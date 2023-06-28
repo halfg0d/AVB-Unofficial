@@ -1,0 +1,88 @@
+inline_script = {
+	script = capitals/habitat/avb_habitat_capitals_regular_desc
+}
+
+triggered_desc = {
+	trigger = {
+		exists = owner
+		owner = {
+			has_origin = origin_toxic_knights
+			NOR = {
+				has_country_flag = toxoids_7011_b
+				has_country_flag = toxoids_7040_b
+				has_country_flag = toxoids_7130_b
+			}
+		}
+		has_planet_flag = toxic_knights_habitat
+	}
+	text = job_knight_commander_effect_desc
+}
+
+triggered_desc = {
+	trigger = {
+		exists = owner
+		owner = {
+			has_origin = origin_toxic_knights
+			OR = {
+				has_country_flag = toxoids_7011_b
+				has_country_flag = toxoids_7040_b
+				has_country_flag = toxoids_7130_b
+			}
+		}
+		has_planet_flag = toxic_knights_habitat
+	}
+	text = job_knight_commander_research_effect_desc
+}
+
+triggered_desc = {
+	trigger = {
+		exists = owner
+		owner = {
+			has_origin = origin_toxic_knights
+		}
+		has_planet_flag = toxic_knights_habitat
+	}
+	text = job_knight_effect_desc
+}
+
+triggered_desc = {
+	trigger = {
+		exists = owner
+		owner = { is_machine_empire = yes }
+	}
+	text = job_coordinator_effect_desc
+}
+
+triggered_desc = {
+	trigger = {
+		exists = owner
+		owner = { is_machine_empire = yes }
+	}
+	text = job_replicator_effect_desc
+}
+
+triggered_desc = {
+	trigger = {
+		exists = owner
+		owner = { is_machine_empire = yes }
+	}
+	text = job_maintenance_drone_effect_desc
+}
+
+triggered_desc = {
+	trigger = {
+		exists = owner
+		owner = { is_hive_empire = yes }
+	}
+	text = job_synapse_drone_effect_desc
+}
+#EC: Bug \/
+triggered_desc = {
+	trigger = {
+		has_global_flag = bug_branch_active
+		exists = owner
+		owner = { has_civic = civic_bugged_machine_researcher }
+	}
+	text = job_bugged_examinatron_effect_desc
+}
+#EC: Bug /\

@@ -1,0 +1,884 @@
+######################
+# Power Plants
+#####################
+
+######################
+# Build speed
+#####################
+
+tech_avb_construction_templates_3 = {
+	cost = @avbtier6cost2
+	area = engineering
+	tier = 6
+	is_rare = yes
+	category = { industry }		
+	prerequisites = { "tech_construction_templates" }
+	weight = @avbtier6weight2
+	
+	modifier = {
+		planet_building_build_speed_mult = 0.25
+	}
+	
+	weight_modifier = {
+		factor = 0.5
+		
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_ethic = ethic_militarist
+				has_ethic = ethic_fanatic_militarist
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_construction_templates_4 = {
+	cost = @avbtier9cost2
+	area = engineering
+	tier = 9
+	is_rare = yes
+	category = { industry }		
+	prerequisites = { "tech_construction_templates" }
+	weight = @avbtier9weight2
+	
+	modifier = {
+		planet_building_build_speed_mult = 0.25
+	}
+	
+	weight_modifier = {
+		factor = 0.5
+		
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_ethic = ethic_militarist
+				has_ethic = ethic_fanatic_militarist
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+######################
+# AI
+#####################
+
+tech_avb_sapient_ai_2 = {
+	area = physics
+	tier = 6
+	cost = @avbtier6cost1
+	category = { computing }
+	prerequisites = { "tech_sapient_ai" }
+	weight = @avbtier6weight1
+	
+	modifier = {
+		all_technology_research_speed = 0.05
+	}
+	
+	potential = {
+		NOT = { has_ethic = ethic_gestalt_consciousness }
+	}
+	
+	weight_modifier = {	
+		factor = 4
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_positronic_implants_2 = {
+	area = physics
+	tier = 6
+	cost = @avbtier6cost1
+	category = { computing }
+	prerequisites = { "tech_positronic_implants" }
+	weight = @avbtier6weight1
+	
+	modifier = {
+		all_technology_research_speed = 0.05
+	}
+	
+	potential = {
+		has_ethic = ethic_gestalt_consciousness
+	}
+	
+	weight_modifier = {	
+		factor = 4
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+######################
+# Science
+#####################
+
+tech_avb_space_science_6 = {
+	cost = @tier4cost1
+	area = physics
+	tier = 4
+	category = { computing }	
+	prerequisites = { "tech_space_science_5" }
+	weight = @tier4weight1
+	
+	modifier = {
+		station_researchers_produces_mult = 0.10
+	}
+	
+	weight_modifier = {
+		factor = 4
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_space_science_7 = {
+	cost = @tier5cost1
+	area = physics
+	tier = 5
+	category = { computing }	
+	prerequisites = { "tech_avb_space_science_6" }
+	weight = @tier5weight1
+	
+	modifier = {
+		station_researchers_produces_mult = 0.10
+	}
+	
+	weight_modifier = {
+		factor = 4
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_space_science_8 = {
+	cost = @avbtier6cost1
+	area = physics
+	tier = 6
+	category = { computing }	
+	prerequisites = { "tech_avb_space_science_7" }
+	weight = @avbtier6weight1
+	
+	modifier = {
+		station_researchers_produces_mult = 0.10
+	}
+	
+	weight_modifier = {
+		factor = 4
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_space_science_9 = {
+	cost = @avbtier7cost1
+	area = physics
+	tier = 7
+	category = { computing }	
+	prerequisites = { "tech_avb_space_science_8" }
+	weight = @avbtier7weight1
+	
+	modifier = {
+		station_researchers_produces_mult = 0.10
+	}
+	
+	weight_modifier = {
+		factor = 4
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_space_science_10 = {
+	cost = @avbtier8cost1
+	area = physics
+	tier = 8
+	category = { computing }	
+	prerequisites = { "tech_avb_space_science_9" }
+	weight = @avbtier8weight1
+	
+	modifier = {
+		station_researchers_produces_mult = 0.10
+	}
+	
+	weight_modifier = {
+		factor = 4
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_physics_4 = {
+	cost = @tier5cost2
+	area = physics
+	tier = 5
+	category = { computing }
+	prerequisites = { "tech_physics_3" }
+	weight = @tier5weight2
+	
+	modifier = {
+		planet_researchers_physics_research_produces_mult = 0.2
+	}
+	
+	weight_modifier = {
+		factor = 4
+	}
+	
+	ai_weight = {
+		weight = 10
+	}
+}
+
+tech_avb_physics_5 = {
+	cost = @avbtier6cost2
+	area = physics
+	tier = 6
+	category = { computing }
+	prerequisites = { "tech_avb_physics_4" }
+	weight = @avbtier6weight2
+	
+	modifier = {
+		planet_researchers_physics_research_produces_mult = 0.2
+	}
+	
+	weight_modifier = {
+		factor = 4
+	}
+	
+	ai_weight = {
+		weight = 10
+	}
+}
+
+tech_avb_physics_6 = {
+	cost = @avbtier7cost2
+	area = physics
+	tier = 7
+	category = { computing }
+	prerequisites = { "tech_avb_physics_5" }
+	weight = @avbtier7weight2
+	
+	modifier = {
+		planet_researchers_physics_research_produces_mult = 0.2
+	}
+	
+	weight_modifier = {
+		factor = 4
+	}
+	
+	ai_weight = {
+		weight = 10
+	}
+}
+
+tech_avb_society_4 = {
+	cost = @tier5cost2
+	area = society
+	tier = 5
+	category = { biology }	
+	prerequisites = { "tech_society_3" }
+	weight = @tier5weight2
+	
+	modifier = {
+		planet_researchers_society_research_produces_mult = 0.2
+	}
+	
+	weight_modifier = {
+		factor = 4
+	}
+	
+	ai_weight = {
+		weight = 10
+	}
+}
+
+tech_avb_society_5 = {
+	cost = @avbtier6cost2
+	area = society
+	tier = 6
+	category = { biology }	
+	prerequisites = { "tech_avb_society_4" }
+	weight = @avbtier6weight2
+	
+	modifier = {
+		planet_researchers_society_research_produces_mult = 0.2
+	}
+	
+	weight_modifier = {
+		factor = 4
+	}
+	
+	ai_weight = {
+		weight = 10
+	}
+}
+
+tech_avb_society_6 = {
+	cost = @avbtier7cost2
+	area = society
+	tier = 7
+	category = { biology }	
+	prerequisites = { "tech_avb_society_5" }
+	weight = @avbtier7weight2
+	
+	modifier = {
+		planet_researchers_society_research_produces_mult = 0.2
+	}
+	
+	weight_modifier = {
+		factor = 4
+	}
+	
+	ai_weight = {
+		weight = 10
+	}
+}
+
+tech_avb_engineering_4 = {
+	cost = @tier5cost2
+	area = engineering
+	tier = 5
+	category = { industry }	
+	prerequisites = { "tech_society_3" }
+	weight = @tier5weight2
+	
+	modifier = {
+		planet_researchers_engineering_research_produces_mult = 0.2
+	}
+	
+	weight_modifier = {
+		factor = 4
+	}
+	
+	ai_weight = {
+		weight = 10
+	}
+}
+
+tech_avb_engineering_5 = {
+	cost = @avbtier6cost2
+	area = engineering
+	tier = 6
+	category = { industry }	
+	prerequisites = { "tech_avb_engineering_4" }
+	weight = @avbtier6weight2
+	
+	modifier = {
+		planet_researchers_engineering_research_produces_mult = 0.2
+	}
+	
+	weight_modifier = {
+		factor = 4
+	}
+	
+	ai_weight = {
+		weight = 10
+	}
+}
+
+tech_avb_engineering_6 = {
+	cost = @avbtier7cost2
+	area = engineering
+	tier = 7
+	category = { industry }	
+	prerequisites = { "tech_avb_engineering_5" }
+	weight = @avbtier7weight2
+	
+	modifier = {
+		planet_researchers_engineering_research_produces_mult = 0.2
+	}
+	
+	weight_modifier = {
+		factor = 4
+	}
+	
+	ai_weight = {
+		weight = 10
+	}
+}
+
+######################
+# Resources
+#####################
+
+tech_avb_advanced_metallurgy_3 = {
+	cost = @tier5cost1
+	area = engineering
+	tier = 5
+	category = { materials }
+	prerequisites = { "tech_advanced_metallurgy_2" "tech_avb_alloys_4" }
+	weight = @tier5weight1
+
+	modifier = {
+		planet_metallurgists_produces_mult = 0.10
+	}
+
+	weight_modifier = {
+		factor = 2
+	}
+
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_advanced_metallurgy_4 = {
+	cost = @avbtier6cost1
+	area = engineering
+	tier = 6
+	category = { materials }
+	prerequisites = { "tech_avb_advanced_metallurgy_3" "tech_avb_alloys_5" }
+	weight = @avbtier6weight1
+
+	modifier = {
+		planet_metallurgists_produces_mult = 0.10
+	}
+
+	weight_modifier = {
+		factor = 2
+	}
+
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_consumer_good_refinement_3 = {
+	cost = @tier4cost1
+	area = physics
+	tier = 5
+	category = { computing }
+	prerequisites = { "tech_avb_luxuries_4" "tech_consumer_good_refinement_2" "tech_avb_sapient_ai_2" }
+	weight = @tier5weight1
+
+	modifier = {
+		planet_artisans_produces_mult = 0.10
+	}
+
+	potential = {
+		OR = {
+			is_gestalt = no
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+
+	weight_modifier = {
+		factor = 2
+	}
+
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_consumer_good_refinement_4 = {
+	cost = @tier5cost1
+	area = physics
+	tier = 6
+	category = { computing }
+	prerequisites = { "tech_avb_luxuries_5" "tech_avb_consumer_good_refinement_3" }
+	weight = @avbtier6weight1
+
+	modifier = {
+		planet_artisans_produces_mult = 0.10
+	}
+
+	potential = {
+		OR = {
+			is_gestalt = no
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+
+	weight_modifier = {
+		factor = 2
+	}
+
+	ai_weight = {
+		factor = 4
+	}
+}
+tech_avb_space_mining_6 = {
+	cost = @tier4cost1
+	area = engineering
+	tier = 4
+	category = { industry }	
+	prerequisites = { "tech_space_mining_5" }
+	weight = @tier4weight1
+	
+	modifier = {
+		station_gatherers_produces_mult = 0.10
+	}
+	
+	weight_modifier = {
+		factor = 4
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_space_mining_7 = {
+	cost = @tier5cost1
+	area = engineering
+	tier = 5
+	category = { industry }	
+	prerequisites = { "tech_avb_space_mining_6" }
+	weight = @tier5weight1
+	
+	modifier = {
+		station_gatherers_produces_mult = 0.10
+	}
+	
+	weight_modifier = {
+		factor = 4
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_space_mining_8 = {
+	cost = @avbtier6cost1
+	area = engineering
+	tier = 6
+	category = { industry }	
+	prerequisites = { "tech_avb_space_mining_7" }
+	weight = @avbtier6weight1
+	
+	modifier = {
+		station_gatherers_produces_mult = 0.10
+	}
+	
+	weight_modifier = {
+		factor = 4
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_space_mining_9 = {
+	cost = @avbtier7cost1
+	area = engineering
+	tier = 7
+	category = { industry }	
+	prerequisites = { "tech_avb_space_mining_8" }
+	weight = @avbtier7weight1
+	
+	modifier = {
+		station_gatherers_produces_mult = 0.10
+	}
+	
+	weight_modifier = {
+		factor = 4
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_space_mining_10 = {
+	cost = @avbtier8cost1
+	area = engineering
+	tier = 8
+	category = { industry }	
+	prerequisites = { "tech_avb_space_mining_9" }
+	weight = @avbtier8weight1
+	
+	modifier = {
+		station_gatherers_produces_mult = 0.10
+	}
+	
+	weight_modifier = {
+		factor = 4
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_space_defense_station_improvement_3 = {
+	cost = @tier4cost3
+	area = engineering
+	tier = 4
+	category = { voidcraft }
+	prerequisites = { "tech_starbase_5" "tech_space_defense_station_improvement" }
+	is_rare = yes
+	weight = @tier4weight3
+	icon = tech_space_defense_station_improvement
+		
+	modifier = {
+		starbase_upgrade_cost_mult = -0.15
+		starbase_upgrade_speed_mult = 0.25
+	}
+	
+	weight_modifier = {
+		factor = 0.5
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_ethic = ethic_militarist
+				has_ethic = ethic_fanatic_militarist
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_space_defense_station_improvement_4 = {
+	cost = @tier5cost3
+	area = engineering
+	tier = 5
+	category = { voidcraft }
+	prerequisites = { "tech_avb_space_defense_station_improvement_3" }
+	is_rare = yes
+	weight = @tier5weight3
+	icon = tech_space_defense_station_improvement
+		
+	modifier = {
+		starbase_upgrade_cost_mult = -0.15
+		starbase_upgrade_speed_mult = 0.25
+	}
+	
+	weight_modifier = {
+		factor = 0.5
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_ethic = ethic_militarist
+				has_ethic = ethic_fanatic_militarist
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_space_defense_station_improvement_5 = {
+	cost = @avbtier6cost3
+	area = engineering
+	tier = 6
+	category = { voidcraft }
+	prerequisites = { "tech_avb_space_defense_station_improvement_4" }
+	is_rare = yes
+	weight = @avbtier6weight3
+	icon = tech_space_defense_station_improvement
+		
+	modifier = {
+		starbase_upgrade_cost_mult = -0.15
+		starbase_upgrade_speed_mult = 0.25
+	}
+	
+	weight_modifier = {
+		factor = 0.5
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_ethic = ethic_militarist
+				has_ethic = ethic_fanatic_militarist
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+######################
+# Hive mind
+#####################
+
+tech_avb_collective_production_methods_2 = {
+	cost = @tier4cost3
+	area = society
+	tier = 4
+	category = { statecraft }
+	prerequisites = { "tech_collective_production_methods" }
+	weight = @tier4weight1
+	
+	modifier = {
+		planet_jobs_produces_mult = 0.05
+	}
+	
+	potential = {
+		has_authority = auth_hive_mind	
+	}
+	
+	weight_modifier = {
+		factor = 4
+	}
+	
+	ai_weight = {
+		weight = 2
+	}
+}
+
+tech_avb_collective_production_methods_3 = {
+	cost = @tier5cost3
+	area = society
+	tier = 5
+	category = { statecraft }
+	prerequisites = { "tech_avb_collective_production_methods_2" }
+	weight = @tier5weight1
+	
+	modifier = {
+		planet_jobs_produces_mult = 0.05
+	}
+	
+	potential = {
+		has_authority = auth_hive_mind	
+	}
+	
+	weight_modifier = {
+		factor = 4
+	}
+	
+	ai_weight = {
+		weight = 2
+	}
+}
+
+tech_avb_collective_production_methods_4 = {
+	cost = @avbtier6cost3
+	area = society
+	tier = 6
+	category = { statecraft }
+	prerequisites = { "tech_avb_collective_production_methods_3" }
+	weight = @avbtier6weight1
+	
+	modifier = {
+		planet_jobs_produces_mult = 0.05
+	}
+	
+	potential = {
+		has_authority = auth_hive_mind	
+	}
+	
+	weight_modifier = {
+		factor = 4
+	}
+	
+	ai_weight = {
+		weight = 2
+	}
+}
+
+tech_avb_resource_processing_algorithms_2 = {
+	cost = @tier4cost1
+	area = society
+	tier = 4
+	category = { statecraft }
+	prerequisites = { "tech_resource_processing_algorithms" }	
+	weight = @tier4weight1
+	
+	modifier = {
+		planet_jobs_produces_mult = 0.05
+	}
+	
+	potential = {
+		has_authority = auth_machine_intelligence
+	}
+	
+	weight_modifier = {
+		factor = 4
+	}
+	
+	ai_weight = {
+		weight = 2
+	}
+}
+
+tech_avb_resource_processing_algorithms_3 = {
+	cost = @tier5cost1
+	area = society
+	tier = 5
+	category = { statecraft }
+	prerequisites = { "tech_avb_resource_processing_algorithms_2" }	
+	weight = @tier5weight1
+	
+	modifier = {
+		planet_jobs_produces_mult = 0.05
+	}
+	
+	potential = {
+		has_authority = auth_machine_intelligence
+	}
+	
+	weight_modifier = {
+		factor = 4
+	}
+	
+	ai_weight = {
+		weight = 2
+	}
+}
+
+tech_avb_resource_processing_algorithms_4 = {
+	cost = @avbtier6cost1
+	area = society
+	tier = 6
+	category = { statecraft }
+	prerequisites = { "tech_avb_resource_processing_algorithms_3" }	
+	weight = @avbtier6weight1
+	
+	modifier = {
+		planet_jobs_produces_mult = 0.05
+	}
+	
+	potential = {
+		has_authority = auth_machine_intelligence
+	}
+	
+	weight_modifier = {
+		factor = 4
+	}
+	
+	ai_weight = {
+		weight = 2
+	}
+}

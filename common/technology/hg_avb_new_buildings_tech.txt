@@ -1,0 +1,281 @@
+tech_avb_posthumous_employment_center_2 = {
+	icon = tech_avb_posthumous_employment_center_2
+	cost = @tier4cost1
+	area = society
+	tier = 4
+	category = { biology }	
+	prerequisites = { "tech_avb_capital_4" }
+	weight = @tier4weight1
+	
+	potential = {
+		has_valid_civic = civic_permanent_employment
+	}
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_posthumous_employment_center }
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+	}
+}
+
+tech_avb_offspring_nest_2 = {
+	icon = tech_avb_offspring_nest_2
+	cost = @tier4cost1
+	area = society
+	tier = 4
+	category = { biology }	
+	prerequisites = { "tech_avb_capital_4" }
+	weight = @tier4weight1
+	
+	potential = {
+		has_origin = origin_progenitor_hive
+	}
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_offspring_nest }
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+	}
+}
+
+tech_avb_toxic_bath_2 = {
+	icon = tech_avb_toxic_bath_2
+	cost = @tier4cost1
+	area = society
+	tier = 4
+	category = { biology }	
+	prerequisites = { "tech_avb_capital_4" }
+	weight = @tier4weight1
+	
+	potential = {
+		is_gestalt = no
+		has_valid_civic = civic_toxic_baths
+	}
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_toxic_bath }
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+	}
+}
+tech_avb_toxic_bath_hive_2 = {
+	icon = tech_avb_toxic_bath_hive_2
+	cost = @tier4cost1
+	area = society
+	tier = 4
+	category = { biology }	
+	prerequisites = { "tech_avb_capital_4" }
+	weight = @tier4weight1
+	
+	potential = {
+		is_hive_empire = yes
+		has_valid_civic = civic_toxic_baths
+	}
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_toxic_bath_hive }
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+	}
+}
+tech_avb_toxic_bath_machine_2 = {
+	icon = tech_avb_toxic_bath_machine_2
+	cost = @tier4cost1
+	area = society
+	tier = 4
+	category = { biology }	
+	prerequisites = { "tech_avb_capital_4" }
+	weight = @tier4weight1
+	
+	potential = {
+		is_machine_empire = yes
+		has_valid_civic = civic_toxic_baths
+	}
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_toxic_bath_machine }
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+	}
+}
+
+tech_avb_ranger_lodge_2 = {
+	cost = @tier3cost2
+	area = society
+	tier = 3
+	category = { statecraft }
+	prerequisites = { "tech_hydroponics" "tech_colonization_3" }
+	potential = {
+		has_valid_civic = civic_environmentalist
+	}
+	weight_modifier = {
+		factor = 4
+	}
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_archaeo_refinery_2 = {
+	cost = @tier4cost3
+	area = society
+	category = { archaeostudies }
+	tier = 4
+	prerequisites = { "tech_archaeo_refinery" }
+	is_rare = yes
+	ai_update_type = all
+	weight = @tier4weight3
+
+	potential = {
+		has_ancrel = yes
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = 0.1
+			num_buildings = {  
+				type = building_archaeo_refinery
+				value < 1 
+				disabled = no
+				in_construction = no 
+			}
+		}
+		modifier = {
+			factor = 0.3
+			NOT = {
+				has_ascension_perk = ap_archaeoengineers
+			}
+		}
+		modifier = {
+			factor = 0
+			has_ancrel = no
+		}
+		inline_script = "technology/archaeotech_weight"
+	}
+}
+
+tech_avb_baol_organic_plant_2 = {
+	cost = @tier5cost1
+	area = society
+	category = { archaeostudies }
+	prerequisites = { tech_secrets_baol }
+	tier = 5
+	is_rare = yes
+	ai_update_type = all
+	weight = 5
+
+	potential = {
+		has_ancrel = yes
+	}
+}
+
+
+tech_avb_archaeostudies_faculty_2 = {
+	cost = @tier4cost1
+	area = society
+	category = { archaeostudies }
+	prerequisites = { tech_archaeostudies }
+	tier = 4
+	is_rare = yes
+	weight = @tier4weight3
+
+	potential = {
+		has_ancrel = yes
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = 0
+			has_ancrel = no
+		}
+		modifier = {
+			factor = 0.3
+			count_archaeological_site = {
+				count < 3
+				limit = {
+					is_site_completed = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			OR = {
+				has_country_flag = origin_shoulders_closure
+				has_completed_precursor_research = yes
+			}
+		}
+	}
+}
+
+tech_avb_vultaum_reality_computer_2 = {
+	cost = @tier5cost1
+	area = society
+	category = { archaeostudies }
+	prerequisites = { tech_secrets_vultaum }
+	tier = 5
+	is_rare = yes
+	ai_update_type = all
+	weight = 5
+
+	potential = {
+		has_ancrel = yes
+	}
+}
+
+tech_avb_league_offices_2 = {
+	cost = @tier5cost1
+	area = society
+	category = { archaeostudies }
+	prerequisites = { tech_secrets_league }
+	tier = 5
+	is_rare = yes
+	ai_update_type = all
+	weight = 5
+
+	potential = {
+		has_ancrel = yes
+	}
+}

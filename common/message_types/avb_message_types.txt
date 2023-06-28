@@ -1,0 +1,9 @@
+message_type = {
+	key = "POP_LITHOID_CREATED_CRYSTAL"
+	icon = "GFX_message_other_construction_surface"
+	icon_frame = 1
+
+	sound = "advisor_notification_construction_complete"
+	sound_is_advisor = yes
+	ping = "ping_notification_green"
+}

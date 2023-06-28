@@ -1,0 +1,61 @@
+#Vanilla \/
+cost = {
+	trigger = {
+		has_z_expanded_mod = no
+	}
+	minerals = @avb_a$tier$_minerals
+	rare_crystals = @avb_a$tier$_rare_cost
+}
+upkeep = {
+	trigger = {
+		has_z_expanded_mod = no
+	}
+	energy = 3
+	rare_crystals = @avb_a$tier$_rare_upkeep
+}
+#Vanilla /\
+
+#z Expanded \/
+cost = {
+	trigger = {
+		has_z_expanded_mod = yes
+		exists = owner
+		owner = {
+			is_civic_plant_organic = no
+		}
+	}
+	minerals = @avb_a$tier$_minerals
+}
+cost = {
+	trigger = {
+		has_z_expanded_mod = yes
+		exists = owner
+		owner = {
+			is_civic_plant_organic = yes
+		}
+	}
+	minerals = @avb_a$tier$_hive_minerals
+	food = @avb_a$tier$_hive_food
+}
+upkeep = {
+	trigger = {
+		has_z_expanded_mod = yes
+		exists = owner
+		owner = {
+			is_civic_plant_organic = yes
+		}
+	}
+	energy = @avb_a$tier$_upkeep_hive
+	food = @avb_a$tier$_upkeep_food
+}
+upkeep = {
+	trigger = {
+		has_z_expanded_mod = yes
+		exists = owner
+		owner = {
+			is_civic_plant_organic = no
+		}
+	}
+	energy = @avb_a$tier$_upkeep
+}
+#z Expanded /\

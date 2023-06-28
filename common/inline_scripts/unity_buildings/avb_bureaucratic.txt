@@ -1,0 +1,134 @@
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_megacorp = no
+			#zExpanded \/
+			NAND = {
+				has_valid_civic = civic_ethical_hedonism
+				has_z_expanded_mod = yes
+			}
+			#zExpanded /\
+		}
+	}
+	modifier = {
+		job_bureaucrat_add = @avb_u$tier$_jobs
+	}
+}
+
+triggered_desc = {
+	trigger = {
+		exists = owner
+		owner = {
+			is_megacorp = no
+			#zExpanded \/
+			NAND = {
+				has_valid_civic = civic_ethical_hedonism
+				has_z_expanded_mod = yes
+			}
+			#zExpanded /\
+		}
+	}
+	text = job_bureaucrat_effect_desc
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_megacorp = yes 
+			#zExpanded \/
+			NAND = {
+				has_valid_civic = civic_private_military_companies
+				has_z_expanded_mod = yes
+			}
+			#zExpanded /\
+		}
+	}
+	modifier = {
+		job_manager_add = @avb_u$tier$_jobs
+	}
+}
+
+triggered_desc = {
+	trigger = {
+		exists = owner
+		owner = {
+			is_megacorp = yes 
+			#zExpanded \/
+			NAND = {
+				has_valid_civic = civic_private_military_companies
+				has_z_expanded_mod = yes
+			}
+			#zExpanded /\
+		}
+	}
+	text = job_manager_effect_desc
+}
+
+#zExpanded \/
+triggered_planet_modifier = {
+	potential = {
+		has_z_expanded_mod = yes
+		exists = owner
+		owner = {
+			is_megacorp = no
+			has_valid_civic = civic_ethical_hedonism
+		}
+	}
+	modifier = {
+		job_bureaucrat_add = @avb_u$tier$_jobs_half
+		job_culture_worker_add = @avb_u$tier$_jobs_half
+	}
+}
+triggered_desc = {
+	trigger = {
+		has_z_expanded_mod = yes
+		exists = owner
+		owner = {
+			is_megacorp = no
+			has_valid_civic = civic_ethical_hedonism
+		}
+	}
+	text = job_culture_worker_effect_desc
+}
+triggered_planet_modifier = {
+	potential = {
+		has_z_expanded_mod = yes
+		exists = owner
+		owner = {
+			is_megacorp = yes
+			has_valid_civic = civic_private_military_companies
+		}
+	}
+	modifier = {
+		job_logistics_officer_add = @avb_u$tier$_jobs
+	}
+}
+triggered_desc = {
+	trigger = {
+		has_z_expanded_mod = yes
+		exists = owner
+		owner = {
+			is_megacorp = yes
+			has_valid_civic = civic_private_military_companies
+		}
+	}
+	text = job_logistics_officer_effect_desc
+}
+#zExpanded /\
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner.federation
+		owner.federation = { has_federation_perk = all_the_priests_2 }
+	}
+	job_high_priest_add = 1
+}
+triggered_desc = {
+	trigger = {
+		exists = owner.federation
+		owner.federation = { has_federation_perk = all_the_priests_2 }
+	}
+	text = job_high_priest_effect_desc
+}

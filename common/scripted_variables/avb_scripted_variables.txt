@@ -1,0 +1,68 @@
+
+##################
+### TECH COSTS ###
+##################
+
+@avbtier6cost1 = 48000
+@avbtier6cost2 = 60000
+@avbtier6cost3 = 72000
+
+@avbtier7cost1 = 96000
+@avbtier7cost2 = 120000
+@avbtier7cost3 = 144000
+
+@avbtier8cost1 = 192000
+@avbtier8cost2 = 240000
+@avbtier8cost3 = 288000
+
+@avbtier9cost1 = 384000
+@avbtier9cost2 = 480000
+@avbtier9cost3 = 576000
+
+@avbtier10cost1 = 768000
+@avbtier10cost2 = 960000
+@avbtier10cost3 = 1152000
+
+#@avbtier6cost1 = 64000
+#@avbtier6cost2 = 80000
+#@avbtier6cost3 = 96000
+
+#@avbtier7cost1 = 128000
+#@avbtier7cost2 = 160000
+#@avbtier7cost3 = 192000
+
+#@avbtier8cost1 = 256000
+#@avbtier8cost2 = 320000
+#@avbtier8cost3 = 384000
+
+#@avbtier9cost1 = 512000
+#@avbtier9cost2 = 640000
+#@avbtier9cost3 = 768000
+
+#@avbtier10cost1 = 1024000
+#@avbtier10cost2 = 1280000
+#@avbtier10cost3 = 1536000
+
+####################
+### TECH WEIGHTS ###
+####################
+
+@avbtier6weight1 = 19
+@avbtier6weight2 = 18
+@avbtier6weight3 = 17
+
+@avbtier7weight1 = 16
+@avbtier7weight2 = 15
+@avbtier7weight3 = 14
+
+@avbtier8weight1 = 13
+@avbtier8weight2 = 12
+@avbtier8weight3 = 11
+
+@avbtier9weight1 = 10
+@avbtier9weight2 = 9
+@avbtier9weight3 = 8
+
+@avbtier10weight1 = 7
+@avbtier10weight2 = 6
+@avbtier10weight3 = 5

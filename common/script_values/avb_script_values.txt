@@ -1,0 +1,10 @@
+avb_telepath_eater_soldier = {
+	base = 0 #same as above
+	complex_trigger_modifier = {
+		trigger = count_owned_pop
+		parameters = { limit = { has_job = job_soldier } }
+		mode = add
+	}
+	add = 1
+	min = 0
+}

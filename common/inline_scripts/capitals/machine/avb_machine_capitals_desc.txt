@@ -1,0 +1,26 @@
+triggered_desc = {
+	text = job_coordinator_effect_desc
+}		
+
+triggered_desc = {
+	text = job_replicator_effect_desc
+}	
+
+triggered_desc = {
+	text = job_patrol_drone_effect_desc
+}
+
+triggered_desc = {
+	trigger = {
+		has_designation = col_crucible
+	}
+	text = job_crucible_drone_effect_desc
+}
+#EC: Bug \/
+triggered_desc = {
+	trigger = {
+		exists = owner
+		owner = { has_civic = civic_bugged_machine_researcher }
+	}
+	text = job_bugged_examinatron_effect_desc
+}

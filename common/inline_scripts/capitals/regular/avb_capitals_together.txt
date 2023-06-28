@@ -1,0 +1,66 @@
+inline_script = {
+	script = buildings/on_all_capital_buildings
+}
+inline_script = {
+	script = capitals/regular/avb_capitals_jobs
+	tier = $tier$
+	#toxic_origin1 = $toxic_origin1$
+	#toxic_origin2 = $toxic_origin2$
+}
+inline_script = {
+	script = capitals/avb_capitals_productivity
+}
+inline_script = {
+	script = capitals/regular/avb_capitals_desc
+	#toxic_origin1 = $toxic_origin1$
+	#toxic_origin2 = $toxic_origin2$
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			has_active_tradition = tr_domination_imperious_architecture
+		}
+	}
+	modifier = {
+		planet_housing_add = 1
+	}
+}
+
+#Probably every regular capital have this so I "teleport" this here \/
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { has_active_tradition = tr_synthetics_finish }
+	}
+	job_roboticist_add = 1
+}
+
+triggered_country_modifier = {
+	potential = {
+		is_capital = yes
+		owner = {
+			has_councilor = { COUNCILOR = "councilor_feudal_realm" } 
+		}
+	}
+	country_naval_cap_add = 1
+	mult = value:naval_cap_vassals_councilor_feudal_realm
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = owner.federation
+		owner.federation = { has_federation_perk = culture_workers_1 }
+	}
+	job_culture_worker_add = 2
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { has_active_tradition = tr_cybernetics_organ_harvesting }
+		has_current_purge = yes
+		growing_species = { has_trait = trait_cybernetic }
+	}
+	pop_growth_speed = 0.10
+}
+#"Teleport" /\

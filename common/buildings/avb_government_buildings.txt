@@ -1,0 +1,550 @@
+#############
+# Government buildings
+#############
+building_avb_noble_estates_2 = {
+	base_buildtime = @avb_g4_time
+	can_build = no
+
+	category = government
+	
+	potential = {
+		exists = owner
+		planet = {
+			or = {
+				has_building = building_noble_estates
+				owner = { is_ai = no }
+			}
+		}
+		owner = {
+			OR = {
+				has_valid_civic = civic_aristocratic_elite
+				AND = {
+					has_global_flag = ethic_civic_classic_active
+					has_civic = civic_harmonious_hierarchy
+				}
+				AND = {
+					has_global_flag = bug_branch_active
+					is_bugged_governmental_elitist = yes
+				}
+			}
+		}
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	allow = {
+		has_upgraded_capital_4 = yes
+		if = {
+			limit = {
+				exists = orbital_defence
+			}
+			orbital_defence = {
+				exists = starbase
+				starbase = {
+					NOR = {
+						has_starbase_building = ring_noble_estates
+						is_starbase_building_building = ring_noble_estates
+					}
+				}
+			}
+		}
+	}
+	destroy_trigger = {
+		exists = owner
+		NOT = {
+			owner = {
+				OR = {
+					has_valid_civic = civic_aristocratic_elite
+					AND = {
+						has_global_flag = ethic_civic_classic_active
+						has_civic = civic_harmonious_hierarchy
+					}
+					AND = {
+						has_global_flag = bug_branch_active
+						is_bugged_governmental_elitist = yes
+					}
+				}
+			}
+		}
+	}
+	
+	planet_modifier = {
+		job_noble_add = 3
+		planet_housing_add = 3
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_g4_minerals
+		}			
+		upkeep = {
+			energy = @avb_g4_upkeep
+		}
+	}
+	
+	triggered_desc = {
+		text = job_noble_effect_desc
+	}
+	
+	prerequisites = {
+		"tech_avb_noble_estates_2"
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_global_flag = ethic_civic_classic_active
+				has_valid_civic = civic_harmious_hierarchy
+			}
+		}
+		modifier = {
+			job_noble_per_pop = 0.03
+			planet_housing_add = 2
+			pop_government_ethic_attraction = 0.2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				AND = {
+					has_global_flag = ethic_civic_classic_active
+					has_civic = civic_aristocratic_elite
+					is_anglers_empire = no
+				}
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_farmer_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				AND = {
+					has_global_flag = ethic_civic_classic_active
+					has_civic = civic_aristocratic_elite
+					is_anglers_empire = yes
+				}
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_angler_add = 1
+		}
+	}
+	#EC: Bug \/
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = bug_branch_active
+			exists = owner
+			owner = {
+				has_valid_civic = civic_bugged_peerage_assembly
+			}
+		}
+		job_noble_add = 1
+		planet_housing_add = 1
+	}
+	#EC: Bug /\
+}
+
+building_avb_slave_processing_2 = {
+	base_buildtime = @avb_g4_time
+	can_build = no
+
+	category = government
+
+	potential = {
+		owner = { is_gestalt = no }
+		owner = { has_policy_flag = slavery_allowed }
+		NOT = { has_modifier = resort_colony }
+	}
+	
+	allow = {
+		has_upgraded_capital_4 = yes
+		if = {
+			limit = {
+				exists = orbital_defence
+			}
+			orbital_defence = {
+				exists = starbase
+				starbase = {
+					NOR = {
+						has_starbase_building = ring_slave_processing_facility
+						is_starbase_building_building = ring_slave_processing_facility
+					}
+				}
+			}
+		}
+	}
+	
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = { is_regular_empire = no }
+			NOT = { owner = { has_policy_flag = slavery_allowed } }
+			has_modifier = resort_colony
+		}
+	}
+	
+	planet_modifier = {
+		planet_jobs_slave_produces_mult = 0.1
+		pop_cat_slave_political_power = -0.5
+		planet_resettlement_unemployed_mult = -0.50
+	}	
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_g4_minerals
+		}
+		upkeep = {
+			energy = @avb_g4_upkeep
+		}
+	}
+	
+	prerequisites = {
+		"tech_avb_slave_processing_2"
+	}
+	#PT \/
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = pt_flag
+			exists = owner
+			owner = { has_ascension_perk = ap_plentiful_traditions_vast_slave_procreation }
+			OR = {
+				has_building = building_clone_vats
+				has_building = building_avb_clone_vats_2
+			}
+		}
+		modifier = {
+			planet_pop_assembly_organic_add = 1.5
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = pt_flag
+			exists = owner
+		}
+		modifier = {
+			job_slave_enforcer_add = 5
+		}
+	}
+	#PT /\
+}
+
+building_avb_enforcement_3 = {
+	base_buildtime = @avb_g4_time
+
+	category = government
+	can_build = no
+	
+	potential = {
+		owner = { is_gestalt = no }
+		NOT = { has_modifier = slave_colony }
+		if = {
+			limit = {
+				owner = { is_ai = yes }
+			}
+			NOT = { has_forbidden_jobs = enforcer }
+			NOT = { has_available_jobs = enforcer }
+		}
+	}
+	
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+	
+	destroy_trigger = {
+		exists = owner
+		owner = { is_regular_empire = no }
+	}
+		
+	planet_modifier = {
+		job_enforcer_add = @avb_g4_jobs
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_g4_minerals
+			volatile_motes = @avb_g4_rare_cost
+		}
+		upkeep = {
+			energy = @avb_g4_upkeep
+			volatile_motes = @avb_g4_rare_upkeep
+		}
+	}
+	
+	prerequisites = {
+		"tech_galactic_administration"
+	}
+	
+	triggered_desc = {
+		text = job_enforcer_effect_desc
+	}
+	
+	show_tech_unlock_if = {
+		is_gestalt = no
+	}
+	
+	upgrades = {
+		building_avb_enforcement_4
+	}
+}
+
+building_avb_enforcement_4 = {
+	base_buildtime = @avb_g5_time
+
+	category = government
+	can_build = no
+	
+	potential = {
+		owner = { is_gestalt = no }
+		NOT = { has_modifier = slave_colony }
+		if = {
+			limit = {
+				owner = { is_ai = yes }
+			}
+			NOT = { has_forbidden_jobs = enforcer }
+			NOT = { has_available_jobs = enforcer }
+		}
+	}
+	
+	allow = {
+		has_upgraded_capital_4 = yes
+	}
+	
+	destroy_trigger = {
+		exists = owner
+		owner = { is_regular_empire = no }
+	}
+		
+	planet_modifier = {
+		job_enforcer_add = @avb_g5_jobs
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_g5_minerals
+			volatile_motes = @avb_g5_rare_cost
+		}
+		upkeep = {
+			energy = @avb_g5_upkeep
+			volatile_motes = @avb_g5_rare_upkeep
+		}
+	}
+	
+	prerequisites = {
+		"tech_avb_capital_4"
+	}
+	
+	triggered_desc = {
+		text = job_enforcer_effect_desc
+	}
+	
+	show_tech_unlock_if = {
+		is_gestalt = no
+	}
+}
+
+building_avb_sentinel_posts_2 = {
+	base_buildtime = @avb_g4_time 
+	can_build = no
+
+	category = government
+	
+	potential = {
+		exists = owner
+		owner = { is_gestalt = yes }
+	}
+	
+	allow = {
+		hidden_trigger = {
+			OR = {
+				owner = { is_ai = no }
+				AND = {
+					NOT = { has_building = building_sentinel_posts }
+					NOT = { has_forbidden_jobs = patrol_drone }
+					NOT = { has_available_jobs = patrol_drone }
+				}
+			}
+		}
+	}
+	
+	destroy_trigger = {
+		exists = owner
+		NOT = {
+			owner = { is_gestalt = yes }
+		}
+	}
+		
+	planet_modifier = {
+		job_patrol_drone_add = 4
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_g4_minerals
+		}
+		upkeep = {
+			energy = @avb_g4_upkeep
+		}
+	}
+	
+	prerequisites = {
+		"tech_galactic_administration"
+	}
+	
+	triggered_desc = {
+		text = job_patrol_drone_effect_desc
+	}
+	
+	show_tech_unlock_if = {
+		is_gestalt = yes
+	}
+}
+
+#############
+# Ascension perks
+#############
+
+building_avb_psi_corps_2 = {
+	base_buildtime = @avb_g4_time
+	can_build = no
+
+	category = government
+	
+	potential = {
+		host_has_dlc = "Utopia"
+		owner = { has_tradition = tr_psionics_psi_corps }
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+	allow = {
+		has_upgraded_capital_5 = yes
+		if = {
+			limit = {
+				exists = orbital_defence
+			}
+			orbital_defence = {
+				exists = starbase
+				starbase = {
+					NOR = {
+						has_starbase_building = ring_psi_corps
+						is_starbase_building_building = ring_psi_corps
+					}
+				}
+			}
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		NOT = {
+			owner = { has_tradition = tr_psionics_psi_corps }
+		}
+	}
+
+	planet_modifier = {
+		job_telepath_add = 1
+		
+		job_telepath_add = 3
+		planet_stability_add = 10
+	}
+	upgrades = {
+		building_avb_psi_corps_3
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_g4_minerals
+			sr_zro = @avb_g4_rare_cost
+		}
+		upkeep = {
+			energy = @avb_g4_upkeep
+			sr_zro = @avb_g4_rare_upkeep
+		}
+	}
+	
+	triggered_desc = {
+		text = job_telepath_effect_desc
+	}	
+	
+	prerequisites = {
+		"tech_avb_psi_corps_2"
+	}
+}
+
+building_avb_psi_corps_3 = {
+	base_buildtime = @avb_g5_time
+	can_build = no
+
+	category = government
+	
+	potential = {
+		host_has_dlc = "Utopia"
+		owner = { has_tradition = tr_psionics_psi_corps }
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+	allow = {
+		has_upgraded_capital_6 = yes
+		if = {
+			limit = {
+				exists = orbital_defence
+			}
+			orbital_defence = {
+				exists = starbase
+				starbase = {
+					NOR = {
+						has_starbase_building = ring_psi_corps
+						is_starbase_building_building = ring_psi_corps
+					}
+				}
+			}
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		NOT = {
+			owner = { has_tradition = tr_psionics_psi_corps }
+		}
+	}
+
+	planet_modifier = {
+		job_telepath_add = 3
+
+		job_telepath_add = 5
+		planet_stability_add = 20
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_g5_minerals
+			sr_zro = @avb_g5_rare_cost
+		}
+		upkeep = {
+			energy = @avb_g5_upkeep
+			sr_zro = @avb_g5_rare_upkeep
+		}
+	}
+	
+	triggered_desc = {
+		text = job_telepath_effect_desc
+	}	
+	
+	prerequisites = {
+		"tech_avb_psi_corps_3"
+	}
+}
+

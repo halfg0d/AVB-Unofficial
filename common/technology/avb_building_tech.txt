@@ -1,0 +1,1817 @@
+######################
+# Capital Buildings
+#####################
+
+tech_avb_capital_4 = {
+	cost = @tier4cost3
+	area = society
+	tier = 4
+	category = { statecraft }
+	prerequisites = { "tech_galactic_administration" }
+	weight = @tier4weight3
+	
+	gateway = capital
+	
+	# modifier = {
+		# country_government_civic_points_add = 1
+	# }
+	
+	
+	weight_modifier = {
+		factor = 4
+
+	}
+
+	ai_weight = {
+		factor = @capital_tech_ai_factor
+	}
+}
+
+
+tech_avb_capital_6 = {
+	cost = @avbtier6cost3
+	area = society
+	tier = 6
+	category = { statecraft }
+	prerequisites = { "tech_avb_capital_5" }
+	weight = @avbtier6weight3
+	
+	gateway = capital
+	
+	modifier = {
+		country_government_civic_points_add = 1
+	}
+	
+	weight_modifier = {
+		factor = 4
+	}
+	
+	ai_weight = {
+		factor = @capital_tech_ai_factor
+	}
+}
+
+tech_avb_hab_capital_3 = {
+	cost = @tier5cost3
+	area = society
+	tier = 5
+	category = { statecraft }
+	prerequisites = { "tech_starbase_5" "tech_avb_capital_4" "tech_habitat_1" }
+	weight = @tier5weight3
+	
+	potential = {
+		has_ascension_perk = ap_voidborn
+	}
+	
+	gateway = capital
+	
+	weight_modifier = {
+		factor = 4
+		modifier = {
+			factor = 0
+			has_megastructure = habitat_0
+		}
+	}
+	
+	ai_weight = {
+		factor = @capital_tech_ai_factor
+		modifier = {
+			factor = 0
+			has_megastructure = habitat_0
+		}
+	}
+}
+
+tech_avb_resort_capital_3 = {
+	cost = @tier5cost3
+	area = society
+	tier = 5
+	category = { statecraft }
+	prerequisites = { "tech_resort_colonies" "tech_avb_capital_4" }
+	weight = @tier5weight3
+	
+	gateway = capital
+	
+	weight_modifier = {
+		factor = 4
+		modifier = {
+			factor = 0
+			NOT = {
+				any_owned_planet = {
+					has_modifier = resort_colony
+				}
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = @capital_tech_ai_factor
+		modifier = {
+			factor = 0
+			NOT = {
+				any_owned_planet = {
+					has_modifier = resort_colony
+				}
+			}
+		}
+	}
+}
+
+tech_avb_slave_capital_3 = {
+	cost = @tier5cost3
+	area = society
+	tier = 5
+	category = { statecraft }
+	prerequisites = { "tech_slave_colonies" "tech_avb_capital_4" }
+	weight = @tier5weight3
+	
+	gateway = capital
+	
+	weight_modifier = {
+		factor = 4
+		modifier = {
+			factor = 0
+			NOT = {
+				any_owned_planet = {
+					has_modifier = slave_colony
+				}
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = @capital_tech_ai_factor
+		modifier = {
+			factor = 0
+			NOT = {
+				any_owned_planet = {
+					has_modifier = slave_colony
+				}
+			}
+		}
+	}
+}
+
+######################
+# Government Buildings
+#####################
+
+tech_avb_noble_estates_2 = {
+	cost = @tier5cost2
+	area = society
+	tier = 5
+	category = { statecraft }
+	prerequisites = { "tech_avb_capital_4" }
+	weight = @tier5weight2
+	
+	gateway = capital
+	
+	potential = {
+		has_valid_civic = civic_aristocratic_elite 
+	}
+	
+	weight_modifier = {
+		factor = 4
+	}
+	
+	ai_weight = {
+		factor = 10
+	}
+}
+
+tech_avb_slave_processing_2 = {
+	cost = @tier5cost2
+	area = society
+	tier = 5
+	category = { statecraft }
+	prerequisites = { "tech_avb_capital_4" "tech_slave_colonies" }
+	weight = @tier5weight2
+	
+	gateway = capital
+	
+	weight_modifier = {
+		factor = 0.5
+		modifier = {
+			factor = 0.25
+			NOR = {
+				has_trait_in_council = { TRAIT = leader_trait_expertise_statecraft }
+				has_trait_in_council = { TRAIT = leader_trait_curator }
+			}
+		}
+
+		modifier = {
+			factor = 0
+			num_owned_planets < 2
+		}
+		modifier = {
+			factor = 0.0
+			OR = {
+				allows_slavery = no
+				NOT = { any_owned_pop = { is_enslaved = yes } }
+			}
+		}
+	}
+
+	ai_weight = {
+		
+	}
+}
+
+tech_avb_psi_corps_2 = {
+	cost = @avbtier6cost2
+	area = society
+	tier = 6
+	category = { statecraft }
+	prerequisites = { "tech_avb_capital_5" "tech_telepathy" }
+	weight = @avbtier6weight2
+	is_rare = yes
+	
+	gateway = capital
+	
+	potential = {
+		has_ascension_perk = ap_mind_over_matter
+	}
+	
+	weight_modifier = {
+		factor = 2
+	}
+	
+	ai_weight = {
+		factor = 6
+	}
+}
+
+tech_avb_psi_corps_3 = {
+	cost = @avbtier8cost2
+	area = society
+	tier = 8
+	category = { statecraft }
+	prerequisites = { "tech_avb_capital_6" "tech_avb_psi_corps_2" }
+	weight = @avbtier8weight2
+	is_rare = yes
+	
+	gateway = capital
+	
+	potential = {
+		has_ascension_perk = ap_mind_over_matter
+	}
+	
+	weight_modifier = {
+		factor = 2
+	}
+	
+	ai_weight = {
+		factor = 6
+	}
+}
+
+tech_avb_clone_vats_2 = {
+	cost = @avbtier6cost2
+	area = society
+	tier = 6
+	category = { statecraft }
+	prerequisites = { "tech_avb_capital_5" }
+	weight = @avbtier6weight2
+	is_rare = yes
+	
+	gateway = capital
+	
+	potential = {
+		has_ascension_perk = ap_engineered_evolution
+	}
+	
+	weight_modifier = {
+		factor = 4
+	}
+	
+	ai_weight = {
+		factor = 10
+	}
+}
+
+######################
+# Pop assembly Buildings
+#####################
+
+tech_avb_robot_assembly_plant_2 = {
+	cost = @tier5cost3
+	area = engineering
+	tier = 5
+	category = { industry }
+	prerequisites = { "tech_droid_workers" "tech_avb_capital_4" }
+	weight = @tier5weight3
+
+	potential = {
+		NOT = { has_ethic = "ethic_gestalt_consciousness" }
+	}	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			has_policy_flag = robots_outlawed
+		}	
+		modifier = {
+			factor = 0.5
+			OR = {
+				has_ethic = "ethic_spiritualist"
+				has_ethic = "ethic_fanatic_spiritualist"
+			}
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_ethic = ethic_materialist
+				has_ethic = ethic_fanatic_materialist
+			}
+		}
+		modifier = {
+			factor = 2
+			has_origin = origin_mechanists
+		}
+	}
+	
+	ai_weight = {
+		weight = 2
+		modifier = {
+			factor = 2
+			OR = {
+				has_ethic = ethic_materialist
+				has_ethic = ethic_fanatic_materialist
+			}
+		}
+		modifier = {
+			factor = 0
+			NOR = {
+				has_ai_personality_behaviour = robot_exploiter
+				has_ai_personality_behaviour = robot_liberator
+			}
+		}
+		modifier = {
+			factor = 2
+			has_origin = origin_mechanists
+		}
+	}
+}
+
+tech_avb_machine_assembly_plant_2 = {
+	cost = @tier5cost3
+	area = engineering
+	tier = 5
+	icon = tech_avb_robot_assembly_plant_2
+	category = { industry }
+	prerequisites = { "tech_avb_capital_4" "tech_mega_assembly" }
+	weight = @tier5weight3
+
+	potential = {
+		has_ethic = "ethic_gestalt_consciousness"
+	}	
+	
+	weight_modifier = {
+		factor = 4
+	}
+	
+	ai_weight = {
+		weight = 2
+		
+	}
+}
+
+######################
+# Resource Buildings
+#####################
+
+tech_avb_hydroponics_2 = {
+	cost = @tier5cost1
+	area = society
+	tier = 5
+	category = { biology }	
+	prerequisites = { "tech_nano_vitality_crops" "tech_avb_capital_4" }
+	weight = @tier5weight1
+	
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 0.01
+			is_machine_empire = yes
+			NOR = { 
+				has_valid_civic = civic_machine_servitor 
+				has_valid_civic = civic_machine_assimilator 	
+				any_owned_planet = {
+					num_districts = { type = district_farming value > 0 }
+				}
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_food_processing_3 = {
+	cost = @tier4cost1
+	area = society
+	tier = 4
+	category = { biology }	
+	prerequisites = { "tech_food_processing_2" "tech_avb_capital_4" }
+	weight = @tier4weight1
+	
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 0.01
+			is_machine_empire = yes
+			NOR = { 
+				has_valid_civic = civic_machine_servitor 
+				has_valid_civic = civic_machine_assimilator 	
+				any_owned_planet = {
+					num_districts = { type = district_farming value > 0 }
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			NOR = {
+				has_technology = tech_mine_volatile_motes
+				has_technology = tech_volatile_motes
+				has_country_flag = has_market_access
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_food_processing_4 = {
+	cost = @tier5cost1
+	area = society
+	tier = 5
+	category = { biology }	
+	prerequisites = { "tech_avb_food_processing_3" "tech_avb_capital_5" }
+	weight = @tier5weight1
+	
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 0.01
+			is_machine_empire = yes
+			NOR = { 
+				has_valid_civic = civic_machine_servitor 
+				has_valid_civic = civic_machine_assimilator 	
+				any_owned_planet = {
+					num_districts = { type = district_farming value > 0 }
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			NOR = {
+				has_technology = tech_mine_volatile_motes
+				has_technology = tech_volatile_motes
+				has_country_flag = has_market_access
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_mineral_purification_3 = {
+	cost = @tier3cost3
+	area = engineering
+	tier = 3
+	category = { industry }	
+	prerequisites = { "tech_mineral_purification_2" "tech_galactic_administration" }
+	weight = @tier3weight3
+	
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 0
+			NOR = {
+				has_technology = tech_mine_volatile_motes
+				has_technology = tech_volatile_motes
+				has_country_flag = has_market_access
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_mineral_purification_4  = {
+	cost = @tier4cost3
+	area = engineering
+	tier = 4
+	category = { industry }	
+	prerequisites = { "tech_avb_mineral_purification_3" "tech_avb_capital_5" }
+	weight = @tier4weight3
+	
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 0
+			NOR = {
+				has_technology = tech_mine_volatile_motes
+				has_technology = tech_volatile_motes
+				has_country_flag = has_market_access
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_power_hub_3 = {
+	cost = @tier3cost3
+	area = physics
+	tier = 3
+	category = { field_manipulation }	
+	prerequisites = { "tech_power_hub_2" "tech_galactic_administration"}
+	weight = @tier3weight3
+		
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_technology = tech_mine_exotic_gases
+				has_technology = tech_exotic_gases
+				has_country_flag = has_market_access
+			}
+		}
+		modifier = {
+			factor = 2
+			has_tradition = tr_prosperity_adopt
+		}
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_power_hub_4 = {
+	cost = @tier4cost3
+	area = physics
+	tier = 4
+	category = { field_manipulation }	
+	prerequisites = { "tech_avb_power_hub_3" "tech_avb_capital_5"}
+	weight = @tier4weight3
+		
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_technology = tech_mine_exotic_gases
+				has_technology = tech_exotic_gases
+				has_country_flag = has_market_access
+			}
+		}
+		modifier = {
+			factor = 2
+			has_tradition = tr_prosperity_adopt
+		}
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_bio_reactor_2  = {
+	cost = @tier5cost3
+	area = physics
+	tier = 5
+	category = { field_manipulation }	
+	prerequisites = { "tech_bio_reactor" "tech_avb_capital_4"}
+	weight = @avbtier6weight3
+	is_rare = yes
+		
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_technology = tech_mine_exotic_gases
+				has_technology = tech_exotic_gases
+				has_country_flag = has_market_access
+			}
+		}
+		modifier = {
+			factor = 2
+			has_tradition = tr_prosperity_adopt
+		}
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+######################
+# Manufacturing Buildings
+#####################
+
+tech_avb_alloys_3 = {
+	cost = @tier4cost1
+	area = engineering
+	tier = 4
+	category = { materials }	
+	prerequisites = { "tech_alloys_2" "tech_galactic_administration" }
+	weight = @tier4weight1
+	
+	weight_modifier = {
+		factor = 2
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_alloys_4 = {
+	cost = @tier5cost1
+	area = engineering
+	tier = 5
+	category = { materials }	
+	prerequisites = { "tech_avb_alloys_3" "tech_avb_capital_4" }
+	weight = @tier5weight1
+	
+	weight_modifier = {
+		factor = 2
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_alloys_5 = {
+	cost = @avbtier6cost1
+	area = engineering
+	tier = 6
+	category = { materials }	
+	prerequisites = { "tech_avb_alloys_4" "tech_avb_capital_5" }
+	weight = @avbtier6weight1
+	
+	weight_modifier = {
+		factor = 2
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_luxuries_3 = {
+	cost = @tier4cost1
+	area = engineering
+	tier = 4
+	category = { materials }	
+	prerequisites = { "tech_luxuries_2" "tech_galactic_administration" }
+	weight = @tier4weight1
+	
+	potential = {
+		OR = {
+			is_gestalt = no
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+	
+	weight_modifier = {
+		factor = 2
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_luxuries_4 = {
+	cost = @tier5cost1
+	area = engineering
+	tier = 5
+	category = { materials }	
+	prerequisites = { "tech_avb_luxuries_3" "tech_avb_capital_4" }
+	weight = @tier5weight1
+	
+	potential = {
+		OR = {
+			is_gestalt = no
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+	
+	weight_modifier = {
+		factor = 2
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_luxuries_5 = {
+	cost = @avbtier6cost1
+	area = engineering
+	tier = 6
+	category = { materials }	
+	prerequisites = { "tech_avb_luxuries_4" "tech_avb_capital_5" }
+	weight = @avbtier6weight1
+	
+	potential = {
+		OR = {
+			is_gestalt = no
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+	
+	weight_modifier = {
+		factor = 2
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_exotic_gases_2 = {
+	cost = @tier4cost1
+	area = engineering
+	tier = 4
+	category = { materials }	
+	prerequisites = { "tech_exotic_gases" "tech_galactic_administration" }
+	weight = @tier4weight1
+	
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 0.5
+			OR = {
+				any_owned_planet = {
+					OR = {
+						has_deposit = d_bubbling_swamp
+						has_deposit = d_fuming_bog
+					}
+				}				
+				any_planet_within_border = {
+					OR = {
+						has_deposit = d_exotic_gases_1
+						has_deposit = d_exotic_gases_2
+						has_deposit = d_exotic_gases_3
+						has_deposit = d_exotic_gases_4
+						has_deposit = d_exotic_gases_5
+					}
+				}	
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5 #important resource
+	}
+}
+
+tech_avb_exotic_gases_3 = {
+	cost = @avbtier6cost1
+	area = engineering
+	tier = 6
+	category = { materials }	
+	prerequisites = { "tech_avb_exotic_gases_2" "tech_avb_capital_5" }
+	weight = @avbtier6weight1
+	
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 0.5
+			OR = {
+				any_owned_planet = {
+					OR = {
+						has_deposit = d_bubbling_swamp
+						has_deposit = d_fuming_bog
+					}
+				}				
+				any_planet_within_border = {
+					OR = {
+						has_deposit = d_exotic_gases_1
+						has_deposit = d_exotic_gases_2
+						has_deposit = d_exotic_gases_3
+						has_deposit = d_exotic_gases_4
+						has_deposit = d_exotic_gases_5
+					}
+				}	
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5 #important resource
+	}
+}
+
+tech_avb_volatile_motes_2 = {
+	cost = @tier4cost1
+	area = engineering
+	tier = 4
+	category = { materials }	
+	prerequisites = { "tech_volatile_motes" "tech_galactic_administration" }
+	weight = @tier4weight1
+	
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 0.5
+			OR = {
+				any_owned_planet = {
+					OR = {
+						has_deposit = d_bubbling_swamp
+						has_deposit = d_fuming_bog
+					}
+				}				
+				any_planet_within_border = {
+					OR = {
+						has_deposit = d_exotic_gases_1
+						has_deposit = d_exotic_gases_2
+						has_deposit = d_exotic_gases_3
+						has_deposit = d_exotic_gases_4
+						has_deposit = d_exotic_gases_5
+					}
+				}	
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5 #important resource
+	}
+}
+
+tech_avb_volatile_motes_3 = {
+	cost = @avbtier6cost1
+	area = engineering
+	tier = 6
+	category = { materials }	
+	prerequisites = { "tech_avb_volatile_motes_2" "tech_avb_capital_5" }
+	weight = @avbtier6weight1
+	
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 0.5
+			OR = {
+				any_owned_planet = {
+					OR = {
+						has_deposit = d_bubbling_swamp
+						has_deposit = d_fuming_bog
+					}
+				}				
+				any_planet_within_border = {
+					OR = {
+						has_deposit = d_exotic_gases_1
+						has_deposit = d_exotic_gases_2
+						has_deposit = d_exotic_gases_3
+						has_deposit = d_exotic_gases_4
+						has_deposit = d_exotic_gases_5
+					}
+				}	
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5 #important resource
+	}
+}
+
+tech_avb_rare_crystals_2 = {
+	cost = @tier4cost1
+	area = engineering
+	tier = 4
+	category = { materials }	
+	prerequisites = { "tech_rare_crystals" "tech_galactic_administration" }
+	weight = @tier4weight1
+	
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 0.5
+			OR = {
+				any_owned_planet = {
+					OR = {
+						has_deposit = d_bubbling_swamp
+						has_deposit = d_fuming_bog
+					}
+				}				
+				any_planet_within_border = {
+					OR = {
+						has_deposit = d_exotic_gases_1
+						has_deposit = d_exotic_gases_2
+						has_deposit = d_exotic_gases_3
+						has_deposit = d_exotic_gases_4
+						has_deposit = d_exotic_gases_5
+					}
+				}	
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5 #important resource
+	}
+}
+
+tech_avb_rare_crystals_3 = {
+	cost = @avbtier6cost1
+	area = engineering
+	tier = 6
+	category = { materials }	
+	prerequisites = { "tech_avb_rare_crystals_2" "tech_avb_capital_5" }
+	weight = @avbtier6weight1
+	
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 0.5
+			OR = {
+				any_owned_planet = {
+					OR = {
+						has_deposit = d_bubbling_swamp
+						has_deposit = d_fuming_bog
+					}
+				}				
+				any_planet_within_border = {
+					OR = {
+						has_deposit = d_exotic_gases_1
+						has_deposit = d_exotic_gases_2
+						has_deposit = d_exotic_gases_3
+						has_deposit = d_exotic_gases_4
+						has_deposit = d_exotic_gases_5
+					}
+				}	
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5 #important resource
+	}
+}
+
+tech_avb_nanite_transmutation_2 = {
+	cost = @tier4cost3
+	area = engineering
+	tier = 4
+	category = { materials }
+	prerequisites = { "tech_nanite_transmutation" "tech_galactic_administration" }
+	weight = @tier5weight3
+	is_rare = yes
+	
+	potential = {
+		host_has_dlc = "Distant Stars Story Pack"
+	}
+	
+	weight_modifier = {
+		factor = 0.50
+		modifier = {
+			factor = 0
+			NOT = { any_system_within_border = { any_system_planet = { has_resource = { type = nanites amount > 0 } } } }
+		}
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+	}
+	
+	ai_weight = {
+		factor = 5 #important resource
+	}
+}
+
+tech_avb_global_production_strategy_2 = {
+	cost = @tier4cost1
+	area = society
+	tier = 4
+	category = { statecraft }	
+	prerequisites = { "tech_avb_alloys_3" "tech_avb_luxuries_3" "tech_avb_capital_4" }
+	weight = @tier4weight1
+	
+	# unlocks Ministry of Production
+	
+	weight_modifier = {
+		factor = 1.5
+	}
+	
+	ai_weight = {
+		factor = 1.5
+	}
+}
+
+######################
+# Research Buildings
+#####################
+
+tech_avb_basic_science_lab_4 = {
+	area = physics
+	category = { computing }
+	tier = 4
+	cost = @tier4cost1
+	prerequisites = { "tech_basic_science_lab_3" "tech_galactic_administration" }
+	weight = @tier4weight1
+		
+	weight_modifier = {
+		factor = 2
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_basic_science_lab_5 = {
+	area = physics
+	category = { computing }
+	tier = 5
+	cost = @tier5cost1
+	prerequisites = { "tech_avb_basic_science_lab_4" "tech_avb_capital_4" }
+	weight = @tier5weight1
+		
+	weight_modifier = {
+		factor = 2
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_basic_science_lab_6 = {
+	area = physics
+	category = { computing }
+	tier = 6
+	cost = @avbtier6cost1
+	prerequisites = { "tech_avb_basic_science_lab_5" "tech_avb_capital_5" }
+	weight = @avbtier6weight1
+		
+	weight_modifier = {
+		factor = 2
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_global_research_initiative_2 = {
+	area = physics
+	tier = 5
+	cost = @tier5cost1
+	category = { computing }
+	prerequisites = { "tech_global_research_initiative" "tech_physics_3" "tech_avb_capital_4" }
+	weight = @tier5weight1
+	
+	weight_modifier = {
+		factor = 1.5
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+######################
+# Trade Buildings
+#####################
+
+tech_avb_interstellar_economics_2 = {
+	cost = @tier4cost1
+	area = society
+	tier = 4
+	category = { statecraft }
+	prerequisites = { "tech_interstellar_economics" "tech_galactic_administration" }
+	weight = @tier4weight1
+	
+	potential = {
+		is_gestalt = no
+	}
+	
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 0
+			NOR = {
+				has_technology = tech_mine_rare_crystals
+				has_technology = tech_rare_crystals
+				has_country_flag = has_market_access
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_prosperity_adopt
+		}
+	}
+	
+	ai_weight = {
+		factor = 2
+	}
+}
+
+tech_avb_interstellar_economics_3 = {
+	cost = @tier5cost1
+	area = society
+	tier = 5
+	category = { statecraft }
+	prerequisites = { "tech_avb_interstellar_economics_2" "tech_avb_capital_4" }
+	weight = @tier5weight1
+	
+	potential = {
+		is_gestalt = no
+	}
+	
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 0
+			NOR = {
+				has_technology = tech_mine_rare_crystals
+				has_technology = tech_rare_crystals
+				has_country_flag = has_market_access
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_prosperity_adopt
+		}
+	}
+	
+	ai_weight = {
+		factor = 2
+	}
+}
+
+tech_avb_interstellar_economics_4 = {
+	cost = @avbtier6cost1
+	area = society
+	tier = 6
+	category = { statecraft }
+	prerequisites = { "tech_avb_interstellar_economics_3" "tech_avb_capital_5" }
+	weight = @avbtier6weight1
+	
+	potential = {
+		is_gestalt = no
+	}
+	
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 0
+			NOR = {
+				has_technology = tech_mine_rare_crystals
+				has_technology = tech_rare_crystals
+				has_country_flag = has_market_access
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_prosperity_adopt
+		}
+	}
+	
+	ai_weight = {
+		factor = 2
+	}
+}
+
+tech_avb_galactic_markets_2 = {
+	cost = @tier4cost1
+	area = society
+	tier = 4
+	category = { statecraft }
+	prerequisites = { "tech_avb_capital_4" "tech_avb_interstellar_economics_3" }
+	weight = @tier4weight1
+	is_rare = yes
+	
+	potential = {
+		is_gestalt = no
+	}
+	
+	weight_modifier = {
+		factor = 0.5
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = 0
+			num_communications < 2
+		}
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+######################
+# Amenity Buildings
+#####################
+
+tech_avb_residence_3 = {
+	cost = @tier4cost1
+	area = society
+	category = { statecraft }
+	tier = 4
+	prerequisites = { "tech_housing_2" "tech_paradise_dome" }
+	weight = @tier4weight1
+	
+	potential = {
+		OR = {
+			is_gestalt = no
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+
+	weight_modifier = {	
+		modifier = {
+			factor = 0
+			NOR = {
+				has_technology = tech_mine_rare_crystals
+				has_technology = tech_rare_crystals
+				has_country_flag = has_market_access
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_residence_4 = {
+	cost = @tier5cost1
+	area = society
+	category = { statecraft }
+	tier = 5
+	prerequisites = { "tech_avb_housing_3" "tech_avb_residence_3" }
+	weight = @tier5weight1
+	
+	potential = {
+		OR = {
+			is_gestalt = no
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+
+	weight_modifier = {	
+		modifier = {
+			factor = 0
+			NOR = {
+				has_technology = tech_mine_rare_crystals
+				has_technology = tech_rare_crystals
+				has_country_flag = has_market_access
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_residence_5 = {
+	cost = @avbtier6cost1
+	area = society
+	category = { statecraft }
+	tier = 6
+	prerequisites = { "tech_avb_housing_4" "tech_avb_residence_4" }
+	weight = @avbtier6weight1
+	
+	potential = {
+		OR = {
+			is_gestalt = no
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+
+	weight_modifier = {	
+		modifier = {
+			factor = 0
+			NOR = {
+				has_technology = tech_mine_rare_crystals
+				has_technology = tech_rare_crystals
+				has_country_flag = has_market_access
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_housing_3 = {
+	cost = @tier4cost1
+	area = engineering
+	tier = 4
+	category = { industry }
+	prerequisites = { "tech_housing_2" }
+	weight = @tier4weight1
+	
+	modifier = {
+		description = district_housing_tech_effect
+	}
+	
+	weight_modifier = {
+		factor = 1.5
+		modifier = {
+			factor = 0
+			has_valid_civic = civic_agrarian_idyll
+		}
+	}
+	
+	ai_weight = {
+		factor = 2
+	}
+}
+
+tech_avb_housing_4 = {
+	cost = @tier5cost1
+	area = engineering
+	tier = 5
+	category = { industry }
+	prerequisites = { "tech_avb_housing_3" }
+	weight = @tier5weight1
+	
+	modifier = {
+		description = district_housing_tech_effect
+	}
+	
+	weight_modifier = {
+		factor = 1.5
+		modifier = {
+			factor = 0
+			has_valid_civic = civic_agrarian_idyll
+		}	
+	}
+	
+	ai_weight = {
+		factor = 2
+	}
+}
+
+#Non-prerequisite
+tech_avb_housing_5 = {
+	cost = @avbtier6cost1
+	area = engineering
+	tier = 6
+	category = { industry }
+	prerequisites = { "tech_avb_housing_4" }
+	weight = @avbtier6weight1
+	
+	modifier = {
+		description = district_housing_tech_effect
+	}
+	
+	weight_modifier = {
+		factor = 1.5
+		modifier = {
+			factor = 0
+			has_valid_civic = civic_agrarian_idyll
+		}	
+	}
+	
+	ai_weight = {
+		factor = 2
+	}
+}
+
+tech_avb_housing_6 = {
+	cost = @avbtier7cost1
+	area = engineering
+	tier = 7
+	category = { industry }
+	prerequisites = { "tech_avb_housing_5" }
+	weight = @avbtier7weight1
+	
+	modifier = {
+		description = district_housing_tech_effect
+	}
+	
+	weight_modifier = {
+		factor = 1.5
+		modifier = {
+			factor = 0
+			has_valid_civic = civic_agrarian_idyll
+		}	
+	}
+	
+	ai_weight = {
+		factor = 2
+	}
+}
+#
+
+tech_avb_self_assembling_components_2 = {
+	cost = @tier5cost3
+	area = engineering
+	tier = 5
+	category = { industry }	
+	weight = @tier5weight3
+	prerequisites = { "tech_self_assembling_components" }
+	
+	modifier = {
+		planet_pop_assembly_mult = 0.10
+	}
+	
+	potential = {
+		has_authority = auth_machine_intelligence
+	}
+	
+	weight_modifier = {
+		factor = 1.5 
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_holo_entertainment_3 = {
+	cost = @tier3cost3
+	area = society
+	category = { statecraft }
+	tier = 3
+	prerequisites = { "tech_hyper_entertainment_forum" }
+	weight = @tier3weight3
+	
+	potential = {
+		is_gestalt = no
+	}
+
+	weight_modifier = {	
+		modifier = {
+			factor = 0
+			NOR = {
+				has_technology = tech_mine_exotic_gases
+				has_technology = tech_exotic_gases
+				has_country_flag = has_market_access
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_holo_entertainment_4 = {
+	cost = @tier5cost3
+	area = society
+	category = { statecraft }
+	tier = 5
+	prerequisites = { "tech_avb_holo_entertainment_3" }
+	weight = @tier5weight3
+	
+	potential = {
+		is_gestalt = no
+	}
+
+	weight_modifier = {	
+		modifier = {
+			factor = 0
+			NOR = {
+				has_technology = tech_mine_exotic_gases
+				has_technology = tech_exotic_gases
+				has_country_flag = has_market_access
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_clinic_3 = {
+	cost = @tier3cost3
+	area = society
+	tier = 3
+	category = { biology }
+	prerequisites = { "tech_frontier_hospital" "tech_galactic_administration" }
+	weight = @tier3weight3
+	
+	potential = {
+		is_gestalt = no
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_technology = tech_mine_exotic_gases
+				has_technology = tech_exotic_gases
+				has_country_flag = has_market_access
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_harmony_adopt
+		}
+	}
+}
+
+tech_avb_clinic_4 = {
+	cost = @tier5cost3
+	area = society
+	tier = 5
+	category = { biology }
+	prerequisites = { "tech_avb_clinic_3" "tech_avb_capital_4" }
+	weight = @tier5weight3
+	
+	potential = {
+		is_gestalt = no
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_technology = tech_mine_exotic_gases
+				has_technology = tech_exotic_gases
+				has_country_flag = has_market_access
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_harmony_adopt
+		}
+	}
+}
+
+tech_avb_spawning_pool_2 = {
+	cost = @tier4cost1
+	area = society
+	tier = 4
+	category = { biology }	
+	prerequisites = { "tech_galactic_administration" }
+	weight = @tier4weight1
+	
+	potential = {
+		is_hive_empire = yes
+	}
+	
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 0.01
+			is_machine_empire = yes
+			NOR = { 
+				has_valid_civic = civic_machine_servitor 
+				has_valid_civic = civic_machine_assimilator 	
+				any_owned_planet = {
+					num_districts = { type = district_farming value > 0 }
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			NOR = {
+				has_technology = tech_mine_volatile_motes
+				has_technology = tech_volatile_motes
+				has_technology = tech_mine_exotic_gases
+				has_technology = tech_exotic_gases
+				has_country_flag = has_market_access
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+
+tech_avb_slave_huts_2 = {
+	cost = @tier4cost3
+	area = society
+	tier = 4
+	category = { statecraft }
+	prerequisites = { "tech_slave_colonies" "tech_avb_capital_4" }
+	weight = @tier4weight3
+	
+	gateway = capital
+	
+	weight_modifier = {
+		factor = 4
+		modifier = {
+			factor = 0
+			NOT = {
+				any_owned_planet = {
+					has_modifier = slave_colony
+				}
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 10
+		modifier = {
+			factor = 0
+			NOT = {
+				any_owned_planet = {
+					has_modifier = slave_colony
+				}
+			}
+		}
+	}
+}
+
+######################
+# Unity Buildings
+#####################
+
+
+######################
+# Army Buildings
+#####################
+
+tech_avb_military_academy_2 = {
+	cost = @tier5cost1
+	area = society
+	tier = 5
+	category = { military_theory }
+	prerequisites = { "tech_combat_training" "tech_command_matrix" "tech_avb_capital_4" }
+	weight = @tier5weight1
+	
+	modifier = {
+		country_occupation_armies_add = 2
+	}	
+	
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 2
+			is_militarist = yes
+		}
+	}
+	
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 2
+			is_militarist = yes
+		}
+	}
+}
+
+tech_avb_stronghold_3 = {
+	cost = @tier3cost1
+	area = society
+	tier = 3
+	category = { military_theory }
+	prerequisites = { "tech_global_defense_grid" "tech_galactic_administration" }
+	weight = @tier3weight1
+	
+	modifier = {
+		army_defense_health_mult = 0.10
+	}	
+	
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 2
+			is_militarist = yes
+		}
+	}
+	
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 2
+			is_militarist = yes
+		}
+	}
+}
+
+tech_avb_stronghold_4 = {
+	cost = @tier4cost1
+	area = society
+	tier = 4
+	category = { military_theory }
+	prerequisites = { "tech_avb_stronghold_3" "tech_avb_capital_4" }
+	weight = @tier4weight1
+	
+	modifier = {
+		army_defense_health_mult = 0.10
+	}	
+	
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 2
+			is_militarist = yes
+		}
+	}
+	
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 2
+			is_militarist = yes
+		}
+	}
+}
+
+tech_avb_stronghold_5 = {
+	cost = @avbtier7cost1
+	area = society
+	tier = 6
+	category = { military_theory }
+	prerequisites = { "tech_avb_stronghold_4" "tech_avb_capital_5" }
+	weight = @avbtier7weight1
+	is_rare = yes
+	
+	modifier = {
+		army_defense_health_mult = 0.10
+	}	
+	
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 2
+			is_militarist = yes
+		}
+	}
+	
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 2
+			is_militarist = yes
+		}
+	}
+}
+
+tech_avb_planetary_shield_generator_2 = {
+	area = physics
+	cost = @tier4cost1
+	tier = 4
+	category = { field_manipulation }
+	ai_update_type = all	
+	is_rare = yes
+	prerequisites = { "tech_planetary_shield_generator" "tech_shields_4" }
+	weight = @tier4weight1
+	
+	weight_modifier = {
+		factor = 0.5
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+	}
+}
+
+tech_avb_planetary_shield_generator_3 = {
+	area = physics
+	cost = @tier5cost1
+	tier = 5
+	category = { field_manipulation }
+	ai_update_type = all	
+	is_rare = yes
+	prerequisites = { "tech_avb_planetary_shield_generator_2" "tech_shields_5" }
+	weight = @tier5weight1
+	
+	weight_modifier = {
+		factor = 0.5
+		
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+	}
+}
+
+tech_avb_dark_matter_planetary_shield_generator = {
+	area = physics
+	cost = @avbtier7cost1
+	tier = 6
+	category = { field_manipulation }
+	ai_update_type = all	
+	is_rare = yes
+	prerequisites = { "tech_avb_planetary_shield_generator_3" "tech_dark_matter_deflector" }
+	weight = @avbtier7weight1
+	
+	weight_modifier = {
+		factor = 0.5
+		
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+	}
+}

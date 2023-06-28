@@ -1,0 +1,64 @@
+inline_script = {
+	script = buildings/on_all_capital_buildings
+}
+inline_script = {
+	script = capitals/avb_capitals_productivity
+}
+inline_script = "capitals/machine/avb_machine_capitals_desc"
+triggered_planet_modifier = {
+	potential = {
+		num_pops >= 10
+	}
+	modifier = {
+		job_replicator_add = @avb_$tier$_replicator1
+	}
+}
+triggered_planet_modifier = {
+	potential = {
+		num_pops >= 40
+	}
+	modifier = {
+		job_replicator_add = @avb_$tier$_replicator2
+	}
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { has_civic = civic_machine_assimilator }
+	}
+	modifier = {
+		job_replicator_add = -@avb_$tier$_replicator1
+		job_maintenance_drone_add = @avb_$tier$_maintenance_drones
+	}
+}
+
+triggered_planet_modifier = {
+	potential = {
+		has_designation = col_crucible
+	}
+	modifier = {
+		job_replicator_add = -@avb_$tier$_replicator1
+		job_crucible_drone_add = @avb_$tier$_crucible_drone
+	}
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { has_active_tradition = tr_synthetics_finish_machine }
+	}
+	modifier = {
+		job_replicator_add = 1
+	}
+}
+#EC: Bug \/
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { has_civic = civic_bugged_machine_researcher }
+	}
+	modifier = {
+		job_bugged_examinatron_add = @avb_$tier$_examinatron
+	}
+}
+#EC: Bug /\

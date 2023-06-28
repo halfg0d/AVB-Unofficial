@@ -1,0 +1,3505 @@
+#############
+# Unity buildings
+#############
+
+#Regular
+building_avb_bureaucratic_4 = {
+	base_buildtime = @avb_u4_time
+	can_build = no
+
+	category = unity
+
+	potential = {
+		exists = owner
+		owner = {
+			is_regular_empire = yes
+			is_spiritualist = no
+			has_make_spiritualist_perk = no
+		}
+		NOT = { has_modifier = slave_colony }
+		NAND = {
+			has_planet_flag = planetary_station
+			has_z_expanded_mod = yes
+		}
+	}
+
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			OR = {
+				is_gestalt = yes
+				is_spiritualist = yes
+				has_make_spiritualist_perk = yes
+			}
+		}
+	}
+
+	convert_to = {
+		building_avb_hive_unity_4
+		building_avb_machine_unity_4
+		building_avb_temple_4
+		building_avb_death_temple_4
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_u4_minerals
+			rare_crystals = @avb_u4_rare_cost
+		}
+		upkeep = {
+			energy = @avb_u4_upkeep
+			rare_crystals = @avb_u4_rare_upkeep
+		}
+	}
+
+	
+	inline_script = {
+		script = unity_buildings/avb_bureaucratic
+		tier = 4
+	}
+
+	prerequisites = {
+		"tech_avb_bureaucratic_4"
+	}
+
+	show_tech_unlock_if = {
+		is_regular_empire = yes
+		is_spiritualist = no
+		has_make_spiritualist_perk = no
+	}
+	upgrades = {
+		building_avb_bureaucratic_5
+	}
+}
+
+building_avb_bureaucratic_5 = {
+	base_buildtime = @avb_u5_time
+	can_build = no
+
+	category = unity
+
+	potential = {
+		exists = owner
+		owner = {
+			is_regular_empire = yes
+			is_spiritualist = no
+			has_make_spiritualist_perk = no
+		}
+		NOT = { has_modifier = slave_colony }
+		NAND = {
+			has_planet_flag = planetary_station
+			has_z_expanded_mod = yes
+		}
+	}
+
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			OR = {
+				is_gestalt = yes
+				is_spiritualist = yes
+				has_make_spiritualist_perk = yes
+			}
+		}
+	}
+
+	convert_to = {
+		building_avb_temple_5
+		building_avb_hive_unity_5
+		building_avb_machine_unity_5
+		building_avb_death_temple_5
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_u5_minerals
+			rare_crystals = @avb_u5_rare_cost
+		}
+		upkeep = {
+			energy = @avb_u5_upkeep
+			rare_crystals = @avb_u5_rare_upkeep
+		}
+	}
+
+	
+	inline_script = {
+		script = unity_buildings/avb_bureaucratic
+		tier = 5
+	}
+
+	prerequisites = {
+		"tech_avb_bureaucratic_5"
+	}
+
+	show_tech_unlock_if = {
+		is_regular_empire = yes
+		is_spiritualist = no
+		has_make_spiritualist_perk = no
+	}
+	upgrades = {
+		building_avb_bureaucratic_6
+	}
+}
+
+building_avb_bureaucratic_6 = {
+	base_buildtime = @avb_u6_time
+	can_build = no
+
+	category = unity
+
+	potential = {
+		exists = owner
+		owner = {
+			is_regular_empire = yes
+			is_spiritualist = no
+			has_make_spiritualist_perk = no
+		}
+		NOT = { has_modifier = slave_colony }
+		NAND = {
+			has_planet_flag = planetary_station
+			has_z_expanded_mod = yes
+		}
+	}
+
+	allow = {
+		has_upgraded_capital_4 = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			OR = {
+				is_gestalt = yes
+				is_spiritualist = yes
+				has_make_spiritualist_perk = yes
+			}
+		}
+	}
+
+	convert_to = {
+		building_avb_temple_6
+		building_avb_hive_unity_6
+		building_avb_machine_unity_6
+		building_avb_death_temple_6
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_u6_minerals
+			rare_crystals = @avb_u6_rare_cost
+		}
+		upkeep = {
+			energy = @avb_u6_upkeep
+			rare_crystals = @avb_u6_rare_upkeep
+		}
+	}
+
+	inline_script = {
+		script = unity_buildings/avb_bureaucratic
+		tier = 6
+	}
+
+	prerequisites = {
+		"tech_avb_bureaucratic_6"
+	}
+
+	show_tech_unlock_if = {
+		is_regular_empire = yes
+		is_spiritualist = no
+		has_make_spiritualist_perk = no
+	}
+}
+#Spiritualists
+building_avb_temple_4 = {
+	base_buildtime = @avb_u4_time
+	can_build = no
+
+	category = unity
+
+	potential = {
+		exists = owner
+		owner = {
+			OR = {
+				is_spiritualist = yes
+				AND = {
+					is_gestalt = no
+					has_make_spiritualist_perk = yes
+				}
+			}
+			#EC: Classic \/
+			AND = {
+				has_global_flag = ethic_civic_classic_active
+				NOR = {
+					has_valid_civic = civic_death_cult
+					has_valid_civic = civic_death_cult_corporate
+				}
+			}
+			#EC: Classic /\
+		}
+		NOT = { has_modifier = slave_colony }
+	}
+
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = {
+				OR = {
+					AND = {
+						is_spiritualist = no
+						has_make_spiritualist_perk = no
+					}
+					is_gestalt = yes
+				}
+			}
+			has_modifier = slave_colony
+		}
+	}
+
+	convert_to = {
+		building_avb_bureaucratic_4
+		building_avb_hive_unity_4
+		building_avb_machine_unity_4
+		building_avb_death_temple_4
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_u4_minerals
+			rare_crystals = @avb_u4_rare_cost
+		}
+		upkeep = {
+			energy = @avb_u4_upkeep
+			rare_crystals = @avb_u4_rare_upkeep
+		}
+	}
+
+	planet_modifier = {
+		job_priest_add = @avb_u4_jobs_half
+		pop_ethic_spiritualist_attraction_mult = 0.2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner.federation
+			owner.federation = { has_federation_perk = all_the_priests_2 }
+		}
+		job_high_priest_add = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_megacorp = no }
+		}
+		modifier = {
+			job_priest_add = @avb_u4_jobs_half
+		}
+	}
+
+	triggered_desc = {
+		text = job_priest_effect_desc
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_megacorp = yes }
+		}
+		modifier = {
+			job_manager_add = @avb_u4_jobs_half
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_megacorp = yes }
+		}
+		text = job_manager_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner.federation
+			owner.federation = { has_federation_perk = all_the_priests_2 }
+		}
+		text = job_high_priest_effect_desc
+	}
+
+	prerequisites = {
+		"tech_avb_temple_4"
+	}
+
+	show_tech_unlock_if = {
+		OR = {
+			is_spiritualist = yes
+			AND = {
+				is_gestalt = no
+				has_make_spiritualist_perk = yes
+			}
+		}
+	}
+	upgrades = {
+		"building_avb_temple_5"
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_global_flag = ethic_civic_classic_active
+				has_civic = civic_defenders_faith
+			}
+		}
+		modifier = {
+		job_priest_add = -3
+		job_templar_add = 3
+		}
+	}
+
+	triggered_desc = {
+		text = job_priest_effect_desc
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_global_flag = ethic_civic_classic_active
+				OR = {
+					has_civic = civic_imperial_cult
+					has_civic = civic_divine_council
+					has_civic = civic_spiritual_democracy
+					has_civic = civic_exalted_priesthood
+				}
+			}
+		}
+		modifier = {
+			job_high_priest_add = 1
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_global_flag = ethic_civic_classic_active
+				has_civic = civic_defenders_faith
+			}
+		}
+		text = job_templar_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_global_flag = ethic_civic_classic_active
+				OR = {
+					has_civic = civic_imperial_cult
+					has_civic = civic_divine_council
+					has_civic = civic_spiritual_democracy
+					has_civic = civic_exalted_priesthood
+				}
+			}
+		}
+		text = job_high_priest_effect_desc
+	}
+	#EC: Bug \/
+	inline_script = {
+		script = "buildings/bugged_temple_effects"
+		BUGGED_TEMPLARS = 4
+		HIGH_PRIEST = 2
+	}
+	#EC: Bug /\
+	#PT \/
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = pt_flag
+			exists = owner.federation
+			owner.federation = { has_federation_perk = all_the_priests_2 }
+			owner = {
+				has_tradition = tr_plentiful_aspiration_3
+			}
+		}
+		modifier = {
+			job_priest_add = @avb_u4_jobs_half
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = pt_flag
+			exists = owner
+			owner = { is_megacorp = no }
+			owner = {
+				has_tradition = tr_plentiful_aspiration_3
+			}
+		}
+		modifier = {
+			job_priest_add = @avb_u4_jobs_half
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = pt_flag
+			exists = owner
+			owner = { is_megacorp = yes }
+			owner = {
+				has_tradition = tr_plentiful_aspiration_3
+			}
+		}
+		modifier = {
+			job_manager_add = @avb_u4_jobs_half
+		}
+	}
+	#PT /\
+}
+building_avb_temple_5 = {
+	base_buildtime = @avb_u5_time
+	can_build = no
+
+	category = unity
+
+	potential = {
+		exists = owner
+		owner = {
+			OR = {
+				is_spiritualist = yes
+				AND = {
+					is_gestalt = no
+					has_make_spiritualist_perk = yes
+				}
+			}
+			#EC: Classic \/
+			AND = {
+				has_global_flag = ethic_civic_classic_active
+				NOR = {
+					has_valid_civic = civic_death_cult
+					has_valid_civic = civic_death_cult_corporate
+				}
+			}
+			#EC: Classic /\
+		}
+		NOT = { has_modifier = slave_colony }
+	}
+
+	allow = {
+		has_upgraded_capital_4 = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = {
+				OR = {
+					AND = {
+						is_spiritualist = no
+						has_make_spiritualist_perk = no
+					}
+					is_gestalt = yes
+				}
+			}
+			has_modifier = slave_colony
+		}
+	}
+
+	convert_to = {
+		building_avb_bureaucratic_5
+		building_avb_hive_unity_5
+		building_avb_machine_unity_5
+		building_avb_death_temple_5
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_u5_minerals
+			rare_crystals = @avb_u5_rare_cost
+		}
+		upkeep = {
+			energy = @avb_u5_upkeep
+			rare_crystals = @avb_u5_rare_upkeep
+		}
+	}
+
+	planet_modifier = {
+		job_priest_add = @avb_u5_jobs_half
+		pop_ethic_spiritualist_attraction_mult = 0.25
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner.federation
+			owner.federation = { has_federation_perk = all_the_priests_2 }
+		}
+		job_high_priest_add = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_megacorp = no }
+		}
+		modifier = {
+			job_priest_add = @avb_u5_jobs_half
+		}
+	}
+
+	triggered_desc = {
+		text = job_priest_effect_desc
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_megacorp = yes }
+		}
+		modifier = {
+			job_manager_add = @avb_u5_jobs_half
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_megacorp = yes }
+		}
+		text = job_manager_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner.federation
+			owner.federation = { has_federation_perk = all_the_priests_2 }
+		}
+		text = job_high_priest_effect_desc
+	}
+
+	prerequisites = {
+		"tech_avb_temple_5"
+	}
+
+	show_tech_unlock_if = {
+		OR = {
+			is_spiritualist = yes
+			AND = {
+				is_gestalt = no
+				has_make_spiritualist_perk = yes
+			}
+		}
+	}
+	upgrades = {
+		"building_avb_temple_6"
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_global_flag = ethic_civic_classic_active
+				has_civic = civic_defenders_faith
+			}
+		}
+		modifier = {
+		job_priest_add = -3
+		job_templar_add = 3
+		}
+	}
+
+	triggered_desc = {
+		text = job_priest_effect_desc
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_global_flag = ethic_civic_classic_active
+				OR = {
+					has_civic = civic_imperial_cult
+					has_civic = civic_divine_council
+					has_civic = civic_spiritual_democracy
+					has_civic = civic_exalted_priesthood
+				}
+			}
+		}
+		modifier = {
+			job_high_priest_add = 1
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_global_flag = ethic_civic_classic_active
+				has_civic = civic_defenders_faith
+			}
+		}
+		text = job_templar_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_global_flag = ethic_civic_classic_active
+				OR = {
+					has_civic = civic_imperial_cult
+					has_civic = civic_divine_council
+					has_civic = civic_spiritual_democracy
+					has_civic = civic_exalted_priesthood
+				}
+			}
+		}
+		text = job_high_priest_effect_desc
+	}
+	#EC: Bug \/
+	inline_script = {
+		script = "buildings/bugged_temple_effects"
+		BUGGED_TEMPLARS = 5
+		HIGH_PRIEST = 3
+	}
+	#EC: Bug /\
+	#PT \/
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = pt_flag
+			exists = owner.federation
+			owner.federation = { has_federation_perk = all_the_priests_2 }
+			owner = {
+				has_tradition = tr_plentiful_aspiration_3
+			}
+		}
+		modifier = {
+			job_priest_add = @avb_u5_jobs_half
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = pt_flag
+			exists = owner
+			owner = { is_megacorp = no }
+			owner = {
+				has_tradition = tr_plentiful_aspiration_3
+			}
+		}
+		modifier = {
+			job_priest_add = @avb_u5_jobs_half
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = pt_flag
+			exists = owner
+			owner = { is_megacorp = yes }
+			owner = {
+				has_tradition = tr_plentiful_aspiration_3
+			}
+		}
+		modifier = {
+			job_manager_add = @avb_u5_jobs_half
+		}
+	}
+	#PT /\
+}
+building_avb_temple_6 = {
+	base_buildtime = @avb_u6_time
+	can_build = no
+
+	category = unity
+
+	potential = {
+		exists = owner
+		owner = {
+			OR = {
+				is_spiritualist = yes
+				AND = {
+					is_gestalt = no
+					has_make_spiritualist_perk = yes
+				}
+			}
+			#EC: Classic \/
+			AND = {
+				has_global_flag = ethic_civic_classic_active
+				NOR = {
+					has_valid_civic = civic_death_cult
+					has_valid_civic = civic_death_cult_corporate
+				}
+			}
+			#EC: Classic /\
+		}
+		NOT = { has_modifier = slave_colony }
+	}
+
+	allow = {
+		has_upgraded_capital_5 = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = {
+				OR = {
+					AND = {
+						is_spiritualist = no
+						has_make_spiritualist_perk = no
+					}
+					is_gestalt = yes
+				}
+			}
+			has_modifier = slave_colony
+		}
+	}
+
+	convert_to = {
+		building_avb_bureaucratic_6
+		building_avb_hive_unity_6
+		building_avb_machine_unity_6
+		building_avb_death_temple_6
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_u6_minerals
+			rare_crystals = @avb_u6_rare_cost
+		}
+		upkeep = {
+			energy = @avb_u6_upkeep
+			rare_crystals = @avb_u6_rare_upkeep
+		}
+	}
+
+	planet_modifier = {
+		job_priest_add = @avb_u6_jobs_half
+		pop_ethic_spiritualist_attraction_mult = 0.3
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner.federation
+			owner.federation = { has_federation_perk = all_the_priests_2 }
+		}
+		job_high_priest_add = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_megacorp = no }
+		}
+		modifier = {
+			job_priest_add = @avb_u6_jobs_half
+		}
+	}
+
+	triggered_desc = {
+		text = job_priest_effect_desc
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_megacorp = yes }
+		}
+		modifier = {
+			job_manager_add = @avb_u6_jobs_half
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_megacorp = yes }
+		}
+		text = job_manager_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner.federation
+			owner.federation = { has_federation_perk = all_the_priests_2 }
+		}
+		text = job_high_priest_effect_desc
+	}
+
+	prerequisites = {
+		"tech_avb_temple_6"
+	}
+
+	show_tech_unlock_if = {
+		OR = {
+			is_spiritualist = yes
+			AND = {
+				is_gestalt = no
+				has_make_spiritualist_perk = yes
+			}
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_global_flag = ethic_civic_classic_active
+				has_civic = civic_defenders_faith
+			}
+		}
+		modifier = {
+		job_priest_add = -3
+		job_templar_add = 3
+		}
+	}
+
+	triggered_desc = {
+		text = job_priest_effect_desc
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_global_flag = ethic_civic_classic_active
+				OR = {
+					has_civic = civic_imperial_cult
+					has_civic = civic_divine_council
+					has_civic = civic_spiritual_democracy
+					has_civic = civic_exalted_priesthood
+				}
+			}
+		}
+		modifier = {
+			job_high_priest_add = 1
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_global_flag = ethic_civic_classic_active
+				has_civic = civic_defenders_faith
+			}
+		}
+		text = job_templar_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_global_flag = ethic_civic_classic_active
+				OR = {
+					has_civic = civic_imperial_cult
+					has_civic = civic_divine_council
+					has_civic = civic_spiritual_democracy
+					has_civic = civic_exalted_priesthood
+				}
+			}
+		}
+		text = job_high_priest_effect_desc
+	}
+	#EC: Bug \/
+	inline_script = {
+		script = "buildings/bugged_temple_effects"
+		BUGGED_TEMPLARS = 6
+		HIGH_PRIEST = 4
+	}
+	#EC: Bug /\
+	#PT \/
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = pt_flag
+			exists = owner.federation
+			owner.federation = { has_federation_perk = all_the_priests_2 }
+			owner = {
+				has_tradition = tr_plentiful_aspiration_3
+			}
+		}
+		modifier = {
+			job_priest_add = @avb_u6_jobs_half
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = pt_flag
+			exists = owner
+			owner = { is_megacorp = no }
+			owner = {
+				has_tradition = tr_plentiful_aspiration_3
+			}
+		}
+		modifier = {
+			job_priest_add = @avb_u6_jobs_half
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = pt_flag
+			exists = owner
+			owner = { is_megacorp = yes }
+			owner = {
+				has_tradition = tr_plentiful_aspiration_3
+			}
+		}
+		modifier = {
+			job_manager_add = @avb_u6_jobs_half
+		}
+	}
+	#PT /\
+}
+#Hive Minds
+building_avb_hive_unity_4 = {
+	base_buildtime = @avb_u4_time
+	can_build = no
+
+	category = unity
+
+	potential = {
+		exists = owner
+		owner = {
+			is_hive_empire = yes
+		}
+	}
+
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { is_hive_empire = no }
+	}
+
+	convert_to = {
+		building_avb_temple_4
+		building_avb_machine_unity_4
+		building_avb_bureaucratic_4
+		building_avb_death_temple_4
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_u4_minerals
+			exotic_gases = @avb_u4_rare_cost
+		}
+		upkeep = {
+			energy = @avb_u4_upkeep
+			exotic_gases = @avb_u4_rare_upkeep
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_edict = synaptic_reinforcement
+				}
+			}
+			energy = 2
+		}
+	}
+
+	planet_modifier = {
+		job_synapse_drone_add = @avb_u4_jobs
+	}
+
+	#PT \/
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = pt_flag
+			exists = owner
+			owner = {
+				has_tradition = tr_plentiful_aspiration_3
+			}
+		}
+		modifier = {
+			job_synapse_drone_add = @avb_u4_jobs
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = pt_flag
+			exists = owner
+			owner = { is_hive_empire = yes }
+			owner = {
+				has_tradition = tr_plentiful_aspiration_3
+			}
+		}
+		modifier = {
+			job_synapse_drone_add = 6
+		}
+	}
+	#PT /\
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_active_tradition = tr_domination_synaptic_extensions
+			}
+		}
+		modifier = {
+			planet_housing_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_edict = synaptic_reinforcement
+			}
+		}
+		job_maintenance_drone_add = 1
+	}
+
+	prerequisites = {
+		tech_avb_hive_unity_4
+	}
+
+	triggered_desc = {
+		text = job_synapse_drone_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_edict = synaptic_reinforcement
+			}
+		}
+		text = job_maintenance_drone_effect_desc
+	}
+	upgrades = {
+		"building_avb_hive_unity_5"
+	}
+}
+building_avb_hive_unity_5 = {
+	base_buildtime = @avb_u5_time
+	can_build = no
+
+	category = unity
+
+	potential = {
+		exists = owner
+		owner = {
+			is_hive_empire = yes
+		}
+	}
+
+	allow = {
+		has_upgraded_capital_4 = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { is_hive_empire = no }
+	}
+
+	convert_to = {
+		building_avb_temple_5
+		building_avb_machine_unity_5
+		building_avb_bureaucratic_5
+		building_avb_death_temple_5
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_u5_minerals
+			exotic_gases = @avb_u5_rare_cost
+		}
+		upkeep = {
+			energy = @avb_u5_upkeep
+			exotic_gases = @avb_u5_rare_upkeep
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_edict = synaptic_reinforcement
+				}
+			}
+			energy = 2
+		}
+	}
+
+	planet_modifier = {
+		job_synapse_drone_add = @avb_u5_jobs
+	}
+
+	#PT \/
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = pt_flag
+			exists = owner
+			owner = {
+				has_tradition = tr_plentiful_aspiration_3
+			}
+		}
+		modifier = {
+			job_synapse_drone_add = @avb_u5_jobs
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = pt_flag
+			exists = owner
+			owner = { is_hive_empire = yes }
+			owner = {
+				has_tradition = tr_plentiful_aspiration_3
+			}
+		}
+		modifier = {
+			job_synapse_drone_add = 8
+		}
+	}
+	#PT /\
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_active_tradition = tr_domination_synaptic_extensions
+			}
+		}
+		modifier = {
+			planet_housing_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_edict = synaptic_reinforcement
+			}
+		}
+		job_maintenance_drone_add = 1
+	}
+
+	prerequisites = {
+		tech_avb_hive_unity_5
+	}
+
+	triggered_desc = {
+		text = job_synapse_drone_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_edict = synaptic_reinforcement
+			}
+		}
+		text = job_maintenance_drone_effect_desc
+	}
+	upgrades = {
+		"building_avb_hive_unity_6"
+	}
+}
+building_avb_hive_unity_6 = {
+	base_buildtime = @avb_u6_time
+	can_build = no
+
+	category = unity
+
+	potential = {
+		exists = owner
+		owner = {
+			is_hive_empire = yes
+		}
+	}
+
+	allow = {
+		has_upgraded_capital_4 = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { is_hive_empire = no }
+	}
+
+	convert_to = {
+		building_avb_temple_6
+		building_avb_machine_unity_6
+		building_avb_bureaucratic_6
+		building_avb_death_temple_6
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_u6_minerals
+			exotic_gases = @avb_u6_rare_cost
+		}
+		upkeep = {
+			energy = @avb_u6_upkeep
+			exotic_gases = @avb_u6_rare_upkeep
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_edict = synaptic_reinforcement
+				}
+			}
+			energy = 2
+		}
+	}
+
+	planet_modifier = {
+		job_synapse_drone_add = @avb_u6_jobs
+	}
+
+	#PT \/
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = pt_flag
+			exists = owner
+			owner = {
+				has_tradition = tr_plentiful_aspiration_3
+			}
+		}
+		modifier = {
+			job_synapse_drone_add = @avb_u6_jobs
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = pt_flag
+			exists = owner
+			owner = { is_hive_empire = yes }
+			owner = {
+				has_tradition = tr_plentiful_aspiration_3
+			}
+		}
+		modifier = {
+			job_synapse_drone_add = 10
+		}
+	}
+	#PT /\
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_active_tradition = tr_domination_synaptic_extensions
+			}
+		}
+		modifier = {
+			planet_housing_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_edict = synaptic_reinforcement
+			}
+		}
+		job_maintenance_drone_add = 1
+	}
+
+	prerequisites = {
+		tech_avb_hive_unity_6
+	}
+
+	triggered_desc = {
+		text = job_synapse_drone_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_edict = synaptic_reinforcement
+			}
+		}
+		text = job_maintenance_drone_effect_desc
+	}
+}
+#Machine Empires
+building_avb_machine_unity_4 = {
+	base_buildtime = @avb_u4_time
+	can_build = no
+	icon = building_avb_monument_4
+
+	category = unity
+
+	potential = {
+		exists = owner
+		owner = {
+			is_machine_empire = yes
+			NOT = {
+				has_valid_civic = civic_machine_servitor
+			}
+		}
+	}
+
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			OR = {
+				is_machine_empire = no
+				has_valid_civic = civic_machine_servitor
+			}
+		}
+	}
+
+	convert_to = {
+		building_avb_temple_4
+		building_avb_hive_unity_4
+		building_avb_bureaucratic_4
+		building_avb_death_temple_4
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_u4_minerals
+			rare_crystals = @avb_u4_rare_cost
+		}
+		upkeep = {
+			energy = @avb_u4_upkeep
+			rare_crystals = @avb_u4_rare_upkeep
+		}
+	}
+
+	planet_modifier = {
+		job_coordinator_add = @avb_u4_jobs
+	}
+
+	triggered_desc = {
+		text = job_coordinator_effect_desc
+	}
+
+	prerequisites = {
+		"tech_avb_bureaucratic_4"
+	}
+
+	show_tech_unlock_if = {
+		is_machine_empire = yes
+		NOT = {
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+	upgrades = {
+		building_avb_machine_unity_5
+	}
+	#PT \/
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = pt_flag
+			exists = owner
+			owner = { is_machine_empire = yes }
+			owner = {
+				has_tradition = tr_plentiful_aspiration_3
+			}
+		}
+		modifier = {
+			job_coordinator_add = 6
+		}
+	}
+	#PT /\
+}
+building_avb_machine_unity_5 = {
+	base_buildtime = @avb_u5_time
+	can_build = no
+	icon = building_avb_monument_5
+
+	category = unity
+
+	potential = {
+		exists = owner
+		owner = {
+			is_machine_empire = yes
+			NOT = {
+				has_valid_civic = civic_machine_servitor
+			}
+		}
+	}
+
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			OR = {
+				is_machine_empire = no
+				has_valid_civic = civic_machine_servitor
+			}
+		}
+	}
+
+	convert_to = {
+		building_avb_temple_5
+		building_avb_hive_unity_5
+		building_avb_bureaucratic_5
+		building_avb_death_temple_5
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_u5_minerals
+			rare_crystals = @avb_u5_rare_cost
+		}
+		upkeep = {
+			energy = @avb_u5_upkeep
+			rare_crystals = @avb_u5_rare_upkeep
+		}
+	}
+
+	planet_modifier = {
+		job_coordinator_add = @avb_u5_jobs
+	}
+
+	triggered_desc = {
+		text = job_coordinator_effect_desc
+	}
+
+	prerequisites = {
+		"tech_avb_bureaucratic_5"
+	}
+
+	show_tech_unlock_if = {
+		is_machine_empire = yes
+		NOT = {
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+	upgrades = {
+		building_avb_machine_unity_6
+	}
+	#PT \/
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = pt_flag
+			exists = owner
+			owner = { is_machine_empire = yes }
+			owner = {
+				has_tradition = tr_plentiful_aspiration_3
+			}
+		}
+		modifier = {
+			job_coordinator_add = 8
+		}
+	}
+	#PT /\
+}
+building_avb_machine_unity_6 = {
+	base_buildtime = @avb_u6_time
+	can_build = no
+	icon = building_avb_monument_6
+
+	category = unity
+
+	potential = {
+		exists = owner
+		owner = {
+			is_machine_empire = yes
+			NOT = {
+				has_valid_civic = civic_machine_servitor
+			}
+		}
+	}
+
+	allow = {
+		has_upgraded_capital_4 = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			OR = {
+				is_machine_empire = no
+				has_valid_civic = civic_machine_servitor
+			}
+		}
+	}
+
+	convert_to = {
+		building_avb_temple_6
+		building_avb_hive_unity_6
+		building_avb_bureaucratic_6
+		building_avb_death_temple_6
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_u6_minerals
+			rare_crystals = @avb_u6_rare_cost
+		}
+		upkeep = {
+			energy = @avb_u6_upkeep
+			rare_crystals = @avb_u6_rare_upkeep
+		}
+	}
+
+	planet_modifier = {
+		job_coordinator_add = @avb_u6_jobs
+	}
+
+	triggered_desc = {
+		text = job_coordinator_effect_desc
+	}
+
+	prerequisites = {
+		"tech_avb_bureaucratic_6"
+	}
+
+	show_tech_unlock_if = {
+		is_machine_empire = yes
+		NOT = {
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+	#PT \/
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = pt_flag
+			exists = owner
+			owner = { is_machine_empire = yes }
+			owner = {
+				has_tradition = tr_plentiful_aspiration_3
+			}
+		}
+		modifier = {
+			job_coordinator_add = 10
+		}
+	}
+	#PT /\
+}
+#Death Cult
+building_avb_death_temple_4 = {
+	base_buildtime = @avb_u4_time
+	can_build = no
+
+	category = unity
+
+	potential = {
+		exists = owner
+		owner = {
+			is_death_cult_empire = yes
+		}
+		NOT = { has_modifier = slave_colony }
+	}
+
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = { is_death_cult_empire = no }
+			has_modifier = slave_colony
+		}
+	}
+
+	convert_to = {
+		building_avb_hive_unity_4
+		building_avb_machine_unity_4
+		building_avb_bureaucratic_4
+		building_avb_temple_4
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_u4_minerals
+			exotic_gases = @avb_u4_rare_cost
+		}
+		upkeep = {
+			energy = @avb_u4_upkeep
+			exotic_gases = @avb_u4_rare_upkeep
+			volatile_motes = @avb_u4_rare_upkeep
+		}
+	}
+
+	planet_modifier = {
+		pop_ethic_spiritualist_attraction_mult = 0.2
+		job_death_priest_add = 3
+		job_mortal_initiate_add = 2
+	}
+
+	triggered_desc = { text = job_death_priest_effect_desc }
+
+	triggered_desc = { text = job_mortal_initiate_effect_desc }
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_megacorp = no }
+		}
+		modifier = {
+			job_death_priest_add = 1
+			job_mortal_initiate_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_megacorp = yes }
+		}
+		modifier = {
+			job_manager_add = 3
+		}
+	}
+
+	#PT \/
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = pt_flag
+			exists = owner
+			owner = { is_megacorp = no }
+			owner = {
+				has_tradition = tr_plentiful_aspiration_3
+			}
+		}
+		modifier = {
+			job_death_priest_add = 1
+			job_mortal_initiate_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = pt_flag
+			exists = owner
+			owner = { is_megacorp = yes }
+			owner = {
+				has_tradition = tr_plentiful_aspiration_3
+			}
+		}
+		modifier = {
+			job_manager_add = 3
+		}
+	}
+	#PT /\
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_megacorp = yes }
+		}
+		text = job_manager_effect_desc
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner.federation
+			owner.federation = { has_federation_perk = all_the_priests_2 }
+		}
+		job_high_priest_add = 1
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner.federation
+			owner.federation = { has_federation_perk = all_the_priests_2 }
+		}
+		text = job_high_priest_effect_desc
+	}
+
+	prerequisites = {
+		"tech_avb_temple_4"
+	}
+
+	show_tech_unlock_if = {
+		is_death_cult_empire = yes
+	}
+	upgrades = {
+		building_avb_death_temple_5
+	}
+	#EC: Bug \/
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = bug_branch_active
+			exists = owner
+			owner = {
+				is_bugged_governmental_spiritualist = yes
+			}
+		}
+		modifier = {
+			job_high_priest_add = 2
+		}
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_bugged_governmental_spiritualist = yes
+			}
+		}
+		text = job_high_priest_effect_desc
+	}
+	inline_script = { # Bug Branch
+		script = "buildings/bugged_temple_effects"
+		BUGGED_TEMPLARS = 4
+		HIGH_PRIEST = 2
+	}
+	#EC: Bug /\
+}
+building_avb_death_temple_5 = {
+	base_buildtime = @avb_u5_time
+	can_build = no
+
+	category = unity
+
+	potential = {
+		exists = owner
+		owner = {
+			is_death_cult_empire = yes
+		}
+		NOT = { has_modifier = slave_colony }
+	}
+
+	allow = {
+		has_upgraded_capital_4 = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = { is_death_cult_empire = no }
+			has_modifier = slave_colony
+		}
+	}
+
+	convert_to = {
+		building_avb_hive_unity_5
+		building_avb_machine_unity_5
+		building_avb_bureaucratic_5
+		building_avb_temple_5
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_u5_minerals
+			exotic_gases = @avb_u5_rare_cost
+		}
+		upkeep = {
+			energy = @avb_u5_upkeep
+			exotic_gases = @avb_u5_rare_upkeep
+			volatile_motes = @avb_u5_rare_upkeep
+		}
+	}
+
+	planet_modifier = {
+		pop_ethic_spiritualist_attraction_mult = 0.25
+		job_death_priest_add = 3
+		job_mortal_initiate_add = 3
+	}
+
+	triggered_desc = { text = job_death_priest_effect_desc }
+
+	triggered_desc = { text = job_mortal_initiate_effect_desc }
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_megacorp = no }
+		}
+		modifier = {
+			job_death_priest_add = 2
+			job_mortal_initiate_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_megacorp = yes }
+		}
+		modifier = {
+			job_manager_add = 4
+		}
+	}
+
+	#PT \/
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = pt_flag
+			exists = owner
+			owner = { is_megacorp = no }
+			owner = {
+				has_tradition = tr_plentiful_aspiration_3
+			}
+		}
+		modifier = {
+			job_death_priest_add = 2
+			job_mortal_initiate_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = pt_flag
+			exists = owner
+			owner = { is_megacorp = yes }
+			owner = {
+				has_tradition = tr_plentiful_aspiration_3
+			}
+		}
+		modifier = {
+			job_manager_add = 4
+		}
+	}
+	#PT /\
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_megacorp = yes }
+		}
+		text = job_manager_effect_desc
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner.federation
+			owner.federation = { has_federation_perk = all_the_priests_2 }
+		}
+		job_high_priest_add = 1
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner.federation
+			owner.federation = { has_federation_perk = all_the_priests_2 }
+		}
+		text = job_high_priest_effect_desc
+	}
+
+	prerequisites = {
+		"tech_avb_temple_5"
+	}
+
+	show_tech_unlock_if = {
+		is_death_cult_empire = yes
+	}
+	upgrades = {
+		building_avb_death_temple_6
+	}
+	#EC: Bug \/
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = bug_branch_active
+			exists = owner
+			owner = {
+				is_bugged_governmental_spiritualist = yes
+			}
+		}
+		modifier = {
+			job_high_priest_add = 2
+		}
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_bugged_governmental_spiritualist = yes
+			}
+		}
+		text = job_high_priest_effect_desc
+	}
+	inline_script = { # Bug Branch
+		script = "buildings/bugged_temple_effects"
+		BUGGED_TEMPLARS = 5
+		HIGH_PRIEST = 3
+	}
+	#EC: Bug /\
+}
+building_avb_death_temple_6 = {
+	base_buildtime = @avb_u6_time
+	can_build = no
+
+	category = unity
+
+	potential = {
+		exists = owner
+		owner = {
+			is_death_cult_empire = yes
+		}
+		NOT = { has_modifier = slave_colony }
+	}
+
+	allow = {
+		has_upgraded_capital_5 = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = { is_death_cult_empire = no }
+			has_modifier = slave_colony
+		}
+	}
+
+	convert_to = {
+		building_avb_hive_unity_6
+		building_avb_machine_unity_6
+		building_avb_bureaucratic_6
+		building_avb_temple_6
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_u6_minerals
+			exotic_gases = @avb_u6_rare_cost
+		}
+		upkeep = {
+			energy = @avb_u6_upkeep
+			exotic_gases = @avb_u6_rare_upkeep
+			volatile_motes = @avb_u6_rare_upkeep
+		}
+	}
+
+	planet_modifier = {
+		pop_ethic_spiritualist_attraction_mult = 0.3
+		job_death_priest_add = 4
+		job_mortal_initiate_add = 3
+	}
+
+	triggered_desc = { text = job_death_priest_effect_desc }
+
+	triggered_desc = { text = job_mortal_initiate_effect_desc }
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_megacorp = no }
+		}
+		modifier = {
+			job_death_priest_add = 2
+			job_mortal_initiate_add = 3
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_megacorp = yes }
+		}
+		modifier = {
+			job_manager_add = 5
+		}
+	}
+
+	#PT \/
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = pt_flag
+			exists = owner
+			owner = { is_megacorp = no }
+			owner = {
+				has_tradition = tr_plentiful_aspiration_3
+			}
+		}
+		modifier = {
+			job_death_priest_add = 2
+			job_mortal_initiate_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = pt_flag
+			exists = owner
+			owner = { is_megacorp = yes }
+			owner = {
+				has_tradition = tr_plentiful_aspiration_3
+			}
+		}
+		modifier = {
+			job_manager_add = 5
+		}
+	}
+	#PT /\
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_megacorp = yes }
+		}
+		text = job_manager_effect_desc
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner.federation
+			owner.federation = { has_federation_perk = all_the_priests_2 }
+		}
+		job_high_priest_add = 1
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner.federation
+			owner.federation = { has_federation_perk = all_the_priests_2 }
+		}
+		text = job_high_priest_effect_desc
+	}
+
+	prerequisites = {
+		"tech_avb_temple_6"
+	}
+
+	show_tech_unlock_if = {
+		is_death_cult_empire = yes
+	}
+	#EC: Bug \/
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = bug_branch_active
+			exists = owner
+			owner = {
+				is_bugged_governmental_spiritualist = yes
+			}
+		}
+		modifier = {
+			job_high_priest_add = 2
+		}
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_bugged_governmental_spiritualist = yes
+			}
+		}
+		text = job_high_priest_effect_desc
+	}
+	inline_script = { # Bug Branch
+		script = "buildings/bugged_temple_effects"
+		BUGGED_TEMPLARS = 6
+		HIGH_PRIEST = 4
+	}
+	#EC: Bug /\
+}
+
+#############
+# Monument buildings
+#############
+
+#Regular
+building_avb_monument_4 = {
+	base_buildtime = @avb_u4_time
+	can_build = no
+
+	category = unity
+
+	potential = {
+		exists = owner
+		NOT = { has_modifier = slave_colony }
+		owner = {
+			NOR = {
+				is_gestalt = yes
+				is_megacorp = yes
+				is_memorialist_empire = yes
+			}
+		}
+	}
+
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			has_modifier = slave_colony
+			owner = {
+				OR = {
+					is_gestalt = yes
+					is_megacorp = yes
+					is_memorialist_empire = yes
+				}
+			}
+		}
+	}
+
+	convert_to = {
+		building_avb_monument_corp_4
+		building_avb_monument_hive_4
+		building_avb_monument_machine_4
+		building_avb_monument_memorial_4
+	}
+
+	resources = {
+		category = planet_buildings
+		produces = {
+			trigger = { exists = owner }
+			unity = 4
+			multiplier = owner.trigger:num_ascension_perks
+		}
+		cost = {
+			minerals = @avb_u4_minerals
+		}
+	}
+
+	planet_modifier = {
+		planet_jobs_unity_produces_mult = 0.2
+		job_culture_worker_add = @avb_u4_jobs
+	}
+
+	triggered_desc = {
+		text = building_avb_monument_effect_4
+	}
+
+	triggered_desc = {
+		text = job_culture_worker_effect_desc
+	}
+
+	prerequisites = {
+		"tech_avb_monument_4"
+	}
+
+	show_tech_unlock_if = {
+		is_gestalt = no
+		is_megacorp = no
+		is_memorialist_empire = no
+	}
+	upgrades = {
+		building_avb_monument_5
+	}
+}
+building_avb_monument_5 = {
+	base_buildtime = @avb_u5_time
+	can_build = no
+
+	category = unity
+
+	potential = {
+		exists = owner
+		NOT = { has_modifier = slave_colony }
+		owner = {
+			NOR = {
+				is_gestalt = yes
+				is_megacorp = yes
+				is_memorialist_empire = yes
+			}
+		}
+	}
+
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			has_modifier = slave_colony
+			owner = {
+				OR = {
+					is_gestalt = yes
+					is_megacorp = yes
+					is_memorialist_empire = yes
+				}
+			}
+		}
+	}
+
+	convert_to = {
+		building_avb_monument_corp_5
+		building_avb_monument_hive_5
+		building_avb_monument_machine_5
+		building_avb_monument_memorial_5
+	}
+
+	resources = {
+		category = planet_buildings
+		produces = {
+			trigger = { exists = owner }
+			unity = 5
+			multiplier = owner.trigger:num_ascension_perks
+		}
+		cost = {
+			minerals = @avb_u5_minerals
+		}
+	}
+
+	planet_modifier = {
+		planet_jobs_unity_produces_mult = 0.25
+		job_culture_worker_add = @avb_u5_jobs
+	}
+
+	triggered_desc = {
+		text = building_avb_monument_effect_5
+	}
+
+	triggered_desc = {
+		text = job_culture_worker_effect_desc
+	}
+
+	prerequisites = {
+		"tech_avb_monument_5"
+	}
+
+	show_tech_unlock_if = {
+		is_gestalt = no
+		is_megacorp = no
+		is_memorialist_empire = no
+	}
+	upgrades = {
+		building_avb_monument_6
+	}
+}
+building_avb_monument_6 = {
+	base_buildtime = @avb_u6_time
+	can_build = no
+
+	category = unity
+
+	potential = {
+		exists = owner
+		NOT = { has_modifier = slave_colony }
+		owner = {
+			NOR = {
+				is_gestalt = yes
+				is_megacorp = yes
+				is_memorialist_empire = yes
+			}
+		}
+	}
+
+	allow = {
+		has_upgraded_capital_4 = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			has_modifier = slave_colony
+			owner = {
+				OR = {
+					is_gestalt = yes
+					is_megacorp = yes
+					is_memorialist_empire = yes
+				}
+			}
+		}
+	}
+
+	convert_to = {
+		building_avb_monument_corp_6
+		building_avb_monument_hive_6
+		building_avb_monument_machine_6
+		building_avb_monument_memorial_6
+	}
+
+	resources = {
+		category = planet_buildings
+		produces = {
+			trigger = { exists = owner }
+			unity = 6
+			multiplier = owner.trigger:num_ascension_perks
+		}
+		cost = {
+			minerals = @avb_u6_minerals
+		}
+	}
+
+	planet_modifier = {
+		planet_jobs_unity_produces_mult = 0.3
+		job_culture_worker_add = @avb_u6_jobs
+	}
+
+	triggered_desc = {
+		text = building_avb_monument_effect_6
+	}
+
+	triggered_desc = {
+		text = job_culture_worker_effect_desc
+	}
+
+	prerequisites = {
+		"tech_avb_monument_6"
+	}
+
+	show_tech_unlock_if = {
+		is_gestalt = no
+		is_megacorp = no
+		is_memorialist_empire = no
+	}
+}
+#Megacorp
+building_avb_monument_corp_4 = {
+	base_buildtime = @avb_u4_time
+	can_build = no
+	icon = building_avb_monument_4
+
+	category = unity
+
+	potential = {
+		exists = owner
+		NOT = { has_modifier = slave_colony }
+		owner = {
+			is_megacorp = yes
+		}
+	}
+
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			has_modifier = slave_colony
+			owner = {
+				OR = {
+					is_megacorp = no
+					is_memorialist_empire = yes
+				}
+			}
+		}
+	}
+
+	convert_to = {
+		building_avb_monument_4
+		building_avb_monument_hive_4
+		building_avb_monument_machine_4
+		building_avb_monument_memorial_4
+	}
+
+	resources = {
+		category = planet_buildings
+		produces = {
+			trigger = { exists = owner }
+			unity = 4
+			multiplier = owner.trigger:num_ascension_perks
+		}
+		cost = {
+			minerals = @avb_u4_minerals
+		}
+	}
+
+	planet_modifier = {
+		planet_jobs_unity_produces_mult = 0.2
+		job_culture_worker_add = @avb_u4_jobs
+	}
+
+	triggered_desc = {
+		text = building_avb_monument_effect_4
+	}
+
+	triggered_desc = {
+		text = job_culture_worker_effect_desc
+	}
+
+	prerequisites = {
+		"tech_avb_monument_4"
+	}
+
+	show_tech_unlock_if = {
+		is_megacorp = yes
+	}
+	upgrades = {
+		"building_avb_monument_corp_5"
+	}
+}
+building_avb_monument_corp_5 = {
+	base_buildtime = @avb_u5_time
+	can_build = no
+	icon = building_avb_monument_5
+
+	category = unity
+
+	potential = {
+		exists = owner
+		NOT = { has_modifier = slave_colony }
+		owner = {
+			is_megacorp = yes
+		}
+	}
+
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			has_modifier = slave_colony
+			owner = {
+				OR = {
+					is_megacorp = no
+					is_memorialist_empire = yes
+				}
+			}
+		}
+	}
+
+	convert_to = {
+		building_avb_monument_5
+		building_avb_monument_hive_5
+		building_avb_monument_machine_5
+		building_avb_monument_memorial_5
+	}
+
+	resources = {
+		category = planet_buildings
+		produces = {
+			trigger = { exists = owner }
+			unity = 5
+			multiplier = owner.trigger:num_ascension_perks
+		}
+		cost = {
+			minerals = @avb_u5_minerals
+		}
+	}
+
+	planet_modifier = {
+		planet_jobs_unity_produces_mult = 0.25
+		job_culture_worker_add = @avb_u5_jobs
+	}
+
+	triggered_desc = {
+		text = building_avb_monument_effect_5
+	}
+
+	triggered_desc = {
+		text = job_culture_worker_effect_desc
+	}
+
+	prerequisites = {
+		"tech_avb_monument_5"
+	}
+
+	show_tech_unlock_if = {
+		is_megacorp = yes
+	}
+	upgrades = {
+		"building_avb_monument_corp_6"
+	}
+}
+building_avb_monument_corp_6 = {
+	base_buildtime = @avb_u6_time
+	can_build = no
+	icon = building_avb_monument_6
+
+	category = unity
+
+	potential = {
+		exists = owner
+		NOT = { has_modifier = slave_colony }
+		owner = {
+			is_megacorp = yes
+		}
+	}
+
+	allow = {
+		has_upgraded_capital_4 = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			has_modifier = slave_colony
+			owner = {
+				OR = {
+					is_megacorp = no
+					is_memorialist_empire = yes
+				}
+			}
+		}
+	}
+
+	convert_to = {
+		building_avb_monument_6
+		building_avb_monument_hive_6
+		building_avb_monument_machine_6
+		building_avb_monument_memorial_6
+	}
+
+	resources = {
+		category = planet_buildings
+		produces = {
+			trigger = { exists = owner }
+			unity = 6
+			multiplier = owner.trigger:num_ascension_perks
+		}
+		cost = {
+			minerals = @avb_u6_minerals
+		}
+	}
+
+	planet_modifier = {
+		planet_jobs_unity_produces_mult = 0.3
+		job_culture_worker_add = @avb_u6_jobs
+	}
+
+	triggered_desc = {
+		text = building_avb_monument_effect_6
+	}
+
+	triggered_desc = {
+		text = job_culture_worker_effect_desc
+	}
+
+	prerequisites = {
+		"tech_avb_monument_6"
+	}
+
+	show_tech_unlock_if = {
+		is_megacorp = yes
+	}
+}
+#Hive
+building_avb_monument_hive_4 = {
+	base_buildtime = @avb_u4_time
+	can_build = no
+	icon = building_avb_holo_theatre_4
+
+	category = unity
+
+	potential = {
+		exists = owner
+		NOT = { has_modifier = slave_colony }
+		owner = {
+			is_hive_empire = yes
+			is_memorialist_empire = no
+		}
+	}
+
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			has_modifier = slave_colony
+			owner = {
+				OR = {
+					is_hive_empire = no
+					is_memorialist_empire = yes
+				}
+			}
+		}
+	}
+
+	convert_to = {
+		building_avb_monument_corp_4
+		building_avb_monument_4
+		building_avb_monument_machine_4
+		building_avb_monument_memorial_4
+	}
+
+	resources = {
+		category = planet_buildings
+		produces = {
+			trigger = { exists = owner }
+			unity = 4
+			multiplier = owner.trigger:num_ascension_perks
+		}
+		cost = {
+			minerals = @avb_u4_minerals
+		}
+	}
+
+	planet_modifier = {
+		planet_jobs_unity_produces_mult = 0.2
+		job_evaluator_add = @avb_u4_jobs
+	}
+
+	triggered_desc = {
+		text = building_avb_monument_effect_4
+	}
+
+	triggered_desc = {
+		text = job_evaluator_effect_desc
+	}
+
+	prerequisites = {
+		"tech_avb_hive_unity_4"
+	}
+
+	show_tech_unlock_if = {
+		is_hive_empire = yes
+		is_memorialist_empire = no
+	}
+	upgrades = {
+		building_avb_monument_hive_5
+	}
+}
+building_avb_monument_hive_5 = {
+	base_buildtime = @avb_u5_time
+	can_build = no
+	icon = building_avb_holo_theatre_5
+
+	category = unity
+
+	potential = {
+		exists = owner
+		NOT = { has_modifier = slave_colony }
+		owner = {
+			is_hive_empire = yes
+			is_memorialist_empire = no
+		}
+	}
+
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			has_modifier = slave_colony
+			owner = {
+				OR = {
+					is_hive_empire = no
+					is_memorialist_empire = yes
+				}
+			}
+		}
+	}
+
+	convert_to = {
+		building_avb_monument_corp_5
+		building_avb_monument_5
+		building_avb_monument_machine_5
+		building_avb_monument_memorial_5
+	}
+
+	resources = {
+		category = planet_buildings
+		produces = {
+			trigger = { exists = owner }
+			unity = 5
+			multiplier = owner.trigger:num_ascension_perks
+		}
+		cost = {
+			minerals = @avb_u5_minerals
+		}
+	}
+
+	planet_modifier = {
+		planet_jobs_unity_produces_mult = 0.25
+		job_evaluator_add = @avb_u5_jobs
+	}
+
+	triggered_desc = {
+		text = building_avb_monument_effect_5
+	}
+
+	triggered_desc = {
+		text = job_evaluator_effect_desc
+	}
+
+	prerequisites = {
+		"tech_avb_hive_unity_5"
+	}
+
+	show_tech_unlock_if = {
+		is_hive_empire = yes
+		is_memorialist_empire = no
+	}
+	upgrades = {
+		building_avb_monument_hive_6
+	}
+}
+building_avb_monument_hive_6 = {
+	base_buildtime = @avb_u6_time
+	can_build = no
+	icon = building_avb_holo_theatre_6
+
+	category = unity
+
+	potential = {
+		exists = owner
+		NOT = { has_modifier = slave_colony }
+		owner = {
+			is_hive_empire = yes
+			is_memorialist_empire = no
+		}
+	}
+
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			has_modifier = slave_colony
+			owner = {
+				OR = {
+					is_hive_empire = no
+					is_memorialist_empire = yes
+				}
+			}
+		}
+	}
+
+	convert_to = {
+		building_avb_monument_corp_6
+		building_avb_monument_6
+		building_avb_monument_machine_6
+		building_avb_monument_memorial_6
+	}
+
+	resources = {
+		category = planet_buildings
+		produces = {
+			trigger = { exists = owner }
+			unity = 6
+			multiplier = owner.trigger:num_ascension_perks
+		}
+		cost = {
+			minerals = @avb_u6_minerals
+		}
+	}
+
+	planet_modifier = {
+		planet_jobs_unity_produces_mult = 0.3
+		job_evaluator_add = @avb_u6_jobs
+	}
+
+	triggered_desc = {
+		text = building_avb_monument_effect_6
+	}
+
+	triggered_desc = {
+		text = job_evaluator_effect_desc
+	}
+
+	prerequisites = {
+		"tech_avb_hive_unity_6"
+	}
+
+	show_tech_unlock_if = {
+		is_hive_empire = yes
+		is_memorialist_empire = no
+	}
+}
+#Machine
+building_avb_monument_machine_4 = {
+	base_buildtime = @avb_u4_time
+	can_build = no
+	icon = building_avb_holo_theatre_4
+
+	category = unity
+
+	potential = {
+		exists = owner
+		NOT = { has_modifier = slave_colony }
+		owner = {
+			is_machine_empire = yes
+			is_memorialist_empire = no
+		}
+	}
+
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			has_modifier = slave_colony
+			owner = {
+				OR = {
+					is_machine_empire = no
+					is_memorialist_empire = yes
+				}
+			}
+		}
+	}
+
+	convert_to = {
+		building_avb_monument_corp_4
+		building_avb_monument_hive_4
+		building_avb_monument_4
+		building_avb_monument_memorial_4
+	}
+
+	resources = {
+		category = planet_buildings
+		produces = {
+			trigger = { exists = owner }
+			unity = 4
+			multiplier = owner.trigger:num_ascension_perks
+		}
+		cost = {
+			minerals = @avb_u4_minerals
+		}
+	}
+
+	planet_modifier = {
+		planet_jobs_unity_produces_mult = 0.2
+		job_evaluator_add = @avb_u4_jobs
+	}
+
+	triggered_desc = {
+		text = building_avb_monument_effect_4
+	}
+
+
+	triggered_desc = {
+		text = job_evaluator_effect_desc
+	}
+
+	prerequisites = {
+		"tech_avb_monument_4"
+	}
+
+	show_tech_unlock_if = {
+		is_machine_empire = yes
+		is_memorialist_empire = no
+	}
+	upgrades = {
+		building_avb_monument_machine_5
+	}
+}
+building_avb_monument_machine_5 = {
+	base_buildtime = @avb_u5_time
+	can_build = no
+	icon = building_avb_holo_theatre_5
+
+	category = unity
+
+	potential = {
+		exists = owner
+		NOT = { has_modifier = slave_colony }
+		owner = {
+			is_machine_empire = yes
+			is_memorialist_empire = no
+		}
+	}
+
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			has_modifier = slave_colony
+			owner = {
+				OR = {
+					is_machine_empire = no
+					is_memorialist_empire = yes
+				}
+			}
+		}
+	}
+
+	convert_to = {
+		building_avb_monument_corp_5
+		building_avb_monument_hive_5
+		building_avb_monument_5
+		building_avb_monument_memorial_5
+	}
+
+	resources = {
+		category = planet_buildings
+		produces = {
+			trigger = { exists = owner }
+			unity = 5
+			multiplier = owner.trigger:num_ascension_perks
+		}
+		cost = {
+			minerals = @avb_u5_minerals
+		}
+	}
+
+	planet_modifier = {
+		planet_jobs_unity_produces_mult = 0.25
+		job_evaluator_add = @avb_u5_jobs
+	}
+
+	triggered_desc = {
+		text = building_avb_monument_effect_5
+	}
+
+
+	triggered_desc = {
+		text = job_evaluator_effect_desc
+	}
+
+	prerequisites = {
+		"tech_avb_monument_5"
+	}
+
+	show_tech_unlock_if = {
+		is_machine_empire = yes
+		is_memorialist_empire = no
+	}
+	upgrades = {
+		building_avb_monument_machine_6
+	}
+}
+building_avb_monument_machine_6 = {
+	base_buildtime = @avb_u6_time
+	can_build = no
+	icon = building_avb_holo_theatre_6
+
+	category = unity
+
+	potential = {
+		exists = owner
+		NOT = { has_modifier = slave_colony }
+		owner = {
+			is_machine_empire = yes
+			is_memorialist_empire = no
+		}
+	}
+
+	allow = {
+		has_upgraded_capital_4 = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			has_modifier = slave_colony
+			owner = {
+				OR = {
+					is_machine_empire = no
+					is_memorialist_empire = yes
+				}
+			}
+		}
+	}
+
+	convert_to = {
+		building_avb_monument_corp_6
+		building_avb_monument_hive_6
+		building_avb_monument_6
+		building_avb_monument_memorial_6
+	}
+
+	resources = {
+		category = planet_buildings
+		produces = {
+			trigger = { exists = owner }
+			unity = 6
+			multiplier = owner.trigger:num_ascension_perks
+		}
+		cost = {
+			minerals = @avb_u6_minerals
+		}
+	}
+
+	planet_modifier = {
+		planet_jobs_unity_produces_mult = 0.3
+		job_evaluator_add = @avb_u6_jobs
+	}
+
+	triggered_desc = {
+		text = building_avb_monument_effect_6
+	}
+
+
+	triggered_desc = {
+		text = job_evaluator_effect_desc
+	}
+
+	prerequisites = {
+		"tech_avb_monument_6"
+	}
+
+	show_tech_unlock_if = {
+		is_machine_empire = yes
+		is_memorialist_empire = no
+	}
+}
+#Memorialist
+building_avb_monument_memorial_4 = {
+	base_buildtime = @avb_u4_time
+	can_build = no
+	category = unity
+
+	potential = {
+		exists = owner
+		NOT = { has_modifier = slave_colony }
+		owner = {
+			is_memorialist_empire = yes
+		}
+	}
+
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			has_modifier = slave_colony
+			owner = { is_memorialist_empire = no }
+		}
+	}
+
+	convert_to = {
+		building_avb_monument_corp_4
+		building_avb_monument_hive_4
+		building_avb_monument_machine_4
+		building_avb_monument_4
+	}
+
+	resources = {
+		category = planet_buildings
+		produces = {
+			trigger = { exists = owner }
+			unity = 4
+			multiplier = owner.trigger:num_ascension_perks
+		}
+		cost = {
+			minerals = @avb_u4_minerals
+			exotic_gases = @avb_u4_rare_cost
+		}
+		upkeep = {
+			minerals = @avb_u4_upkeep
+			exotic_gases = @avb_u4_rare_upkeep
+		}
+	}
+
+	planet_modifier = {
+		planet_jobs_unity_produces_mult = 0.2
+	}
+
+	triggered_desc = {
+		text = building_avb_monument_effect_4
+	}
+
+	prerequisites = {
+		"tech_avb_monument_4"
+	}
+
+	#Jobs
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		job_death_chronicler_add = @avb_u4_jobs
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = "job_death_chronicler_effect_desc"
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_chronicle_drone_add = @avb_u4_jobs
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = "job_chronicle_drone_effect_desc"
+	}
+
+	#Tomb/Relic worlds
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+			OR = {
+				is_planet_class = pc_nuked
+				is_planet_class = pc_relic
+			}
+		}
+		pop_government_ethic_attraction = 0.20
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			OR = {
+				is_planet_class = pc_nuked
+				is_planet_class = pc_relic
+			}
+		}
+		planet_crime_no_happiness_add = -20
+	}
+
+	show_tech_unlock_if = {
+		is_memorialist_empire = yes
+	}
+	upgrades = {
+		building_avb_monument_memorial_5
+	}
+}
+building_avb_monument_memorial_5 = {
+	base_buildtime = @avb_u5_time
+	can_build = no
+	category = unity
+
+	potential = {
+		exists = owner
+		NOT = { has_modifier = slave_colony }
+		owner = {
+			is_memorialist_empire = yes
+		}
+	}
+
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			has_modifier = slave_colony
+			owner = { is_memorialist_empire = no }
+		}
+	}
+
+	convert_to = {
+		building_avb_monument_corp_5
+		building_avb_monument_hive_5
+		building_avb_monument_machine_5
+		building_avb_monument_5
+	}
+
+	resources = {
+		category = planet_buildings
+		produces = {
+			trigger = { exists = owner }
+			unity = 5
+			multiplier = owner.trigger:num_ascension_perks
+		}
+		cost = {
+			minerals = @avb_u5_minerals
+			exotic_gases = @avb_u5_rare_cost
+		}
+		upkeep = {
+			minerals = @avb_u5_upkeep
+			exotic_gases = @avb_u5_rare_upkeep
+		}
+	}
+
+	planet_modifier = {
+		planet_jobs_unity_produces_mult = 0.25
+	}
+
+	triggered_desc = {
+		text = building_avb_monument_effect_5
+	}
+
+	prerequisites = {
+		"tech_avb_monument_5"
+	}
+
+	#Jobs
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		job_death_chronicler_add = @avb_u5_jobs
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = "job_death_chronicler_effect_desc"
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_chronicle_drone_add = @avb_u5_jobs
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = "job_chronicle_drone_effect_desc"
+	}
+
+	#Tomb/Relic worlds
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+			OR = {
+				is_planet_class = pc_nuked
+				is_planet_class = pc_relic
+			}
+		}
+		pop_government_ethic_attraction = 0.20
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			OR = {
+				is_planet_class = pc_nuked
+				is_planet_class = pc_relic
+			}
+		}
+		planet_crime_no_happiness_add = -20
+	}
+
+	show_tech_unlock_if = {
+		is_memorialist_empire = yes
+	}
+	upgrades = {
+		building_avb_monument_memorial_6
+	}
+}
+building_avb_monument_memorial_6 = {
+	base_buildtime = @avb_u6_time
+	can_build = no
+	category = unity
+
+	potential = {
+		exists = owner
+		NOT = { has_modifier = slave_colony }
+		owner = {
+			is_memorialist_empire = yes
+		}
+	}
+
+	allow = {
+		has_upgraded_capital_4 = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			has_modifier = slave_colony
+			owner = { is_memorialist_empire = no }
+		}
+	}
+
+	convert_to = {
+		building_avb_monument_corp_6
+		building_avb_monument_hive_6
+		building_avb_monument_machine_6
+		building_avb_monument_6
+	}
+
+	resources = {
+		category = planet_buildings
+		produces = {
+			trigger = { exists = owner }
+			unity = 6
+			multiplier = owner.trigger:num_ascension_perks
+		}
+		cost = {
+			minerals = @avb_u6_minerals
+			exotic_gases = @avb_u6_rare_cost
+		}
+		upkeep = {
+			minerals = @avb_u6_upkeep
+			exotic_gases = @avb_u6_rare_upkeep
+		}
+	}
+
+	planet_modifier = {
+		planet_jobs_unity_produces_mult = 0.3
+	}
+
+	triggered_desc = {
+		text = building_avb_monument_effect_6
+	}
+
+	prerequisites = {
+		"tech_avb_monument_6"
+	}
+
+	#Jobs
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		job_death_chronicler_add = @avb_u6_jobs
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = "job_death_chronicler_effect_desc"
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_chronicle_drone_add = @avb_u6_jobs
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = "job_chronicle_drone_effect_desc"
+	}
+
+	#Tomb/Relic worlds
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+			OR = {
+				is_planet_class = pc_nuked
+				is_planet_class = pc_relic
+			}
+		}
+		pop_government_ethic_attraction = 0.20
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			OR = {
+				is_planet_class = pc_nuked
+				is_planet_class = pc_relic
+			}
+		}
+		planet_crime_no_happiness_add = -20
+	}
+
+	show_tech_unlock_if = {
+		is_memorialist_empire = yes
+	}
+}
+
+#Servitors
+building_avb_organic_sanctuary_3 = {
+	base_buildtime = @avb_u4_time
+	can_build = no
+	category = unity
+	potential = {
+		exists = owner
+		owner = { has_valid_civic = civic_machine_servitor }
+	}
+	
+	destroy_trigger = {
+		exists = owner
+		NOT = { owner = { has_valid_civic = civic_machine_servitor } }
+	}
+	
+	convert_to = {
+		building_avb_residence_3
+		building_avb_communal_housing_3
+	}
+		
+	planet_modifier = {
+		#planet_housing_add = 20
+		job_bio_trophy_add = 30
+		job_artisan_drone_add = 3
+		job_maintenance_drone_add = 2
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_u4_minerals
+			exotic_gases = @avb_u4_rare_cost
+		}
+		upkeep = {
+			energy = @avb_u4_upkeep
+			exotic_gases = @avb_u4_rare_upkeep
+		}
+	}
+	
+	triggered_desc = {
+		text = job_bio_trophy_effect_desc
+	}
+
+	triggered_desc = {
+		text = job_artisan_drone_effect_desc
+	}
+
+	triggered_desc = {
+		text = job_maintenance_drone_effect_desc
+	}
+	prerequisites = { "tech_avb_residence_3" }
+	
+	show_tech_unlock_if = {
+		owner = { has_valid_civic = civic_machine_servitor }
+	}
+	
+	upgrades = {
+		"building_avb_organic_sanctuary_4"
+	}
+}
+
+building_avb_organic_sanctuary_4 = {
+	base_buildtime = @avb_u5_time
+	can_build = no
+	category = unity
+	potential = {
+		exists = owner
+		owner = { has_valid_civic = civic_machine_servitor }
+	}
+	
+	destroy_trigger = {
+		exists = owner
+		NOT = { owner = { has_valid_civic = civic_machine_servitor } }
+	}
+	
+	convert_to = {
+		building_avb_residence_4
+		building_avb_communal_housing_4
+	}
+		
+	planet_modifier = {
+		#planet_housing_add = 20
+		job_bio_trophy_add = 40
+		job_artisan_drone_add = 4
+		job_maintenance_drone_add = 3
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_u5_minerals
+			exotic_gases = @avb_u5_rare_cost
+		}
+		upkeep = {
+			energy = @avb_u5_upkeep
+			exotic_gases = @avb_u5_rare_upkeep
+		}
+	}
+	triggered_desc = {
+		text = job_bio_trophy_effect_desc
+	}
+
+	triggered_desc = {
+		text = job_artisan_drone_effect_desc
+	}
+
+	triggered_desc = {
+		text = job_maintenance_drone_effect_desc
+	}
+	prerequisites = { "tech_avb_residence_4" }
+	
+	show_tech_unlock_if = {
+		owner = { has_valid_civic = civic_machine_servitor }
+	}
+}

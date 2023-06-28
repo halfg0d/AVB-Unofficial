@@ -1,0 +1,4 @@
+avb_zombie_buff = {
+	planet_jobs_produces_mult = 0.1
+	pop_job_trade_mult = 0.1
+}

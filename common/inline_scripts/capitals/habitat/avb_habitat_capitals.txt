@@ -1,0 +1,135 @@
+#Scripts
+inline_script = {
+	script = buildings/on_all_capital_buildings
+}
+inline_script = {
+	script = capitals/avb_capitals_productivity
+}
+inline_script = {
+	script = capitals/habitat/avb_habitat_capitals_desc
+}
+#Regular Habitats
+inline_script = {
+	script = capitals/habitat/avb_habitat_capitals_regular_jobs
+	tier = $tier$
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_regular_empire = yes }
+	}
+	job_enforcer_add = @avb_$tier$_enforcer
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { has_active_tradition = tr_synthetics_finish }
+	}
+	job_roboticist_add = 1
+}
+
+#Machines Habitats
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_machine_empire = yes }
+	}
+	job_coordinator_add = @avb_$tier$_coordinator
+	job_replicator_add = @avb_$tier$_replicator
+	job_maintenance_drone_add = @avb_$tier$_maintenance_drone
+	planet_amenities_add = @avb_$tier$_amenites
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_machine_empire = yes
+			has_active_tradition = tr_synthetics_finish_machine
+		}
+	}
+	modifier = {
+		job_replicator_add = 1
+	}
+}
+#Hives Habitats
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		job_synapse_drone_add = @avb_$tier$_synapses_drone
+		planet_amenities_add = @avb_$tier$_amenites
+	}
+
+#All of them
+triggered_planet_modifier = {
+	potential = {
+		exists = owner.federation
+		owner = {
+			is_gestalt = no
+			federation = { has_federation_perk = culture_workers_1 }
+		}
+	}
+	job_culture_worker_add = 1
+}
+triggered_planet_modifier = {
+	modifier = { planet_stability_add = 1 }
+	mult = modifier:habitat_stability_add
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			has_active_tradition = tr_domination_imperious_architecture
+		}
+	}
+	modifier = {
+		planet_housing_add = 1
+	}
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { has_active_tradition = tr_prosperity_void_works }
+	}
+	modifier = {
+		 planet_max_buildings_add = 1
+	}
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { has_ascension_perk = ap_voidborn }
+	}
+	modifier = {
+		planet_max_buildings_add = 2
+	}
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { has_active_tradition = tr_cybernetics_organ_harvesting }
+		has_current_purge = yes
+		growing_species = { has_trait = trait_cybernetic }
+	}
+	pop_growth_speed = 0.10
+}
+#EC: Bug \/
+triggered_planet_modifier = {
+	potential = {
+		has_global_flag = bug_branch_active
+		exists = owner
+		owner = { has_civic = civic_bugged_machine_researcher }
+	}
+	modifier = {
+		job_bugged_examinatron_add = 2
+	}
+}
+inline_script = "buildings/bugged_inline_capital_distributism_effects"
+inline_script = "buildings/bugged_inline_capital_desc"
+inline_script = { # Bug Branch
+	script = "buildings/bugged_capital_jobs_governmental"
+	GOVERNMENTAL_JOB = 1
+}
+#EC: Bug /\

@@ -1,0 +1,579 @@
+# BUILDINGS
+@avb_b2_time = 480
+@avb_b2_minerals = 600
+@avb_b2_upkeep = 4
+@avb_b2_jobs = 4
+
+@avb_b3_time = 600
+@avb_b3_minerals = 1000
+@avb_b3_upkeep = 6
+@avb_b3_jobs = 8
+@avb_b3_rare_cost = 150
+@avb_b3_rare_upkeep = 4
+
+@avb_b4_time = 1200
+@avb_b4_minerals = 2000
+@avb_b4_upkeep = 12
+@avb_b4_jobs = 16
+@avb_b4_rare_cost = 250
+@avb_b4_rare_upkeep = 6
+
+@avb_b5_time = 2400
+@avb_b5_minerals = 4000
+@avb_b5_upkeep = 18
+@avb_b5_jobs = 24
+@avb_b5_rare_cost = 250
+@avb_b5_rare_upkeep = 6
+
+@avb_b6_time = 3500
+@avb_b6_minerals = 5400
+@avb_b6_upkeep = 26
+
+##
+## New Value System
+##
+
+#Unity Buildings
+@avb_u3_jobs = 6
+@avb_u3_jobs_half = 3
+@avb_u4_jobs = 8
+@avb_u4_jobs_half = 4
+@avb_u5_jobs = 10
+@avb_u5_jobs_half = 5
+@avb_u6_jobs = 12
+@avb_u6_jobs_half = 6
+
+@avb_u4_time = 720
+@avb_u5_time = 800
+@avb_u6_time = 960
+
+@avb_u4_minerals = 1200
+@avb_u5_minerals = 1600
+@avb_u6_minerals = 2000
+
+@avb_u4_rare_cost = 150
+@avb_u5_rare_cost = 200
+@avb_u6_rare_cost = 250
+
+@avb_u4_upkeep = 10
+@avb_u5_upkeep = 12
+@avb_u6_upkeep = 14
+
+@avb_u4_rare_upkeep = 3
+@avb_u5_rare_upkeep = 4
+@avb_u6_rare_upkeep = 5
+
+#Amenity Buildings
+@avb_a2_jobs = 4
+
+@avb_a2_minerals = 800
+@avb_a2_hive_minerals = 533
+@avb_a2_hive_food = 267
+@avb_a2_rare_cost = 50
+@avb_a2_upkeep = 8
+@avb_a2_upkeep_hive = 5.3
+@avb_a2_upkeep_food = 2.7
+@avb_a2_rare_upkeep = 1
+
+@avb_a3_minerals = 1200
+@avb_a3_hive_minerals = 800
+@avb_a3_hive_food = 400
+@avb_a3_rare_cost = 100
+@avb_a3_upkeep = 12
+@avb_a3_upkeep_hive = 8
+@avb_a3_upkeep_food = 4
+@avb_a3_rare_upkeep = 2
+
+@avb_a4_minerals = 1500
+@avb_a4_hive_minerals = 100
+@avb_a4_hive_food = 500
+@avb_a4_rare_cost = 200
+@avb_a4_upkeep = 16
+@avb_a4_upkeep_hive = 10.7
+@avb_a4_upkeep_food = 5.3
+@avb_a4_rare_upkeep = 4
+
+@avb_a5_minerals = 2100
+@avb_a5_hive_minerals = 1400
+@avb_a5_hive_food = 700
+@avb_a5_rare_cost = 350
+@avb_a5_upkeep = 22
+@avb_a5_upkeep_hive = 14.7
+@avb_a5_upkeep_food = 7.3
+@avb_a5_rare_upkeep = 7
+
+#Research Buildings
+@avb_r4_jobs = 8
+@avb_r5_jobs = 10
+@avb_r6_jobs = 12
+
+@avb_r4_time = 760
+@avb_r5_time = 890
+@avb_r6_time = 1020
+
+@avb_r4_minerals = 1400
+@avb_r5_minerals = 1800
+@avb_r6_minerals = 2300
+
+@avb_r4_rare_cost = 120
+@avb_r5_rare_cost = 150
+@avb_r6_rare_cost = 200
+
+@avb_r4_upkeep = 14
+@avb_r5_upkeep = 19
+@avb_r6_upkeep = 25
+
+@avb_r4_rare_upkeep = 3
+@avb_r5_rare_upkeep = 4
+@avb_r6_rare_upkeep = 5
+
+#Trade Buildings
+@avb_t2_clerk1 = 6
+@avb_t2_clerk2 = 1
+@avb_t2_merchant1 = 1
+@avb_t2_merchant2 = 1
+@avb_t2_bugged_trader = 2
+@avb_t2_manager = 1
+@avb_t2_entrepreneur = 1
+
+@avb_t3_clerk1 = 8
+@avb_t3_clerk2 = 1
+@avb_t3_merchant1 = 2
+@avb_t3_merchant2 = 1
+@avb_t3_bugged_trader = 3
+@avb_t3_manager = 1
+@avb_t3_entrepreneur = 1
+
+@avb_t4_clerk1 = 10
+@avb_t4_clerk2 = 1
+@avb_t4_merchant1 = 4
+@avb_t4_merchant2 = 1
+@avb_t4_bugged_trader = 4
+@avb_t4_manager = 1
+@avb_t4_entrepreneur = 1
+
+@avb_t5_clerk1 = 12
+@avb_t5_clerk2 = 1
+@avb_t5_merchant1 = 6
+@avb_t5_merchant2 = 1
+@avb_t5_bugged_trader = 5
+@avb_t5_manager = 1
+@avb_t5_entrepreneur = 1
+
+@avb_t5_time = 700
+@avb_t5_time = 860
+@avb_t6_time = 940
+
+@avb_t5_minerals = 800
+@avb_t5_minerals = 960
+@avb_t6_minerals = 1200
+
+@avb_t5_rare_cost = 120
+@avb_t5_rare_cost = 170
+@avb_t6_rare_cost = 210
+
+@avb_t5_upkeep = 8
+@avb_t5_upkeep = 13
+@avb_t6_upkeep = 16
+
+@avb_t5_rare_upkeep = 2
+@avb_t5_rare_upkeep = 3
+@avb_t6_rare_upkeep = 6
+
+#Deposit Buildings
+@avb_d4_jobs = 2
+@avb_d4_jobs2 = 6 #betharian
+@avb_d4_jobs3 = 5 #animals
+
+@avb_d4_time = 950
+
+@avb_d4_minerals = 1200
+
+@avb_d4_upkeep = 7
+
+#Resource Buildings
+@avb_rs4_jobs = 4
+@avb_rs5_jobs = 6
+
+@avb_rs4_time = 980
+@avb_rs5_time = 1400
+
+@avb_rs4_minerals = 1400
+@avb_rs5_minerals = 1780
+
+@avb_rs4_rare_cost = 150
+@avb_rs5_rare_cost = 224
+
+@avb_rs4_upkeep = 5
+@avb_rs5_upkeep = 8
+
+@avb_rs4_rare_upkeep = 3
+@avb_rs5_rare_upkeep = 4
+
+
+#Government Buildings
+@avb_g4_jobs = 6
+@avb_g5_jobs = 8
+
+@avb_g4_time = 865
+@avb_g5_time = 1145
+
+@avb_g4_minerals = 888
+@avb_g5_minerals = 1666
+
+@avb_g4_rare_cost = 80
+@avb_g5_rare_cost = 120
+
+@avb_g4_upkeep = 6
+@avb_g5_upkeep = 9
+
+@avb_g4_rare_upkeep = 2
+@avb_g5_rare_upkeep = 3
+
+
+#First Contact Buildings
+@avb_f4_time = 1000
+
+@avb_f4_minerals = 1700
+
+@avb_f4_rare_cost = 200
+
+@avb_f4_upkeep = 8
+
+@avb_f4_rare_upkeep = 4
+
+#Capital buildings
+@avb_c4_jobs1 = 8
+@avb_c5_jobs1 = 16
+@avb_c6_jobs1 = 24
+
+@avb_c3_time = 1350
+@avb_c4_time = 1500
+@avb_c5_time = 1800
+@avb_c6_time = 2100
+@avb_c7_time = 3000
+
+@avb_c4_minerals = 2300
+@avb_c5_minerals = 2460
+@avb_c6_minerals = 2780
+@avb_c7_minerals = 3240
+
+@avb_c4_upkeep = 10
+@avb_c5_upkeep = 14
+@avb_c6_upkeep = 19
+@avb_c7_upkeep = 24
+
+@avb_c4_jobs2 = 99
+@avb_c5_jobs2 = 99
+@avb_c6_jobs2 = 99 #noble/priests etc
+@avb_c6_jobs3 = 99 #politician etc
+
+#Jobs used in inline_scripts/capitals/regular/avb_capitals_jobs
+
+####
+#### Tier 3
+####
+@avb_c3_politician1 = 4 # Normal
+@avb_c3_executive = 4
+
+#3/4 normal
+@avb_c3_noble = 2
+@avb_c3_politician2 = 3
+
+#Half normal
+@avb_c3_politician3 = 2 
+
+@avb_c3_head_researcher = 2
+
+@avb_c3_high_priest = 2
+
+@avb_c3_mogul = 2
+
+@avb_c3_commandante = 2
+
+@avb_c3_supervisor = 2
+
+#Other
+@avb_c3_healtcare = 3
+
+@avb_c3_enforcer1 = 1
+@avb_c3_enforcer2 = 2
+
+@avb_c3_transcend = 2
+
+####
+#### Tier 4
+####
+@avb_c4_politician1 = 8 #normal
+@avb_c4_executive = 8
+
+#3/4 normal
+@avb_c4_noble = 3
+@avb_c4_politician2 = 5
+
+#Half normal
+@avb_c4_politician3 = 4
+
+@avb_c4_head_researcher = 4
+
+@avb_c4_high_priest = 4
+
+@avb_c4_mogul = 4
+
+@avb_c4_commandante = 4
+
+#Other
+@avb_c4_supervisor = 2
+
+@avb_c4_healtcare = 3
+
+@avb_c4_enforcer1 = 1
+@avb_c4_enforcer2 = 2
+
+@avb_c4_transcend = 2
+
+####
+#### Tier 5
+####
+@avb_c5_politician1 = 14 #normal
+@avb_c5_executive = 14
+
+#3/4 normal
+@avb_c5_noble = 5
+@avb_c5_politician2 = 9
+
+#Half normal
+@avb_c5_politician3 = 8 
+
+@avb_c5_head_researcher = 6
+
+@avb_c5_high_priest = 6
+
+@avb_c5_mogul = 6
+
+@avb_c5_commandante = 6
+
+
+#Other
+@avb_c5_supervisor = 2
+
+@avb_c5_healtcare = 3
+
+@avb_c5_enforcer1 = 1
+@avb_c5_enforcer2 = 2
+
+@avb_c5_transcend = 2
+
+####
+#### Tier 6
+####
+@avb_c6_politician1 = 21 #normal
+@avb_c6_executive = 21
+
+#3/4 normal
+@avb_c6_noble = 7
+@avb_c6_politician2 = 14
+
+#Half normal
+@avb_c6_politician3 = 10 
+
+@avb_c6_head_researcher = 11
+
+@avb_c6_high_priest = 11
+
+@avb_c6_mogul = 11
+
+@avb_c6_commandante = 11
+
+
+#Other
+@avb_c6_supervisor = 2
+
+@avb_c6_healtcare = 3
+
+@avb_c6_enforcer1 = 1
+@avb_c6_enforcer2 = 2
+
+@avb_c6_transcend = 2
+
+####
+#### Tier 7
+####
+@avb_c7_politician1 = 28 #normal
+@avb_c7_executive = 28
+
+#3/4 normal
+@avb_c7_noble = 10
+@avb_c7_politician2 = 18
+
+#Half normal
+@avb_c7_politician3 = 16 
+
+@avb_c7_head_researcher = 12
+
+@avb_c7_high_priest = 12
+
+@avb_c7_mogul = 12
+
+@avb_c7_commandante = 12
+
+
+#Other
+@avb_c7_supervisor = 2
+
+@avb_c7_healtcare = 3
+
+@avb_c7_enforcer1 = 1
+@avb_c7_enforcer2 = 2
+
+@avb_c7_transcend = 2
+
+####
+####	Habitat Capitals
+####
+@avb_hab_t2_politician1 = 2
+@avb_hab_t2_knight = 1
+@avb_hab_t2_executive = 2
+@avb_hab_t2_high_priest = 1
+@avb_hab_t2_politician3 = 1
+@avb_hab_t2_noble = 1
+@avb_hab_t2_politician2 = 1
+@avb_hab_t2_head_researcher = 1
+@avb_hab_t2_mogul = 1
+@avb_hab_t2_commandante = 1
+@avb_hab_t2_supervisor = 1
+@avb_hab_t2_healthcare = 0
+@avb_hab_t2_transcend = 1
+@avb_hab_t2_enforcer = 1
+@avb_hab_t2_enforcer1 = 1
+@avb_hab_t2_enforcer2 = 2
+
+@avb_hab_t3_politician1 = 4
+@avb_hab_t3_knight = 2
+@avb_hab_t3_executive = 4
+@avb_hab_t3_high_priest = 2
+@avb_hab_t3_politician3 = 2
+@avb_hab_t3_noble = 2
+@avb_hab_t3_politician2 = 2
+@avb_hab_t3_head_researcher = 2
+@avb_hab_t3_mogul = 2
+@avb_hab_t3_commandante = 2
+@avb_hab_t3_supervisor = 2
+@avb_hab_t3_healthcare = 0
+@avb_hab_t3_transcend = 2
+@avb_hab_t3_enforcer1 = 2
+@avb_hab_t3_enforcer1 = 1
+@avb_hab_t3_enforcer2 = 2
+
+@avb_hab_t2_coordinator = 2
+@avb_hab_t2_replicator = 1
+@avb_hab_t2_maintenance_drone = 3
+@avb_hab_t2_amenites = 3
+@avb_hab_t2_synapses_drone = 3
+
+@avb_hab_t3_coordinator = 4
+@avb_hab_t3_replicator = 2
+@avb_hab_t3_maintenance_drone = 5
+@avb_hab_t3_amenites = 6
+@avb_hab_t3_synapses_drone = 5
+
+####
+####	Machine Capitals
+####
+@avb_cm3_replicator1 = 1
+@avb_cm3_replicator2 = 1
+@avb_cm3_maintenance_drone = 1
+@avb_cm3_crucible_drone = 2
+@avb_cm3_examinatron = 3
+
+@avb_cm4_replicator1 = 1
+@avb_cm4_replicator2 = 2
+@avb_cm4_maintenance_drone = 2
+@avb_cm4_crucible_drone = 3
+@avb_cm4_examinatron = 4
+
+@avb_cm5_replicator1 = 1
+@avb_cm5_replicator2 = 3
+@avb_cm5_maintenance_drone = 2
+@avb_cm5_crucible_drone = 3
+@avb_cm5_examinatron = 5
+
+@avb_cm6_replicator1 = 1
+@avb_cm6_replicator2 = 4
+@avb_cm6_maintenance_drone = 3
+@avb_cm6_crucible_drone = 4
+@avb_cm6_examinatron = 6
+
+@avb_cm7_replicator1 = 1
+@avb_cm7_replicator2 = 5
+@avb_cm7_maintenance_drone = 3
+@avb_cm7_crucible_drone = 4
+@avb_cm7_examinatron = 7
+
+#Manufactury Buildings - Factory
+@avb_m_f3_mineral_upkeep1 = 4
+@avb_m_f3_mineral_upkeep2 = 2
+@avb_m_f3_food_upkeep1 = 3
+@avb_m_f3_food_upkeep2 = 6
+@avb_m_f3_alloy1 = 2
+@avb_m_f3_alloy2 = 1
+@avb_m_f3_energy_upkeep = 4
+@avb_m_f3_jobs = 2
+
+
+@avb_m_f4_mineral_upkeep1 = 6
+@avb_m_f4_food_upkeep1 = 9
+@avb_m_f4_alloy1 = 3
+@avb_m_f4_energy_upkeep = 6
+@avb_m_f4_jobs = 4
+
+@avb_m_f4_mineral_upkeep2 = 2
+@avb_m_f4_food_upkeep2 = 3
+@avb_m_f4_alloy2 = 1
+
+
+@avb_m_f5_mineral_upkeep1 = 8
+@avb_m_f5_food_upkeep1 = 12
+@avb_m_f5_alloy1 = 4
+@avb_m_f5_energy_upkeep = 8
+@avb_m_f5_jobs = 6
+
+@avb_m_f5_mineral_upkeep2 = 2
+@avb_m_f5_food_upkeep2 = 3
+@avb_m_f5_alloy2 = 1
+
+
+@avb_m_f6_mineral_upkeep1 = 10
+@avb_m_f6_food_upkeep1 = 15
+@avb_m_f6_alloy1 = 5
+@avb_m_f6_energy_upkeep = 10
+@avb_m_f6_jobs = 8
+
+@avb_m_f6_mineral_upkeep2 = 2
+@avb_m_f6_food_upkeep2 = 3
+@avb_m_f6_alloy2 = 1
+
+#Blank
+#@xavb_r4_jobs = 
+#@xavb_r5_jobs = 
+#@xavb_r6_jobs = 
+
+#@xavb_r4_time = 
+#@xavb_r5_time = 
+#@xavb_r6_time = 
+
+#@xavb_r4_minerals = 
+#@xavb_r5_minerals = 
+#@xavb_r6_minerals = 
+
+#@xavb_r4_rare_cost = 
+#@xavb_r5_rare_cost = 
+#@xavb_r6_rare_cost = 
+
+#@xavb_r4_upkeep = 
+#@xavb_r5_upkeep = 
+#@xavb_r6_upkeep = 
+
+#@xavb_r4_rare_upkeep = 
+#@xavb_r5_rare_upkeep = 
+#@xavb_r6_rare_upkeep = 

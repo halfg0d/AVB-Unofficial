@@ -1,0 +1,614 @@
+#############
+# Capital buildings
+#############
+@buildings_t1 = 1
+@buildings_t2 = 2
+@buildings_t3 = 3
+@buildings_t4 = 4
+
+
+@tier_2_capital_defense_armies = 4
+@tier_3_capital_defense_armies = 8
+@tier_4_capital_defense_armies = 16
+
+building_system_capital = {
+	base_buildtime = @b4_time
+	capital = yes
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	position_priority = 0
+
+	category = government
+
+	potential = {
+		exists = owner
+		owner = {
+			is_regular_empire = yes
+			is_fallen_empire = no
+		}
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+	convert_to = {
+		building_hive_major_capital
+		building_machine_major_capital
+		building_major_capital
+		building_resort_major_capital
+		building_slave_major_capital
+		building_ancient_control_center
+		building_ancient_palace
+	}
+
+	allow = {
+		num_pops >= 50
+	}
+
+	prerequisites = {
+		"tech_galactic_administration"
+	}
+
+	show_tech_unlock_if = {
+		is_regular_empire = yes
+	}
+
+	planet_modifier = {
+		job_enforcer_add = 3
+		planet_housing_add = 12
+		planet_amenities_add = 12
+		planet_max_buildings_add = @buildings_t4
+		planet_max_branch_office_buildings_add = 4
+		defense_armies_add = @tier_4_capital_defense_armies
+	}
+
+	inline_script = {
+		script = "capitals/regular/avb_capitals_together"
+		tier = c3
+		#toxic_origin1 = ""
+		#toxic_origin2 = ""
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b4_minerals
+		}
+		upkeep = {
+			energy = @b4_upkeep
+		}
+	}
+
+	upgrades = {
+		building_avb_capital_4
+	}
+}
+
+#############
+# Machine buildings
+#############
+
+# Primary Nexus
+building_machine_system_capital = {
+	base_buildtime = @b4_time
+	capital = yes
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	position_priority = 0
+	
+	category = government
+
+	potential = {
+		exists = owner
+		owner = {
+			OR = {
+				is_machine_empire = yes
+				is_country_type = ai_empire
+			}
+			is_fallen_empire = no
+		}
+	}
+
+	convert_to = {
+		building_hive_major_capital
+		building_major_capital
+		building_machine_major_capital
+		building_ancient_control_center
+		building_ancient_palace
+	}
+
+	allow = {
+		num_pops >= 50
+	}
+
+	prerequisites = {
+		"tech_galactic_administration"
+	}
+
+	show_tech_unlock_if = { 
+		is_machine_empire = yes
+	}
+
+	planet_modifier = {
+		planet_housing_add = 12
+		planet_amenities_add = 18
+		job_replicator_add = 2
+		job_patrol_drone_add = 3
+		job_maintenance_drone_add = 5
+		planet_max_buildings_add = @buildings_t4
+		defense_armies_add = @tier_4_capital_defense_armies
+	}
+	inline_script = {
+		script = capitals/machine/avb_machine_capitals
+		tier = cm3
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b4_minerals
+		}			
+		upkeep = {
+			energy = @b4_upkeep
+		}
+	}
+	
+	#EC: Bug /\ 
+	upgrades = {
+		"building_avb_machine_capital_4"
+	}
+}
+
+
+#############
+# Hive buildings
+#############
+
+# Hive Nexus
+building_hive_major_capital = {
+	base_buildtime = @b2_time
+	capital = yes
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	position_priority = 0
+	icon = building_hive_major_capital
+
+	category = government
+
+	potential = {
+		exists = owner
+		owner = {
+			OR = {
+				is_hive_empire = yes
+				is_country_type = swarm
+			}
+			is_fallen_empire = no
+		}
+	}
+
+	convert_to = {
+		building_machine_major_capital
+		building_major_capital
+		building_ancient_control_center
+		building_ancient_palace
+	}
+
+	allow = {
+		num_pops >= 25
+	}
+
+	prerequisites = {
+		"tech_colonial_centralization"
+	}
+
+	show_tech_unlock_if = { 
+		is_hive_empire = yes
+	}
+
+	planet_modifier = {
+		planet_housing_add = 10
+		planet_amenities_add = 12
+		job_synapse_drone_add = 3
+		job_maintenance_drone_add = 5
+		job_patrol_drone_add = 2
+		planet_max_buildings_add = @buildings_t4
+		defense_armies_add = @tier_3_capital_defense_armies
+	}
+	inline_script = {
+		script = buildings/on_all_capital_buildings
+	}
+	inline_script = {
+		script = capitals/avb_capitals_productivity
+	}
+    triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_origin = origin_progenitor_hive }
+			is_planet_class = pc_hive
+		}
+		job_spawning_drone_add = -1
+		job_offspring_drone_add = 1
+	}
+
+    triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_active_tradition = tr_cybernetics_organ_harvesting }
+			has_current_purge = yes
+			growing_species = { has_trait = trait_cybernetic }
+		}
+		pop_growth_speed = 0.10
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+		}
+		upkeep = {
+			energy = @b2_upkeep
+		}
+	}
+
+	triggered_desc = {
+		text = job_synapse_drone_effect_desc
+	}	
+
+	triggered_desc = {
+		text = job_maintenance_drone_effect_desc
+	}	
+
+	triggered_desc = {
+		text = job_patrol_drone_effect_desc
+	}		
+
+	upgrades = {
+		"building_avb_hive_capital_3"
+	}
+}
+
+#############
+# Habitat buildings
+#############
+
+# Habitat Central Complex
+building_hab_major_capital = {
+	base_buildtime = @b2_time
+	capital = yes
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	position_priority = 0
+
+	icon = building_major_capital
+
+	category = government
+
+	potential = {
+		uses_habitat_capitals = yes
+		exists = owner
+		owner = { is_fallen_empire = no }
+	}
+
+	convert_to = {
+		building_hab_fe_capital
+	}
+
+	allow = {
+		num_pops >= 10
+	}
+
+	upgrades = {
+		building_avb_hab_capital_3
+	}
+	resources = {
+		category = planet_buildings_hab_capital
+		cost = {
+			minerals = @b2_minerals
+		}
+		upkeep = {
+			energy = 3
+			alloys = 5
+		}
+		upkeep = {
+			trigger = { owner = { has_active_tradition = tr_domination_adopt_void } }
+			alloys = -1
+		}
+	}
+
+	planet_modifier = {
+		planet_housing_add = 5
+		planet_amenities_add = 5
+		planet_max_buildings_add = @buildings_t2
+		planet_max_branch_office_buildings_add = 1
+		defense_armies_add = @tier_2_capital_defense_armies
+	}
+	#EC: Bug \/
+	#EC: Bug /\
+
+	inline_script = {
+		script = capitals/habitat/avb_habitat_capitals
+		tier = hab_t2
+		#toxic_origin1 = "is_toxic_origin1 = no"
+		#toxic_origin2 = "is_toxic_origin2 = no"
+	}
+	
+}
+
+#############
+# Special
+#############
+
+# Resort Governing Complex
+building_resort_major_capital = {
+	base_buildtime = @b2_time
+	capital = yes
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	position_priority = 0
+	icon = building_major_capital
+
+	category = government
+
+	potential = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = resort_colony_pd_habitat
+		}
+	}
+
+	convert_to = {
+		building_hive_major_capital
+		building_machine_major_capital
+		building_major_capital
+		building_ancient_control_center
+		building_ancient_palace		
+	}
+
+	allow = {
+		num_pops >= 10
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+		}
+		upkeep = {
+			energy = @b2_upkeep
+		}
+	}
+
+	planet_modifier = {
+		planet_housing_add = 10
+		planet_amenities_add = 10
+		job_entertainer_add = 2
+		planet_max_buildings_add = 11
+		planet_max_branch_office_buildings_add = 2
+	}	
+	inline_script = {
+		script = buildings/on_all_capital_buildings
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_warrior_culture
+			}					
+		}
+		modifier = {
+			job_duelist_add = 2
+			job_entertainer_add = -2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_active_tradition = tr_synthetics_finish }
+		}
+		job_roboticist_add = 1
+	}	
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_megacorp = no
+			}
+		}
+		job_politician_add = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_megacorp = yes }
+		}
+		modifier = {
+			job_executive_add = 1
+		}
+	}	
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_capital_productivity_1 }
+		}
+		modifier = {
+			planet_jobs_productive_upkeep_mult = 0.1
+			planet_jobs_productive_produces_mult = 0.1
+		}
+	}
+
+    triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_active_tradition = tr_cybernetics_organ_harvesting }
+			has_current_purge = yes
+			growing_species = { has_trait = trait_cybernetic }
+		}
+		pop_growth_speed = 0.10
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_megacorp = no
+			}
+		}	
+		text = job_politician_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { has_active_tradition = tr_synthetics_finish }
+		}
+		text = job_roboticist_effect_desc
+	}	
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_megacorp = yes
+			}
+		}	
+		text = job_executive_effect_desc
+	}	
+
+	upgrades = {
+		"building_avb_resort_capital_3"
+	}
+}
+
+# Thrall-World Major Capital
+building_slave_major_capital = {
+	base_buildtime = @b2_time
+	capital = yes
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	position_priority = 0
+	icon = building_major_capital
+
+	category = government
+
+	potential = {
+		has_modifier = slave_colony
+	}
+
+	allow = {
+		num_pops >= 20
+	}
+
+	convert_to = {
+		building_hive_major_capital
+		building_machine_major_capital
+		building_major_capital	
+		building_ancient_control_center
+		building_ancient_palace
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 500
+		}		
+		upkeep = {
+			energy = @b1_upkeep
+		}			
+	}
+
+	planet_modifier = {
+		planet_housing_add = 10
+		planet_amenities_add = 10	
+		job_slave_overseer_add = 4
+		planet_stability_add = 10
+		planet_max_buildings_add = 11
+		planet_max_branch_office_buildings_add = 2
+	}
+	inline_script = {
+		script = buildings/on_all_capital_buildings
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_megacorp = no
+			}
+		}
+		job_politician_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_megacorp = yes }
+		}
+		modifier = {
+			job_executive_add = 2
+		}
+	}	
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_capital_productivity_1 }
+		}
+		modifier = {
+			planet_jobs_productive_upkeep_mult = 0.1
+			planet_jobs_productive_produces_mult = 0.1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_active_tradition = tr_cybernetics_organ_harvesting }
+			has_current_purge = yes
+			growing_species = { has_trait = trait_cybernetic }
+		}
+		pop_growth_speed = 0.10
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_megacorp = no
+			}
+		}	
+		text = job_politician_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_megacorp = yes
+			}
+		}	
+		text = job_executive_effect_desc
+	}		
+
+	triggered_desc = {	
+		text = job_slave_overseer_effect_desc
+	}	
+
+	upgrades = {
+		"building_avb_slave_capital_3"
+	}
+}

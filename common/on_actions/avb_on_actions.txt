@@ -1,0 +1,36 @@
+# Triggers when the game starts
+# For some one who need that mod to work with other
+on_game_start = {
+	events = {
+		avb_mod_flag.1
+	}
+}
+
+
+on_building_upgraded = {
+	events = {
+		avb.1
+		avb_vat.1
+	}
+}
+on_pop_assembled = {
+	events = {
+		avb.2
+	}
+}
+on_building_downgraded = {
+	events = {
+		avb.3
+	}
+}
+on_building_replaced = {
+	events = {
+		avb.3
+	}
+}
+on_colony_yearly_pulse = {
+	events = {
+		#avb.10
+		#avb.11
+	}
+}

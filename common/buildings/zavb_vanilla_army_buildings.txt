@@ -1,0 +1,425 @@
+#############
+# Army buildings
+#############
+#
+building_military_academy = {
+	base_buildtime = @b2_time
+	base_cap_amount = 1
+	can_be_ruined = no
+	category = army
+	
+	potential = {
+		exists = owner
+		owner = {
+			NOT = { has_valid_civic = civic_reanimated_armies }
+			OR = {
+				NOT = { has_global_flg = bug_branch_active }
+				AND = {
+					has_global_flag = bug_branch_active
+					is_bugged_reanimator = no #EC: Bug <<
+				}
+			}
+		}
+	}
+
+	allow = {
+		has_upgraded_capital = yes
+		if = {
+			limit = {
+				exists = owner
+				owner = { is_ai = yes }
+			}
+			OR = {
+				has_building = building_stronghold
+				has_building = building_fortress
+				is_capital = yes
+				solar_system = { is_bottleneck_system = yes }
+			}
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			OR = {
+				has_valid_civic = civic_reanimated_armies
+				AND = {
+					is_ai = yes
+					prev = {
+						NOR = {
+							has_building = building_stronghold
+							has_building = building_fortress
+							is_capital = yes
+							solar_system = { is_bottleneck_system = yes }
+						}
+					}
+				}
+			}
+		}
+	}
+
+	convert_to = {
+		building_dread_encampment
+	}
+
+	army_modifier = {
+		army_starting_experience_add = 100
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_soldier_add = @b1_jobs
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_warrior_drone_add = @b1_jobs
+		}
+	}
+	#EC: Classic \/
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = ethic_civic_classic_active
+			exists = owner
+			owner = { has_civic = civic_martial_brotherhood }
+		}
+		modifier = {
+			planet_housing_add = 2
+		}
+	}
+	#EC: Classic /\
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b1_minerals
+		}
+		upkeep = {
+			energy = @b1_upkeep
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_global_flag = ethic_civic_classic_active
+					has_civic = civic_martial_brotherhood
+				}
+			}
+			unity = 5
+		}
+	}
+	
+	prerequisites = {
+		"tech_centralized_command"
+	}
+
+	show_tech_unlock_if = {
+		NOT = { has_valid_civic = civic_reanimated_armies }
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_warrior_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_soldier_effect_desc
+	}
+	
+	upgrades = {
+		"building_avb_military_academy_2"
+		"building_eutab_battle_praxeum"
+	}
+}
+
+
+building_dread_encampment = {
+	base_buildtime = @b2_time
+	base_cap_amount = 1
+	can_be_ruined = no
+	category = army
+
+	potential = {
+		exists = owner
+		owner = {
+			OR = {
+				has_valid_civic = civic_reanimated_armies
+				is_bugged_reanimator = yes
+			}
+		}
+	}
+
+	convert_to = {
+		building_military_academy
+	}
+
+	allow = {
+		has_upgraded_capital = yes
+	}
+
+	army_modifier = {
+		army_starting_experience_add = 100
+	}
+
+	planet_modifier = {
+		job_necromancer_add = 2
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+		}
+		upkeep = {
+			energy = @b1_upkeep
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			always = yes
+		}
+		text = job_necromancer_effect_desc
+	}
+}
+
+building_fortress = {
+	base_buildtime = @b1_time
+	can_build = no
+	planetary_ftl_inhibitor = yes
+	position_priority = 100
+	can_be_ruined = no
+	category = army
+	
+	allow = {
+		has_upgraded_capital = yes
+	}
+
+	#PT \/
+	destroy_trigger = {
+		has_global_flag = pt_flag
+		exists = owner
+		owner = { is_ai = yes }
+		num_buildings = { type = building_fortress value > 1 }
+		OR = {
+			AND = {
+				num_buildings = { type = building_fortress value > 1 }
+				free_building_slots = 0
+				owner = { used_naval_capacity_percent < 0.4	}
+			}
+			buildings_no_motes = yes
+		}
+	}
+	#PT /\
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_gestalt = no 
+				NOT = {
+					has_civic = civic_private_militaries
+				}
+			}
+		}
+		modifier = {
+			job_soldier_add = @b2_jobs
+		}
+	}
+	triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+				has_global_flag = ethic_civic_classic_active
+                has_civic = civic_private_militaries
+            }
+        }
+        modifier = {
+            job_soldier_add = @b2_jobs
+            job_mercenary_add = @b2_jobs
+        }
+    }
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+        }
+        modifier = {
+            job_warrior_drone_add = @b2_jobs
+        }
+    }
+	#EC: Bug \/
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = bug_branch_active
+			exists = owner
+			owner = {
+				is_bugged_private_militaries = yes
+			}
+		}
+		modifier = {
+			job_bugged_mercenary_add = 2
+		}
+	}
+	#EC: Bug /\
+	resources = {
+		category = planet_buildings_strongholds
+		cost = {
+			minerals = @b2_minerals
+			volatile_motes = @b2_rare_cost
+		}
+		upkeep = {
+			energy = 1
+			volatile_motes = @b2_rare_upkeep
+		}
+		produces = {
+            trigger = {
+                exists = owner
+                owner = {
+                    has_active_tradition = tr_unyielding_resistance_is_frugal
+                }
+            }
+            unity = 3
+        }
+	}
+	
+	prerequisites = {
+		"tech_global_defense_grid"
+	}
+	
+	triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_warrior_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        text = job_soldier_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+				has_global_flag = ethic_civic_classic_active
+                has_civic = civic_private_militaries
+            }
+        }
+        text = job_mercenary_effect_desc
+    }
+	triggered_desc = {
+		trigger = {
+			has_global_flag = bug_branch_active
+			exists = owner
+			owner = {
+				is_bugged_private_militaries = yes
+			}
+		}
+		text = job_bugged_mercenary_effect_desc
+	}
+	upgrades = {
+		"building_avb_stronghold_3"
+	}
+}
+
+#
+building_planetary_shield_generator = {
+	base_buildtime = @b3_time	
+	base_cap_amount = 1
+	position_priority = 100
+	can_be_ruined = no
+	#icon = building_planetary_shield_generator
+
+	category = army
+	
+	allow = {
+		has_upgraded_capital = yes
+		hidden_trigger = { owner = { is_ai = no } }
+		if = {
+			limit = {
+				exists = orbital_defence
+			}
+			orbital_defence = {
+				exists = starbase
+				starbase = {
+					NOR = {
+						has_starbase_building = ring_orbital_shield_generator
+						is_starbase_building_building = ring_orbital_shield_generator
+					}
+				}
+			}
+		}
+	}
+	
+	
+	destroy_trigger = {
+		exists = owner
+		owner = { is_ai = yes }
+		is_capital = no
+		solar_system = { is_bottleneck_system = no }
+		num_buildings = { type = building_stronghold value < 1 }
+		num_buildings = { type = building_fortress value < 1 }
+	}
+	
+	planet_modifier = {
+		planet_orbital_bombardment_damage = -0.5
+		}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+		}
+		upkeep = {
+			energy = @b2_upkeep
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_global_flag = ethic_civic_classic_active
+					has_civic = civic_inwards_perfection
+				}
+			}
+			unity = 10
+		}
+	}
+	#EC: Bug \/
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = bug_branch_active
+			exists = owner
+			owner = { has_civic = civic_inwards_perfection }
+		}
+		modifier = {
+			planet_jobs_unity_produces_mult = 0.2
+		}
+	}
+	#EC: Bug /\
+	prerequisites = {
+		"tech_planetary_shield_generator"
+	}
+	
+	upgrades = {
+		building_avb_planetary_shield_generator_2
+	}
+}

@@ -1,0 +1,37 @@
+d_big_nature_preserve_blocker = {
+	icon = d_lush_jungle
+	potential = { always = no }
+	can_be_cleared = {
+		custom_tooltip = {
+			fail_text = has_ranger_lodge
+			planet = {
+				NOT = { has_building = building_ranger_lodge }
+			}
+		}
+		custom_tooltip = {
+			fail_text = has_avb_ranger_lodge_2
+			planet = {
+				NOT = { has_building = building_avb_ranger_lodge_2 }
+			}
+		}
+	}
+
+	resources = {
+		category = deposit_blockers_natural
+	}
+
+	is_for_colonizable = yes
+	category = deposit_cat_blockers
+
+	planet_modifier = {
+		planet_max_districts_add = -1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			THIS = {
+				has_building = building_avb_ranger_lodge_2
+			}
+		}
+		planet_max_districts_add = -1
+	}
+}

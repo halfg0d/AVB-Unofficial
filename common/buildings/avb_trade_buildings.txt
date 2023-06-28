@@ -1,0 +1,431 @@
+
+#############
+# Trade buildings
+#############
+building_avb_commercial_3 = {
+	base_buildtime = @avb_t4_time
+	can_build = no
+
+	category = trade
+	
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+	
+	potential = {
+		exists = owner
+		owner = { is_gestalt = no }
+		NOT = { has_modifier = slave_colony }
+		#zExpanded
+		NAND = {
+			has_z_expanded_mod = yes
+			owner = { NOT = { is_agrarian_empire = { allow_invalid = yes } } }
+		}
+	}
+	
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = { is_gestalt = yes }
+			has_modifier = slave_colony
+			and = { owner = { is_ai = yes } years_passed > 5 }
+			#zExpanded
+			NAND = {
+				has_z_expanded_mod = yes
+				owner = { NOT = { is_agrarian_empire = { allow_invalid = yes } } }
+			}
+		}
+	}
+	inline_script = {
+		script = trade_buildings/avb_commercials.txt
+		tier = 3
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_t4_minerals
+			rare_crystals = @avb_t4_rare_cost
+		}	
+		upkeep = {
+			energy = @avb_t4_upkeep
+			rare_crystals = @avb_t4_rare_upkeep
+		}
+        produces = {
+            trigger = {
+                owner = {
+					has_global_flag = ethic_civic_classic_active
+                    has_valid_civic = civic_consumerism
+                }
+            }
+            unity = 5
+        }		
+	}
+
+	upgrades = {
+		building_avb_commercial_4
+	}
+	
+	prerequisites = {
+		"tech_avb_interstellar_economics_2"
+	}
+	
+	show_tech_unlock_if = { 
+		is_gestalt = no
+		NAND = {
+            has_z_expanded_mod = yes
+			NOT = { is_agrarian_empire = { allow_invalid = yes } }
+		}
+	}
+
+	ai_resource_production = {
+		energy = 4
+		trigger = {
+			always = yes
+		}
+	}
+	ai_resource_production = {
+		energy = 6
+		trigger = {
+			OR = {
+				num_unemployed >= 10
+				num_assigned_jobs = {
+					job = servant
+					value >= 10
+				}
+			}
+		}
+	}
+}
+
+building_avb_commercial_4 = {
+	base_buildtime = @avb_t5_time
+	can_build = no
+
+	category = trade
+	
+	allow = {
+		has_upgraded_capital_4 = yes
+	}
+	
+	potential = {
+		exists = owner
+		owner = { is_gestalt = no }
+		NOT = { has_modifier = slave_colony }
+		#zExpanded
+		NAND = {
+			has_z_expanded_mod = yes
+			owner = { NOT = { is_agrarian_empire = { allow_invalid = yes } } }
+		}
+	}
+	
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = { is_gestalt = yes }
+			has_modifier = slave_colony
+			and = { owner = { is_ai = yes } years_passed > 5 }
+			#zExpanded
+			NAND = {
+				has_z_expanded_mod = yes
+				owner = { NOT = { is_agrarian_empire = { allow_invalid = yes } } }
+			}
+		}
+	}
+	
+	inline_script = {
+		script = trade_buildings/avb_commercials.txt
+		tier = 4
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_t5_minerals
+			rare_crystals = @avb_t5_rare_cost
+		}	
+		upkeep = {
+			energy = @avb_t5_upkeep
+			rare_crystals = @avb_t5_rare_upkeep
+		}	
+        produces = {
+            trigger = {
+                owner = {
+					has_global_flag = ethic_civic_classic_active
+                    has_valid_civic = civic_consumerism
+                }
+            }
+            unity = 5
+        }	
+	}
+	upgrades = {
+		building_avb_commercial_5
+	}
+	
+	prerequisites = {
+		"tech_avb_interstellar_economics_3"
+	}
+	
+	show_tech_unlock_if = { 
+		is_gestalt = no
+		NAND = {
+            has_z_expanded_mod = yes
+			NOT = { is_agrarian_empire = { allow_invalid = yes } }
+		}
+	}
+	ai_resource_production = {
+		energy = 4
+		trigger = {
+			always = yes
+		}
+	}
+	ai_resource_production = {
+		energy = 6
+		trigger = {
+			OR = {
+				num_unemployed >= 10
+				num_assigned_jobs = {
+					job = servant
+					value >= 10
+				}
+			}
+		}
+	}
+}
+
+building_avb_commercial_5 = {
+	base_buildtime = @avb_t6_time
+	can_build = no
+
+	category = trade
+	
+	allow = {
+		has_upgraded_capital_5 = yes
+	}
+	
+	potential = {
+		exists = owner
+		owner = { is_gestalt = no }
+		NOT = { has_modifier = slave_colony }
+		#zExpanded
+		NAND = {
+			has_z_expanded_mod = yes
+			owner = { NOT = { is_agrarian_empire = { allow_invalid = yes } } }
+		}
+	}
+	
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = { is_gestalt = yes }
+			has_modifier = slave_colony
+			and = { owner = { is_ai = yes } years_passed > 5 }
+			#zExpanded
+			NAND = {
+				has_z_expanded_mod = yes
+				owner = { NOT = { is_agrarian_empire = { allow_invalid = yes } } }
+			}
+		}
+	}
+
+	inline_script = {
+		script = trade_buildings/avb_commercials.txt
+		tier = 5
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_t6_minerals
+			rare_crystals = @avb_t6_rare_cost
+		}	
+		upkeep = {
+			energy = @avb_t6_upkeep
+			rare_crystals = @avb_t6_rare_upkeep
+		}	
+        produces = {
+            trigger = {
+                owner = {
+					has_global_flag = ethic_civic_classic_active
+                    has_valid_civic = civic_consumerism
+                }
+            }
+            unity = 5
+        }	
+	}
+	prerequisites = {
+		"tech_avb_interstellar_economics_4"
+	}
+	
+	show_tech_unlock_if = { 
+		is_gestalt = no
+		NAND = {
+            has_z_expanded_mod = yes
+			NOT = { is_agrarian_empire = { allow_invalid = yes } }
+		}
+	}
+	
+	ai_resource_production = {
+		energy = 4
+		trigger = {
+			always = yes
+		}
+	}
+	ai_resource_production = {
+		energy = 6
+		trigger = {
+			OR = {
+				num_unemployed >= 10
+				num_assigned_jobs = {
+					job = servant
+					value >= 10
+				}
+			}
+		}
+	}
+}
+
+building_avb_galactic_stock_exchange_2 = {
+	base_buildtime = @avb_t4_time
+	can_build = no
+
+	category = trade
+	
+	potential = {
+		NOT = { has_modifier = resort_colony }	
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = { is_gestalt = yes }
+			has_modifier = slave_colony
+			has_modifier = resort_colony
+		}
+	}
+	
+	allow = {
+		has_upgraded_capital_4 = yes
+		if = {
+			limit = {
+				exists = orbital_defence
+			}
+			orbital_defence = {
+				exists = starbase
+				starbase = {
+					NOR = {
+						has_starbase_building = ring_galactic_stock_exchange
+						is_starbase_building_building = ring_galactic_stock_exchange
+					}
+				}
+			}
+		}
+	}
+	planet_modifier = {
+		job_merchant_add = @avb_t4_jobs
+		trade_value_mult = 0.40
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_global_flag = ethic_civic_classic_active
+			}
+		}
+		modifier = {
+			job_mogul_add = @avb_t4_jobs
+			job_merchant_add = -@avb_t4_jobs
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_global_flag = ethic_civic_classic_active
+				OR = {
+					has_civic = civic_merchant_guilds
+					has_civic = civic_state_monopoly
+				}
+			}
+		}
+		modifier = {
+			job_mogul_add = 1
+			trade_value_mult = 0.05
+		}
+	}
+	#EC: Bug \/
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				has_global_flag = galactic_market_founded
+				owner = {
+					is_bugged_globalism = yes
+				}
+			}
+			exists = owner
+			owner = {
+				OR = {
+					has_civic = civic_merchant_guilds
+					has_civic = civic_bugged_state_monopoly
+				}
+			}
+		}
+		modifier = {
+			job_merchant_add = 1
+			trade_value_mult = 0.05
+		}
+	}
+	#EC: Bug /\
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_t4_minerals
+			rare_crystals = @avb_t4_rare_cost
+		}
+		upkeep = {
+			energy = @avb_t4_upkeep
+			rare_crystals = @avb_t4_rare_upkeep
+		}
+	}
+	
+	prerequisites = {
+		"tech_avb_galactic_markets_2"
+	}
+	
+	triggered_desc = {
+		trigger = {
+			owner = { NOT = { has_global_flag = ethic_civic_classic_active } }
+		}
+		text = job_merchant_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			owner = { has_global_flag = ethic_civic_classic_active }
+		}
+		text = job_mogul_effect_desc
+	}
+	
+	ai_resource_production = {
+		energy = 3
+		trigger = {
+			always = yes
+		}
+	}
+	ai_resource_production = {
+		energy = 5
+		trigger = {
+			solar_system = {
+				has_system_trade_value >= 50
+			}
+		}
+	}
+	ai_resource_production = {
+		energy = 3
+		trigger = {
+			solar_system = {
+				has_system_trade_value >= 80
+			}
+		}
+	}
+}

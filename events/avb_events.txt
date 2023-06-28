@@ -1,0 +1,97 @@
+namespace = avb_mod_flag
+
+# For some one who need that mod to work with other
+event = {
+	id = avb_mod_flag.1
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = { NOT = { has_global_flag = avb_mod_flag } }
+
+	immediate = { set_global_flag = avb_mod_flag }
+}
+
+
+namespace = avb
+
+planet_event = {
+	id = avb.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		last_building_changed = building_avb_posthumous_employment_center_2
+		has_building = building_avb_posthumous_employment_center_2
+	}
+
+	immediate = {
+		# Turn planet to zombie lovers
+		every_owned_pop = {
+			limit = {
+				has_trait = trait_zombie
+			}
+			add_modifier = {
+				modifier = avb_zombie_buff
+			}
+		}
+	}
+}
+planet_event = {
+	id = avb.2
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		last_created_pop = {
+			has_trait = trait_zombie
+		}
+		has_building = building_avb_posthumous_employment_center_2
+	}
+	immediate = {
+		every_owned_pop = {
+			limit = {
+				has_trait = trait_zombie
+				NOT = { has_modifier = avb_zombie_buff }
+			}
+			add_modifier = {
+				modifier = avb_zombie_buff
+			}
+		}
+	}
+}
+planet_event = {
+	id = avb.3
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		NOT = { has_building = building_avb_posthumous_employment_center_2 }
+		any_owned_pop = {
+			has_modifier = avb_zombie_buff
+		}
+	}
+	immediate = {
+		every_owned_pop = {
+			limit = {
+				has_modifier = avb_zombie_buff
+			}
+			remove_modifier = avb_zombie_buff
+		}
+	}
+}
+namespace = avb_vat
+planet_event = {
+	id = avb_vat.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		NOT = { has_planet_flag = can_organic_assemble_flag }
+		has_building = building_avb_clone_vats_2
+		last_building_changed = building_avb_clone_vats_2
+	}
+	immediate = {
+		set_planet_flag = can_organic_assemble_flag
+	}
+}

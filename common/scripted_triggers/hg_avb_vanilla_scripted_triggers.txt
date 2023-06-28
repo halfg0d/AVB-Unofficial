@@ -1,0 +1,71 @@
+has_research_building = {
+	OR = {
+		has_building = building_research_lab_1
+		has_building = building_research_lab_2
+		has_building = building_research_lab_3
+		has_building = building_institute
+		has_building = building_supercomputer
+		#AVB
+		has_building = building_avb_research_lab_4
+		has_building = building_avb_research_lab_5
+		has_building = building_avb_research_lab_6
+		has_building = building_avb_institute_2
+		has_building = building_avb_supercomputer_2 
+		#ACOT
+        has_building = building_enigmatic_lab
+        has_building = building_fe_institute
+        has_building = building_ae_enigmatic_lab
+        has_building = building_ae_institute
+        has_building = building_phanon_enigmatic_lab
+        has_building = building_phanon_institute
+        has_building = building_stellarite_enigmatic_lab
+        has_building = building_stellarite_institute
+		#EUTAB
+		eutab_has_research_building = yes
+	}
+}
+has_any_farming_district_or_buildings = {
+	OR = {
+		has_district = district_farming
+		has_district = district_rw_farming
+		has_district = district_farming_uncapped
+		has_building = building_hydroponics_farm
+		#AVB
+		has_building = building_avb_hydroponics_farm_2
+		#EUTAB
+		eutab_has_farming_building = yes
+	}
+}
+has_any_generator_district_or_building = {
+	OR = {
+		has_district = district_generator
+		has_district = district_hab_energy
+		has_district = district_generator_uncapped
+		has_district = district_rw_generator
+		has_building = building_betharian_power_plant
+		#AVB
+		has_building = building_avb_betharian_power_plant_2
+		#EUTAB
+		eutab_has_generator_building = yes
+	}
+}
+
+is_pd_crucible = {
+	OR = { 
+		is_planet_class = pc_crucible 
+		is_planet_class = pc_shroud_crucible 
+		is_planet_class = pc_clean_crucible
+	}
+}
+has_z_expanded_mod = {
+	has_global_flag = expanded_pops_active
+}
+is_toxic_origin1_trigger = {
+	has_planet_flag = toxic_knights_habitat
+}
+is_toxic_origin2_trigger = {
+	OR = {
+		is_toxic_origin1_trigger = yes
+		owner = { has_origin = origin_toxic_knights }
+	}
+}

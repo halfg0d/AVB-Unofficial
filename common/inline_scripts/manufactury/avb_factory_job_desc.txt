@@ -1,0 +1,85 @@
+triggered_desc = {
+	trigger = {
+		exists = owner
+		owner = {
+			is_regular_empire = yes
+			is_catalytic_empire = no
+		}
+		is_pd_crucible = no
+	}
+	text = job_foundry_effect_desc
+}
+
+triggered_desc = {
+	trigger = {
+		exists = owner
+		owner = {
+			is_regular_empire = yes
+			is_catalytic_empire = yes
+		}
+		is_pd_crucible = no
+	}
+	text = job_catalytic_technician_effect_desc
+}
+triggered_desc = {
+	trigger = {
+		exists = owner
+		owner = {
+			is_hive_empire = yes
+			is_catalytic_empire = no
+		}
+		is_pd_crucible = no
+	}
+	text = job_alloy_drone_effect_desc
+}
+
+triggered_desc = {
+	trigger = {
+		exists = owner
+		owner = {
+			is_machine_empire = yes
+			is_catalytic_empire = no
+		}
+		is_pd_crucible = no
+	}
+	text = job_fabricator_effect_desc
+}
+
+triggered_desc = {
+	trigger = {
+		exists = owner
+		owner = {
+			is_gestalt = yes
+			is_catalytic_empire = yes
+		}
+		is_pd_crucible = no
+	}
+	text = job_catalytic_drone_effect_desc
+}
+
+triggered_desc = {
+	trigger = {
+		exists = owner
+		owner = { is_regular_empire = yes }
+		is_pd_crucible = yes
+	}
+	text = job_crucible_foundry_effect_desc
+}
+
+triggered_desc = {
+	trigger = {
+		exists = owner
+		owner = { is_hive_empire = yes }
+		is_pd_crucible = yes
+	}
+	text = job_crucible_alloy_drone_effect_desc
+}
+
+triggered_desc = {
+	trigger = {
+		exists = owner
+		owner = { is_machine_empire = yes }
+		is_pd_crucible = yes
+	}
+	text = job_crucible_fabricator_effect_desc
+}
