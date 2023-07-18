@@ -12,14 +12,21 @@ tech_avb_capital_4 = {
 	
 	gateway = capital
 	
-	# modifier = {
-		# country_government_civic_points_add = 1
-	# }
+	
+	modifier = {
+		country_leader_cap_add = 1
+	}
 	
 	
 	weight_modifier = {
 		factor = 4
-
+		modifier = { # No tech without builded previous capital
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_system_capital }
+			}
+		}
+		inline_script = "tech_weights/avb_government_weight"
 	}
 
 	ai_weight = {
@@ -27,6 +34,39 @@ tech_avb_capital_4 = {
 	}
 }
 
+
+tech_avb_capital_5 = {
+	cost = @tier5cost3
+	area = society
+	tier = 5
+	category = { statecraft }
+	prerequisites = { "tech_avb_capital_4" }
+	weight = @tier5weight3
+	
+	gateway = capital
+	
+	modifier = {
+		country_leader_cap_add = 1
+	}
+
+	potential = {
+		is_hive_empire = no
+	}
+	weight_modifier = {
+		factor = 4
+		modifier = { # No tech without builded previous capital
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_avb_capital_4 }
+			}
+		}
+		inline_script = "tech_weights/avb_government_weight"
+	}
+	
+	ai_weight = {
+		factor = 10
+	}
+}
 
 tech_avb_capital_6 = {
 	cost = @avbtier6cost3
@@ -38,12 +78,23 @@ tech_avb_capital_6 = {
 	
 	gateway = capital
 	
+	potential = {
+		is_hive_empire = no
+	}
+
 	modifier = {
-		country_government_civic_points_add = 1
+		country_leader_cap_add = 1
 	}
 	
 	weight_modifier = {
 		factor = 4
+		modifier = { # No tech without builded previous capital
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_avb_capital_5 }
+			}
+		}
+		inline_script = "tech_weights/avb_government_weight"
 	}
 	
 	ai_weight = {
@@ -67,17 +118,28 @@ tech_avb_hab_capital_3 = {
 	
 	weight_modifier = {
 		factor = 4
-		modifier = {
+		modifier = { # can't get without any habitat in empire
 			factor = 0
-			has_megastructure = habitat_0
+			any_owned_planet = {
+				NOR = {
+					is_planet_class = pc_habitat 
+					is_pd_habitat = yes
+				}
+			}
 		}
+		inline_script = "tech_weights/avb_government_weight"
 	}
 	
 	ai_weight = {
 		factor = @capital_tech_ai_factor
-		modifier = {
+		modifier = { # can't get without any habitat in empire
 			factor = 0
-			has_megastructure = habitat_0
+			any_owned_planet = {
+				NOR = {
+					is_planet_class = pc_habitat 
+					is_pd_habitat = yes
+				}
+			}
 		}
 	}
 }
@@ -102,6 +164,14 @@ tech_avb_resort_capital_3 = {
 				}
 			}
 		}
+		modifier = {
+			factor = 2
+			is_xenophile = yes
+		}
+		modifier = {
+			factor = 2.5
+			is_fanatic_xenophile = yes
+		}
 	}
 	
 	ai_weight = {
@@ -113,6 +183,14 @@ tech_avb_resort_capital_3 = {
 					has_modifier = resort_colony
 				}
 			}
+		}
+		modifier = {
+			factor = 2
+			is_xenophile = yes
+		}
+		modifier = {
+			factor = 2.5
+			is_fanatic_xenophile = yes
 		}
 	}
 }
@@ -137,6 +215,14 @@ tech_avb_slave_capital_3 = {
 				}
 			}
 		}
+		modifier = {
+			factor = 2
+			has_ethic = ethic_authoritarian
+		}
+		modifier = {
+			factor = 2.5
+			has_ethic = ethic_fanatic_authoritarian
+		}
 	}
 	
 	ai_weight = {
@@ -148,6 +234,14 @@ tech_avb_slave_capital_3 = {
 					has_modifier = slave_colony
 				}
 			}
+		}
+		modifier = {
+			factor = 2
+			has_ethic = ethic_authoritarian
+		}
+		modifier = {
+			factor = 2.5
+			has_ethic = ethic_fanatic_authoritarian
 		}
 	}
 }
@@ -167,11 +261,21 @@ tech_avb_noble_estates_2 = {
 	gateway = capital
 	
 	potential = {
-		has_valid_civic = civic_aristocratic_elite 
+		OR = {
+			has_valid_civic = civic_aristocratic_elite 
+			has_civic = civic_harmonious_hierarchy
+		}
 	}
 	
 	weight_modifier = {
 		factor = 4
+		inline_script = "tech_weights/avb_government_weight"
+		modifier = { # No tech without builded previous building
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_noble_estates }
+			}
+		}
 	}
 	
 	ai_weight = {
@@ -198,11 +302,6 @@ tech_avb_slave_processing_2 = {
 				has_trait_in_council = { TRAIT = leader_trait_curator }
 			}
 		}
-
-		modifier = {
-			factor = 0
-			num_owned_planets < 2
-		}
 		modifier = {
 			factor = 0.0
 			OR = {
@@ -210,10 +309,34 @@ tech_avb_slave_processing_2 = {
 				NOT = { any_owned_pop = { is_enslaved = yes } }
 			}
 		}
+		modifier = {
+			factor = 2
+			has_ethic = ethic_authoritarian
+		}
+		modifier = {
+			factor = 2.5
+			has_ethic = ethic_fanatic_authoritarian
+		}
+		modifier = { # No tech without builded previous building
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_slave_processing }
+			}
+		}
 	}
 
 	ai_weight = {
-		
+		factor = 10
+		modifier = {
+			factor = 1.25
+			is_ai = yes
+			has_ethic = ethic_authoritarian
+		}
+		modifier = {
+			factor = 1.5
+			is_ai = yes
+			has_ethic = ethic_fanatic_authoritarian
+		}
 	}
 }
 
@@ -229,15 +352,37 @@ tech_avb_psi_corps_2 = {
 	gateway = capital
 	
 	potential = {
-		has_ascension_perk = ap_mind_over_matter
+		owner = { has_tradition = tr_psionics_psi_corps }
 	}
 	
 	weight_modifier = {
 		factor = 2
+		modifier = {
+			factor = 2
+			is_spiritualist = yes
+		}
+		modifier = {
+			factor = 2.5
+			is_fanatic_spiritualist = yes
+		}
+		modifier = { # No tech without builded previous building
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_psi_corps }
+			}
+		}
 	}
 	
 	ai_weight = {
 		factor = 6
+		modifier = {
+			factor = 2
+			is_spiritualist = yes
+		}
+		modifier = {
+			factor = 2.5
+			is_fanatic_spiritualist = yes
+		}
 	}
 }
 
@@ -253,15 +398,37 @@ tech_avb_psi_corps_3 = {
 	gateway = capital
 	
 	potential = {
-		has_ascension_perk = ap_mind_over_matter
+		owner = { has_tradition = tr_psionics_psi_corps }
 	}
 	
 	weight_modifier = {
 		factor = 2
+		modifier = {
+			factor = 2
+			is_spiritualist = yes
+		}
+		modifier = {
+			factor = 2.5
+			is_fanatic_spiritualist = yes
+		}
+		modifier = { # No tech without builded previous building
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_avb_psi_corps_2 }
+			}
+		}
 	}
 	
 	ai_weight = {
 		factor = 6
+		modifier = {
+			factor = 2
+			is_spiritualist = yes
+		}
+		modifier = {
+			factor = 2.5
+			is_fanatic_spiritualist = yes
+		}
 	}
 }
 
@@ -277,11 +444,18 @@ tech_avb_clone_vats_2 = {
 	gateway = capital
 	
 	potential = {
-		has_ascension_perk = ap_engineered_evolution
+		owner = { has_tradition = tr_genetics_adopt }
 	}
 	
 	weight_modifier = {
 		factor = 4
+		modifier = { # No tech without builded previous building
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_clone_vats }
+			}
+		}
+		inline_script = "tech_weights/avb_government_weight"
 	}
 	
 	ai_weight = {
@@ -302,7 +476,7 @@ tech_avb_robot_assembly_plant_2 = {
 	weight = @tier5weight3
 
 	potential = {
-		NOT = { has_ethic = "ethic_gestalt_consciousness" }
+		is_gestalt = no
 	}	
 	
 	weight_modifier = {
@@ -327,6 +501,12 @@ tech_avb_robot_assembly_plant_2 = {
 		modifier = {
 			factor = 2
 			has_origin = origin_mechanists
+		}
+		modifier = { # No tech without builded previous building
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_robot_assembly_plant }
+			}
 		}
 	}
 	
@@ -363,11 +543,17 @@ tech_avb_machine_assembly_plant_2 = {
 	weight = @tier5weight3
 
 	potential = {
-		has_ethic = "ethic_gestalt_consciousness"
+		is_machine_empire = yes
 	}	
 	
 	weight_modifier = {
 		factor = 4
+		modifier = { # No tech without builded previous building
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_machine_assembly_complex }
+			}
+		}
 	}
 	
 	ai_weight = {
@@ -399,6 +585,12 @@ tech_avb_hydroponics_2 = {
 				any_owned_planet = {
 					num_districts = { type = district_farming value > 0 }
 				}
+			}
+		}
+		modifier = { # No tech without builded previous building
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_hydroponics_farm }
 			}
 		}
 	}
@@ -437,6 +629,12 @@ tech_avb_food_processing_3 = {
 				has_country_flag = has_market_access
 			}
 		}
+		modifier = { # No tech without builded previous building
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_food_processing_center }
+			}
+		}
 	}
 	
 	ai_weight = {
@@ -473,6 +671,12 @@ tech_avb_food_processing_4 = {
 				has_country_flag = has_market_access
 			}
 		}
+		modifier = { # No tech without builded previous building
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_avb_food_processing_3 }
+			}
+		}
 	}
 	
 	ai_weight = {
@@ -498,6 +702,12 @@ tech_avb_mineral_purification_3 = {
 				has_country_flag = has_market_access
 			}
 		}
+		modifier = { # No tech without builded previous cbuilding
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_mineral_purification_hub }
+			}
+		}
 	}
 	
 	ai_weight = {
@@ -521,6 +731,12 @@ tech_avb_mineral_purification_4  = {
 				has_technology = tech_mine_volatile_motes
 				has_technology = tech_volatile_motes
 				has_country_flag = has_market_access
+			}
+		}
+		modifier = { # No tech without builded previous cbuilding
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_avb_mineral_purification_3 }
 			}
 		}
 	}
@@ -551,6 +767,12 @@ tech_avb_power_hub_3 = {
 			factor = 2
 			has_tradition = tr_prosperity_adopt
 		}
+		modifier = { # No tech without builded previous cbuilding
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_energy_nexus }
+			}
+		}
 	}
 	
 	ai_weight = {
@@ -578,6 +800,12 @@ tech_avb_power_hub_4 = {
 		modifier = {
 			factor = 2
 			has_tradition = tr_prosperity_adopt
+		}
+		modifier = { # No tech without builded previous cbuilding
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_avb_energy_grid_3 }
+			}
 		}
 	}
 	
@@ -608,6 +836,12 @@ tech_avb_bio_reactor_2  = {
 			factor = 2
 			has_tradition = tr_prosperity_adopt
 		}
+		modifier = { # No tech without builded previous cbuilding
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_bio_reactor }
+			}
+		}
 	}
 	
 	ai_weight = {
@@ -629,6 +863,13 @@ tech_avb_alloys_3 = {
 	
 	weight_modifier = {
 		factor = 2
+		modifier = { # No tech without builded previous cbuilding
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_foundry_3 }
+			}
+		}
+		inline_script = "tech_weights/avb_economy_weight"
 	}
 	
 	ai_weight = {
@@ -646,6 +887,13 @@ tech_avb_alloys_4 = {
 	
 	weight_modifier = {
 		factor = 2
+		modifier = { # No tech without builded previous cbuilding
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_avb_foundry_4 }
+			}
+		}
+		inline_script = "tech_weights/avb_economy_weight"
 	}
 	
 	ai_weight = {
@@ -663,6 +911,13 @@ tech_avb_alloys_5 = {
 	
 	weight_modifier = {
 		factor = 2
+		modifier = { # No tech without builded previous cbuilding
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_avb_foundry_5 }
+			}
+		}
+		inline_script = "tech_weights/avb_economy_weight"
 	}
 	
 	ai_weight = {

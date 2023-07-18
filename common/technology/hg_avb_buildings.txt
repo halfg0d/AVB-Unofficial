@@ -223,27 +223,6 @@ tech_avb_xeno_zoo_2 = {
 	}
 }
 
-tech_avb_capital_5 = {
-	cost = @tier5cost3
-	area = society
-	tier = 5
-	category = { statecraft }
-	prerequisites = { "tech_avb_capital_4" }
-	weight = @tier5weight3
-	
-	gateway = capital
-	
-	potential = {
-		NOT = { has_authority = auth_hive_mind }
-	}
-	weight_modifier = {
-		factor = 4
-	}
-	
-	ai_weight = {
-		factor = 10
-	}
-}
 
 
 ######################

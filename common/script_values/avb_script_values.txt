@@ -1,10 +1,15 @@
-avb_telepath_eater_soldier = {
-	base = 0 #same as above
+avb_colonies_scaling = { # counting colonies and adding as 0.1x
+	base = 1
 	complex_trigger_modifier = {
-		trigger = count_owned_pop
-		parameters = { limit = { has_job = job_soldier } }
-		mode = add
+		trigger = count_owned_planet
+		trigger_scope = owner
+		parameters = {
+			limit = {	
+				is_colony = yes
+			}
+		}
+		mode = subtract
 	}
-	add = 1
-	min = 0
+	add = 0.1
+	min = 1
 }
