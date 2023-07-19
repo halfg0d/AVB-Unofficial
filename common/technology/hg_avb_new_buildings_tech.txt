@@ -206,6 +206,16 @@ tech_avb_baol_organic_plant_2 = {
 	potential = {
 		has_ancrel = yes
 	}
+
+	weight_modifier = {
+		factor = 2
+		modifier = { # No tech without builded previous cbuilding
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_baol_organic_plant }
+			}
+		}
+	}
 }
 
 
@@ -247,6 +257,12 @@ tech_avb_archaeostudies_faculty_2 = {
 				has_completed_precursor_research = yes
 			}
 		}
+		modifier = { # No tech without builded previous cbuilding
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_archaeostudies_faculty }
+			}
+		}
 	}
 }
 
@@ -263,6 +279,15 @@ tech_avb_vultaum_reality_computer_2 = {
 	potential = {
 		has_ancrel = yes
 	}
+	weight_modifier = {
+		factor = 2
+		modifier = { # No tech without builded previous cbuilding
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_vultaum_reality_computer }
+			}
+		}
+	}
 }
 
 tech_avb_league_offices_2 = {
@@ -277,5 +302,14 @@ tech_avb_league_offices_2 = {
 
 	potential = {
 		has_ancrel = yes
+	}
+	weight_modifier = {
+		factor = 2
+		modifier = { # No tech without builded previous cbuilding
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_league_offices }
+			}
+		}
 	}
 }

@@ -83,7 +83,7 @@ tech_avb_sapient_ai_2 = {
 	}
 	
 	potential = {
-		NOT = { has_ethic = ethic_gestalt_consciousness }
+		is_gestalt = no
 	}
 	
 	weight_modifier = {	
@@ -108,7 +108,7 @@ tech_avb_positronic_implants_2 = {
 	}
 	
 	potential = {
-		has_ethic = ethic_gestalt_consciousness
+		is_regular_empire = no
 	}
 	
 	weight_modifier = {	
