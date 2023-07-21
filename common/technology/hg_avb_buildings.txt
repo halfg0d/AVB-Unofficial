@@ -30,6 +30,12 @@ tech_avb_mote_harvesters_2 = {
 				}	
 			}
 		}
+		modifier = { # No tech without builded previous cbuilding
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_mote_harvesters }
+			}
+		}
 	}
 	
 	ai_weight = {
@@ -66,6 +72,12 @@ tech_avb_gas_extractors_2 = {
 						has_deposit = d_exotic_gases_5
 					}
 				}	
+			}
+		}
+		modifier = { # No tech without builded previous cbuilding
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_gas_extractors }
 			}
 		}
 	}
@@ -106,6 +118,12 @@ tech_avb_crystal_mines_2 = {
 				}	
 			}
 		}
+		modifier = { # No tech without builded previous cbuilding
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_crystal_mines }
+			}
+		}
 	}
 	
 	ai_weight = {
@@ -129,6 +147,12 @@ tech_avb_betharian_power_plant_2 = {
 				any_owned_planet = {
 					has_deposit = d_betharian_deposit
 				}
+			}
+		}
+		modifier = { # No tech without builded previous cbuilding
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_betharian_power_plant }
 			}
 		}
 	}
@@ -192,6 +216,12 @@ tech_avb_xeno_zoo_2 = {
 			factor = 2
 			has_relic = r_pox_sample
 		}
+		modifier = { # No tech without builded previous cbuilding
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_xeno_zoo }
+			}
+		}
 	}
 
 	ai_weight = {
@@ -223,27 +253,6 @@ tech_avb_xeno_zoo_2 = {
 	}
 }
 
-tech_avb_capital_5 = {
-	cost = @tier5cost3
-	area = society
-	tier = 5
-	category = { statecraft }
-	prerequisites = { "tech_avb_capital_4" }
-	weight = @tier5weight3
-	
-	gateway = capital
-	
-	potential = {
-		NOT = { has_authority = auth_hive_mind }
-	}
-	weight_modifier = {
-		factor = 4
-	}
-	
-	ai_weight = {
-		factor = 10
-	}
-}
 
 
 ######################
@@ -530,24 +539,16 @@ tech_avb_bureaucratic_4 = {
 		country_edict_fund_add = 20
 	}
 	potential = {
-		owner = { is_hive_empire = no }
+		is_hive_empire = no
 	}
 	weight_modifier = {
-		modifier = {
+		factor = 4
+		inline_script = "tech_weights/avb_government_weight"
+		modifier = { # No tech without builded previous cbuilding
 			factor = 0
-			num_owned_planets < 2
-		}
-		modifier = {
-			factor = 1.5
-			num_owned_planets > 2
-		}
-		modifier = {
-			factor = 1.5
-			num_owned_planets > 3
-		}
-		modifier = {
-			factor = 1.5
-			num_owned_planets > 4
+			any_owned_planet = {
+				NOT = { has_building = building_bureaucratic_3 }
+			}
 		}
 	}
 
@@ -568,24 +569,15 @@ tech_avb_bureaucratic_5 = {
 		country_edict_fund_add = 20
 	}
 	potential = {
-		owner = { is_hive_empire = no }
+		is_hive_empire = no
 	}
 	weight_modifier = {
-		modifier = {
+		inline_script = "tech_weights/avb_government_weight"
+		modifier = { # No tech without builded previous cbuilding
 			factor = 0
-			num_owned_planets < 2
-		}
-		modifier = {
-			factor = 1.5
-			num_owned_planets > 2
-		}
-		modifier = {
-			factor = 1.5
-			num_owned_planets > 3
-		}
-		modifier = {
-			factor = 1.5
-			num_owned_planets > 4
+			any_owned_planet = {
+				NOT = { has_building = building_avb_bureaucratic_4 }
+			}
 		}
 	}
 
@@ -606,24 +598,15 @@ tech_avb_bureaucratic_6 = {
 		country_edict_fund_add = 20
 	}
 	potential = {
-		owner = { is_hive_empire = no }
+		is_hive_empire = no
 	}
 	weight_modifier = {
-		modifier = {
+		inline_script = "tech_weights/avb_government_weight"
+		modifier = { # No tech without builded previous cbuilding
 			factor = 0
-			num_owned_planets < 2
-		}
-		modifier = {
-			factor = 1.5
-			num_owned_planets > 2
-		}
-		modifier = {
-			factor = 1.5
-			num_owned_planets > 3
-		}
-		modifier = {
-			factor = 1.5
-			num_owned_planets > 4
+			any_owned_planet = {
+				NOT = { has_building = building_avb_bureaucratic_5 }
+			}
 		}
 	}
 
@@ -654,6 +637,12 @@ tech_avb_temple_4 = {
 	
 	weight_modifier = {
 		factor = 4
+		modifier = { # No tech without builded previous cbuilding
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_sacred_nexus }
+			}
+		}
 	}
 
 	ai_weight = {
@@ -682,6 +671,12 @@ tech_avb_temple_5 = {
 	
 	weight_modifier = {
 		factor = 4
+		modifier = { # No tech without builded previous cbuilding
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_avb_temple_4 }
+			}
+		}
 	}
 
 	ai_weight = {
@@ -710,6 +705,12 @@ tech_avb_temple_6 = {
 	
 	weight_modifier = {
 		factor = 4
+		modifier = { # No tech without builded previous cbuilding
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_avb_temple_5 }
+			}
+		}
 	}
 
 	ai_weight = {
@@ -727,6 +728,12 @@ tech_avb_hive_unity_4 = {
 
 	weight_modifier = {
 		factor = 4
+		modifier = { # No tech without builded previous cbuilding
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_hive_confluence }
+			}
+		}
 	}
 
 	ai_weight = {
@@ -743,6 +750,12 @@ tech_avb_hive_unity_5 = {
 
 	weight_modifier = {
 		factor = 4
+		modifier = { # No tech without builded previous cbuilding
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_avb_hive_unity_4 }
+			}
+		}
 	}
 
 	ai_weight = {
@@ -759,6 +772,12 @@ tech_avb_hive_unity_6 = {
 
 	weight_modifier = {
 		factor = 4
+		modifier = { # No tech without builded previous cbuilding
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_avb_hive_unity_5 }
+			}
+		}
 	}
 
 	ai_weight = {
@@ -778,6 +797,12 @@ tech_avb_monument_4 = {
 
 	weight_modifier = {
 		factor = 4
+		modifier = { # No tech without builded previous cbuilding
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_hypercomms_forum }
+			}
+		}
 	}
 
 	ai_weight = {
@@ -797,6 +822,12 @@ tech_avb_monument_5 = {
 
 	weight_modifier = {
 		factor = 4
+		modifier = { # No tech without builded previous cbuilding
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_avb_monument_4 }
+			}
+		}
 	}
 
 	ai_weight = {
@@ -815,6 +846,12 @@ tech_avb_monument_6 = {
 
 	weight_modifier = {
 		factor = 4
+		modifier = { # No tech without builded previous cbuilding
+			factor = 0
+			any_owned_planet = {
+				NOT = { has_building = building_avb_monument_5 }
+			}
+		}
 	}
 
 	ai_weight = {

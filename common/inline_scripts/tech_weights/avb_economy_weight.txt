@@ -1,0 +1,9 @@
+# Militarist empire are more likelity to get economy type technologies
+modifier = {
+	factor = 1.25
+	is_militarist = yes
+}
+modifier = {
+	factor = 1.5
+	is_fanatic_militarist = yes
+}
