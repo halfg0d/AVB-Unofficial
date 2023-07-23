@@ -85,7 +85,7 @@
 @avb_a3_rare_upkeep = 2
 
 @avb_a4_minerals = 1500
-@avb_a4_hive_minerals = 100
+@avb_a4_hive_minerals = 1000
 @avb_a4_hive_food = 500
 @avb_a4_rare_cost = 200
 @avb_a4_upkeep = 16
@@ -230,6 +230,17 @@
 @avb_g4_rare_upkeep = 2
 @avb_g5_rare_upkeep = 3
 
+@avb_g4_hive_cost = 592
+@avb_g5_hive_cost = 1111
+
+@avb_g4_food_cost = 296
+@avb_g5_food_cost = 555
+
+@avb_g4_hive_upkeep = 4
+@avb_g5_hive_upkeep = 6
+
+@avb_g4_food_upkeep = 2
+@avb_g5_food_upkeep = 3
 
 #First Contact Buildings
 @avb_f4_time = 1000
@@ -511,6 +522,21 @@
 @avb_cm7_examinatron = 7
 
 #Manufactury Buildings - Factory
+@avb_a_f3_cgood_vanilla = 2
+@avb_a_f3_mineral_upkeep_vanilla = 2
+@avb_a_f3_cgood1 = 1
+@avb_a_f3_mineral_upkeep1 = 0.5
+@avb_a_f3_food_upkeep1 = 0.5
+@avb_a_f3_cgood2 = 1
+@avb_a_f3_mineral_upkeep2 = 1
+@avb_a_f3_farmer_goods = 1
+@avb_a_f3_miners_goods = 1
+@avb_a_f3_mineral_upkeep3 = 1
+@avb_a_f3_food_upkeep3 = 1
+@avb_a_f3_mineral_upkeep4 = 2
+@avb_a_f3_waste_produce = 4
+
+#Manufactury Buildings - Foundry
 @avb_m_f3_mineral_upkeep1 = 4
 @avb_m_f3_mineral_upkeep2 = 2
 @avb_m_f3_food_upkeep1 = 3
@@ -519,7 +545,6 @@
 @avb_m_f3_alloy2 = 1
 @avb_m_f3_energy_upkeep = 4
 @avb_m_f3_jobs = 2
-
 
 @avb_m_f4_mineral_upkeep1 = 6
 @avb_m_f4_food_upkeep1 = 9
@@ -552,6 +577,7 @@
 @avb_m_f6_mineral_upkeep2 = 2
 @avb_m_f6_food_upkeep2 = 3
 @avb_m_f6_alloy2 = 1
+
 
 #Blank
 #@xavb_r4_jobs = 
