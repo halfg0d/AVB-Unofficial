@@ -415,11 +415,13 @@ building_avb_communal_housing_3 = {
 			NOT = {
 				owner = {
 					is_regular_empire = yes
-					has_valid_civic = civic_shared_burden
-					#z Expanded
-					AND = {
-						has_z_expanded_mod = yes
-						has_valid_civic = civic_worker_coop
+					OR = {
+						has_valid_civic = civic_shared_burden
+						#z Expanded
+						AND = {
+							has_z_expanded_mod = yes
+							has_valid_civic = civic_worker_coop
+						}
 					}
 				}
 			}
@@ -572,10 +574,12 @@ building_avb_communal_housing_4 = {
 				owner = {
 					is_regular_empire = yes
 					has_valid_civic = civic_shared_burden
-					#z Expanded
-					AND = {
-						has_z_expanded_mod = yes
-						has_valid_civic = civic_worker_coop
+					OR = {
+						#z Expanded
+						AND = {
+							has_z_expanded_mod = yes
+							has_valid_civic = civic_worker_coop
+						}
 					}
 				}
 			}
@@ -728,10 +732,12 @@ building_avb_communal_housing_5 = {
 				owner = {
 					is_regular_empire = yes
 					has_valid_civic = civic_shared_burden
-					#z Expanded
-					AND = {
-						has_z_expanded_mod = yes
-						has_valid_civic = civic_worker_coop
+					OR {
+						#z Expanded
+						AND = {
+							has_z_expanded_mod = yes
+							has_valid_civic = civic_worker_coop
+						}
 					}
 				}
 			}

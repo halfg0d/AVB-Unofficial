@@ -16,9 +16,12 @@ building_bureaucratic_3 = {
 			has_make_spiritualist_perk = no
 		}
 		NOT = { has_modifier = slave_colony }
-		NAND = {
-			has_planet_flag = planetary_station
-			has_z_expanded_mod = yes
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_planet_flag = planetary_station
+				has_z_expanded_mod = yes
+			}
 		}
 	}
 

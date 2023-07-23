@@ -17,9 +17,12 @@ building_avb_commercial_3 = {
 		owner = { is_gestalt = no }
 		NOT = { has_modifier = slave_colony }
 		#zExpanded
-		NAND = {
-			has_z_expanded_mod = yes
-			owner = { NOT = { is_agrarian_empire = { allow_invalid = yes } } }
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				owner = { NOT = { is_agrarian_empire = { allow_invalid = yes } } }
+			}
 		}
 	}
 	
@@ -30,7 +33,7 @@ building_avb_commercial_3 = {
 			has_modifier = slave_colony
 			and = { owner = { is_ai = yes } years_passed > 5 }
 			#zExpanded
-			NAND = {
+			AND = {
 				has_z_expanded_mod = yes
 				owner = { NOT = { is_agrarian_empire = { allow_invalid = yes } } }
 			}
@@ -71,9 +74,12 @@ building_avb_commercial_3 = {
 	
 	show_tech_unlock_if = { 
 		is_gestalt = no
-		NAND = {
-            has_z_expanded_mod = yes
-			NOT = { is_agrarian_empire = { allow_invalid = yes } }
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { is_agrarian_empire = { allow_invalid = yes } }
+			}
 		}
 	}
 
@@ -112,9 +118,12 @@ building_avb_commercial_4 = {
 		owner = { is_gestalt = no }
 		NOT = { has_modifier = slave_colony }
 		#zExpanded
-		NAND = {
-			has_z_expanded_mod = yes
-			owner = { NOT = { is_agrarian_empire = { allow_invalid = yes } } }
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				owner = { NOT = { is_agrarian_empire = { allow_invalid = yes } } }
+			}
 		}
 	}
 	
@@ -125,7 +134,7 @@ building_avb_commercial_4 = {
 			has_modifier = slave_colony
 			and = { owner = { is_ai = yes } years_passed > 5 }
 			#zExpanded
-			NAND = {
+			AND = {
 				has_z_expanded_mod = yes
 				owner = { NOT = { is_agrarian_empire = { allow_invalid = yes } } }
 			}
@@ -167,9 +176,12 @@ building_avb_commercial_4 = {
 	
 	show_tech_unlock_if = { 
 		is_gestalt = no
-		NAND = {
-            has_z_expanded_mod = yes
-			NOT = { is_agrarian_empire = { allow_invalid = yes } }
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { is_agrarian_empire = { allow_invalid = yes } }
+			}
 		}
 	}
 	ai_resource_production = {
@@ -207,9 +219,12 @@ building_avb_commercial_5 = {
 		owner = { is_gestalt = no }
 		NOT = { has_modifier = slave_colony }
 		#zExpanded
-		NAND = {
-			has_z_expanded_mod = yes
-			owner = { NOT = { is_agrarian_empire = { allow_invalid = yes } } }
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				owner = { NOT = { is_agrarian_empire = { allow_invalid = yes } } }
+			}
 		}
 	}
 	
@@ -220,7 +235,7 @@ building_avb_commercial_5 = {
 			has_modifier = slave_colony
 			and = { owner = { is_ai = yes } years_passed > 5 }
 			#zExpanded
-			NAND = {
+			AND = {
 				has_z_expanded_mod = yes
 				owner = { NOT = { is_agrarian_empire = { allow_invalid = yes } } }
 			}
@@ -258,9 +273,12 @@ building_avb_commercial_5 = {
 	
 	show_tech_unlock_if = { 
 		is_gestalt = no
-		NAND = {
-            has_z_expanded_mod = yes
-			NOT = { is_agrarian_empire = { allow_invalid = yes } }
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { is_agrarian_empire = { allow_invalid = yes } }
+			}
 		}
 	}
 	
