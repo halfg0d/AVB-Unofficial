@@ -273,6 +273,13 @@ building_hall_judgment = {
 			NOT = { has_forbidden_jobs = enforcer }
 			NOT = { has_available_jobs = enforcer }
 		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
 	
 	destroy_trigger = {
@@ -287,11 +294,61 @@ building_hall_judgment = {
 	resources = {
 		category = planet_buildings
 		cost = {
+			trigger = {
+				exists = owner
+				OR = {
+					has_z_expanded_mod = no
+					AND = {
+						has_z_expanded_mod = yes
+						owner = { is_civic_plant_organic = no }
+					}
+				}
+			}
 			minerals = @b2_minerals
 			volatile_motes = @b2_rare_cost
 		}
+		cost = {
+			trigger = {
+				exists = owner
+				OR = {
+					has_z_expanded_mod = no
+					AND = {
+						has_z_expanded_mod = yes
+						owner = { is_civic_plant_organic = yes }
+					}
+				}
+			}
+			minerals = @b2_hive_minerals
+			food = @b2_hive_food
+			volatile_motes = @b2_rare_cost
+		}
 		upkeep = {
-			energy = @b1_upkeep
+			trigger = {
+				exists = owner
+				OR = {
+					has_z_expanded_mod = no
+					AND = {
+						has_z_expanded_mod = yes
+						owner = { is_civic_plant_organic = yes }
+					}
+				}
+			}
+			energy = @b2_upkeep_hive
+			food = @b2_upkeep_food
+			volatile_motes = @b2_rare_upkeep
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				OR = {
+					has_z_expanded_mod = no
+					AND = {
+						has_z_expanded_mod = yes
+						owner = { is_civic_plant_organic = no }
+					}
+				}
+			}
+			energy = @b2_upkeep
 			volatile_motes = @b2_rare_upkeep
 		}
 		upkeep = {

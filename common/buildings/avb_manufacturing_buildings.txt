@@ -68,10 +68,10 @@ building_avb_foundry_4 = {
 	}
 	
 	inline_script = {
-		script = manufactury/avb_factory_jobs
+		script = manufactury/avb_foundry_jobs
 		tier = 4
 	}
-	inline_script = "manufactury/avb_factory_job_desc"
+	inline_script = "manufactury/avb_foundry_job_desc"
 	
 	ai_resource_production = {
 		alloys = 16
@@ -177,10 +177,10 @@ building_avb_foundry_5 = {
 	}
 	
 	inline_script = {
-		script = manufactury/avb_factory_jobs
+		script = manufactury/avb_foundry_jobs
 		tier = 5
 	}
-	inline_script = "manufactury/avb_factory_job_desc"
+	inline_script = "manufactury/avb_foundry_job_desc"
 	
 	ai_resource_production = {
 		alloys = 16
@@ -282,10 +282,10 @@ building_avb_foundry_6 = {
 	}	
 	
 	inline_script = {
-		script = manufactury/avb_factory_jobs
+		script = manufactury/avb_foundry_jobs
 		tier = 6
 	}
-	inline_script = "manufactury/avb_factory_job_desc"
+	inline_script = "manufactury/avb_foundry_job_desc"
 	
 	ai_resource_production = {
 		alloys = 16

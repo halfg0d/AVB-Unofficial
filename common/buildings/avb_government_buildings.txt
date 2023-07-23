@@ -254,6 +254,13 @@ building_avb_enforcement_3 = {
 			NOT = { has_forbidden_jobs = enforcer }
 			NOT = { has_available_jobs = enforcer }
 		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
 	
 	allow = {
@@ -272,12 +279,71 @@ building_avb_enforcement_3 = {
 	resources = {
 		category = planet_buildings
 		cost = {
+			trigger = {
+				exists = owner
+				OR = {
+					has_z_expanded_mod = no
+					AND = {
+						has_z_expanded_mod = yes
+						owner = { is_civic_plant_organic = no }
+					}
+				}
+			}
 			minerals = @avb_g4_minerals
 			volatile_motes = @avb_g4_rare_cost
 		}
+		cost = {
+			trigger = {
+				exists = owner
+				OR = {
+					has_z_expanded_mod = no
+					AND = {
+						has_z_expanded_mod = yes
+						owner = { is_civic_plant_organic = yes }
+					}
+				}
+			}
+			minerals = @avb_g4_hive_cost
+			food = @avb_g4_food_cost
+			volatile_motes = @avb_g4_rare_cost
+		}
 		upkeep = {
+			trigger = {
+				exists = owner
+				OR = {
+					has_z_expanded_mod = no
+					AND = {
+						has_z_expanded_mod = yes
+						owner = { is_civic_plant_organic = yes }
+					}
+				}
+			}
+			energy = @avb_g4_hive_upkeep
+			food = @avb_g4_food_upkeep
+			volatile_motes = @avb_g4_rare_upkeep
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				OR = {
+					has_z_expanded_mod = no
+					AND = {
+						has_z_expanded_mod = yes
+						owner = { is_civic_plant_organic = no }
+					}
+				}
+			}
 			energy = @avb_g4_upkeep
 			volatile_motes = @avb_g4_rare_upkeep
+		}
+		upkeep = {
+			trigger = {
+				owner = {
+					has_global_flag = ethic_civic_classic_active
+					has_civic = civic_police_state
+				}
+			}
+			energy = 2
 		}
 	}
 	
@@ -314,6 +380,13 @@ building_avb_enforcement_4 = {
 			NOT = { has_forbidden_jobs = enforcer }
 			NOT = { has_available_jobs = enforcer }
 		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
 	
 	allow = {
@@ -332,12 +405,71 @@ building_avb_enforcement_4 = {
 	resources = {
 		category = planet_buildings
 		cost = {
+			trigger = {
+				exists = owner
+				OR = {
+					has_z_expanded_mod = no
+					AND = {
+						has_z_expanded_mod = yes
+						owner = { is_civic_plant_organic = no }
+					}
+				}
+			}
 			minerals = @avb_g5_minerals
 			volatile_motes = @avb_g5_rare_cost
 		}
+		cost = {
+			trigger = {
+				exists = owner
+				OR = {
+					has_z_expanded_mod = no
+					AND = {
+						has_z_expanded_mod = yes
+						owner = { is_civic_plant_organic = yes }
+					}
+				}
+			}
+			minerals = @avb_g5_hive_cost
+			food = @avb_g5_food_cost
+			volatile_motes = @avb_g5_rare_cost
+		}
 		upkeep = {
+			trigger = {
+				exists = owner
+				OR = {
+					has_z_expanded_mod = no
+					AND = {
+						has_z_expanded_mod = yes
+						owner = { is_civic_plant_organic = yes }
+					}
+				}
+			}
+			energy = @avb_g5_hive_upkeep
+			food = @avb_g5_food_upkeep
+			volatile_motes = @avb_g5_rare_upkeep
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				OR = {
+					has_z_expanded_mod = no
+					AND = {
+						has_z_expanded_mod = yes
+						owner = { is_civic_plant_organic = no }
+					}
+				}
+			}
 			energy = @avb_g5_upkeep
 			volatile_motes = @avb_g5_rare_upkeep
+		}
+		upkeep = {
+			trigger = {
+				owner = {
+					has_global_flag = ethic_civic_classic_active
+					has_civic = civic_police_state
+				}
+			}
+			energy = 2
 		}
 	}
 	

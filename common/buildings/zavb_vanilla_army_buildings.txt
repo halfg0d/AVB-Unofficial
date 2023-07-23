@@ -252,22 +252,28 @@ building_fortress = {
 		has_upgraded_capital = yes
 	}
 
-	#PT \/
 	destroy_trigger = {
-		has_global_flag = pt_flag
 		exists = owner
 		owner = { is_ai = yes }
-		num_buildings = { type = building_fortress value > 1 }
 		OR = {
 			AND = {
 				num_buildings = { type = building_fortress value > 1 }
 				free_building_slots = 0
-				owner = { used_naval_capacity_percent < 0.4	}
+				owner = {
+					is_militarist = no
+					used_naval_capacity_percent < 0.4
+				}
 			}
-			buildings_no_motes = yes
+			AND = {
+				num_buildings = { type = building_fortress value > 2 }
+				free_building_slots = 0
+				owner = {
+					is_militarist = yes
+					used_naval_capacity_percent < 0.4
+				}
+			}
 		}
 	}
-	#PT /\
 
 	triggered_planet_modifier = {
 		potential = {
@@ -283,11 +289,12 @@ building_fortress = {
 			job_soldier_add = @b2_jobs
 		}
 	}
+	#EC: Classic \/
 	triggered_planet_modifier = {
         potential = {
+			has_global_flag = ethic_civic_classic_active
             exists = owner
             owner = {
-				has_global_flag = ethic_civic_classic_active
                 has_civic = civic_private_militaries
             }
         }
@@ -296,6 +303,7 @@ building_fortress = {
             job_mercenary_add = @b2_jobs
         }
     }
+	#EC: Classc /\
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -339,7 +347,33 @@ building_fortress = {
             unity = 3
         }
 	}
-	
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_active_tradition = tr_domination_imperious_architecture
+				is_gestalt = no
+			}					
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_active_tradition = tr_domination_synaptic_extensions
+			}					
+		}
+		modifier = {
+			planet_housing_add = 2
+		}
+	}
+	#zExpanded /\
 	prerequisites = {
 		"tech_global_defense_grid"
 	}

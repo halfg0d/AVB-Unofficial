@@ -428,13 +428,78 @@ building_expanded_warren = {
 	resources = {
 		category = planet_buildings
 		cost = {
+			trigger = {
+				has_z_expanded_mod = no
+			}
 			minerals = @b2_minerals
 			rare_crystals = @b2_rare_cost
 		}
 		upkeep = {
+			trigger = {
+				has_z_expanded_mod = no
+			}
 			energy = 3
 			rare_crystals = @b2_rare_upkeep
 		}
+		#zExpanded \/
+		cost = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					is_lithoid_empire = yes
+				}
+			}
+			minerals = @b2_minerals
+			rare_crystals = @b2_rare_cost
+		}
+		cost = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					NOT = { has_valid_civic = civic_integrated_bioarchitecture } is_lithoid_empire = no
+				}
+			}
+			minerals = @b2_hive_minerals
+			food = @b2_hive_food
+			rare_crystals = @b2_rare_cost
+		}
+		cost = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = { has_valid_civic = civic_integrated_bioarchitecture is_lithoid_empire = no }
+			}
+			food = @b2_minerals
+			rare_crystals = @b2_rare_cost
+		}
+		upkeep = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					is_lithoid_empire = no
+				}
+			}
+			energy = @b2_upkeep_hive
+			food = @b2_upkeep_food
+			rare_crystals = @b2_rare_upkeep
+		}
+		upkeep = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					is_lithoid_empire = yes
+					NOT = { has_valid_civic = civic_integrated_bioarchitecture }
+				}
+			}
+			energy = @b2_upkeep_hive
+			minerals = @b2_upkeep_food
+			rare_crystals = @b2_rare_upkeep
+		}
+		#zExpanded /\
 	}
 	
 	
@@ -445,6 +510,45 @@ building_expanded_warren = {
 	upgrades = {
 		"building_avb_warren_3"
 	}
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_valid_civic = civic_underground_drones
+			}				
+		}
+		modifier = {
+			planet_amenities_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_technology = tech_housing_1 
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_technology = tech_housing_2 
+				NOT = { is_agrarian_empire = { allow_invalid = yes } }
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	#zExpanded /\
 }
 
 building_hyper_entertainment_forum = {

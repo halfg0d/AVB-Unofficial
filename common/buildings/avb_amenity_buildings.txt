@@ -1080,13 +1080,78 @@ building_avb_warren_3 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_b3_minerals
-			rare_crystals = 100
+			trigger = {
+				has_z_expanded_mod = no
+			}
+			minerals = @avb_a3_minerals
+			rare_crystals = @avb_a3_rare_cost
 		}
 		upkeep = {
-			energy = @avb_b3_upkeep
-			rare_crystals = 2
+			trigger = {
+				has_z_expanded_mod = no
+			}
+			energy = 3
+			rare_crystals = @avb_a3_rare_upkeep
 		}
+		#zExpanded \/
+		cost = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					is_lithoid_empire = yes
+				}
+			}
+			minerals = @avb_a3_minerals
+			rare_crystals = @avb_a3_rare_cost
+		}
+		cost = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					NOT = { has_valid_civic = civic_integrated_bioarchitecture } is_lithoid_empire = no
+				}
+			}
+			minerals = @avb_a3_hive_minerals
+			food = @avb_a3_hive_food
+			rare_crystals = @avb_a3_rare_cost
+		}
+		cost = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = { has_valid_civic = civic_integrated_bioarchitecture is_lithoid_empire = no }
+			}
+			food = @avb_a3_minerals
+			rare_crystals = @avb_a3_rare_cost
+		}
+		upkeep = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					is_lithoid_empire = no
+				}
+			}
+			energy = @avb_a3_upkeep_hive
+			food = @avb_a3_upkeep_food
+			rare_crystals = @avb_a3_rare_upkeep
+		}
+		upkeep = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					is_lithoid_empire = yes
+					NOT = { has_valid_civic = civic_integrated_bioarchitecture }
+				}
+			}
+			energy = @avb_a3_upkeep_hive
+			minerals = @avb_a3_upkeep_food
+			rare_crystals = @avb_a3_rare_upkeep
+		}
+		#zExpanded /\
 	}
 	
 	upgrades = {
@@ -1097,6 +1162,45 @@ building_avb_warren_3 = {
 		"tech_avb_housing_3" 
 	}
 
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_valid_civic = civic_underground_drones
+			}				
+		}
+		modifier = {
+			planet_amenities_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_technology = tech_housing_1 
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_technology = tech_housing_2 
+				NOT = { is_agrarian_empire = { allow_invalid = yes } }
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	#zExpanded /\
 	on_queued = {
 		IF = {
 			limit = {
@@ -1168,13 +1272,78 @@ building_avb_warren_4 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_b4_minerals
-			rare_crystals = 100
+			trigger = {
+				has_z_expanded_mod = no
+			}
+			minerals = @avb_a4_minerals
+			rare_crystals = @avb_a4_rare_cost
 		}
 		upkeep = {
-			energy = @avb_b4_upkeep
-			rare_crystals = 4
+			trigger = {
+				has_z_expanded_mod = no
+			}
+			energy = 3
+			rare_crystals = @avb_a4_rare_upkeep
 		}
+		#zExpanded \/
+		cost = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					is_lithoid_empire = yes
+				}
+			}
+			minerals = @avb_a4_minerals
+			rare_crystals = @avb_a4_rare_cost
+		}
+		cost = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					NOT = { has_valid_civic = civic_integrated_bioarchitecture } is_lithoid_empire = no
+				}
+			}
+			minerals = @avb_a4_hive_minerals
+			food = @avb_a4_hive_food
+			rare_crystals = @avb_a4_rare_cost
+		}
+		cost = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = { has_valid_civic = civic_integrated_bioarchitecture is_lithoid_empire = no }
+			}
+			food = @avb_a4_minerals
+			rare_crystals = @avb_a4_rare_cost
+		}
+		upkeep = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					is_lithoid_empire = no
+				}
+			}
+			energy = @avb_a4_upkeep_hive
+			food = @avb_a4_upkeep_food
+			rare_crystals = @avb_a4_rare_upkeep
+		}
+		upkeep = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					is_lithoid_empire = yes
+					NOT = { has_valid_civic = civic_integrated_bioarchitecture }
+				}
+			}
+			energy = @avb_a4_upkeep_hive
+			minerals = @avb_a4_upkeep_food
+			rare_crystals = @avb_a4_rare_upkeep
+		}
+		#zExpanded /\
 	}
 	
 	
@@ -1182,6 +1351,45 @@ building_avb_warren_4 = {
 		"tech_avb_housing_4" 
 	}
 
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_valid_civic = civic_underground_drones
+			}				
+		}
+		modifier = {
+			planet_amenities_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_technology = tech_housing_1 
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_technology = tech_housing_2 
+				NOT = { is_agrarian_empire = { allow_invalid = yes } }
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	#zExpanded /\
 	on_queued = {
 		IF = {
 			limit = {

@@ -67,10 +67,10 @@ building_foundry_3 = {
 		"building_avb_foundry_4"
 	}
 	inline_script = {
-		script = manufactury/avb_factory_jobs
+		script = manufactury/avb_foundry_jobs
 		tier = 3
 	}
-	inline_script = "manufactury/avb_factory_job_desc"
+	inline_script = "manufactury/avb_foundry_job_desc"
 }
 
 building_factory_3 = {
@@ -94,6 +94,21 @@ building_factory_3 = {
 			has_modifier = slave_colony
 			has_modifier = crucible_colony
 		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				OR = {
+					NOT = { has_modifier = slave_colony }
+					owner = {
+						OR = {
+							has_valid_civic = civic_indentured_assets
+							has_valid_civic = civic_slaver_guilds
+						}
+					}
+				}
+			}
+		}
 	}
 	
 	destroy_trigger = {
@@ -101,6 +116,19 @@ building_factory_3 = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
 			has_modifier = crucible_colony
+
+			AND = {
+				has_z_expanded_mod = yes
+				OR = {
+					NOT = { has_modifier = slave_colony }
+					owner = {
+						OR = {
+							has_valid_civic = civic_indentured_assets
+							has_valid_civic = civic_slaver_guilds
+						}
+					}
+				}
+			}
 
 			AND = {
 				exists = owner
@@ -116,55 +144,14 @@ building_factory_3 = {
 			}
 		}
 	}
-	planet_modifier = {
-		planet_artisans_consumer_goods_produces_add = 2
-		planet_artisans_minerals_upkeep_add = 2
+	inline_script = {
+		script = "manufactury/avb_factory_modifiers"
+		tier = 3
 	}
-	triggered_planet_modifier = {
-		potential = {
-			has_ringworld_output_boost = yes
-		}
-		modifier = {
-			planet_artisans_consumer_goods_produces_add = 1
-			planet_artisans_minerals_upkeep_add = 2
-		}
+	inline_script = {
+		script = "manufactury/avb_factory_jobs"
+		tier = 3
 	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_gestalt = no
-				is_crafter_empire = no
-			}
-		}
-		modifier = {
-			job_artisan_add = @b1_jobs
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_gestalt = no
-				is_crafter_empire = yes
-			}
-		}
-		modifier = {
-			job_artificer_add = @b1_jobs
-		}
-	}
-	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-		}
-		modifier = {
-			job_artisan_drone_add = @b1_jobs
-		}
-	}	
-	
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -201,35 +188,6 @@ building_factory_3 = {
 	}
 	prerequisites = {
 		tech_luxuries_2
-	}
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_gestalt = no
-				is_crafter_empire = no
-			}
-		}
-		text = job_artisan_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_gestalt = no
-				is_crafter_empire = yes
-			}
-		}
-		text = job_artificer_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-		}
-		text = job_artisan_drone_effect_desc
 	}
 }
 
