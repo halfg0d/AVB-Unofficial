@@ -26,7 +26,7 @@ building_commercial_megaplex = {
 			owner = { is_gestalt = yes }
 			has_modifier = slave_colony
 			and = { owner = { is_ai = yes } years_passed > 5 }
-			NAND = {
+			AND = {
 				has_z_expanded_mod = yes
 				owner = { NOT = { is_agrarian_empire = { allow_invalid = yes } } }
 			}
@@ -39,7 +39,9 @@ building_commercial_megaplex = {
 	upgrades = {
 		"building_avb_commercial_3"
 	}
-
+	convert_to = {
+		building_farmer_complex # zExpanded
+	}
 	resources = {
 		category = planet_buildings
 		cost = {

@@ -189,6 +189,7 @@ building_baol_organic_plant = {
 
 	triggered_planet_modifier = {
 		potential = {
+			has_z_expanded_mod = no
 			exists = owner
 			owner = {
 				is_regular_empire = yes
@@ -211,6 +212,7 @@ building_baol_organic_plant = {
 
 	triggered_planet_modifier = {
 		potential = {
+			has_z_expanded_mod = no
 			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
@@ -221,6 +223,7 @@ building_baol_organic_plant = {
 
 	triggered_planet_modifier = {
 		potential = {
+			has_z_expanded_mod = no
 			exists = owner
 			owner = { is_gestalt = yes }
 		}
@@ -231,6 +234,7 @@ building_baol_organic_plant = {
 
 	triggered_planet_modifier = {
 		potential = {
+			has_z_expanded_mod = no
 			exists = owner
 			owner = {
 				is_regular_empire = yes

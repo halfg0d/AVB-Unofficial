@@ -152,6 +152,10 @@ building_avb_dread_encampment_2 = {
 				is_bugged_reanimator = yes
 			}
 		}
+		AND = {
+			has_z_expanded_mod = yes
+			NOT = { has_planet_flag = planetary_station }
+		}
 	}
 
 	convert_to = {
@@ -169,6 +173,25 @@ building_avb_dread_encampment_2 = {
 	planet_modifier = {
 		job_necromancer_add = 4
 	}
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+		}
+		modifier = {
+			planet_army_build_speed_mult = 0.75
+		}
+	}
+	triggered_country_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = army_leader
+		}
+		modifier = {
+			empire_size_colonies_mult = 0.1
+		}
+	}
+	#zExpanded /\
 
 	resources = {
 		category = planet_buildings
@@ -177,6 +200,14 @@ building_avb_dread_encampment_2 = {
 		}			
 		upkeep = {
 			energy = @avb_b3_upkeep
+		}
+		upkeep = {
+			trigger = { 
+				has_z_expanded_mod = yes
+				exists = army_leader
+			}
+			energy = @b2_upkeep
+			unity = @b2_upkeep
 		}
 	}
 	
@@ -194,6 +225,20 @@ building_avb_dread_encampment_2 = {
 		}
 		text = job_necromancer_effect_desc
 	}
+	#zExpanded \/
+	triggered_desc = {
+		trigger = {
+			always = yes
+		}
+		text = building_military_academy_tooltip
+	}
+	#trick the ai into building this
+	ai_resource_production = {
+		trigger = { always = yes }
+		alloys = 8
+		minerals = 8
+	}
+	#zExpanded /\
 }
 
 building_avb_stronghold_3 = {

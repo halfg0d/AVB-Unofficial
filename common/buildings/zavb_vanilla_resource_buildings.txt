@@ -232,9 +232,13 @@ building_food_processing_center = {
 					}
 				}
 			}
-			is_planet_class = pc_machine
+			is_machine_world = yes
 			has_modifier = resort_colony
 			has_modifier = crucible_colony
+			AND = {
+				has_z_expanded_mod = yes
+				has_planet_flag = planetary_station
+			}
 		}
 	}
 	
@@ -325,6 +329,30 @@ building_food_processing_center = {
 		}
 	}
 	#EC: Bug /\
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			has_global_flag = EcologyMod_active
+		}
+		modifier = {
+			planet_farmers_waste_produces_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+				is_lithoid_empire = no
+			}
+		}
+		modifier = {
+			planet_farmers_food_produces_mult = 0.05
+		}
+	}
+	#zExpanded /\
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -417,6 +445,24 @@ building_food_processing_center = {
 	upgrades = {
 		"building_avb_food_processing_3"
 		"building_crystal_pillar"
+	}
+	ai_resource_production = {
+		food = 6
+		trigger = {
+			always = yes
+		}
+	}
+	ai_resource_production = {
+		food = 15
+		trigger = {
+			str_num_districts_farming = { operator = > num = 3 }
+		}
+	}
+	ai_resource_production = {
+		food = 30
+		trigger = {
+			str_num_districts_farming = { operator = > num = 5 }
+		}
 	}
 }
 
@@ -728,6 +774,7 @@ building_energy_nexus = {
 
 	triggered_planet_modifier = {
 		potential = {
+			has_z_expanded_mod = no
 			exists = owner
 			owner = {
 				is_gestalt = no
@@ -741,6 +788,7 @@ building_energy_nexus = {
 
 	triggered_planet_modifier = {
 		potential = {
+			has_z_expanded_mod = no
 			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
@@ -751,6 +799,7 @@ building_energy_nexus = {
 
 	triggered_planet_modifier = {
 		potential = {
+			has_z_expanded_mod = no
 			exists = owner
 			owner = { is_gestalt = yes }
 		}
@@ -806,6 +855,37 @@ building_energy_nexus = {
 		}
 	}
 	#EC: Bug /\
+	#zExpanded \/
+	inline_script = {
+		script = job_groups/technician_add
+		trigger = "has_z_expanded_mod = yes"
+		hive = 2
+		machine = 2
+		regular = 2
+		desc = " "
+		machine_bonus = " "
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			has_global_flag = EcologyMod_active
+		}
+		modifier = {
+			planet_technician_waste_produces_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = { has_technology = tech_akx_worm_1 }
+		}
+		modifier = {
+			planet_technician_energy_produces_mult = 0.10
+		}
+	}
+	#zExpanded /\
 	triggered_planet_modifier = {
         potential = {
             exists = owner
@@ -882,6 +962,25 @@ building_energy_nexus = {
 	upgrades = {
 		"building_avb_energy_grid_3"
 		"building_eludium_plant"
+	}
+	
+	ai_resource_production = {
+		energy = 6
+		trigger = {
+			always = yes
+		}
+	}
+	ai_resource_production = {
+		energy = 10
+		trigger = {
+			str_num_districts_generator = { operator = > num = 2 }
+		}
+	}
+	ai_resource_production = {
+		energy = 20
+		trigger = {
+			str_num_districts_generator = { operator = > num = 4 }
+		}
 	}
 }
 building_resource_silo = {
