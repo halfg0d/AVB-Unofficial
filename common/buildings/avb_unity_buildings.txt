@@ -974,6 +974,13 @@ building_avb_hive_unity_4 = {
 		owner = {
 			is_hive_empire = yes
 		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
 
 	allow = {
@@ -995,21 +1002,32 @@ building_avb_hive_unity_4 = {
 	resources = {
 		category = planet_buildings
 		cost = {
+			trigger = {
+				has_z_expanded_mod = no
+			}
 			minerals = @avb_u4_minerals
 			exotic_gases = @avb_u4_rare_cost
 		}
 		upkeep = {
+			trigger = {
+				has_z_expanded_mod = no
+			}
 			energy = @avb_u4_upkeep
 			exotic_gases = @avb_u4_rare_upkeep
 		}
 		upkeep = {
 			trigger = {
+				has_z_expanded_mod = no
 				exists = owner
 				owner = {
 					has_edict = synaptic_reinforcement
 				}
 			}
 			energy = 2
+		}
+		inline_script = {
+			script = "unity_buildings/avb_hive_confluence_resources"
+			tier = 4
 		}
 	}
 
@@ -1098,6 +1116,13 @@ building_avb_hive_unity_5 = {
 		owner = {
 			is_hive_empire = yes
 		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
 
 	allow = {
@@ -1119,21 +1144,32 @@ building_avb_hive_unity_5 = {
 	resources = {
 		category = planet_buildings
 		cost = {
+			trigger = {
+				has_z_expanded_mod = no
+			}
 			minerals = @avb_u5_minerals
 			exotic_gases = @avb_u5_rare_cost
 		}
 		upkeep = {
+			trigger = {
+				has_z_expanded_mod = no
+			}
 			energy = @avb_u5_upkeep
 			exotic_gases = @avb_u5_rare_upkeep
 		}
 		upkeep = {
 			trigger = {
+				has_z_expanded_mod = no
 				exists = owner
 				owner = {
 					has_edict = synaptic_reinforcement
 				}
 			}
 			energy = 2
+		}
+		inline_script = {
+			script = "unity_buildings/avb_hive_confluence_resources"
+			tier = 5
 		}
 	}
 
@@ -1222,6 +1258,13 @@ building_avb_hive_unity_6 = {
 		owner = {
 			is_hive_empire = yes
 		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
 
 	allow = {
@@ -1243,21 +1286,32 @@ building_avb_hive_unity_6 = {
 	resources = {
 		category = planet_buildings
 		cost = {
+			trigger = {
+				has_z_expanded_mod = no
+			}
 			minerals = @avb_u6_minerals
 			exotic_gases = @avb_u6_rare_cost
 		}
 		upkeep = {
+			trigger = {
+				has_z_expanded_mod = no
+			}
 			energy = @avb_u6_upkeep
 			exotic_gases = @avb_u6_rare_upkeep
 		}
 		upkeep = {
 			trigger = {
+				has_z_expanded_mod = no
 				exists = owner
 				owner = {
 					has_edict = synaptic_reinforcement
 				}
 			}
 			energy = 2
+		}
+		inline_script = {
+			script = "unity_buildings/avb_hive_confluence_resources"
+			tier = 6
 		}
 	}
 

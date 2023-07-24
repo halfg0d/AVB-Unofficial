@@ -1702,6 +1702,10 @@ building_avb_clinic_3 = {
 				buildings_stop_pop = yes
 				owner = { is_ai = yes }
 			}
+			AND = {
+				has_z_expanded_mod = yes
+				has_modifier = planetary_station
+			}
 		}
 	}
 	
@@ -1821,6 +1825,10 @@ building_avb_clinic_4 = {
 			AND = {
 				buildings_stop_pop = yes
 				owner = { is_ai = yes }
+			}
+			AND = {
+				has_z_expanded_mod = yes
+				has_modifier = planetary_station
 			}
 		}
 	}

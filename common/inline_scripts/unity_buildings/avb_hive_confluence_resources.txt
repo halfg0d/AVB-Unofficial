@@ -1,0 +1,85 @@
+cost = {
+	trigger = {
+		has_z_expanded_mod = yes
+		exists = owner
+		owner = {
+			is_lithoid_empire = yes
+		}
+	}
+	minerals = @avb_u$tier$_minerals
+	exotic_gases = @avb_u$tier$_rare_cost
+}
+cost = {
+	trigger = {
+		has_z_expanded_mod = yes
+		exists = owner
+		owner = {
+			NOT = { has_valid_civic = civic_integrated_bioarchitecture }
+			is_lithoid_empire = no
+		}
+	}
+	minerals = @avb_u$tier$_hive_minerals
+	food = @avb_u$tier$_hive_food
+	exotic_gases = @avb_u$tier$_rare_cost
+}
+cost = {
+	trigger = {
+		has_z_expanded_mod = yes
+		exists = owner
+		owner = {
+			has_valid_civic = civic_integrated_bioarchitecture
+			is_lithoid_empire = no
+		}
+	}
+	food = @avb_u$tier$_minerals
+	exotic_gases = @avb_u$tier$_rare_cost
+}
+upkeep = {
+	trigger = {
+		has_z_expanded_mod = yes
+		exists = owner
+		owner = {
+			is_lithoid_empire = no
+			NOT = { has_valid_civic = civic_integrated_bioarchitecture }
+		}
+	}
+	energy = @avb_u$tier$_upkeep_hive
+	food = @avb_u$tier$_upkeep_food
+	exotic_gases = @avb_u$tier$_rare_upkeep
+}
+upkeep = {
+	trigger = {
+		has_z_expanded_mod = yes
+		exists = owner
+		owner = {
+			is_lithoid_empire = yes
+			NOT = { has_valid_civic = civic_integrated_bioarchitecture }
+		}
+	}
+	energy = @avb_u$tier$_upkeep
+	exotic_gases = @avb_u$tier$_rare_upkeep
+}
+upkeep = {
+	trigger = {
+		has_z_expanded_mod = yes
+		exists = owner
+		owner = {
+			is_lithoid_empire = no
+			has_edict = synaptic_reinforcement
+		}
+	}
+	energy = 1
+	food = 1
+}
+upkeep = {
+	trigger = {
+		has_z_expanded_mod = yes
+		exists = owner
+		owner = {
+			is_lithoid_empire = yes
+			has_edict = synaptic_reinforcement
+		}
+	}
+	energy = 1
+	minerals = 1
+}

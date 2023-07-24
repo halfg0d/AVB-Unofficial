@@ -62,3 +62,11 @@ triggered_desc = {
 	}
 	text = job_artisan_drone_effect_desc
 }
+
+inline_script = {
+	script = job_groups/artisan_add
+	trigger = "has_z_expanded_mod = yes"
+	regular = @avb_a_f$tier$_jobs
+	gestalt = @avb_a_f$tier$_jobs
+	desc = " "
+}

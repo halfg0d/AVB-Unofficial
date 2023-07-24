@@ -63,6 +63,21 @@
 @avb_u5_rare_upkeep = 4
 @avb_u6_rare_upkeep = 5
 
+@avb_u4_hive_minerals = 800
+@avb_u4_hive_food = 400
+@avb_u4_upkeep_hive = 7
+@avb_u4_upkeep_food = 3
+
+@avb_u5_hive_minerals = 1067
+@avb_u5_hive_food = 533
+@avb_u5_upkeep_hive = 8
+@avb_u5_upkeep_food = 4
+
+@avb_u6_hive_minerals = 1333
+@avb_u6_hive_food = 667
+@avb_u6_upkeep_hive = 9.4
+@avb_u6_upkeep_food = 4.6
+
 #Amenity Buildings
 @avb_a2_jobs = 4
 
@@ -529,12 +544,51 @@
 @avb_a_f3_food_upkeep1 = 0.5
 @avb_a_f3_cgood2 = 1
 @avb_a_f3_mineral_upkeep2 = 1
-@avb_a_f3_farmer_goods = 1
-@avb_a_f3_miners_goods = 1
 @avb_a_f3_mineral_upkeep3 = 1
 @avb_a_f3_food_upkeep3 = 1
 @avb_a_f3_mineral_upkeep4 = 2
 @avb_a_f3_waste_produce = 4
+@avb_a_f3_jobs = @b1_jobs
+
+
+@avb_a_f4_cgood_vanilla = 3
+@avb_a_f4_mineral_upkeep_vanilla = 3
+@avb_a_f4_cgood1 = 2
+@avb_a_f4_mineral_upkeep1 = 1
+@avb_a_f4_food_upkeep1 = 1
+@avb_a_f4_cgood2 = 2
+@avb_a_f4_mineral_upkeep2 = 2
+@avb_a_f4_mineral_upkeep3 = 2
+@avb_a_f4_food_upkeep3 = 2
+@avb_a_f4_mineral_upkeep4 = 4
+@avb_a_f4_waste_produce = 8
+@avb_a_f4_jobs = 4
+
+@avb_a_f5_cgood_vanilla = 4
+@avb_a_f5_mineral_upkeep_vanilla = 4
+@avb_a_f5_cgood1 = 4
+@avb_a_f5_mineral_upkeep1 = 2
+@avb_a_f5_food_upkeep1 = 2
+@avb_a_f5_cgood2 = 4
+@avb_a_f5_mineral_upkeep2 = 4
+@avb_a_f5_mineral_upkeep3 = 4
+@avb_a_f5_food_upkeep3 = 4
+@avb_a_f5_mineral_upkeep4 = 6
+@avb_a_f5_waste_produce = 12
+@avb_a_f5_jobs = 6
+
+@avb_a_f6_cgood_vanilla = 5
+@avb_a_f6_mineral_upkeep_vanilla = 5
+@avb_a_f6_cgood1 = 6
+@avb_a_f6_mineral_upkeep1 = 3
+@avb_a_f6_food_upkeep1 = 3
+@avb_a_f6_cgood2 = 6
+@avb_a_f6_mineral_upkeep2 = 6
+@avb_a_f6_mineral_upkeep3 = 6
+@avb_a_f6_food_upkeep3 = 6
+@avb_a_f6_mineral_upkeep4 = 8
+@avb_a_f6_waste_produce = 16
+@avb_a_f6_jobs = 8
 
 #Manufactury Buildings - Foundry
 @avb_m_f3_mineral_upkeep1 = 4

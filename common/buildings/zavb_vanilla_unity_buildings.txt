@@ -336,6 +336,13 @@ building_hive_confluence = {
 		owner = {
 			is_hive_empire = yes
 		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
 
 	allow = {
@@ -356,21 +363,113 @@ building_hive_confluence = {
 	resources = {
 		category = planet_buildings
 		cost = {
+			trigger = {
+				has_z_expanded_mod = no
+			}
 			minerals = @b3_minerals
 			exotic_gases = @b3_rare_cost
 		}
 		upkeep = {
+			trigger = {
+				has_z_expanded_mod = no
+			}
 			energy = @b3_upkeep
 			exotic_gases = @b3_rare_upkeep
 		}
 		upkeep = {
 			trigger = {
+				has_z_expanded_mod = no
 				exists = owner
 				owner = {
 					has_edict = synaptic_reinforcement
 				}
 			}
 			energy = 2
+		}
+		cost = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					is_lithoid_empire = yes
+				}
+			}
+			minerals = @b3_minerals
+			exotic_gases = @b3_rare_cost
+		}
+		cost = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					NOT = { has_valid_civic = civic_integrated_bioarchitecture }
+					is_lithoid_empire = no
+				}
+			}
+			minerals = @b3_hive_minerals
+			food = @b3_hive_food
+			exotic_gases = @b3_rare_cost
+		}
+		cost = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					has_valid_civic = civic_integrated_bioarchitecture
+					is_lithoid_empire = no
+				}
+			}
+			food = @b3_minerals
+			exotic_gases = @b3_rare_cost
+		}
+		upkeep = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					is_lithoid_empire = no
+					NOT = { has_valid_civic = civic_integrated_bioarchitecture }
+				}
+			}
+			energy = @b3_upkeep_hive
+			food = @b3_upkeep_food
+			exotic_gases = @b3_rare_upkeep
+		}
+		upkeep = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					is_lithoid_empire = yes
+					NOT = { has_valid_civic = civic_integrated_bioarchitecture }
+				}
+			}
+			energy = @b3_upkeep
+			exotic_gases = @b3_rare_upkeep
+		}
+		upkeep = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					is_lithoid_empire = no
+					has_edict = synaptic_reinforcement
+				}
+			}
+			energy = 1
+			food = 1
+		}
+		upkeep = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					is_lithoid_empire = yes
+					has_edict = synaptic_reinforcement
+				}
+			}
+			energy = 1
+			minerals = 1
 		}
 	}
 
