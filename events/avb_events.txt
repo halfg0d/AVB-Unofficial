@@ -95,3 +95,16 @@ planet_event = {
 		set_planet_flag = can_organic_assemble_flag
 	}
 }
+
+namespace = avb_test
+country_event = {
+	id = avb_test.1
+	is_triggered_only = yes
+	hide_window = no
+
+	trigger = {
+		any_owned_planet = {
+			NOT = { has_building = building_research_lab_1 }
+		}
+	}
+}

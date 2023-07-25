@@ -14,8 +14,8 @@ tech_avb_posthumous_employment_center_2 = {
 		factor = 2
 		modifier = {
 			factor = 0
-			any_owned_planet = {
-				NOT = { has_building = building_posthumous_employment_center }
+			NOT = {
+				any_owned_planet = { has_building = building_posthumous_employment_center }
 			}
 		}
 	}
@@ -41,8 +41,8 @@ tech_avb_offspring_nest_2 = {
 		factor = 2
 		modifier = {
 			factor = 0
-			any_owned_planet = {
-				NOT = { has_building = building_offspring_nest }
+			NOT = {
+				any_owned_planet = { has_building = building_offspring_nest }
 			}
 		}
 	}
@@ -69,8 +69,8 @@ tech_avb_toxic_bath_2 = {
 		factor = 2
 		modifier = {
 			factor = 0
-			any_owned_planet = {
-				NOT = { has_building = building_toxic_bath }
+			NOT = {
+				any_owned_planet = { has_building = building_toxic_bath }
 			}
 		}
 	}
@@ -96,8 +96,8 @@ tech_avb_toxic_bath_hive_2 = {
 		factor = 2
 		modifier = {
 			factor = 0
-			any_owned_planet = {
-				NOT = { has_building = building_toxic_bath_hive }
+			NOT = {
+				any_owned_planet = { has_building = building_toxic_bath_hive }
 			}
 		}
 	}
@@ -123,8 +123,8 @@ tech_avb_toxic_bath_machine_2 = {
 		factor = 2
 		modifier = {
 			factor = 0
-			any_owned_planet = {
-				NOT = { has_building = building_toxic_bath_machine }
+			NOT = {
+				any_owned_planet = { has_building = building_toxic_bath_machine }
 			}
 		}
 	}
@@ -211,8 +211,8 @@ tech_avb_baol_organic_plant_2 = {
 		factor = 2
 		modifier = { # No tech without builded previous cbuilding
 			factor = 0
-			any_owned_planet = {
-				NOT = { has_building = building_baol_organic_plant }
+			NOT = {
+				any_owned_planet = { has_building = building_baol_organic_plant }
 			}
 		}
 	}
@@ -259,8 +259,8 @@ tech_avb_archaeostudies_faculty_2 = {
 		}
 		modifier = { # No tech without builded previous cbuilding
 			factor = 0
-			any_owned_planet = {
-				NOT = { has_building = building_archaeostudies_faculty }
+			NOT = {
+				any_owned_planet = { has_building = building_archaeostudies_faculty }
 			}
 		}
 	}
@@ -283,8 +283,8 @@ tech_avb_vultaum_reality_computer_2 = {
 		factor = 2
 		modifier = { # No tech without builded previous cbuilding
 			factor = 0
-			any_owned_planet = {
-				NOT = { has_building = building_vultaum_reality_computer }
+			NOT = {
+				any_owned_planet = { has_building = building_vultaum_reality_computer }
 			}
 		}
 	}
@@ -307,8 +307,8 @@ tech_avb_league_offices_2 = {
 		factor = 2
 		modifier = { # No tech without builded previous cbuilding
 			factor = 0
-			any_owned_planet = {
-				NOT = { has_building = building_league_offices }
+			NOT = {
+				any_owned_planet = { has_building = building_league_offices }
 			}
 		}
 	}

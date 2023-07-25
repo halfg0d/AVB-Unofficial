@@ -32,8 +32,8 @@ tech_avb_mote_harvesters_2 = {
 		}
 		modifier = { # No tech without builded previous cbuilding
 			factor = 0
-			any_owned_planet = {
-				NOT = { has_building = building_mote_harvesters }
+			NOT = {
+				any_owned_planet = { has_building = building_mote_harvesters }
 			}
 		}
 	}
@@ -76,8 +76,8 @@ tech_avb_gas_extractors_2 = {
 		}
 		modifier = { # No tech without builded previous cbuilding
 			factor = 0
-			any_owned_planet = {
-				NOT = { has_building = building_gas_extractors }
+			NOT = {
+				any_owned_planet = { has_building = building_gas_extractors }
 			}
 		}
 	}
@@ -120,8 +120,8 @@ tech_avb_crystal_mines_2 = {
 		}
 		modifier = { # No tech without builded previous cbuilding
 			factor = 0
-			any_owned_planet = {
-				NOT = { has_building = building_crystal_mines }
+			NOT = {
+				any_owned_planet = { has_building = building_crystal_mines }
 			}
 		}
 	}
@@ -151,8 +151,8 @@ tech_avb_betharian_power_plant_2 = {
 		}
 		modifier = { # No tech without builded previous cbuilding
 			factor = 0
-			any_owned_planet = {
-				NOT = { has_building = building_betharian_power_plant }
+			NOT = {
+				any_owned_planet = { has_building = building_betharian_power_plant }
 			}
 		}
 	}
@@ -218,8 +218,8 @@ tech_avb_xeno_zoo_2 = {
 		}
 		modifier = { # No tech without builded previous cbuilding
 			factor = 0
-			any_owned_planet = {
-				NOT = { has_building = building_xeno_zoo }
+			NOT = {
+				any_owned_planet = { has_building = building_xeno_zoo }
 			}
 		}
 	}
@@ -546,8 +546,8 @@ tech_avb_bureaucratic_4 = {
 		inline_script = "tech_weights/avb_government_weight"
 		modifier = { # No tech without builded previous cbuilding
 			factor = 0
-			any_owned_planet = {
-				NOT = { has_building = building_bureaucratic_3 }
+			NOT = {
+				any_owned_planet = { has_building = building_bureaucratic_3 }
 			}
 		}
 	}
@@ -575,8 +575,8 @@ tech_avb_bureaucratic_5 = {
 		inline_script = "tech_weights/avb_government_weight"
 		modifier = { # No tech without builded previous cbuilding
 			factor = 0
-			any_owned_planet = {
-				NOT = { has_building = building_avb_bureaucratic_4 }
+			NOT = {
+				any_owned_planet = { has_building = building_avb_bureaucratic_4 }
 			}
 		}
 	}
@@ -604,8 +604,8 @@ tech_avb_bureaucratic_6 = {
 		inline_script = "tech_weights/avb_government_weight"
 		modifier = { # No tech without builded previous cbuilding
 			factor = 0
-			any_owned_planet = {
-				NOT = { has_building = building_avb_bureaucratic_5 }
+			NOT = {
+				any_owned_planet = { has_building = building_avb_bureaucratic_5 }
 			}
 		}
 	}
@@ -639,8 +639,8 @@ tech_avb_temple_4 = {
 		factor = 4
 		modifier = { # No tech without builded previous cbuilding
 			factor = 0
-			any_owned_planet = {
-				NOT = { has_building = building_sacred_nexus }
+			NOT = {
+				any_owned_planet = { has_building = building_sacred_nexus }
 			}
 		}
 	}
@@ -673,8 +673,8 @@ tech_avb_temple_5 = {
 		factor = 4
 		modifier = { # No tech without builded previous cbuilding
 			factor = 0
-			any_owned_planet = {
-				NOT = { has_building = building_avb_temple_4 }
+			NOT = {
+				any_owned_planet = { has_building = building_avb_temple_4 }
 			}
 		}
 	}
@@ -707,8 +707,8 @@ tech_avb_temple_6 = {
 		factor = 4
 		modifier = { # No tech without builded previous cbuilding
 			factor = 0
-			any_owned_planet = {
-				NOT = { has_building = building_avb_temple_5 }
+			NOT = {
+				any_owned_planet = { has_building = building_avb_temple_5 }
 			}
 		}
 	}
@@ -730,8 +730,8 @@ tech_avb_hive_unity_4 = {
 		factor = 4
 		modifier = { # No tech without builded previous cbuilding
 			factor = 0
-			any_owned_planet = {
-				NOT = { has_building = building_hive_confluence }
+			NOT = {
+				any_owned_planet = { has_building = building_hive_confluence }
 			}
 		}
 	}
@@ -752,8 +752,8 @@ tech_avb_hive_unity_5 = {
 		factor = 4
 		modifier = { # No tech without builded previous cbuilding
 			factor = 0
-			any_owned_planet = {
-				NOT = { has_building = building_avb_hive_unity_4 }
+			NOT = {
+				any_owned_planet = { has_building = building_avb_hive_unity_4 }
 			}
 		}
 	}
@@ -774,8 +774,8 @@ tech_avb_hive_unity_6 = {
 		factor = 4
 		modifier = { # No tech without builded previous cbuilding
 			factor = 0
-			any_owned_planet = {
-				NOT = { has_building = building_avb_hive_unity_5 }
+			NOT = {
+				any_owned_planet = { has_building = building_avb_hive_unity_5 }
 			}
 		}
 	}
@@ -799,8 +799,8 @@ tech_avb_monument_4 = {
 		factor = 4
 		modifier = { # No tech without builded previous cbuilding
 			factor = 0
-			any_owned_planet = {
-				NOT = { has_building = building_hypercomms_forum }
+			NOT = {
+				any_owned_planet = { has_building = building_hypercomms_forum }
 			}
 		}
 	}
@@ -824,8 +824,8 @@ tech_avb_monument_5 = {
 		factor = 4
 		modifier = { # No tech without builded previous cbuilding
 			factor = 0
-			any_owned_planet = {
-				NOT = { has_building = building_avb_monument_4 }
+			NOT = {
+				any_owned_planet = { has_building = building_avb_monument_4 }
 			}
 		}
 	}
@@ -848,8 +848,8 @@ tech_avb_monument_6 = {
 		factor = 4
 		modifier = { # No tech without builded previous cbuilding
 			factor = 0
-			any_owned_planet = {
-				NOT = { has_building = building_avb_monument_5 }
+			NOT = {
+				any_owned_planet = { has_building = building_avb_monument_5 }
 			}
 		}
 	}
