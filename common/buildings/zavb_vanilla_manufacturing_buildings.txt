@@ -15,7 +15,6 @@ building_foundry_3 = {
 	destroy_trigger = {
 		OR = {
 			has_modifier = resort_colony
-			has_modifier = slave_colony
 			has_modifier = crucible_colony
 			AND = {
 				exists = owner
@@ -24,38 +23,31 @@ building_foundry_3 = {
 				}
 				has_any_industry_district = no
 			}
+			#zExpanded \/
+			OR = {
+				AND = {
+					has_z_expanded_mod = no
+					has_modifier = slave_colony
+				}
+				AND = {
+					has_z_expanded_mod = yes
+					owner = {
+						NOR = {
+							has_valid_civic = civic_indentured_assets
+							has_valid_civic = civic_slaver_guilds
+						}
+					}
+				}
+			}
+			#zExpanded /\
 		}
 	}
 
 	resources = {
 		category = planet_buildings
-		cost = {
-			trigger = {
-				has_ringworld_output_boost = no
-			}
-			minerals = @b3_minerals
-			volatile_motes = @b4_rare_cost
-		}
-		cost = {
-			trigger = {
-				has_ringworld_output_boost = yes
-			}
-			minerals = 1500
-			volatile_motes = 600
-		}
-		upkeep = {
-			trigger = {
-				has_ringworld_output_boost = no
-			}
-			energy = @b3_upkeep
-			volatile_motes = @b4_rare_upkeep
-		}
-		upkeep = {
-			trigger = {
-				has_ringworld_output_boost = yes
-			}
-			energy = 15
-			volatile_motes = 8
+		inline_script = {
+			script = "manufactury/avb_foundry_resources"
+			tier = 3
 		}
 	}
 

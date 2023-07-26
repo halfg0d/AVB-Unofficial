@@ -590,49 +590,6 @@
 @avb_a_f6_waste_produce = 16
 @avb_a_f6_jobs = 8
 
-#Manufactury Buildings - Foundry
-@avb_m_f3_mineral_upkeep1 = 4
-@avb_m_f3_mineral_upkeep2 = 2
-@avb_m_f3_food_upkeep1 = 3
-@avb_m_f3_food_upkeep2 = 6
-@avb_m_f3_alloy1 = 2
-@avb_m_f3_alloy2 = 1
-@avb_m_f3_energy_upkeep = 4
-@avb_m_f3_jobs = 2
-
-@avb_m_f4_mineral_upkeep1 = 6
-@avb_m_f4_food_upkeep1 = 9
-@avb_m_f4_alloy1 = 3
-@avb_m_f4_energy_upkeep = 6
-@avb_m_f4_jobs = 4
-
-@avb_m_f4_mineral_upkeep2 = 2
-@avb_m_f4_food_upkeep2 = 3
-@avb_m_f4_alloy2 = 1
-
-
-@avb_m_f5_mineral_upkeep1 = 8
-@avb_m_f5_food_upkeep1 = 12
-@avb_m_f5_alloy1 = 4
-@avb_m_f5_energy_upkeep = 8
-@avb_m_f5_jobs = 6
-
-@avb_m_f5_mineral_upkeep2 = 2
-@avb_m_f5_food_upkeep2 = 3
-@avb_m_f5_alloy2 = 1
-
-
-@avb_m_f6_mineral_upkeep1 = 10
-@avb_m_f6_food_upkeep1 = 15
-@avb_m_f6_alloy1 = 5
-@avb_m_f6_energy_upkeep = 10
-@avb_m_f6_jobs = 8
-
-@avb_m_f6_mineral_upkeep2 = 2
-@avb_m_f6_food_upkeep2 = 3
-@avb_m_f6_alloy2 = 1
-
-
 #Blank
 #@xavb_r4_jobs = 
 #@xavb_r5_jobs = 

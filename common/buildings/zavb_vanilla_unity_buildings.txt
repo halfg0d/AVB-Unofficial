@@ -941,6 +941,13 @@ building_hypercomms_forum = {
 				is_memorialist_empire = yes
 			}
 		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
 
 	allow = {
@@ -984,7 +991,17 @@ building_hypercomms_forum = {
 		planet_jobs_unity_produces_mult = 0.15
 		job_culture_worker_add = @b3_jobs
 	}
-
+	#zExpanded
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = { has_valid_civic = civic_ethical_hedonism }
+		}
+		modifier = {
+			job_culture_worker_add = 3
+		}
+	}
 	triggered_desc = {
 		text = building_hypercomms_forum_effect
 	}

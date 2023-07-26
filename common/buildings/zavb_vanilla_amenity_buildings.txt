@@ -566,6 +566,15 @@ building_hyper_entertainment_forum = {
 		has_upgraded_capital = yes
 		owner = {
 			NOT = { has_valid_civic = civic_dystopian_society }
+			#zExpanded \/
+			OR = {
+				has_z_expanded_mod = no
+				AND = {
+					has_z_expanded_mod = yes
+					NOT = { has_warrior_culture = yes }
+				}
+			}
+			#zExpanded /\
 		}
 		OR = {
 			owner = {
@@ -589,9 +598,37 @@ building_hyper_entertainment_forum = {
 				free_amenities > 30
 				years_passed > 25
 			}
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_warrior_culture = yes }
+			}
 		}
 	}
-		
+
+	#zExpanded \/
+	convert_to = {
+		building_virtual_combat_arena
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+		}	
+		modifier = {
+			trade_value_mult = 0.02
+		}
+	}
+	show_tech_unlock_if = {
+		owner = {
+			OR = {
+				has_z_expanded_mod = no
+				AND = {
+					has_z_expanded_mod = yes
+					NOT = { has_warrior_culture = yes }
+				}
+			}
+		}
+	}
+	#zExpanded /\
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
