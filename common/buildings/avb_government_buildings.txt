@@ -29,6 +29,13 @@ building_avb_noble_estates_2 = {
 			}
 		}
 		NOT = { has_modifier = slave_colony }
+		OR = { #zExpanded
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
 	
 	allow = {
@@ -61,6 +68,10 @@ building_avb_noble_estates_2 = {
 					AND = {
 						has_global_flag = bug_branch_active
 						is_bugged_governmental_elitist = yes
+					}
+					AND = {
+						has_z_expanded_mod = yes
+						is_aristocratic_empire = { allow_invalid = yes }
 					}
 				}
 			}
@@ -151,6 +162,30 @@ building_avb_noble_estates_2 = {
 		planet_housing_add = 1
 	}
 	#EC: Bug /\
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+		}
+		modifier = {
+			planet_housing_add = 6
+			planet_amenities_add = 15
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = { is_ai = yes }
+			NOT = { has_building = building_noble_estates }
+			NOT = { has_building = building_palatial_estates }
+		}
+		modifier = {
+			job_starnet_spice_melange_farmer_add = 1
+			job_starnet_spice_melange_antifarmer_add = -1
+		}
+	}
+	#zExpanded /\
 }
 
 building_avb_slave_processing_2 = {

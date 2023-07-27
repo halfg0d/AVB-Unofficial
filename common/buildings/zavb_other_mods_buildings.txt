@@ -73,4 +73,96 @@ building_virtual_combat_arena = {
 		building_avb_holo_theatre_3
 	}
 }
+building_war_factory = {
+	base_buildtime = @b2_time
+	base_cap_amount = 1
+	icon = building_robot_assembly_plant
+
+	category = army
+
+	potential = {
+		NOT = { has_planet_flag = planetary_station }
+		exists = owner
+		owner = { has_valid_civic = civic_machine_terminator }
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_valid_civic = civic_machine_terminator } }
+	}
+
+	convert_to = {
+		building_military_academy
+		building_dread_encampment
+	}
+
+	allow = {
+		has_upgraded_capital = yes
+	}
+
+	army_modifier = {
+		army_starting_experience_add = 100
+	}
+
+	planet_modifier = {
+		planet_army_build_speed_mult = 0.5
+		job_warrior_drone_add = 1
+		job_patrol_drone_add = 1
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			exists = army_leader
+		}
+		modifier = {
+			empire_size_colonies_mult = 0.1
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b1_minerals
+		}			
+		upkeep = {
+			energy = @b1_upkeep
+		}
+		upkeep = {
+			trigger = { exists = army_leader }
+			energy = @b2_upkeep
+			unity = @b2_upkeep
+		}
+	}
+
+	prerequisites = {
+		"tech_centralized_command"
+	}
+
+	show_tech_unlock_if = { 
+		has_valid_civic = civic_machine_terminator
+	}
+
+	triggered_desc = {
+		text = job_warrior_drone_effect_desc
+	}
+
+	triggered_desc = {
+		text = job_patrol_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			always = yes
+		}
+		text = building_military_academy_tooltip
+	}
+	#trick the ai into building this
+	ai_resource_production = {
+		trigger = { always = yes }
+		alloys = 8
+		minerals = 8
+	}
+	upgrades = {
+		building_avb_military_academy_2
+	}
+}
 #zExpanded /\

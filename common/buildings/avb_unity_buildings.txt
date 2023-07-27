@@ -1398,8 +1398,9 @@ building_avb_machine_unity_4 = {
 		exists = owner
 		owner = {
 			is_machine_empire = yes
-			NOT = {
+			NOR = {
 				has_valid_civic = civic_machine_servitor
+				is_servitor_empire = yes
 			}
 		}
 	}
@@ -1414,6 +1415,7 @@ building_avb_machine_unity_4 = {
 			OR = {
 				is_machine_empire = no
 				has_valid_civic = civic_machine_servitor
+				is_servitor_empire = yes
 			}
 		}
 	}
@@ -1485,8 +1487,9 @@ building_avb_machine_unity_5 = {
 		exists = owner
 		owner = {
 			is_machine_empire = yes
-			NOT = {
+			NOR = {
 				has_valid_civic = civic_machine_servitor
+				is_servitor_empire = yes
 			}
 		}
 	}
@@ -1501,6 +1504,7 @@ building_avb_machine_unity_5 = {
 			OR = {
 				is_machine_empire = no
 				has_valid_civic = civic_machine_servitor
+				is_servitor_empire = yes
 			}
 		}
 	}
@@ -1572,8 +1576,9 @@ building_avb_machine_unity_6 = {
 		exists = owner
 		owner = {
 			is_machine_empire = yes
-			NOT = {
+			NOR = {
 				has_valid_civic = civic_machine_servitor
+				is_servitor_empire = yes
 			}
 		}
 	}
@@ -1588,6 +1593,7 @@ building_avb_machine_unity_6 = {
 			OR = {
 				is_machine_empire = no
 				has_valid_civic = civic_machine_servitor
+				is_servitor_empire = yes
 			}
 		}
 	}
@@ -2685,6 +2691,13 @@ building_avb_monument_hive_4 = {
 			is_hive_empire = yes
 			is_memorialist_empire = no
 		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
 
 	allow = {
@@ -2761,6 +2774,13 @@ building_avb_monument_hive_5 = {
 		owner = {
 			is_hive_empire = yes
 			is_memorialist_empire = no
+		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
 		}
 	}
 
@@ -2839,6 +2859,13 @@ building_avb_monument_hive_6 = {
 			is_hive_empire = yes
 			is_memorialist_empire = no
 		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
 
 	allow = {
@@ -2913,6 +2940,13 @@ building_avb_monument_machine_4 = {
 		owner = {
 			is_machine_empire = yes
 			is_memorialist_empire = no
+		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
 		}
 	}
 
@@ -2992,6 +3026,13 @@ building_avb_monument_machine_5 = {
 			is_machine_empire = yes
 			is_memorialist_empire = no
 		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
 
 	allow = {
@@ -3069,6 +3110,13 @@ building_avb_monument_machine_6 = {
 		owner = {
 			is_machine_empire = yes
 			is_memorialist_empire = no
+		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
 		}
 	}
 
@@ -3537,14 +3585,39 @@ building_avb_organic_sanctuary_3 = {
 	base_buildtime = @avb_u4_time
 	can_build = no
 	category = unity
+	
 	potential = {
 		exists = owner
-		owner = { has_valid_civic = civic_machine_servitor }
+		owner = {
+			OR = {
+				has_valid_civic = civic_machine_servitor
+				AND = {
+					has_z_expanded_mod = yes
+					OR = {
+						is_servitor_empire = yes
+						has_valid_civic = civic_machine_consciousness
+					}
+				}
+			}
+		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
-	
+
 	destroy_trigger = {
 		exists = owner
-		NOT = { owner = { has_valid_civic = civic_machine_servitor } }
+		owner = {
+			NOR = {
+				has_valid_civic = civic_machine_servitor
+				is_servitor_empire = yes
+				has_valid_civic = civic_machine_consciousness
+			}
+		}
 	}
 	
 	convert_to = {
@@ -3559,6 +3632,31 @@ building_avb_organic_sanctuary_3 = {
 		job_maintenance_drone_add = 2
 	}
 	
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				is_servitor_empire = yes
+			}
+		}
+		modifier = {
+			job_servitor_caretaker_drone_add = 2
+			job_maintenance_drone_add = -2
+		}
+	}
+	triggered_desc = {
+		trigger = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				is_servitor_empire = yes
+			}
+		}
+		text = job_servitor_caretaker_drone_effect_desc
+	}
+	#zExpanded /\
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -3585,7 +3683,13 @@ building_avb_organic_sanctuary_3 = {
 	prerequisites = { "tech_avb_residence_3" }
 	
 	show_tech_unlock_if = {
-		owner = { has_valid_civic = civic_machine_servitor }
+		owner = {
+			OR = {
+				has_valid_civic = civic_machine_servitor
+				is_servitor_empire = yes 
+				has_valid_civic = civic_machine_consciousness 
+			}
+		}
 	}
 	
 	upgrades = {
@@ -3597,14 +3701,39 @@ building_avb_organic_sanctuary_4 = {
 	base_buildtime = @avb_u5_time
 	can_build = no
 	category = unity
+
 	potential = {
 		exists = owner
-		owner = { has_valid_civic = civic_machine_servitor }
+		owner = {
+			OR = {
+				has_valid_civic = civic_machine_servitor
+				AND = {
+					has_z_expanded_mod = yes
+					OR = {
+						is_servitor_empire = yes
+						has_valid_civic = civic_machine_consciousness
+					}
+				}
+			}
+		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
-	
+
 	destroy_trigger = {
 		exists = owner
-		NOT = { owner = { has_valid_civic = civic_machine_servitor } }
+		owner = {
+			NOR = {
+				has_valid_civic = civic_machine_servitor
+				is_servitor_empire = yes
+				has_valid_civic = civic_machine_consciousness
+			}
+		}
 	}
 	
 	convert_to = {
@@ -3619,6 +3748,31 @@ building_avb_organic_sanctuary_4 = {
 		job_maintenance_drone_add = 3
 	}
 	
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				is_servitor_empire = yes
+			}
+		}
+		modifier = {
+			job_servitor_caretaker_drone_add = 3
+			job_maintenance_drone_add = -3
+		}
+	}
+	triggered_desc = {
+		trigger = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				is_servitor_empire = yes
+			}
+		}
+		text = job_servitor_caretaker_drone_effect_desc
+	}
+	#zExpanded /\
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -3644,6 +3798,12 @@ building_avb_organic_sanctuary_4 = {
 	prerequisites = { "tech_avb_residence_4" }
 	
 	show_tech_unlock_if = {
-		owner = { has_valid_civic = civic_machine_servitor }
+		owner = {
+			OR = {
+				has_valid_civic = civic_machine_servitor
+				is_servitor_empire = yes 
+				has_valid_civic = civic_machine_consciousness 
+			}
+		}
 	}
 }

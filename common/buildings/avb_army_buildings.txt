@@ -82,6 +82,25 @@ building_avb_military_academy_2 = {
 		}
 	}
 
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+		}
+		modifier = {
+			planet_army_build_speed_mult = 0.5
+		}
+	}
+	triggered_country_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = army_leader
+		}
+		modifier = {
+			empire_size_colonies_mult = 0.1
+		}
+	}
+	#zExpanded /\
 	#EC: Classic \/
 	triggered_planet_modifier = {
 		potential = {
@@ -134,6 +153,12 @@ building_avb_military_academy_2 = {
 			owner = { is_gestalt = no }
 		}
 		text = job_soldier_effect_desc
+	}
+	triggered_desc = { #zExpanded
+		trigger = {
+			has_z_expanded_mod = yes
+		}
+		text = building_military_academy_tooltip
 	}
 }
 

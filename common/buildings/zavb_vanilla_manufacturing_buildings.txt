@@ -195,6 +195,10 @@ building_refinery = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
 			has_modifier = crucible_colony
+			AND = {
+				has_z_expanded_mod = yes
+				has_planet_flag = planetary_station
+			}
 		}
 	}
 	
@@ -252,6 +256,23 @@ building_refinery = {
 		"building_avb_refinery_2"
 		#"eb_refinery"
 	}
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				is_ai = yes
+				str_force_gases = yes
+			}
+			NOT = { has_building = building_refinery }
+		}
+		modifier = {
+			job_starnet_spice_melange_farmer_add = 2
+			job_starnet_spice_melange_antifarmer_add = -2
+		}
+	}
+	#zExpanded /\
 }
 
 building_chemical_plant = {
@@ -464,13 +485,35 @@ building_nanite_transmuter = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
 			has_modifier = crucible_colony
+			AND = {
+				has_z_expanded = yes
+				has_planet_flag = planetary_station
+			}
 		}
 	}
 	
 	allow = {
 		has_upgraded_capital = yes
 	}
-	
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = { is_ai = yes }
+			NOT = { has_building = building_ministry_production }
+			or = {
+				has_factory_designation = yes
+				has_foundry_designation = yes
+				has_industrial_designation = yes
+			}
+		}
+		modifier = {
+			job_starnet_spice_melange_farmer_add = 1
+			job_starnet_spice_melange_antifarmer_add = -1
+		}
+	}
+	#zExpanded /\
 	resources = {
 		category = planet_buildings
 		cost = {

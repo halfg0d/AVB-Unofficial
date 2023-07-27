@@ -559,8 +559,9 @@ building_system_conflux = {
 		exists = owner
 		owner = {
 			is_machine_empire = yes
-			NOT = {
+			NOR = {
 				has_valid_civic = civic_machine_servitor
+				is_servitor_empire = yes
 			}
 		}
 	}
@@ -575,6 +576,7 @@ building_system_conflux = {
 			OR = {
 				is_machine_empire = no
 				has_valid_civic = civic_machine_servitor
+				is_servitor_empire = yes
 			}
 		}
 	}
@@ -583,6 +585,7 @@ building_system_conflux = {
 		building_bureaucratic_3
 		building_sacred_nexus
 		building_hive_confluence
+		building_sensorium_3
 	}
 
 	resources = {
@@ -643,12 +646,36 @@ building_organic_paradise = {
 	category = unity
 	potential = {
 		exists = owner
-		owner = { has_valid_civic = civic_machine_servitor }
+		owner = {
+			OR = {
+				has_valid_civic = civic_machine_servitor
+				AND = {
+					has_z_expanded_mod = yes
+					OR = {
+						is_servitor_empire = yes
+						has_valid_civic = civic_machine_consciousness
+					}
+				}
+			}
+		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
 
 	destroy_trigger = {
 		exists = owner
-		NOT = { owner = { has_valid_civic = civic_machine_servitor } }
+		owner = {
+			NOR = {
+				has_valid_civic = civic_machine_servitor
+				is_servitor_empire = yes
+				has_valid_civic = civic_machine_consciousness
+			}
+		}
 	}
 
 	convert_to = {
@@ -661,7 +688,31 @@ building_organic_paradise = {
 		job_artisan_drone_add = 2
 		job_maintenance_drone_add = 1
 	}
-
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				is_servitor_empire = yes
+			}
+		}
+		modifier = {
+			job_servitor_caretaker_drone_add = 1
+			job_maintenance_drone_add = -1
+		}
+	}
+	triggered_desc = {
+		trigger = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				is_servitor_empire = yes
+			}
+		}
+		text = job_servitor_caretaker_drone_effect_desc
+	}
+	#zExpanded /\
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -689,7 +740,13 @@ building_organic_paradise = {
 	prerequisites = { "tech_paradise_dome" }
 
 	show_tech_unlock_if = {
-		owner = { has_valid_civic = civic_machine_servitor }
+		owner = {
+			OR = {
+				has_valid_civic = civic_machine_servitor
+				is_servitor_empire = yes 
+				has_valid_civic = civic_machine_consciousness 
+			}
+		}
 	}
 
 	# Here we try to adress the second issue that the AI cant evaluate the pop job output of the bio trophy given the happiness trigger that was put inplace to guard against players exploiting bio trophies
@@ -1116,6 +1173,13 @@ building_simulation_3 = {
 			is_machine_empire = yes
 			is_memorialist_empire = no
 		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
 
 	allow = {
@@ -1195,6 +1259,13 @@ building_sensorium_3 = {
 		owner = {
 			is_hive_empire = yes
 			is_memorialist_empire = no
+		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
 		}
 	}
 

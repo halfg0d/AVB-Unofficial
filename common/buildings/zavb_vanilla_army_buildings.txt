@@ -19,6 +19,20 @@ building_military_academy = {
 					is_bugged_reanimator = no #EC: Bug <<
 				}
 			}
+			OR = {
+				has_z_expanded_mod = no
+				AND = {
+					has_z_expanded_mod = yes
+					NOT = { has_valid_civic = civic_machine_terminator }
+				}
+			}
+		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
 		}
 	}
 
@@ -54,12 +68,17 @@ building_military_academy = {
 						}
 					}
 				}
+				AND = {
+					has_z_expanded_mod = yes
+					NOT = { has_valid_civic = civic_machine_terminator }
+				}
 			}
 		}
 	}
 
 	convert_to = {
 		building_dread_encampment
+		building_war_factory #zExpanded
 	}
 
 	army_modifier = {
@@ -84,6 +103,25 @@ building_military_academy = {
 			job_warrior_drone_add = @b1_jobs
 		}
 	}
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+		}
+		modifier = {
+			planet_army_build_speed_mult = 0.5
+		}
+	}
+	triggered_country_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = army_leader
+		}
+		modifier = {
+			empire_size_colonies_mult = 0.1
+		}
+	}
+	#zExpanded /\
 	#EC: Classic \/
 	triggered_planet_modifier = {
 		potential = {
@@ -121,6 +159,7 @@ building_military_academy = {
 
 	show_tech_unlock_if = {
 		NOT = { has_valid_civic = civic_reanimated_armies }
+		NOT = { has_valid_civic = civic_machine_terminator }
 	}
 
 	triggered_desc = {
@@ -137,7 +176,12 @@ building_military_academy = {
 		}
 		text = job_soldier_effect_desc
 	}
-	
+	triggered_desc = { #zExpanded
+		trigger = {
+			has_z_expanded_mod = yes
+		}
+		text = building_military_academy_tooltip
+	}
 	upgrades = {
 		"building_avb_military_academy_2"
 		"building_eutab_battle_praxeum"

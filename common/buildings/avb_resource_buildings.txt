@@ -709,6 +709,10 @@ building_avb_mineral_purification_3 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = crucible_colony
+			AND = {
+				has_z_expanded = yes
+				has_planet_flag = planetary_station
+			}
 		}
 	}
 	
@@ -722,6 +726,10 @@ building_avb_mineral_purification_3 = {
 					is_ai = yes
 				}
 				has_any_mining_district = no
+			}
+			AND = {
+				has_z_expanded_mod = yes
+				has_planet_flag = planetary_station
 			}
 		}
 	}
@@ -841,6 +849,53 @@ building_avb_mineral_purification_3 = {
 		}
 	}
 	#EC: Bug /\
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = { has_civic = civic_mining_guilds }
+		}
+		modifier = {
+			job_guildmaster_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			has_global_flag = EcologyMod_active
+		}
+		modifier = {
+			planet_miners_waste_produces_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				OR = {
+					is_robot_empire = yes
+					is_lithoid_empire = yes
+				}
+			}
+		}
+		modifier = {
+			planet_miners_minerals_produces_mult = 0.05
+		}
+	}
+	triggered_desc = {
+		trigger = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_civic = civic_mining_guilds
+			}
+		}
+		text = job_guildmaster_effect_desc
+	}	
+	#zExpanded /\
 	triggered_planet_modifier = {
 		potential = {
 			NOT = { is_planet_class = pc_shattered_ring_habitable }
@@ -975,6 +1030,10 @@ building_avb_mineral_purification_4 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = crucible_colony
+			AND = {
+				has_z_expanded = yes
+				has_planet_flag = planetary_station
+			}
 		}
 	}
 	
@@ -988,6 +1047,10 @@ building_avb_mineral_purification_4 = {
 					is_ai = yes
 				}
 				has_any_mining_district = no
+			}
+			AND = {
+				has_z_expanded_mod = yes
+				has_planet_flag = planetary_station
 			}
 		}
 	}
@@ -1116,6 +1179,53 @@ building_avb_mineral_purification_4 = {
 		}
 	}
 	#EC: Bug /\
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = { has_civic = civic_mining_guilds }
+		}
+		modifier = {
+			job_guildmaster_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			has_global_flag = EcologyMod_active
+		}
+		modifier = {
+			planet_miners_waste_produces_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				OR = {
+					is_robot_empire = yes
+					is_lithoid_empire = yes
+				}
+			}
+		}
+		modifier = {
+			planet_miners_minerals_produces_mult = 0.05
+		}
+	}
+	triggered_desc = {
+		trigger = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_civic = civic_mining_guilds
+			}
+		}
+		text = job_guildmaster_effect_desc
+	}	
+	#zExpanded /\
 	triggered_planet_modifier = {
 		potential = {
 			NOT = { is_planet_class = pc_shattered_ring_habitable }
