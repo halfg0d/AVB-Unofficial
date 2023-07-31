@@ -40,7 +40,7 @@ building_avb_commercial_3 = {
 		}
 	}
 	inline_script = {
-		script = trade_buildings/avb_commercials.txt
+		script = trade_buildings/avb_commercials
 		tier = 3
 	}
 	resources = {
@@ -142,7 +142,7 @@ building_avb_commercial_4 = {
 	}
 	
 	inline_script = {
-		script = trade_buildings/avb_commercials.txt
+		script = trade_buildings/avb_commercials
 		tier = 4
 	}
 
@@ -243,7 +243,7 @@ building_avb_commercial_5 = {
 	}
 
 	inline_script = {
-		script = trade_buildings/avb_commercials.txt
+		script = trade_buildings/avb_commercials
 		tier = 5
 	}
 	

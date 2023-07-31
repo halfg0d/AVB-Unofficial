@@ -800,7 +800,15 @@ tech_avb_monument_4 = {
 		modifier = { # No tech without builded previous cbuilding
 			factor = 0
 			NOT = {
-				any_owned_planet = { has_building = building_hypercomms_forum }
+				any_owned_planet = {
+					OR = {
+						has_building = building_hypercomms_forum
+						has_building = building_corporate_forum
+						has_building = building_sensorium_3
+						has_building = building_simulation_3
+						has_building = building_galactic_memorial_3
+					}
+				}
 			}
 		}
 	}
@@ -825,7 +833,15 @@ tech_avb_monument_5 = {
 		modifier = { # No tech without builded previous cbuilding
 			factor = 0
 			NOT = {
-				any_owned_planet = { has_building = building_avb_monument_4 }
+				any_owned_planet = {
+					OR = {
+						has_building = building_avb_monument_4
+						has_building = building_avb_monument_corp_4
+						has_building = building_avb_monument_machine_4
+						has_building = building_avb_monument_hive_4
+						has_building = building_avb_monument_memorial_4
+					}
+				}
 			}
 		}
 	}
@@ -849,7 +865,15 @@ tech_avb_monument_6 = {
 		modifier = { # No tech without builded previous cbuilding
 			factor = 0
 			NOT = {
-				any_owned_planet = { has_building = building_avb_monument_5 }
+				any_owned_planet = {
+					OR = {
+						has_building = building_avb_monument_5
+						has_building = building_avb_monument_corp_5
+						has_building = building_avb_monument_machine_5
+						has_building = building_avb_monument_hive_5
+						has_building = building_avb_monument_memorial_5
+					}
+				}
 			}
 		}
 	}

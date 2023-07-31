@@ -439,7 +439,7 @@ building_avb_temple_4 = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner.federation
 			owner.federation = { has_federation_perk = all_the_priests_2 }
 			owner = {
@@ -452,7 +452,7 @@ building_avb_temple_4 = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner
 			owner = { is_megacorp = no }
 			owner = {
@@ -465,7 +465,7 @@ building_avb_temple_4 = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner
 			owner = { is_megacorp = yes }
 			owner = {
@@ -687,7 +687,7 @@ building_avb_temple_5 = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner.federation
 			owner.federation = { has_federation_perk = all_the_priests_2 }
 			owner = {
@@ -700,7 +700,7 @@ building_avb_temple_5 = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner
 			owner = { is_megacorp = no }
 			owner = {
@@ -713,7 +713,7 @@ building_avb_temple_5 = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner
 			owner = { is_megacorp = yes }
 			owner = {
@@ -932,7 +932,7 @@ building_avb_temple_6 = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner.federation
 			owner.federation = { has_federation_perk = all_the_priests_2 }
 			owner = {
@@ -945,7 +945,7 @@ building_avb_temple_6 = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner
 			owner = { is_megacorp = no }
 			owner = {
@@ -958,7 +958,7 @@ building_avb_temple_6 = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner
 			owner = { is_megacorp = yes }
 			owner = {
@@ -1029,7 +1029,7 @@ building_avb_hive_unity_4 = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner
 			owner = {
 				has_tradition = tr_plentiful_aspiration_3
@@ -1041,7 +1041,7 @@ building_avb_hive_unity_4 = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner
 			owner = { is_hive_empire = yes }
 			owner = {
@@ -1153,7 +1153,7 @@ building_avb_hive_unity_5 = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner
 			owner = {
 				has_tradition = tr_plentiful_aspiration_3
@@ -1165,7 +1165,7 @@ building_avb_hive_unity_5 = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner
 			owner = { is_hive_empire = yes }
 			owner = {
@@ -1277,7 +1277,7 @@ building_avb_hive_unity_6 = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner
 			owner = {
 				has_tradition = tr_plentiful_aspiration_3
@@ -1289,7 +1289,7 @@ building_avb_hive_unity_6 = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner
 			owner = { is_hive_empire = yes }
 			owner = {
@@ -1416,7 +1416,7 @@ building_avb_machine_unity_4 = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner
 			owner = { is_machine_empire = yes }
 			owner = {
@@ -1503,7 +1503,7 @@ building_avb_machine_unity_5 = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner
 			owner = { is_machine_empire = yes }
 			owner = {
@@ -1587,7 +1587,7 @@ building_avb_machine_unity_6 = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner
 			owner = { is_machine_empire = yes }
 			owner = {
@@ -1680,7 +1680,7 @@ building_avb_death_temple_4 = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner
 			owner = { is_megacorp = no }
 			owner = {
@@ -1694,7 +1694,7 @@ building_avb_death_temple_4 = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner
 			owner = { is_megacorp = yes }
 			owner = {
@@ -1848,7 +1848,7 @@ building_avb_death_temple_5 = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner
 			owner = { is_megacorp = no }
 			owner = {
@@ -1862,7 +1862,7 @@ building_avb_death_temple_5 = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner
 			owner = { is_megacorp = yes }
 			owner = {
@@ -2016,7 +2016,7 @@ building_avb_death_temple_6 = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner
 			owner = { is_megacorp = no }
 			owner = {
@@ -2030,7 +2030,7 @@ building_avb_death_temple_6 = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner
 			owner = { is_megacorp = yes }
 			owner = {
@@ -2638,7 +2638,7 @@ building_avb_monument_hive_4 = {
 	}
 
 	prerequisites = {
-		"tech_avb_hive_unity_4"
+		"tech_avb_monument_4"
 	}
 
 	show_tech_unlock_if = {
@@ -2715,7 +2715,7 @@ building_avb_monument_hive_5 = {
 	}
 
 	prerequisites = {
-		"tech_avb_hive_unity_5"
+		"tech_avb_monument_5"
 	}
 
 	show_tech_unlock_if = {
@@ -2792,7 +2792,7 @@ building_avb_monument_hive_6 = {
 	}
 
 	prerequisites = {
-		"tech_avb_hive_unity_6"
+		"tech_avb_monument_6"
 	}
 
 	show_tech_unlock_if = {

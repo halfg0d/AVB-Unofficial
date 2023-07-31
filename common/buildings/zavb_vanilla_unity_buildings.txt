@@ -288,7 +288,7 @@ building_sacred_nexus = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner.federation
 			owner.federation = { has_federation_perk = all_the_priests_2 }
 			owner = {
@@ -301,7 +301,7 @@ building_sacred_nexus = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner
 			owner = { is_megacorp = no }
 			owner = {
@@ -314,7 +314,7 @@ building_sacred_nexus = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner
 			owner = { is_megacorp = yes }
 			owner = {
@@ -383,7 +383,7 @@ building_hive_confluence = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner
 			owner = {
 				has_tradition = tr_plentiful_aspiration_3
@@ -395,7 +395,7 @@ building_hive_confluence = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner
 			owner = { is_hive_empire = yes }
 			owner = {
@@ -525,7 +525,7 @@ building_system_conflux = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner
 			owner = { is_machine_empire = yes }
 			owner = {
@@ -796,7 +796,7 @@ building_sacrificial_temple_3 = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner
 			owner = { is_megacorp = no }
 			owner = {
@@ -810,7 +810,7 @@ building_sacrificial_temple_3 = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner
 			owner = { is_megacorp = yes }
 			owner = {

@@ -209,7 +209,7 @@ building_avb_stronghold_3 = {
 	}
 	#PT \/
 	destroy_trigger = {
-		has_global_flag = pt_flag
+		has_plentiful_tradition_mod = yes
 		exists = owner
 		owner = { is_ai = yes }
 		num_buildings = { type = building_fortress value > 1 }
@@ -355,7 +355,7 @@ building_avb_stronghold_4 = {
 	}
 	#PT \/
 	destroy_trigger = {
-		has_global_flag = pt_flag
+		has_plentiful_tradition_mod = yes
 		exists = owner
 		owner = { is_ai = yes }
 		num_buildings = { type = building_fortress value > 1 }
@@ -502,7 +502,7 @@ building_avb_stronghold_5 = {
 	}
 	#PT \/
 	destroy_trigger = {
-		has_global_flag = pt_flag
+		has_plentiful_tradition_mod = yes
 		exists = owner
 		owner = { is_ai = yes }
 		num_buildings = { type = building_fortress value > 1 }

@@ -209,7 +209,7 @@ building_fortress = {
 
 	#PT \/
 	destroy_trigger = {
-		has_global_flag = pt_flag
+		has_plentiful_tradition_mod = yes
 		exists = owner
 		owner = { is_ai = yes }
 		num_buildings = { type = building_fortress value > 1 }

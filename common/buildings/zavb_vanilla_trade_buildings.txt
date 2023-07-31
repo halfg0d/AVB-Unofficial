@@ -77,7 +77,7 @@ building_commercial_megaplex = {
 		}
 	}
 	inline_script = {
-		script = trade_buildings/avb_commercials.txt
+		script = trade_buildings/avb_commercials
 		tier = 2
 	}
 	ai_resource_production = {

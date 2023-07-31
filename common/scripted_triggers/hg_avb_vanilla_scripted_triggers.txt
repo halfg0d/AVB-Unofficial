@@ -69,3 +69,32 @@ is_toxic_origin2_trigger = {
 		owner = { has_origin = origin_toxic_knights }
 	}
 }
+
+has_plentiful_tradition_mod = {
+	OR = {
+		any_country = {
+			has_ascension_perk = ap_plentiful_traditions_vast_slave_procreation
+			has_ascension_perk = ap_total_assimilation
+			has_tradition = tr_plentiful_aspiration_3
+			has_tradition = tr_plentiful_affinity_adopt
+			has_tradition = tr_plentiful_anguish_adopt
+			has_tradition = tr_plentiful_aspiration_adopt
+			has_tradition = tr_plentiful_assault_adopt
+			has_tradition = tr_plentiful_biogenesis_adopt
+			has_tradition = tr_plentiful_dedication_adopt
+			has_tradition = tr_plentiful_defence_adopt
+			has_tradition = tr_plentiful_endure_adopt
+			has_tradition = tr_plentiful_experimentalism_adopt
+			has_tradition = tr_plentiful_faith_adopt
+			has_tradition = tr_plentiful_genetic_cyborg_adopt
+			has_tradition = tr_plentiful_industry_adopt
+			has_tradition = tr_plentiful_kleptocracy_adopt
+			has_tradition = tr_plentiful_malice_adopt
+			has_tradition = tr_plentiful_mutagenesis_adopt
+			has_tradition = tr_plentiful_mysticism_adopt
+			has_tradition = tr_plentiful_order_adopt
+			has_tradition = tr_plentiful_robotics_adopt
+			has_tradition = tr_plentiful_transformation_adopt
+		}
+	}
+}

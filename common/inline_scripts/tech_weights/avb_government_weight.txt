@@ -1,8 +1,20 @@
 # Weight scaling with colonies number
 modifier = {
-	factor = value:avb_colonies_scaling
+	factor = 2
 	count_owned_planet = {
-		count > 1
+		count > 3
+	}
+}
+modifier = {
+	factor = 5
+	count_owned_planet = {
+		count > 10
+	}
+}
+modifier = {
+	factor = 10
+	count_owned_planet = {
+		count > 20
 	}
 }
 # Pacifist easier get government type techs

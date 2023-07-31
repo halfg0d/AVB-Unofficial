@@ -214,7 +214,7 @@ building_avb_slave_processing_2 = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner
 			owner = { has_ascension_perk = ap_plentiful_traditions_vast_slave_procreation }
 			OR = {
@@ -228,7 +228,7 @@ building_avb_slave_processing_2 = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_plentiful_tradition_mod = yes
 			exists = owner
 		}
 		modifier = {
