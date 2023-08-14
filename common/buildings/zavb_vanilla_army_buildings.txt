@@ -70,7 +70,7 @@ building_military_academy = {
 				}
 				AND = {
 					has_z_expanded_mod = yes
-					NOT = { has_valid_civic = civic_machine_terminator }
+					has_valid_civic = civic_machine_terminator
 				}
 			}
 		}
@@ -462,6 +462,7 @@ building_fortress = {
 	}
 	upgrades = {
 		"building_avb_stronghold_3"
+		"building_citadel"
 	}
 }
 

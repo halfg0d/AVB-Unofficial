@@ -12,7 +12,7 @@ building_avb_residence_3 = {
 		OR = {
 			NOT = { 
 				OR = {
-					is_planet_class = pc_habitat
+					is_habitat = yes
 					is_pd_habitat = yes
 				}
 			}
@@ -39,6 +39,13 @@ building_avb_residence_3 = {
 			owner = { has_valid_civic = civic_shared_burden }
 			has_modifier = slave_colony
 			owner = { is_ai = yes }
+			AND = {
+				OR = {
+					owner = { is_shared_burden_empire = yes }
+					owner = { has_valid_civic = civic_worker_coop }
+				}
+				has_z_expanded_mod = yes
+			}
 		}
 	}
 	
@@ -89,15 +96,48 @@ building_avb_residence_3 = {
 		}
 	}
 	#EC: Classic/Bug /\
+	#zExpanded \/
+	inline_script = {
+		script = job_groups/entertainer_add
+		trigger = "
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = { is_pleasure_seeker = yes }
+		"
+		count = 2
+		desc = " "
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_technology = tech_housing_1 
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_technology = tech_housing_2 
+				NOT = { is_agrarian_empire = { allow_invalid = yes } }
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	#zExpanded /\
 	resources = {
 		category = planet_buildings
-		cost = {
-			minerals = @avb_b3_minerals
-			rare_crystals = 100
-		}
-		upkeep = {
-			energy = @avb_b3_upkeep
-			rare_crystals = 2
+		inline_script = {
+			script = "amenity_buildings/avb_residence_resources"
+			tier = 3
 		}
 	}
 	
@@ -113,6 +153,13 @@ building_avb_residence_3 = {
 		owner = { 
 			is_regular_empire = yes
 			NOT = { has_valid_civic = civic_shared_burden }
+			AND = {
+				has_z_expanded_mod = yes
+				NOR ={
+					NOT = { is_shared_burden_empire = yes }
+					NOT = { has_valid_civic = civic_worker_coop }
+				}
+			}
 		}
 	}
 }
@@ -128,7 +175,7 @@ building_avb_residence_4 = {
 		OR = {
 			NOT = { 
 				OR = {
-					is_planet_class = pc_habitat
+					is_habitat = yes
 					is_pd_habitat = yes
 				}
 			}
@@ -155,6 +202,13 @@ building_avb_residence_4 = {
 			owner = { has_valid_civic = civic_shared_burden }
 			has_modifier = slave_colony
 			owner = { is_ai = yes }
+			AND = {
+				OR = {
+					owner = { is_shared_burden_empire = yes }
+					owner = { has_valid_civic = civic_worker_coop }
+				}
+				has_z_expanded_mod = yes
+			}
 		}
 	}
 	
@@ -206,15 +260,48 @@ building_avb_residence_4 = {
 		}
 	}
 	#EC: Classic/Bug /\
+	#zExpanded \/
+	inline_script = {
+		script = job_groups/entertainer_add
+		trigger = "
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = { is_pleasure_seeker = yes }
+		"
+		count = 3
+		desc = " "
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_technology = tech_housing_1 
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_technology = tech_housing_2 
+				NOT = { is_agrarian_empire = { allow_invalid = yes } }
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	#zExpanded /\
 	resources = {
 		category = planet_buildings
-		cost = {
-			minerals = @avb_b4_minerals
-			rare_crystals = 150
-		}
-		upkeep = {
-			energy = @avb_b4_upkeep
-			rare_crystals = 3
+		inline_script = {
+			script = "amenity_buildings/avb_residence_resources"
+			tier = 4
 		}
 	}
 	
@@ -230,6 +317,13 @@ building_avb_residence_4 = {
 		owner = { 
 			is_regular_empire = yes
 			NOT = { has_valid_civic = civic_shared_burden }
+			AND = {
+				has_z_expanded_mod = yes
+				NOR ={
+					NOT = { is_shared_burden_empire = yes }
+					NOT = { has_valid_civic = civic_worker_coop }
+				}
+			}
 		}
 	}
 }
@@ -245,7 +339,7 @@ building_avb_residence_5 = {
 		OR = {
 			NOT = { 
 				OR = {
-					is_planet_class = pc_habitat
+					is_habitat = yes
 					is_pd_habitat = yes
 				}
 			}
@@ -272,6 +366,13 @@ building_avb_residence_5 = {
 			owner = { has_valid_civic = civic_shared_burden }
 			has_modifier = slave_colony
 			owner = { is_ai = yes }
+			AND = {
+				OR = {
+					owner = { is_shared_burden_empire = yes }
+					owner = { has_valid_civic = civic_worker_coop }
+				}
+				has_z_expanded_mod = yes
+			}
 		}
 	}
 	
@@ -323,15 +424,48 @@ building_avb_residence_5 = {
 		}
 	}
 	#EC: Classic/Bug /\
+	#zExpanded \/
+	inline_script = {
+		script = job_groups/entertainer_add
+		trigger = "
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = { is_pleasure_seeker = yes }
+		"
+		count = 3
+		desc = " "
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_technology = tech_housing_1 
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_technology = tech_housing_2 
+				NOT = { is_agrarian_empire = { allow_invalid = yes } }
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	#zExpanded /\
 	resources = {
 		category = planet_buildings
-		cost = {
-			minerals = @avb_b5_minerals
-			rare_crystals = 200
-		}
-		upkeep = {
-			energy = @avb_b5_upkeep
-			rare_crystals = 4
+		inline_script = {
+			script = "amenity_buildings/avb_residence_resources"
+			tier = 5
 		}
 	}
 	
@@ -343,6 +477,13 @@ building_avb_residence_5 = {
 		owner = { 
 			is_regular_empire = yes
 			NOT = { has_valid_civic = civic_shared_burden }
+			AND = {
+				has_z_expanded_mod = yes
+				NOR ={
+					NOT = { is_shared_burden_empire = yes }
+					NOT = { has_valid_civic = civic_worker_coop }
+				}
+			}
 		}
 	}
 }
@@ -541,7 +682,7 @@ building_avb_communal_housing_4 = {
 		has_upgraded_capital_5 = yes
 	}
 	
-	how_tech_unlock_if = { 
+	show_tech_unlock_if = { 
 		owner = { 
 			is_gestalt = no
 			OR = {
@@ -2120,10 +2261,16 @@ building_avb_ranger_lodge_2 = {
 			has_valid_civic = civic_environmentalist
 		}
 		NOR = {
+			#Vanilla
 			is_planet_class = pc_city
 			is_planet_class = pc_hive
 			is_planet_class = pc_machine
 			is_planet_class = pc_relic
+			#With other mods
+			is_city_world = yes
+			is_hive_world = yes
+			is_machine_world = yes
+			is_relic_world = yes
 		}
 		is_artificial = no
 	}
@@ -2143,13 +2290,24 @@ building_avb_ranger_lodge_2 = {
 	destroy_trigger = {
 		exists = owner
 		OR = {
-			owner = { is_gestalt = yes}
+			owner = { is_gestalt = yes }
 			has_modifier = slave_colony
-			owner = { NOT = { has_valid_civic = civic_environmentalist } }
+			owner = {
+				NOR = {
+					has_valid_civic = civic_environmentalist 
+					is_enviromentalist_empire = yes
+				} 
+			}
+			#Vanilla
 			is_planet_class = pc_city
 			is_planet_class = pc_hive
 			is_planet_class = pc_machine
 			is_planet_class = pc_relic
+			#With other mods
+			is_city_world = yes
+			is_hive_world = yes
+			is_machine_world = yes
+			is_relic_world = yes
 		}
 	}
 
@@ -2157,45 +2315,41 @@ building_avb_ranger_lodge_2 = {
 		job_ranger_add = @avb_a2_jobs
 		deposit_blockers_natural_unity_produces_add = 4
 	}
+	inline_script = amenity_buildings/avb_ranger_resolutions
 
-	ai_resource_production = {
-		unity = 2
-		mult = value:natural_blocker_count
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+		}
+		deposit_blockers_natural_unity_produces_add = 2
+		pop_environment_tolerance = 0.05
 	}
-
-	ai_resource_production = {
-		unity = 1
-		trigger = { owner_has_resolution = { RES = resolution_ecology_integrated_gardens } }
-		mult = value:natural_blocker_count
-	}
-
-	ai_resource_production = {
-		unity = 1
-		trigger = { owner_has_resolution = { RES = resolution_ecology_environmental_control_board } }
-		mult = value:natural_blocker_count
-	}
-
-	ai_resource_production = {
-		unity = 1
-		trigger = { owner_has_resolution = { RES = resolution_ecology_paradise_initiative } }
-		mult = value:natural_blocker_count
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			has_global_flag = EcologyMod_active
+		}
+		job_park_ranger_add = @avb_a2_jobs
+		job_ranger_add = -@avb_a2_jobs
 	}
 
 	triggered_planet_modifier = {
-		potential = { owner_has_resolution = { RES = resolution_ecology_integrated_gardens } }
-		deposit_blockers_natural_unity_produces_add = 1
+		potential = {
+			has_z_expanded_mod = yes
+			has_designation = col_resort
+			NOT = { has_global_flag = EcologyMod_active }
+		}
+		job_ranger_per_pop = 0.15 # 3 job per 20 pops
 	}
-
 	triggered_planet_modifier = {
-		potential = { owner_has_resolution = { RES = resolution_ecology_environmental_control_board } }
-		deposit_blockers_natural_unity_produces_add = 1
+		potential = {
+			has_z_expanded_mod = yes
+			has_designation = col_resort
+			has_global_flag = EcologyMod_active
+		}
+		job_park_ranger_per_pop = 0.15 # 3 job per 20 pops
 	}
-
-	triggered_planet_modifier = {
-		potential = { owner_has_resolution = { RES = resolution_ecology_paradise_initiative } }
-		deposit_blockers_natural_unity_produces_add = 1
-	}
-
+	#zExpanded /\
 	resources = {
 		category = planet_buildings
 		cost = {

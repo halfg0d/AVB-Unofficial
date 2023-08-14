@@ -111,13 +111,11 @@ building_factory_3 = {
 
 			AND = {
 				has_z_expanded_mod = yes
-				OR = {
-					NOT = { has_modifier = slave_colony }
-					owner = {
-						OR = {
-							has_valid_civic = civic_indentured_assets
-							has_valid_civic = civic_slaver_guilds
-						}
+				has_modifier = slave_colony
+				owner = {
+					NOR = {
+						has_valid_civic = civic_indentured_assets
+						has_valid_civic = civic_slaver_guilds
 					}
 				}
 			}

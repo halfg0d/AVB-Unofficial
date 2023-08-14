@@ -1,6 +1,6 @@
 # Weight scaling with colonies number
 modifier = {
-	factor = value:avb_colonies_scaling
+	factor = 5
 	count_owned_planet = {
 		count > 1
 	}

@@ -13,7 +13,7 @@ building_paradise_dome = {
 		OR = {
 			NOT = { 
 				OR = {
-					is_planet_class = pc_habitat
+					is_habitat = yes
 					is_pd_habitat = yes
 				}
 			}
@@ -40,6 +40,13 @@ building_paradise_dome = {
 			owner = { has_valid_civic = civic_shared_burden }
 			has_modifier = slave_colony
 			owner = { is_ai = yes }
+			AND = {
+				OR = {
+					owner = { is_shared_burden_empire = yes }
+					owner = { has_valid_civic = civic_worker_coop }
+				}
+				has_z_expanded_mod = yes
+			}
 		}
 	}
 	
@@ -89,15 +96,48 @@ building_paradise_dome = {
 		}
 	}
 	#EC: Classic/Bug /\
+	#zExpanded \/
+	inline_script = {
+		script = job_groups/entertainer_add
+		trigger = "
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = { is_pleasure_seeker = yes }
+		"
+		count = 2
+		desc = " "
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_technology = tech_housing_1 
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_technology = tech_housing_2 
+				NOT = { is_agrarian_empire = { allow_invalid = yes } }
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	#zExpanded /\
 	resources = {
 		category = planet_buildings
-		cost = {
-			minerals = @b2_minerals
-			rare_crystals = @b2_rare_cost
-		}
-		upkeep = {
-			energy = 3
-			rare_crystals = @b2_rare_upkeep
+		inline_script = {
+			script = "amenity_buildings/avb_residence_resources"
+			tier = 2
 		}
 	}
 	
@@ -121,6 +161,13 @@ building_paradise_dome = {
 		owner = { 
 			is_regular_empire = yes
 			NOT = { has_valid_civic = civic_shared_burden }
+			AND = {
+				has_z_expanded_mod = yes
+				NOR ={
+					NOT = { is_shared_burden_empire = yes }
+					NOT = { has_valid_civic = civic_worker_coop }
+				}
+			}
 		}
 	}
 	
@@ -214,6 +261,7 @@ building_communal_housing_large = {
 		building_drone_megastorage
 		building_expanded_warren
 		building_paradise_dome
+		building_organic_paradise
 	}
 	
 	planet_modifier = {
@@ -930,13 +978,26 @@ building_ranger_lodge = {
 		NOT = {	has_modifier = slave_colony	}
 		owner = {
 			is_gestalt = no
-			has_valid_civic = civic_environmentalist
+			OR = {
+				has_valid_civic = civic_environmentalist
+				AND = {
+					has_z_expanded_mod = yes
+					is_enviromentalist_empire = yes
+				}
+			}
+			
 		}
 		NOR = {
+			#Vanilla
 			is_planet_class = pc_city
 			is_planet_class = pc_hive
 			is_planet_class = pc_machine
 			is_planet_class = pc_relic
+			#With other mods
+			is_city_world = yes
+			is_hive_world = yes
+			is_machine_world = yes
+			is_relic_world = yes
 		}
 		is_artificial = no
 	}
@@ -958,11 +1019,22 @@ building_ranger_lodge = {
 		OR = {
 			owner = { is_gestalt = yes }
 			has_modifier = slave_colony
-			owner = { NOT = { has_valid_civic = civic_environmentalist } }
+			owner = {
+				NOR = {
+					has_valid_civic = civic_environmentalist 
+					is_enviromentalist_empire = yes
+				} 
+			}
+			#Vanilla
 			is_planet_class = pc_city
 			is_planet_class = pc_hive
 			is_planet_class = pc_machine
 			is_planet_class = pc_relic
+			#With other mods
+			is_city_world = yes
+			is_hive_world = yes
+			is_machine_world = yes
+			is_relic_world = yes
 		}
 	}
 
@@ -970,52 +1042,41 @@ building_ranger_lodge = {
 		job_ranger_add = @b1_jobs
 		deposit_blockers_natural_unity_produces_add = 2
 	}
-
-	#triggered_planet_modifier = { TODO_CD Reimplement this later with propper tooltips
-	#	potential = {
-	#		has_designation = col_resort
-	#	}
-	#	job_ranger_per_pop = 0.1 # 1 job per 10 pops
-	#}
-
-	ai_resource_production = {
-		unity = 2
-		mult = value:natural_blocker_count
+	inline_script = amenity_buildings/avb_ranger_resolutions
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+		}
+		deposit_blockers_natural_unity_produces_add = 2
+		pop_environment_tolerance = 0.05
 	}
-
-	ai_resource_production = {
-		unity = 1
-		trigger = { owner_has_resolution = { RES = resolution_ecology_integrated_gardens } }
-		mult = value:natural_blocker_count
-	}
-
-	ai_resource_production = {
-		unity = 1
-		trigger = { owner_has_resolution = { RES = resolution_ecology_environmental_control_board } }
-		mult = value:natural_blocker_count
-	}
-
-	ai_resource_production = {
-		unity = 1
-		trigger = { owner_has_resolution = { RES = resolution_ecology_paradise_initiative } }
-		mult = value:natural_blocker_count
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			has_global_flag = EcologyMod_active
+		}
+		job_park_ranger_add = @b1_jobs
+		job_ranger_add = -@b1_jobs
 	}
 
 	triggered_planet_modifier = {
-		potential = { owner_has_resolution = { RES = resolution_ecology_integrated_gardens } }
-		deposit_blockers_natural_unity_produces_add = 1
+		potential = {
+			has_z_expanded_mod = yes
+			has_designation = col_resort
+			NOT = { has_global_flag = EcologyMod_active }
+		}
+		job_ranger_per_pop = 0.1 # 1 job per 10 pops
 	}
-
 	triggered_planet_modifier = {
-		potential = { owner_has_resolution = { RES = resolution_ecology_environmental_control_board } }
-		deposit_blockers_natural_unity_produces_add = 1
+		potential = {
+			has_z_expanded_mod = yes
+			has_designation = col_resort
+			has_global_flag = EcologyMod_active
+		}
+		job_park_ranger_per_pop = 0.1 # 1 job per 10 pops
 	}
-
-	triggered_planet_modifier = {
-		potential = { owner_has_resolution = { RES = resolution_ecology_paradise_initiative } }
-		deposit_blockers_natural_unity_produces_add = 1
-	}
-	
+	#zExpanded /\
 	resources = {
 		category = planet_buildings
 		cost = {

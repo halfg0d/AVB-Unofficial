@@ -24,7 +24,16 @@ triggered_planet_modifier = {
 triggered_planet_modifier = {
 	potential = {
 		exists = owner
-		owner = { has_civic = civic_machine_assimilator }
+		owner = {
+			OR = {
+				has_civic = civic_machine_assimilator
+				is_machine_assimilator = yes
+				AND = {
+					has_z_expanded_mod = yes
+					has_origin = origin_extant_creators
+				}
+			}
+		}
 	}
 	modifier = {
 		job_replicator_add = -@avb_$tier$_replicator1

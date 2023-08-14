@@ -7,7 +7,7 @@ triggered_planet_modifier = {
 		}
 	}
 	modifier = {
-		job_artisan_add = $jobs$
+		job_artisan_add = @avb_a_f$tier$_jobs
 	}
 }
 
@@ -20,7 +20,7 @@ triggered_planet_modifier = {
 		}
 	}
 	modifier = {
-		job_artificer_add = $jobs$
+		job_artificer_add = @avb_a_f$tier$_jobs
 	}
 }
 
@@ -30,7 +30,7 @@ triggered_planet_modifier = {
 		owner = { is_machine_empire = yes }
 	}
 	modifier = {
-		job_artisan_drone_add = $jobs$
+		job_artisan_drone_add = @avb_a_f$tier$_jobs
 	}
 }	
 triggered_desc = {
@@ -61,12 +61,4 @@ triggered_desc = {
 		owner = { is_machine_empire = yes }
 	}
 	text = job_artisan_drone_effect_desc
-}
-
-inline_script = {
-	script = job_groups/artisan_add
-	trigger = "has_z_expanded_mod = yes"
-	regular = @avb_a_f$tier$_jobs
-	gestalt = @avb_a_f$tier$_jobs
-	desc = " "
 }

@@ -60,7 +60,7 @@ building_avb_foundry_4 = {
 	}
 	
 	inline_script = {
-		script = manufactury/avb_foundry_jobs
+		script = "manufactury/avb_foundry_jobs"
 		tier = 4
 	}
 	inline_script = "manufactury/avb_foundry_job_desc"

@@ -103,6 +103,13 @@ building_sacred_nexus = {
 			#EC: Classic /\
 		}
 		NOT = { has_modifier = slave_colony }
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
 
 	allow = {
@@ -129,6 +136,7 @@ building_sacred_nexus = {
 		building_bureaucratic_3
 		building_hive_confluence
 		building_system_conflux
+		building_sacrificial_temple_3
 	}
 
 	resources = {
@@ -179,6 +187,37 @@ building_sacred_nexus = {
 			job_manager_add = 3
 		}
 	}
+
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_valid_civic = civic_private_military_companies
+			}					
+		}
+		modifier = {
+			job_chaplain_add = 3
+			job_logistics_officer_add = 3
+			job_priest_add = -3
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_valid_civic = civic_machine_cult
+			}
+		}
+		modifier = {
+			job_priest_add = -@b3_jobs
+			job_tech_priest_add = @b3_jobs
+		}
+	}
+	#zExpanded /\
 
 	triggered_desc = {
 		trigger = {
@@ -285,7 +324,7 @@ building_sacred_nexus = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner.federation
 			owner.federation = { has_federation_perk = all_the_priests_2 }
 			owner = {
@@ -298,7 +337,7 @@ building_sacred_nexus = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner
 			owner = { is_megacorp = no }
 			owner = {
@@ -311,7 +350,7 @@ building_sacred_nexus = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner
 			owner = { is_megacorp = yes }
 			owner = {
@@ -479,7 +518,7 @@ building_hive_confluence = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner
 			owner = {
 				has_tradition = tr_plentiful_aspiration_3
@@ -491,7 +530,7 @@ building_hive_confluence = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner
 			owner = { is_hive_empire = yes }
 			owner = {
@@ -564,6 +603,14 @@ building_system_conflux = {
 				is_servitor_empire = yes
 			}
 		}
+
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
 
 	allow = {
@@ -624,7 +671,7 @@ building_system_conflux = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner
 			owner = { is_machine_empire = yes }
 			owner = {
@@ -949,7 +996,7 @@ building_sacrificial_temple_3 = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner
 			owner = { is_megacorp = no }
 			owner = {
@@ -963,7 +1010,7 @@ building_sacrificial_temple_3 = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner
 			owner = { is_megacorp = yes }
 			owner = {
@@ -1439,6 +1486,7 @@ building_galactic_memorial_3 = {
 	#Tomb/Relic worlds with z Expanded
 	triggered_planet_modifier = {
 		potential = {
+			has_z_expanded_mod = yes
 			exists = owner
 			owner = { is_gestalt = no }
 			OR = {

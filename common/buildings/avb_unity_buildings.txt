@@ -248,6 +248,13 @@ building_avb_temple_4 = {
 			#EC: Classic /\
 		}
 		NOT = { has_modifier = slave_colony }
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
 
 	allow = {
@@ -342,6 +349,37 @@ building_avb_temple_4 = {
 		text = job_high_priest_effect_desc
 	}
 
+	
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_valid_civic = civic_private_military_companies
+			}					
+		}
+		modifier = {
+			job_chaplain_add = @avb_u4_jobs_half
+			job_logistics_officer_add = @avb_u4_jobs_half
+			job_priest_add = -@avb_u4_jobs_half
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_valid_civic = civic_machine_cult
+			}
+		}
+		modifier = {
+			job_priest_add = -@avb_u4_jobs_half
+			job_tech_priest_add = @avb_u4_jobs
+		}
+	}
+	#zExpanded /\
 	prerequisites = {
 		"tech_avb_temple_4"
 	}
@@ -430,7 +468,7 @@ building_avb_temple_4 = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner.federation
 			owner.federation = { has_federation_perk = all_the_priests_2 }
 			owner = {
@@ -443,7 +481,7 @@ building_avb_temple_4 = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner
 			owner = { is_megacorp = no }
 			owner = {
@@ -456,7 +494,7 @@ building_avb_temple_4 = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner
 			owner = { is_megacorp = yes }
 			owner = {
@@ -496,6 +534,13 @@ building_avb_temple_5 = {
 			#EC: Classic /\
 		}
 		NOT = { has_modifier = slave_colony }
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
 
 	allow = {
@@ -573,7 +618,36 @@ building_avb_temple_5 = {
 			job_manager_add = @avb_u5_jobs_half
 		}
 	}
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_valid_civic = civic_private_military_companies
+			}					
+		}
+		modifier = {
+			job_chaplain_add = @avb_u5_jobs_half
+			job_logistics_officer_add = @avb_u5_jobs_half
+			job_priest_add = -@avb_u5_jobs_half
+		}
+	}
 
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_valid_civic = civic_machine_cult
+			}
+		}
+		modifier = {
+			job_priest_add = -@avb_u5_jobs_half
+			job_tech_priest_add = @avb_u5_jobs_half
+		}
+	}
+	#zExpanded /\
 	triggered_desc = {
 		trigger = {
 			exists = owner
@@ -678,7 +752,7 @@ building_avb_temple_5 = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner.federation
 			owner.federation = { has_federation_perk = all_the_priests_2 }
 			owner = {
@@ -691,7 +765,7 @@ building_avb_temple_5 = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner
 			owner = { is_megacorp = no }
 			owner = {
@@ -704,7 +778,7 @@ building_avb_temple_5 = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner
 			owner = { is_megacorp = yes }
 			owner = {
@@ -923,7 +997,7 @@ building_avb_temple_6 = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner.federation
 			owner.federation = { has_federation_perk = all_the_priests_2 }
 			owner = {
@@ -936,7 +1010,7 @@ building_avb_temple_6 = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner
 			owner = { is_megacorp = no }
 			owner = {
@@ -949,7 +1023,7 @@ building_avb_temple_6 = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner
 			owner = { is_megacorp = yes }
 			owner = {
@@ -1038,7 +1112,7 @@ building_avb_hive_unity_4 = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner
 			owner = {
 				has_tradition = tr_plentiful_aspiration_3
@@ -1050,7 +1124,7 @@ building_avb_hive_unity_4 = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner
 			owner = { is_hive_empire = yes }
 			owner = {
@@ -1180,7 +1254,7 @@ building_avb_hive_unity_5 = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner
 			owner = {
 				has_tradition = tr_plentiful_aspiration_3
@@ -1192,7 +1266,7 @@ building_avb_hive_unity_5 = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner
 			owner = { is_hive_empire = yes }
 			owner = {
@@ -1322,7 +1396,7 @@ building_avb_hive_unity_6 = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner
 			owner = {
 				has_tradition = tr_plentiful_aspiration_3
@@ -1334,7 +1408,7 @@ building_avb_hive_unity_6 = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner
 			owner = { is_hive_empire = yes }
 			owner = {
@@ -1403,6 +1477,13 @@ building_avb_machine_unity_4 = {
 				is_servitor_empire = yes
 			}
 		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
 
 	allow = {
@@ -1463,7 +1544,7 @@ building_avb_machine_unity_4 = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner
 			owner = { is_machine_empire = yes }
 			owner = {
@@ -1490,6 +1571,13 @@ building_avb_machine_unity_5 = {
 			NOR = {
 				has_valid_civic = civic_machine_servitor
 				is_servitor_empire = yes
+			}
+		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
 			}
 		}
 	}
@@ -1552,7 +1640,7 @@ building_avb_machine_unity_5 = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner
 			owner = { is_machine_empire = yes }
 			owner = {
@@ -1579,6 +1667,13 @@ building_avb_machine_unity_6 = {
 			NOR = {
 				has_valid_civic = civic_machine_servitor
 				is_servitor_empire = yes
+			}
+		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
 			}
 		}
 	}
@@ -1638,7 +1733,7 @@ building_avb_machine_unity_6 = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner
 			owner = { is_machine_empire = yes }
 			owner = {
@@ -1731,7 +1826,7 @@ building_avb_death_temple_4 = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner
 			owner = { is_megacorp = no }
 			owner = {
@@ -1745,7 +1840,7 @@ building_avb_death_temple_4 = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner
 			owner = { is_megacorp = yes }
 			owner = {
@@ -1899,7 +1994,7 @@ building_avb_death_temple_5 = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner
 			owner = { is_megacorp = no }
 			owner = {
@@ -1913,7 +2008,7 @@ building_avb_death_temple_5 = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner
 			owner = { is_megacorp = yes }
 			owner = {
@@ -2067,7 +2162,7 @@ building_avb_death_temple_6 = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner
 			owner = { is_megacorp = no }
 			owner = {
@@ -2081,7 +2176,7 @@ building_avb_death_temple_6 = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner
 			owner = { is_megacorp = yes }
 			owner = {
@@ -3286,6 +3381,7 @@ building_avb_monument_memorial_4 = {
 	#Tomb/Relic worlds with z Expanded
 	triggered_planet_modifier = {
 		potential = {
+			has_z_expanded_mod = yes
 			exists = owner
 			owner = { is_gestalt = no }
 			OR = {
@@ -3420,6 +3516,7 @@ building_avb_monument_memorial_5 = {
 	#Tomb/Relic worlds with z Expanded
 	triggered_planet_modifier = {
 		potential = {
+			has_z_expanded_mod = yes
 			exists = owner
 			owner = { is_gestalt = no }
 			OR = {
@@ -3554,6 +3651,7 @@ building_avb_monument_memorial_6 = {
 	#Tomb/Relic worlds with z Expanded
 	triggered_planet_modifier = {
 		potential = {
+			has_z_expanded_mod = yes
 			exists = owner
 			owner = { is_gestalt = no }
 			OR = {

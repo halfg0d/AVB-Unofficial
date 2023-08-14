@@ -136,9 +136,90 @@ building_avb_hydroponics_farm_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
+			trigger = {
+				has_z_expanded_mod = no
+			}
 			minerals = @avb_rs4_minerals
 		}
 		upkeep = {
+			trigger = {
+				has_z_expanded_mod = no
+			}
+			energy = @avb_rs4_upkeep
+		}
+		cost = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					OR = {
+						is_lithoid_empire = yes
+						AND = {
+							is_hive_empire = no
+							is_civic_plant_organic = no
+						}
+					}
+				}
+			}
+			minerals = @avb_rs4_minerals
+		}
+		cost = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					NOT = { has_valid_civic = civic_integrated_bioarchitecture }
+					OR = {
+						is_hive_empire = yes
+						is_civic_plant_organic = yes
+					}
+					is_lithoid_empire = no
+				}
+			}
+			minerals = @avb_rs4_hive_minerals
+			food = @avb_rs4_hive_food
+		}
+		cost = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					has_valid_civic = civic_integrated_bioarchitecture
+					is_lithoid_empire = no
+				}
+			}
+			food = @avb_rs4_minerals
+		}
+		upkeep = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					is_lithoid_empire = no
+					OR = {
+						is_hive_empire = yes
+						is_civic_plant_organic = yes
+					}
+				}
+			}
+			energy = @avb_rs4_upkeep_hive
+			food = @avb_rs4_upkeep_food
+		}
+		upkeep = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					OR = {
+						is_lithoid_empire = yes
+						AND = {
+							is_hive_empire = no
+							is_civic_plant_organic = no
+						}
+					}
+					NOT = { has_valid_civic = civic_integrated_bioarchitecture }
+				}
+			}
 			energy = @avb_rs4_upkeep
 		}
 	}	
@@ -1949,95 +2030,8 @@ building_avb_bio_reactor_2 = {
 		upkeep = {
 			food = 100
 		}
-		produces = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					NOT = { has_deficit = food }
-					has_technology = tech_power_plant_2
-				}
-			}
-			energy = 2
-		}
-		produces = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					NOT = { has_deficit = food }
-					has_technology = tech_power_plant_3
-				}
-			}
-			energy = 2
-		}
-		produces = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					NOT = { has_deficit = food }
-					has_technology = tech_power_plant_4
-				}
-			}
-			energy = 2
-		}
-		produces = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					NOT = { has_deficit = food }
-				}
-				exists = planet
-				planet = {
-					has_active_building = building_energy_grid
-				}
-			}
-			energy = 2
-		}
-		produces = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					NOT = { has_deficit = food }
-				}
-				exists = planet
-				planet = {
-					has_active_building = building_energy_nexus
-				}
-			}
-			energy = 4
-		}
-		produces = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					NOT = { has_deficit = food }
-				}
-				exists = planet
-				planet = {
-					has_active_building = building_energy_nexus
-				}
-			}
-			energy = 4
-		}
-		produces = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					NOT = { has_deficit = food }
-				}
-				exists = planet
-				planet = {
-					has_active_building = building_energy_nexus
-				}
-			}
-			energy = 6
-		}
+		inline_script = "resources/avb_bioreactor_production"
+		inline_script = "resources/avb_bioreactor_production"
 	}	
 	
 	prerequisites = {

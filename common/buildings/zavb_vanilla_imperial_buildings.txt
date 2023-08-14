@@ -40,7 +40,7 @@ building_imperial_capital = {
 
 	inline_script = {
 		script = capitals/regular/avb_capitals_together
-		tier = 7
+		tier = c7
 	}
 
 	prerequisites = {
@@ -119,6 +119,17 @@ building_imperial_machine_capital = {
 		tier = cm7
 	}
 
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_servitor_empire = yes }
+		}
+		modifier = {
+			job_bio_trophy_add = 15
+			job_servitor_caretaker_drone_add = 1
+		}
+	}
+
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -132,7 +143,7 @@ building_imperial_machine_capital = {
 
 # Imperial Complex
 building_imperial_hive_capital = {
-	base_buildtime = @avb_b6_time
+	base_buildtime = @avb_c_h5_time
 	capital = yes
 	can_build = no
 	can_demolish = no
@@ -187,38 +198,12 @@ building_imperial_hive_capital = {
 		job_spawning_drone_add = -1
 		job_offspring_drone_add = 1
 	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_technology = tech_capital_productivity_1 }
-		}
-		modifier = {
-			planet_jobs_productive_upkeep_mult = 0.1
-			planet_jobs_productive_produces_mult = 0.1
-		}
+	inline_script = {
+		script = capitals/avb_capitals_productivity
 	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_technology = tech_capital_productivity_2 }
-		}
-		modifier = {
-			planet_jobs_productive_upkeep_mult = 0.1
-			planet_jobs_productive_produces_mult = 0.1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_technology = tech_capital_productivity_3 }
-		}
-		modifier = {
-			planet_jobs_productive_upkeep_mult = 0.1
-			planet_jobs_productive_produces_mult = 0.1
-		}
+	
+	inline_script = {
+		script = buildings/on_all_capital_buildings
 	}
 
 	triggered_planet_modifier = {
@@ -233,11 +218,9 @@ building_imperial_hive_capital = {
 
 	resources = {
 		category = planet_buildings
-		cost = {
-			minerals = @b4_minerals
-		}
-		upkeep = {
-			energy = @b4_upkeep
+		inline_script = {
+			script = "capitals/hive/avb_capitals_hive_resources"
+			tier = 5
 		}
 	}
 

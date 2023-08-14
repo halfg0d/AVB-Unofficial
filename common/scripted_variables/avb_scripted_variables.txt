@@ -66,3 +66,5 @@
 @avbtier10weight1 = 7
 @avbtier10weight2 = 6
 @avbtier10weight3 = 5
+
+## To work properly

@@ -5,6 +5,12 @@ cost = {
 		has_ringworld_output_boost = no
 	}
 	minerals = @avb_m_f$tier$_minerals
+}
+cost = {
+	trigger = {
+		has_z_expanded_mod = no
+		has_ringworld_output_boost = no
+	}
 	volatile_motes = @avb_m_f$tier$_rare_cost
 }
 cost = {

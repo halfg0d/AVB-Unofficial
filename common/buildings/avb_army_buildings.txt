@@ -18,6 +18,20 @@ building_avb_military_academy_2 = {
 					is_bugged_reanimator = no #EC: Bug <<
 				}
 			}
+			OR = {
+				has_z_expanded_mod = no
+				AND = {
+					has_z_expanded_mod = yes
+					NOT = { has_valid_civic = civic_machine_terminator }
+				}
+			}
+		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
 		}
 	}
 
@@ -36,6 +50,10 @@ building_avb_military_academy_2 = {
 							solar_system = { is_bottleneck_system = yes }
 						}
 					}
+				}
+				AND = {
+					has_z_expanded_mod = yes
+					has_valid_civic = civic_machine_terminator
 				}
 			}
 		}
@@ -177,9 +195,12 @@ building_avb_dread_encampment_2 = {
 				is_bugged_reanimator = yes
 			}
 		}
-		AND = {
-			has_z_expanded_mod = yes
-			NOT = { has_planet_flag = planetary_station }
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
 		}
 	}
 

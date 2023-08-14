@@ -249,7 +249,7 @@ building_avb_slave_processing_2 = {
 	#PT \/
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner
 			owner = { has_ascension_perk = ap_plentiful_traditions_vast_slave_procreation }
 			OR = {
@@ -263,7 +263,7 @@ building_avb_slave_processing_2 = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = pt_flag
+			has_pt_mod = yes
 			exists = owner
 		}
 		modifier = {
@@ -563,6 +563,71 @@ building_avb_sentinel_posts_2 = {
 		}
 		upkeep = {
 			energy = @avb_g4_upkeep
+		}
+		cost = {
+			trigger = {
+				has_z_expanded = yes
+				exists = owner
+				owner = {
+					OR = {
+						is_lithoid_empire = yes
+						is_machine_empire = yes
+					}
+				}
+			}
+			minerals = @avb_g4_minerals
+		}
+		cost = {
+			trigger = {
+				has_z_expanded = yes
+				exists = owner
+				owner = {
+					NOT = { has_valid_civic = civic_integrated_bioarchitecture }
+					is_lithoid_empire = no
+					is_machine_empire = no
+				}
+			}
+			minerals = @avb_g4_hive_cost
+			food = @avb_g4_food_cost
+		}
+		cost = {
+			trigger = {
+				has_z_expanded = yes
+				exists = owner
+				owner = {
+					has_valid_civic = civic_integrated_bioarchitecture
+					is_lithoid_empire = no
+					is_machine_empire = no
+				}
+			}
+			food = @avb_g4_hive_cost
+		}
+		upkeep = {
+			trigger = {
+				has_z_expanded = yes
+				exists = owner
+				owner = {
+					is_lithoid_empire = no
+					is_machine_empire = no
+				}
+			}
+			energy = @avb_g4_hive_upkeep
+			food = @avb_g4_food_upkeep
+		}
+		upkeep = {
+			trigger = {
+				has_z_expanded = yes
+				exists = owner
+				owner = {
+					OR = {
+						is_lithoid_empire = yes
+						is_machine_empire = yes
+					}
+					NOT = { has_valid_civic = civic_integrated_bioarchitecture }
+				}
+			}
+			energy = @avb_g4_hive_upkeep
+			minerals = @avb_g4_food_upkeep
 		}
 	}
 	
