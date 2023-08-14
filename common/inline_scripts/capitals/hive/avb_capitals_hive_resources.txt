@@ -1,0 +1,71 @@
+#Vanilla
+cost = {
+	trigger = {
+		has_z_expanded_mod = no
+	}
+	minerals = @avb_c_h$tier$_minerals
+}
+upkeep = {
+	trigger = {
+		has_z_expanded_mod = no
+	}
+	energy = @avb_c_h$tier$_upkeep_hive
+	food = @avb_c_h$tier$_upkeep_food
+}
+#zExpanded \/
+cost = {
+	trigger = {
+		has_z_expanded_mod = yes
+		exists = owner
+		owner = {
+			is_lithoid_empire = yes
+		}
+	}
+	minerals = @avb_c_h$tier$_minerals
+}
+cost = {
+	trigger = {
+		has_z_expanded_mod = yes
+		exists = owner
+		owner = {
+			NOT = { has_valid_civic = civic_integrated_bioarchitecture }
+			is_lithoid_empire = no
+		}
+	}
+	minerals = @avb_c_h$tier$_hive_minerals
+	food = @avb_c_h$tier$_hive_food
+}
+cost = {
+	trigger = {
+		has_z_expanded_mod = yes
+		exists = owner
+		owner = {
+			has_valid_civic = civic_integrated_bioarchitecture
+			is_lithoid_empire = no
+		}
+	}
+	food = @avb_c_h$tier$_minerals
+}
+upkeep = {
+	trigger = {
+		has_z_expanded_mod = yes
+		exists = owner
+		owner = {
+			is_lithoid_empire = no
+		}
+	}
+	energy = @avb_c_h$tier$_upkeep_hive
+	food = @avb_c_h$tier$_upkeep_food
+}
+upkeep = {
+	trigger = {
+		has_z_expanded_mod = yes
+		exists = owner
+		owner = {
+			is_lithoid_empire = yes
+			NOT = { has_valid_civic = civic_integrated_bioarchitecture }
+		}
+	}
+	energy = @avb_c_h$tier$_upkeep
+}
+#zExpanded /\

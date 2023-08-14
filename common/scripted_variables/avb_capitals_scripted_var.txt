@@ -1,0 +1,229 @@
+#Capital Hive buildings
+@avb_c_h2_time = 480
+@avb_c_h3_time = 600
+@avb_c_h4_time = 900
+@avb_c_h5_time = 1400
+
+@avb_c_h2_hive_minerals = 400
+@avb_c_h3_hive_minerals = 533
+@avb_c_h4_hive_minerals = 1333
+@avb_c_h5_hive_minerals = 1640
+
+@avb_c_h2_hive_food = 200
+@avb_c_h3_hive_food = 267
+@avb_c_h4_hive_food = 667
+@avb_c_h5_hive_food = 820
+
+@avb_c_h2_upkeep_hive = 3.3
+@avb_c_h3_upkeep_hive = 5.3
+@avb_c_h4_upkeep_hive = 6.7
+@avb_c_h5_upkeep_hive = 9.4
+
+@avb_c_h2_upkeep_food = 1.7
+@avb_c_h3_upkeep_food = 2.7
+@avb_c_h4_upkeep_food = 3.3
+@avb_c_h5_upkeep_food = 4.7
+
+@avb_c_h2_upkeep = 5
+@avb_c_h3_upkeep = 8
+@avb_c_h4_upkeep = 10
+@avb_c_h5_upkeep = 14
+
+@avb_c_h2_minerals = 600
+@avb_c_h3_minerals = 800
+@avb_c_h4_minerals = 2000
+@avb_c_h5_minerals = 2460
+
+#Capital buildings
+@avb_c4_jobs1 = 8
+@avb_c5_jobs1 = 16
+@avb_c6_jobs1 = 24
+
+@avb_c3_time = 1350
+@avb_c4_time = 1500
+@avb_c5_time = 1800
+@avb_c6_time = 2100
+@avb_c7_time = 3000
+
+@avb_c4_minerals = 2300
+@avb_c5_minerals = 2460
+@avb_c6_minerals = 2780
+@avb_c7_minerals = 3240
+
+@avb_c4_upkeep = 10
+@avb_c5_upkeep = 14
+@avb_c6_upkeep = 19
+@avb_c7_upkeep = 24
+
+#@avb_c4_jobs2 = 99
+#@avb_c5_jobs2 = 99
+#@avb_c6_jobs2 = 99 #noble/priests etc
+#@avb_c6_jobs3 = 99 #politician etc
+
+#Jobs used in inline_scripts/capitals/regular/avb_capitals_jobs
+
+####
+#### Tier 3
+####
+@avb_c3_politician1 = 4 # Normal
+@avb_c3_executive = 4
+
+#3/4 normal
+@avb_c3_noble = 2
+@avb_c3_politician2 = 3
+
+#Half normal
+@avb_c3_politician3 = 2 
+
+@avb_c3_head_researcher = 2
+
+@avb_c3_high_priest = 2
+
+@avb_c3_mogul = 2
+
+@avb_c3_commandante = 2
+
+@avb_c3_supervisor = 2
+
+#Other
+@avb_c3_healtcare = 3
+
+@avb_c3_enforcer1 = 1
+@avb_c3_enforcer2 = 2
+
+@avb_c3_transcend = 2
+
+@avb_c3_guildmaster = 1
+####
+#### Tier 4
+####
+@avb_c4_politician1 = 8 #normal
+@avb_c4_executive = 8
+
+#3/4 normal
+@avb_c4_noble = 3
+@avb_c4_politician2 = 5
+
+#Half normal
+@avb_c4_politician3 = 4
+
+@avb_c4_head_researcher = 4
+
+@avb_c4_high_priest = 4
+
+@avb_c4_mogul = 4
+
+@avb_c4_commandante = 4
+
+#Other
+@avb_c4_supervisor = 2
+
+@avb_c4_healtcare = 3
+
+@avb_c4_enforcer1 = 1
+@avb_c4_enforcer2 = 2
+
+@avb_c4_transcend = 2
+
+@avb_c4_guildmaster = 1
+####
+#### Tier 5
+####
+@avb_c5_politician1 = 14 #normal
+@avb_c5_executive = 14
+
+#3/4 normal
+@avb_c5_noble = 5
+@avb_c5_politician2 = 9
+
+#Half normal
+@avb_c5_politician3 = 8 
+
+@avb_c5_head_researcher = 6
+
+@avb_c5_high_priest = 6
+
+@avb_c5_mogul = 6
+
+@avb_c5_commandante = 6
+
+
+#Other
+@avb_c5_supervisor = 2
+
+@avb_c5_healtcare = 3
+
+@avb_c5_enforcer1 = 1
+@avb_c5_enforcer2 = 2
+
+@avb_c5_transcend = 2
+
+@avb_c5_guildmaster = 2
+####
+#### Tier 6
+####
+@avb_c6_politician1 = 21 #normal
+@avb_c6_executive = 21
+
+#3/4 normal
+@avb_c6_noble = 7
+@avb_c6_politician2 = 14
+
+#Half normal
+@avb_c6_politician3 = 10 
+
+@avb_c6_head_researcher = 11
+
+@avb_c6_high_priest = 11
+
+@avb_c6_mogul = 11
+
+@avb_c6_commandante = 11
+
+
+#Other
+@avb_c6_supervisor = 2
+
+@avb_c6_healtcare = 3
+
+@avb_c6_enforcer1 = 1
+@avb_c6_enforcer2 = 2
+
+@avb_c6_transcend = 2
+
+@avb_c6_guildmaster = 2
+####
+#### Tier 7
+####
+@avb_c7_politician1 = 28 #normal
+@avb_c7_executive = 28
+
+#3/4 normal
+@avb_c7_noble = 10
+@avb_c7_politician2 = 18
+
+#Half normal
+@avb_c7_politician3 = 16 
+
+@avb_c7_head_researcher = 12
+
+@avb_c7_high_priest = 12
+
+@avb_c7_mogul = 12
+
+@avb_c7_commandante = 12
+
+
+#Other
+@avb_c7_supervisor = 2
+
+@avb_c7_healtcare = 3
+
+@avb_c7_enforcer1 = 1
+@avb_c7_enforcer2 = 2
+
+@avb_c7_transcend = 2
+
+@avb_c7_guildmaster = 4
+
+## To work properly
