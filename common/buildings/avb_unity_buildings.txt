@@ -240,21 +240,27 @@ building_avb_temple_4 = {
 		exists = owner
 		owner = {
 			OR = {
-				is_spiritualist = yes
 				AND = {
-					is_gestalt = no
-					has_make_spiritualist_perk = yes
+					#Vanilla
+					NOT = { has_global_flag = ethic_civic_classic_active }
+					OR = {
+						is_spiritualist = yes
+						AND = {
+							is_gestalt = no
+							has_make_spiritualist_perk = yes
+						}
+					}
+				}
+				AND = {
+					#EC: Classic
+					has_global_flag = ethic_civic_classic_active
+					is_spiritualist = yes
+					NOR = {
+						has_valid_civic = civic_death_cult
+						has_valid_civic = civic_death_cult_corporate
+					}
 				}
 			}
-			#EC: Classic \/
-			AND = {
-				has_global_flag = ethic_civic_classic_active
-				NOR = {
-					has_valid_civic = civic_death_cult
-					has_valid_civic = civic_death_cult_corporate
-				}
-			}
-			#EC: Classic /\
 		}
 		NOT = { has_modifier = slave_colony }
 	}
@@ -488,21 +494,27 @@ building_avb_temple_5 = {
 		exists = owner
 		owner = {
 			OR = {
-				is_spiritualist = yes
 				AND = {
-					is_gestalt = no
-					has_make_spiritualist_perk = yes
+					#Vanilla
+					NOT = { has_global_flag = ethic_civic_classic_active }
+					OR = {
+						is_spiritualist = yes
+						AND = {
+							is_gestalt = no
+							has_make_spiritualist_perk = yes
+						}
+					}
+				}
+				AND = {
+					#EC: Classic
+					has_global_flag = ethic_civic_classic_active
+					is_spiritualist = yes
+					NOR = {
+						has_valid_civic = civic_death_cult
+						has_valid_civic = civic_death_cult_corporate
+					}
 				}
 			}
-			#EC: Classic \/
-			AND = {
-				has_global_flag = ethic_civic_classic_active
-				NOR = {
-					has_valid_civic = civic_death_cult
-					has_valid_civic = civic_death_cult_corporate
-				}
-			}
-			#EC: Classic /\
 		}
 		NOT = { has_modifier = slave_colony }
 	}
@@ -736,21 +748,27 @@ building_avb_temple_6 = {
 		exists = owner
 		owner = {
 			OR = {
-				is_spiritualist = yes
 				AND = {
-					is_gestalt = no
-					has_make_spiritualist_perk = yes
+					#Vanilla
+					NOT = { has_global_flag = ethic_civic_classic_active }
+					OR = {
+						is_spiritualist = yes
+						AND = {
+							is_gestalt = no
+							has_make_spiritualist_perk = yes
+						}
+					}
+				}
+				AND = {
+					#EC: Classic
+					has_global_flag = ethic_civic_classic_active
+					is_spiritualist = yes
+					NOR = {
+						has_valid_civic = civic_death_cult
+						has_valid_civic = civic_death_cult_corporate
+					}
 				}
 			}
-			#EC: Classic \/
-			AND = {
-				has_global_flag = ethic_civic_classic_active
-				NOR = {
-					has_valid_civic = civic_death_cult
-					has_valid_civic = civic_death_cult_corporate
-				}
-			}
-			#EC: Classic /\
 		}
 		NOT = { has_modifier = slave_colony }
 	}
