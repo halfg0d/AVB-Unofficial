@@ -1,0 +1,43 @@
+﻿l_english:
+ building_avb_orb_ring_connection:0 "Ring Connection Administration"
+ building_avb_orb_ring_connection_desc:1 "A large buildings which connect our planet with orbital ring to better functioning infrastructure."
+ avb_orb_is_building_similar_to_x_fail:1 "Doesn't exist building to improve"
+ 
+ avb_orb_upgrade_to_t2:0 "§YAfter finish construction that orbital ring building will be upgraded to tier 2 and will give new modifier.§!"
+ avb_orb_upgrade_to_t3:0 "§YAfter finish construction that orbital ring building will be upgraded to tier 3 and will give new modifier.§!"
+
+ avb_orb_tier1_sign:0 "Tier 1 §R###§!######\n\n"
+ avb_orb_tier2_sign:0 "Tier 2 §Y######§!###\n\n"
+ avb_orb_tier3_sign:0 "Tier 3 §G#########§!\n\n"
+
+#Robot/Machine Assembly
+ sm_ring_avb_robot_assembly:0 "Semi-Automation Machine Assembly"
+ sm_ring_avb_robot_assembly_desc:0 "After transferred part of Machine Assembly on orbit we developed how to control automation process of creating new machines, that helped a lot in progressing our society.\n\n£job_roboticist£ $job_roboticist_plural$ turn £alloys£ §Y$alloys$§! into new £pop£ §YPops§!\n"
+ tech_ring_avb_robot_assembly_1:0 "Semi-Automation Processing"
+ tech_ring_avb_robot_assembly_1_desc:1 "Our society struggle with deficiencies of workers. We have to develop semi-automation process for create new machines immediately."
+  tech_ring_avb_robot_assembly_2:0 "$tech_ring_avb_robot_assembly_1$ Tier 2"
+ tech_ring_avb_robot_assembly_2_desc:0 "tech_ring_avb_robot_assembly_1 Tier 3"
+ tech_ring_avb_robot_assembly_3:0 "$tech_ring_avb_robot_assembly_1_desc$"
+ tech_ring_avb_robot_assembly_3_desc:0 "$tech_ring_avb_robot_assembly_1_desc$"
+ building_avb_orb_ring_connection_robot_2:0 "Semi-Automation Machine Assembly Upgrade to Tier 2"
+ building_avb_orb_ring_connection_robot_2_desc:0 "$avb_orb_upgrade_to_t2$"
+ building_avb_orb_ring_connection_robot_3:0 "Semi-Automation Machine Assembly Upgrade to Tier 3"
+ building_avb_orb_ring_connection_robot_3_desc:0 "$avb_orb_upgrade_to_t3$"
+
+#Clone Vats
+ sm_ring_avb_clone_vats:0 "Self-Standing Orbital Clone Vats"
+ sm_ring_avb_clone_vats_desc:0 "We started construction of new clone vats on orbit. Shortages of workers will disappear soon."
+ building_avb_orb_ring_connection_clone_2:0 "$sm_ring_avb_clone_vats$ Upgrade to Tier 2"
+ building_avb_orb_ring_connection_clone_2_desc:0 "$avb_orb_upgrade_to_t2$"
+ building_avb_orb_ring_connection_clone_3:0 "$sm_ring_avb_clone_vats$ Upgrade to Tier 3"
+ building_avb_orb_ring_connection_clone_3_desc:0 "$avb_orb_upgrade_to_t3$"
+
+ tech_ring_avb_clone_vats_1:0 "Independent Cloning Program"
+ tech_ring_avb_clone_vats_1_desc:0 "On planets are too many jobs. Society suffers from shortages of workers. There's only one solution, we have to introduce self-standing cloning"
+ tech_ring_avb_clone_vats_2:0 "$tech_ring_avb_clone_vats_1$"
+ tech_ring_avb_clone_vats_2_desc:0 "$tech_ring_avb_clone_vats_1_desc$"
+ tech_ring_avb_clone_vats_3:0 "$tech_ring_avb_clone_vats_1$"
+ tech_ring_avb_clone_vats_3_desc:0 "$tech_ring_avb_clone_vats_1_desc$"
+
+#Institute
+ avb_orb_ap_tech:0 "Bonus will increase after taking AP "

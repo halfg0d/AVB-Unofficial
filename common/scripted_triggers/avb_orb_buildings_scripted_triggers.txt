@@ -1,0 +1,152 @@
+has_any_orb_flag = {
+	OR = {
+		has_planet_flag = avb_orb_robot_assembly.1
+		has_planet_flag = avb_orb_robot_assembly.2
+		has_planet_flag = avb_orb_robot_assembly.3
+	}
+}
+is_building_similar_to_robot_assembly = {
+	planet = {
+		if = {
+			limit = {
+				exists = owner
+				owner = { is_regular_empire = yes }
+			}
+			custom_tooltip = {
+				fail_text = "avb_orb_is_building_similar_to_x_fail"
+				OR = {
+					#Vanilla
+					has_building = building_robot_assembly_plant
+					has_building = building_robot_assembly_complex
+					#AVB
+					has_building = building_avb_robot_assembly_plant_2
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				exists = owner
+				owner = { is_machine_empire = yes }
+		 	}
+			custom_tooltip = {
+				fail_text = "avb_orb_is_building_similar_to_x_fail"
+				OR = {
+					#Vanilla
+					has_building = building_machine_assembly_plant
+					has_building = building_machine_assembly_complex
+					#AVB
+					has_building = building_avb_machine_assembly_plant_2
+				}
+			}
+		}
+	}
+}
+
+is_building_similar_to_clone_vats = {
+	planet = {
+		if = {
+			limit = {
+				exists = owner
+				owner = { is_machine_empire = no }
+			}
+			custom_tooltip = {
+				fail_text = "avb_orb_is_building_similar_to_x_fail"
+				OR = {
+					#Vanilla
+					has_building = building_clone_vats
+					#has_building_construction = building_clone_vats
+					#AVB
+					has_building = building_avb_clone_vats_2
+					#has_building_construction = building_avb_clone_vats_2
+				}
+			}
+		}
+	}
+}
+
+is_building_similar_to_institute = {
+	planet = {
+		custom_tooltip = {
+			fail_text = "avb_orb_is_building_similar_to_x_fail"
+			OR = {
+				#Vanilla
+				has_building = building_institute
+				has_building = building_supercomputer
+				#AVB
+				has_building = building_avb_institute_2
+				has_building = building_avb_supercomputer_2
+			}
+		}
+	}
+}
+is_building_similar_to_organic_paradise = {
+	planet = {
+		if = {
+			limit = {
+				exists = owner
+				owner = { has_valid_civic = civic_machine_servitor }
+			}
+			custom_tooltip = {
+				fail_text = "avb_orb_is_building_similar_to_x_fail"
+				OR = {
+					#Vanilla
+					has_building = building_organic_sanctuary
+					has_building = building_organic_paradise
+					#AVB
+					has_building = building_avb_organic_sanctuary_3
+					has_building = building_avb_organic_sanctuary_4
+				}
+			}
+		}
+	}
+}
+is_building_similar_to_hospital = {
+	planet = {
+		if = {
+			limit = {
+				exists = owner
+				owner = { is_regular_empire = yes }
+			}
+			custom_tooltip = {
+				fail_text = "avb_orb_is_building_similar_to_x_fail"
+				OR = {
+					#Vanilla
+					has_building = building_clinic
+					has_building = building_hospital
+					#AVB
+					has_building = building_avb_clinic_3
+					has_building = building_avb_clinic_4
+				}
+			}
+		}
+	}
+}
+is_building_similar_to_bioreactor = {
+	planet = {
+		if = {
+			limit = {
+				exists = owner
+				owner = {
+					OR = {
+						is_machine_empire = yes
+						is_mechanical_empire = yes
+						is_lithoid_empire = yes
+					}
+					OR = {
+						owner = { is_ai = no }
+						owner = { country_uses_food = no }
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = "avb_orb_is_building_similar_to_x_fail"
+				OR = {
+					#Vanilla
+					has_building = building_bio_reactor
+					#AVB
+					has_building = building_avb_bio_reactor_2
+				}
+			}
+		}
+	}
+}
