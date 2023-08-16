@@ -1,0 +1,295 @@
+namespace = avb_orb_prepare
+
+
+
+country_event = {
+	id = avb_orb_prepare.1
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		any_owned_planet = {
+			OR = {
+				has_planet_flag = avb_orb_robot_assembly.1
+				has_planet_flag = avb_orb_robot_assembly.2
+				has_planet_flag = avb_orb_robot_assembly.3
+			}
+			exists = orbital_defence
+			OR = {
+				orbital_defence = {
+					exists = starbase
+					starbase = {
+						NOT = { has_starbase_building = ring_avb_robot_assembly }
+					}
+				}
+				is_building_similar_to_robot_assembly = no
+			}
+		}
+	}
+	immediate = {
+		owner = {
+			random_owned_planet = {
+				limit = {
+					OR = {
+						has_planet_flag = avb_orb_robot_assembly.1
+						has_planet_flag = avb_orb_robot_assembly.2
+						has_planet_flag = avb_orb_robot_assembly.3
+					}
+					exists = orbital_defence
+					OR = {
+						orbital_defence = {
+							exists = starbase
+							starbase = {
+								NOT = { has_starbase_building = ring_avb_robot_assembly }
+							}
+						}
+						is_building_similar_to_robot_assembly = no
+					}
+				}
+				remove_planet_flag = avb_orb_robot_assembly.1
+				remove_planet_flag = avb_orb_robot_assembly.2
+				remove_planet_flag = avb_orb_robot_assembly.3
+			}
+		}
+	}
+}
+country_event = {
+	id = avb_orb_prepare.3
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		any_owned_planet = {
+			OR = {
+				has_planet_flag = avb_orb_clone_vats.1
+				has_planet_flag = avb_orb_clone_vats.2
+				has_planet_flag = avb_orb_clone_vats.3
+			}
+			exists = orbital_defence
+			OR = {
+				orbital_defence = {
+					exists = starbase
+					starbase = {
+						NOT = { has_starbase_building = ring_avb_clone_vats }
+					}
+				}
+				is_building_similar_to_clone_vats = no
+			}
+		}
+	}
+	immediate = {
+		owner = {
+			random_owned_planet = {
+				limit = {
+					OR = {
+						has_planet_flag = avb_orb_clone_vats.1
+						has_planet_flag = avb_orb_clone_vats.2
+						has_planet_flag = avb_orb_clone_vats.3
+					}
+					exists = orbital_defence
+					OR = {
+						orbital_defence = {
+							exists = starbase
+							starbase = {
+								NOT = { has_starbase_building = ring_avb_clone_vats }
+							}
+						}
+						is_building_similar_to_clone_vats = no
+					}
+				}
+				remove_planet_flag = avb_orb_clone_vats.1
+				remove_planet_flag = avb_orb_clone_vats.2
+				remove_planet_flag = avb_orb_clone_vats.3
+			}
+		}
+	}
+}
+country_event = {
+	id = avb_orb_prepare.10
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		any_owned_planet = {
+			exists = orbital_defence
+			orbital_defence = {
+				exists = starbase
+				starbase = {
+					has_starbase_building = ring_avb_robot_assembly
+				}
+			}
+			NOT = { has_planet_flag = avb_orb_robot_assembly.1 }
+		}
+	}
+	immediate = {
+		random_owned_planet = {
+			limit = {
+				exists = orbital_defence
+				orbital_defence = {
+					exists = starbase
+					starbase = {
+						has_starbase_building = ring_avb_robot_assembly
+					}
+				}
+				NOT = { has_planet_flag = avb_orb_robot_assembly.1 }
+			}
+			planet = {
+				set_planet_flag = avb_orb_robot_assembly.1
+			}
+		}
+	}
+}
+country_event = {
+	id = avb_orb_prepare.11
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		any_owned_planet = {
+			exists = orbital_defence
+			orbital_defence = {
+				exists = starbase
+				starbase = {
+					has_starbase_building = ring_avb_clone_vats
+				}
+			}
+			NOT = { has_planet_flag = avb_orb_clone_vats.1 }
+		}
+	}
+	immediate = {
+		random_owned_planet = {
+			limit = {
+				exists = orbital_defence
+				orbital_defence = {
+					exists = starbase
+					starbase = {
+						has_starbase_building = ring_avb_clone_vats
+					}
+				}
+				NOT = { has_planet_flag = avb_orb_clone_vats.1 }
+			}
+			planet = {
+				set_planet_flag = avb_orb_clone_vats.1
+			}
+		}
+	}
+}
+namespace = avb_orb
+#Robot Assembly
+planet_event = {
+	id = avb_orb.11
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		last_building_changed = building_avb_orb_ring_connection_robot_2
+		has_building = building_avb_orb_ring_connection_robot_2
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_robot_assembly.1
+		}
+		exists = owner
+		owner = {
+			is_hive_empire = no
+			NOT = { has_policy_flag = robots_outlawed }
+			OR = {
+				is_ai = no
+				NOT = { has_ascension_perk = ap_engineered_evolution }
+				is_materialist = yes
+			}
+			has_technology = tech_ring_avb_robot_assembly_2
+		}
+		is_building_similar_to_robot_assembly = yes
+	}
+
+	immediate = {
+		remove_building = building_avb_orb_ring_connection_robot_2
+		add_building = building_avb_orb_ring_connection
+		set_planet_flag = avb_orb_robot_assembly.2
+	}
+}
+planet_event = {
+	id = avb_orb.12
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		last_building_changed = building_avb_orb_ring_connection_robot_3
+		has_building = building_avb_orb_ring_connection_robot_3
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_robot_assembly.2
+		}
+		exists = owner
+		owner = {
+			is_hive_empire = no
+			NOT = { has_policy_flag = robots_outlawed }
+			OR = {
+				is_ai = no
+				NOT = { has_ascension_perk = ap_engineered_evolution }
+				is_materialist = yes
+			}
+			has_technology = tech_ring_avb_robot_assembly_3
+		}
+		is_building_similar_to_robot_assembly = yes
+	}
+
+	immediate = {
+		remove_building = building_avb_orb_ring_connection_robot_3
+		add_building = building_avb_orb_ring_connection
+		set_planet_flag = avb_orb_robot_assembly.3
+	}
+}
+#Clone vats
+planet_event = {
+	id = avb_orb.13
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		last_building_changed = building_avb_orb_ring_connection_clone_2
+		has_building = building_avb_orb_ring_connection_clone_2
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_clone_vats.1
+		}
+		exists = owner
+		owner = {
+			is_machine_empire = no
+			
+			has_technology = tech_ring_avb_clone_vats_2
+		}
+		is_building_similar_to_clone_vats = yes
+	}
+
+	immediate = {
+		remove_building = building_avb_orb_ring_connection_clone_2
+		add_building = building_avb_orb_ring_connection
+		set_planet_flag = avb_orb_clone_vats.2
+	}
+}
+planet_event = {
+	id = avb_orb.14
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		last_building_changed = building_avb_orb_ring_connection_clone_3
+		has_building = building_avb_orb_ring_connection_clone_3
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_clone_vats.2
+		}
+		exists = owner
+		owner = {
+			is_machine_empire = no
+			
+			has_technology = tech_ring_avb_clone_vats_3
+		}
+		is_building_similar_to_clone_vats = yes
+	}
+
+	immediate = {
+		remove_building = building_avb_orb_ring_connection_clone_3
+		add_building = building_avb_orb_ring_connection
+		set_planet_flag = avb_orb_clone_vats.3
+	}
+}

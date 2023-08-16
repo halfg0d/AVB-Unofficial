@@ -1,0 +1,43 @@
+@avb_orb_time = 960
+@avb_orb_time_t2 = 1140
+
+@avb_orb_minerals = 1200
+@avb_orb_upkeep = 8
+@avb_orb_alloys = 450
+@avb_orb_clone_upkeep = 50
+@avb_orb_clone_cost = 500
+@avb_orb_organic_paradise = 350
+@avb_orb_production_motes_cost = 225
+@avb_orb_production_motes_upkeep = 2
+
+#Technology variables
+@orb_tier4cost1 = 16000
+@orb_tier4cost2 = 18000
+@orb_tier4cost3 = 20000
+
+#Alloy cost variables
+@orb_t1_alloy_cost = 450
+@orb_t2_alloy_cost = 520
+@orb_t3_alloy_cost = 630
+
+#Energy upkeep variables
+@orb_t1_energy_upkeep = 8
+@orb_t2_energy_upkeep = 5 #plus previous = 13
+@orb_t3_energy_upkeep = 3 #plus previous = 17
+
+#Clone variables
+@orb_t1_clone_cost_alloy = 150
+@orb_t2_clone_cost_alloy = 190
+@orb_t3_clone_cost_alloy = 280
+
+@orb_t1_clone_cost = 350
+@orb_t2_clone_cost = 410
+@orb_t3_clone_cost = 520
+
+@orb_t1_clone_upkeep_energy = 4
+@orb_t2_clone_upkeep_energy = 2 #plus previous = 6
+@orb_t3_clone_upkeep_energy = 3 #plus previous = 9
+
+@orb_t1_clone_upkeep = 50
+@orb_t2_clone_upkeep = 10 #plus previous = 60
+@orb_t3_clone_upkeep = 15 #plus previous = 75

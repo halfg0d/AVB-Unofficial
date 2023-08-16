@@ -1,0 +1,10 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_orbitalring_avb_robot_assembly"
+		textureFile = "gfx/interface/icons/buildings/avb_orb_robot_assembly.dds"
+	}
+	spriteType = {
+		name = "GFX_orbitalring_avb_clone_vats"
+		textureFile = "gfx/interface/icons/buildings/avb_orb_clone_vats.dds"
+	}
+}
