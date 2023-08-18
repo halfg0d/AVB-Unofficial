@@ -12,7 +12,7 @@ building_avb_military_academy_2 = {
 		owner = {
 			NOT = { has_valid_civic = civic_reanimated_armies }
 			OR = {
-				NOT = { has_global_flg = bug_branch_active }
+				NOT = { has_global_flag = bug_branch_active }
 				AND = {
 					has_global_flag = bug_branch_active
 					is_bugged_reanimator = no #EC: Bug <<

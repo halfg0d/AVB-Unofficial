@@ -566,7 +566,7 @@ building_avb_sentinel_posts_2 = {
 		}
 		cost = {
 			trigger = {
-				has_z_expanded = yes
+				has_z_expanded_mod = yes
 				exists = owner
 				owner = {
 					OR = {
@@ -579,7 +579,7 @@ building_avb_sentinel_posts_2 = {
 		}
 		cost = {
 			trigger = {
-				has_z_expanded = yes
+				has_z_expanded_mod = yes
 				exists = owner
 				owner = {
 					NOT = { has_valid_civic = civic_integrated_bioarchitecture }
@@ -592,7 +592,7 @@ building_avb_sentinel_posts_2 = {
 		}
 		cost = {
 			trigger = {
-				has_z_expanded = yes
+				has_z_expanded_mod = yes
 				exists = owner
 				owner = {
 					has_valid_civic = civic_integrated_bioarchitecture
@@ -604,7 +604,7 @@ building_avb_sentinel_posts_2 = {
 		}
 		upkeep = {
 			trigger = {
-				has_z_expanded = yes
+				has_z_expanded_mod = yes
 				exists = owner
 				owner = {
 					is_lithoid_empire = no
@@ -616,7 +616,7 @@ building_avb_sentinel_posts_2 = {
 		}
 		upkeep = {
 			trigger = {
-				has_z_expanded = yes
+				has_z_expanded_mod = yes
 				exists = owner
 				owner = {
 					OR = {

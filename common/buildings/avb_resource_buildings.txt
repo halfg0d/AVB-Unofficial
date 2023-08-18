@@ -791,7 +791,7 @@ building_avb_mineral_purification_3 = {
 			has_modifier = resort_colony
 			has_modifier = crucible_colony
 			AND = {
-				has_z_expanded = yes
+				has_z_expanded_mod = yes
 				has_planet_flag = planetary_station
 			}
 		}
@@ -1112,7 +1112,7 @@ building_avb_mineral_purification_4 = {
 			has_modifier = resort_colony
 			has_modifier = crucible_colony
 			AND = {
-				has_z_expanded = yes
+				has_z_expanded_mod = yes
 				has_planet_flag = planetary_station
 			}
 		}

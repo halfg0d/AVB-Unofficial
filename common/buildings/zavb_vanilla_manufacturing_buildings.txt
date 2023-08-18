@@ -484,7 +484,7 @@ building_nanite_transmuter = {
 			has_modifier = slave_colony
 			has_modifier = crucible_colony
 			AND = {
-				has_z_expanded = yes
+				has_z_expanded_mod = yes
 				has_planet_flag = planetary_station
 			}
 		}
