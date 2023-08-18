@@ -743,10 +743,72 @@ building_avb_toxic_bath_hive_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_b2_minerals
+			trigger = {
+				has_z_expanded_mod = no
+			}
+			minerals = @avb_a2_minerals
 		}
 		upkeep = {
-			energy = @avb_b2_upkeep
+			trigger = {
+				has_z_expanded_mod = no
+			}
+			energy = @avb_a2_upkeep
+		}
+		cost = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					is_lithoid_empire = yes
+				}
+			}
+			minerals = @avb_a2_minerals
+		}
+		cost = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					NOT = { has_valid_civic = civic_integrated_bioarchitecture }
+					is_lithoid_empire = no
+				}
+			}
+			minerals = @avb_a2_hive_minerals
+			food = @avb_a2_hive_food
+		}
+		cost = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					has_valid_civic = civic_integrated_bioarchitecture
+					is_lithoid_empire = no
+				}
+			}
+			food = @avb_a2_minerals
+		}
+		upkeep = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					is_lithoid_empire = no
+				}
+			}
+			energy = @avb_a2_upkeep_hive
+			food = @avb_a2_upkeep_food
+		}
+		upkeep = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					is_lithoid_empire = yes
+					NOT = { has_valid_civic = civic_integrated_bioarchitecture }
+				}
+			}
+			energy = @avb_a2_upkeep_hive
+			minerals = @avb_a2_upkeep_food
 		}
 	}
 }

@@ -141,3 +141,14 @@ triggered_desc = {
 	}
 	text = job_unifier_effect_desc
 }
+#zExpanded
+triggered_desc = {
+	trigger = {
+		has_z_expanded_mod = yes
+		exists = owner
+		owner = {
+			has_civic = civic_mining_guilds
+		}
+	}
+	text = job_guildmaster_effect_desc
+}

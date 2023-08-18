@@ -2,18 +2,14 @@ inline_script = {
 	script = buildings/on_all_capital_buildings
 }
 inline_script = {
-	script = capitals/regular/avb_capitals_jobs
-	tier = $tier$
-	#toxic_origin1 = $toxic_origin1$
-	#toxic_origin2 = $toxic_origin2$
-}
-inline_script = {
 	script = capitals/avb_capitals_productivity
 }
 inline_script = {
 	script = capitals/regular/avb_capitals_desc
-	#toxic_origin1 = $toxic_origin1$
-	#toxic_origin2 = $toxic_origin2$
+}
+inline_script = {
+	script = "capitals/regular/avb_capitals_jobs"
+	tier = $tier$
 }
 
 triggered_planet_modifier = {
@@ -64,3 +60,144 @@ triggered_planet_modifier = {
 	pop_growth_speed = 0.10
 }
 #"Teleport" /\
+#zExpanded \/
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_capital_productivity_1 }
+	}
+	modifier = {
+		trade_value_mult = 0.1
+	}
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_capital_productivity_2 }
+	}
+	modifier = {
+		trade_value_mult = 0.1
+	}
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_capital_productivity_3 }
+	}
+	modifier = {
+		trade_value_mult = 0.1
+	}
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_ai = yes }
+		num_districts = {
+			type = district_mining
+			value > 0
+		}
+		str_force_district_mining = yes
+	}
+	job_starnet_spice_melange_farmer_add = -2
+	job_starnet_spice_melange_antifarmer_add = 2
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_ai = yes }
+		num_districts = {
+			type = district_mining
+			value > 2
+		}
+		str_force_district_mining = yes
+	}
+	job_starnet_spice_melange_farmer_add = -2
+	job_starnet_spice_melange_antifarmer_add = 2
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_ai = yes }
+		num_districts = {
+			type = district_mining
+			value > 4
+		}
+		str_force_district_mining = yes
+	}
+	job_starnet_spice_melange_farmer_add = -2
+	job_starnet_spice_melange_antifarmer_add = 2
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_ai = yes }
+		num_districts = {
+			type = district_mining
+			value > 6
+		}
+		str_force_district_mining = yes
+	}
+	job_starnet_spice_melange_farmer_add = -2
+	job_starnet_spice_melange_antifarmer_add = 2
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_ai = yes }
+		num_districts = {
+			type = district_city
+			value > 0
+		}
+		str_force_city_district = yes
+	}
+	job_starnet_spice_melange_farmer_add = -2
+	job_starnet_spice_melange_antifarmer_add = 2
+}
+
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_ai = yes }
+		num_districts = {
+			type = district_city
+			value > 2
+		}
+		str_force_city_district = yes
+	}
+	job_starnet_spice_melange_farmer_add = -2
+	job_starnet_spice_melange_antifarmer_add = 2
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_ai = yes }
+		num_districts = {
+			type = district_city
+			value > 4
+		}
+		str_force_city_district = yes
+	}
+	job_starnet_spice_melange_farmer_add = -2
+	job_starnet_spice_melange_antifarmer_add = 2
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_ai = yes }
+		num_districts = {
+			type = district_city
+			value > 6
+		}
+		str_force_city_district = yes
+	}
+	job_starnet_spice_melange_farmer_add = -2
+	job_starnet_spice_melange_antifarmer_add = 2
+}
+#zExpanded /\

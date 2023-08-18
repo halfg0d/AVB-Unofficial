@@ -31,6 +31,10 @@ building_system_capital = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			AND = {
+				has_modifier = penal_colony
+				has_z_expanded_mod = yes
+			}
 		}
 	}
 	convert_to = {
@@ -41,6 +45,7 @@ building_system_capital = {
 		building_slave_major_capital
 		building_ancient_control_center
 		building_ancient_palace
+		building_penal_major_capital
 	}
 
 	allow = {
@@ -67,8 +72,6 @@ building_system_capital = {
 	inline_script = {
 		script = "capitals/regular/avb_capitals_together"
 		tier = c3
-		#toxic_origin1 = ""
-		#toxic_origin2 = ""
 	}
 	
 	resources = {
@@ -138,7 +141,7 @@ building_machine_system_capital = {
 		planet_amenities_add = 18
 		job_replicator_add = 2
 		job_patrol_drone_add = 3
-		job_maintenance_drone_add = 5
+		job_maintenance_drone_add = 4
 		planet_max_buildings_add = @buildings_t4
 		defense_armies_add = @tier_4_capital_defense_armies
 	}
@@ -248,11 +251,9 @@ building_hive_major_capital = {
 
 	resources = {
 		category = planet_buildings
-		cost = {
-			minerals = @b2_minerals
-		}
-		upkeep = {
-			energy = @b2_upkeep
+		inline_script = {
+			script = "capitals/hive/avb_capitals_hive_resources"
+			tier = 2
 		}
 	}
 
@@ -375,7 +376,7 @@ building_resort_major_capital = {
 	}
 
 	allow = {
-		num_pops >= 10
+		num_pops >= 20
 	}
 
 	resources = {
@@ -390,8 +391,6 @@ building_resort_major_capital = {
 
 	planet_modifier = {
 		planet_housing_add = 10
-		planet_amenities_add = 10
-		job_entertainer_add = 2
 		planet_max_buildings_add = 11
 		planet_max_branch_office_buildings_add = 2
 	}	
@@ -402,7 +401,10 @@ building_resort_major_capital = {
 		potential = {
 			exists = owner
 			owner = {
-				has_valid_civic = civic_warrior_culture
+				OR = {
+					has_valid_civic = civic_warrior_culture
+					has_warrior_culture = yes
+				}
 			}					
 		}
 		modifier = {
@@ -460,6 +462,47 @@ building_resort_major_capital = {
 		pop_growth_speed = 0.10
 	}
 
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_regular_empire = yes }
+		}
+		planet_amenities_add = 10
+		job_entertainer_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			owner = { is_servitor_empire = yes }
+		}
+		planet_amenities_no_happiness_add = 10
+		job_patrol_drone_add = 1
+		job_maintenance_drone_add = 1
+		job_replicator_add = 2
+		job_servitor_caretaker_drone_add = 1
+		job_bio_trophy_add = 5
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = { has_active_tradition = tr_synthetics_finish_machine }
+		}
+		modifier = {
+			job_replicator_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = { has_technology = tech_capital_productivity_1 }
+		}
+		modifier = {
+			trade_value_mult = 0.1
+		}
+	}
+	#zExpanded /\
 	triggered_desc = {
 		trigger = {
 			exists = owner
@@ -563,6 +606,46 @@ building_slave_major_capital = {
 		}
 	}	
 	
+	#zExpanded \/
+	inline_script = {
+		script = job_groups/civic_capital_jobs
+		count = 1
+		trigger = "
+			has_z_expanded_mod = yes
+			owner = {
+				NOR = {
+					has_capital_merchants = yes
+					has_exalted_priesthood = { allow_invalid = yes }
+					is_technocracy = { allow_invalid = yes }
+				}
+			}
+		"
+		desc = " "
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = { has_technology = tech_capital_productivity_2 }
+		}
+		modifier = {
+			planet_jobs_productive_upkeep_mult = 0.1
+			planet_jobs_productive_produces_mult = 0.1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = { has_technology = tech_capital_productivity_3 }
+			planet = { num_pops >= 80 }
+		}
+		modifier = {
+			planet_jobs_productive_upkeep_mult = 0.1
+			planet_jobs_productive_produces_mult = 0.1
+		}
+	}
+	#zExpanded /\
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner

@@ -12,7 +12,7 @@ building_avb_residence_3 = {
 		OR = {
 			NOT = { 
 				OR = {
-					is_planet_class = pc_habitat
+					is_habitat = yes
 					is_pd_habitat = yes
 				}
 			}
@@ -39,6 +39,13 @@ building_avb_residence_3 = {
 			owner = { has_valid_civic = civic_shared_burden }
 			has_modifier = slave_colony
 			owner = { is_ai = yes }
+			AND = {
+				OR = {
+					owner = { is_shared_burden_empire = yes }
+					owner = { has_valid_civic = civic_worker_coop }
+				}
+				has_z_expanded_mod = yes
+			}
 		}
 	}
 	
@@ -89,15 +96,48 @@ building_avb_residence_3 = {
 		}
 	}
 	#EC: Classic/Bug /\
+	#zExpanded \/
+	inline_script = {
+		script = job_groups/entertainer_add
+		trigger = "
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = { is_pleasure_seeker = yes }
+		"
+		count = 2
+		desc = " "
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_technology = tech_housing_1 
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_technology = tech_housing_2 
+				NOT = { is_agrarian_empire = { allow_invalid = yes } }
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	#zExpanded /\
 	resources = {
 		category = planet_buildings
-		cost = {
-			minerals = @avb_b3_minerals
-			rare_crystals = 100
-		}
-		upkeep = {
-			energy = @avb_b3_upkeep
-			rare_crystals = 2
+		inline_script = {
+			script = "amenity_buildings/avb_residence_resources"
+			tier = 3
 		}
 	}
 	
@@ -113,6 +153,16 @@ building_avb_residence_3 = {
 		owner = { 
 			is_regular_empire = yes
 			NOT = { has_valid_civic = civic_shared_burden }
+			OR = {
+				has_z_expanded_mod = no
+				AND = {
+					has_z_expanded_mod = yes
+					NOR ={
+						is_shared_burden_empire = yes
+						has_valid_civic = civic_worker_coop
+					}
+				}
+			}
 		}
 	}
 }
@@ -128,7 +178,7 @@ building_avb_residence_4 = {
 		OR = {
 			NOT = { 
 				OR = {
-					is_planet_class = pc_habitat
+					is_habitat = yes
 					is_pd_habitat = yes
 				}
 			}
@@ -155,6 +205,13 @@ building_avb_residence_4 = {
 			owner = { has_valid_civic = civic_shared_burden }
 			has_modifier = slave_colony
 			owner = { is_ai = yes }
+			AND = {
+				OR = {
+					owner = { is_shared_burden_empire = yes }
+					owner = { has_valid_civic = civic_worker_coop }
+				}
+				has_z_expanded_mod = yes
+			}
 		}
 	}
 	
@@ -206,15 +263,48 @@ building_avb_residence_4 = {
 		}
 	}
 	#EC: Classic/Bug /\
+	#zExpanded \/
+	inline_script = {
+		script = job_groups/entertainer_add
+		trigger = "
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = { is_pleasure_seeker = yes }
+		"
+		count = 3
+		desc = " "
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_technology = tech_housing_1 
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_technology = tech_housing_2 
+				NOT = { is_agrarian_empire = { allow_invalid = yes } }
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	#zExpanded /\
 	resources = {
 		category = planet_buildings
-		cost = {
-			minerals = @avb_b4_minerals
-			rare_crystals = 150
-		}
-		upkeep = {
-			energy = @avb_b4_upkeep
-			rare_crystals = 3
+		inline_script = {
+			script = "amenity_buildings/avb_residence_resources"
+			tier = 4
 		}
 	}
 	
@@ -230,6 +320,16 @@ building_avb_residence_4 = {
 		owner = { 
 			is_regular_empire = yes
 			NOT = { has_valid_civic = civic_shared_burden }
+			OR = {
+				has_z_expanded_mod = no
+				AND = {
+					has_z_expanded_mod = yes
+					NOR ={
+						is_shared_burden_empire = yes
+						has_valid_civic = civic_worker_coop
+					}
+				}
+			}
 		}
 	}
 }
@@ -245,7 +345,7 @@ building_avb_residence_5 = {
 		OR = {
 			NOT = { 
 				OR = {
-					is_planet_class = pc_habitat
+					is_habitat = yes
 					is_pd_habitat = yes
 				}
 			}
@@ -272,6 +372,13 @@ building_avb_residence_5 = {
 			owner = { has_valid_civic = civic_shared_burden }
 			has_modifier = slave_colony
 			owner = { is_ai = yes }
+			AND = {
+				OR = {
+					owner = { is_shared_burden_empire = yes }
+					owner = { has_valid_civic = civic_worker_coop }
+				}
+				has_z_expanded_mod = yes
+			}
 		}
 	}
 	
@@ -323,15 +430,48 @@ building_avb_residence_5 = {
 		}
 	}
 	#EC: Classic/Bug /\
+	#zExpanded \/
+	inline_script = {
+		script = job_groups/entertainer_add
+		trigger = "
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = { is_pleasure_seeker = yes }
+		"
+		count = 3
+		desc = " "
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_technology = tech_housing_1 
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_technology = tech_housing_2 
+				NOT = { is_agrarian_empire = { allow_invalid = yes } }
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	#zExpanded /\
 	resources = {
 		category = planet_buildings
-		cost = {
-			minerals = @avb_b5_minerals
-			rare_crystals = 200
-		}
-		upkeep = {
-			energy = @avb_b5_upkeep
-			rare_crystals = 4
+		inline_script = {
+			script = "amenity_buildings/avb_residence_resources"
+			tier = 5
 		}
 	}
 	
@@ -343,6 +483,16 @@ building_avb_residence_5 = {
 		owner = { 
 			is_regular_empire = yes
 			NOT = { has_valid_civic = civic_shared_burden }
+			OR = {
+				has_z_expanded_mod = no
+				AND = {
+					has_z_expanded_mod = yes
+					NOR ={
+						is_shared_burden_empire = yes
+						has_valid_civic = civic_worker_coop
+					}
+				}
+			}
 		}
 	}
 }
@@ -543,7 +693,7 @@ building_avb_communal_housing_4 = {
 		has_upgraded_capital_5 = yes
 	}
 	
-	how_tech_unlock_if = { 
+	show_tech_unlock_if = { 
 		owner = { 
 			is_gestalt = no
 			OR = {
@@ -860,6 +1010,33 @@ building_avb_drone_storage_3 = {
 		}
 	}
 
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_technology = tech_housing_1 
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_technology = tech_housing_2 
+				NOT = { is_agrarian_empire = { allow_invalid = yes } }
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	#zExpanded /\
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -943,6 +1120,33 @@ building_avb_drone_storage_4 = {
 		}
 	}
 
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_technology = tech_housing_1 
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_technology = tech_housing_2 
+				NOT = { is_agrarian_empire = { allow_invalid = yes } }
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	#zExpanded /\
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1032,13 +1236,78 @@ building_avb_warren_3 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_b3_minerals
-			rare_crystals = 100
+			trigger = {
+				has_z_expanded_mod = no
+			}
+			minerals = @avb_a3_minerals
+			rare_crystals = @avb_a3_rare_cost
 		}
 		upkeep = {
-			energy = @avb_b3_upkeep
-			rare_crystals = 2
+			trigger = {
+				has_z_expanded_mod = no
+			}
+			energy = 3
+			rare_crystals = @avb_a3_rare_upkeep
 		}
+		#zExpanded \/
+		cost = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					is_lithoid_empire = yes
+				}
+			}
+			minerals = @avb_a3_minerals
+			rare_crystals = @avb_a3_rare_cost
+		}
+		cost = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					NOT = { has_valid_civic = civic_integrated_bioarchitecture } is_lithoid_empire = no
+				}
+			}
+			minerals = @avb_a3_hive_minerals
+			food = @avb_a3_hive_food
+			rare_crystals = @avb_a3_rare_cost
+		}
+		cost = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = { has_valid_civic = civic_integrated_bioarchitecture is_lithoid_empire = no }
+			}
+			food = @avb_a3_minerals
+			rare_crystals = @avb_a3_rare_cost
+		}
+		upkeep = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					is_lithoid_empire = no
+				}
+			}
+			energy = @avb_a3_upkeep_hive
+			food = @avb_a3_upkeep_food
+			rare_crystals = @avb_a3_rare_upkeep
+		}
+		upkeep = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					is_lithoid_empire = yes
+					NOT = { has_valid_civic = civic_integrated_bioarchitecture }
+				}
+			}
+			energy = @avb_a3_upkeep_hive
+			minerals = @avb_a3_upkeep_food
+			rare_crystals = @avb_a3_rare_upkeep
+		}
+		#zExpanded /\
 	}
 	
 	upgrades = {
@@ -1049,6 +1318,45 @@ building_avb_warren_3 = {
 		"tech_avb_housing_3" 
 	}
 
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_valid_civic = civic_underground_drones
+			}				
+		}
+		modifier = {
+			planet_amenities_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_technology = tech_housing_1 
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_technology = tech_housing_2 
+				NOT = { is_agrarian_empire = { allow_invalid = yes } }
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	#zExpanded /\
 	on_queued = {
 		IF = {
 			limit = {
@@ -1120,13 +1428,78 @@ building_avb_warren_4 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_b4_minerals
-			rare_crystals = 100
+			trigger = {
+				has_z_expanded_mod = no
+			}
+			minerals = @avb_a4_minerals
+			rare_crystals = @avb_a4_rare_cost
 		}
 		upkeep = {
-			energy = @avb_b4_upkeep
-			rare_crystals = 4
+			trigger = {
+				has_z_expanded_mod = no
+			}
+			energy = 3
+			rare_crystals = @avb_a4_rare_upkeep
 		}
+		#zExpanded \/
+		cost = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					is_lithoid_empire = yes
+				}
+			}
+			minerals = @avb_a4_minerals
+			rare_crystals = @avb_a4_rare_cost
+		}
+		cost = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					NOT = { has_valid_civic = civic_integrated_bioarchitecture } is_lithoid_empire = no
+				}
+			}
+			minerals = @avb_a4_hive_minerals
+			food = @avb_a4_hive_food
+			rare_crystals = @avb_a4_rare_cost
+		}
+		cost = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = { has_valid_civic = civic_integrated_bioarchitecture is_lithoid_empire = no }
+			}
+			food = @avb_a4_minerals
+			rare_crystals = @avb_a4_rare_cost
+		}
+		upkeep = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					is_lithoid_empire = no
+				}
+			}
+			energy = @avb_a4_upkeep_hive
+			food = @avb_a4_upkeep_food
+			rare_crystals = @avb_a4_rare_upkeep
+		}
+		upkeep = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					is_lithoid_empire = yes
+					NOT = { has_valid_civic = civic_integrated_bioarchitecture }
+				}
+			}
+			energy = @avb_a4_upkeep_hive
+			minerals = @avb_a4_upkeep_food
+			rare_crystals = @avb_a4_rare_upkeep
+		}
+		#zExpanded /\
 	}
 	
 	
@@ -1134,6 +1507,45 @@ building_avb_warren_4 = {
 		"tech_avb_housing_4" 
 	}
 
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_valid_civic = civic_underground_drones
+			}				
+		}
+		modifier = {
+			planet_amenities_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_technology = tech_housing_1 
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_technology = tech_housing_2 
+				NOT = { is_agrarian_empire = { allow_invalid = yes } }
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	#zExpanded /\
 	on_queued = {
 		IF = {
 			limit = {
@@ -1170,6 +1582,15 @@ building_avb_holo_theatre_3 = {
 		has_fully_upgraded_capital = yes
 		owner = {
 			NOT = { has_valid_civic = civic_dystopian_society }
+			#zExpanded \/
+			OR = {
+				has_z_expanded_mod = no
+				AND = {
+					has_z_expanded_mod = yes
+					NOT = { has_warrior_culture = yes }
+				}
+			}
+			#zExpanded /\
 		}
 		OR = {
 			owner = {
@@ -1193,9 +1614,37 @@ building_avb_holo_theatre_3 = {
 				free_amenities > 30
 				years_passed > 25
 			}
+			AND = {
+				has_z_expanded_mod = yes
+				has_warrior_culture = yes
+			}
 		}
 	}
-		
+	
+	#zExpanded \/
+	convert_to = {
+		building_virtual_combat_arena
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+		}	
+		modifier = {
+			trade_value_mult = 0.02
+		}
+	}
+	show_tech_unlock_if = {
+		owner = {
+			OR = {
+				has_z_expanded_mod = no
+				AND = {
+					has_z_expanded_mod = yes
+					NOT = { has_warrior_culture = yes }
+				}
+			}
+		}
+	}
+	#zExpanded /\	
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -1296,6 +1745,15 @@ building_avb_holo_theatre_4 = {
 		has_upgraded_capital_5 = yes
 		owner = {
 			NOT = { has_valid_civic = civic_dystopian_society }
+			#zExpanded \/
+			OR = {
+				has_z_expanded_mod = no
+				AND = {
+					has_z_expanded_mod = yes
+					NOT = { has_warrior_culture = yes }
+				}
+			}
+			#zExpanded /\
 		}
 		OR = {
 			owner = {
@@ -1308,6 +1766,30 @@ building_avb_holo_theatre_4 = {
 		}
 	}
 	
+	#zExpanded \/
+	convert_to = {
+		building_virtual_combat_arena
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+		}	
+		modifier = {
+			trade_value_mult = 0.02
+		}
+	}
+	show_tech_unlock_if = {
+		owner = {
+			OR = {
+				has_z_expanded_mod = no
+				AND = {
+					has_z_expanded_mod = yes
+					NOT = { has_warrior_culture = yes }
+				}
+			}
+		}
+	}
+	#zExpanded /\
 	destroy_trigger = {
 		exists = owner
 		owner = { has_valid_civic = civic_dystopian_society }
@@ -1318,6 +1800,10 @@ building_avb_holo_theatre_4 = {
 				owner = { is_ai = yes }
 				free_amenities > 30
 				years_passed > 25
+			}
+			AND = {
+				has_z_expanded_mod = yes
+				has_warrior_culture = yes
 			}
 		}
 	}
@@ -1446,6 +1932,10 @@ building_avb_clinic_3 = {
 				buildings_stop_pop = yes
 				owner = { is_ai = yes }
 			}
+			AND = {
+				has_z_expanded_mod = yes
+				has_modifier = planetary_station
+			}
 		}
 	}
 	
@@ -1565,6 +2055,10 @@ building_avb_clinic_4 = {
 			AND = {
 				buildings_stop_pop = yes
 				owner = { is_ai = yes }
+			}
+			AND = {
+				has_z_expanded_mod = yes
+				has_modifier = planetary_station
 			}
 		}
 	}
@@ -1782,10 +2276,16 @@ building_avb_ranger_lodge_2 = {
 			has_valid_civic = civic_environmentalist
 		}
 		NOR = {
+			#Vanilla
 			is_planet_class = pc_city
 			is_planet_class = pc_hive
 			is_planet_class = pc_machine
 			is_planet_class = pc_relic
+			#With other mods
+			is_city_world = yes
+			is_hive_world = yes
+			is_machine_world = yes
+			is_relic_world = yes
 		}
 		is_artificial = no
 	}
@@ -1805,13 +2305,24 @@ building_avb_ranger_lodge_2 = {
 	destroy_trigger = {
 		exists = owner
 		OR = {
-			owner = { is_gestalt = yes}
+			owner = { is_gestalt = yes }
 			has_modifier = slave_colony
-			owner = { NOT = { has_valid_civic = civic_environmentalist } }
+			owner = {
+				NOR = {
+					has_valid_civic = civic_environmentalist 
+					is_enviromentalist_empire = yes
+				} 
+			}
+			#Vanilla
 			is_planet_class = pc_city
 			is_planet_class = pc_hive
 			is_planet_class = pc_machine
 			is_planet_class = pc_relic
+			#With other mods
+			is_city_world = yes
+			is_hive_world = yes
+			is_machine_world = yes
+			is_relic_world = yes
 		}
 	}
 
@@ -1819,45 +2330,41 @@ building_avb_ranger_lodge_2 = {
 		job_ranger_add = @avb_a2_jobs
 		deposit_blockers_natural_unity_produces_add = 4
 	}
+	inline_script = amenity_buildings/avb_ranger_resolutions
 
-	ai_resource_production = {
-		unity = 2
-		mult = value:natural_blocker_count
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+		}
+		deposit_blockers_natural_unity_produces_add = 2
+		pop_environment_tolerance = 0.05
 	}
-
-	ai_resource_production = {
-		unity = 1
-		trigger = { owner_has_resolution = { RES = resolution_ecology_integrated_gardens } }
-		mult = value:natural_blocker_count
-	}
-
-	ai_resource_production = {
-		unity = 1
-		trigger = { owner_has_resolution = { RES = resolution_ecology_environmental_control_board } }
-		mult = value:natural_blocker_count
-	}
-
-	ai_resource_production = {
-		unity = 1
-		trigger = { owner_has_resolution = { RES = resolution_ecology_paradise_initiative } }
-		mult = value:natural_blocker_count
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			has_global_flag = EcologyMod_active
+		}
+		job_park_ranger_add = @avb_a2_jobs
+		job_ranger_add = -@avb_a2_jobs
 	}
 
 	triggered_planet_modifier = {
-		potential = { owner_has_resolution = { RES = resolution_ecology_integrated_gardens } }
-		deposit_blockers_natural_unity_produces_add = 1
+		potential = {
+			has_z_expanded_mod = yes
+			has_designation = col_resort
+			NOT = { has_global_flag = EcologyMod_active }
+		}
+		job_ranger_per_pop = 0.15 # 3 job per 20 pops
 	}
-
 	triggered_planet_modifier = {
-		potential = { owner_has_resolution = { RES = resolution_ecology_environmental_control_board } }
-		deposit_blockers_natural_unity_produces_add = 1
+		potential = {
+			has_z_expanded_mod = yes
+			has_designation = col_resort
+			has_global_flag = EcologyMod_active
+		}
+		job_park_ranger_per_pop = 0.15 # 3 job per 20 pops
 	}
-
-	triggered_planet_modifier = {
-		potential = { owner_has_resolution = { RES = resolution_ecology_paradise_initiative } }
-		deposit_blockers_natural_unity_produces_add = 1
-	}
-
+	#zExpanded /\
 	resources = {
 		category = planet_buildings
 		cost = {

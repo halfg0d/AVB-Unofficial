@@ -1,0 +1,76 @@
+#zExpanded \/
+building_virtual_combat_arena = {
+	base_buildtime = @b2_time
+	position_priority = 170
+	can_build = no
+	#icon = building_hyper_entertainment_forum
+
+	category = amenity
+	
+	potential = {
+		has_z_expanded_mod = yes
+		has_building = building_combat_arena
+	}
+
+	allow = {
+		has_upgraded_capital = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = { is_regular_empire = no }
+			owner = { NOT = { has_warrior_culture = yes } }
+			owner = { has_dystopian_society = yes }
+			has_modifier = slave_colony
+
+		}
+	}
+
+	convert_to = {
+		building_hyper_entertainment_forum
+	}
+		
+	planet_modifier = {
+		pop_happiness = 0.02
+	}
+
+	inline_script = {
+		script = job_groups/entertainer_add
+		trigger = " "
+		count = @b2_jobs
+		desc = " "
+	}
+
+	army_modifier = {
+		army_defense_morale_mult = 0.40
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+			exotic_gases = @b2_rare_cost
+		}
+		upkeep = {
+			energy = @b2_upkeep
+			exotic_gases = @b2_rare_upkeep
+		}
+	}
+
+	prerequisites = {
+		"tech_virtual_combat_arena"
+	}
+
+	show_tech_unlock_if = {
+		owner = { has_warrior_culture = yes }
+	}
+
+	triggered_desc = {
+		text = job_duelist_effect_desc
+	}
+	upgrades = {
+		building_avb_holo_theatre_3
+	}
+}
+#zExpanded /\

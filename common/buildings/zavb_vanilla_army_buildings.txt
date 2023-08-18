@@ -19,6 +19,20 @@ building_military_academy = {
 					is_bugged_reanimator = no #EC: Bug <<
 				}
 			}
+			OR = {
+				has_z_expanded_mod = no
+				AND = {
+					has_z_expanded_mod = yes
+					NOT = { has_valid_civic = civic_machine_terminator }
+				}
+			}
+		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
 		}
 	}
 
@@ -54,12 +68,17 @@ building_military_academy = {
 						}
 					}
 				}
+				AND = {
+					has_z_expanded_mod = yes
+					has_valid_civic = civic_machine_terminator
+				}
 			}
 		}
 	}
 
 	convert_to = {
 		building_dread_encampment
+		building_war_factory #zExpanded
 	}
 
 	army_modifier = {
@@ -84,6 +103,25 @@ building_military_academy = {
 			job_warrior_drone_add = @b1_jobs
 		}
 	}
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+		}
+		modifier = {
+			planet_army_build_speed_mult = 0.5
+		}
+	}
+	triggered_country_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = army_leader
+		}
+		modifier = {
+			empire_size_colonies_mult = 0.1
+		}
+	}
+	#zExpanded /\
 	#EC: Classic \/
 	triggered_planet_modifier = {
 		potential = {
@@ -121,6 +159,7 @@ building_military_academy = {
 
 	show_tech_unlock_if = {
 		NOT = { has_valid_civic = civic_reanimated_armies }
+		NOT = { has_valid_civic = civic_machine_terminator }
 	}
 
 	triggered_desc = {
@@ -137,7 +176,12 @@ building_military_academy = {
 		}
 		text = job_soldier_effect_desc
 	}
-	
+	triggered_desc = { #zExpanded
+		trigger = {
+			has_z_expanded_mod = yes
+		}
+		text = building_military_academy_tooltip
+	}
 	upgrades = {
 		"building_avb_military_academy_2"
 		"building_eutab_battle_praxeum"
@@ -159,10 +203,15 @@ building_dread_encampment = {
 				is_bugged_reanimator = yes
 			}
 		}
+		AND = {
+			has_z_expanded_mod = yes
+			NOT = { has_planet_flag = planetary_station }
+		}
 	}
 
 	convert_to = {
 		building_military_academy
+		building_war_factory #zExpanded
 	}
 
 	allow = {
@@ -176,7 +225,25 @@ building_dread_encampment = {
 	planet_modifier = {
 		job_necromancer_add = 2
 	}
-
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+		}
+		modifier = {
+			planet_army_build_speed_mult = 0.5
+		}
+	}
+	triggered_country_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = army_leader
+		}
+		modifier = {
+			empire_size_colonies_mult = 0.1
+		}
+	}
+	#zExpanded /\
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -184,6 +251,14 @@ building_dread_encampment = {
 		}
 		upkeep = {
 			energy = @b1_upkeep
+		}
+		upkeep = {
+			trigger = { 
+				has_z_expanded_mod = yes
+				exists = army_leader
+			}
+			energy = @b2_upkeep
+			unity = @b2_upkeep
 		}
 	}
 
@@ -193,6 +268,20 @@ building_dread_encampment = {
 		}
 		text = job_necromancer_effect_desc
 	}
+	#zExpanded \/
+	triggered_desc = {
+		trigger = {
+			always = yes
+		}
+		text = building_military_academy_tooltip
+	}
+	#trick the ai into building this
+	ai_resource_production = {
+		trigger = { always = yes }
+		alloys = 8
+		minerals = 8
+	}
+	#zExpanded /\
 }
 
 building_fortress = {
@@ -207,22 +296,29 @@ building_fortress = {
 		has_upgraded_capital = yes
 	}
 
-	#PT \/
 	destroy_trigger = {
 		has_plentiful_tradition_mod = yes
 		exists = owner
 		owner = { is_ai = yes }
-		num_buildings = { type = building_fortress value > 1 }
 		OR = {
 			AND = {
 				num_buildings = { type = building_fortress value > 1 }
 				free_building_slots = 0
-				owner = { used_naval_capacity_percent < 0.4	}
+				owner = {
+					is_militarist = no
+					used_naval_capacity_percent < 0.4
+				}
 			}
-			buildings_no_motes = yes
+			AND = {
+				num_buildings = { type = building_fortress value > 2 }
+				free_building_slots = 0
+				owner = {
+					is_militarist = yes
+					used_naval_capacity_percent < 0.4
+				}
+			}
 		}
 	}
-	#PT /\
 
 	triggered_planet_modifier = {
 		potential = {
@@ -238,11 +334,12 @@ building_fortress = {
 			job_soldier_add = @b2_jobs
 		}
 	}
+	#EC: Classic \/
 	triggered_planet_modifier = {
         potential = {
+			has_global_flag = ethic_civic_classic_active
             exists = owner
             owner = {
-				has_global_flag = ethic_civic_classic_active
                 has_civic = civic_private_militaries
             }
         }
@@ -251,6 +348,7 @@ building_fortress = {
             job_mercenary_add = @b2_jobs
         }
     }
+	#EC: Classc /\
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -294,7 +392,33 @@ building_fortress = {
             unity = 3
         }
 	}
-	
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_active_tradition = tr_domination_imperious_architecture
+				is_gestalt = no
+			}					
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_active_tradition = tr_domination_synaptic_extensions
+			}					
+		}
+		modifier = {
+			planet_housing_add = 2
+		}
+	}
+	#zExpanded /\
 	prerequisites = {
 		"tech_global_defense_grid"
 	}
@@ -339,6 +463,7 @@ building_fortress = {
 	}
 	upgrades = {
 		"building_avb_stronghold_3"
+		"building_citadel"
 	}
 }
 

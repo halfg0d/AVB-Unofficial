@@ -150,3 +150,13 @@ triggered_desc = {
 	}
 	text = job_unifier_effect_desc
 }
+triggered_desc = {
+	trigger = {
+		exists = owner
+		owner = {
+			has_civic = civic_mining_guilds
+		}
+		is_toxic_origin2_trigger = no
+	}
+	text = job_guildmaster_effect_desc
+}

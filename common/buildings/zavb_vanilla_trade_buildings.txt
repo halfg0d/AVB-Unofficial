@@ -29,12 +29,9 @@ building_commercial_megaplex = {
 			owner = { is_gestalt = yes }
 			has_modifier = slave_colony
 			and = { owner = { is_ai = yes } years_passed > 5 }
-			OR = {
-				has_z_expanded_mod = no
-				AND = {
-					has_z_expanded_mod = yes
-					owner = { NOT = { is_agrarian_empire = { allow_invalid = yes } } }
-				}
+			AND = {
+				has_z_expanded_mod = yes
+				owner = { NOT = { is_agrarian_empire = { allow_invalid = yes } } }
 			}
 		}
 	}
@@ -45,7 +42,9 @@ building_commercial_megaplex = {
 	upgrades = {
 		"building_avb_commercial_3"
 	}
-
+	convert_to = {
+		building_farmer_complex # zExpanded
+	}
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -110,6 +109,13 @@ building_galactic_stock_exchange = {
 	potential = {
 		NOT = { has_modifier = resort_colony }	
 		NOT = { has_modifier = slave_colony }
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
 		
 	allow = {

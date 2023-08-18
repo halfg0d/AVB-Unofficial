@@ -1,0 +1,231 @@
+
+
+planet_modifier = {
+	planet_metallurgists_alloys_produces_add = @avb_m_f$tier$_alloy1
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_catalytic_empire = no
+		}
+		is_pd_crucible = no
+	}
+	modifier = {
+		planet_metallurgists_minerals_upkeep_add = @avb_m_f$tier$_mineral_upkeep1
+	}
+}
+
+triggered_planet_modifier = {
+	potential = {
+		has_ringworld_output_boost = yes
+		exists = owner
+		owner = {
+			is_catalytic_empire = no
+		}
+	}
+	modifier = {
+		planet_metallurgists_alloys_produces_add = @avb_m_f$tier$_alloy2
+		planet_metallurgists_minerals_upkeep_add = @avb_m_f$tier$_mineral_upkeep2
+	}
+}
+
+triggered_planet_modifier = {
+	potential = {
+		has_ringworld_output_boost = yes
+		exists = owner
+		owner = {
+			is_catalytic_empire = yes
+		}
+	}
+	modifier = {
+		planet_metallurgists_alloys_produces_add = @avb_m_f$tier$_alloy2
+		planet_metallurgists_food_upkeep_add = @avb_m_f$tier$_food_upkeep2
+	}
+}
+#PD Unique \/
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_catalytic_empire = no
+		}
+		is_pd_crucible = yes
+	}
+	modifier = {
+		planet_metallurgists_energy_upkeep_add = @avb_m_f$tier$_energy_upkeep
+	}
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_regular_empire = yes
+		}
+		is_pd_crucible = yes
+	}
+	modifier = {
+		job_crucible_foundry_add = @avb_m_f$tier$_jobs
+	}
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_hive_empire = yes
+		}
+		is_pd_crucible = yes
+	}
+	modifier = {
+		job_crucible_alloy_drone_add = @avb_m_f$tier$_jobs
+	}
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_machine_empire = yes
+		}
+		is_pd_crucible = yes
+	}
+	modifier = {
+		job_crucible_fabricator_add = @avb_m_f$tier$_jobs
+	}
+}
+#PD Unique /\
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = no
+			is_catalytic_empire = no
+		}
+		is_pd_crucible = no
+	}
+	modifier = {
+		job_foundry_add = @avb_m_f$tier$_jobs
+	}
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = no
+			is_catalytic_empire = yes
+		}
+		is_pd_crucible = no
+	}
+	modifier = {
+		planet_metallurgists_food_upkeep_add = @avb_m_f$tier$_food_upkeep1
+		job_catalytic_technician_add = @avb_m_f$tier$_jobs
+	}
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_hive_empire = yes
+			is_catalytic_empire = no
+		}
+		is_pd_crucible = no
+	}
+	modifier = {
+		job_alloy_drone_add = @avb_m_f$tier$_jobs
+	}
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_machine_empire = yes
+			is_catalytic_empire = no
+		}
+		is_pd_crucible = no
+	}
+	modifier = {
+		job_fabricator_add = @avb_m_f$tier$_jobs
+	}
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = yes
+			is_catalytic_empire = yes
+		}
+		is_pd_crucible = no
+	}
+	modifier = {
+		planet_metallurgists_food_upkeep_add = @avb_m_f$tier$_food_upkeep1
+		job_catalytic_drone_add = @avb_m_f$tier$_jobs
+	}
+}
+#zExpanded \/
+triggered_planet_modifier = {
+	potential = {
+		has_z_expanded_mod = yes
+		exists = owner
+		owner = {
+			has_technology = tech_agrarian_alloys 
+			is_agrarian_empire = { allow_invalid = yes }
+		}
+	}
+	modifier = {
+		planet_miners_alloys_produces_add = 1
+	}
+}
+
+triggered_planet_modifier = {
+	potential = {
+		has_z_expanded_mod = yes
+		exists = owner
+		owner = {
+			has_technology = tech_agrarian_alloys 
+			is_agrarian_empire = { allow_invalid = yes }
+		}
+		has_ringworld_output_boost = yes
+	}
+	modifier = {
+		planet_miners_alloys_produces_add = 0.5
+	}
+}
+
+triggered_planet_modifier = {
+	potential = {
+		has_z_expanded_mod = yes
+		has_global_flag = EcologyMod_active
+	}
+	modifier = {
+		planet_metallurgists_waste_produces_add = 4
+	}
+}
+
+triggered_planet_modifier = {
+	potential = {
+		has_z_expanded_mod = yes
+		has_global_flag = EcologyMod_active
+		has_ringworld_output_boost = yes
+	}
+	modifier = {
+		planet_metallurgists_waste_produces_add = 2
+	}
+}
+triggered_planet_modifier = {
+	potential = {
+		has_z_expanded_mod = yes
+		exists = owner
+		owner = { is_ai = yes }
+		str_force_building_foundry_upgrade = yes
+		NOT = { has_building = building_foundry_3 }
+	}
+	modifier = {
+		job_starnet_spice_melange_farmer_add = 1
+		job_starnet_spice_melange_antifarmer_add = -1
+	}
+}
+#zExpanded /\

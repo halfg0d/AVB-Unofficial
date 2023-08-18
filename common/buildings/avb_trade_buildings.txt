@@ -311,6 +311,13 @@ building_avb_galactic_stock_exchange_2 = {
 	potential = {
 		NOT = { has_modifier = resort_colony }	
 		NOT = { has_modifier = slave_colony }
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
 	
 	destroy_trigger = {

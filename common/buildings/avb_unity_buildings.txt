@@ -263,6 +263,13 @@ building_avb_temple_4 = {
 			}
 		}
 		NOT = { has_modifier = slave_colony }
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
 
 	allow = {
@@ -357,6 +364,37 @@ building_avb_temple_4 = {
 		text = job_high_priest_effect_desc
 	}
 
+	
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_valid_civic = civic_private_military_companies
+			}					
+		}
+		modifier = {
+			job_chaplain_add = @avb_u4_jobs_half
+			job_logistics_officer_add = @avb_u4_jobs_half
+			job_priest_add = -@avb_u4_jobs_half
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_valid_civic = civic_machine_cult
+			}
+		}
+		modifier = {
+			job_priest_add = -@avb_u4_jobs_half
+			job_tech_priest_add = @avb_u4_jobs
+		}
+	}
+	#zExpanded /\
 	prerequisites = {
 		"tech_avb_temple_4"
 	}
@@ -517,6 +555,13 @@ building_avb_temple_5 = {
 			}
 		}
 		NOT = { has_modifier = slave_colony }
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
 
 	allow = {
@@ -594,7 +639,36 @@ building_avb_temple_5 = {
 			job_manager_add = @avb_u5_jobs_half
 		}
 	}
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_valid_civic = civic_private_military_companies
+			}					
+		}
+		modifier = {
+			job_chaplain_add = @avb_u5_jobs_half
+			job_logistics_officer_add = @avb_u5_jobs_half
+			job_priest_add = -@avb_u5_jobs_half
+		}
+	}
 
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_valid_civic = civic_machine_cult
+			}
+		}
+		modifier = {
+			job_priest_add = -@avb_u5_jobs_half
+			job_tech_priest_add = @avb_u5_jobs_half
+		}
+	}
+	#zExpanded /\
 	triggered_desc = {
 		trigger = {
 			exists = owner
@@ -1001,6 +1075,13 @@ building_avb_hive_unity_4 = {
 		owner = {
 			is_hive_empire = yes
 		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
 
 	allow = {
@@ -1022,21 +1103,32 @@ building_avb_hive_unity_4 = {
 	resources = {
 		category = planet_buildings
 		cost = {
+			trigger = {
+				has_z_expanded_mod = no
+			}
 			minerals = @avb_u4_minerals
 			exotic_gases = @avb_u4_rare_cost
 		}
 		upkeep = {
+			trigger = {
+				has_z_expanded_mod = no
+			}
 			energy = @avb_u4_upkeep
 			exotic_gases = @avb_u4_rare_upkeep
 		}
 		upkeep = {
 			trigger = {
+				has_z_expanded_mod = no
 				exists = owner
 				owner = {
 					has_edict = synaptic_reinforcement
 				}
 			}
 			energy = 2
+		}
+		inline_script = {
+			script = "unity_buildings/avb_hive_confluence_resources"
+			tier = 4
 		}
 	}
 
@@ -1125,6 +1217,13 @@ building_avb_hive_unity_5 = {
 		owner = {
 			is_hive_empire = yes
 		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
 
 	allow = {
@@ -1146,21 +1245,32 @@ building_avb_hive_unity_5 = {
 	resources = {
 		category = planet_buildings
 		cost = {
+			trigger = {
+				has_z_expanded_mod = no
+			}
 			minerals = @avb_u5_minerals
 			exotic_gases = @avb_u5_rare_cost
 		}
 		upkeep = {
+			trigger = {
+				has_z_expanded_mod = no
+			}
 			energy = @avb_u5_upkeep
 			exotic_gases = @avb_u5_rare_upkeep
 		}
 		upkeep = {
 			trigger = {
+				has_z_expanded_mod = no
 				exists = owner
 				owner = {
 					has_edict = synaptic_reinforcement
 				}
 			}
 			energy = 2
+		}
+		inline_script = {
+			script = "unity_buildings/avb_hive_confluence_resources"
+			tier = 5
 		}
 	}
 
@@ -1249,6 +1359,13 @@ building_avb_hive_unity_6 = {
 		owner = {
 			is_hive_empire = yes
 		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
 
 	allow = {
@@ -1270,21 +1387,32 @@ building_avb_hive_unity_6 = {
 	resources = {
 		category = planet_buildings
 		cost = {
+			trigger = {
+				has_z_expanded_mod = no
+			}
 			minerals = @avb_u6_minerals
 			exotic_gases = @avb_u6_rare_cost
 		}
 		upkeep = {
+			trigger = {
+				has_z_expanded_mod = no
+			}
 			energy = @avb_u6_upkeep
 			exotic_gases = @avb_u6_rare_upkeep
 		}
 		upkeep = {
 			trigger = {
+				has_z_expanded_mod = no
 				exists = owner
 				owner = {
 					has_edict = synaptic_reinforcement
 				}
 			}
 			energy = 2
+		}
+		inline_script = {
+			script = "unity_buildings/avb_hive_confluence_resources"
+			tier = 6
 		}
 	}
 
@@ -1371,8 +1499,16 @@ building_avb_machine_unity_4 = {
 		exists = owner
 		owner = {
 			is_machine_empire = yes
-			NOT = {
+			NOR = {
 				has_valid_civic = civic_machine_servitor
+				is_servitor_empire = yes
+			}
+		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
 			}
 		}
 	}
@@ -1387,6 +1523,7 @@ building_avb_machine_unity_4 = {
 			OR = {
 				is_machine_empire = no
 				has_valid_civic = civic_machine_servitor
+				is_servitor_empire = yes
 			}
 		}
 	}
@@ -1458,8 +1595,16 @@ building_avb_machine_unity_5 = {
 		exists = owner
 		owner = {
 			is_machine_empire = yes
-			NOT = {
+			NOR = {
 				has_valid_civic = civic_machine_servitor
+				is_servitor_empire = yes
+			}
+		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
 			}
 		}
 	}
@@ -1474,6 +1619,7 @@ building_avb_machine_unity_5 = {
 			OR = {
 				is_machine_empire = no
 				has_valid_civic = civic_machine_servitor
+				is_servitor_empire = yes
 			}
 		}
 	}
@@ -1545,8 +1691,16 @@ building_avb_machine_unity_6 = {
 		exists = owner
 		owner = {
 			is_machine_empire = yes
-			NOT = {
+			NOR = {
 				has_valid_civic = civic_machine_servitor
+				is_servitor_empire = yes
+			}
+		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
 			}
 		}
 	}
@@ -1561,6 +1715,7 @@ building_avb_machine_unity_6 = {
 			OR = {
 				is_machine_empire = no
 				has_valid_civic = civic_machine_servitor
+				is_servitor_empire = yes
 			}
 		}
 	}
@@ -2142,6 +2297,13 @@ building_avb_monument_4 = {
 				is_memorialist_empire = yes
 			}
 		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
 
 	allow = {
@@ -2185,6 +2347,17 @@ building_avb_monument_4 = {
 		planet_jobs_unity_produces_mult = 0.2
 		job_culture_worker_add = @avb_u4_jobs
 	}
+	#zExpanded
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = { has_valid_civic = civic_ethical_hedonism }
+		}
+		modifier = {
+			job_culture_worker_add = 3
+		}
+	}
 
 	triggered_desc = {
 		text = building_avb_monument_effect_4
@@ -2221,6 +2394,13 @@ building_avb_monument_5 = {
 				is_gestalt = yes
 				is_megacorp = yes
 				is_memorialist_empire = yes
+			}
+		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
 			}
 		}
 	}
@@ -2266,6 +2446,17 @@ building_avb_monument_5 = {
 		planet_jobs_unity_produces_mult = 0.25
 		job_culture_worker_add = @avb_u5_jobs
 	}
+	#zExpanded
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = { has_valid_civic = civic_ethical_hedonism }
+		}
+		modifier = {
+			job_culture_worker_add = 3
+		}
+	}
 
 	triggered_desc = {
 		text = building_avb_monument_effect_5
@@ -2302,6 +2493,13 @@ building_avb_monument_6 = {
 				is_gestalt = yes
 				is_megacorp = yes
 				is_memorialist_empire = yes
+			}
+		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
 			}
 		}
 	}
@@ -2346,6 +2544,17 @@ building_avb_monument_6 = {
 	planet_modifier = {
 		planet_jobs_unity_produces_mult = 0.3
 		job_culture_worker_add = @avb_u6_jobs
+	}
+	#zExpanded
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = { has_valid_civic = civic_ethical_hedonism }
+		}
+		modifier = {
+			job_culture_worker_add = 3
+		}
 	}
 
 	triggered_desc = {
@@ -2604,6 +2813,13 @@ building_avb_monument_hive_4 = {
 			is_hive_empire = yes
 			is_memorialist_empire = no
 		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
 
 	allow = {
@@ -2680,6 +2896,13 @@ building_avb_monument_hive_5 = {
 		owner = {
 			is_hive_empire = yes
 			is_memorialist_empire = no
+		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
 		}
 	}
 
@@ -2758,6 +2981,13 @@ building_avb_monument_hive_6 = {
 			is_hive_empire = yes
 			is_memorialist_empire = no
 		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
 
 	allow = {
@@ -2832,6 +3062,13 @@ building_avb_monument_machine_4 = {
 		owner = {
 			is_machine_empire = yes
 			is_memorialist_empire = no
+		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
 		}
 	}
 
@@ -2911,6 +3148,13 @@ building_avb_monument_machine_5 = {
 			is_machine_empire = yes
 			is_memorialist_empire = no
 		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
 
 	allow = {
@@ -2988,6 +3232,13 @@ building_avb_monument_machine_6 = {
 		owner = {
 			is_machine_empire = yes
 			is_memorialist_empire = no
+		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
 		}
 	}
 
@@ -3154,6 +3405,19 @@ building_avb_monument_memorial_4 = {
 		}
 		pop_government_ethic_attraction = 0.20
 	}
+	#Tomb/Relic worlds with z Expanded
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = { is_gestalt = no }
+			OR = {
+				is_planet_class = pc_nuked
+				is_planet_class = pc_relic
+			}
+		}
+		planet_jobs_unity_produces_mult = 0.20
+	}
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -3275,6 +3539,19 @@ building_avb_monument_memorial_5 = {
 			}
 		}
 		pop_government_ethic_attraction = 0.20
+	}
+	#Tomb/Relic worlds with z Expanded
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = { is_gestalt = no }
+			OR = {
+				is_planet_class = pc_nuked
+				is_planet_class = pc_relic
+			}
+		}
+		planet_jobs_unity_produces_mult = 0.20
 	}
 	triggered_planet_modifier = {
 		potential = {
@@ -3398,6 +3675,19 @@ building_avb_monument_memorial_6 = {
 		}
 		pop_government_ethic_attraction = 0.20
 	}
+	#Tomb/Relic worlds with z Expanded
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = { is_gestalt = no }
+			OR = {
+				is_planet_class = pc_nuked
+				is_planet_class = pc_relic
+			}
+		}
+		planet_jobs_unity_produces_mult = 0.20
+	}
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -3420,14 +3710,39 @@ building_avb_organic_sanctuary_3 = {
 	base_buildtime = @avb_u4_time
 	can_build = no
 	category = unity
+	
 	potential = {
 		exists = owner
-		owner = { has_valid_civic = civic_machine_servitor }
+		owner = {
+			OR = {
+				has_valid_civic = civic_machine_servitor
+				AND = {
+					has_z_expanded_mod = yes
+					OR = {
+						is_servitor_empire = yes
+						has_valid_civic = civic_machine_consciousness
+					}
+				}
+			}
+		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
-	
+
 	destroy_trigger = {
 		exists = owner
-		NOT = { owner = { has_valid_civic = civic_machine_servitor } }
+		owner = {
+			NOR = {
+				has_valid_civic = civic_machine_servitor
+				is_servitor_empire = yes
+				has_valid_civic = civic_machine_consciousness
+			}
+		}
 	}
 	
 	convert_to = {
@@ -3442,6 +3757,31 @@ building_avb_organic_sanctuary_3 = {
 		job_maintenance_drone_add = 2
 	}
 	
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				is_servitor_empire = yes
+			}
+		}
+		modifier = {
+			job_servitor_caretaker_drone_add = 2
+			job_maintenance_drone_add = -2
+		}
+	}
+	triggered_desc = {
+		trigger = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				is_servitor_empire = yes
+			}
+		}
+		text = job_servitor_caretaker_drone_effect_desc
+	}
+	#zExpanded /\
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -3468,7 +3808,13 @@ building_avb_organic_sanctuary_3 = {
 	prerequisites = { "tech_avb_residence_3" }
 	
 	show_tech_unlock_if = {
-		owner = { has_valid_civic = civic_machine_servitor }
+		owner = {
+			OR = {
+				has_valid_civic = civic_machine_servitor
+				is_servitor_empire = yes 
+				has_valid_civic = civic_machine_consciousness 
+			}
+		}
 	}
 	
 	upgrades = {
@@ -3480,14 +3826,39 @@ building_avb_organic_sanctuary_4 = {
 	base_buildtime = @avb_u5_time
 	can_build = no
 	category = unity
+
 	potential = {
 		exists = owner
-		owner = { has_valid_civic = civic_machine_servitor }
+		owner = {
+			OR = {
+				has_valid_civic = civic_machine_servitor
+				AND = {
+					has_z_expanded_mod = yes
+					OR = {
+						is_servitor_empire = yes
+						has_valid_civic = civic_machine_consciousness
+					}
+				}
+			}
+		}
+		OR = {
+			has_z_expanded_mod = no
+			AND = {
+				has_z_expanded_mod = yes
+				NOT = { has_planet_flag = planetary_station }
+			}
+		}
 	}
-	
+
 	destroy_trigger = {
 		exists = owner
-		NOT = { owner = { has_valid_civic = civic_machine_servitor } }
+		owner = {
+			NOR = {
+				has_valid_civic = civic_machine_servitor
+				is_servitor_empire = yes
+				has_valid_civic = civic_machine_consciousness
+			}
+		}
 	}
 	
 	convert_to = {
@@ -3502,6 +3873,31 @@ building_avb_organic_sanctuary_4 = {
 		job_maintenance_drone_add = 3
 	}
 	
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				is_servitor_empire = yes
+			}
+		}
+		modifier = {
+			job_servitor_caretaker_drone_add = 3
+			job_maintenance_drone_add = -3
+		}
+	}
+	triggered_desc = {
+		trigger = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				is_servitor_empire = yes
+			}
+		}
+		text = job_servitor_caretaker_drone_effect_desc
+	}
+	#zExpanded /\
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -3527,6 +3923,12 @@ building_avb_organic_sanctuary_4 = {
 	prerequisites = { "tech_avb_residence_4" }
 	
 	show_tech_unlock_if = {
-		owner = { has_valid_civic = civic_machine_servitor }
+		owner = {
+			OR = {
+				has_valid_civic = civic_machine_servitor
+				is_servitor_empire = yes 
+				has_valid_civic = civic_machine_consciousness 
+			}
+		}
 	}
 }

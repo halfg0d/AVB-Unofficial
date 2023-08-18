@@ -79,10 +79,8 @@ building_avb_capital_4 = {
 
 	
 	inline_script = {
-		script = capitals/regular/avb_capitals_together
+		script = "capitals/regular/avb_capitals_together"
 		tier = c4
-		#toxic_origin1 = ""
-		#toxic_origin2 = ""
 	}
 
 	resources = {
@@ -534,11 +532,9 @@ building_avb_hive_capital_3 = {
 	
 	resources = {
 		category = planet_buildings
-		cost = {
-			minerals = @avb_c4_minerals
-		}			
-		upkeep = {
-			energy = @avb_c4_upkeep
+		inline_script = {
+			script = capitals/hive/avb_capitals_hive_resources
+			tier = 3
 		}
 	}
 	
@@ -628,11 +624,9 @@ building_avb_hive_capital_4 = {
 	
 	resources = {
 		category = planet_buildings
-		cost = {
-			minerals = @avb_c5_minerals
-		}			
-		upkeep = {
-			energy = @avb_c5_upkeep
+		inline_script = {
+			script = "capitals/hive/avb_capitals_hive_resources"
+			tier = 4
 		}
 	}
 	
@@ -766,8 +760,6 @@ building_avb_resort_capital_3 = {
 	
 	planet_modifier = {
 		planet_housing_add = 16
-		planet_amenities_add = 16
-		job_entertainer_add = 4
 		planet_max_buildings_add = 18
 		planet_max_branch_office_buildings_add = 4
 	}	
@@ -846,6 +838,67 @@ building_avb_resort_capital_3 = {
 		}
 	}
 
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_regular_empire = yes }
+		}
+		planet_amenities_add = 16
+		job_entertainer_add = 4
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			owner = { is_servitor_empire = yes }
+		}
+		planet_amenities_no_happiness_add = 16
+		job_patrol_drone_add = 2
+		job_maintenance_drone_add = 2
+		job_replicator_add = 3
+		job_servitor_caretaker_drone_add = 2
+		job_bio_trophy_add = 10
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = { has_active_tradition = tr_synthetics_finish_machine }
+		}
+		modifier = {
+			job_replicator_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = { has_technology = tech_capital_productivity_1 }
+		}
+		modifier = {
+			trade_value_mult = 0.1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = { has_technology = tech_capital_productivity_2 }
+		}
+		modifier = {
+			trade_value_mult = 0.1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = { has_technology = tech_capital_productivity_3 }
+		}
+		modifier = {
+			trade_value_mult = 0.1
+		}
+	}
+	#zExpanded /\
 	triggered_desc = {
 		trigger = {
 			exists = owner
@@ -970,6 +1023,7 @@ building_avb_slave_capital_3 = {
 
 	triggered_planet_modifier = {
 		potential = {
+			has_z_expanded_mod = no
 			exists = owner
 			owner = { has_technology = tech_capital_productivity_3 }
 		}
@@ -979,6 +1033,45 @@ building_avb_slave_capital_3 = {
 		}
 	}
 
+	#zExpanded \/
+	inline_script = {
+		script = job_groups/civic_capital_jobs
+		count = 2
+		trigger = "
+			has_z_expanded_mod = yes
+			owner = {
+				NOR = {
+					has_capital_merchants = yes
+					has_exalted_priesthood = { allow_invalid = yes }
+					is_technocracy = { allow_invalid = yes }
+				}
+			}
+		"
+		desc = " "
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_capital_productivity_2 }
+		}
+		modifier = {
+			planet_jobs_productive_upkeep_mult = 0.1
+			planet_jobs_productive_produces_mult = 0.1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = { has_technology = tech_capital_productivity_3 }
+			planet = { num_pops >= 80 }
+		}
+		modifier = {
+			planet_jobs_productive_upkeep_mult = 0.1
+			planet_jobs_productive_produces_mult = 0.1
+		}
+	}
+	#zExpanded /\
 	triggered_desc = {
 		trigger = {
 			exists = owner

@@ -274,3 +274,85 @@ triggered_planet_modifier = {
 		job_enforcer_add = @avb_$tier$_enforcer2
 	}
 }
+#zExpanded \/
+triggered_planet_modifier = {
+	potential = {
+		has_z_expanded_mod = yes
+		exists = owner
+		owner = {
+			has_civic = civic_mining_guilds
+			NOR = {
+				AND = {
+					has_exalted_priesthood = { allow_invalid = yes }
+					is_aristocratic_empire = { allow_invalid = yes }
+				}
+				AND = {
+					has_exalted_priesthood = { allow_invalid = yes }
+					is_technocracy = { allow_invalid = yes }
+				}
+				AND = {
+					has_exalted_priesthood = { allow_invalid = yes }
+					has_capital_merchants = yes
+				}
+				AND = {
+					is_aristocratic_empire = { allow_invalid = yes }
+					is_technocracy = { allow_invalid = yes }
+				}
+				AND = {
+					is_aristocratic_empire = { allow_invalid = yes }
+					has_capital_merchants = yes
+				}
+				AND = {
+					is_technocracy = { allow_invalid = yes }
+					has_capital_merchants = yes
+				}
+			}
+		}
+		is_toxic_origin2_trigger = no
+	}
+	modifier = {
+		job_guildmaster_add = $count$
+		job_politician_add = -$count$
+	}
+}
+
+triggered_planet_modifier = {
+	potential = {
+		has_z_expanded_mod = yes
+		exists = owner
+		owner = {
+			has_civic = civic_mining_guilds
+			OR = {
+				AND = {
+					has_exalted_priesthood = { allow_invalid = yes }
+					is_aristocratic_empire = { allow_invalid = yes }
+				}
+				AND = {
+					has_exalted_priesthood = { allow_invalid = yes }
+					is_technocracy = { allow_invalid = yes }
+				}
+				AND = {
+					has_exalted_priesthood = { allow_invalid = yes }
+					has_capital_merchants = yes
+				}
+				AND = {
+					is_aristocratic_empire = { allow_invalid = yes }
+					is_technocracy = { allow_invalid = yes }
+				}
+				AND = {
+					is_aristocratic_empire = { allow_invalid = yes }
+					has_capital_merchants = yes
+				}
+				AND = {
+					is_technocracy = { allow_invalid = yes }
+					has_capital_merchants = yes
+				}
+			}
+		}
+		is_toxic_origin2_trigger = no
+	}
+	modifier = {
+		job_guildmaster_add = $count$
+	}
+}
+#zExpanded /\

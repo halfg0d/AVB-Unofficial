@@ -133,3 +133,44 @@ inline_script = { # Bug Branch
 	GOVERNMENTAL_JOB = 1
 }
 #EC: Bug /\
+#zExpanded \/
+triggered_planet_modifier = {
+	potential = {
+		has_z_expanded_mod = yes
+		has_planet_flag = advanced_habitat
+	}
+	modifier = {
+		planet_max_buildings_add = 1
+	}
+}
+
+triggered_planet_modifier = {
+	potential = {
+		has_z_expanded_mod = yes
+		has_planet_flag = advanced_habitat_2
+	}
+	modifier = {
+		planet_max_buildings_add = 1
+	}
+}
+inline_script = {
+	script = job_groups/entertainer_add
+	count = 1
+	trigger = "
+		has_z_expanded_mod = yes
+		exists = planet
+		planet = { has_modifier = pleasure_palace }
+	"
+	desc = " "
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_servitor_empire = yes }
+	}
+	modifier = {
+		job_bio_trophy_add = 5
+		job_servitor_caretaker_drone_add = 1
+	}
+}
+#zExpanded /\

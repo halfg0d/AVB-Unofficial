@@ -297,15 +297,37 @@ building_avb_xeno_zoo_2 = {
 		upkeep = {
 			energy = @avb_d4_upkeep
 		}
+		produces = {
+			trigger = {
+				has_z_expanded_mod = yes
+				has_global_flag = better_diplo_installed
+				is_active_resolution = resolution_galacticcooperation_sanctity_of_life
+			}
+			consumer_goods = 5
+			society_research = 5
+		}
 	}
 	planet_modifier = {
 		job_xeno_zoo_keeper_add = @avb_d4_jobs
 	}
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+		}
+		modifier = {
+			planet_immigration_pull_mult = 0.5
+		}
+	}
+	#zExpanded /\
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = {
-				has_valid_civic = civic_warrior_culture
+				OR = {
+					has_valid_civic = civic_warrior_culture
+					has_warrior_culture = yes
+				}
 			}
 		}
 		modifier = {
@@ -316,7 +338,10 @@ building_avb_xeno_zoo_2 = {
 		potential = {
 			exists = owner
 			owner = {
-				NOT = { has_valid_civic = civic_warrior_culture }
+				NOR = {
+					has_valid_civic = civic_warrior_culture
+					has_warrior_culture = yes
+				}
 			}
 		}
 		modifier = {
@@ -332,7 +357,10 @@ building_avb_xeno_zoo_2 = {
 			}
 			exists = owner
 			owner = {
-				NOT = { has_valid_civic = civic_warrior_culture }
+				NOR = {
+					has_valid_civic = civic_warrior_culture
+					has_warrior_culture = yes
+				}
 			}
 		}
 		modifier = {
@@ -348,7 +376,10 @@ building_avb_xeno_zoo_2 = {
 			}
 			exists = owner
 			owner = {
-				has_valid_civic = civic_warrior_culture
+				OR = {
+					has_valid_civic = civic_warrior_culture
+					has_warrior_culture = yes
+				}
 			}
 		}
 		modifier = {
@@ -366,7 +397,12 @@ building_avb_xeno_zoo_2 = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { NOT = { has_valid_civic = civic_warrior_culture } }
+			owner = { 
+				NOR = { 
+					has_valid_civic = civic_warrior_culture 
+					has_warrior_culture = yes
+				}
+			}
 		}
 		text = job_entertainer_effect_desc
 	}
@@ -374,7 +410,12 @@ building_avb_xeno_zoo_2 = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { has_valid_civic = civic_warrior_culture }
+			owner = { 
+				OR = {
+					has_valid_civic = civic_warrior_culture
+					has_warrior_culture = yes
+				}
+			 }
 		}
 		text = job_duelist_effect_desc
 	}
@@ -387,7 +428,12 @@ building_avb_xeno_zoo_2 = {
 				}
 			}
 			exists = owner
-			owner = { NOT = { has_valid_civic = civic_warrior_culture } }
+			owner = { 
+				NOR = { 
+					has_valid_civic = civic_warrior_culture 
+					has_warrior_culture = yes
+				}
+			}
 		}
 		text = job_xeno_zoo_animal_effect_desc
 	}
@@ -400,7 +446,12 @@ building_avb_xeno_zoo_2 = {
 				}
 			}
 			exists = owner
-			owner = { NOT = { has_valid_civic = civic_warrior_culture } }
+			owner = { 
+				OR = {
+					has_valid_civic = civic_warrior_culture
+					has_warrior_culture = yes
+				}
+			 }
 		}
 		text = job_livestock_zoo_animal_effect_desc
 	}
@@ -413,7 +464,12 @@ building_avb_xeno_zoo_2 = {
 				}
 			}
 			exists = owner
-			owner = { has_valid_civic = civic_warrior_culture }
+			owner = { 
+				OR = {
+					has_valid_civic = civic_warrior_culture
+					has_warrior_culture = yes
+				}
+			}
 		}
 		text = job_xeno_zoo_beast_effect_desc
 	}
@@ -426,7 +482,12 @@ building_avb_xeno_zoo_2 = {
 				}
 			}
 			exists = owner
-			owner = { has_valid_civic = civic_warrior_culture }
+			owner = { 
+				NOR = { 
+					has_valid_civic = civic_warrior_culture 
+					has_warrior_culture = yes
+				}
+			}
 		}
 		text = job_livestock_zoo_beast_effect_desc
 	}

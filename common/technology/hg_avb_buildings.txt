@@ -34,6 +34,8 @@ tech_avb_mote_harvesters_2 = {
 			factor = 0
 			NOT = {
 				any_owned_planet = { has_building = building_mote_harvesters }
+			NOT = {
+				any_owned_planet = { has_building = building_mote_harvesters }
 			}
 		}
 	}

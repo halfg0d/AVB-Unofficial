@@ -43,19 +43,19 @@ triggered_planet_modifier = {
 	}
 }
 
-triggered_planet_modifier = {
-	potential = {
-		has_planet_flag = toxic_knights_habitat
-		exists = owner
-		owner = {
-			has_origin = origin_toxic_knights
-		}
-	}
-	modifier = {
-		job_knight_commander_add = @avb_$tier$_knight
-		job_knight_add = @avb_$tier$_knight
-	}
-}
+#triggered_planet_modifier = {
+#	potential = {
+#		has_planet_flag = toxic_knights_habitat
+#		exists = owner
+#		owner = {
+#			has_origin = origin_toxic_knights
+#		}
+#	}
+#	modifier = {
+#		job_knight_commander_add = @avb_$tier$_knight
+#		job_knight_add = @avb_$tier$_knight
+#	}
+#}
 
 triggered_planet_modifier = {
 	potential = {
@@ -272,5 +272,17 @@ triggered_planet_modifier = {
 	}
 	modifier = {
 		job_enforcer_add = @avb_$tier$_enforcer2
+	}
+}
+triggered_planet_modifier = {
+	potential = {
+		has_z_expanded_mod = yes
+		exists = owner
+		owner = {
+			has_civic = civic_mining_guilds
+		}
+	}
+	modifier = {
+		job_guildmaster_add = @avb_$tier$_guildmaster
 	}
 }

@@ -682,7 +682,8 @@ building_toxic_bath = {
 	}
 
 	upgrades = {
-		building_avb_toxic_bath_2
+		"building_avb_toxic_bath_2"
+		"building_toxic_bath_advanced"
 	}
 }
 
@@ -737,14 +738,77 @@ building_toxic_bath_hive = {
 	resources = {
 		category = planet_buildings
 		cost = {
+			trigger = {
+				has_z_expanded_mod = no
+			}
 			minerals = @b1_minerals
 		}
 		upkeep = {
+			trigger = {
+				has_z_expanded_mod = no
+			}
 			energy = @b1_upkeep
+		}
+		cost = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					is_lithoid_empire = yes
+				}
+			}
+			minerals = @b1_minerals
+		}
+		cost = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					NOT = { has_valid_civic = civic_integrated_bioarchitecture }
+					is_lithoid_empire = no
+				}
+			}
+			minerals = @b1_hive_minerals
+			food = @b1_hive_food
+		}
+		cost = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					has_valid_civic = civic_integrated_bioarchitecture
+					is_lithoid_empire = no
+				}
+			}
+			food = @b1_minerals
+		}
+		upkeep = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					is_lithoid_empire = no
+				}
+			}
+			energy = @b1_upkeep_hive
+			food = @b1_upkeep_food
+		}
+		upkeep = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					is_lithoid_empire = yes
+					NOT = { has_valid_civic = civic_integrated_bioarchitecture }
+				}
+			}
+			energy = @b1_upkeep_hive
+			minerals = @b1_upkeep_food
 		}
 	}
 	upgrades = {
-		building_avb_toxic_bath_hive_2
+		"building_avb_toxic_bath_hive_2"
+		"building_toxic_bath_hive_advanced"
 	}
 }
 
@@ -790,7 +854,8 @@ building_toxic_bath_machine = {
 		}
 	}
 	upgrades = {
-		building_avb_toxic_bath_machine_2
+		"building_avb_toxic_bath_machine_2"
+		"building_toxic_bath_machine_advanced"
 	}
 }
 

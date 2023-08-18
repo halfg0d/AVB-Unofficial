@@ -136,9 +136,90 @@ building_avb_hydroponics_farm_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
+			trigger = {
+				has_z_expanded_mod = no
+			}
 			minerals = @avb_rs4_minerals
 		}
 		upkeep = {
+			trigger = {
+				has_z_expanded_mod = no
+			}
+			energy = @avb_rs4_upkeep
+		}
+		cost = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					OR = {
+						is_lithoid_empire = yes
+						AND = {
+							is_hive_empire = no
+							is_civic_plant_organic = no
+						}
+					}
+				}
+			}
+			minerals = @avb_rs4_minerals
+		}
+		cost = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					NOT = { has_valid_civic = civic_integrated_bioarchitecture }
+					OR = {
+						is_hive_empire = yes
+						is_civic_plant_organic = yes
+					}
+					is_lithoid_empire = no
+				}
+			}
+			minerals = @avb_rs4_hive_minerals
+			food = @avb_rs4_hive_food
+		}
+		cost = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					has_valid_civic = civic_integrated_bioarchitecture
+					is_lithoid_empire = no
+				}
+			}
+			food = @avb_rs4_minerals
+		}
+		upkeep = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					is_lithoid_empire = no
+					OR = {
+						is_hive_empire = yes
+						is_civic_plant_organic = yes
+					}
+				}
+			}
+			energy = @avb_rs4_upkeep_hive
+			food = @avb_rs4_upkeep_food
+		}
+		upkeep = {
+			trigger = {
+				has_z_expanded_mod = yes
+				exists = owner
+				owner = {
+					OR = {
+						is_lithoid_empire = yes
+						AND = {
+							is_hive_empire = no
+							is_civic_plant_organic = no
+						}
+					}
+					NOT = { has_valid_civic = civic_integrated_bioarchitecture }
+				}
+			}
 			energy = @avb_rs4_upkeep
 		}
 	}	
@@ -226,6 +307,10 @@ building_avb_food_processing_3 = {
 			is_planet_class = pc_machine
 			has_modifier = resort_colony
 			has_modifier = crucible_colony
+			AND = {
+				has_z_expanded_mod = yes
+				has_planet_flag = planetary_station
+			}
 		}
 	}
 
@@ -317,6 +402,30 @@ building_avb_food_processing_3 = {
 		}
 	}
 	#EC: Bug /\
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			has_global_flag = EcologyMod_active
+		}
+		modifier = {
+			planet_farmers_waste_produces_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+				is_lithoid_empire = no
+			}
+		}
+		modifier = {
+			planet_farmers_food_produces_mult = 0.05
+		}
+	}
+	#zExpanded /\
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -413,23 +522,15 @@ building_avb_food_processing_3 = {
 		}
 	}
 	ai_resource_production = {
-		food = 6
+		food = 15
 		trigger = {
-			planet_resource_compare = {
-				resource = food
-				value >= 24
-				type = produces
-			}
+			str_num_districts_farming = { operator = > num = 3 }
 		}
 	}
 	ai_resource_production = {
-		food = 6
+		food = 30
 		trigger = {
-			planet_resource_compare = {
-				resource = food
-				value >= 48
-				type = produces
-			}
+			str_num_districts_farming = { operator = > num = 5 }
 		}
 	}
 }
@@ -689,6 +790,10 @@ building_avb_mineral_purification_3 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = crucible_colony
+			AND = {
+				has_z_expanded_mod = yes
+				has_planet_flag = planetary_station
+			}
 		}
 	}
 	
@@ -702,6 +807,10 @@ building_avb_mineral_purification_3 = {
 					is_ai = yes
 				}
 				has_any_mining_district = no
+			}
+			AND = {
+				has_z_expanded_mod = yes
+				has_planet_flag = planetary_station
 			}
 		}
 	}
@@ -821,6 +930,53 @@ building_avb_mineral_purification_3 = {
 		}
 	}
 	#EC: Bug /\
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = { has_civic = civic_mining_guilds }
+		}
+		modifier = {
+			job_guildmaster_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			has_global_flag = EcologyMod_active
+		}
+		modifier = {
+			planet_miners_waste_produces_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				OR = {
+					is_robot_empire = yes
+					is_lithoid_empire = yes
+				}
+			}
+		}
+		modifier = {
+			planet_miners_minerals_produces_mult = 0.05
+		}
+	}
+	triggered_desc = {
+		trigger = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_civic = civic_mining_guilds
+			}
+		}
+		text = job_guildmaster_effect_desc
+	}	
+	#zExpanded /\
 	triggered_planet_modifier = {
 		potential = {
 			NOT = { is_planet_class = pc_shattered_ring_habitable }
@@ -955,6 +1111,10 @@ building_avb_mineral_purification_4 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = crucible_colony
+			AND = {
+				has_z_expanded_mod = yes
+				has_planet_flag = planetary_station
+			}
 		}
 	}
 	
@@ -968,6 +1128,10 @@ building_avb_mineral_purification_4 = {
 					is_ai = yes
 				}
 				has_any_mining_district = no
+			}
+			AND = {
+				has_z_expanded_mod = yes
+				has_planet_flag = planetary_station
 			}
 		}
 	}
@@ -1096,6 +1260,53 @@ building_avb_mineral_purification_4 = {
 		}
 	}
 	#EC: Bug /\
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = { has_civic = civic_mining_guilds }
+		}
+		modifier = {
+			job_guildmaster_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			has_global_flag = EcologyMod_active
+		}
+		modifier = {
+			planet_miners_waste_produces_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				OR = {
+					is_robot_empire = yes
+					is_lithoid_empire = yes
+				}
+			}
+		}
+		modifier = {
+			planet_miners_minerals_produces_mult = 0.05
+		}
+	}
+	triggered_desc = {
+		trigger = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = {
+				has_civic = civic_mining_guilds
+			}
+		}
+		text = job_guildmaster_effect_desc
+	}	
+	#zExpanded /\
 	triggered_planet_modifier = {
 		potential = {
 			NOT = { is_planet_class = pc_shattered_ring_habitable }
@@ -1244,6 +1455,7 @@ building_avb_energy_grid_3 = {
 
 	triggered_planet_modifier = {
 		potential = {
+			has_z_expanded_mod = no
 			exists = owner
 			owner = {
 				is_gestalt = no
@@ -1257,6 +1469,7 @@ building_avb_energy_grid_3 = {
 
 	triggered_planet_modifier = {
 		potential = {
+			has_z_expanded_mod = no
 			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
@@ -1267,6 +1480,7 @@ building_avb_energy_grid_3 = {
 
 	triggered_planet_modifier = {
 		potential = {
+			has_z_expanded_mod = no
 			exists = owner
 			owner = { is_gestalt = yes }
 		}
@@ -1322,6 +1536,36 @@ building_avb_energy_grid_3 = {
 		}
 	}
 	#EC: Bug /\
+	#zExpanded \/
+	inline_script = {
+		script = job_groups/technician_add
+		trigger = "has_z_expanded_mod = yes"
+		hive = @avb_rs4_jobs
+		machine = @avb_rs4_jobs
+		regular = @avb_rs4_jobs
+		desc = " "
+		machine_bonus = " "
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			has_global_flag = EcologyMod_active
+		}
+		modifier = {
+			planet_technician_waste_produces_add = 4
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = { has_technology = tech_akx_worm_1 }
+		}
+		modifier = {
+			planet_technician_energy_produces_mult = 0.10
+		}
+	}
+	#zExpanded /\
 	triggered_planet_modifier = {
         potential = {
             exists = owner
@@ -1396,23 +1640,15 @@ building_avb_energy_grid_3 = {
 		}
 	}
 	ai_resource_production = {
-		energy = 6
+		energy = 10
 		trigger = {
-			planet_resource_compare = {
-				resource = energy
-				value >= 24
-				type = produces
-			}
+			str_num_districts_generator = { operator = > num = 2 }
 		}
 	}
 	ai_resource_production = {
-		energy = 6
+		energy = 20
 		trigger = {
-			planet_resource_compare = {
-				resource = energy
-				value >= 48
-				type = produces
-			}
+			str_num_districts_generator = { operator = > num = 4 }
 		}
 	}
 }
@@ -1533,6 +1769,36 @@ building_avb_energy_grid_4 = {
 		}
 	}
 	#EC: Bug /\
+	#zExpanded \/
+	inline_script = {
+		script = job_groups/technician_add
+		trigger = "has_z_expanded_mod = yes"
+		hive = @avb_rs5_jobs
+		machine = @avb_rs5_jobs
+		regular = @avb_rs5_jobs
+		desc = " "
+		machine_bonus = " "
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			has_global_flag = EcologyMod_active
+		}
+		modifier = {
+			planet_technician_waste_produces_add = 6
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+			exists = owner
+			owner = { has_technology = tech_akx_worm_1 }
+		}
+		modifier = {
+			planet_technician_energy_produces_mult = 0.10
+		}
+	}
+	#zExpanded /\
 	triggered_planet_modifier = {
         potential = {
             exists = owner
@@ -1603,23 +1869,15 @@ building_avb_energy_grid_4 = {
 		}
 	}
 	ai_resource_production = {
-		energy = 6
+		energy = 10
 		trigger = {
-			planet_resource_compare = {
-				resource = energy
-				value >= 24
-				type = produces
-			}
+			str_num_districts_generator = { operator = > num = 2 }
 		}
 	}
 	ai_resource_production = {
-		energy = 6
+		energy = 20
 		trigger = {
-			planet_resource_compare = {
-				resource = energy
-				value >= 48
-				type = produces
-			}
+			str_num_districts_generator = { operator = > num = 4 }
 		}
 	}
 }
@@ -1772,95 +2030,8 @@ building_avb_bio_reactor_2 = {
 		upkeep = {
 			food = 100
 		}
-		produces = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					NOT = { has_deficit = food }
-					has_technology = tech_power_plant_2
-				}
-			}
-			energy = 2
-		}
-		produces = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					NOT = { has_deficit = food }
-					has_technology = tech_power_plant_3
-				}
-			}
-			energy = 2
-		}
-		produces = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					NOT = { has_deficit = food }
-					has_technology = tech_power_plant_4
-				}
-			}
-			energy = 2
-		}
-		produces = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					NOT = { has_deficit = food }
-				}
-				exists = planet
-				planet = {
-					has_active_building = building_energy_grid
-				}
-			}
-			energy = 2
-		}
-		produces = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					NOT = { has_deficit = food }
-				}
-				exists = planet
-				planet = {
-					has_active_building = building_energy_nexus
-				}
-			}
-			energy = 4
-		}
-		produces = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					NOT = { has_deficit = food }
-				}
-				exists = planet
-				planet = {
-					has_active_building = building_energy_nexus
-				}
-			}
-			energy = 4
-		}
-		produces = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					NOT = { has_deficit = food }
-				}
-				exists = planet
-				planet = {
-					has_active_building = building_energy_nexus
-				}
-			}
-			energy = 6
-		}
+		inline_script = "resources/avb_bioreactor_production"
+		inline_script = "resources/avb_bioreactor_production"
 	}	
 	
 	prerequisites = {
