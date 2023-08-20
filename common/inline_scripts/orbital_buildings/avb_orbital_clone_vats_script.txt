@@ -1,0 +1,24 @@
+inline_script = {
+	script = "orbital_buildings/avb_orbital_universal"
+	condition = "
+	exists = owner
+	owner = {
+		has_tradition = tr_genetics_adopt
+		NOT = { has_tradition = tr_genetics_efficient_cloning }
+	}"
+	modifier = "planet_pop_assembly_organic_add"
+	value = $val1$
+	flag = $flag$
+}
+inline_script = {
+	script = "orbital_buildings/avb_orbital_universal"
+	condition = "
+	exists = owner
+	owner = {
+		has_tradition = tr_genetics_adopt
+		has_tradition = tr_genetics_efficient_cloning
+	}"
+	modifier = "planet_pop_assembly_organic_add"
+	value = $val2$
+	flag = $flag$
+}

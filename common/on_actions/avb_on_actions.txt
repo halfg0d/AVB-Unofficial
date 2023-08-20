@@ -13,10 +13,10 @@ on_building_upgraded = {
 		avb_vat.1
 		
 	#Sub-mod Orbital Ring Buildings
-		avb_orb.11 #t2 robot
-		avb_orb.12 #t3 robot
-		avb_orb.13 #t2 clone
-		avb_orb.14 #t3 clone
+		avb_orb_up.11 #t2 robot
+		avb_orb_up.12 #t3 robot
+		avb_orb_up.21 #t2 clone
+		avb_orb_up.22 #t3 clone
 	}
 }
 on_pop_assembled = {
@@ -43,14 +43,10 @@ on_colony_yearly_pulse = {
 #Sub-mod Orbital Ring Buildings
 on_monthly_pulse_country = {
 	events = {
-		#Machine Assembly \/
-		avb_orb_prepare.1 #Delete flags
-		avb_orb_prepare.10 #Add flag t1
-		#Machine Assembly /\
+		avb_orb_del.1 #Delete flags
+		avb_orb_set.1 #Add flag t1
 		
-		#Clone vats \/
-		avb_orb_prepare.3 #Delete flags
-		avb_orb_prepare.11 #Add flag t1
-		#Clone vats /\
+		avb_orb_del.2 #Delete flags
+		avb_orb_set.2 #Add flag t1
 	}
 }

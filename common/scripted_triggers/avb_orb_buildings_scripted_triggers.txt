@@ -5,6 +5,18 @@ has_any_orb_flag = {
 		has_planet_flag = avb_orb_robot_assembly.3
 	}
 }
+has_organic_assembly_building = {
+	OR = {
+		has_building = building_clone_vats
+		has_building = building_clone_army_clone_vat
+		has_building = building_posthumous_employment_center
+	}
+}
+can_build_cyborgs = {
+	owner = {
+		has_policy_flag = roboticist_output_build_cyborgs
+	}
+}
 is_building_similar_to_robot_assembly = {
 	planet = {
 		if = {

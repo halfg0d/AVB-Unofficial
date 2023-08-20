@@ -46,13 +46,10 @@ tech_ring_avb_robot_assembly_1 = {
 				has_origin = origin_machine
 			}
 		}
+		inline_script = "tech_weights/avb_orbital_weight"
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_industry"
-				has_level > 2
-			}
+			has_trait_in_council = { TRAIT = leader_trait_custom_AI_assistant }
 		}
 	}
 	
@@ -80,12 +77,10 @@ tech_ring_avb_robot_assembly_1 = {
 				has_origin = origin_machine
 			}
 		}
+		inline_script = "tech_weights/avb_orbital_weight"
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_industry"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_custom_AI_assistant }
 		}
 	}
 }
@@ -137,13 +132,10 @@ tech_ring_avb_robot_assembly_2 = {
 				has_origin = origin_machine
 			}
 		}
+		inline_script = "tech_weights/avb_orbital_weight"
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_industry"
-				has_level > 2
-			}
+			has_trait_in_council = { TRAIT = leader_trait_custom_AI_assistant }
 		}
 	}
 	
@@ -171,12 +163,10 @@ tech_ring_avb_robot_assembly_2 = {
 				has_origin = origin_machine
 			}
 		}
+		inline_script = "tech_weights/avb_orbital_weight"
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_industry"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_custom_AI_assistant }
 		}
 	}
 }
@@ -228,13 +218,10 @@ tech_ring_avb_robot_assembly_3 = {
 				has_origin = origin_machine
 			}
 		}
+		inline_script = "tech_weights/avb_orbital_weight"
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_industry"
-				has_level > 2
-			}
+			has_trait_in_council = { TRAIT = leader_trait_custom_AI_assistant }
 		}
 	}
 	
@@ -262,12 +249,10 @@ tech_ring_avb_robot_assembly_3 = {
 				has_origin = origin_machine
 			}
 		}
+		inline_script = "tech_weights/avb_orbital_weight"
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_industry"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_custom_AI_assistant }
 		}
 	}
 }
@@ -292,23 +277,19 @@ tech_ring_avb_clone_vats_1 = {
 	weight_modifier = {
 		factor = 4
 		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
+			factor = 2
+			has_trait_in_council = { TRAIT = leader_trait_expertise_biology }
 		}
+		inline_script = "tech_weights/avb_orbital_weight"
 	}
 	
 	ai_weight = {
 		factor = 10
 		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
+			factor = 2
+			has_trait_in_council = { TRAIT = leader_trait_expertise_biology }
 		}
+		inline_script = "tech_weights/avb_orbital_weight"
 	}
 }
 tech_ring_avb_clone_vats_2 = {
@@ -331,23 +312,19 @@ tech_ring_avb_clone_vats_2 = {
 	weight_modifier = {
 		factor = 4
 		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
+			factor = 2
+			has_trait_in_council = { TRAIT = leader_trait_expertise_biology }
 		}
+		inline_script = "tech_weights/avb_orbital_weight"
 	}
 	
 	ai_weight = {
 		factor = 10
 		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
+			factor = 2
+			has_trait_in_council = { TRAIT = leader_trait_expertise_biology }
 		}
+		inline_script = "tech_weights/avb_orbital_weight"
 	}
 }
 tech_ring_avb_clone_vats_3 = {
@@ -370,22 +347,168 @@ tech_ring_avb_clone_vats_3 = {
 	weight_modifier = {
 		factor = 4
 		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
+			factor = 2
+			has_trait_in_council = { TRAIT = leader_trait_expertise_biology }
 		}
+		inline_script = "tech_weights/avb_orbital_weight"
 	}
 	
 	ai_weight = {
 		factor = 10
 		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
+			factor = 2
+			has_trait_in_council = { TRAIT = leader_trait_expertise_biology }
 		}
+		inline_script = "tech_weights/avb_orbital_weight"
+	}
+}
+tech_ring_avb_institute_1 = {
+	icon = tech_ring_avb_institute
+	cost = @orb_tier4cost1
+	area = physics
+	tier = 4
+	category = { computing }
+	prerequisites = { "tech_orbital_ring_tier_1" "tech_global_research_initiative" }
+	weight =  @tier4weight1
+
+	potential = {
+		exists = owner
+	}
+
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			count_owned_planet = {
+				limit = {
+					OR = {
+						has_building = building_avb_supercomputer_2
+						has_building = building_avb_institute_2
+						has_building = building_supercomputer
+						has_building = building_institute
+					}
+				}
+				count > 2
+			}
+			factor = 5
+		}
+		inline_script = "tech_weights/avb_orbital_weight"
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			count_owned_planet = {
+				limit = {
+					OR = {
+						has_building = building_avb_supercomputer_2
+						has_building = building_avb_institute_2
+						has_building = building_supercomputer
+						has_building = building_institute
+					}
+				}
+				count > 2
+			}
+			factor = 5
+		}
+		inline_script = "tech_weights/avb_orbital_weight"
+	}
+}
+tech_ring_avb_institute_2 = {
+	icon = tech_ring_avb_institute
+	cost = @orb_tier4cost2
+	area = physics
+	tier = 4
+	category = { computing }
+	prerequisites = { "tech_ring_avb_institute_1" }
+	weight =  @tier4weight2
+
+	potential = {
+		exists = owner
+	}
+
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			count_owned_planet = {
+				limit = {
+					OR = {
+						has_building = building_avb_supercomputer_2
+						has_building = building_avb_institute_2
+						has_building = building_supercomputer
+						has_building = building_institute
+					}
+				}
+				count > 2
+			}
+			factor = 5
+		}
+		inline_script = "tech_weights/avb_orbital_weight"
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			count_owned_planet = {
+				limit = {
+					OR = {
+						has_building = building_avb_supercomputer_2
+						has_building = building_avb_institute_2
+						has_building = building_supercomputer
+						has_building = building_institute
+					}
+				}
+				count > 2
+			}
+			factor = 5
+		}
+		inline_script = "tech_weights/avb_orbital_weight"
+	}
+}
+tech_ring_avb_institute_3 = {
+	icon = tech_ring_avb_institute
+	cost = @orb_tier4cost3
+	area = physics
+	tier = 4
+	category = { computing }
+	prerequisites = { "tech_ring_avb_institute_2" }
+	weight =  @tier4weight3
+
+	potential = {
+		exists = owner
+	}
+
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			count_owned_planet = {
+				limit = {
+					OR = {
+						has_building = building_avb_supercomputer_2
+						has_building = building_avb_institute_2
+						has_building = building_supercomputer
+						has_building = building_institute
+					}
+				}
+				count > 2
+			}
+			factor = 5
+		}
+		inline_script = "tech_weights/avb_orbital_weight"
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			count_owned_planet = {
+				limit = {
+					OR = {
+						has_building = building_avb_supercomputer_2
+						has_building = building_avb_institute_2
+						has_building = building_supercomputer
+						has_building = building_institute
+					}
+				}
+				count > 2
+			}
+			factor = 5
+		}
+		inline_script = "tech_weights/avb_orbital_weight"
 	}
 }

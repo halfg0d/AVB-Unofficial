@@ -1,0 +1,54 @@
+namespace = avb_orb_set
+country_event = {
+	id = avb_orb_set.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		any_owned_planet = {
+			limit = {
+				exists = orbital_defence
+				orbital_defence = {
+					exists = starbase
+					starbase = {
+						has_starbase_building = ring_avb_robot_assembly
+					}
+				}
+				NOR = {
+					has_planet_flag = avb_orb_robot_assembly.1
+					has_planet_flag = avb_orb_robot_assembly.2
+					has_planet_flag = avb_orb_robot_assembly.3
+				}
+			}
+			planet = {
+				set_planet_flag = avb_orb_robot_assembly.1
+			}
+		}
+	}
+}
+country_event = {
+	id = avb_orb_set.2
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		random_owned_planet = {
+			limit = {
+				exists = orbital_defence
+				orbital_defence = {
+					exists = starbase
+					starbase = {
+						has_starbase_building = ring_avb_clone_vats
+					}
+				}
+				NOR = {
+					has_planet_flag = avb_orb_clone_vats.1
+					has_planet_flag = avb_orb_clone_vats.2
+					has_planet_flag = avb_orb_clone_vats.3
+				}
+			}
+			planet = {
+				set_planet_flag = avb_orb_clone_vats.1
+			}
+		}
+	}
+}
