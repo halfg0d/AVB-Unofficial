@@ -1,0 +1,18 @@
+inline_script = {
+	script = "orbital_buildings/avb_orbital_universal_country"
+	building = "institute"
+	condition = "
+	exists = owner
+	owner = { NOT = { has_ascension_perk = ap_technological_ascendancy } }"
+	modifier = "all_technology_research_speed"
+	value = $val1$
+}
+inline_script = {
+	script = "orbital_buildings/avb_orbital_universal_country"
+	building = "institute"
+	condition = "
+	exists = owner
+	owner = { has_ascension_perk = ap_technological_ascendancy }"
+	modifier = "pall_technology_research_speed"
+	value = $val2$
+}

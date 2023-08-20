@@ -1,0 +1,14 @@
+triggered_country_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_$building$.1
+			NOR = {
+				has_planet_flag = avb_orb_$building$.2
+				has_planet_flag = avb_orb_$building$.3
+			}
+		}
+		$condition$
+	}
+	$modifier$ = $value$
+}
