@@ -31,189 +31,30 @@ ring_avb_robot_assembly = {
 		is_building_similar_to_robot_assembly = yes
 	}
 
+	on_finished = {
+		planet = {
+			set_planet_flag = avb_orb_robot_assembly_1
+		}
+	}
+	on_destroyed = {
+		planet = {
+			remove_planet_flag = avb_orb_robot_assembly_1
+			remove_planet_flag = avb_orb_robot_assembly_2
+			remove_planet_flag = avb_orb_robot_assembly_3
+		}
+	}
+
 	abort_trigger = {
-		have_building_similar_to_robot_assembly = no
+		exists = planet
+		planet = {
+			NOR = {
+				has_building = building_avb_orb_ring_connection
+				have_building_similar_to_robot_assembly = yes
+			}
+		}
 	}
 
-	destroy_trigger = {
-		have_building_similar_to_robot_assembly = no
-	}
-	###			###
-	###  Tier 1	###
-	###			###
-
-	##Modifier \/
-	triggered_planet_modifier = {
-		potential = {
-			exists = planet
-			planet = {
-				has_planet_flag = avb_orb_robot_assembly.1
-			}
-			OR = {
-				AND = {
-					exists = owner
-					can_build_cyborgs = no
-				}
-				NOT = { exists = owner }
-			}
-		}
-		planet_pop_assembly_add = 2
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = planet
-			planet = {
-				has_planet_flag = avb_orb_robot_assembly.1
-			}
-			exists = owner
-			can_build_cyborgs = yes
-			can_assemble_cyborg_pop = yes
-		}
-		planet_pop_assembly_organic_add = 2
-	}
-	##Modifier /\
-	##Jobs \/
-	triggered_planet_modifier = {
-		potential = {
-			exists = planet
-			planet = {
-				has_planet_flag = avb_orb_robot_assembly.1
-			}
-			exists = owner
-			owner = { is_regular_empire = yes }
-		}
-		job_roboticist_add = 1
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = planet
-			planet = {
-				has_planet_flag = avb_orb_robot_assembly.1
-			}
-			exists = owner
-			owner = { is_machine_empire = yes }
-		}
-		job_replicator_add = 1
-	}
-	##Modifier /\
-
-	###			###
-	###  Tier 2	###
-	###			###
-
-	##Modifier \/
-	triggered_planet_modifier = {
-		potential = {
-			exists = planet
-			planet = {
-				has_planet_flag = avb_orb_robot_assembly.2
-			}
-			OR = {
-				AND = {
-					exists = owner
-					can_build_cyborgs = no
-				}
-				NOT = { exists = owner }
-			}
-		}
-		planet_pop_assembly_add = 2
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = planet
-			planet = {
-				has_planet_flag = avb_orb_robot_assembly.2
-			}
-			exists = owner
-			can_build_cyborgs = yes
-			can_assemble_cyborg_pop = yes
-		}
-		planet_pop_assembly_organic_add = 2
-	}
-	##Modifier /\
-	##Jobs \/
-	triggered_planet_modifier = {
-		potential = {
-			exists = planet
-			planet = {
-				has_planet_flag = avb_orb_robot_assembly.2
-			}
-			exists = owner
-			owner = { is_regular_empire = yes }
-		}
-		job_roboticist_add = 1
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = planet
-			planet = {
-				has_planet_flag = avb_orb_robot_assembly.2
-			}
-			exists = owner
-			owner = { is_machine_empire = yes }
-		}
-		job_replicator_add = 1
-	}
-	##Modifier /\
-
-	###			###
-	###  Tier 3	###
-	###			###
-
-	##Modifier \/
-	triggered_planet_modifier = {
-		potential = {
-			exists = planet
-			planet = {
-				has_planet_flag = avb_orb_robot_assembly.3
-			}
-			OR = {
-				AND = {
-					exists = owner
-					can_build_cyborgs = no
-				}
-				NOT = { exists = owner }
-			}
-		}
-		planet_pop_assembly_add = 2.5
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = planet
-			planet = {
-				has_planet_flag = avb_orb_robot_assembly.3
-			}
-			exists = owner
-			can_build_cyborgs = yes
-			can_assemble_cyborg_pop = yes
-		}
-		planet_pop_assembly_organic_add = 2.5
-	}
-	##Modifier /\
-	##Jobs \/
-	triggered_planet_modifier = {
-		potential = {
-			exists = planet
-			planet = {
-				has_planet_flag = avb_orb_robot_assembly.3
-			}
-			exists = owner
-			owner = { is_regular_empire = yes }
-		}
-		job_roboticist_add = 2
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = planet
-			planet = {
-				has_planet_flag = avb_orb_robot_assembly.3
-			}
-			exists = owner
-			owner = { is_machine_empire = yes }
-		}
-		job_replicator_add = 2
-	}
-	##Modifier /\
+	inline_script = orbital_buildings/robot_assembly
 	resources = {
 		category = starbase_buildings
 		cost = {
@@ -226,7 +67,7 @@ ring_avb_robot_assembly = {
 			trigger = {
 				exists = owner
 				planet = {
-					has_planet_flag = avb_orb_robot_assembly.2
+					has_planet_flag = avb_orb_robot_assembly_2
 				}
 			}
 			energy = @orb_t2_energy_upkeep
@@ -235,7 +76,7 @@ ring_avb_robot_assembly = {
 			trigger = {
 				exists = owner
 				planet = {
-					has_planet_flag = avb_orb_robot_assembly.3
+					has_planet_flag = avb_orb_robot_assembly_3
 				}
 			}
 			energy = @orb_t3_energy_upkeep
@@ -317,6 +158,30 @@ ring_avb_clone_vats = {
 		is_building_similar_to_clone_vats = yes
 	}
 
+	on_finished = {
+		planet = {
+			set_planet_flag = avb_orb_clone_vats_1
+		}
+	}
+	on_destroyed = {
+		planet = {
+			remove_planet_flag = avb_orb_clone_vats_1
+			remove_planet_flag = avb_orb_clone_vats_2
+			remove_planet_flag = avb_orb_clone_vats_3
+		}
+	}
+
+	abort_trigger = {
+		exists = planet
+		planet = {
+			NOR = {
+				has_building = building_avb_orb_ring_connection
+				is_building_similar_to_clone_vats = yes
+			}
+		}
+	}
+
+	inline_script = orbital_buildings/clone_vats
 	resources = {
 		category = starbase_buildings
 		cost = {
@@ -358,7 +223,7 @@ ring_avb_clone_vats = {
 		upkeep = {
 			trigger = {
 				exists = owner
-				planet = { has_planet_flag = avb_orb_clone_vats.2 }
+				planet = { has_planet_flag = avb_orb_clone_vats_2 }
 			}
 			energy = @orb_t2_clone_upkeep_energy
 		}
@@ -366,7 +231,7 @@ ring_avb_clone_vats = {
 			trigger = {
 				exists = owner
 				owner = { is_lithoid = no }
-				planet = { has_planet_flag = avb_orb_clone_vats.2 }
+				planet = { has_planet_flag = avb_orb_clone_vats_2 }
 			}
 			food = @orb_t2_clone_upkeep
 		}
@@ -374,7 +239,7 @@ ring_avb_clone_vats = {
 			trigger = {
 				exists = owner
 				owner = { is_lithoid = yes }
-				planet = { has_planet_flag = avb_orb_clone_vats.2 }
+				planet = { has_planet_flag = avb_orb_clone_vats_2 }
 			}
 			minerals = @orb_t2_clone_upkeep
 		}
@@ -382,7 +247,7 @@ ring_avb_clone_vats = {
 		upkeep = {
 			trigger = {
 				exists = owner
-				planet = { has_planet_flag = avb_orb_clone_vats.3 }
+				planet = { has_planet_flag = avb_orb_clone_vats_3 }
 			}
 			energy = @orb_t3_clone_upkeep_energy
 		}
@@ -390,7 +255,7 @@ ring_avb_clone_vats = {
 			trigger = {
 				exists = owner
 				owner = { is_lithoid = no }
-				planet = { has_planet_flag = avb_orb_clone_vats.3 }
+				planet = { has_planet_flag = avb_orb_clone_vats_3 }
 			}
 			food = @orb_t3_clone_upkeep
 		}
@@ -398,7 +263,7 @@ ring_avb_clone_vats = {
 			trigger = {
 				exists = owner
 				owner = { is_lithoid = yes }
-				planet = { has_planet_flag = avb_orb_clone_vats.3 }
+				planet = { has_planet_flag = avb_orb_clone_vats_3 }
 			}
 			minerals = @orb_t3_clone_upkeep
 		}
@@ -412,46 +277,6 @@ ring_avb_clone_vats = {
 		have_building_similar_to_clone_vats = no
 	}
 
-	###			###
-	###  Tier 1	###
-	###			###
-	inline_script = {
-		script = "orbital_buildings/avb_orbital_clone_script"
-		val1 = 1
-		val2 = 1.5
-		flag = "
-		has_planet_flag = avb_orb_clone_vats.1
-		NOR = {
-			has_planet_flag = avb_orb_clone_vats.2
-			has_planet_flag = avb_orb_clone_vats.3
-		}"
-	}
-	###			###
-	###  Tier 2	###
-	###			###
-	inline_script = {
-		script = "orbital_buildings/avb_orbital_clone_script"
-		val1 = 2
-		val2 = 3
-		flag = "
-		has_planet_flag = avb_orb_clone_vats.1
-		has_planet_flag = avb_orb_clone_vats.2
-		NOT = {
-			has_planet_flag = avb_orb_clone_vats.3
-		}"
-	}
-	###			###
-	###  Tier 3	###
-	###			###
-	inline_script = {
-		script = "orbital_buildings/avb_orbital_clone_script"
-		val1 = 3
-		val2 = 4.5
-		flag = "
-		has_planet_flag = avb_orb_clone_vats.1
-		has_planet_flag = avb_orb_clone_vats.2
-		has_planet_flag = avb_orb_clone_vats.3"
-	}
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = yes
 

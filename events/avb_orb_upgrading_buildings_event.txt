@@ -11,7 +11,7 @@ planet_event = {
 		has_building = building_avb_orb_ring_connection_robot_2
 		exists = planet
 		planet = {
-			has_planet_flag = avb_orb_robot_assembly.1
+			has_planet_flag = avb_orb_robot_assembly_1
 		}
 		exists = owner
 		owner = {
@@ -23,8 +23,8 @@ planet_event = {
 	immediate = {
 		remove_building = building_avb_orb_ring_connection_robot_2
 		add_building = building_avb_orb_ring_connection
-		remove_planet_flag = avb_orb_robot_assembly.1
-		set_planet_flag = avb_orb_robot_assembly.2
+		remove_planet_flag = avb_orb_robot_assembly_1
+		set_planet_flag = avb_orb_robot_assembly_2
 	}
 }
 planet_event = {
@@ -37,7 +37,7 @@ planet_event = {
 		has_building = building_avb_orb_ring_connection_robot_3
 		exists = planet
 		planet = {
-			has_planet_flag = avb_orb_robot_assembly.2
+			has_planet_flag = avb_orb_robot_assembly_2
 		}
 		exists = owner
 		owner = {
@@ -49,8 +49,8 @@ planet_event = {
 	immediate = {
 		remove_building = building_avb_orb_ring_connection_robot_3
 		add_building = building_avb_orb_ring_connection
-		remove_planet_flag = avb_orb_robot_assembly.2
-		set_planet_flag = avb_orb_robot_assembly.3
+		remove_planet_flag = avb_orb_robot_assembly_2
+		set_planet_flag = avb_orb_robot_assembly_3
 	}
 }
 #Clone vats
@@ -64,7 +64,7 @@ planet_event = {
 		has_building = building_avb_orb_ring_connection_clone_2
 		exists = planet
 		planet = {
-			has_planet_flag = avb_orb_clone_vats.1
+			has_planet_flag = avb_orb_clone_vats_1
 		}
 		exists = owner
 		owner = {
@@ -76,8 +76,8 @@ planet_event = {
 	immediate = {
 		remove_building = building_avb_orb_ring_connection_clone_2
 		add_building = building_avb_orb_ring_connection
-		remove_planet_flag = avb_orb_clone_vats.1
-		set_planet_flag = avb_orb_clone_vats.2
+		remove_planet_flag = avb_orb_clone_vats_1
+		set_planet_flag = avb_orb_clone_vats_2
 	}
 }
 planet_event = {
@@ -90,7 +90,7 @@ planet_event = {
 		has_building = building_avb_orb_ring_connection_clone_3
 		exists = planet
 		planet = {
-			has_planet_flag = avb_orb_clone_vats.2
+			has_planet_flag = avb_orb_clone_vats_2
 		}
 		exists = owner
 		owner = {
@@ -102,7 +102,7 @@ planet_event = {
 	immediate = {
 		remove_building = building_avb_orb_ring_connection_clone_3
 		add_building = building_avb_orb_ring_connection
-		remove_planet_flag = avb_orb_clone_vats.2
-		set_planet_flag = avb_orb_clone_vats.3
+		remove_planet_flag = avb_orb_clone_vats_2
+		set_planet_flag = avb_orb_clone_vats_3
 	}
 }

@@ -373,6 +373,7 @@ tech_ring_avb_institute_1 = {
 
 	potential = {
 		exists = owner
+		always = no
 	}
 
 	weight_modifier = {

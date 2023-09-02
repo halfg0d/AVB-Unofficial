@@ -12,8 +12,7 @@ building_avb_orb_ring_connection_robot_2 = {
 		exists = planet
 		planet = {
 			exists = orbital_defence
-			has_planet_flag = avb_orb_robot_assembly.1
-			NOT = { has_planet_flag = avb_orb_robot_assembly.2 }
+			has_planet_flag = avb_orb_robot_assembly_1
 		}
 	}
 
@@ -50,9 +49,7 @@ building_avb_orb_ring_connection_robot_3 = {
 		exists = planet
 		planet = {
 			exists = orbital_defence
-			has_planet_flag = avb_orb_robot_assembly.1
-			has_planet_flag = avb_orb_robot_assembly.2
-			NOT = { has_planet_flag = avb_orb_robot_assembly.3 }
+			has_planet_flag = avb_orb_robot_assembly_2
 		}
 	}
 
@@ -93,8 +90,7 @@ building_avb_orb_ring_connection_clone_2 = {
 		exists = planet
 		planet = {
 			exists = orbital_defence
-			has_planet_flag =  avb_orb_clone_vats.1
-			NOT = { has_planet_flag =  avb_orb_clone_vats.2 }
+			has_planet_flag =  avb_orb_clone_vats_1
 		}
 	}
 
@@ -145,9 +141,7 @@ building_avb_orb_ring_connection_clone_3 = {
 		exists = planet
 		planet = {
 			exists = orbital_defence
-			has_planet_flag =  avb_orb_clone_vats.1
-			has_planet_flag =  avb_orb_clone_vats.2
-			NOT = { has_planet_flag =  avb_orb_clone_vats.3 }
+			has_planet_flag =  avb_orb_clone_vats_2
 		}
 	}
 
