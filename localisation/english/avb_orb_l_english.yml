@@ -9,13 +9,14 @@
  avb_orb_tier1_sign:0 "Tier 1 §R###§!######\n\n"
  avb_orb_tier2_sign:0 "Tier 2 §Y######§!###\n\n"
  avb_orb_tier3_sign:0 "Tier 3 §G#########§!\n\n"
+ avb_orb_building_robot:0 "$sm_ring_avb_robot_assembly$:"
 
 #Robot/Machine Assembly
  sm_ring_avb_robot_assembly:0 "Semi-Automation Machine Assembly"
- sm_ring_avb_robot_assembly_desc:0 "After transferred part of Machine Assembly on orbit we developed how to control automation process of creating new machines, that helped a lot in progressing our society.\n\n£job_roboticist£ $job_roboticist_plural$ turn £alloys£ §Y$alloys$§! into new £pop£ §YPops§!\n"
+ sm_ring_avb_robot_assembly_desc:0 "After transferred part of Machine Assembly on orbit we developed how to control automation process of creating new machines, that helped a lot in progressing our society.\n\nBuilding provide £job_roboticist£ $job_roboticist_plural$ jobs and also £mod_planet_pop_assembly_mult£ §Y$MOD_PLANET_POP_ASSEMBLY_ADD$§! or  £mod_planet_pop_assembly_organic_mult£ §Y$MOD_PLANET_POP_ASSEMBLY_ORGANIC_ADD$§!.\n"
  tech_ring_avb_robot_assembly_1:0 "Semi-Automation Processing"
  tech_ring_avb_robot_assembly_1_desc:1 "Our society struggle with deficiencies of workers. We have to develop semi-automation process for create new machines immediately."
-  tech_ring_avb_robot_assembly_2:0 "$tech_ring_avb_robot_assembly_1$ Tier 2"
+ tech_ring_avb_robot_assembly_2:0 "$tech_ring_avb_robot_assembly_1$ Tier 2"
  tech_ring_avb_robot_assembly_2_desc:0 "tech_ring_avb_robot_assembly_1 Tier 3"
  tech_ring_avb_robot_assembly_3:0 "$tech_ring_avb_robot_assembly_1_desc$"
  tech_ring_avb_robot_assembly_3_desc:0 "$tech_ring_avb_robot_assembly_1_desc$"
