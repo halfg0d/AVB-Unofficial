@@ -14,9 +14,6 @@ planet_event = {
 			has_planet_flag = avb_orb_robot_assembly_1
 		}
 		exists = owner
-		owner = {
-			has_technology = tech_ring_avb_robot_assembly_2
-		}
 		is_building_similar_to_robot_assembly = yes
 	}
 
@@ -40,9 +37,6 @@ planet_event = {
 			has_planet_flag = avb_orb_robot_assembly_2
 		}
 		exists = owner
-		owner = {
-			has_technology = tech_ring_avb_robot_assembly_3
-		}
 		is_building_similar_to_robot_assembly = yes
 	}
 
@@ -67,9 +61,6 @@ planet_event = {
 			has_planet_flag = avb_orb_clone_vats_1
 		}
 		exists = owner
-		owner = {
-			has_technology = tech_ring_avb_clone_vats_2
-		}
 		is_building_similar_to_clone_vats = yes
 	}
 
@@ -93,9 +84,6 @@ planet_event = {
 			has_planet_flag = avb_orb_clone_vats_2
 		}
 		exists = owner
-		owner = {
-			has_technology = tech_ring_avb_clone_vats_3
-		}
 		is_building_similar_to_clone_vats = yes
 	}
 
@@ -104,5 +92,146 @@ planet_event = {
 		add_building = building_avb_orb_ring_connection
 		remove_planet_flag = avb_orb_clone_vats_2
 		set_planet_flag = avb_orb_clone_vats_3
+	}
+}
+#Institute
+planet_event = {
+	id = avb_orb_up.31
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		last_building_changed = building_avb_orb_ring_connection_institute_2
+		has_building = building_avb_orb_ring_connection_institute_2
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_institute_1
+		}
+		exists = owner
+		is_building_similar_to_institute = yes
+	}
+
+	immediate = {
+		remove_building = building_avb_orb_ring_connection_institute_2
+		add_building = building_avb_orb_ring_connection
+		remove_planet_flag = avb_orb_institute_1
+		set_planet_flag = avb_orb_institute_2
+	}
+}
+planet_event = {
+	id = avb_orb_up.32
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		last_building_changed = building_avb_orb_ring_connection_institute_3
+		has_building = building_avb_orb_ring_connection_institute_3
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_institute_2
+		}
+		exists = owner
+		is_building_similar_to_institute = yes
+	}
+
+	immediate = {
+		remove_building = building_avb_orb_ring_connection_institute_3
+		add_building = building_avb_orb_ring_connection
+		remove_planet_flag = avb_orb_institute_2
+		set_planet_flag = avb_orb_institute_3
+	}
+}
+#Paradise
+planet_event = {
+	id = avb_orb_up.41
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		last_building_changed = building_avb_orb_ring_connection_paradise_2
+		has_building = building_avb_orb_ring_connection_paradise_2
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_paradise_1
+		}
+		exists = owner
+		is_building_similar_to_organic_paradise = yes
+	}
+
+	immediate = {
+		remove_building = building_avb_orb_ring_connection_paradise_2
+		add_building = building_avb_orb_ring_connection
+		remove_planet_flag = avb_orb_paradise_1
+		set_planet_flag = avb_orb_paradise_2
+	}
+}
+planet_event = {
+	id = avb_orb_up.42
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		last_building_changed = building_avb_orb_ring_connection_paradise_3
+		has_building = building_avb_orb_ring_connection_paradise_3
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_paradise_2
+		}
+		exists = owner
+		is_building_similar_to_organic_paradise = yes
+	}
+
+	immediate = {
+		remove_building = building_avb_orb_ring_connection_paradise_3
+		add_building = building_avb_orb_ring_connection
+		remove_planet_flag = avb_orb_paradise_2
+		set_planet_flag = avb_orb_paradise_3
+	}
+}
+#Ranger
+planet_event = {
+	id = avb_orb_up.51
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		last_building_changed = building_avb_orb_ring_connection_ranger_2
+		has_building = building_avb_orb_ring_connection_ranger_2
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_ranger_1
+		}
+		exists = owner
+		is_building_similar_to_ranger = yes
+	}
+
+	immediate = {
+		remove_building = building_avb_orb_ring_connection_ranger_2
+		add_building = building_avb_orb_ring_connection
+		remove_planet_flag = avb_orb_ranger_1
+		set_planet_flag = avb_orb_ranger_2
+	}
+}
+planet_event = {
+	id = avb_orb_up.52
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		last_building_changed = building_avb_orb_ring_connection_ranger_3
+		has_building = building_avb_orb_ring_connection_ranger_3
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_ranger_2
+		}
+		exists = owner
+		is_building_similar_to_ranger = yes
+	}
+
+	immediate = {
+		remove_building = building_avb_orb_ring_connection_ranger_3
+		add_building = building_avb_orb_ring_connection
+		remove_planet_flag = avb_orb_ranger_2
+		set_planet_flag = avb_orb_ranger_3
 	}
 }

@@ -1,0 +1,81 @@
+###			###
+###  Tier 1	###
+###			###
+triggered_country_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_institute_1
+            orb_institute_active = yes
+		}
+		exists = owner
+		owner = { NOT = { has_ascension_perk = ap_technological_ascendancy } }
+	}
+	all_technology_research_speed = 0.1
+}
+triggered_country_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_institute_1
+            orb_institute_active = yes
+		}
+		exists = owner
+		owner = { has_ascension_perk = ap_technological_ascendancy }
+	}
+	all_technology_research_speed = 0.15
+}
+###			###
+###  Tier 2	###
+###			###
+triggered_country_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_institute_2
+            orb_institute_active = yes
+		}
+		exists = owner
+		owner = { NOT = { has_ascension_perk = ap_technological_ascendancy } }
+	}
+	all_technology_research_speed = 0.2
+}
+triggered_country_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_institute_2
+            orb_institute_active = yes
+		}
+		exists = owner
+		owner = { has_ascension_perk = ap_technological_ascendancy }
+	}
+	all_technology_research_speed = 0.25
+}
+###			###
+###  Tier 3	###
+###			###
+triggered_country_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_institute_3
+            orb_institute_active = yes
+		}
+		exists = owner
+		owner = { NOT = { has_ascension_perk = ap_technological_ascendancy } }
+	}
+	all_technology_research_speed = 0.3
+}
+triggered_country_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_institute_3
+            orb_institute_active = yes
+		}
+		exists = owner
+		owner = { has_ascension_perk = ap_technological_ascendancy }
+	}
+	all_technology_research_speed = 0.35
+}

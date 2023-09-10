@@ -30,6 +30,12 @@ building_avb_orb_ring_connection = {
 		building_avb_orb_ring_connection_robot_3
 		building_avb_orb_ring_connection_clone_2
 		building_avb_orb_ring_connection_clone_3
+		building_avb_orb_ring_connection_institute_2
+		building_avb_orb_ring_connection_institute_3
+		building_avb_orb_ring_connection_paradise_2
+		building_avb_orb_ring_connection_paradise_3
+		building_avb_orb_ring_connection_ranger_2
+		building_avb_orb_ring_connection_ranger_3
 	}
 	## Upgrades /\
 

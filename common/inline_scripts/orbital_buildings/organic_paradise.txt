@@ -1,0 +1,107 @@
+###			###
+###  Tier 1	###
+###			###
+
+##Modifier \/
+triggered_planet_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			orb_paradise_active = yes
+			has_planet_flag = avb_orb_paradise_1
+		}
+		exists = owner
+		owner = {
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+	planet_bio_trophy_unity_produces_add = 1
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			orb_paradise_active = yes
+			has_planet_flag = avb_orb_paradise_1
+		}
+		exists = owner
+		owner = {
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+	planet_jobs_complex_drone_produces_mult = 0.1
+	planet_jobs_simple_drone_produces_mult = 0.05
+}
+##Modifier /\
+
+###			###
+###  Tier 2	###
+###			###
+
+##Modifier \/
+triggered_planet_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			orb_paradise_active = yes
+			has_planet_flag = avb_orb_paradise_2
+		}
+		exists = owner
+		owner = {
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+	planet_bio_trophy_unity_produces_add = 2
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			orb_paradise_active = yes
+			has_planet_flag = avb_orb_paradise_2
+		}
+		exists = owner
+		owner = {
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+	planet_jobs_complex_drone_produces_mult = 0.15
+	planet_jobs_simple_drone_produces_mult = 0.075
+}
+##Modifier /\
+
+###			###
+###  Tier 3	###
+###			###
+
+##Modifier \/
+triggered_planet_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			orb_paradise_active = yes
+			has_planet_flag = avb_orb_paradise_3
+		}
+		exists = owner
+		owner = {
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+	planet_bio_trophy_unity_produces_add = 3
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			orb_paradise_active = yes
+			has_planet_flag = avb_orb_paradise_3
+		}
+		exists = owner
+		owner = {
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+	planet_jobs_complex_drone_produces_mult = 0.2
+	planet_jobs_simple_drone_produces_mult = 0.1
+}
+##Modifier /\
