@@ -269,14 +269,6 @@ ring_avb_clone_vats = {
 		}
 	}
 
-	abort_trigger = {
-		have_building_similar_to_clone_vats = no
-	}
-
-	destroy_trigger = {
-		have_building_similar_to_clone_vats = no
-	}
-
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = yes
 
@@ -309,6 +301,30 @@ ring_avb_institute = {
 		}
 		is_building_similar_to_institute = yes
 	}
+	on_finished = {
+		planet = {
+			set_planet_flag = avb_orb_institute_1
+		}
+	}
+	on_destroyed = {
+		planet = {
+			remove_planet_flag = avb_orb_institute_1
+			remove_planet_flag = avb_orb_institute_2
+			remove_planet_flag = avb_orb_institute_3
+		}
+	}
+
+	abort_trigger = {
+		exists = planet
+		planet = {
+			NOR = {
+				has_building = building_avb_orb_ring_connection
+				is_building_similar_to_institute = yes
+			}
+		}
+	}
+
+	inline_script = orbital_buildings/institute
 	resources = {
 		category = starbase_buildings
 		cost = {
@@ -321,7 +337,7 @@ ring_avb_institute = {
 			trigger = {
 				exists = owner
 				planet = {
-					has_planet_flag = avb_orb_institute.2
+					has_planet_flag = avb_orb_institute_2
 				}
 			}
 			energy = @orb_t2_energy_upkeep
@@ -330,49 +346,11 @@ ring_avb_institute = {
 			trigger = {
 				exists = owner
 				planet = {
-					has_planet_flag = avb_orb_institute.3
+					has_planet_flag = avb_orb_institute_3
 				}
 			}
 			energy = @orb_t3_energy_upkeep
 		}
-	}
-
-	abort_trigger = {
-		have_building_similar_to_institute = no
-	}
-
-	destroy_trigger = {
-		have_building_similar_to_institute = no
-	}
-
-	inline_script = {
-		script = "orbital_buildings/avb_orbital_institute_script"
-		val1 = 0.1
-		val2 = 0.15
-		flag = "
-		has_planet_flag = avb_orb_institute.1
-		NOR = {
-			has_planet_flag = avb_orb_institute.2
-			has_planet_flag = avb_orb_institute.3
-		}"
-	}
-	inline_script = {
-		script = "orbital_buildings/avb_orbital_institute_script"
-		val1 = 0.15
-		val2 = 0.2
-		flag = "
-		has_planet_flag = avb_orb_institute.1
-		has_planet_flag = avb_orb_institute.2
-		NOT = { has_planet_flag = avb_orb_institute.3 }"
-	}
-	inline_script = {
-		script = "orbital_buildings/avb_orbital_institute_script"
-		val1 = 0.2
-		val2 = 0.25
-		flag = "
-		has_planet_flag = avb_orb_institute.1
-		has_planet_flag = avb_orb_institute.2
-		has_planet_flag = avb_orb_institute.3"
 	}
 	##Desc AP \/
 	triggered_desc = {
@@ -399,127 +377,12 @@ ring_avb_institute = {
 		weight = 50
 	}
 }
-ring_avb_organic_paradise = {
-	icon = "GFX_orbitalring_avb_organic_paradise"
-	construction_days = @avb_orb_time
-
-	potential = {
-		exists = owner
-		owner = {
-			has_valid_civic = civic_machine_servitor
-		}
-		is_orbital_ring = yes
-	}
-	possible = {
-		planet = {
-			has_building = building_avb_orb_ring_connection
-		}
-		is_building_similar_to_organic_paradise = yes
-	}
-	resources = {
-		category = starbase_buildings
-		cost = {
-			alloys = @orb_t1_alloy_cost
-			rare_crystals = @avb_orb_organic_paradise
-		}
-		upkeep = {
-			energy = @orb_t1_energy_upkeep
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				planet = {
-					has_planet_flag = avb_orb_organic_paradise.2
-				}
-			}
-			energy = @orb_t2_energy_upkeep
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				planet = {
-					has_planet_flag = avb_orb_organic_paradise.3
-				}
-			}
-			energy = @orb_t3_energy_upkeep
-		}
-	}
-
-	abort_trigger = {
-		have_building_similar_to_organic_paradise = no
-	}
-
-	destroy_trigger = {
-		have_building_similar_to_organic_paradise = no
-	}
-
-	###			###
-	###  Tier 1	###
-	###			###
-
-	##Modifier \/
-	triggered_planet_modifier = {
-		potential = {
-			exists = planet
-			planet = {
-				has_planet_flag = avb_orb_organic_paradise.1
-				NOR = {
-					has_planet_flag = avb_orb_organic_paradise.2
-					has_planet_flag = avb_orb_organic_paradise.3
-				}
-			}
-		}
-		planet_bio_trophy_unity_produces_add = 1
-	}
-	##Modifier /\
-
-	###			###
-	###  Tier 2	###
-	###			###
-
-	##Modifier \/
-	triggered_planet_modifier = {
-		potential = {
-			exists = planet
-			planet = {
-				has_planet_flag = avb_orb_organic_paradise.1
-				has_planet_flag = avb_orb_organic_paradise.2
-				NOT = { has_planet_flag = avb_orb_organic_paradise.3 }
-			}
-		}
-		planet_bio_trophy_unity_produces_add = 2.5
-	}
-	##Modifier /\
-
-	###			###
-	###  Tier 3	###
-	###			###
-
-	##Modifier \/
-	triggered_planet_modifier = {
-		potential = {
-			exists = planet
-			planet = {
-				has_planet_flag = avb_orb_organic_paradise.1
-				has_planet_flag = avb_orb_organic_paradise.2
-				has_planet_flag = avb_orb_organic_paradise.3
-			}
-		}
-		planet_bio_trophy_unity_produces_add = 5
-	}
-	##Modifier /\
-	ai_build_at_chokepoint = yes
-	ai_build_outside_chokepoint = yes
-
-	ai_weight = {
-		weight = 50
-	}
-}
 ring_avb_hospital = {
 	icon = "GFX_orbitalring_avb_hospital"
 	construction_days = @avb_orb_time
 
 	potential = {
+		always = no
 		exists = owner
 		owner = {
 			OR = {
@@ -677,6 +540,182 @@ ring_avb_hospital = {
 		planet_healthcare_society_research_produces_add = 3
 	}
 	##Modifier /\
+
+	ai_build_at_chokepoint = yes
+	ai_build_outside_chokepoint = yes
+
+	ai_weight = {
+		weight = 50
+	}
+}
+ring_avb_paradise = {
+	icon = "GFX_orbitalring_avb_paradise"
+	construction_days = @avb_orb_time
+
+	show_in_tech = "tech_ring_avb_paradise_1"
+	potential = {
+		exists = owner
+		owner = {
+			has_valid_civic = civic_machine_servitor
+			has_technology = tech_ring_avb_paradise_1
+		}
+		is_orbital_ring = yes
+	}
+	possible = {
+		planet = {
+			has_building = building_avb_orb_ring_connection
+		}
+		is_building_similar_to_organic_paradise = yes
+	}
+	on_finished = {
+		planet = {
+			set_planet_flag = avb_orb_paradise_1
+		}
+	}
+	on_destroyed = {
+		planet = {
+			remove_planet_flag = avb_orb_paradise_1
+			remove_planet_flag = avb_orb_paradise_2
+			remove_planet_flag = avb_orb_paradise_3
+		}
+	}
+
+	abort_trigger = {
+		exists = planet
+		planet = {
+			NOR = {
+				has_building = building_avb_orb_ring_connection
+				is_building_similar_to_organic_paradise = yes
+			}
+		}
+	}
+
+	inline_script = orbital_buildings/organic_paradise
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = @orb_t1_alloy_cost
+		}
+		upkeep = {
+			energy = @orb_t1_energy_upkeep
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				planet = {
+					has_planet_flag = avb_orb_paradise_2
+				}
+			}
+			energy = @orb_t2_energy_upkeep
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				planet = {
+					has_planet_flag = avb_orb_paradise_3
+				}
+			}
+			energy = @orb_t3_energy_upkeep
+		}
+	}
+
+	abort_trigger = {
+		is_building_similar_to_organic_paradise = no
+	}
+
+	destroy_trigger = {
+		is_building_similar_to_organic_paradise = no
+	}
+
+	
+
+	ai_build_at_chokepoint = yes
+	ai_build_outside_chokepoint = yes
+
+	ai_weight = {
+		weight = 50
+	}
+}
+ring_avb_ranger = {
+	icon = "GFX_orbitalring_avb_ranger_lodge"
+	construction_days = @avb_orb_time
+
+	show_in_tech = "tech_ring_avb_ranger_1"
+	potential = {
+		exists = owner
+		owner = {
+			has_valid_civic = civic_machine_servitor
+			has_technology = tech_ring_avb_ranger_1
+		}
+		is_orbital_ring = yes
+	}
+	possible = {
+		planet = {
+			has_building = building_avb_orb_ring_connection
+		}
+		is_building_similar_to_organic_paradise = yes
+	}
+	on_finished = {
+		planet = {
+			set_planet_flag = avb_orb_ranger_1
+		}
+	}
+	on_destroyed = {
+		planet = {
+			remove_planet_flag = avb_orb_ranger_1
+			remove_planet_flag = avb_orb_ranger_2
+			remove_planet_flag = avb_orb_ranger_3
+		}
+	}
+
+	abort_trigger = {
+		exists = planet
+		planet = {
+			NOR = {
+				has_building = building_avb_orb_ring_connection
+				is_building_similar_to_ranger = yes
+			}
+		}
+	}
+
+	inline_script = orbital_buildings/ranger_lodge
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = @orb_t1_alloy_cost
+		}
+		upkeep = {
+			energy = @orb_t1_energy_upkeep
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				planet = {
+					has_planet_flag = avb_orb_ranger_2
+				}
+			}
+			energy = @orb_t2_energy_upkeep
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				planet = {
+					has_planet_flag = avb_orb_ranger_3
+				}
+			}
+			energy = @orb_t3_energy_upkeep
+		}
+	}
+
+	abort_trigger = {
+		is_building_similar_to_ranger = no
+	}
+
+	destroy_trigger = {
+		is_building_similar_to_ranger = no
+	}
+
+	
 
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = yes
