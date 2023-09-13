@@ -3,7 +3,7 @@ triggered_planet_modifier = {
 		has_z_expanded_mod = no
 	}
 	modifier = {
-		job_merchant_add = @avb_t$tier$_merchant1
+		job_trader_add = @avb_t$tier$_trader
 		job_clerk_add = @avb_t$tier$_clerk1
 	}
 }
@@ -85,7 +85,7 @@ triggered_planet_modifier = {
 			}
 		}
 		modifier = {
-			job_merchant_add = 1
+			job_trader_add = @avb_t$tier$_trader
 		}
 	}
 	
@@ -93,7 +93,7 @@ triggered_planet_modifier = {
 		text = job_clerk_effect_desc
 	}
 	triggered_desc = {
-		text = job_merchant_effect_desc
+		text = job_trader_effect_desc
 	}
 
 	triggered_desc = {

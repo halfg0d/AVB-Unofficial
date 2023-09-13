@@ -146,7 +146,7 @@ building_galactic_stock_exchange = {
 	}
 	
 	planet_modifier = {
-		job_merchant_add = 2
+		job_merchant_add = 1
 		trade_value_mult = 0.20
 	}
 

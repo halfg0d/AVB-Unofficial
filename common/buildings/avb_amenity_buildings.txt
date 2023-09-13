@@ -10,17 +10,14 @@ building_avb_residence_3 = {
 	potential = {
 		has_building = building_paradise_dome
 		OR = {
-			NOT = { 
-				OR = {
-					is_habitat = yes
-					is_pd_habitat = yes
-				}
+			NOR = {
+				is_habitat = yes
+				is_pd_habitat = yes
 			}
 			AND = {
-				has_planet_flag = advanced_habitat
 				exists = owner
 				owner = {
-					has_ascension_perk = ap_voidborn
+					is_void_dweller_empire = yes
 				}
 			}
 			has_modifier = resort_colony_pd_hab
@@ -176,17 +173,14 @@ building_avb_residence_4 = {
 	potential = {
 		has_building = building_avb_residence_3
 		OR = {
-			NOT = { 
-				OR = {
-					is_habitat = yes
-					is_pd_habitat = yes
-				}
+			NOR = {
+				is_habitat = yes
+				is_pd_habitat = yes
 			}
 			AND = {
-				has_planet_flag = advanced_habitat
 				exists = owner
 				owner = {
-					has_ascension_perk = ap_voidborn
+					is_void_dweller_empire = yes
 				}
 			}
 			has_modifier = resort_colony_pd_hab
@@ -343,17 +337,14 @@ building_avb_residence_5 = {
 	potential = {
 		has_building = building_avb_residence_4
 		OR = {
-			NOT = { 
-				OR = {
-					is_habitat = yes
-					is_pd_habitat = yes
-				}
+			NOR = {
+				is_habitat = yes
+				is_pd_habitat = yes
 			}
 			AND = {
-				has_planet_flag = advanced_habitat
 				exists = owner
 				owner = {
-					has_ascension_perk = ap_voidborn
+					is_void_dweller_empire = yes
 				}
 			}
 			has_modifier = resort_colony_pd_hab
@@ -521,10 +512,9 @@ building_avb_communal_housing_3 = {
 				is_pd_habitat = yes
 			}
 			AND = {
-				has_planet_flag = advanced_habitat
 				exists = owner
 				owner = {
-					has_ascension_perk = ap_voidborn
+					is_void_dweller_empire = yes
 				}
 			}
 			has_modifier = resort_colony_pd_hab #PD Habitats
@@ -679,10 +669,9 @@ building_avb_communal_housing_4 = {
 				is_pd_habitat = yes
 			}
 			AND = {
-				has_planet_flag = advanced_habitat
 				exists = owner
 				owner = {
-					has_ascension_perk = ap_voidborn
+					is_void_dweller_empire = yes
 				}
 			}
 			has_modifier = resort_colony_pd_hab #PD Habitats
@@ -837,10 +826,9 @@ building_avb_communal_housing_5 = {
 				is_pd_habitat = yes
 			}
 			AND = {
-				has_planet_flag = advanced_habitat
 				exists = owner
 				owner = {
-					has_ascension_perk = ap_voidborn
+					is_void_dweller_empire = yes
 				}
 			}
 			has_modifier = resort_colony_pd_hab #PD Habitats
@@ -2327,8 +2315,23 @@ building_avb_ranger_lodge_2 = {
 	}
 
 	planet_modifier = {
-		job_ranger_add = @avb_a2_jobs
-		deposit_blockers_natural_unity_produces_add = 4
+		job_ranger_add = 2
+		deposit_blockers_natural_unity_produces_add = 3
+	}
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		job_ranger_add = 1 # +1 Ranger per natural blocker
+		mult = value:natural_blocker_count
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner_has_resolution = { RES = resolution_ecology_paradise_initiative }
+		}
+		job_ranger_add = 1 # +1 Ranger per natural blocker if GalCom approves
+		mult = value:natural_blocker_count
 	}
 	inline_script = amenity_buildings/avb_ranger_resolutions
 
@@ -2392,8 +2395,12 @@ building_avb_ranger_lodge_2 = {
 		planet = {
 			if = {
 				limit = { has_deposit = d_big_nature_preserve_blocker }
-				remove_deposit = d_big_nature_preserve_blocker
-				remove_deposit = d_big_nature_preserve_blocker
+				every_deposit = {
+					limit = {
+						is_deposit_type = d_big_nature_preserve_blocker
+					}
+					remove_deposit = d_big_nature_preserve_blocker
+				}
 			}
 		}
 	}

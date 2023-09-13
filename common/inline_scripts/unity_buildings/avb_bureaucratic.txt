@@ -37,6 +37,7 @@ triggered_planet_modifier = {
 		exists = owner
 		owner = {
 			is_megacorp = yes 
+			is_worker_coop_empire = no
 			#zExpanded \/
 			NAND = {
 				has_valid_civic = civic_private_military_companies
@@ -55,6 +56,7 @@ triggered_desc = {
 		exists = owner
 		owner = {
 			is_megacorp = yes 
+			is_worker_coop_empire = no
 			#zExpanded \/
 			NAND = {
 				has_valid_civic = civic_private_military_companies
@@ -65,7 +67,27 @@ triggered_desc = {
 	}
 	text = job_manager_effect_desc
 }
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_worker_coop_empire = yes
+		}
+	}
+	modifier = {
+		job_steward_add = @avb_u$tier$_jobs
+	}
+}
 
+triggered_desc = {
+	trigger = {
+		exists = owner
+		owner = {
+			is_worker_coop_empire = yes
+		}
+	}
+	text = job_steward_effect_desc
+}
 #zExpanded \/
 triggered_planet_modifier = {
 	potential = {

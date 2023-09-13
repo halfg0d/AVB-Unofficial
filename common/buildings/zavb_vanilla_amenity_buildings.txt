@@ -11,17 +11,14 @@ building_paradise_dome = {
 	potential = {
 		has_building = building_luxury_residence
 		OR = {
-			NOT = { 
-				OR = {
-					is_habitat = yes
-					is_pd_habitat = yes
-				}
+			NOR = {
+				is_habitat = yes
+				is_pd_habitat = yes
 			}
 			AND = {
-				has_planet_flag = advanced_habitat
 				exists = owner
 				owner = {
-					has_ascension_perk = ap_voidborn
+					is_void_dweller_empire = yes
 				}
 			}
 			has_modifier = resort_colony_pd_hab
@@ -202,10 +199,9 @@ building_communal_housing_large = {
 				is_pd_habitat = yes
 			}
 			AND = {
-				has_planet_flag = advanced_habitat
 				exists = owner
 				owner = {
-					has_ascension_perk = ap_voidborn
+					is_void_dweller_empire = yes
 				}
 			}
 			has_modifier = resort_colony_pd_hab #PD Habitats
@@ -1041,8 +1037,23 @@ building_ranger_lodge = {
 	}
 
 	planet_modifier = {
-		job_ranger_add = @b1_jobs
+		job_ranger_add = 1
 		deposit_blockers_natural_unity_produces_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		job_ranger_add = 1 # +1 Ranger per natural blocker
+		mult = value:natural_blocker_count
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner_has_resolution = { RES = resolution_ecology_paradise_initiative }
+		}
+		job_ranger_add = 1 # +1 Ranger per natural blocker if GalCom approves
+		mult = value:natural_blocker_count
 	}
 	inline_script = amenity_buildings/avb_ranger_resolutions
 	#zExpanded \/
@@ -1103,7 +1114,12 @@ building_ranger_lodge = {
 		planet = {
 			if = {
 				limit = { has_deposit = d_big_nature_preserve_blocker }
-				remove_deposit = d_big_nature_preserve_blocker
+				every_deposit = {
+					limit = {
+						is_deposit_type = d_big_nature_preserve_blocker
+					}
+					remove_deposit = d_big_nature_preserve_blocker
+				}
 			}
 		}
 	}

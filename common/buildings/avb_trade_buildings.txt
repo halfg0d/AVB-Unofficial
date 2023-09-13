@@ -347,7 +347,7 @@ building_avb_galactic_stock_exchange_2 = {
 		}
 	}
 	planet_modifier = {
-		job_merchant_add = @avb_t4_jobs
+		job_merchant_add = 2
 		trade_value_mult = 0.40
 	}
 	triggered_planet_modifier = {
