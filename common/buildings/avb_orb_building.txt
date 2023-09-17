@@ -55,6 +55,8 @@ building_avb_orb_ring_connection = {
 	planet_modifier = {
 		planet_building_build_speed_mult = 0.2
 	}
+	inline_script = orbital_buildings/avb_orb_ring_connection_desc
+	
 	## Jobs \/
 	triggered_planet_modifier = {
 		potential = {
@@ -92,7 +94,6 @@ building_avb_orb_ring_connection = {
 		}
 	}
 	## Jobs /\
-	inline_script = orbital_buildings/avb_orb_ring_connection_desc
 	triggered_desc = {
 		trigger = {
 			exists = owner

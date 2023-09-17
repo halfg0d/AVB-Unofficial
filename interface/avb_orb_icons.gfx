@@ -8,6 +8,10 @@ spriteTypes = {
 		textureFile = "gfx/interface/icons/buildings/avb_orb_clone_vats.dds"
 	}
 	spriteType = {
+		name = "GFX_orbitalring_avb_institute"
+		textureFile = "gfx/interface/icons/buildings/avb_orb_institute.dds"
+	}
+	spriteType = {
 		name = "GFX_orbitalring_avb_organic_paradise"
 		textureFile = "gfx/interface/icons/buildings/avb_orb_organic_paradise.dds"
 	}

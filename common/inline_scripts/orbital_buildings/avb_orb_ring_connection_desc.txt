@@ -1,52 +1,37 @@
 #Levels Desc
-triggered_desc = {
-	trigger = {
-		exists = orbital_defence
-		orbital_defence = {
-			exists = starbase
-			starbase = {
-				has_starbase_building = ring_avb_robot_assembly
-			}
-		}
-	}
+
+#Robot
+inline_script = {
+	script = orbital_buildings/avb_orb_formula_desc
+	building = ring_avb_robot_assembly
 	text = avb_orb_building_robot
+	flag = avb_orb_robot_assembly
 }
-triggered_desc = {
-	trigger = {
-		exists = orbital_defence
-		orbital_defence = {
-			exists = starbase
-			starbase = {
-				has_starbase_building = ring_avb_robot_assembly
-			}
-		}
-		has_planet_flag = avb_orb_robot_assembly_1
-	}
-	text = avb_orb_tier1_sign
+#Clone Vats
+inline_script = {
+	script = orbital_buildings/avb_orb_formula_desc
+	building = ring_avb_clone_vats
+	text = avb_orb_building_clone
+	flag = avb_orb_clone_vats
 }
-triggered_desc = {
-	trigger = {
-		exists = orbital_defence
-		orbital_defence = {
-			exists = starbase
-			starbase = {
-				has_starbase_building = ring_avb_robot_assembly
-			}
-		}
-		has_planet_flag = avb_orb_robot_assembly_2
-	}
-	text = avb_orb_tier2_sign
+#Institute
+inline_script = {
+	script = orbital_buildings/avb_orb_formula_desc
+	building = ring_avb_institute
+	text = avb_orb_building_institute
+	flag = avb_orb_institute
 }
-triggered_desc = {
-	trigger = {
-		exists = orbital_defence
-		orbital_defence = {
-			exists = starbase
-			starbase = {
-				has_starbase_building = ring_avb_robot_assembly
-			}
-		}
-		has_planet_flag = avb_orb_robot_assembly_3
-	}
-	text = avb_orb_tier3_sign
+#Organic Paradise
+inline_script = {
+	script = orbital_buildings/avb_orb_formula_desc
+	building = ring_avb_paradise
+	text = avb_orb_building_paradise
+	flag = avb_orb_paradise
+}
+#Ranger Lodge
+inline_script = {
+	script = orbital_buildings/avb_orb_formula_desc
+	building = ring_avb_ranger
+	text = avb_orb_building_ranger
+	flag = avb_orb_ranger
 }
