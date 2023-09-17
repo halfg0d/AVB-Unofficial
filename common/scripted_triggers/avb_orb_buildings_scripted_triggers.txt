@@ -3,6 +3,18 @@ has_any_orb_flag = {
 		has_planet_flag = avb_orb_robot_assembly_1
 		has_planet_flag = avb_orb_robot_assembly_2
 		has_planet_flag = avb_orb_robot_assembly_3
+		has_planet_flag = avb_orb_clone_vats_1
+		has_planet_flag = avb_orb_clone_vats_2
+		has_planet_flag = avb_orb_clone_vats_3
+		has_planet_flag = avb_orb_paradise_1
+		has_planet_flag = avb_orb_paradise_2
+		has_planet_flag = avb_orb_paradise_3
+		has_planet_flag = avb_orb_institute_1
+		has_planet_flag = avb_orb_institute_2
+		has_planet_flag = avb_orb_institute_3
+		has_planet_flag = avb_orb_ranger_1
+		has_planet_flag = avb_orb_ranger_2
+		has_planet_flag = avb_orb_ranger_3
 	}
 }
 has_organic_assembly_building = {
@@ -37,7 +49,7 @@ is_building_similar_to_robot_assembly = {
 				owner = { is_regular_empire = yes }
 			}
 			custom_tooltip = {
-				fail_text = "avb_orb_is_building_similar_to_x_fail"
+				fail_text = "avb_orb_is_building_similar_to_robot_fail"
 				OR = {
 					#Vanilla
 					has_building = building_robot_assembly_plant
@@ -53,7 +65,7 @@ is_building_similar_to_robot_assembly = {
 				owner = { is_machine_empire = yes }
 		 	}
 			custom_tooltip = {
-				fail_text = "avb_orb_is_building_similar_to_x_fail"
+				fail_text = "avb_orb_is_building_similar_to_robot_fail"
 				OR = {
 					#Vanilla
 					has_building = building_machine_assembly_plant
@@ -80,14 +92,12 @@ is_building_similar_to_clone_vats = {
 				owner = { is_machine_empire = no }
 			}
 			custom_tooltip = {
-				fail_text = "avb_orb_is_building_similar_to_x_fail"
+				fail_text = "avb_orb_is_building_similar_to_clone_vats_fail"
 				OR = {
 					#Vanilla
 					has_building = building_clone_vats
-					#has_building_construction = building_clone_vats
 					#AVB
 					has_building = building_avb_clone_vats_2
-					#has_building_construction = building_avb_clone_vats_2
 				}
 			}
 		}
@@ -105,7 +115,7 @@ orb_institute_active = {
 is_building_similar_to_institute = {
 	planet = {
 		custom_tooltip = {
-			fail_text = "avb_orb_is_building_similar_to_x_fail"
+			fail_text = "avb_orb_is_building_similar_to_institute_fail"
 			OR = {
 				#Vanilla
 				has_building = building_institute
@@ -136,7 +146,7 @@ is_building_similar_to_organic_paradise = {
 				owner = { has_valid_civic = civic_machine_servitor }
 			}
 			custom_tooltip = {
-				fail_text = "avb_orb_is_building_similar_to_x_fail"
+				fail_text = "avb_orb_is_building_similar_to_paradise_fail"
 				OR = {
 					#Vanilla
 					has_building = building_organic_sanctuary
@@ -168,7 +178,7 @@ is_building_similar_to_ranger = {
 				}
 			}
 			custom_tooltip = {
-				fail_text = "avb_orb_is_building_similar_to_x_fail"
+				fail_text = "avb_orb_is_building_similar_to_ranger_fail"
 				OR = {
 					#Vanilla
 					has_building = building_ranger_lodge

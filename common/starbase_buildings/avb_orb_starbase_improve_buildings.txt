@@ -549,7 +549,7 @@ ring_avb_hospital = {
 	}
 }
 ring_avb_paradise = {
-	icon = "GFX_orbitalring_avb_paradise"
+	icon = "GFX_orbitalring_avb_organic_paradise"
 	construction_days = @avb_orb_time
 
 	show_in_tech = "tech_ring_avb_paradise_1"
@@ -644,7 +644,7 @@ ring_avb_ranger = {
 	potential = {
 		exists = owner
 		owner = {
-			has_valid_civic = civic_machine_servitor
+			has_valid_civic = civic_environmentalist
 			has_technology = tech_ring_avb_ranger_1
 		}
 		is_orbital_ring = yes

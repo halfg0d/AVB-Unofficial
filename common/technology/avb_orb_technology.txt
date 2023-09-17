@@ -513,7 +513,7 @@ tech_ring_avb_institute_3 = {
 	}
 }
 tech_ring_avb_paradise_1= {
-	icon = tech_ring_avb_paradise
+	icon = tech_ring_avb_organic_paradise
 	cost = @orb_tier4cost1
 	area = society
 	tier = 4
@@ -554,7 +554,7 @@ tech_ring_avb_paradise_1= {
 	}
 }
 tech_ring_avb_paradise_2 = {
-	icon = tech_ring_avb_paradise
+	icon = tech_ring_avb_organic_paradise
 	cost = @orb_tier4cost2
 	area = society
 	tier = 4
@@ -595,7 +595,7 @@ tech_ring_avb_paradise_2 = {
 	}
 }
 tech_ring_avb_paradise_3 = {
-	icon = tech_ring_avb_paradise
+	icon = tech_ring_avb_organic_paradise
 	cost = @orb_tier4cost3
 	area = society
 	tier = 4

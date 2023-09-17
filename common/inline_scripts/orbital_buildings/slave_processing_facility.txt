@@ -1,0 +1,24 @@
+triggered_planet_modifier = {
+	potential = {
+		owner = {
+			NOT = { has_technology = tech_avb_slave_processing_2 }
+		}
+	}
+	modifier = {
+		planet_jobs_slave_produces_mult = 0.05
+		pop_cat_slave_political_power = -0.25
+		planet_resettlement_unemployed_mult = -0.50
+	}
+}
+triggered_planet_modifier = {
+	potential = {
+		owner = {
+			has_technology = tech_avb_slave_processing_2
+		}
+	}
+	modifier = {
+		planet_jobs_slave_produces_mult = 0.1
+		pop_cat_slave_political_power = -0.5
+		planet_resettlement_unemployed_mult = -0.50
+	}
+}
