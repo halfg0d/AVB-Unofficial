@@ -315,7 +315,7 @@ building_avb_food_processing_3 = {
 	}
 
 	planet_modifier = {
-		planet_farmers_food_produces_add = @avb_rs4_jobs
+		planet_farmers_food_produces_add = 4
 	}
 
 	triggered_planet_modifier = {
@@ -323,7 +323,7 @@ building_avb_food_processing_3 = {
 			has_ringworld_output_boost = yes
 		}
 		modifier = {
-			planet_farmers_food_produces_add = 4
+			planet_farmers_food_produces_add = 2
 		}
 	}
 
@@ -568,7 +568,7 @@ building_avb_food_processing_4 = {
 	}
 
 	planet_modifier = {
-		planet_farmers_food_produces_add = 2
+		planet_farmers_food_produces_add = 6
 	}
 
 	triggered_planet_modifier = {
@@ -576,7 +576,7 @@ building_avb_food_processing_4 = {
 			has_ringworld_output_boost = yes
 		}
 		modifier = {
-			planet_farmers_food_produces_add = 6
+			planet_farmers_food_produces_add = 2
 		}
 	}
 
@@ -2030,7 +2030,6 @@ building_avb_bio_reactor_2 = {
 		upkeep = {
 			food = 100
 		}
-		inline_script = "resources/avb_bioreactor_production"
 		inline_script = "resources/avb_bioreactor_production"
 	}	
 	
