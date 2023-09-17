@@ -1,0 +1,100 @@
+###			###
+###  Tier 1	###
+###			###
+triggered_planet_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_clone_vats_1
+            orb_clone_vats_active = yes
+		}
+		exists = owner
+		owner = {
+			has_tradition = tr_genetics_adopt
+			NOT = { has_tradition = tr_genetics_efficient_cloning }
+		}
+	}
+	planet_pop_assembly_organic_add = 1
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_clone_vats_1
+            orb_clone_vats_active = yes
+		}
+		exists = owner
+		owner = {
+			has_tradition = tr_genetics_adopt
+			has_tradition = tr_genetics_efficient_cloning
+		}
+	}
+	planet_pop_assembly_organic_add = 1.5
+}
+###			###
+###  Tier 2	###
+###			###
+triggered_planet_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_clone_vats_2
+            orb_clone_vats_active = yes
+		}
+		exists = owner
+		owner = {
+			has_tradition = tr_genetics_adopt
+			NOT = { has_tradition = tr_genetics_efficient_cloning }
+		}
+	}
+	planet_pop_assembly_organic_add = 2
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_clone_vats_2
+            orb_clone_vats_active = yes
+		}
+		exists = owner
+		owner = {
+			has_tradition = tr_genetics_adopt
+			has_tradition = tr_genetics_efficient_cloning
+		}
+	}
+	planet_pop_assembly_organic_add = 3
+}
+###			###
+###  Tier 3	###
+###			###
+triggered_planet_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_clone_vats_3
+            orb_clone_vats_active = yes
+		}
+		exists = owner
+		owner = {
+			has_tradition = tr_genetics_adopt
+			NOT = { has_tradition = tr_genetics_efficient_cloning }
+		}
+	}
+	planet_pop_assembly_organic_add = 3
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_clone_vats_3
+            orb_clone_vats_active = yes
+		}
+		exists = owner
+		owner = {
+			has_tradition = tr_genetics_adopt
+			has_tradition = tr_genetics_efficient_cloning
+		}
+	}
+	planet_pop_assembly_organic_add = 4.5
+}
+

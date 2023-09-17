@@ -1,0 +1,37 @@
+#Levels Desc
+
+#Robot
+inline_script = {
+	script = orbital_buildings/avb_orb_formula_desc
+	building = ring_avb_robot_assembly
+	text = avb_orb_building_robot
+	flag = avb_orb_robot_assembly
+}
+#Clone Vats
+inline_script = {
+	script = orbital_buildings/avb_orb_formula_desc
+	building = ring_avb_clone_vats
+	text = avb_orb_building_clone
+	flag = avb_orb_clone_vats
+}
+#Institute
+inline_script = {
+	script = orbital_buildings/avb_orb_formula_desc
+	building = ring_avb_institute
+	text = avb_orb_building_institute
+	flag = avb_orb_institute
+}
+#Organic Paradise
+inline_script = {
+	script = orbital_buildings/avb_orb_formula_desc
+	building = ring_avb_paradise
+	text = avb_orb_building_paradise
+	flag = avb_orb_paradise
+}
+#Ranger Lodge
+inline_script = {
+	script = orbital_buildings/avb_orb_formula_desc
+	building = ring_avb_ranger
+	text = avb_orb_building_ranger
+	flag = avb_orb_ranger
+}

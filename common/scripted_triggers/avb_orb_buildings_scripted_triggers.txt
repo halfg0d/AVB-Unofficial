@@ -1,0 +1,191 @@
+has_any_orb_flag = {
+	OR = {
+		has_planet_flag = avb_orb_robot_assembly_1
+		has_planet_flag = avb_orb_robot_assembly_2
+		has_planet_flag = avb_orb_robot_assembly_3
+		has_planet_flag = avb_orb_clone_vats_1
+		has_planet_flag = avb_orb_clone_vats_2
+		has_planet_flag = avb_orb_clone_vats_3
+		has_planet_flag = avb_orb_paradise_1
+		has_planet_flag = avb_orb_paradise_2
+		has_planet_flag = avb_orb_paradise_3
+		has_planet_flag = avb_orb_institute_1
+		has_planet_flag = avb_orb_institute_2
+		has_planet_flag = avb_orb_institute_3
+		has_planet_flag = avb_orb_ranger_1
+		has_planet_flag = avb_orb_ranger_2
+		has_planet_flag = avb_orb_ranger_3
+	}
+}
+has_organic_assembly_building = {
+	OR = {
+		has_building = building_clone_vats
+		has_building = building_clone_army_clone_vat
+		has_building = building_posthumous_employment_center
+	}
+}
+can_build_cyborgs = {
+	owner = {
+		has_policy_flag = roboticist_output_build_cyborgs
+	}
+}
+orb_robot_assembly_active = {
+	OR = {
+		has_active_building = building_robot_assembly_plant
+		has_active_building = building_robot_assembly_complex
+		has_active_building = building_machine_assembly_plant
+		has_active_building = building_machine_assembly_complex
+		#AVB
+		has_active_building = building_avb_robot_assembly_plant_2
+		has_active_building = building_avb_machine_assembly_plant_2
+	}
+}
+
+is_building_similar_to_robot_assembly = {
+	planet = {
+		if = {
+			limit = {
+				exists = owner
+				owner = { is_regular_empire = yes }
+			}
+			custom_tooltip = {
+				fail_text = "avb_orb_is_building_similar_to_robot_fail"
+				OR = {
+					#Vanilla
+					has_building = building_robot_assembly_plant
+					has_building = building_robot_assembly_complex
+					#AVB
+					has_building = building_avb_robot_assembly_plant_2
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				exists = owner
+				owner = { is_machine_empire = yes }
+		 	}
+			custom_tooltip = {
+				fail_text = "avb_orb_is_building_similar_to_robot_fail"
+				OR = {
+					#Vanilla
+					has_building = building_machine_assembly_plant
+					has_building = building_machine_assembly_complex
+					#AVB
+					has_building = building_avb_machine_assembly_plant_2
+				}
+			}
+		}
+	}
+}
+
+orb_clone_vats_active = {
+	OR = {
+		has_active_building = building_clone_vats
+		has_active_building = building_avb_clone_vats_2
+	}
+}
+is_building_similar_to_clone_vats = {
+	planet = {
+		if = {
+			limit = {
+				exists = owner
+				owner = { is_machine_empire = no }
+			}
+			custom_tooltip = {
+				fail_text = "avb_orb_is_building_similar_to_clone_vats_fail"
+				OR = {
+					#Vanilla
+					has_building = building_clone_vats
+					#AVB
+					has_building = building_avb_clone_vats_2
+				}
+			}
+		}
+	}
+}
+orb_institute_active = {
+	OR = {
+		has_active_building = building_institute
+		has_active_building = building_supercomputer
+		#AVB
+		has_active_building = building_avb_institute_2
+		has_active_building = building_avb_supercomputer_2
+	}
+}
+is_building_similar_to_institute = {
+	planet = {
+		custom_tooltip = {
+			fail_text = "avb_orb_is_building_similar_to_institute_fail"
+			OR = {
+				#Vanilla
+				has_building = building_institute
+				has_building = building_supercomputer
+				#AVB
+				has_building = building_avb_institute_2
+				has_building = building_avb_supercomputer_2
+			}
+		}
+	}
+}
+orb_paradise_active = {
+	OR = {
+		#Vanilla
+		has_active_building = building_organic_sanctuary
+		has_active_building = building_organic_paradise
+		#AVB
+		has_active_building = building_avb_organic_sanctuary_3
+		has_active_building = building_avb_organic_sanctuary_4
+
+	}
+}
+is_building_similar_to_organic_paradise = {
+	planet = {
+		if = {
+			limit = {
+				exists = owner
+				owner = { has_valid_civic = civic_machine_servitor }
+			}
+			custom_tooltip = {
+				fail_text = "avb_orb_is_building_similar_to_paradise_fail"
+				OR = {
+					#Vanilla
+					has_building = building_organic_sanctuary
+					has_building = building_organic_paradise
+					#AVB
+					has_building = building_avb_organic_sanctuary_3
+					has_building = building_avb_organic_sanctuary_4
+				}
+			}
+		}
+	}
+}
+orb_ranger_active = {
+	OR = {
+		#Vanilla
+		has_active_building = building_ranger_lodge
+		#AVB
+		has_active_building = building_avb_ranger_lodge_2
+	}
+}
+is_building_similar_to_ranger = {
+	planet = {
+		if = {
+			limit = {
+				exists = owner
+				owner = {
+					is_regular_empire = yes
+					has_valid_civic = civic_environmentalist
+				}
+			}
+			custom_tooltip = {
+				fail_text = "avb_orb_is_building_similar_to_ranger_fail"
+				OR = {
+					#Vanilla
+					has_building = building_ranger_lodge
+					#AVB
+					has_building = building_avb_ranger_lodge_2
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,36 @@
+modifier = {
+	factor = 1.25
+	count_owned_planet = {
+		limit = {
+			exists = orbital_defence
+		}
+		count > 1
+	}
+}
+modifier = {
+	factor = 1.25
+	count_owned_planet = {
+		limit = {
+			exists = orbital_defence
+		}
+		count > 3
+	}
+}
+modifier = {
+	factor = 1.25
+	count_owned_planet = {
+		limit = {
+			exists = orbital_defence
+		}
+		count > 5
+	}
+}	
+modifier = {
+	factor = 2.5
+	count_owned_planet = {
+		limit = {
+			has_any_orb_flag = yes
+		}
+		count > 1
+	}
+}	

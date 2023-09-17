@@ -1785,7 +1785,13 @@ tech_avb_residence_3 = {
 		modifier = { # No tech without builded previous cbuilding
 			factor = 0
 			NOT = {
-				any_owned_planet = { has_building = building_luxury_residence }
+				any_owned_planet = {
+					OR = {
+						has_building = building_paradise_dome
+						has_building = building_communal_housing_large
+						has_building = building_organic_paradise
+					}
+				}
 			}
 		}
 		modifier = {
@@ -1829,7 +1835,13 @@ tech_avb_residence_4 = {
 		modifier = { # No tech without builded previous cbuilding
 			factor = 0
 			NOT = {
-				any_owned_planet = { has_building = building_avb_residence_3 }
+				any_owned_planet = {
+					OR = {
+						has_building = building_avb_residence_3
+						has_building = building_avb_communal_housing_3
+						has_building = building_avb_organic_sanctuary_3
+					}
+				}
 			}
 		}
 		modifier = {
@@ -1855,10 +1867,7 @@ tech_avb_residence_5 = {
 	weight = @avbtier6weight1
 	
 	potential = {
-		OR = {
-			is_gestalt = no
-			has_valid_civic = civic_machine_servitor
-		}
+		is_gestalt = no
 	}
 
 	weight_modifier = {	
@@ -1873,7 +1882,13 @@ tech_avb_residence_5 = {
 		modifier = { # No tech without builded previous cbuilding
 			factor = 0
 			NOT = {
-				any_owned_planet = { has_building = building_avb_residence_4 }
+				any_owned_planet = { 
+					OR = {
+						has_building = building_avb_residence_4
+						has_building = building_avb_communal_housing_4
+						has_building = building_avb_organic_sanctuary_4
+					}
+				}
 			}
 		}
 		modifier = {

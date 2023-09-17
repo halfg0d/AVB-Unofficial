@@ -1,0 +1,90 @@
+triggered_station_modifier = {
+	potential = {
+		owner = {
+			NOR = {
+				has_technology = tech_avb_planetary_shield_generator_2
+				has_technology = tech_avb_planetary_shield_generator_3
+				has_technology = tech_avb_dark_matter_planetary_shield_generator
+			}
+		}
+	}
+	ship_shield_mult = 0.25
+	ship_shield_hardening_add = 0.25
+}
+triggered_station_modifier = {
+	potential = {
+		owner = {
+			NOR = {
+				has_technology = tech_avb_planetary_shield_generator_3
+				has_technology = tech_avb_dark_matter_planetary_shield_generator
+			}
+		}
+	}
+	ship_shield_mult = 0.35
+	ship_shield_hardening_add = 0.35
+}
+triggered_station_modifier = {
+	potential = {
+		owner = {
+			NOT = {
+				has_technology = tech_avb_dark_matter_planetary_shield_generator
+			}
+		}
+	}
+	ship_shield_mult = 0.45
+	ship_shield_hardening_add = 0.45
+}
+triggered_station_modifier = {
+	potential = {
+		owner = {
+			has_technology = tech_avb_dark_matter_planetary_shield_generator
+		}
+	}
+	ship_shield_mult = 0.6
+	ship_shield_hardening_add = 0.6
+}
+triggered_defense_platform_modifier = {
+	potential = {
+		owner = {
+			NOR = {
+				has_technology = tech_avb_planetary_shield_generator_2
+				has_technology = tech_avb_planetary_shield_generator_3
+				has_technology = tech_avb_dark_matter_planetary_shield_generator
+			}
+		}
+	}
+	ship_shield_mult = 0.25
+	ship_shield_hardening_add = 0.25
+}
+triggered_defense_platform_modifier = {
+	potential = {
+		owner = {
+			NOR = {
+				has_technology = tech_avb_planetary_shield_generator_3
+				has_technology = tech_avb_dark_matter_planetary_shield_generator
+			}
+		}
+	}
+	ship_shield_mult = 0.35
+	ship_shield_hardening_add = 0.35
+}
+triggered_defense_platform_modifier = {
+	potential = {
+		owner = {
+			NOT = {
+				has_technology = tech_avb_dark_matter_planetary_shield_generator
+			}
+		}
+	}
+	ship_shield_mult = 0.45
+	ship_shield_hardening_add = 0.45
+}
+triggered_defense_platform_modifier = {
+	potential = {
+		owner = {
+			has_technology = tech_avb_dark_matter_planetary_shield_generator
+		}
+	}
+	ship_shield_mult = 0.6
+	ship_shield_hardening_add = 0.6
+}

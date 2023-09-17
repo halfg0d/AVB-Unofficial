@@ -1,0 +1,52 @@
+#Levels Desc
+triggered_desc = {
+	trigger = {
+		exists = orbital_defence
+		orbital_defence = {
+			exists = starbase
+			starbase = {
+				has_starbase_building = $building$
+			}
+		}
+	}
+	text = $text$
+}
+triggered_desc = {
+	trigger = {
+		exists = orbital_defence
+		orbital_defence = {
+			exists = starbase
+			starbase = {
+				has_starbase_building = $building$
+			}
+		}
+		has_planet_flag = $flag$_1
+	}
+	text = avb_orb_tier1_sign
+}
+triggered_desc = {
+	trigger = {
+		exists = orbital_defence
+		orbital_defence = {
+			exists = starbase
+			starbase = {
+				has_starbase_building = $building$
+			}
+		}
+		has_planet_flag = $flag$_2
+	}
+	text = avb_orb_tier2_sign
+}
+triggered_desc = {
+	trigger = {
+		exists = orbital_defence
+		orbital_defence = {
+			exists = starbase
+			starbase = {
+				has_starbase_building = $building$
+			}
+		}
+		has_planet_flag = $flag$_3
+	}
+	text = avb_orb_tier3_sign
+}

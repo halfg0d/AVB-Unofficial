@@ -1,0 +1,36 @@
+triggered_planet_modifier = {
+	potential = {
+		owner = {
+			NOR = {
+				has_technology = tech_avb_psi_corps_2
+				has_technology = tech_avb_psi_corps_3
+			}
+		}
+	}
+	modifier = {
+		job_telepath_add = 2
+		planet_stability_add = 5
+	}
+}
+triggered_planet_modifier = {
+	potential = {
+		owner = {
+			NOT = { has_technology = tech_avb_psi_corps_3 }
+		}
+	}
+	modifier = {
+		job_telepath_add = 4
+		planet_stability_add = 10
+	}
+}
+triggered_planet_modifier = {
+	potential = {
+		owner = {
+			has_technology = tech_avb_psi_corps_3
+		}
+	}
+	modifier = {
+		job_telepath_add = 8
+		planet_stability_add = 20
+	}
+}

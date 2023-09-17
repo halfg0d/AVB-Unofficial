@@ -1,0 +1,107 @@
+###			###
+###  Tier 1	###
+###			###
+triggered_country_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_ranger_1
+            orb_ranger_active = yes
+		}
+		exists = owner
+	}
+	planet_jobs_ranger_produces_mult = 0.1
+}
+###			###
+###  Tier 2	###
+###			###
+triggered_country_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_ranger_2
+            orb_ranger_active = yes
+		}
+		exists = owner
+	}
+	planet_jobs_ranger_produces_mult = 0.15
+}
+###			###
+###  Tier 3	###
+###			###
+triggered_country_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_ranger_3
+            orb_ranger_active = yes
+		}
+		exists = owner
+	}
+	planet_jobs_ranger_produces_mult = 0.225
+}
+#### Other
+triggered_country_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			OR = {
+				has_planet_flag = avb_orb_ranger_1
+				has_planet_flag = avb_orb_ranger_2
+				has_planet_flag = avb_orb_ranger_3
+			}
+            orb_ranger_active = yes
+		}
+		exists = owner
+		owner = {
+			has_tradition = tr_aptitude_adopt
+			NOR = {
+				has_tradition = tr_aptitude_specialist_training
+				has_tradition = tr_aptitude_finish
+			}
+		}
+	}
+	species_leader_exp_gain = 0.1
+}
+triggered_country_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			OR = {
+				has_planet_flag = avb_orb_ranger_1
+				has_planet_flag = avb_orb_ranger_2
+				has_planet_flag = avb_orb_ranger_3
+			}
+            orb_ranger_active = yes
+		}
+		exists = owner
+		owner = {
+			has_tradition = tr_aptitude_adopt
+			has_tradition = tr_aptitude_specialist_training
+			NOT = {
+				has_tradition = tr_aptitude_finish
+			}
+		}
+	}
+	species_leader_exp_gain = 0.2
+}
+triggered_country_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			OR = {
+				has_planet_flag = avb_orb_ranger_1
+				has_planet_flag = avb_orb_ranger_2
+				has_planet_flag = avb_orb_ranger_3
+			}
+            orb_ranger_active = yes
+		}
+		exists = owner
+		owner = {
+			has_tradition = tr_aptitude_adopt
+			has_tradition = tr_aptitude_specialist_training
+			has_tradition = tr_aptitude_finish
+		}
+	}
+	species_leader_exp_gain = 0.3
+}
