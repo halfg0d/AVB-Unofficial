@@ -87,8 +87,8 @@
  building_avb_orb_ring_connection_ranger_3:0 "$sm_ring_avb_ranger$ Upgrade to Tier 3"
  building_avb_orb_ring_connection_ranger_3_desc:0 "$avb_orb_upgrade_to_t3$\n\nAdditional output from rangers."
 
- tech_ring_avb_ranger_1:0 "Advanced Encrypted Data Bank"
- tech_ring_avb_ranger_1_desc:0 "Transfering the data on distance longer than orbit nowadays is very dangerous. With that technology it will be safer."
+ tech_ring_avb_ranger_1:0 "The Pure and Safe Jungle."
+ tech_ring_avb_ranger_1_desc:0 "Organic Jungle plants in artificial enviroment on the orbit with holographic zoo is perfect for every nature lover."
  tech_ring_avb_ranger_2:0 "$tech_ring_avb_ranger_1$"
  tech_ring_avb_ranger_2_desc:0 "$tech_ring_avb_ranger_1_desc$"
  tech_ring_avb_ranger_3:0 "$tech_ring_avb_ranger_1$"
