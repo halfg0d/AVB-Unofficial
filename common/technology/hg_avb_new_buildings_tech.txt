@@ -259,3 +259,110 @@ tech_avb_league_offices_2 = {
 		factor = 2
 	}
 }
+
+tech_avb_transcendent_faith_2 = {
+	cost =@tier5cost2
+	area = society
+	category = { statecraft }
+	tier = 5
+	prerequisites = { "tech_transcendent_faith" }
+	weight = @tier5weight2
+
+	potential = {
+		OR = {
+			has_ethic = ethic_spiritualist
+			has_ethic = ethic_fanatic_spiritualist
+			AND = {
+				is_gestalt = no
+				has_make_spiritualist_perk = yes
+			}
+		}
+	}
+
+	weight_modifier = {
+
+	}
+
+	ai_weight = {
+
+	}
+}
+tech_avb_autocurating_vault_2 = {
+	cost = @tier4cost1
+	area = society
+	category = { statecraft }
+	tier = 4
+	prerequisites = { "tech_autocurating_vault"}
+	weight = @tier4weight1
+
+	potential = {
+		NOR = {
+			has_ethic = ethic_spiritualist
+			has_ethic = ethic_fanatic_spiritualist
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+
+	weight_modifier = {
+
+	}
+
+	ai_weight = {
+
+	}
+}
+tech_avb_xeno_relations_2 = {
+	cost = @tier4cost2
+	area = society
+	tier = 4
+	category = { statecraft }
+	prerequisites = { "tech_xeno_relations" "tech_avb_capital_5" }
+	weight = @tier4weight1
+
+	potential = {
+		is_regular_empire = yes
+	}
+
+	modifier = {
+		diplo_weight_mult = 0.1
+	}
+
+	## unlock embassy building upgrade
+
+	weight_modifier = {
+		factor = 2
+
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_xenophile
+		}
+		modifier = {
+			factor = 2
+			has_ethic = ethic_fanatic_xenophile
+		}
+		modifier = {
+			factor = 2
+			is_galactic_community_member = yes
+		}
+		modifier = {
+			factor = 0.01
+			has_civic = civic_inwards_perfection
+		}
+	}
+
+	ai_weight = {
+
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_xenophile
+		}
+		modifier = {
+			factor = 2
+			has_ethic = ethic_fanatic_xenophile
+		}
+		modifier = {
+			factor = 0.01
+			has_civic = civic_inwards_perfection
+		}
+	}
+}

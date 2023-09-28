@@ -1581,3 +1581,411 @@ building_galactic_memorial_3 = {
 		building_avb_monument_memorial_4
 	}
 }
+
+##################
+# Unity boosters
+##################
+
+building_autocurating_vault = {
+	base_buildtime = @b2_time
+	base_cap_amount = 1
+	category = unity
+
+	potential = {
+		exists = owner
+		NOT = { has_modifier = slave_colony }
+		owner = {
+			is_machine_empire = no		# see 'building_alpha_hub'
+			is_megacorp = no			# see 'building_corporate_vault'
+			is_spiritualist = no		# see 'building_citadel_of_faith'
+			OR = {						# only Hive Minds may avoid effects and restrictions imposed by the 'make_spiritualist_1' Federation Perk
+				is_hive_empire = yes
+				has_make_spiritualist_perk = no
+			}
+		}
+	}
+
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+	upgrades = {
+		building_avb_autocurating_vault_2
+	}
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			has_modifier = slave_colony
+			owner = {
+				OR = {
+					is_machine_empire = yes
+					is_spiritualist = yes
+					is_megacorp = yes
+				}
+			}
+		}
+	}
+
+	convert_to = {
+		building_citadel_of_faith
+		building_alpha_hub
+		building_corporate_vault
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			trigger = {
+				has_ringworld_output_boost = no
+			}
+			minerals = @b2_minerals
+			rare_crystals = @b2_rare_cost
+		}
+		cost = {
+			trigger = {
+				has_ringworld_output_boost = yes
+			}
+			minerals = 1200
+			rare_crystals = 375
+		}
+		upkeep = {
+			trigger = {
+				has_ringworld_output_boost = no
+			}
+			energy = @b2_upkeep
+			rare_crystals = @b2_rare_upkeep
+		}
+		upkeep = {
+			trigger = {
+				has_ringworld_output_boost = yes
+			}
+			energy = 8
+			rare_crystals = 3
+		}
+		produces = {
+			unity = 10
+		}
+	}
+
+	planet_modifier = {
+		planet_administrators_produces_mult = 0.15
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_ringworld_output_boost = yes
+		}
+		planet_administrators_unity_produces_add = 1
+		planet_managers_unity_produces_add = 1
+		planet_priests_unity_produces_add = 1
+		planet_telepaths_unity_produces_add = 1
+	}
+
+	prerequisites = {
+		"tech_autocurating_vault"
+	}
+
+	show_tech_unlock_if = {
+		is_machine_empire = no
+		is_spiritualist = no
+		is_megacorp = no
+		OR = {
+			is_hive_empire = yes
+			has_make_spiritualist_perk = no
+		}
+	}
+}
+
+building_citadel_of_faith = {
+	base_buildtime = @b2_time
+	base_cap_amount = 1
+
+	category = unity
+
+	potential = {
+		exists = owner
+		owner = {
+			OR = {
+				is_spiritualist = yes
+				AND = {
+					is_gestalt = no
+					has_make_spiritualist_perk = yes
+				}
+			}
+		}
+		NOT = { has_modifier = slave_colony }
+	}
+
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+	upgrades = {
+		building_avb_citadel_of_faith_2
+	}
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = {
+				OR = {
+					AND = {
+						is_spiritualist = no
+						has_make_spiritualist_perk = no
+					}
+					is_gestalt = yes
+				}
+			}
+			has_modifier = slave_colony
+		}
+	}
+
+	convert_to = {
+		building_autocurating_vault
+		building_alpha_hub
+		building_corporate_vault
+	}
+
+	planet_modifier = {
+		job_high_priest_add = 1
+		pop_ethic_spiritualist_attraction_mult = 0.20
+		planet_administrators_produces_mult = 0.15
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			trigger = {
+				has_ringworld_output_boost = no
+			}
+			minerals = @b2_minerals
+			rare_crystals = @b2_rare_cost
+		}
+		cost = {
+			trigger = {
+				has_ringworld_output_boost = yes
+			}
+			minerals = 1200
+			rare_crystals = 375
+		}
+		upkeep = {
+			trigger = {
+				has_ringworld_output_boost = no
+			}
+			energy = @b2_upkeep
+			rare_crystals = @b2_rare_upkeep
+		}
+		upkeep = {
+			trigger = {
+				has_ringworld_output_boost = yes
+			}
+			energy = 8
+			rare_crystals = 3
+		}
+		produces = {
+			unity = 10
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_ringworld_output_boost = yes
+		}
+		planet_administrators_unity_produces_add = 1
+		planet_managers_unity_produces_add = 1
+		planet_priests_unity_produces_add = 1
+		planet_telepaths_unity_produces_add = 1
+	}
+
+	prerequisites = {
+		"tech_transcendent_faith"
+	}
+
+	triggered_desc = {
+		text = job_high_priest_effect_desc
+	}
+}
+
+building_corporate_vault = {
+	base_buildtime = @b3_time
+	base_cap_amount = 1
+	icon = building_autocurating_vault
+
+	category = unity
+
+	potential = {
+		exists = owner
+		NOT = { has_modifier = slave_colony }
+		owner = {
+			is_megacorp = yes
+			is_spiritualist = no
+			has_make_spiritualist_perk = no
+		}
+	}
+
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+	upgrades = {
+		building_avb_corporate_vault_2
+	}
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			has_modifier = slave_colony
+			owner = {
+				OR = {
+					is_megacorp = no
+					is_spiritualist = yes
+					has_make_spiritualist_perk = yes
+				}
+			}
+		}
+	}
+
+	convert_to = {
+		building_citadel_of_faith
+		building_autocurating_vault
+		building_alpha_hub
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			trigger = {
+				has_ringworld_output_boost = no
+			}
+			minerals = @b2_minerals
+			rare_crystals = @b2_rare_cost
+		}
+		cost = {
+			trigger = {
+				has_ringworld_output_boost = yes
+			}
+			minerals = 1200
+			rare_crystals = 375
+		}
+		upkeep = {
+			trigger = {
+				has_ringworld_output_boost = no
+			}
+			energy = @b2_upkeep
+			rare_crystals = @b2_rare_upkeep
+		}
+		upkeep = {
+			trigger = {
+				has_ringworld_output_boost = yes
+			}
+			energy = 8
+			rare_crystals = 3
+		}
+		produces = {
+			unity = 10
+		}
+	}
+
+	planet_modifier = {
+		planet_administrators_produces_mult = 0.15
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_ringworld_output_boost = yes
+		}
+		planet_administrators_unity_produces_add = 1
+		planet_managers_unity_produces_add = 1
+		planet_priests_unity_produces_add = 1
+		planet_telepaths_unity_produces_add = 1
+	}
+
+	prerequisites = {
+		"tech_autocurating_vault"
+	}
+
+	show_tech_unlock_if = {
+		is_megacorp = yes
+		is_spiritualist = no
+		has_make_spiritualist_perk = no
+	}
+}
+
+building_alpha_hub = {
+	base_buildtime = @b3_time
+	base_cap_amount = 1
+	icon = building_autocurating_vault
+
+	category = unity
+
+	potential = {
+		exists = owner
+		owner = { is_machine_empire = yes }
+	}
+
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+	upgrades = {
+		building_avb_alpha_hub_2
+	}
+	destroy_trigger = {
+		exists = owner
+		owner = { is_machine_empire = no }
+	}
+
+	convert_to = {
+		building_autocurating_vault
+		building_citadel_of_faith
+		building_corporate_vault
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			trigger = {
+				has_ringworld_output_boost = no
+			}
+			minerals = @b2_minerals
+			rare_crystals = @b2_rare_cost
+		}
+		cost = {
+			trigger = {
+				has_ringworld_output_boost = yes
+			}
+			minerals = 1200
+			rare_crystals = 375
+		}
+		upkeep = {
+			trigger = {
+				has_ringworld_output_boost = no
+			}
+			energy = @b2_upkeep
+			rare_crystals = @b2_rare_upkeep
+		}
+		upkeep = {
+			trigger = {
+				has_ringworld_output_boost = yes
+			}
+			energy = 8
+			rare_crystals = 3
+		}
+		produces = {
+			unity = 10
+		}
+	}
+
+	planet_modifier = {
+		planet_administrators_produces_mult = 0.15
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_ringworld_output_boost = yes
+		}
+		custom_tooltip = "sm_ring_maintenance_hub_effect"
+	}
+
+	prerequisites = {
+		"tech_autocurating_vault"
+	}
+
+	show_tech_unlock_if = {
+		is_machine_empire = yes
+	}
+}
