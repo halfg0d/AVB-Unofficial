@@ -11,7 +11,8 @@ on_building_upgraded = {
 	events = {
 		avb.1
 		avb_vat.1
-		
+
+		avb_habitat.1 #Upgrade T3 habitat
 	#Upgrade Orbital Building
 		avb_orb_up.11 #t2 robot
 		avb_orb_up.12 #t3 robot

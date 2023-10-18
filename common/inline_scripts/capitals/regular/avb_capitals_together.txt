@@ -28,6 +28,14 @@ triggered_planet_modifier = {
 triggered_planet_modifier = {
 	potential = {
 		exists = owner
+		owner = { has_valid_civic = civic_private_healthcare_corporate }
+	}
+	job_healthcare_add = 1
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
 		owner = { has_active_tradition = tr_synthetics_finish }
 	}
 	job_roboticist_add = 1

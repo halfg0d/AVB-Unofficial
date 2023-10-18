@@ -170,7 +170,7 @@ has_upgraded_capital_5 = {
     }
     else = {
         custom_tooltip = {
-            fail_text = "requires_building_capital_4"
+            fail_text = "requires_building_capital_5"
             OR = {
 			    has_building = building_avb_capital_5
 			    has_building = building_avb_capital_6

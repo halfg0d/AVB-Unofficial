@@ -108,3 +108,18 @@ country_event = {
 		}
 	}
 }
+namespace = avb_habitat
+planet_event = {
+	id = avb_habitat.1
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		last_building_changed = building_avb_hab_capital_3
+	}
+
+	immediate = {
+		increase_habitat_level_effect = yes
+	}
+}
