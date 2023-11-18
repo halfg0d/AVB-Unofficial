@@ -4116,7 +4116,7 @@ building_avb_organic_sanctuary_4 = {
 
 building_avb_autocurating_vault_2 = {
 	base_buildtime = @b4_time
-	base_cap_amount = 1
+
 	icon = building_avb_unity_booster_5
 	category = unity
 
@@ -4187,13 +4187,11 @@ building_avb_autocurating_vault_2 = {
 			energy = 8
 			rare_crystals = 3
 		}
-		produces = {
-			unity = 20
-		}
 	}
 
-	planet_modifier = {
-		planet_administrators_produces_mult = 0.25
+	country_modifier = {
+		country_official_cap_add = 2
+		country_unity_produces_mult = 0.1
 	}
 
 	triggered_planet_modifier = {
@@ -4209,7 +4207,40 @@ building_avb_autocurating_vault_2 = {
 	prerequisites = {
 		"tech_avb_autocurating_vault_2"
 	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_politician_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_evaluator_add = 4
+		}
+	}
 
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_politician_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_evaluator_effect_desc
+	}
 	show_tech_unlock_if = {
 		is_machine_empire = no
 		is_spiritualist = no
@@ -4223,7 +4254,7 @@ building_avb_autocurating_vault_2 = {
 
 building_avb_citadel_of_faith_2 = {
 	base_buildtime = @b2_time
-	base_cap_amount = 1
+
 
 	category = unity
 
@@ -4266,10 +4297,14 @@ building_avb_citadel_of_faith_2 = {
 		building_avb_corporate_vault_2
 	}
 
+	country_modifier = {
+		country_official_cap_add = 2
+		country_unity_produces_mult = 0.1
+	}
+
 	planet_modifier = {
 		job_high_priest_add = 2
-		pop_ethic_spiritualist_attraction_mult = 0.30
-		planet_administrators_produces_mult = 0.25
+		pop_ethic_spiritualist_attraction_mult = 0.35
 	}
 
 	resources = {
@@ -4302,9 +4337,6 @@ building_avb_citadel_of_faith_2 = {
 			energy = 8
 			rare_crystals = 3
 		}
-		produces = {
-			unity = 20
-		}
 	}
 
 	triggered_planet_modifier = {
@@ -4328,7 +4360,7 @@ building_avb_citadel_of_faith_2 = {
 
 building_avb_corporate_vault_2 = {
 	base_buildtime = @b3_time
-	base_cap_amount = 1
+
 	icon = building_avb_unity_booster_5
 
 	category = unity
@@ -4396,13 +4428,11 @@ building_avb_corporate_vault_2 = {
 			energy = 8
 			rare_crystals = 3
 		}
-		produces = {
-			unity = 20
-		}
 	}
 
-	planet_modifier = {
-		planet_administrators_produces_mult = 0.25
+	country_modifier = {
+		country_official_cap_add = 2
+		country_unity_produces_mult = 0.1
 	}
 
 	triggered_planet_modifier = {
@@ -4418,7 +4448,53 @@ building_avb_corporate_vault_2 = {
 	prerequisites = {
 		"tech_avb_autocurating_vault_2"
 	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_megacorp = yes
+				is_worker_coop_empire = no
+			}
+		}
+		modifier = {
+			job_executive_add = 2
+		}
+	}
 
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_megacorp = yes
+				is_worker_coop_empire = yes
+			}
+		}
+		modifier = {
+			job_steward_add = 4
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_megacorp = yes
+				is_worker_coop_empire = no
+			}
+		}
+		text = job_executive_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_megacorp = yes
+				is_worker_coop_empire = yes
+			}
+		}
+		text = job_steward_effect_desc
+	}
 	show_tech_unlock_if = {
 		is_megacorp = yes
 		is_spiritualist = no
@@ -4428,9 +4504,7 @@ building_avb_corporate_vault_2 = {
 
 building_avb_alpha_hub_2 = {
 	base_buildtime = @b3_time
-	base_cap_amount = 1
 	icon = building_avb_unity_booster_5
-
 	category = unity
 
 	potential = {
@@ -4482,13 +4556,19 @@ building_avb_alpha_hub_2 = {
 			energy = 8
 			rare_crystals = 3
 		}
-		produces = {
-			unity = 20
-		}
+	}
+
+	country_modifier = {
+		country_official_cap_add = 2
+		country_unity_produces_mult = 0.1
 	}
 
 	planet_modifier = {
-		planet_administrators_produces_mult = 0.25
+		job_evaluator_add = 4
+	}
+
+	triggered_desc = {
+		text = job_evaluator_effect_desc
 	}
 
 	triggered_planet_modifier = {

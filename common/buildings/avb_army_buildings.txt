@@ -10,7 +10,6 @@ building_avb_military_academy_2 = {
 	potential = {
 		exists = owner
 		owner = {
-			NOT = { has_valid_civic = civic_reanimated_armies }
 			OR = {
 				NOT = { has_global_flag = bug_branch_active }
 				AND = {
@@ -35,68 +34,34 @@ building_avb_military_academy_2 = {
 		}
 	}
 
-	destroy_trigger = {
-		exists = owner
-		owner = {
-			OR = {
-				has_valid_civic = civic_reanimated_armies
-				AND = {
-					is_ai = yes
-					prev = {
-						NOR = {
-							has_building = building_stronghold
-							has_building = building_fortress
-							is_capital = yes
-							solar_system = { is_bottleneck_system = yes }
-						}
-					}
-				}
-				AND = {
-					has_z_expanded_mod = yes
-					has_valid_civic = civic_machine_terminator
-				}
-			}
-		}
-	}
-
 	convert_to = {
-		building_dread_encampment
+		building_avb_dread_encampment_2
 	}
 
 	allow = {
 		has_upgraded_capital_4 = yes
-		if = {
-			limit = {
-				exists = owner
-				owner = { is_ai = yes }
-			}
-			OR = {
-				has_building = building_stronghold
-				has_building = building_fortress
-				is_capital = yes
-				solar_system = { is_bottleneck_system = yes }
-			}
-		}
 	}
-	
-	army_modifier = {
-		army_starting_experience_add = 200
+	country_modifier = {
+		country_commander_cap_add = 2
+		country_naval_cap_mult = 0.1
 	}
 	
 	triggered_planet_modifier = {
 		potential = {
+			exists = owner
 			owner = { is_gestalt = no }
 		}
 		modifier = {
-			job_soldier_add = 4
+			job_politician_add = 2
 		}
 	}
 	triggered_planet_modifier = {
 		potential = {
+			exists = owner
 			owner = { is_gestalt = yes }
 		}
 		modifier = {
-			job_warrior_drone_add = 4
+			job_evaluator_add = 4
 		}
 	}
 
@@ -134,10 +99,12 @@ building_avb_military_academy_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_b3_minerals
-		}			
+			minerals = @b3_minerals
+			volatile_motes = @b3_rare_cost
+		}
 		upkeep = {
-			energy = @avb_b3_upkeep
+			energy = @b3_upkeep
+			volatile_motes = @b3_rare_upkeep
 		}
 		produces = {
 			trigger = {
@@ -155,22 +122,23 @@ building_avb_military_academy_2 = {
 	}
 	
 	show_tech_unlock_if = {
-		NOT = { has_valid_civic = civic_reanimated_armies }
+		always = yes
 	}
 	
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { is_gestalt = yes }
+			owner = { is_gestalt = no }
 		}
-		text = job_warrior_drone_effect_desc
+		text = job_politician_effect_desc
 	}
+
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { is_gestalt = no }
+			owner = { is_gestalt = yes }
 		}
-		text = job_soldier_effect_desc
+		text = job_evaluator_effect_desc
 	}
 	triggered_desc = { #zExpanded
 		trigger = {
@@ -203,19 +171,10 @@ building_avb_dread_encampment_2 = {
 			}
 		}
 	}
-
-	convert_to = {
-		building_military_academy
-	}
 	
 	allow = {
-		has_upgraded_capital_4 = yes
+		has_major_upgraded_capital = yes
 	}
-	
-	army_modifier = {
-		army_starting_experience_add = 200
-	}
-	
 	planet_modifier = {
 		job_necromancer_add = 4
 	}
