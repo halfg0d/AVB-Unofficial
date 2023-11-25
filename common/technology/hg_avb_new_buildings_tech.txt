@@ -313,3 +313,26 @@ tech_avb_league_offices_2 = {
 		}
 	}
 }
+tech_avb_paragon_memory_vaults_2 = {
+	cost = @tier3cost1
+	area = society
+	category = { statecraft }
+	prerequisites = { tech_society_2 }
+	tier = 3
+	is_rare = yes
+	ai_update_type = all
+	weight = 5
+
+	potential = {
+		has_paragon_dlc = yes
+	}
+	weight_modifier = {
+		factor = 2
+		modifier = { # No tech without builded previous cbuilding
+			factor = 0
+			NOT = {
+				any_owned_planet = { has_building = building_paragon_memory_vaults }
+			}
+		}
+	}
+}

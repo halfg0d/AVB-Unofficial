@@ -137,3 +137,8 @@
  tech_avb_vultaum_reality_computer_2_desc:0 "$building_avb_vultaum_reality_computer_2_desc$"
  tech_avb_league_offices_2:0 "$building_avb_league_offices_2$"
  tech_avb_league_offices_2_desc:0 "$building_avb_league_offices_2_desc$"
+#Paragon
+ building_avb_paragon_memory_vaults_2:0 "Grand Vault of Wisdom"
+ building_avb_paragon_memory_vaults_2_desc:0 "Our society has always preserved the stories of heroes and prominent figures from the past. Their knowledge and experiences are digitized and gathered. There in Grand Vault of Wisdom we can experience that stories. Destroying this building will eradicate the data stored inside."
+ tech_avb_paragon_memory_vaults_2:0 "Visualization in Vault of Knowledge"
+ tech_avb_paragon_memory_vaults_2_desc:0 "Better than hearing stories is to be part of it. There in Grand Vault of Wisdom it would be possible."
