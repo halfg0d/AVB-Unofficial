@@ -1,6 +1,5 @@
 building_avb_paragon_memory_vaults_2 = {
 	base_buildtime = @b4_time
-	empire_limit = 1
 	category = unity
 	can_demolish = yes
 	can_be_ruined = yes
@@ -8,7 +7,7 @@ building_avb_paragon_memory_vaults_2 = {
 	is_essential = yes
 	can_build = no
 	prerequisites = {
-		tech_avb_paragon_memory_vaults_2
+		"tech_avb_paragon_memory_vaults_2"
 	}
 	destroy_trigger = {
 		exists = owner

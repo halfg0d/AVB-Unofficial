@@ -6,6 +6,7 @@ building_paragon_memory_vaults = {
 	can_demolish = yes
 	can_be_ruined = yes
 	can_be_disabled = yes
+	is_essential = yes
 	destroy_trigger = {
 		exists = owner
 		owner = {
@@ -66,9 +67,6 @@ building_paragon_memory_vaults = {
 		category = planet_buildings
 		cost = {
 			minerals = @b2_minerals
-		}
-		produces = {
-			alloys = 999
 		}
 		produces = {
 			trigger = {
