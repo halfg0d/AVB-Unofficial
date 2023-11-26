@@ -1,0 +1,132 @@
+building_avb_paragon_memory_vaults_2 = {
+	base_buildtime = @b4_time
+	category = unity
+	can_demolish = yes
+	can_be_ruined = yes
+	can_be_disabled = yes
+	is_essential = yes
+	can_build = no
+	prerequisites = {
+		"tech_avb_paragon_memory_vaults_2"
+	}
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			is_memory_vault_empire = no
+		}
+	}
+	desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				OR = {
+					has_civic = civic_memory_vault
+					has_civic = civic_memory_vault_corporate
+				}
+			}
+		}
+		text = building_paragon_memory_vaults_desc
+	}
+	desc = {
+		trigger = {
+			exists = owner
+			owner = { has_civic = civic_memory_vault_machine }
+		}
+		text = building_paragon_memory_vaults_machine_desc
+	}
+	desc = {
+		trigger = {
+			exists = owner
+			owner = { has_civic = civic_memory_vault_hive }
+		}
+		text = building_paragon_memory_vaults_hive_desc
+	}
+
+	allow = {
+		has_upgraded_capital_4 = yes
+		hidden_trigger = {
+			owner = {
+				OR = {
+					is_ai = no 
+					resource_stockpile_compare = { resource = minerals value >= 1200 }
+					resource_stockpile_compare = { resource = rare_crystals value >= 400 }
+				}
+			}
+		}
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1200
+			rare_crystals = 400
+		}
+		produces = {
+			trigger = {
+				exists = owner
+			}
+			unity = 7.5
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				planet = { is_variable_set = paragon_memory_vault }
+			}
+			unity = 7.5
+			multiplier = planet.paragon_memory_vault
+		}
+		upkeep = {
+			energy = 6
+			rare_crystals = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_civic = civic_memory_vault_corporate }
+		}
+		trade_value_add = 15
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_civic = civic_memory_vault_corporate }
+			planet = { is_variable_set = paragon_memory_vault }
+		}
+		trade_value_add = 15
+		mult = planet.paragon_memory_vault
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					has_civic = civic_memory_vault
+					has_civic = civic_memory_vault_machine
+					has_civic = civic_memory_vault_hive
+				}
+			}
+		}
+		species_leader_exp_gain = 0.02
+	}
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					has_civic = civic_memory_vault
+					has_civic = civic_memory_vault_machine
+					has_civic = civic_memory_vault_hive
+				}
+			}
+			planet = { is_variable_set = paragon_memory_vault }
+		}
+		species_leader_exp_gain = 0.02
+		mult = planet.paragon_memory_vault
+	}
+
+	on_destroy = {
+		clear_variable = paragon_memory_vault
+	}
+}
