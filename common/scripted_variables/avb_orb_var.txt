@@ -1,5 +1,6 @@
 @avb_orb_time = 960
 @avb_orb_time_t2 = 1140
+@avb_orb_time_t3 = 1355
 
 @avb_orb_minerals = 1200
 @avb_orb_upkeep = 8

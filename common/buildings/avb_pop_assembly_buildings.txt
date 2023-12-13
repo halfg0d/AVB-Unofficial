@@ -978,6 +978,7 @@ building_avb_clone_army_clone_vat_2 = {
 	category = pop_assembly
 
 	potential = {
+		always = no
 		exists = owner
 		owner = {
 			has_origin = origin_clone_army
