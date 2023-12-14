@@ -19,16 +19,16 @@ building_avb_gas_extractors_2 = {
 	}
 	
 	allow = {
-		has_fully_upgraded_capital = yes
+		has_major_upgraded_capital = yes
 	}
 
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_gestalt = no }
+			owner = { is_regular_empire = yes }
 		}
 		modifier = {
-			job_gas_extractor_add = @avb_d4_jobs
+			job_gas_extractor_add = 2
 		}
 	}
 
@@ -38,7 +38,7 @@ building_avb_gas_extractors_2 = {
 			owner = { is_gestalt = yes }
 		}
 		modifier = {
-			job_gas_extraction_drone_add = @avb_d4_jobs
+			job_gas_extraction_drone_add = 2
 		}
 	}
 	
@@ -67,23 +67,19 @@ building_avb_crystal_mines_2 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = crucible_colony
-			has_modifier = lithoid_crater
 		}
 	}
 	
 	allow = {
-		has_fully_upgraded_capital = yes
-	}
-	convert_to = {
-		building_avb_lithoid_crystal_mines_2
+		has_major_upgraded_capital = yes
 	}
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_gestalt = no }
+			owner = { is_regular_empire = yes }
 		}
 		modifier = {
-			job_crystal_miner_add = @avb_d4_jobs
+			job_crystal_miner_add = 2
 		}
 	}
 
@@ -93,7 +89,7 @@ building_avb_crystal_mines_2 = {
 			owner = { is_gestalt = yes }
 		}
 		modifier = {
-			job_crystal_mining_drone_add = @avb_d4_jobs
+			job_crystal_mining_drone_add = 2
 		}
 	}
 	
@@ -126,16 +122,16 @@ building_avb_mote_harvesters_2 = {
 	}
 	
 	allow = {
-		has_fully_upgraded_capital = yes
+		has_major_upgraded_capital = yes
 	}
 
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_gestalt = no }
+			owner = { is_regular_empire = yes }
 		}
 		modifier = {
-			job_mote_harvester_add = @avb_d4_jobs
+			job_mote_harvester_add = 2
 		}
 	}
 
@@ -145,7 +141,7 @@ building_avb_mote_harvesters_2 = {
 			owner = { is_gestalt = yes }
 		}
 		modifier = {
-			job_mote_harvesting_drone_add = @avb_d4_jobs
+			job_mote_harvesting_drone_add = 2
 		}
 	}
 	
@@ -191,39 +187,9 @@ building_avb_betharian_power_plant_2 = {
 		}
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = no }
-		}
-		modifier = {
-			job_technician_add = @avb_d4_jobs2
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }
-		}
-		modifier = {
-			job_technician_drone_add = @avb_d4_jobs2
-		}
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_gestalt = yes }
-		}
-		text = job_technician_drone_effect_desc
-	}
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_gestalt = no }
-		}
-		text = job_technician_effect_desc
+	inline_script = {
+		script = jobs/technicians_add
+		AMOUNT = 8
 	}
 	
 	prerequisites = {
@@ -240,7 +206,7 @@ building_avb_xeno_zoo_2 = {
 	potential = {
 		exists = owner
 		owner = {
-			is_gestalt = no
+			is_regular_empire = yes
 		}
 		planet = {
 			OR = {
@@ -285,7 +251,7 @@ building_avb_xeno_zoo_2 = {
 						is_livestock = yes
 					}
 				}
-			}			
+			}
 		}
 	}
 	
@@ -297,57 +263,25 @@ building_avb_xeno_zoo_2 = {
 		upkeep = {
 			energy = @avb_d4_upkeep
 		}
-		produces = {
-			trigger = {
-				has_z_expanded_mod = yes
-				has_global_flag = better_diplo_installed
-				is_active_resolution = resolution_galacticcooperation_sanctity_of_life
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_warrior_culture
 			}
-			consumer_goods = 5
-			society_research = 5
+		}
+		modifier = {
+			job_duelist_add = 2
+			job_entertainer_add = -2
 		}
 	}
+
 	planet_modifier = {
-		job_xeno_zoo_keeper_add = @avb_d4_jobs
+		job_entertainer_add = 2
+		job_xeno_zoo_keeper_add = 2
 	}
-	#zExpanded \/
-	triggered_planet_modifier = {
-		potential = {
-			has_z_expanded_mod = yes
-		}
-		modifier = {
-			planet_immigration_pull_mult = 0.5
-		}
-	}
-	#zExpanded /\
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				OR = {
-					has_valid_civic = civic_warrior_culture
-					has_warrior_culture = yes
-				}
-			}
-		}
-		modifier = {
-			job_duelist_add = @avb_d4_jobs
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				NOR = {
-					has_valid_civic = civic_warrior_culture
-					has_warrior_culture = yes
-				}
-			}
-		}
-		modifier = {
-			job_entertainer_add = @avb_d4_jobs
-		}
-	}
+
 	triggered_planet_modifier = {
 		potential = {
 			planet = {
@@ -357,16 +291,14 @@ building_avb_xeno_zoo_2 = {
 			}
 			exists = owner
 			owner = {
-				NOR = {
-					has_valid_civic = civic_warrior_culture
-					has_warrior_culture = yes
-				}
+				NOT = { has_valid_civic = civic_warrior_culture }
 			}
 		}
 		modifier = {
-			job_livestock_zoo_animal_add = @avb_d4_jobs3
+			job_livestock_zoo_animal_add = 6
 		}
 	}
+
 	triggered_planet_modifier = {
 		potential = {
 			planet = {
@@ -376,14 +308,11 @@ building_avb_xeno_zoo_2 = {
 			}
 			exists = owner
 			owner = {
-				OR = {
-					has_valid_civic = civic_warrior_culture
-					has_warrior_culture = yes
-				}
+				has_valid_civic = civic_warrior_culture
 			}
 		}
 		modifier = {
-			job_livestock_zoo_beast_add = @avb_d4_jobs3
+			job_livestock_zoo_beast_add = 6
 		}
 	}
 	prerequisites = {
@@ -397,12 +326,7 @@ building_avb_xeno_zoo_2 = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { 
-				NOR = { 
-					has_valid_civic = civic_warrior_culture 
-					has_warrior_culture = yes
-				}
-			}
+			owner = { NOT = { has_valid_civic = civic_warrior_culture } }
 		}
 		text = job_entertainer_effect_desc
 	}
@@ -410,12 +334,7 @@ building_avb_xeno_zoo_2 = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { 
-				OR = {
-					has_valid_civic = civic_warrior_culture
-					has_warrior_culture = yes
-				}
-			 }
+			owner = { has_valid_civic = civic_warrior_culture }
 		}
 		text = job_duelist_effect_desc
 	}
@@ -428,12 +347,7 @@ building_avb_xeno_zoo_2 = {
 				}
 			}
 			exists = owner
-			owner = { 
-				NOR = { 
-					has_valid_civic = civic_warrior_culture 
-					has_warrior_culture = yes
-				}
-			}
+			owner = { NOT = { has_valid_civic = civic_warrior_culture } }
 		}
 		text = job_xeno_zoo_animal_effect_desc
 	}
@@ -446,12 +360,7 @@ building_avb_xeno_zoo_2 = {
 				}
 			}
 			exists = owner
-			owner = { 
-				OR = {
-					has_valid_civic = civic_warrior_culture
-					has_warrior_culture = yes
-				}
-			 }
+			owner = { NOT = { has_valid_civic = civic_warrior_culture } }
 		}
 		text = job_livestock_zoo_animal_effect_desc
 	}
@@ -464,12 +373,7 @@ building_avb_xeno_zoo_2 = {
 				}
 			}
 			exists = owner
-			owner = { 
-				OR = {
-					has_valid_civic = civic_warrior_culture
-					has_warrior_culture = yes
-				}
-			}
+			owner = { has_valid_civic = civic_warrior_culture }
 		}
 		text = job_xeno_zoo_beast_effect_desc
 	}
@@ -482,72 +386,8 @@ building_avb_xeno_zoo_2 = {
 				}
 			}
 			exists = owner
-			owner = { 
-				NOR = { 
-					has_valid_civic = civic_warrior_culture 
-					has_warrior_culture = yes
-				}
-			}
+			owner = { has_valid_civic = civic_warrior_culture }
 		}
 		text = job_livestock_zoo_beast_effect_desc
-	}
-}
-
-building_avb_lithoid_crystal_mines_2 = {
-	base_buildtime = @avb_d4_time
-	can_build = no
-
-	category = resource
-	
-	potential = {
-		NOR = {
-			has_modifier = resort_colony
-			has_modifier = crucible_colony
-		}
-		has_modifier = lithoid_crater
-	}
-	
-	allow = {
-		has_fully_upgraded_capital = yes
-	}
-
-	convert_to = {
-		building_avb_crystal_mines_2
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = no }
-		}
-		modifier = {
-			job_crystal_miner_add = @avb_d4_jobs
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }
-		}
-		modifier = {
-			job_crystal_mining_drone_add = @avb_d4_jobs
-		}
-	}
-	
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @avb_d4_minerals
-		}
-		upkeep = {
-			energy = @avb_d4_upkeep
-		}
-	}	
-	show_tech_unlock_if = {
-		always = no
-		#has_origin = origin_lithoid
-	}
-	prerequisites = {
-		"tech_avb_crystal_mines_2"
 	}
 }
