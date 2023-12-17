@@ -1,47 +1,27 @@
-
 #############
 # Trade buildings
 #############
 building_commercial_megaplex = {
 	base_buildtime = @b2_time
 	can_build = no
-	icon = building_commercial_megaplex
 
 	category = trade
-	
+
 	potential = {
 		exists = owner
-		owner = { is_gestalt = no }
+		owner = { is_regular_empire = yes }
 		NOT = { has_modifier = slave_colony }
 		has_building = building_commercial_zone
-		NAND = {
-			has_z_expanded_mod = yes
-			owner = { NOT = { is_agrarian_empire = { allow_invalid = yes } } }
-		}
 	}
 
 	destroy_trigger = {
 		exists = owner
 		OR = {
-			owner = { is_gestalt = yes }
+			owner = { is_regular_empire = no }
 			has_modifier = slave_colony
-			and = { owner = { is_ai = yes } years_passed > 5 }
-			AND = {
-				has_z_expanded_mod = yes
-				owner = { NOT = { is_agrarian_empire = { allow_invalid = yes } } }
-			}
 		}
 	}
-	
-	prerequisites = {
-		"tech_interstellar_economics"
-	}
-	upgrades = {
-		"building_avb_commercial_3"
-	}
-	convert_to = {
-		building_farmer_complex # zExpanded
-	}
+
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -52,66 +32,69 @@ building_commercial_megaplex = {
 			energy = @b2_upkeep
 			rare_crystals = @b2_rare_upkeep
 		}
-		produces = {
-            trigger = {
-                owner = {
-					has_global_flag = ethic_civic_classic_active
-                    has_valid_civic = civic_consumerism
-                }
-            }
-            unity = 5
-        }
 	}
-	show_tech_unlock_if = { 
-		is_gestalt = no
-		NAND = {
-            has_z_expanded_mod = yes
-			NOT = { is_agrarian_empire = { allow_invalid = yes } }
+
+	planet_modifier = {
+		job_clerk_add = 4
+		job_trader_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_active_tradition = tr_mercantile_commercial_enterprise
+			}
+		}
+		modifier = {
+			job_trader_add = 2
 		}
 	}
-	inline_script = {
-		script = trade_buildings/avb_commercials
-		tier = 2
+
+	triggered_desc = {
+		text = job_clerk_effect_desc
 	}
-	ai_resource_production = {
-		energy = 4
-		trigger = {
-			always = yes
-		}
+
+	triggered_desc = {
+		text = job_trader_effect_desc
 	}
+
+	prerequisites = {
+		"tech_interstellar_economics"
+	}
+
+	show_tech_unlock_if = {
+		is_regular_empire = yes
+	}
+
 	ai_resource_production = {
 		energy = 6
 		trigger = {
 			OR = {
 				num_unemployed >= 10
 				num_assigned_jobs = {
-					job = servant
+				job = servant
 					value >= 10
 				}
 			}
 		}
 	}
+	upgrades = {
+		building_avb_commercial_3
+	}
 }
 
-#
 building_galactic_stock_exchange = {
-	base_buildtime = @b2_time	
+	base_buildtime = @b2_time
 	base_cap_amount = 1
 
 	category = trade
-	
+
 	potential = {
-		NOT = { has_modifier = resort_colony }	
+		NOT = { has_modifier = resort_colony }
 		NOT = { has_modifier = slave_colony }
-		OR = {
-			has_z_expanded_mod = no
-			AND = {
-				has_z_expanded_mod = yes
-				NOT = { has_planet_flag = planetary_station }
-			}
-		}
 	}
-		
+
 	allow = {
 		has_major_upgraded_capital = yes
 		if = {
@@ -129,73 +112,22 @@ building_galactic_stock_exchange = {
 			}
 		}
 	}
-	
+
 	destroy_trigger = {
 		exists = owner
 		OR = {
-			owner = { is_gestalt = yes }
+			owner = { is_regular_empire = no }
 			has_modifier = slave_colony
 			has_modifier = resort_colony
 		}
 	}
-	
+
+
 	planet_modifier = {
-		job_merchant_add = 2
+		job_merchant_add = 1
 		trade_value_mult = 0.20
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_global_flag = ethic_civic_classic_active
-			}
-		}
-		modifier = {
-			job_mogul_add = 2
-			job_merchant_add = -2
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_global_flag = ethic_civic_classic_active
-				OR = {
-					has_civic = civic_merchant_guilds
-					has_civic = civic_state_monopoly
-				}
-			}
-		}
-		modifier = {
-			job_mogul_add = 1
-			trade_value_mult = 0.05
-		}
-	}
-	#EC: Bug \/
-	triggered_planet_modifier = {
-		potential = {
-			OR = {
-				has_global_flag = galactic_market_founded
-				owner = {
-					is_bugged_globalism = yes
-				}
-			}
-			exists = owner
-			owner = {
-				OR = {
-					has_civic = civic_merchant_guilds
-					has_civic = civic_bugged_state_monopoly
-				}
-			}
-		}
-		modifier = {
-			job_merchant_add = 1
-			trade_value_mult = 0.05
-		}
-	}
-	#EC: Bug /\
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -207,28 +139,15 @@ building_galactic_stock_exchange = {
 			rare_crystals = @b2_rare_upkeep
 		}
 	}
-	
+
 	prerequisites = {
 		"tech_galactic_markets"
 	}
-	
+
 	triggered_desc = {
-		trigger = {
-			owner = { NOT = { has_global_flag = ethic_civic_classic_active } }
-		}
 		text = job_merchant_effect_desc
 	}
-	triggered_desc = {
-		trigger = {
-			owner = { has_global_flag = ethic_civic_classic_active }
-		}
-		text = job_mogul_effect_desc
-	}
-	
-	upgrades = {
-		"building_avb_galactic_stock_exchange_2"
-	}
-	
+
 	ai_resource_production = {
 		energy = 5
 		trigger = {
@@ -246,18 +165,7 @@ building_galactic_stock_exchange = {
 			}
 		}
 	}
-}
-
-#Deleting EC: Bug planetary stock exchange
-
-building_bugged_planetary_stock_exchange = {
-	category = trade
-
-	potential = {
-		always = no
-	}
-
-	allow = {
-		always = no
+	upgrades = {
+		building_avb_galactic_stock_exchange_2
 	}
 }

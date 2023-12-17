@@ -1,0 +1,7 @@
+planet_modifier = {
+	job_coordinator_add = $coordinator$
+}
+
+triggered_desc = {
+	text = job_coordinator_effect_desc
+}

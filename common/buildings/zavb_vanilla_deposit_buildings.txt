@@ -1,6 +1,120 @@
-#########################
-## Limited by deposits ##
-#########################
+######################
+# Limited by deposits ##
+######################
+
+building_gas_extractors = {
+	base_buildtime = @b1_time
+	icon = building_gas_extractors
+
+	is_capped_by_modifier = yes
+
+	category = resource
+
+	potential = {
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = crucible_colony
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_gas_extractor_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_gas_extraction_drone_add = 1
+		}
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 200
+		}
+		upkeep = {
+			energy = 1
+		}
+	}	
+	
+	prerequisites = {
+		"tech_mine_exotic_gases"
+	}
+	
+	upgrades = {
+		"building_avb_gas_extractors_2"
+	}
+}
+
+ building_crystal_mines = {
+	base_buildtime = @b1_time
+	icon = building_crystal_mines
+
+	is_capped_by_modifier = yes
+
+	category = resource
+	
+	potential = {
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = crucible_colony
+		}
+	}
+	convert_to = {
+		building_lithoid_crystal_mines
+	}
+	destroy_trigger = {
+		#has_modifier = lithoid_crater
+		#owner = { has_origin = origin_lithoid }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_crystal_miner_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_crystal_mining_drone_add = 1
+		}
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 200
+		}
+		upkeep = {
+			energy = 1
+		}
+	}	
+	
+	prerequisites = {
+		"tech_mine_rare_crystals"
+	}
+	
+	upgrades = {
+		"building_avb_crystal_mines_2"
+	}
+}
 
 building_mote_harvesters = {
 	base_buildtime = @b1_time
@@ -20,7 +134,7 @@ building_mote_harvesters = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_regular_empire = yes }
+			owner = { is_gestalt = no }
 		}
 		modifier = {
 			job_mote_harvester_add = 1
@@ -50,130 +164,27 @@ building_mote_harvesters = {
 	prerequisites = {
 		"tech_mine_volatile_motes"
 	}
-	upgrade = {
-		building_avb_mote_harvesters_2
-	}
-}
 
-building_gas_extractors = {
-	base_buildtime = @b1_time
-	icon = building_gas_extractors
-
-	is_capped_by_modifier = yes
-
-	category = resource
-
-	potential = {
-		NOR = {
-			has_modifier = resort_colony
-			has_modifier = crucible_colony
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_regular_empire = yes }
-		}
-		modifier = {
-			job_gas_extractor_add = 1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }
-		}
-		modifier = {
-			job_gas_extraction_drone_add = 1
-		}
-	}
-
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = 200
-		}
-		upkeep = {
-			energy = 1
-		}
-	}
-
-	prerequisites = {
-		"tech_mine_exotic_gases"
-	}
-	upgrade = {
-		building_avb_gas_extractors
-	}
-}
-
-building_crystal_mines = {
-	base_buildtime = @b1_time
-
-	is_capped_by_modifier = yes
-
-	category = resource
-
-	potential = {
-		NOR = {
-			has_modifier = resort_colony
-			has_modifier = crucible_colony
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_regular_empire = yes }
-		}
-		modifier = {
-			job_crystal_miner_add = 1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }
-		}
-		modifier = {
-			job_crystal_mining_drone_add = 1
-		}
-	}
-
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = 200
-		}
-		upkeep = {
-			energy = 1
-		}
-	}
-
-	prerequisites = {
-		"tech_mine_rare_crystals"
-	}
-	upgrade = {
-		building_avb_crystal_mines_2
+	upgrades = {
+		"building_avb_mote_harvesters_2"
 	}
 }
 
 building_betharian_power_plant = {
 	base_buildtime = @b1_time
-
+	icon = building_betharian_power_plant
+	
 	is_capped_by_modifier = yes
 
 	category = resource
-
+	
 	potential = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = crucible_colony
 		}
 	}
-
+	
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -184,16 +195,47 @@ building_betharian_power_plant = {
 		}
 	}
 
-	inline_script = {
-		script = jobs/technicians_add
-		AMOUNT = 4
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_technician_add = 4
+		}
 	}
 
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_technician_drone_add = 4
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_technician_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_technician_effect_desc
+	}
+	
 	prerequisites = {
 		"tech_mine_betharian"
 	}
-	upgrade = {
-		building_avb_betharian_power_plant_2
+	
+	upgrades = {
+		"building_avb_betharian_power_plant_2"
 	}
 }
 
@@ -201,11 +243,11 @@ building_xeno_zoo = {
 	base_buildtime = @b1_time
 	base_cap_amount = 1
 	category = amenity
-
+	
 	potential = {
 		exists = owner
 		owner = {
-			is_regular_empire = yes
+			is_gestalt = no
 		}
 		planet = {
 			OR = {
@@ -246,7 +288,7 @@ building_xeno_zoo = {
 						is_livestock = yes
 					}
 				}
-			}
+			}			
 		}
 	}
 
@@ -258,13 +300,25 @@ building_xeno_zoo = {
 		upkeep = {
 			energy = @b1_upkeep
 		}
+		produces = {
+			trigger = {
+				has_z_expanded_mod = yes
+				has_global_flag = better_diplo_installed
+				is_active_resolution = resolution_galacticcooperation_sanctity_of_life
+			}
+			consumer_goods = 5
+			society_research = 5
+		}
 	}
 
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = {
-				has_valid_civic = civic_warrior_culture
+				OR = {
+					has_valid_civic = civic_warrior_culture
+					has_warrior_culture = yes
+				}
 			}
 		}
 		modifier = {
@@ -278,6 +332,16 @@ building_xeno_zoo = {
 		job_xeno_zoo_keeper_add = 1
 	}
 
+	#zExpanded \/
+	triggered_planet_modifier = {
+		potential = {
+			has_z_expanded_mod = yes
+		}
+		modifier = {
+			planet_immigration_pull_mult = 0.25
+		}
+	}
+	#zExpanded /\
 	triggered_planet_modifier = {
 		potential = {
 			planet = {
@@ -287,7 +351,10 @@ building_xeno_zoo = {
 			}
 			exists = owner
 			owner = {
-				NOT = { has_valid_civic = civic_warrior_culture }
+				NOR = { 
+					has_valid_civic = civic_warrior_culture 
+					has_warrior_culture = yes
+				}
 			}
 		}
 		modifier = {
@@ -304,7 +371,10 @@ building_xeno_zoo = {
 			}
 			exists = owner
 			owner = {
-				has_valid_civic = civic_warrior_culture
+				OR = {
+					has_valid_civic = civic_warrior_culture
+					has_warrior_culture = yes
+				}
 			}
 		}
 		modifier = {
@@ -323,7 +393,12 @@ building_xeno_zoo = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { NOT = { has_valid_civic = civic_warrior_culture } }
+			owner = { 
+				NOR = { 
+					has_valid_civic = civic_warrior_culture 
+					has_warrior_culture = yes
+				}
+			}
 		}
 		text = job_entertainer_effect_desc
 	}
@@ -331,7 +406,12 @@ building_xeno_zoo = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { has_valid_civic = civic_warrior_culture }
+			owner = { 
+				OR = {
+					has_valid_civic = civic_warrior_culture
+					has_warrior_culture = yes
+				}
+			 }
 		}
 		text = job_duelist_effect_desc
 	}
@@ -344,7 +424,12 @@ building_xeno_zoo = {
 				}
 			}
 			exists = owner
-			owner = { NOT = { has_valid_civic = civic_warrior_culture } }
+			owner = { 
+				NOR = { 
+					has_valid_civic = civic_warrior_culture 
+					has_warrior_culture = yes
+				}
+			}
 		}
 		text = job_xeno_zoo_animal_effect_desc
 	}
@@ -357,7 +442,12 @@ building_xeno_zoo = {
 				}
 			}
 			exists = owner
-			owner = { NOT = { has_valid_civic = civic_warrior_culture } }
+			owner = { 
+				OR = {
+					has_valid_civic = civic_warrior_culture
+					has_warrior_culture = yes
+				}
+			 }
 		}
 		text = job_livestock_zoo_animal_effect_desc
 	}
@@ -370,7 +460,12 @@ building_xeno_zoo = {
 				}
 			}
 			exists = owner
-			owner = { has_valid_civic = civic_warrior_culture }
+			owner = { 
+				OR = {
+					has_valid_civic = civic_warrior_culture
+					has_warrior_culture = yes
+				}
+			}
 		}
 		text = job_xeno_zoo_beast_effect_desc
 	}
@@ -383,11 +478,85 @@ building_xeno_zoo = {
 				}
 			}
 			exists = owner
-			owner = { has_valid_civic = civic_warrior_culture }
+			owner = { 
+				NOR = { 
+					has_valid_civic = civic_warrior_culture 
+					has_warrior_culture = yes
+				}
+			}
 		}
 		text = job_livestock_zoo_beast_effect_desc
 	}
-	upgrade = {
-		building_avb_xeno_zoo_2
+	upgrades = {
+		"building_avb_xeno_zoo_2"
+	}
+}
+building_lithoid_crystal_mines = {
+	base_buildtime = @b1_time
+	icon = building_crystal_mines
+	can_build = no
+	#is_capped_by_modifier = yes
+
+	category = resource
+	
+	potential = {
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = crucible_colony
+		}
+		has_modifier = lithoid_crater
+	}
+	planet_modifier = {
+		building_crystal_mines_max = -1
+	}
+	convert_to = {
+		building_crystal_mines
+	}
+	destroy_trigger = {
+		always = yes
+	#	NOR = { 
+	#		has_modifier = lithoid_crater
+	#		owner = { has_origin = origin_lithoid  }
+	#	}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_crystal_miner_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_crystal_mining_drone_add = 1
+		}
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 200
+		}
+		upkeep = {
+			energy = 1
+		}
+	}	
+	
+	prerequisites = {
+		"tech_mine_rare_crystals"
+	}
+		
+	show_tech_unlock_if = {
+		has_origin = origin_lithoid
+	}
+	upgrades = {
+		"building_avb_lithoid_crystal_mines_2"
 	}
 }

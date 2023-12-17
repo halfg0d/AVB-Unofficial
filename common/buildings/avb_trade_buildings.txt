@@ -16,29 +16,19 @@ building_avb_commercial_3 = {
 		exists = owner
 		owner = { is_gestalt = no }
 		NOT = { has_modifier = slave_colony }
-		#zExpanded
-		NAND = {
-			has_z_expanded_mod = yes
-			owner = { NOT = { is_agrarian_empire = { allow_invalid = yes } } }
-		}
 	}
 	
 	destroy_trigger = {
 		exists = owner
 		OR = {
-			owner = { is_gestalt = yes }
+			owner = { is_regular_empire = no }
 			has_modifier = slave_colony
-			and = { owner = { is_ai = yes } years_passed > 5 }
-			#zExpanded
-			NAND = {
-				has_z_expanded_mod = yes
-				owner = { NOT = { is_agrarian_empire = { allow_invalid = yes } } }
-			}
 		}
 	}
 	inline_script = {
 		script = trade_buildings/avb_commercials
-		tier = 3
+		clerk_add = 5
+		trader_add = 3
 	}
 	resources = {
 		category = planet_buildings
@@ -49,16 +39,7 @@ building_avb_commercial_3 = {
 		upkeep = {
 			energy = @avb_t4_upkeep
 			rare_crystals = @avb_t4_rare_upkeep
-		}
-        produces = {
-            trigger = {
-                owner = {
-					has_global_flag = ethic_civic_classic_active
-                    has_valid_civic = civic_consumerism
-                }
-            }
-            unity = 5
-        }		
+		}		
 	}
 
 	upgrades = {
@@ -69,19 +50,8 @@ building_avb_commercial_3 = {
 		"tech_avb_interstellar_economics_2"
 	}
 	
-	show_tech_unlock_if = { 
-		is_gestalt = no
-		NAND = {
-            has_z_expanded_mod = yes
-			NOT = { is_agrarian_empire = { allow_invalid = yes } }
-		}
-	}
-
-	ai_resource_production = {
-		energy = 4
-		trigger = {
-			always = yes
-		}
+	show_tech_unlock_if = {
+		is_regular_empire = yes
 	}
 	ai_resource_production = {
 		energy = 6
@@ -89,7 +59,7 @@ building_avb_commercial_3 = {
 			OR = {
 				num_unemployed >= 10
 				num_assigned_jobs = {
-					job = servant
+				job = servant
 					value >= 10
 				}
 			}
@@ -111,11 +81,6 @@ building_avb_commercial_4 = {
 		exists = owner
 		owner = { is_gestalt = no }
 		NOT = { has_modifier = slave_colony }
-		#zExpanded
-		NAND = {
-			has_z_expanded_mod = yes
-			owner = { NOT = { is_agrarian_empire = { allow_invalid = yes } } }
-		}
 	}
 	
 	destroy_trigger = {
@@ -123,18 +88,14 @@ building_avb_commercial_4 = {
 		OR = {
 			owner = { is_gestalt = yes }
 			has_modifier = slave_colony
-			and = { owner = { is_ai = yes } years_passed > 5 }
-			#zExpanded
-			NAND = {
-				has_z_expanded_mod = yes
-				owner = { NOT = { is_agrarian_empire = { allow_invalid = yes } } }
-			}
 		}
 	}
 	
+	
 	inline_script = {
 		script = trade_buildings/avb_commercials
-		tier = 4
+		clerk_add = 6
+		trader_add = 4
 	}
 
 	resources = {
@@ -146,16 +107,7 @@ building_avb_commercial_4 = {
 		upkeep = {
 			energy = @avb_t5_upkeep
 			rare_crystals = @avb_t5_rare_upkeep
-		}	
-        produces = {
-            trigger = {
-                owner = {
-					has_global_flag = ethic_civic_classic_active
-                    has_valid_civic = civic_consumerism
-                }
-            }
-            unity = 5
-        }	
+		}
 	}
 	upgrades = {
 		building_avb_commercial_5
@@ -166,17 +118,7 @@ building_avb_commercial_4 = {
 	}
 	
 	show_tech_unlock_if = { 
-		is_gestalt = no
-		NAND = {
-            has_z_expanded_mod = yes
-			NOT = { is_agrarian_empire = { allow_invalid = yes } }
-		}
-	}
-	ai_resource_production = {
-		energy = 4
-		trigger = {
-			always = yes
-		}
+		is_regular_empire = yes
 	}
 	ai_resource_production = {
 		energy = 6
@@ -206,11 +148,6 @@ building_avb_commercial_5 = {
 		exists = owner
 		owner = { is_gestalt = no }
 		NOT = { has_modifier = slave_colony }
-		#zExpanded
-		NAND = {
-			has_z_expanded_mod = yes
-			owner = { NOT = { is_agrarian_empire = { allow_invalid = yes } } }
-		}
 	}
 	
 	destroy_trigger = {
@@ -218,18 +155,14 @@ building_avb_commercial_5 = {
 		OR = {
 			owner = { is_gestalt = yes }
 			has_modifier = slave_colony
-			and = { owner = { is_ai = yes } years_passed > 5 }
-			#zExpanded
-			NAND = {
-				has_z_expanded_mod = yes
-				owner = { NOT = { is_agrarian_empire = { allow_invalid = yes } } }
-			}
 		}
 	}
 
+	
 	inline_script = {
 		script = trade_buildings/avb_commercials
-		tier = 5
+		clerk_add = 7
+		trader_add = 5
 	}
 	
 	resources = {
@@ -241,34 +174,14 @@ building_avb_commercial_5 = {
 		upkeep = {
 			energy = @avb_t6_upkeep
 			rare_crystals = @avb_t6_rare_upkeep
-		}	
-        produces = {
-            trigger = {
-                owner = {
-					has_global_flag = ethic_civic_classic_active
-                    has_valid_civic = civic_consumerism
-                }
-            }
-            unity = 5
-        }	
+		}
 	}
 	prerequisites = {
 		"tech_avb_interstellar_economics_4"
 	}
 	
 	show_tech_unlock_if = { 
-		is_gestalt = no
-		NAND = {
-            has_z_expanded_mod = yes
-			NOT = { is_agrarian_empire = { allow_invalid = yes } }
-		}
-	}
-	
-	ai_resource_production = {
-		energy = 4
-		trigger = {
-			always = yes
-		}
+		is_regular_empire = yes
 	}
 	ai_resource_production = {
 		energy = 6
@@ -293,13 +206,6 @@ building_avb_galactic_stock_exchange_2 = {
 	potential = {
 		NOT = { has_modifier = resort_colony }	
 		NOT = { has_modifier = slave_colony }
-		OR = {
-			has_z_expanded_mod = no
-			AND = {
-				has_z_expanded_mod = yes
-				NOT = { has_planet_flag = planetary_station }
-			}
-		}
 	}
 	
 	destroy_trigger = {
@@ -329,61 +235,9 @@ building_avb_galactic_stock_exchange_2 = {
 		}
 	}
 	planet_modifier = {
-		job_merchant_add = @avb_t4_jobs
-		trade_value_mult = 0.40
+		job_merchant_add = 2
+		trade_value_mult = 0.30
 	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_global_flag = ethic_civic_classic_active
-			}
-		}
-		modifier = {
-			job_mogul_add = @avb_t4_jobs
-			job_merchant_add = -@avb_t4_jobs
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_global_flag = ethic_civic_classic_active
-				OR = {
-					has_civic = civic_merchant_guilds
-					has_civic = civic_state_monopoly
-				}
-			}
-		}
-		modifier = {
-			job_mogul_add = 1
-			trade_value_mult = 0.05
-		}
-	}
-	#EC: Bug \/
-	triggered_planet_modifier = {
-		potential = {
-			OR = {
-				has_global_flag = galactic_market_founded
-				owner = {
-					is_bugged_globalism = yes
-				}
-			}
-			exists = owner
-			owner = {
-				OR = {
-					has_civic = civic_merchant_guilds
-					has_civic = civic_bugged_state_monopoly
-				}
-			}
-		}
-		modifier = {
-			job_merchant_add = 1
-			trade_value_mult = 0.05
-		}
-	}
-	#EC: Bug /\
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -401,24 +255,9 @@ building_avb_galactic_stock_exchange_2 = {
 	}
 	
 	triggered_desc = {
-		trigger = {
-			owner = { NOT = { has_global_flag = ethic_civic_classic_active } }
-		}
 		text = job_merchant_effect_desc
 	}
-	triggered_desc = {
-		trigger = {
-			owner = { has_global_flag = ethic_civic_classic_active }
-		}
-		text = job_mogul_effect_desc
-	}
 	
-	ai_resource_production = {
-		energy = 3
-		trigger = {
-			always = yes
-		}
-	}
 	ai_resource_production = {
 		energy = 5
 		trigger = {
@@ -427,6 +266,7 @@ building_avb_galactic_stock_exchange_2 = {
 			}
 		}
 	}
+
 	ai_resource_production = {
 		energy = 3
 		trigger = {
