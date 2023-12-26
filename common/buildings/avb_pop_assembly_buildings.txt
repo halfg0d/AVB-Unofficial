@@ -549,14 +549,16 @@ building_avb_posthumous_employment_center_2 = {
 			}
 		}
 	}
-	on_destroy = {
-		every_owned_pop = {
-			limit = {
-				has_modifier = avb_zombie_buff
-			}
-			remove_modifier = avb_zombie_buff
-		}
-	}
+
+#	on_destroy = {
+#		every_owned_pop = {
+#			limit = {
+#				has_modifier = avb_zombie_buff
+#			}
+#			remove_modifier = avb_zombie_buff
+#		}
+#	}
+
 	planet_modifier = {
 		job_reassigner_add = 2
 	}

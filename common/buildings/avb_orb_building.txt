@@ -43,7 +43,6 @@ building_avb_orb_ring_connection = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_orb_minerals
-
 		}
 		upkeep = {
 			energy = @avb_orb_upkeep
