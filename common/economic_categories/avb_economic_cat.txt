@@ -1,0 +1,37 @@
+planet_zoo_administration = {
+	icon = "job_avb_zoo_curator"
+	parent = planet_jobs_productive
+	generate_add_modifiers = {
+		upkeep
+		produces
+	}
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	modifier_category = pop
+}
+pop_category_pre_sapients = {
+	parent = planet_pops
+	generate_add_modifiers = {
+		upkeep
+		produces
+	}
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	modifier_category = pop
+}
+planet_livestock = {
+	parent = planet_jobs_productive
+	generate_add_modifiers = {
+		upkeep
+		produces
+	}
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	modifier_category = pop
+}

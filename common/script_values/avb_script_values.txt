@@ -13,3 +13,34 @@ avb_colonies_scaling = { # counting colonies and adding as 0.1x
 	add = 0.1
 	min = 1
 }
+zoo_curator_trade_output = {
+	base = 2
+	complex_trigger_modifier = {
+		trigger = count_owned_pop
+		trigger_scope = planet
+		parameters = {
+			limit = {
+				OR = {
+					has_job = xeno_zoo_animal
+					has_job = xeno_zoo_beast
+					has_job = livestock_zoo_animal
+					has_job = livestock_zoo_beast
+				}
+			}
+		}
+		mode = add
+		mult = 0.5
+	}
+	mult = value:scripted_modifier_mult|MODIFIER|pop_job_trade_mult|
+}
+livestock_number = {
+	complex_trigger_modifier = {
+		trigger = count_owned_pop
+		parameters = {
+			limit = {
+				has_slavery_type = { type = slavery_livestock }
+			}
+		}
+		mode = add
+	}
+}

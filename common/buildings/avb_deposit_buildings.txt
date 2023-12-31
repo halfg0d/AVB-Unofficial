@@ -419,78 +419,7 @@ building_avb_xeno_zoo_2 = {
 		}
 		text = job_duelist_effect_desc
 	}
-
-	triggered_desc = {
-		trigger = {
-			planet = {
-				any_owned_pop = {
-					is_sapient = no
-				}
-			}
-			exists = owner
-			owner = { 
-				NOR = { 
-					has_valid_civic = civic_warrior_culture 
-					has_warrior_culture = yes
-				}
-			}
-		}
-		text = job_xeno_zoo_animal_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			planet = {
-				any_owned_pop = {
-					is_livestock = yes
-				}
-			}
-			exists = owner
-			owner = { 
-				OR = {
-					has_valid_civic = civic_warrior_culture
-					has_warrior_culture = yes
-				}
-			 }
-		}
-		text = job_livestock_zoo_animal_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			planet = {
-				any_owned_pop = {
-					is_sapient = no
-				}
-			}
-			exists = owner
-			owner = { 
-				OR = {
-					has_valid_civic = civic_warrior_culture
-					has_warrior_culture = yes
-				}
-			}
-		}
-		text = job_xeno_zoo_beast_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			planet = {
-				any_owned_pop = {
-					is_livestock = yes
-				}
-			}
-			exists = owner
-			owner = { 
-				NOR = { 
-					has_valid_civic = civic_warrior_culture 
-					has_warrior_culture = yes
-				}
-			}
-		}
-		text = job_livestock_zoo_beast_effect_desc
-	}
+	inline_script = misc/zoo_animals
 }
 
 building_avb_lithoid_crystal_mines_2 = {
