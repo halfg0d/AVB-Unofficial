@@ -44,3 +44,69 @@ livestock_number = {
 		mode = add
 	}
 }
+get_capital_tier = {
+	modifier = {
+		set = 1
+		OR = {
+			has_building = building_capital
+			has_building = building_machine_capital
+			has_building = building_hive_capital
+		}
+	}
+	modifier = {
+		set = 2
+		OR = {
+			has_building = building_major_capital
+			has_building = building_machine_major_capital
+			has_building = building_hive_major_capital
+		}
+	}
+	modifier = {
+		set = 3
+		OR = {
+			has_building = building_system_capital
+			has_building = building_machine_system_capital
+			has_building = building_avb_hive_capital_3
+		}
+	}
+	modifier = {
+		set = 4
+		OR = {
+			has_building = building_avb_capital_4
+			has_building = building_avb_machine_capital_4
+			has_building = building_avb_hive_capital_4
+		}
+	}
+	modifier = {
+		set = 5
+		OR = {
+			has_building = building_avb_capital_5
+			has_building = building_avb_machine_capital_5
+			has_building = building_imperial_hive_capital
+		}
+	}
+	modifier = {
+		set = 6
+		OR = {
+			has_building = building_avb_capital_6
+			has_building = building_avb_machine_capital_6
+		}
+	}
+	modifier = {
+		set = 7
+		OR = {
+			has_building = building_imperial_capital
+			has_building = building_imperial_machine_capital
+		}
+	}
+}
+num_active_vats_tier2 = {
+	complex_trigger_modifier = {
+		trigger = num_buildings
+		parameters = {
+			type = building_avb_clone_army_clone_vat_2
+			disabled = no
+		}
+		mode = add
+	}
+}

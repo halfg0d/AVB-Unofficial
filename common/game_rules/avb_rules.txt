@@ -51,7 +51,10 @@ can_species_be_assembled = {
 				}
 				root = {
 					# Event 'clones.3' should cover this, but extra safety check.
-					has_building = building_clone_army_clone_vat
+					OR = {
+						has_building = building_clone_army_clone_vat
+						has_building = building_avb_clone_army_clone_vat_2
+					}
 					NOT = {
 						check_variable = {
 							which = clone_pops_missing

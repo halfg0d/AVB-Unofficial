@@ -159,3 +159,9 @@
  col_zoo_world_desc:0 "A zoo the size of a planet"
  mod_pop_category_pre_sapients_upkeep_mult:1 "$pop_category_pre_sapients$ upkeep"
  mod_planet_livestock_upkeep_mult:1 "$job_livestock$ upkeep"
+#Clone Army
+ building_avb_clone_army_clone_vat_2:0 "Innovatus Clonogenic Repository"
+ building_avb_clone_army_clone_vat_2_desc:0 "An epic structure based on recovered technology crafted by the enigmatic Architects. Though initially mysterious, humanity has successfully replicated the advanced mechanisms of this building, elevating it to a higher level of innovation. Its intricate components can now be easily disassembled and reconstructed, unveiling the secrets of advanced technology."
+ tech_avb_clone_army_vats_2:0 "Genesis Insight Matrix"
+ tech_avb_clone_army_vats_2_desc:0 "A groundbreaking technological marvel that emerged from the relentless pursuit of understanding the enigmatic Ancient Clone Vat. This innovative system not only unraveled the secrets concealed within the structure but also empowered humanity to replicate its intricate mechanisms. The Genesis Insight Matrix stands as a testament to our ability to decode and master the once-mysterious technology, ushering in a new era of advanced cloning and synthesis capabilities."
+ building_clone_army_clone_vat_2_effect_desc:1 "Assembles and sustains up to §Y50§! £pops£ §Y$clone_soldier$§! Pops. The effectiveness of this assembly is reduced as the $building_avb_clone_army_clone_vat_2$ reaches capacity."
