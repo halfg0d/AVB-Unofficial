@@ -21,7 +21,7 @@ building_avb_hydroponics_farm_2 = {
 	}
 	
 	allow = {
-		has_fully_upgraded_capital = yes
+		has_upgraded_capital = yes
 		OR = {
 			owner = { is_ai = no }
 			AND = {
@@ -268,7 +268,9 @@ building_avb_hydroponics_farm_2 = {
 	prerequisites = {
 		"tech_avb_hydroponics_2"
 	}
-
+	upgrades = {
+		building_avb_hydroponics_farm_3
+	}
 	ai_resource_production = {
 		food = 1
 		trigger = {
@@ -1966,7 +1968,9 @@ building_avb_resource_silo_2 = {
 	prerequisites = {
 		"tech_mining_3"
 	}
-
+	upgrades = {
+		building_avb_resource_silo_3
+	}
 	triggered_desc = {
 		trigger = {
 			exists = owner

@@ -380,3 +380,37 @@ tech_avb_clone_army_vats_2 = {
 		}
 	}
 }
+
+tech_avb_hydroponics_3 = {
+	cost = @avbtier6cost1
+	area = society
+	tier = 6
+	category = { biology }	
+	prerequisites = { "tech_avb_hydroponics_2" }
+	weight = @avbtier6weight1
+	
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 0.01
+			is_machine_empire = yes
+			NOR = { 
+				has_valid_civic = civic_machine_servitor 
+				has_valid_civic = civic_machine_assimilator 	
+				any_owned_planet = {
+					num_districts = { type = district_farming value > 0 }
+				}
+			}
+		}
+		modifier = { # No tech without builded previous building
+			factor = 0
+			NOT = {
+				any_owned_planet = { has_building = building_avb_hydroponics_farm_2 }
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}

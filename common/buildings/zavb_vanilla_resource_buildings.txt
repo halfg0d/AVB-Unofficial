@@ -279,7 +279,6 @@ building_hydroponics_farm = {
 	
 	upgrades = {
 		"building_avb_hydroponics_farm_2"
-		#"eb_hydrofarm2"
 		"building_eutab_hydroponics_tower"
 	}
 	
