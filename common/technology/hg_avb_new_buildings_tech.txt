@@ -389,3 +389,205 @@ tech_avb_paragon_memory_vaults_2 = {
 		}
 	}
 }
+tech_avb_paragon_memory_vaults_2 = {
+	cost = @tier3cost1
+	area = society
+	category = { statecraft }
+	prerequisites = { tech_society_2 }
+	tier = 3
+	is_rare = yes
+	ai_update_type = all
+	weight = 5
+
+	potential = {
+		has_paragon_dlc = yes
+	}
+	weight_modifier = {
+		factor = 2
+		modifier = { # No tech without builded previous cbuilding
+			factor = 0
+			NOT = {
+				any_owned_planet = { has_building = building_paragon_memory_vaults }
+			}
+		}
+	}
+}
+tech_avb_clone_army_vats_2 = {
+	cost = @avbtier7cost2
+	area = society
+	category = { biology }
+	prerequisites = {
+		tech_gene_tailoring
+		tech_morphogenetic_field_mastery
+	}
+	icon = tech_clone_soldier_fertility
+	tier = 6
+	is_rare = yes
+	ai_update_type = all
+	weight = 5
+
+	potential = {
+		has_origin = origin_clone_army
+		has_clone_full_path = yes
+	}
+
+	weight_modifier = {
+		factor = 1.5	# genetech needs to be a bit more common
+		modifier = {
+			factor = 2
+			has_relic = r_pox_sample
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+			}
+		}
+	}
+
+	ai_weight = {
+		modifier = {
+			factor = 2
+			OR = {
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+			}
+		}
+	}
+}
+
+tech_avb_hydroponics_3 = {
+	cost = @avbtier6cost1
+	area = society
+	tier = 6
+	category = { biology }	
+	prerequisites = { "tech_avb_hydroponics_2" }
+	weight = @avbtier6weight1
+	
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 0.01
+			is_machine_empire = yes
+			NOR = { 
+				has_valid_civic = civic_machine_servitor 
+				has_valid_civic = civic_machine_assimilator 	
+				any_owned_planet = {
+					num_districts = { type = district_farming value > 0 }
+				}
+			}
+		}
+		modifier = { # No tech without builded previous building
+			factor = 0
+			NOT = {
+				any_owned_planet = { has_building = building_avb_hydroponics_farm_2 }
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+tech_avb_paragon_memory_vaults_2 = {
+	cost = @tier3cost1
+	area = society
+	category = { statecraft }
+	prerequisites = { tech_society_2 }
+	tier = 3
+	is_rare = yes
+	ai_update_type = all
+	weight = 5
+
+	potential = {
+		has_paragon_dlc = yes
+	}
+	weight_modifier = {
+		factor = 2
+		modifier = { # No tech without builded previous cbuilding
+			factor = 0
+			NOT = {
+				any_owned_planet = { has_building = building_paragon_memory_vaults }
+			}
+		}
+	}
+}
+tech_avb_clone_army_vats_2 = {
+	cost = @avbtier7cost2
+	area = society
+	category = { biology }
+	prerequisites = {
+		tech_gene_tailoring
+		tech_morphogenetic_field_mastery
+	}
+	icon = tech_clone_soldier_fertility
+	tier = 6
+	is_rare = yes
+	ai_update_type = all
+	weight = 5
+
+	potential = {
+		has_origin = origin_clone_army
+		has_clone_full_path = yes
+	}
+
+	weight_modifier = {
+		factor = 1.5	# genetech needs to be a bit more common
+		modifier = {
+			factor = 2
+			has_relic = r_pox_sample
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+			}
+		}
+	}
+
+	ai_weight = {
+		modifier = {
+			factor = 2
+			OR = {
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+			}
+		}
+	}
+}
+
+tech_avb_hydroponics_3 = {
+	cost = @avbtier6cost1
+	area = society
+	tier = 6
+	category = { biology }	
+	prerequisites = { "tech_avb_hydroponics_2" }
+	weight = @avbtier6weight1
+	
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 0.01
+			is_machine_empire = yes
+			NOR = { 
+				has_valid_civic = civic_machine_servitor 
+				has_valid_civic = civic_machine_assimilator 	
+				any_owned_planet = {
+					num_districts = { type = district_farming value > 0 }
+				}
+			}
+		}
+		modifier = { # No tech without builded previous building
+			factor = 0
+			NOT = {
+				any_owned_planet = { has_building = building_avb_hydroponics_farm_2 }
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}

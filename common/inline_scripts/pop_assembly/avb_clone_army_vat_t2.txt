@@ -1,0 +1,107 @@
+#AVB												missing
+#Pop assembly organic +2 if Pops per vat is 49+		0
+#Pop assembly organic +5 if Pops per vat is 45-49	1
+#Pop assembly organic +7 if Pops per vat is 37-44	6
+#Pop assembly organic +10 if Pops per vat is 28-36	14
+#Pop assembly organic +15 if Pops per vat is 24-27	23
+#Pop assembly organic +19 if Pops per vat is 19-23	27
+#Pop assembly organic +24 if Pops per vat is 16-18	32
+#Pop assembly organic +28 if Pops per vat is 12-15	35
+#Pop assembly organic +35 if Pops per vat is 8-11	39
+#Pop assembly organic +45 if Pops per vat is 0-7 	43
+
+#Pop assembly organic +2 if Pops per vat for xenophobes and AI
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_ai = yes }
+		can_assemble_clone_soldier_pop = yes
+	}
+	planet_pop_assembly_organic_add = 2
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			OR = {
+				is_ai = yes
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+			}
+		}
+		can_assemble_clone_soldier_pop = yes
+	}
+	planet_pop_assembly_organic_add = 2
+}
+
+# Add growth from 0 to 50 depending on 'clone_pops_missing_per_vat'.
+triggered_planet_modifier = {
+	potential = {
+		can_assemble_clone_soldier_pop = yes
+		check_variable = { which = clone_pops_missing_per_vat value > 0 }
+	}
+	modifier = { planet_pop_assembly_organic_add = 2 }
+}
+triggered_planet_modifier = {
+	potential = {
+		can_assemble_clone_soldier_pop = yes
+		check_variable = { which = clone_pops_missing_per_vat value > 1 }
+	}
+	modifier = { planet_pop_assembly_organic_add = 3 }
+}
+triggered_planet_modifier = {
+	potential = {
+		can_assemble_clone_soldier_pop = yes
+		check_variable = { which = clone_pops_missing_per_vat value > 6 }
+	}
+	modifier = { planet_pop_assembly_organic_add = 2 }
+}
+triggered_planet_modifier = {
+	potential = {
+		can_assemble_clone_soldier_pop = yes
+		check_variable = { which = clone_pops_missing_per_vat value > 14 }
+	}
+	modifier = { planet_pop_assembly_organic_add = 3 }
+}
+triggered_planet_modifier = {
+	potential = {
+		can_assemble_clone_soldier_pop = yes
+		check_variable = { which = clone_pops_missing_per_vat value > 23 }
+	}
+	modifier = { planet_pop_assembly_organic_add = 5 }
+}
+triggered_planet_modifier = {
+	potential = {
+		can_assemble_clone_soldier_pop = yes
+		check_variable = { which = clone_pops_missing_per_vat value > 27 }
+	}
+	modifier = { planet_pop_assembly_organic_add = 4 }
+}
+triggered_planet_modifier = {
+	potential = {
+		can_assemble_clone_soldier_pop = yes
+		check_variable = { which = clone_pops_missing_per_vat value > 32 }
+	}
+	modifier = { planet_pop_assembly_organic_add = 5 }
+}
+triggered_planet_modifier = {
+	potential = {
+		can_assemble_clone_soldier_pop = yes
+		check_variable = { which = clone_pops_missing_per_vat value > 35 }
+	}
+	modifier = { planet_pop_assembly_organic_add = 4 }
+}
+triggered_planet_modifier = {
+	potential = {
+		can_assemble_clone_soldier_pop = yes
+		check_variable = { which = clone_pops_missing_per_vat value > 39 }
+	}
+	modifier = { planet_pop_assembly_organic_add = 7 }
+}
+triggered_planet_modifier = {
+	potential = {
+		can_assemble_clone_soldier_pop = yes
+		check_variable = { which = clone_pops_missing_per_vat value > 43 }
+	}
+	modifier = { planet_pop_assembly_organic_add = 10 }
+}

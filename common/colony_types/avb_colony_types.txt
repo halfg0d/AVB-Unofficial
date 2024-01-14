@@ -1,0 +1,24 @@
+col_zoo_world = {
+	icon = GFX_colony_type_resort
+
+	potential = {
+		has_modifier = resort_colony
+	}
+
+	planet_modifier = {
+		trade_value_mult = 0.1
+		pop_category_pre_sapients_upkeep_mult = -0.2
+		planet_livestock_upkeep_mult = -0.2
+	}
+	weight_modifier = {
+		base = 10
+		modifier = {
+			factor = 10
+			planet = {
+				any_owned_pop = {
+					has_job = xeno_zoo_keeper
+				}
+			}
+		}
+	}
+}

@@ -98,3 +98,6 @@ has_plentiful_tradition_mod = {
 		}
 	}
 }
+has_clone_full_path = {
+	has_country_flag = clone_army_full_potential
+}

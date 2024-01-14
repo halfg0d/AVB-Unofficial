@@ -1,0 +1,112 @@
+avb_colonies_scaling = { # counting colonies and adding as 0.1x
+	base = 1
+	complex_trigger_modifier = {
+		trigger = count_owned_planet
+		trigger_scope = owner
+		parameters = {
+			limit = {	
+				is_colony = yes
+			}
+		}
+		mode = subtract
+	}
+	add = 0.1
+	min = 1
+}
+zoo_curator_trade_output = {
+	base = 2
+	complex_trigger_modifier = {
+		trigger = count_owned_pop
+		trigger_scope = planet
+		parameters = {
+			limit = {
+				OR = {
+					has_job = xeno_zoo_animal
+					has_job = xeno_zoo_beast
+					has_job = livestock_zoo_animal
+					has_job = livestock_zoo_beast
+				}
+			}
+		}
+		mode = add
+		mult = 0.5
+	}
+	mult = value:scripted_modifier_mult|MODIFIER|pop_job_trade_mult|
+}
+livestock_number = {
+	complex_trigger_modifier = {
+		trigger = count_owned_pop
+		parameters = {
+			limit = {
+				has_slavery_type = { type = slavery_livestock }
+			}
+		}
+		mode = add
+	}
+}
+get_capital_tier = {
+	modifier = {
+		set = 1
+		OR = {
+			has_building = building_capital
+			has_building = building_machine_capital
+			has_building = building_hive_capital
+		}
+	}
+	modifier = {
+		set = 2
+		OR = {
+			has_building = building_major_capital
+			has_building = building_machine_major_capital
+			has_building = building_hive_major_capital
+		}
+	}
+	modifier = {
+		set = 3
+		OR = {
+			has_building = building_system_capital
+			has_building = building_machine_system_capital
+			has_building = building_avb_hive_capital_3
+		}
+	}
+	modifier = {
+		set = 4
+		OR = {
+			has_building = building_avb_capital_4
+			has_building = building_avb_machine_capital_4
+			has_building = building_avb_hive_capital_4
+		}
+	}
+	modifier = {
+		set = 5
+		OR = {
+			has_building = building_avb_capital_5
+			has_building = building_avb_machine_capital_5
+			has_building = building_imperial_hive_capital
+		}
+	}
+	modifier = {
+		set = 6
+		OR = {
+			has_building = building_avb_capital_6
+			has_building = building_avb_machine_capital_6
+		}
+	}
+	modifier = {
+		set = 7
+		OR = {
+			has_building = building_imperial_capital
+			has_building = building_imperial_machine_capital
+		}
+	}
+}
+num_active_vats_tier2 = {
+	complex_trigger_modifier = {
+		trigger = num_buildings
+		parameters = {
+			type = building_avb_clone_army_clone_vat_2
+			disabled = no
+		}
+		mode = add
+	}
+}

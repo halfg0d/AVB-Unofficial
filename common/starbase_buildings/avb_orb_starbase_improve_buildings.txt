@@ -138,7 +138,7 @@ ring_avb_clone_vats = {
 	potential = {
 		exists = owner
 		owner = { 
-			has_technology = tech_ring_avb_orb_clone_vats_1
+			has_technology = tech_ring_avb_clone_vats_1
 			has_tradition = tr_genetics_adopt
 		}
 		planet = {
