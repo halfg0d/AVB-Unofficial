@@ -22,9 +22,9 @@
 @orb_t3_alloy_cost = 630
 
 #Energy upkeep variables
-@orb_t1_energy_upkeep = 8
-@orb_t2_energy_upkeep = 5 #plus base = 13
-@orb_t3_energy_upkeep = 9 #plus base = 17
+@orb_t1_energy_upkeep = 5
+@orb_t2_energy_upkeep = 8 #plus base = 13
+@orb_t3_energy_upkeep = 12 #plus base = 17
 
 #Produce variables
 @orb_t1_produce = 5

@@ -725,23 +725,21 @@ ring_avb_ranger = {
 	}
 }
 
-avb_foundry_ring = {
-	#icon
+ring_alloys_hub = {
+	icon = "GFX_orbitalring_alloy_hub"
+	starbase_type = orbital_ring
 	construction_days = @avb_orb_time
 
-	show_in_tech = "tech_ring_avb_foundry_1"
+	show_in_tech = "tech_alloys_2"
 	potential = {
 		exists = owner
 		owner = {
-			has_technology = tech_ring_avb_foundry_1
+			has_technology = tech_alloys_2
 		}
 		is_orbital_ring = yes
 	}
 	possible = {
-		planet = {
-			has_building = building_avb_orb_ring_connection
-		}
-		is_building_similar_to_foundry = yes
+		always = yes
 	}
 	on_finished = {
 		planet = {
@@ -768,11 +766,12 @@ avb_foundry_ring = {
 	resources = {
 		category = starbase_buildings
 		cost = {
-			alloys = @orb_t1_alloy_cost
+			alloys = 200
 			volatile_motes = 300
 		}
 		upkeep = {
-			energy = @orb_t1_energy_upkeep
+			energy = 5
+			volatile_motes = 2
 		}
 		upkeep = {
 			trigger = {
@@ -793,9 +792,6 @@ avb_foundry_ring = {
 			energy = @orb_t3_energy_upkeep
 		}
 		#Automation produce
-		produces = {
-			alloys = @orb_t1_produce
-		}
 		produces = {
 			trigger = {
 				exists = owner
@@ -821,15 +817,6 @@ avb_foundry_ring = {
 				owner = {
 					is_catalytic_empire = no
 				}
-			}
-			minerals = @orb_t1_upkeep_minerals
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = {
-					is_catalytic_empire = no
-				}
 				planet = {
 					has_planet_flag = avb_orb_foundry_2
 				}
@@ -849,15 +836,6 @@ avb_foundry_ring = {
 			minerals = @orb_t3_upkeep_minerals
 		}
 		#Upkeep food
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = {
-					is_catalytic_empire = yes
-				}
-			}
-			food = @orb_t1_upkeep_food
-		}
 		upkeep = {
 			trigger = {
 				exists = owner
@@ -890,6 +868,47 @@ avb_foundry_ring = {
 	ai_build_outside_chokepoint = yes
 
 	ai_weight = {
-		weight = 50
+		weight = 100
+	}
+}
+
+ring_consumer_goods_hub = {
+	icon = "GFX_orbitalring_consumer_hub"
+	construction_days = 360
+	starbase_type = orbital_ring
+
+	potential = {
+		exists = owner
+		owner = {
+			has_technology = tech_luxuries_2
+			country_uses_consumer_goods = yes
+		}
+		is_orbital_ring = yes
+	}
+
+	planet_modifier = {
+		planet_artisans_consumer_goods_produces_add = 1
+		planet_artisans_minerals_upkeep_add = 1
+	}
+
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 200
+			rare_crystals = 300
+		}
+
+		upkeep = {
+			energy = 5
+			rare_crystals = 2
+		}
+	}
+
+	show_in_tech = "tech_luxuries_2"
+
+
+
+	ai_weight = {
+		weight = 100
 	}
 }

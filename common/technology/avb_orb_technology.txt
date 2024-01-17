@@ -512,7 +512,7 @@ tech_ring_avb_institute_3 = {
 		inline_script = tech_weights/avb_orbital_weight
 	}
 }
-tech_ring_avb_paradise_1= {
+tech_ring_avb_paradise_1 = {
 	icon = tech_ring_avb_organic_paradise
 	cost = @orb_tier4cost1
 	area = society
@@ -635,51 +635,13 @@ tech_ring_avb_paradise_3 = {
 		inline_script = tech_weights/avb_orbital_weight
 	}
 }
-tech_ring_avb_foundry_1 = {
-	cost = @orb_tier4cost1
-	area = engineering
-	tier = 4
-	category = { industry }
-	prerequisites = { "tech_orbital_ring_tier_1" "tech_alloys_2" }
-	weight = @tier4weight1
-	
-	potential = {
-		exists = owner
-	}
-
-	weight_modifier = {
-		factor = 2
-		modifier = {
-			count_owned_planet = {
-				limit = {
-					orb_foundry_active = yes
-				}
-				count > 2
-			}
-			factor = 5
-		}
-		inline_script = tech_weights/avb_orbital_weight
-	}
-	ai_weight = {
-		factor = 2
-		modifier = {
-			count_owned_planet = {
-				limit = {
-					orb_foundry_active = yes
-				}
-				count > 2
-			}
-			factor = 5
-		}
-		inline_script = tech_weights/avb_orbital_weight
-	}
-}
+#Tech 1 is tech_alloys_2
 tech_ring_avb_foundry_2 = {
 	cost = @orb_tier4cost2
 	area = engineering
 	tier = 4
 	category = { industry }
-	prerequisites = { "tech_ring_avb_foundry_1" }
+	prerequisites = { "tech_alloys_2" "tech_orbital_ring_tier_1" }
 	weight = @tier4weight2
 	
 	potential = {
@@ -714,6 +676,7 @@ tech_ring_avb_foundry_2 = {
 	}
 }
 tech_ring_avb_foundry_3 = {
+	icon = tech_ring_avb_foundry_2
 	cost = @orb_tier4cost3
 	area = engineering
 	tier = 4
