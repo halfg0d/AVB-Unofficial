@@ -8,26 +8,32 @@ modifier = {
 # Pacifist easier get government type techs
 modifier = {
 	factor = 0.75
-	NOT = {
-		OR = {
-			has_ethic = ethic_pacifist
-			has_ethic = ethic_fanatic_pacifist
-		}
+	NOR = {
+		has_ethic = ethic_pacifist
+		has_ethic = ethic_fanatic_pacifist
 	}
 }
 # Authoritharian AI easier get government type techs
 modifier = {
 	factor = 1.25
-	is_ai = yes
-	has_ethic = ethic_authoritarian
+	AND = {
+		is_ai = yes
+		has_ethic = ethic_authoritarian
+	}
 }
 modifier = {
 	factor = 1.5
-	is_ai = yes
-	has_ethic = ethic_fanatic_authoritarian
+	AND = {
+		is_ai = yes
+		has_ethic = ethic_fanatic_authoritarian
+	}
 }
 # non Regular empries got easier that tech
 modifier = {
 	factor = 1.2
 	is_regular_empire = no
+}
+# more planets = higher chance
+modifier = {
+	factor = value:avb_colonies_scaling
 }

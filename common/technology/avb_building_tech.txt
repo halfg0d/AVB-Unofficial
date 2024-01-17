@@ -19,14 +19,14 @@ tech_avb_capital_4 = {
 	
 	
 	weight_modifier = {
-		factor = 4
+		factor = 2
 		modifier = { # No tech without builded previous capital
 			factor = 0
 			NOT = {
 				any_owned_planet = { has_building = building_system_capital }
 			}
 		}
-		inline_script = "tech_weights/avb_government_weight"
+		inline_script = tech_weights/avb_government_weight
 	}
 
 	ai_weight = {
@@ -53,14 +53,14 @@ tech_avb_capital_5 = {
 		is_hive_empire = no
 	}
 	weight_modifier = {
-		factor = 4
+		factor = 2
 		modifier = { # No tech without builded previous capital
 			factor = 0
 			NOT = {
 				any_owned_planet = { has_building = building_avb_capital_4 }
 			}
 		}
-		inline_script = "tech_weights/avb_government_weight"
+		inline_script = tech_weights/avb_government_weight
 	}
 	
 	ai_weight = {
@@ -87,14 +87,14 @@ tech_avb_capital_6 = {
 	}
 	
 	weight_modifier = {
-		factor = 4
+		factor = 2
 		modifier = { # No tech without builded previous capital
 			factor = 0
 			NOT = {
 				any_owned_planet = { has_building = building_avb_capital_5 }
 			}
 		}
-		inline_script = "tech_weights/avb_government_weight"
+		inline_script = tech_weights/avb_government_weight
 	}
 	
 	ai_weight = {
@@ -122,12 +122,13 @@ tech_avb_hab_capital_3 = {
 			factor = 0
 			any_owned_planet = {
 				NOR = {
+					is_habitat = yes
 					is_planet_class = pc_habitat 
 					is_pd_habitat = yes
 				}
 			}
 		}
-		inline_script = "tech_weights/avb_government_weight"
+		inline_script = tech_weights/avb_government_weight
 	}
 	
 	ai_weight = {
@@ -136,6 +137,7 @@ tech_avb_hab_capital_3 = {
 			factor = 0
 			any_owned_planet = {
 				NOR = {
+					is_habitat = yes
 					is_planet_class = pc_habitat 
 					is_pd_habitat = yes
 				}
@@ -171,6 +173,9 @@ tech_avb_resort_capital_3 = {
 		modifier = {
 			factor = 2.5
 			is_fanatic_xenophile = yes
+		}
+		modifier = {
+			factor = value:avb_colonies_scaling
 		}
 	}
 	
@@ -217,11 +222,18 @@ tech_avb_slave_capital_3 = {
 		}
 		modifier = {
 			factor = 2
-			has_ethic = ethic_authoritarian
+			owner = {
+				has_ethic = ethic_authoritarian
+			}
 		}
 		modifier = {
 			factor = 2.5
-			has_ethic = ethic_fanatic_authoritarian
+			owner = {
+				has_ethic = ethic_fanatic_authoritarian
+			}
+		}
+		modifier = {
+			factor = value:avb_colonies_scaling
 		}
 	}
 	
@@ -237,11 +249,15 @@ tech_avb_slave_capital_3 = {
 		}
 		modifier = {
 			factor = 2
-			has_ethic = ethic_authoritarian
+			owner = {
+				has_ethic = ethic_authoritarian
+			}
 		}
 		modifier = {
 			factor = 2.5
-			has_ethic = ethic_fanatic_authoritarian
+			owner = {
+				has_ethic = ethic_fanatic_authoritarian
+			}
 		}
 	}
 }
@@ -269,7 +285,7 @@ tech_avb_noble_estates_2 = {
 	
 	weight_modifier = {
 		factor = 4
-		inline_script = "tech_weights/avb_government_weight"
+		inline_script = tech_weights/avb_government_weight
 		modifier = { # No tech without builded previous building
 			factor = 0
 			NOT = {
@@ -311,17 +327,24 @@ tech_avb_slave_processing_2 = {
 		}
 		modifier = {
 			factor = 2
-			has_ethic = ethic_authoritarian
+			owner = {
+				has_ethic = ethic_authoritarian
+			}
 		}
 		modifier = {
 			factor = 2.5
-			has_ethic = ethic_fanatic_authoritarian
+			owner = {
+				has_ethic = ethic_fanatic_authoritarian
+			}
 		}
 		modifier = { # No tech without builded previous building
 			factor = 0
 			NOT = {
 				any_owned_planet = { has_building = building_slave_processing }
 			}
+		}
+		modifier = {
+			factor = value:avb_colonies_scaling
 		}
 	}
 
@@ -371,6 +394,9 @@ tech_avb_psi_corps_2 = {
 				any_owned_planet = { has_building = building_psi_corps }
 			}
 		}
+		modifier = {
+			factor = value:avb_colonies_scaling
+		}
 	}
 	
 	ai_weight = {
@@ -417,6 +443,9 @@ tech_avb_psi_corps_3 = {
 				any_owned_planet = { has_building = building_avb_psi_corps_2 }
 			}
 		}
+		modifier = {
+			factor = value:avb_colonies_scaling
+		}
 	}
 	
 	ai_weight = {
@@ -455,7 +484,7 @@ tech_avb_clone_vats_2 = {
 				any_owned_planet = { has_building = building_clone_vats }
 			}
 		}
-		inline_script = "tech_weights/avb_government_weight"
+		inline_script = tech_weights/avb_government_weight
 	}
 	
 	ai_weight = {
@@ -508,6 +537,9 @@ tech_avb_robot_assembly_plant_2 = {
 				any_owned_planet = { has_building = building_robot_assembly_plant }
 			}
 		}
+		modifier = {
+			factor = value:avb_colonies_scaling
+		}
 	}
 	
 	ai_weight = {
@@ -554,6 +586,9 @@ tech_avb_machine_assembly_plant_2 = {
 				any_owned_planet = { has_building = building_machine_assembly_complex }
 			}
 		}
+		modifier = {
+			factor = value:avb_colonies_scaling
+		}
 	}
 	
 	ai_weight = {
@@ -592,6 +627,9 @@ tech_avb_hydroponics_2 = {
 			NOT = {
 				any_owned_planet = { has_building = building_hydroponics_farm }
 			}
+		}
+		modifier = {
+			factor = value:avb_colonies_scaling
 		}
 	}
 	
@@ -635,6 +673,9 @@ tech_avb_food_processing_3 = {
 				any_owned_planet = { has_building = building_food_processing_center }
 			}
 		}
+		modifier = {
+			factor = value:avb_colonies_scaling
+		}
 	}
 	
 	ai_weight = {
@@ -677,6 +718,9 @@ tech_avb_food_processing_4 = {
 				any_owned_planet = { has_building = building_avb_food_processing_3 }
 			}
 		}
+		modifier = {
+			factor = value:avb_colonies_scaling
+		}
 	}
 	
 	ai_weight = {
@@ -708,6 +752,9 @@ tech_avb_mineral_purification_3 = {
 				any_owned_planet = { has_building = building_mineral_purification_hub }
 			}
 		}
+		modifier = {
+			factor = value:avb_colonies_scaling
+		}
 	}
 	
 	ai_weight = {
@@ -738,6 +785,9 @@ tech_avb_mineral_purification_4  = {
 			NOT = {
 				any_owned_planet = { has_building = building_avb_mineral_purification_3 }
 			}
+		}
+		modifier = {
+			factor = value:avb_colonies_scaling
 		}
 	}
 	
@@ -773,6 +823,9 @@ tech_avb_power_hub_3 = {
 				any_owned_planet = { has_building = building_energy_nexus }
 			}
 		}
+		modifier = {
+			factor = value:avb_colonies_scaling
+		}
 	}
 	
 	ai_weight = {
@@ -806,6 +859,9 @@ tech_avb_power_hub_4 = {
 			NOT = {
 				any_owned_planet = { has_building = building_avb_energy_grid_3 }
 			}
+		}
+		modifier = {
+			factor = value:avb_colonies_scaling
 		}
 	}
 	
@@ -842,6 +898,9 @@ tech_avb_bio_reactor_2  = {
 				any_owned_planet = { has_building = building_bio_reactor }
 			}
 		}
+		modifier = {
+			factor = value:avb_colonies_scaling
+		}
 	}
 	
 	ai_weight = {
@@ -869,7 +928,7 @@ tech_avb_alloys_3 = {
 				any_owned_planet = { has_building = building_foundry_3 }
 			}
 		}
-		inline_script = "tech_weights/avb_economy_weight"
+		inline_script = tech_weights/avb_economy_weight
 	}
 	
 	ai_weight = {
@@ -893,7 +952,7 @@ tech_avb_alloys_4 = {
 				any_owned_planet = { has_building = building_avb_foundry_4 }
 			}
 		}
-		inline_script = "tech_weights/avb_economy_weight"
+		inline_script = tech_weights/avb_economy_weight
 	}
 	
 	ai_weight = {
@@ -917,7 +976,7 @@ tech_avb_alloys_5 = {
 				any_owned_planet = { has_building = building_avb_foundry_5 }
 			}
 		}
-		inline_script = "tech_weights/avb_economy_weight"
+		inline_script = tech_weights/avb_economy_weight
 	}
 	
 	ai_weight = {
@@ -971,6 +1030,9 @@ tech_avb_luxuries_3 = {
 					}
 				}
 			} 
+		}
+		modifier = {
+			factor = value:avb_colonies_scaling
 		}
 	}
 	
@@ -1026,6 +1088,9 @@ tech_avb_luxuries_4 = {
 				}
 			} 
 		}
+		modifier = {
+			factor = value:avb_colonies_scaling
+		}
 	}
 	
 	ai_weight = {
@@ -1079,6 +1144,9 @@ tech_avb_luxuries_5 = {
 					}
 				}
 			} 
+		}
+		modifier = {
+			factor = value:avb_colonies_scaling
 		}
 	}
 	
@@ -1338,6 +1406,9 @@ tech_avb_rare_crystals_3 = {
 				any_owned_planet = { has_building = building_avb_crystal_plant_2 }
 			}
 		}
+		modifier = {
+			factor = value:avb_colonies_scaling
+		}
 	}
 	
 	ai_weight = {
@@ -1399,6 +1470,9 @@ tech_avb_global_production_strategy_2 = {
 				any_owned_planet = { has_building = building_production_center }
 			}
 		}
+		modifier = {
+			factor = value:avb_colonies_scaling
+		}
 	}
 	
 	ai_weight = {
@@ -1449,6 +1523,9 @@ tech_avb_basic_science_lab_4 = {
 				}
 			}
 		}
+		modifier = {
+			factor = value:avb_colonies_scaling
+		}
 	}
 	
 	ai_weight = {
@@ -1495,6 +1572,9 @@ tech_avb_basic_science_lab_5 = {
 				}
 			}
 		}
+		modifier = {
+			factor = value:avb_colonies_scaling
+		}
 	}
 	
 	ai_weight = {
@@ -1540,6 +1620,9 @@ tech_avb_basic_science_lab_6 = {
 				
 				}
 			}
+		}
+		modifier = {
+			factor = value:avb_colonies_scaling
 		}
 	}
 	
@@ -1590,6 +1673,9 @@ tech_avb_global_research_initiative_2 = {
 				}
 			}
 		}
+		modifier = {
+			factor = value:avb_colonies_scaling
+		}
 	}
 	
 	ai_weight = {
@@ -1633,6 +1719,9 @@ tech_avb_interstellar_economics_2 = {
 				any_owned_planet = { has_building = building_commercial_megaplex }
 			}
 		}
+		modifier = {
+			factor = value:avb_colonies_scaling
+		}
 	}
 	
 	ai_weight = {
@@ -1671,6 +1760,9 @@ tech_avb_interstellar_economics_3 = {
 			NOT = {
 				any_owned_planet = { has_building = building_avb_commercial_3 }
 			}
+		}
+		modifier = {
+			factor = value:avb_colonies_scaling
 		}
 	}
 	
@@ -1711,6 +1803,9 @@ tech_avb_interstellar_economics_4 = {
 				any_owned_planet = { has_building = building_avb_commercial_4 }
 			}
 		}
+		modifier = {
+			factor = value:avb_colonies_scaling
+		}
 	}
 	
 	ai_weight = {
@@ -1746,6 +1841,9 @@ tech_avb_galactic_markets_2 = {
 			NOT = {
 				any_owned_planet = { has_building = building_galactic_stock_exchange }
 			}
+		}
+		modifier = {
+			factor = value:avb_colonies_scaling
 		}
 	}
 	
@@ -1801,6 +1899,9 @@ tech_avb_residence_3 = {
 				count > 1
 			}
 		}
+		modifier = {
+			factor = value:avb_colonies_scaling
+		}
 	}
 	
 	ai_weight = {
@@ -1851,6 +1952,9 @@ tech_avb_residence_4 = {
 				count > 1
 			}
 		}
+		modifier = {
+			factor = value:avb_colonies_scaling
+		}
 	}
 	
 	ai_weight = {
@@ -1897,6 +2001,9 @@ tech_avb_residence_5 = {
 				free_housing <= 0
 				count > 1
 			}
+		}
+		modifier = {
+			factor = value:avb_colonies_scaling
 		}
 	}
 	
@@ -1947,6 +2054,9 @@ tech_avb_housing_4 = {
 		modifier = {
 			factor = 0
 			has_valid_civic = civic_agrarian_idyll
+		}
+		modifier = {
+			factor = value:avb_colonies_scaling
 		}
 	}
 	
@@ -2008,6 +2118,9 @@ tech_avb_holo_entertainment_3 = {
 				any_owned_planet = { has_building = building_holo_theatres }
 			}
 		}
+		modifier = {
+			factor = value:avb_colonies_scaling
+		}
 	}
 	
 	ai_weight = {
@@ -2041,6 +2154,9 @@ tech_avb_holo_entertainment_4 = {
 			NOT = {
 				any_owned_planet = { has_building = building_avb_holo_theatre_3 }
 			}
+		}
+		modifier = {
+			factor = value:avb_colonies_scaling
 		}
 	}
 	
@@ -2080,6 +2196,9 @@ tech_avb_clinic_3 = {
 				any_owned_planet = { has_building = building_hospital }
 			}
 		}
+		modifier = {
+			factor = value:avb_colonies_scaling
+		}
 	}
 }
 
@@ -2113,6 +2232,9 @@ tech_avb_clinic_4 = {
 			NOT = {
 				any_owned_planet = { has_building = building_avb_clinic_3 }
 			}
+		}
+		modifier = {
+			factor = value:avb_colonies_scaling
 		}
 	}
 }
@@ -2158,6 +2280,9 @@ tech_avb_spawning_pool_2 = {
 				any_owned_planet = { has_building = building_spawning_pool }
 			}
 		}
+		modifier = {
+			factor = value:avb_colonies_scaling
+		}v
 	}
 	
 	ai_weight = {
@@ -2190,6 +2315,9 @@ tech_avb_slave_huts_2 = {
 			NOT = {
 				any_owned_planet = { has_building = building_slave_huts }
 			}
+		}
+		modifier = {
+			factor = value:avb_colonies_scaling
 		}
 	}
 	
@@ -2238,12 +2366,12 @@ tech_avb_military_academy_2 = {
 				}
 			}
 		}
-		inline_script = "tech_weights/avb_military_weight"
+		inline_script = tech_weights/avb_military_weight
 	}
 	
 	ai_weight = {
 		factor = 2
-		inline_script = "tech_weights/avb_military_weight"
+		inline_script = tech_weights/avb_military_weight
 	}
 }
 
@@ -2267,12 +2395,12 @@ tech_avb_stronghold_3 = {
 				any_owned_planet = { has_building = building_fortress }
 			}
 		}
-		inline_script = "tech_weights/avb_military_weight"
+		inline_script = tech_weights/avb_military_weight
 	}
 	
 	ai_weight = {
 		factor = 2
-		inline_script = "tech_weights/avb_military_weight"
+		inline_script = tech_weights/avb_military_weight
 	}
 }
 
@@ -2296,12 +2424,12 @@ tech_avb_stronghold_4 = {
 				any_owned_planet = { has_building = building_avb_stronghold_3 }
 			}
 		}
-		inline_script = "tech_weights/avb_military_weight"
+		inline_script = tech_weights/avb_military_weight
 	}
 	
 	ai_weight = {
 		factor = 2
-		inline_script = "tech_weights/avb_military_weight"
+		inline_script = tech_weights/avb_military_weight
 	}
 }
 
@@ -2326,12 +2454,12 @@ tech_avb_stronghold_5 = {
 				any_owned_planet = { has_building = building_avb_stronghold_4 }
 			}
 		}
-		inline_script = "tech_weights/avb_military_weight"
+		inline_script = tech_weights/avb_military_weight
 	}
 	
 	ai_weight = {
 		factor = 2
-		inline_script = "tech_weights/avb_military_weight"
+		inline_script = tech_weights/avb_military_weight
 	}
 }
 
@@ -2356,6 +2484,9 @@ tech_avb_planetary_shield_generator_2 = {
 			NOT = {
 				any_owned_planet = { has_building = building_planetary_shield_generator }
 			}
+		}
+		modifier = {
+			factor = value:avb_colonies_scaling
 		}
 	}
 }
@@ -2383,6 +2514,9 @@ tech_avb_planetary_shield_generator_3 = {
 				any_owned_planet = { has_building = building_avb_planetary_shield_generator_2 }
 			}
 		}
+		modifier = {
+			factor = value:avb_colonies_scaling
+		}
 	}
 }
 
@@ -2408,6 +2542,9 @@ tech_avb_dark_matter_planetary_shield_generator = {
 			NOT = {
 				any_owned_planet = { has_building = building_avb_planetary_shield_generator_3 }
 			}
+		}
+		modifier = {
+			factor = value:avb_colonies_scaling
 		}
 	}
 }

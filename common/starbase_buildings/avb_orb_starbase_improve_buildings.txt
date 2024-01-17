@@ -724,3 +724,172 @@ ring_avb_ranger = {
 		weight = 50
 	}
 }
+
+avb_foundry_ring = {
+	#icon
+	construction_days = @avb_orb_time
+
+	show_in_tech = "tech_ring_avb_foundry_1"
+	potential = {
+		exists = owner
+		owner = {
+			has_technology = tech_ring_avb_foundry_1
+		}
+		is_orbital_ring = yes
+	}
+	possible = {
+		planet = {
+			has_building = building_avb_orb_ring_connection
+		}
+		is_building_similar_to_foundry = yes
+	}
+	on_finished = {
+		planet = {
+			set_planet_flag = avb_orb_foundry_1
+		}
+	}
+	on_destroyed = {
+		planet = {
+			remove_planet_flag = avb_orb_foundry_1
+			remove_planet_flag = avb_orb_foundry_2
+			remove_planet_flag = avb_orb_foundry_3
+		}
+	}
+	abort_trigger = {
+		exists = planet
+		planet = {
+			NOR = {
+				has_building = building_avb_orb_ring_connection
+				is_building_similar_to_foundry = yes
+			}
+		}
+	}
+	inline_script = orbital_buildings/foundry
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = @orb_t1_alloy_cost
+			volatile_motes = 300
+		}
+		upkeep = {
+			energy = @orb_t1_energy_upkeep
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				planet = {
+					has_planet_flag = avb_orb_foundry_2
+				}
+			}
+			energy = @orb_t2_energy_upkeep
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				planet = {
+					has_planet_flag = avb_orb_foundry_3
+				}
+			}
+			energy = @orb_t3_energy_upkeep
+		}
+		#Automation produce
+		produces = {
+			alloys = @orb_t1_produce
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				planet = {
+					has_planet_flag = avb_orb_foundry_2
+				}
+			}
+			alloys = @orb_t2_produce
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				planet = {
+					has_planet_flag = avb_orb_foundry_3
+				}
+			}
+			alloys = @orb_t3_produce
+		}
+		#Upkeep Minerals
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_catalytic_empire = no
+				}
+			}
+			minerals = @orb_t1_upkeep_minerals
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_catalytic_empire = no
+				}
+				planet = {
+					has_planet_flag = avb_orb_foundry_2
+				}
+			}
+			minerals = @orb_t2_upkeep_minerals
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_catalytic_empire = no
+				}
+				planet = {
+					has_planet_flag = avb_orb_foundry_3
+				}
+			}
+			minerals = @orb_t3_upkeep_minerals
+		}
+		#Upkeep food
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_catalytic_empire = yes
+				}
+			}
+			food = @orb_t1_upkeep_food
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_catalytic_empire = yes
+				}
+				planet = {
+					has_planet_flag = avb_orb_foundry_2
+				}
+			}
+			food = @orb_t2_upkeep_food
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_catalytic_empire = yes
+				}
+				planet = {
+					has_planet_flag = avb_orb_foundry_3
+				}
+			}
+			food = @orb_t3_upkeep_food
+		}
+	}
+	destroy_trigger = {
+		is_building_similar_to_foundry = no
+	}
+	ai_build_at_chokepoint = yes
+	ai_build_outside_chokepoint = yes
+
+	ai_weight = {
+		weight = 50
+	}
+}

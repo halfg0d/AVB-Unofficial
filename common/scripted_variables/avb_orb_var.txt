@@ -23,8 +23,21 @@
 
 #Energy upkeep variables
 @orb_t1_energy_upkeep = 8
-@orb_t2_energy_upkeep = 5 #plus previous = 13
-@orb_t3_energy_upkeep = 3 #plus previous = 17
+@orb_t2_energy_upkeep = 5 #plus base = 13
+@orb_t3_energy_upkeep = 9 #plus base = 17
+
+#Produce variables
+@orb_t1_produce = 5
+@orb_t2_produce = 5 # plus base = 10
+@orb_t3_produce = 15 # plus base = 20
+
+@orb_t1_upkeep_minerals = 10
+@orb_t2_upkeep_minerals = 20
+@orb_t3_upkeep_minerals = 40
+
+@orb_t1_upkeep_food = 12
+@orb_t2_upkeep_food = 24
+@orb_t3_upkeep_food = 48
 
 #Clone variables
 @orb_t1_clone_cost_alloy = 150
