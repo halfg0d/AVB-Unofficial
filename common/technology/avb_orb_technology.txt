@@ -715,3 +715,81 @@ tech_ring_avb_foundry_3 = {
 		inline_script = tech_weights/avb_orbital_weight
 	}
 }
+tech_ring_avb_factory_2 = {
+	cost = @orb_tier4cost2
+	area = engineering
+	tier = 4
+	category = { industry }
+	prerequisites = { "tech_luxuries_2" "tech_orbital_ring_tier_1" }
+	weight = @tier4weight2
+	
+	potential = {
+		exists = owner
+	}
+
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			count_owned_planet = {
+				limit = {
+					orb_factory_active = yes
+				}
+				count > 2
+			}
+			factor = 5
+		}
+		inline_script = tech_weights/avb_orbital_weight
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			count_owned_planet = {
+				limit = {
+					orb_factory_active = yes
+				}
+				count > 2
+			}
+			factor = 5
+		}
+		inline_script = tech_weights/avb_orbital_weight
+	}
+}
+tech_ring_avb_factory_3 = {
+	cost = @orb_tier4cost3
+	area = engineering
+	tier = 4
+	category = { industry }
+	prerequisites = { "tech_ring_avb_factory_2" }
+	weight = @tier4weight3
+	
+	potential = {
+		exists = owner
+	}
+
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			count_owned_planet = {
+				limit = {
+					orb_factory_active = yes
+				}
+				count > 2
+			}
+			factor = 5
+		}
+		inline_script = tech_weights/avb_orbital_weight
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			count_owned_planet = {
+				limit = {
+					orb_factory_active = yes
+				}
+				count > 2
+			}
+			factor = 5
+		}
+		inline_script = tech_weights/avb_orbital_weight
+	}
+}

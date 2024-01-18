@@ -1,0 +1,50 @@
+
+planet_modifier = {
+}
+###			###
+###  Tier 1	###
+###			###
+triggered_planet_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			NOR = {
+				has_planet_flag = avb_orb_factory_2
+				has_planet_flag = avb_orb_factory_3
+			}
+		}
+		exists = owner
+	}
+	planet_artisans_consumer_goods_produces_add = 1
+	planet_artisans_minerals_upkeep_add = 1
+}
+###			###
+###  Tier 2	###
+###			###
+triggered_planet_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_factory_2
+            orb_factory_active = yes
+		}
+		exists = owner
+	}
+	planet_artisans_consumer_goods_produces_add = 2
+	planet_artisans_minerals_upkeep_add = 2
+}
+###			###
+###  Tier 3	###
+###			###
+triggered_planet_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_factory_3
+            orb_factory_active = yes
+		}
+		exists = owner
+	}
+	planet_artisans_consumer_goods_produces_add = 3
+	planet_artisans_minerals_upkeep_add = 3
+}

@@ -753,15 +753,6 @@ ring_alloys_hub = {
 			remove_planet_flag = avb_orb_foundry_3
 		}
 	}
-	abort_trigger = {
-		exists = planet
-		planet = {
-			NOR = {
-				has_building = building_avb_orb_ring_connection
-				is_building_similar_to_foundry = yes
-			}
-		}
-	}
 	inline_script = orbital_buildings/foundry
 	resources = {
 		category = starbase_buildings
@@ -861,9 +852,6 @@ ring_alloys_hub = {
 			food = @orb_t3_upkeep_food
 		}
 	}
-	destroy_trigger = {
-		is_building_similar_to_foundry = no
-	}
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = yes
 
@@ -877,6 +865,7 @@ ring_consumer_goods_hub = {
 	construction_days = 360
 	starbase_type = orbital_ring
 
+	show_in_tech = "tech_luxuries_2"
 	potential = {
 		exists = owner
 		owner = {
@@ -885,28 +874,101 @@ ring_consumer_goods_hub = {
 		}
 		is_orbital_ring = yes
 	}
-
+	possible = {
+		always = yes
+	}
+	on_finished = {
+		planet = {
+			set_planet_flag = avb_orb_factory_1
+		}
+	}
+	on_destroyed = {
+		planet = {
+			remove_planet_flag = avb_orb_factory_1
+			remove_planet_flag = avb_orb_factory_2
+			remove_planet_flag = avb_orb_factory_3
+		}
+	}
 	planet_modifier = {
 		planet_artisans_consumer_goods_produces_add = 1
 		planet_artisans_minerals_upkeep_add = 1
 	}
-
+	inline_script = orbital_buildings/factory
 	resources = {
 		category = starbase_buildings
 		cost = {
 			alloys = 200
-			rare_crystals = 300
+			volatile_motes = 300
 		}
-
 		upkeep = {
 			energy = 5
-			rare_crystals = 2
+			volatile_motes = 2
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				planet = {
+					has_planet_flag = avb_orb_factory_2
+				}
+			}
+			energy = @orb_t2_energy_upkeep
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				planet = {
+					has_planet_flag = avb_orb_factory_3
+				}
+			}
+			energy = @orb_t3_energy_upkeep
+		}
+		#Automation produce
+		produces = {
+			trigger = {
+				exists = owner
+				planet = {
+					has_planet_flag = avb_orb_factory_2
+				}
+			}
+			consumer_goods = 10
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				planet = {
+					has_planet_flag = avb_orb_factory_3
+				}
+			}
+			consumer_goods = 20
+		}
+		#Upkeep Minerals
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_catalytic_empire = no
+				}
+				planet = {
+					has_planet_flag = avb_orb_factory_2
+				}
+			}
+			minerals = 10
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_catalytic_empire = no
+				}
+				planet = {
+					has_planet_flag = avb_orb_factory_3
+				}
+			}
+			minerals = 20
 		}
 	}
-
-	show_in_tech = "tech_luxuries_2"
-
-
+	ai_build_at_chokepoint = yes
+	ai_build_outside_chokepoint = yes
 
 	ai_weight = {
 		weight = 100

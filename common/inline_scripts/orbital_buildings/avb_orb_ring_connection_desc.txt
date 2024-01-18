@@ -42,3 +42,10 @@ inline_script = {
 	text = avb_orb_building_foundry
 	flag = avb_orb_foundry
 }
+#Factory
+inline_script = {
+	script = orbital_buildings/avb_orb_formula_desc
+	building = ring_consumer_goods_hub
+	text = avb_orb_building_factory
+	flag = avb_orb_factory
+}
