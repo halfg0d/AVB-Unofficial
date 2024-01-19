@@ -15,6 +15,7 @@ triggered_planet_modifier = {
 triggered_planet_modifier = {
 	potential = {
 		owner = {
+			has_technology = tech_avb_psi_corps_2
 			NOT = { has_technology = tech_avb_psi_corps_3 }
 		}
 	}
