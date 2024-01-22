@@ -2,7 +2,7 @@
 # Government buildings
 #############
 building_avb_noble_estates_2 = {
-	base_buildtime = @avb_g4_time
+	base_buildtime = @avb_b4_time
 	can_build = no
 
 	category = government
@@ -51,10 +51,10 @@ building_avb_noble_estates_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_g4_minerals
+			minerals = @avb_b4_minerals
 		}			
 		upkeep = {
-			energy = @avb_g4_upkeep
+			energy = @avb_b4_upkeep
 		}
 	}
 	
@@ -68,7 +68,7 @@ building_avb_noble_estates_2 = {
 }
 
 building_avb_slave_processing_2 = {
-	base_buildtime = @avb_g4_time
+	base_buildtime = @avb_b4_time
 	can_build = no
 
 	category = government
@@ -115,10 +115,10 @@ building_avb_slave_processing_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_g4_minerals
+			minerals = @avb_b4_minerals
 		}
 		upkeep = {
-			energy = @avb_g4_upkeep
+			energy = @avb_b4_upkeep
 		}
 	}
 	
@@ -135,7 +135,7 @@ building_avb_slave_processing_2 = {
 }
 
 building_avb_enforcement_3 = {
-	base_buildtime = @avb_g4_time
+	base_buildtime = @avb_b4_time
 
 	category = government
 	can_build = no
@@ -168,12 +168,12 @@ building_avb_enforcement_3 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_g4_minerals
-			volatile_motes = @avb_g4_rare_cost
+			minerals = @avb_b4_minerals
+			volatile_motes = @avb_b4_rare_cost
 		}
 		upkeep = {
-			energy = @avb_g4_upkeep
-			volatile_motes = @avb_g4_rare_upkeep
+			energy = @avb_b4_upkeep
+			volatile_motes = @avb_b4_rare_upkeep
 		}
 	}
 	
@@ -195,7 +195,7 @@ building_avb_enforcement_3 = {
 }
 
 building_avb_enforcement_4 = {
-	base_buildtime = @avb_g5_time
+	base_buildtime = @avb_b5_time
 
 	category = government
 	can_build = no
@@ -228,12 +228,12 @@ building_avb_enforcement_4 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_g5_minerals
-			volatile_motes = @avb_g5_rare_cost
+			minerals = @avb_b5_minerals
+			volatile_motes = @avb_b5_rare_cost
 		}
 		upkeep = {
-			energy = @avb_g5_upkeep
-			volatile_motes = @avb_g5_rare_upkeep
+			energy = @avb_b5_upkeep
+			volatile_motes = @avb_b5_rare_upkeep
 		}
 	}
 	
@@ -251,7 +251,7 @@ building_avb_enforcement_4 = {
 }
 
 building_avb_sentinel_posts_2 = {
-	base_buildtime = @avb_g4_time 
+	base_buildtime = @avb_b4_time 
 	can_build = no
 
 	category = government
@@ -288,10 +288,10 @@ building_avb_sentinel_posts_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_g4_minerals
+			minerals = @avb_b4_minerals
 		}
 		upkeep = {
-			energy = @avb_g4_upkeep
+			energy = @avb_b4_upkeep
 		}
 	}
 	
@@ -313,7 +313,7 @@ building_avb_sentinel_posts_2 = {
 #############
 
 building_avb_psi_corps_2 = {
-	base_buildtime = @avb_g4_time
+	base_buildtime = @avb_b4_time
 	can_build = no
 
 	category = government
@@ -359,12 +359,12 @@ building_avb_psi_corps_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_g4_minerals
-			sr_zro = @avb_g4_rare_cost
+			minerals = @avb_b4_minerals
+			sr_zro = @avb_b4_rare_cost
 		}
 		upkeep = {
-			energy = @avb_g4_upkeep
-			sr_zro = @avb_g4_rare_upkeep
+			energy = @avb_b4_upkeep
+			sr_zro = @avb_b4_rare_upkeep
 		}
 	}
 	
@@ -378,7 +378,7 @@ building_avb_psi_corps_2 = {
 }
 
 building_avb_psi_corps_3 = {
-	base_buildtime = @avb_g5_time
+	base_buildtime = @avb_b5_time
 	can_build = no
 
 	category = government
@@ -422,12 +422,12 @@ building_avb_psi_corps_3 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_g5_minerals
-			sr_zro = @avb_g5_rare_cost
+			minerals = @avb_b5_minerals
+			sr_zro = @avb_b5_rare_cost
 		}
 		upkeep = {
-			energy = @avb_g5_upkeep
-			sr_zro = @avb_g5_rare_upkeep
+			energy = @avb_b5_upkeep
+			sr_zro = @avb_b5_rare_upkeep
 		}
 	}
 	

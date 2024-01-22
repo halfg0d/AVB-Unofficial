@@ -28,7 +28,11 @@
 @avb_b6_time = 3500
 @avb_b6_minerals = 5400
 @avb_b6_upkeep = 26
+@avb_b6_rare_cost = 400
+@avb_b6_rare_upkeep = 8
 
+@avb_t7_cost = 10400
+@avb_t7_upkeep = 64
 ##
 ## New Value System
 ##

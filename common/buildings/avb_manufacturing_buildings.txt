@@ -23,30 +23,13 @@ building_avb_foundry_4 = {
 				}
 				has_any_industry_district = no
 			}
-			#zExpanded \/
-			OR = {
-				AND = {
-					has_z_expanded_mod = no
-					has_modifier = slave_colony
-				}
-				AND = {
-					has_z_expanded_mod = yes
-					owner = {
-						NOR = {
-							has_valid_civic = civic_indentured_assets
-							has_valid_civic = civic_slaver_guilds
-						}
-					}
-				}
-			}
-			#zExpanded /\
 		}
 	}
 
 	resources = {
 		category = planet_buildings
 		inline_script = {
-			script = "manufactury/avb_foundry_resources"
+			script = manufactury/avb_foundry_resources
 			tier = 4
 		}
 	}
@@ -60,10 +43,10 @@ building_avb_foundry_4 = {
 	}
 	
 	inline_script = {
-		script = "manufactury/avb_foundry_jobs"
+		script = manufactury/avb_foundry_jobs
 		tier = 4
 	}
-	inline_script = "manufactury/avb_foundry_job_desc"
+	inline_script = manufactury/avb_foundry_job_desc
 	
 	ai_resource_production = {
 		alloys = 16
@@ -124,30 +107,13 @@ building_avb_foundry_5 = {
 				}
 				has_any_industry_district = no
 			}
-			#zExpanded \/
-			OR = {
-				AND = {
-					has_z_expanded_mod = no
-					has_modifier = slave_colony
-				}
-				AND = {
-					has_z_expanded_mod = yes
-					owner = {
-						NOR = {
-							has_valid_civic = civic_indentured_assets
-							has_valid_civic = civic_slaver_guilds
-						}
-					}
-				}
-			}
-			#zExpanded /\
 		}
 	}
 
 	resources = {
 		category = planet_buildings
 		inline_script = {
-			script = "manufactury/avb_foundry_resources"
+			script = manufactury/avb_foundry_resources
 			tier = 5
 		}
 	}
@@ -164,7 +130,7 @@ building_avb_foundry_5 = {
 		script = manufactury/avb_foundry_jobs
 		tier = 5
 	}
-	inline_script = "manufactury/avb_foundry_job_desc"
+	inline_script = manufactury/avb_foundry_job_desc
 	
 	ai_resource_production = {
 		alloys = 16
@@ -225,30 +191,13 @@ building_avb_foundry_6 = {
 				}
 				has_any_industry_district = no
 			}
-			#zExpanded \/
-			OR = {
-				AND = {
-					has_z_expanded_mod = no
-					has_modifier = slave_colony
-				}
-				AND = {
-					has_z_expanded_mod = yes
-					owner = {
-						NOR = {
-							has_valid_civic = civic_indentured_assets
-							has_valid_civic = civic_slaver_guilds
-						}
-					}
-				}
-			}
-			#zExpanded /\
 		}
 	}
 
 	resources = {
 		category = planet_buildings
 		inline_script = {
-			script = "manufactury/avb_foundry_resources"
+			script = manufactury/avb_foundry_resources
 			tier = 6
 		}
 	}
@@ -261,7 +210,7 @@ building_avb_foundry_6 = {
 		script = manufactury/avb_foundry_jobs
 		tier = 6
 	}
-	inline_script = "manufactury/avb_foundry_job_desc"
+	inline_script = manufactury/avb_foundry_job_desc
 	
 	ai_resource_production = {
 		alloys = 16
@@ -344,11 +293,11 @@ building_avb_factory_4 = {
 		}
 	}
 	inline_script = {
-		script = "manufactury/avb_factory_modifiers"
+		script = manufactury/avb_factory_modifiers
 		tier = 4
 	}
 	inline_script = {
-		script = "manufactury/avb_factory_jobs"
+		script = manufactury/avb_factory_jobs
 		tier = 4
 	}
 	
@@ -359,7 +308,7 @@ building_avb_factory_4 = {
 				has_ringworld_output_boost = no
 			}
 			minerals = @avb_b3_minerals
-			rare_crystals = 150	
+			rare_crystals = @avb_b3_rare_cost
 		}	
 		cost = {
 			trigger = {
@@ -373,7 +322,7 @@ building_avb_factory_4 = {
 				has_ringworld_output_boost = no
 			}
 			energy = @avb_b3_upkeep
-			rare_crystals = 4
+			rare_crystals = @avb_b3_upkeep
 		}
 		upkeep = {
 			trigger = {
@@ -504,11 +453,11 @@ building_avb_factory_5 = {
 	}
 	
 	inline_script = {
-		script = "manufactury/avb_factory_modifiers"
+		script = manufactury/avb_factory_modifiers
 		tier = 5
 	}
 	inline_script = {
-		script = "manufactury/avb_factory_jobs"
+		script = manufactury/avb_factory_jobs
 		tier = 5
 	}
 	
@@ -519,7 +468,7 @@ building_avb_factory_5 = {
 				has_ringworld_output_boost = no
 			}
 			minerals = @avb_b4_minerals
-			rare_crystals = 180	
+			rare_crystals = @avb_b4_rare_cost
 		}	
 		cost = {
 			trigger = {
@@ -533,7 +482,7 @@ building_avb_factory_5 = {
 				has_ringworld_output_boost = no
 			}
 			energy = @avb_b4_upkeep
-			rare_crystals = 4
+			rare_crystals = @avb_b4_rare_upkeep
 		}
 		upkeep = {
 			trigger = {
@@ -651,11 +600,11 @@ building_avb_factory_6 = {
 	
 	
 	inline_script = {
-		script = "manufactury/avb_factory_modifiers"
+		script = manufactury/avb_factory_modifiers
 		tier = 6
 	}
 	inline_script = {
-		script = "manufactury/avb_factory_jobs"
+		script = manufactury/avb_factory_jobs
 		tier = 6
 	}
 	
@@ -666,7 +615,7 @@ building_avb_factory_6 = {
 				has_ringworld_output_boost = no
 			}
 			minerals = @avb_b5_minerals
-			rare_crystals = 220	
+			rare_crystals = @avb_b5_rare_cost
 		}	
 		cost = {
 			trigger = {
@@ -680,7 +629,7 @@ building_avb_factory_6 = {
 				has_ringworld_output_boost = no
 			}
 			energy = @avb_b5_upkeep
-			rare_crystals = 4
+			rare_crystals = @avb_b5_rare_upkeep
 		}
 		upkeep = {
 			trigger = {
@@ -808,7 +757,7 @@ building_avb_refinery_2 = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b3_minerals
-			exotic_gases = 100
+			exotic_gases = @avb_b3_rare_cost
 		}	
 		upkeep = {
 			energy = @avb_b3_upkeep
@@ -845,23 +794,6 @@ building_avb_refinery_2 = {
 			always = yes
 		}
 	}
-	#zExpanded \/
-	triggered_planet_modifier = {
-		potential = {
-			has_z_expanded_mod = yes
-			exists = owner
-			owner = {
-				is_ai = yes
-				str_force_gases = yes
-			}
-			NOT = { has_building = building_refinery }
-		}
-		modifier = {
-			job_starnet_spice_melange_farmer_add = 2
-			job_starnet_spice_melange_antifarmer_add = -2
-		}
-	}
-	#zExpanded /\
 }
 
 building_avb_refinery_3 = {
@@ -923,7 +855,7 @@ building_avb_refinery_3 = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b4_minerals
-			exotic_gases = 200
+			exotic_gases = @avb_b4_rare_cost
 		}	
 		upkeep = {
 			energy = @avb_b4_upkeep
@@ -979,23 +911,6 @@ building_avb_refinery_3 = {
 			always = yes
 		}
 	}
-	#zExpanded \/
-	triggered_planet_modifier = {
-		potential = {
-			has_z_expanded_mod = yes
-			exists = owner
-			owner = {
-				is_ai = yes
-				str_force_gases = yes
-			}
-			NOT = { has_building = building_refinery }
-		}
-		modifier = {
-			job_starnet_spice_melange_farmer_add = 2
-			job_starnet_spice_melange_antifarmer_add = -2
-		}
-	}
-	#zExpanded /\
 }
 
 building_avb_chemical_plant_2 = {
@@ -1053,7 +968,7 @@ building_avb_chemical_plant_2 = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b3_minerals
-			volatile_motes = 100
+			volatile_motes = @avb_b3_rare_cost
 		}	
 		upkeep = {
 			energy = @avb_b3_upkeep
@@ -1090,23 +1005,6 @@ building_avb_chemical_plant_2 = {
 			always = yes
 		}
 	}
-	#zExpanded \/ ~ IDK why
-	triggered_planet_modifier = {
-		potential = {
-			has_z_expanded_mod = yes
-			exists = owner
-			owner = {
-				is_ai = yes
-				str_force_motes = yes
-			}
-			NOT = { has_building = building_avb_chemical_plant_2 }
-		}
-		modifier = {
-			job_starnet_spice_melange_farmer_add = 2
-			job_starnet_spice_melange_antifarmer_add = -2
-		}
-	}
-	#zExpanded /\
 }
 
 building_avb_chemical_plant_3 = {
@@ -1164,7 +1062,7 @@ building_avb_chemical_plant_3 = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b4_minerals
-			volatile_motes = 200
+			volatile_motes = @avb_b4_rare_cost
 		}	
 		upkeep = {
 			energy = @avb_b4_upkeep
@@ -1197,23 +1095,6 @@ building_avb_chemical_plant_3 = {
 			always = yes
 		}
 	}
-	#zExpanded \/ ~ IDK why
-	triggered_planet_modifier = {
-		potential = {
-			has_z_expanded_mod = yes
-			exists = owner
-			owner = {
-				is_ai = yes
-				str_force_motes = yes
-			}
-			NOT = { has_building = building_avb_chemical_plant_3 }
-		}
-		modifier = {
-			job_starnet_spice_melange_farmer_add = 2
-			job_starnet_spice_melange_antifarmer_add = -2
-		}
-	}
-	#zExpanded /\
 }
 
 building_avb_crystal_plant_2 = {
@@ -1275,7 +1156,7 @@ building_avb_crystal_plant_2 = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b3_minerals
-			rare_crystals = 100
+			rare_crystals = @avb_b3_rare_cost
 		}	
 		upkeep = {
 			energy = @avb_b3_upkeep
@@ -1305,24 +1186,6 @@ building_avb_crystal_plant_2 = {
 		}
 		text = job_translucer_drone_effect_desc
 	}
-
-	#zExpaned \/
-	triggered_planet_modifier = {
-		potential = {
-			has_z_expanded_mod = yes
-			exists = owner
-			owner = {
-				is_ai = yes
-				str_force_crystals = yes
-			}
-			NOT = { has_building = building_crystal_plant }
-		}
-		modifier = {
-			job_starnet_spice_melange_farmer_add = 2
-			job_starnet_spice_melange_antifarmer_add = -2
-		}
-	}
-	#zExpanded /\
 	ai_resource_production = {
 		rare_crystals = 1
 		trigger = {
@@ -1343,10 +1206,6 @@ building_avb_crystal_plant_3 = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
 			has_modifier = crucible_colony
-			AND = {
-				has_z_expanded_mod = yes
-				has_planet_flag = planetary_station
-			}
 		}
 	}
 	
@@ -1390,7 +1249,7 @@ building_avb_crystal_plant_3 = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b4_minerals
-			rare_crystals = 200
+			rare_crystals = @avb_b4_rare_cost
 		}	
 		upkeep = {
 			energy = @avb_b4_upkeep
@@ -1416,24 +1275,6 @@ building_avb_crystal_plant_3 = {
 		}
 		text = job_translucer_drone_effect_desc
 	}
-	
-	#zExpaned \/
-	triggered_planet_modifier = {
-		potential = {
-			has_z_expanded_mod = yes
-			exists = owner
-			owner = {
-				is_ai = yes
-				str_force_crystals = yes
-			}
-			NOT = { has_building = building_crystal_plant }
-		}
-		modifier = {
-			job_starnet_spice_melange_farmer_add = 2
-			job_starnet_spice_melange_antifarmer_add = -2
-		}
-	}
-	#zExpanded /\
 	ai_resource_production = {
 		rare_crystals = 1
 		trigger = {
@@ -1469,35 +1310,12 @@ building_avb_nanite_transmuter_2 = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
 			has_modifier = crucible_colony
-			AND = {
-				has_z_expanded_mod = yes
-				has_planet_flag = planetary_station
-			}
 		}
 	}
 	
 	allow = {
 		has_fully_upgraded_capital = yes
 	}
-	#zExpanded \/
-	triggered_planet_modifier = {
-		potential = {
-			has_z_expanded_mod = yes
-			exists = owner
-			owner = { is_ai = yes }
-			NOT = { has_building = building_ministry_production }
-			or = {
-				has_factory_designation = yes
-				has_foundry_designation = yes
-				has_industrial_designation = yes
-			}
-		}
-		modifier = {
-			job_starnet_spice_melange_farmer_add = 1
-			job_starnet_spice_melange_antifarmer_add = -1
-		}
-	}
-	#zExpanded /\
 	
 	resources = {
 		category = planet_buildings

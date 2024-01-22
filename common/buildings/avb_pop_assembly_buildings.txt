@@ -67,7 +67,7 @@ building_avb_robot_assembly_plant_2 = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b3_minerals
-			rare_crystals = 350
+			rare_crystals = @avb_b3_rare_cost
 		}
 		upkeep = {
 			energy = @avb_b3_upkeep
@@ -173,11 +173,11 @@ building_avb_machine_assembly_plant_2 = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b3_minerals
-			rare_crystals = 350
+			rare_crystals = @avb_b3_rare_cost
 		}
 		upkeep = {
 			energy = @avb_b3_upkeep
-			rare_crystals = 6
+			rare_crystals = @avb_b3_rare_upkeep
 		}
 	}
 	
@@ -349,10 +349,10 @@ building_avb_offspring_nest_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @b1_minerals
+			minerals = @avb_b2_cost
 		}
 		upkeep = {
-			energy = 2
+			energy = @avb_b2_upkeep
 		}
 	}
 	triggered_desc = {
@@ -439,42 +439,6 @@ building_avb_clone_vats_2 = {
 			planet_pop_assembly_organic_add = 1.5
 		}
 	}
-	#EC: Classic/Bug \/
-	triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner = {
-				OR = {
-					AND = {
-						has_global_flag = ethic_civic_classic_active
-						has_civic = civic_symbiotic_race
-					}
-					AND = {
-						has_global_flag = bug_branch_active
-						is_bugged_evolutionary_architects = yes
-					}
-				}
-            }
-        }
-        modifier = {
-            planet_jobs_unity_produces_mult = 0.1
-        }
-    }
-	#EC: Classic/Bug /\
-	#PT \/
-	triggered_planet_modifier = {
-		potential = {
-			has_pt_mod = yes
-			exists = owner
-			owner = {
-				has_ascension_perk = ap_total_assimilation
-			}
-		}
-		modifier = {
-			planet_pop_assembly_organic_add = 1
-		}
-	}
-	#PT /\
 
 	#Resources all copied from PT and updated to tier 2
 	resources = {
@@ -489,14 +453,6 @@ building_avb_clone_vats_2 = {
 			trigger = {
 				exists = owner
 				owner = { is_lithoid_empire = no }
-				NOT = {
-					owner = { has_ascension_perk = ap_plentiful_traditions_vast_slave_procreation }
-					OR = {
-						has_building = building_plentiful_traditions_advanced_slave_processing
-						has_building = building_slave_processing
-						has_building = building_avb_slave_processing_2
-					}
-				}
 			}
 			food = 1000
 		}
@@ -504,44 +460,8 @@ building_avb_clone_vats_2 = {
 			trigger = {
 				exists = owner
 				owner = { is_lithoid_empire = yes }
-				NOT = {
-					owner = { has_ascension_perk = ap_plentiful_traditions_vast_slave_procreation }
-					OR = {
-						has_building = building_plentiful_traditions_advanced_slave_processing
-						has_building = building_slave_processing
-						has_building = building_avb_slave_processing_2
-					}
-				}
 			}
 			energy = 1000
-		}
-		
-				# Org/Lith cost mit Perk etc.
-		cost = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid_empire = no }
-				owner = { has_ascension_perk = ap_plentiful_traditions_vast_slave_procreation }
-				OR = {
-					has_building = building_plentiful_traditions_advanced_slave_processing
-					has_building = building_slave_processing
-					has_building = building_avb_slave_processing_2
-				}
-			}
-			food = 500
-		}
-		cost = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid_empire = yes }
-				owner = { has_ascension_perk = ap_plentiful_traditions_vast_slave_procreation }
-				OR = {
-					has_building = building_plentiful_traditions_advanced_slave_processing
-					has_building = building_slave_processing
-					has_building = building_avb_slave_processing_2
-				}
-			}
-			energy = 500
 		}
 		# Base upkeep
 		upkeep = {
@@ -552,14 +472,6 @@ building_avb_clone_vats_2 = {
 			trigger = {
 				exists = owner
 				owner = { is_lithoid_empire = no }
-				NOT = {
-					owner = { has_ascension_perk = ap_plentiful_traditions_vast_slave_procreation }
-					OR = {
-						has_building = building_plentiful_traditions_advanced_slave_processing
-						has_building = building_slave_processing
-						has_building = building_avb_slave_processing_2
-					}
-				}
 			}
 			food = 60
 		}
@@ -567,43 +479,8 @@ building_avb_clone_vats_2 = {
 			trigger = {
 				exists = owner
 				owner = { is_lithoid_empire = yes }
-				NOT = {
-					owner = { has_ascension_perk = ap_plentiful_traditions_vast_slave_procreation }
-					OR = {
-						has_building = building_plentiful_traditions_advanced_slave_processing
-						has_building = building_slave_processing
-						has_building = building_avb_slave_processing_2
-					}
-				}
 			}
 			minerals = 60
-		}
-		# Org/Lith upkeep mit Perk
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid_empire = no }
-				owner = { has_ascension_perk = ap_plentiful_traditions_vast_slave_procreation }
-				OR = {
-					has_building = building_plentiful_traditions_advanced_slave_processing
-					has_building = building_slave_processing
-					has_building = building_avb_slave_processing_2
-				}
-			}
-			food = 30
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid_empire = yes }
-				owner = { has_ascension_perk = ap_plentiful_traditions_vast_slave_procreation }
-				OR = {
-					has_building = building_plentiful_traditions_advanced_slave_processing
-					has_building = building_slave_processing
-					has_building = building_avb_slave_processing_2
-				}
-			}
-			minerals = 30
 		}
 	}
 
@@ -611,6 +488,7 @@ building_avb_clone_vats_2 = {
 		trigger = {
 			OR = {
 				has_building = building_robot_assembly_plant
+				has_building = building_avb_robot_assembly_plant_2
 				AND = {
 					exists = assembling_species
 					assembling_species = { is_robotic = yes }
@@ -679,72 +557,10 @@ building_avb_toxic_bath_hive_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			trigger = {
-				has_z_expanded_mod = no
-			}
-			minerals = @avb_a2_minerals
+			minerals = @avb_b2_minerals
 		}
 		upkeep = {
-			trigger = {
-				has_z_expanded_mod = no
-			}
-			energy = @avb_a2_upkeep
-		}
-		cost = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					is_lithoid_empire = yes
-				}
-			}
-			minerals = @avb_a2_minerals
-		}
-		cost = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					NOT = { has_valid_civic = civic_integrated_bioarchitecture }
-					is_lithoid_empire = no
-				}
-			}
-			minerals = @avb_a2_hive_minerals
-			food = @avb_a2_hive_food
-		}
-		cost = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					has_valid_civic = civic_integrated_bioarchitecture
-					is_lithoid_empire = no
-				}
-			}
-			food = @avb_a2_minerals
-		}
-		upkeep = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					is_lithoid_empire = no
-				}
-			}
-			energy = @avb_a2_upkeep_hive
-			food = @avb_a2_upkeep_food
-		}
-		upkeep = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					is_lithoid_empire = yes
-					NOT = { has_valid_civic = civic_integrated_bioarchitecture }
-				}
-			}
-			energy = @avb_a2_upkeep_hive
-			minerals = @avb_a2_upkeep_food
+			energy = @avb_b2_upkeep
 		}
 	}
 }
@@ -886,6 +702,7 @@ building_avb_posthumous_employment_center_2 = {
 		trigger = {
 			OR = {
 				has_building = building_robot_assembly_plant
+				has_building = building_avb_robot_assembly_plant_2
 				AND = {
 					exists = assembling_species
 					assembling_species = { is_robotic = yes }
@@ -958,28 +775,6 @@ building_avb_clone_army_clone_vat_2 = {
 		planet_pop_assembly_organic_add = 2
 	}
 
-	#EC: Classic/Bug \/
-	triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner = {
-				OR = {
-					AND = {
-						has_global_flag = ethic_civic_classic_active
-						has_civic = civic_symbiotic_race
-					}
-					AND = {
-						has_global_flag = bug_branch_active
-						is_bugged_evolutionary_architects = yes
-					}
-				}
-            }
-        }
-        modifier = {
-            planet_jobs_unity_produces_mult = 0.1
-        }
-    }
-	#EC: Classic/Bug /\
 	
 	# Add growth from 0 to 25 depending on 'clone_pops_missing_per_vat'.
 	triggered_planet_modifier = {
@@ -1042,6 +837,7 @@ building_avb_clone_army_clone_vat_2 = {
 		trigger = {
 			OR = {
 				has_building = building_robot_assembly_plant
+				has_building = building_avb_robot_assembly_plant_2
 				AND = {
 					exists = assembling_species
 					assembling_species = { is_robotic = yes }
