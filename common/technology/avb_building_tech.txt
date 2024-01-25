@@ -93,7 +93,12 @@ tech_avb_hab_capital_3 = {
 	weight = @tier5weight3
 	
 	potential = {
-		has_ascension_perk = ap_voidborn
+		any_owned_planet = {
+			OR = {
+				is_habitat = yes
+				is_planet_class = pc_habitat
+			}
+		}
 	}
 	
 	gateway = capital

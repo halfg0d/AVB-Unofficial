@@ -703,8 +703,8 @@ building_avb_hab_capital_3 = {
 	inline_script = {
 		script = capitals/habitat/avb_habitat_capitals
 		tier = hab_t3
-		toxic_origin1 = "is_toxic_origin1 = no"
-		toxic_origin2 = "is_toxic_origin2 = no"
+	#	toxic_origin1 = "is_toxic_origin1 = no"
+	#	toxic_origin2 = "is_toxic_origin2 = no"
 	}
 	#EC: Bug /\
 }
