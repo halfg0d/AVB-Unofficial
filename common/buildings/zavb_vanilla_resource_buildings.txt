@@ -1231,57 +1231,76 @@ building_resource_silo = {
 	}
 }
 
-building_bio_reactor = {
-	base_buildtime = 240
-	icon = building_bio_reactor
-
+building_bio_reactor_2 = {
+	base_buildtime = @b2_time
+	can_build = no
 	category = resource
-	
+
+	allow = {
+		has_upgraded_capital = yes
+	}
+
 	potential = {
-		OR = {
-			has_z_expanded_mod = no
-			AND = {
-				has_z_expanded_mod = yes
-				NOT = { has_planet_flag = planetary_station }
-			}
-		}
 		exists = owner
-		owner = {
-			OR = {
-				is_machine_empire = yes
-				is_mechanical_empire = yes
-				is_lithoid_empire = yes
+		NOR = {
+			is_planet_class = pc_machine
+			has_modifier = resort_colony
+			has_modifier = crucible_colony
+		}
+
+		OR = {
+			owner = {
+				is_ai = no
 			}
-			OR = {
-				owner = { is_ai = no }
-				owner = { country_uses_food = no }
+			has_any_farming_district_or_buildings = yes
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = {
+				is_ai = yes
+				country_uses_food = no
+			}
+			is_planet_class = pc_machine
+			has_modifier = resort_colony
+			has_modifier = crucible_colony
+			AND = {
+				owner = {
+					is_ai = yes
+				}
+				has_any_farming_district_or_buildings = no
 			}
 		}
 	}
-	
+
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = 200
-		}
-		produces = {
-			trigger = {
-				exists = owner
-				owner = { NOT = { has_deficit = food } }
-			}
-			energy = 20
+			minerals = @b2_minerals
 		}
 		upkeep = {
-			food = 25
+			food = @b2_upkeep
 		}
-		inline_script = "resources/avb_bioreactor_production"
 	}
-	
+
+	inline_script = {
+		script = jobs/farmers_add
+		FARMER_AMOUNT = 2
+		ANGLER_AMOUNT = 2
+	}
+
+	planet_modifier = {
+		planet_farmers_food_produces_add = -3
+		planet_farmers_energy_produces_add = 2
+		planet_farmers_exotic_gases_produces_add = 0.1
+	}
+
 	prerequisites = {
-		"tech_bio_reactor"
+		tech_bio_reactor_2
 	}
-	
 	upgrades = {
-		"building_avb_bio_reactor_2"
+		building_avb_bio_reactor_3
 	}
 }
