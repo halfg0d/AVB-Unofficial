@@ -1,0 +1,57 @@
+planet_modifier = {
+	planet_jobs_unity_produces_mult = $modifier$
+}
+
+#Jobs
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = no }
+	}
+	job_death_chronicler_add = $chronicle$
+}
+triggered_desc = {
+	trigger = {
+		exists = owner
+		owner = { is_gestalt = no }
+	}
+	text = "job_death_chronicler_effect_desc"
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = yes }
+	}
+	job_chronicle_drone_add = $chronicle$
+}
+triggered_desc = {
+	trigger = {
+		exists = owner
+		owner = { is_gestalt = yes }
+	}
+	text = "job_chronicle_drone_effect_desc"
+}
+
+#Tomb/Relic worlds
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = no }
+		OR = {
+			is_planet_class = pc_nuked
+			is_planet_class = pc_relic
+		}
+	}
+	pop_government_ethic_attraction = 0.20
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = yes }
+		OR = {
+			is_planet_class = pc_nuked
+			is_planet_class = pc_relic
+		}
+	}
+	planet_crime_no_happiness_add = -20
+}

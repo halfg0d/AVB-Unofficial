@@ -57,8 +57,8 @@ building_avb_paragon_memory_vaults_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = 1200
-			rare_crystals = 400
+			minerals = @avb_b3_minerals
+			rare_crystals = @avb_b3_rare_cost
 		}
 		produces = {
 			trigger = {
@@ -75,8 +75,8 @@ building_avb_paragon_memory_vaults_2 = {
 			multiplier = planet.paragon_memory_vault
 		}
 		upkeep = {
-			energy = 6
-			rare_crystals = 2
+			energy = @avb_b3_upkeep
+			rare_crystals = @avb_b3_rare_upkeep
 		}
 	}
 

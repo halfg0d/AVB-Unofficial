@@ -2,7 +2,7 @@
 # Government buildings
 #############
 building_avb_noble_estates_2 = {
-	base_buildtime = @avb_g4_time
+	base_buildtime = @avb_b3_time
 	can_build = no
 
 	category = government
@@ -15,31 +15,12 @@ building_avb_noble_estates_2 = {
 				owner = { is_ai = no }
 			}
 		}
-		owner = {
-			OR = {
-				has_valid_civic = civic_aristocratic_elite
-				AND = {
-					has_global_flag = ethic_civic_classic_active
-					has_civic = civic_harmonious_hierarchy
-				}
-				AND = {
-					has_global_flag = bug_branch_active
-					is_bugged_governmental_elitist = yes
-				}
-			}
-		}
+		owner = { has_valid_civic = civic_aristocratic_elite }
 		NOT = { has_modifier = slave_colony }
-		OR = { #zExpanded
-			has_z_expanded_mod = no
-			AND = {
-				has_z_expanded_mod = yes
-				NOT = { has_planet_flag = planetary_station }
-			}
-		}
 	}
 	
 	allow = {
-		has_upgraded_capital_4 = yes
+		has_fully_upgraded_capital = yes
 		if = {
 			limit = {
 				exists = orbital_defence
@@ -58,23 +39,7 @@ building_avb_noble_estates_2 = {
 	destroy_trigger = {
 		exists = owner
 		NOT = {
-			owner = {
-				OR = {
-					has_valid_civic = civic_aristocratic_elite
-					AND = {
-						has_global_flag = ethic_civic_classic_active
-						has_civic = civic_harmonious_hierarchy
-					}
-					AND = {
-						has_global_flag = bug_branch_active
-						is_bugged_governmental_elitist = yes
-					}
-					AND = {
-						has_z_expanded_mod = yes
-						is_aristocratic_empire = { allow_invalid = yes }
-					}
-				}
-			}
+			owner = { has_civic = civic_aristocratic_elite }
 		}
 	}
 	
@@ -86,10 +51,10 @@ building_avb_noble_estates_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_g4_minerals
+			minerals = @avb_b3_minerals
 		}			
 		upkeep = {
-			energy = @avb_g4_upkeep
+			energy = @avb_b3_upkeep
 		}
 	}
 	
@@ -100,96 +65,10 @@ building_avb_noble_estates_2 = {
 	prerequisites = {
 		"tech_avb_noble_estates_2"
 	}
-	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_global_flag = ethic_civic_classic_active
-				has_valid_civic = civic_harmious_hierarchy
-			}
-		}
-		modifier = {
-			job_noble_per_pop = 0.03
-			planet_housing_add = 2
-			pop_government_ethic_attraction = 0.2
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				AND = {
-					has_global_flag = ethic_civic_classic_active
-					has_civic = civic_aristocratic_elite
-					is_anglers_empire = no
-				}
-			}
-		}
-		modifier = {
-			planet_housing_add = 1
-			job_farmer_add = 1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				AND = {
-					has_global_flag = ethic_civic_classic_active
-					has_civic = civic_aristocratic_elite
-					is_anglers_empire = yes
-				}
-			}
-		}
-		modifier = {
-			planet_housing_add = 1
-			job_angler_add = 1
-		}
-	}
-	#EC: Bug \/
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = bug_branch_active
-			exists = owner
-			owner = {
-				has_valid_civic = civic_bugged_peerage_assembly
-			}
-		}
-		job_noble_add = 1
-		planet_housing_add = 1
-	}
-	#EC: Bug /\
-	#zExpanded \/
-	triggered_planet_modifier = {
-		potential = {
-			has_z_expanded_mod = yes
-		}
-		modifier = {
-			planet_housing_add = 6
-			planet_amenities_add = 15
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_z_expanded_mod = yes
-			exists = owner
-			owner = { is_ai = yes }
-			NOT = { has_building = building_noble_estates }
-			NOT = { has_building = building_palatial_estates }
-		}
-		modifier = {
-			job_starnet_spice_melange_farmer_add = 1
-			job_starnet_spice_melange_antifarmer_add = -1
-		}
-	}
-	#zExpanded /\
 }
 
 building_avb_slave_processing_2 = {
-	base_buildtime = @avb_g4_time
+	base_buildtime = @avb_b3_time
 	can_build = no
 
 	category = government
@@ -230,51 +109,33 @@ building_avb_slave_processing_2 = {
 	planet_modifier = {
 		planet_jobs_slave_produces_mult = 0.1
 		pop_cat_slave_political_power = -0.5
-		planet_resettlement_unemployed_mult = -0.50
+		planet_resettlement_unemployed_mult = -0.60
 	}	
 
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_g4_minerals
+			minerals = @avb_b3_minerals
 		}
 		upkeep = {
-			energy = @avb_g4_upkeep
+			energy = @avb_b3_upkeep
 		}
+	}
+	triggered_desc = {
+		text = building_slave_processing_slave_army_effect_desc
+	}
+
+	triggered_desc = {
+		text = building_slave_processing_migrate_effect_desc
 	}
 	
 	prerequisites = {
 		"tech_avb_slave_processing_2"
 	}
-	#PT \/
-	triggered_planet_modifier = {
-		potential = {
-			has_pt_mod = yes
-			exists = owner
-			owner = { has_ascension_perk = ap_plentiful_traditions_vast_slave_procreation }
-			OR = {
-				has_building = building_clone_vats
-				has_building = building_avb_clone_vats_2
-			}
-		}
-		modifier = {
-			planet_pop_assembly_organic_add = 1.5
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_pt_mod = yes
-			exists = owner
-		}
-		modifier = {
-			job_slave_enforcer_add = 5
-		}
-	}
-	#PT /\
 }
 
 building_avb_enforcement_3 = {
-	base_buildtime = @avb_g4_time
+	base_buildtime = @avb_b3_time
 
 	category = government
 	can_build = no
@@ -289,13 +150,6 @@ building_avb_enforcement_3 = {
 			NOT = { has_forbidden_jobs = enforcer }
 			NOT = { has_available_jobs = enforcer }
 		}
-		OR = {
-			has_z_expanded_mod = no
-			AND = {
-				has_z_expanded_mod = yes
-				NOT = { has_planet_flag = planetary_station }
-			}
-		}
 	}
 	
 	allow = {
@@ -308,77 +162,18 @@ building_avb_enforcement_3 = {
 	}
 		
 	planet_modifier = {
-		job_enforcer_add = @avb_g4_jobs
+		job_enforcer_add = @avb_b3_jobs
 	}
 
 	resources = {
 		category = planet_buildings
 		cost = {
-			trigger = {
-				exists = owner
-				OR = {
-					has_z_expanded_mod = no
-					AND = {
-						has_z_expanded_mod = yes
-						owner = { is_civic_plant_organic = no }
-					}
-				}
-			}
-			minerals = @avb_g4_minerals
-			volatile_motes = @avb_g4_rare_cost
-		}
-		cost = {
-			trigger = {
-				exists = owner
-				OR = {
-					has_z_expanded_mod = no
-					AND = {
-						has_z_expanded_mod = yes
-						owner = { is_civic_plant_organic = yes }
-					}
-				}
-			}
-			minerals = @avb_g4_hive_cost
-			food = @avb_g4_food_cost
-			volatile_motes = @avb_g4_rare_cost
+			minerals = @avb_b4_minerals
+			volatile_motes = @avb_b4_rare_cost
 		}
 		upkeep = {
-			trigger = {
-				exists = owner
-				OR = {
-					has_z_expanded_mod = no
-					AND = {
-						has_z_expanded_mod = yes
-						owner = { is_civic_plant_organic = yes }
-					}
-				}
-			}
-			energy = @avb_g4_hive_upkeep
-			food = @avb_g4_food_upkeep
-			volatile_motes = @avb_g4_rare_upkeep
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				OR = {
-					has_z_expanded_mod = no
-					AND = {
-						has_z_expanded_mod = yes
-						owner = { is_civic_plant_organic = no }
-					}
-				}
-			}
-			energy = @avb_g4_upkeep
-			volatile_motes = @avb_g4_rare_upkeep
-		}
-		upkeep = {
-			trigger = {
-				owner = {
-					has_global_flag = ethic_civic_classic_active
-					has_civic = civic_police_state
-				}
-			}
-			energy = 2
+			energy = @avb_b4_upkeep
+			volatile_motes = @avb_b4_rare_upkeep
 		}
 	}
 	
@@ -400,7 +195,7 @@ building_avb_enforcement_3 = {
 }
 
 building_avb_enforcement_4 = {
-	base_buildtime = @avb_g5_time
+	base_buildtime = @avb_b5_time
 
 	category = government
 	can_build = no
@@ -415,13 +210,6 @@ building_avb_enforcement_4 = {
 			NOT = { has_forbidden_jobs = enforcer }
 			NOT = { has_available_jobs = enforcer }
 		}
-		OR = {
-			has_z_expanded_mod = no
-			AND = {
-				has_z_expanded_mod = yes
-				NOT = { has_planet_flag = planetary_station }
-			}
-		}
 	}
 	
 	allow = {
@@ -434,77 +222,18 @@ building_avb_enforcement_4 = {
 	}
 		
 	planet_modifier = {
-		job_enforcer_add = @avb_g5_jobs
+		job_enforcer_add = @avb_b5_jobs
 	}
 
 	resources = {
 		category = planet_buildings
 		cost = {
-			trigger = {
-				exists = owner
-				OR = {
-					has_z_expanded_mod = no
-					AND = {
-						has_z_expanded_mod = yes
-						owner = { is_civic_plant_organic = no }
-					}
-				}
-			}
-			minerals = @avb_g5_minerals
-			volatile_motes = @avb_g5_rare_cost
-		}
-		cost = {
-			trigger = {
-				exists = owner
-				OR = {
-					has_z_expanded_mod = no
-					AND = {
-						has_z_expanded_mod = yes
-						owner = { is_civic_plant_organic = yes }
-					}
-				}
-			}
-			minerals = @avb_g5_hive_cost
-			food = @avb_g5_food_cost
-			volatile_motes = @avb_g5_rare_cost
+			minerals = @avb_b5_minerals
+			volatile_motes = @avb_b5_rare_cost
 		}
 		upkeep = {
-			trigger = {
-				exists = owner
-				OR = {
-					has_z_expanded_mod = no
-					AND = {
-						has_z_expanded_mod = yes
-						owner = { is_civic_plant_organic = yes }
-					}
-				}
-			}
-			energy = @avb_g5_hive_upkeep
-			food = @avb_g5_food_upkeep
-			volatile_motes = @avb_g5_rare_upkeep
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				OR = {
-					has_z_expanded_mod = no
-					AND = {
-						has_z_expanded_mod = yes
-						owner = { is_civic_plant_organic = no }
-					}
-				}
-			}
-			energy = @avb_g5_upkeep
-			volatile_motes = @avb_g5_rare_upkeep
-		}
-		upkeep = {
-			trigger = {
-				owner = {
-					has_global_flag = ethic_civic_classic_active
-					has_civic = civic_police_state
-				}
-			}
-			energy = 2
+			energy = @avb_b5_upkeep
+			volatile_motes = @avb_b5_rare_upkeep
 		}
 	}
 	
@@ -522,7 +251,7 @@ building_avb_enforcement_4 = {
 }
 
 building_avb_sentinel_posts_2 = {
-	base_buildtime = @avb_g4_time 
+	base_buildtime = @avb_b3_time 
 	can_build = no
 
 	category = government
@@ -559,75 +288,10 @@ building_avb_sentinel_posts_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_g4_minerals
+			minerals = @avb_b2_minerals
 		}
 		upkeep = {
-			energy = @avb_g4_upkeep
-		}
-		cost = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					OR = {
-						is_lithoid_empire = yes
-						is_machine_empire = yes
-					}
-				}
-			}
-			minerals = @avb_g4_minerals
-		}
-		cost = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					NOT = { has_valid_civic = civic_integrated_bioarchitecture }
-					is_lithoid_empire = no
-					is_machine_empire = no
-				}
-			}
-			minerals = @avb_g4_hive_cost
-			food = @avb_g4_food_cost
-		}
-		cost = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					has_valid_civic = civic_integrated_bioarchitecture
-					is_lithoid_empire = no
-					is_machine_empire = no
-				}
-			}
-			food = @avb_g4_hive_cost
-		}
-		upkeep = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					is_lithoid_empire = no
-					is_machine_empire = no
-				}
-			}
-			energy = @avb_g4_hive_upkeep
-			food = @avb_g4_food_upkeep
-		}
-		upkeep = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					OR = {
-						is_lithoid_empire = yes
-						is_machine_empire = yes
-					}
-					NOT = { has_valid_civic = civic_integrated_bioarchitecture }
-				}
-			}
-			energy = @avb_g4_hive_upkeep
-			minerals = @avb_g4_food_upkeep
+			energy = @avb_b2_upkeep
 		}
 	}
 	
@@ -649,7 +313,7 @@ building_avb_sentinel_posts_2 = {
 #############
 
 building_avb_psi_corps_2 = {
-	base_buildtime = @avb_g4_time
+	base_buildtime = @avb_b3_time
 	can_build = no
 
 	category = government
@@ -661,7 +325,7 @@ building_avb_psi_corps_2 = {
 		NOT = { has_modifier = slave_colony }
 	}
 	allow = {
-		has_upgraded_capital_5 = yes
+		has_upgraded_capital_4 = yes
 		if = {
 			limit = {
 				exists = orbital_defence
@@ -695,12 +359,12 @@ building_avb_psi_corps_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_g4_minerals
-			sr_zro = @avb_g4_rare_cost
+			minerals = @avb_b3_minerals
+			sr_zro = @avb_b3_rare_cost
 		}
 		upkeep = {
-			energy = @avb_g4_upkeep
-			sr_zro = @avb_g4_rare_upkeep
+			energy = @avb_b3_upkeep
+			sr_zro = @avb_b3_rare_upkeep
 		}
 	}
 	
@@ -714,7 +378,7 @@ building_avb_psi_corps_2 = {
 }
 
 building_avb_psi_corps_3 = {
-	base_buildtime = @avb_g5_time
+	base_buildtime = @avb_b5_time
 	can_build = no
 
 	category = government
@@ -758,12 +422,12 @@ building_avb_psi_corps_3 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_g5_minerals
-			sr_zro = @avb_g5_rare_cost
+			minerals = @avb_b5_minerals
+			sr_zro = @avb_b5_rare_cost
 		}
 		upkeep = {
-			energy = @avb_g5_upkeep
-			sr_zro = @avb_g5_rare_upkeep
+			energy = @avb_b5_upkeep
+			sr_zro = @avb_b5_rare_upkeep
 		}
 	}
 	
@@ -832,10 +496,10 @@ building_avb_zoo_administration = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_g4_minerals
+			minerals = @avb_b3_minerals
 		}
 		upkeep = {
-			energy = @avb_g4_upkeep
+			energy = @avb_b3_upkeep
 		}
 	}
 	planet_modifier = {
