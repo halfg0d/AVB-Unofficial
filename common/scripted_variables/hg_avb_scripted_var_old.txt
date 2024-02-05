@@ -160,7 +160,7 @@
 @avb_t3_manager = 1
 @avb_t3_entrepreneur = 1
 
-@avb_t4_trader = 7
+@avb_t4_clerk1 = 7
 @avb_t4_clerk2 = 1
 @avb_t4_trader = 4
 @avb_t4_merchant2 = 1
@@ -168,7 +168,7 @@
 @avb_t4_manager = 1
 @avb_t4_entrepreneur = 1
 
-@avb_t5_trader = 8
+@avb_t5_clerk1 = 8
 @avb_t5_clerk2 = 1
 @avb_t5_trader = 5
 @avb_t5_merchant2 = 1
