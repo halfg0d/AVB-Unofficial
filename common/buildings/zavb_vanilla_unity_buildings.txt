@@ -16,10 +16,6 @@ building_bureaucratic_3 = {
 			has_make_spiritualist_perk = no
 		}
 		NOT = { has_modifier = slave_colony }
-		NAND = {
-			has_planet_flag = planetary_station
-			has_z_expanded_mod = yes
-		}
 	}
 
 	allow = {
@@ -54,10 +50,90 @@ building_bureaucratic_3 = {
 			rare_crystals = @b3_rare_upkeep
 		}
 	}
+triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_megacorp = no
+				is_worker_coop_empire = no
+			}
+		}
+		modifier = {
+			job_bureaucrat_add = @b3_jobs
+		}
+	}
 
-	inline_script = {
-		script = unity_buildings/avb_bureaucratic
-		tier = 3
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_megacorp = no
+				is_worker_coop_empire = no
+			}
+		}
+		text = job_bureaucrat_effect_desc
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner.federation
+			owner.federation = { has_federation_perk = all_the_priests_2 }
+		}
+		job_high_priest_add = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_megacorp = yes
+				is_worker_coop_empire = no
+			}
+		}
+		modifier = {
+			job_manager_add = @b3_jobs
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_megacorp = yes
+				is_worker_coop_empire = no
+			}
+		}
+		text = job_manager_effect_desc
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_worker_coop_empire = yes
+			}
+		}
+		modifier = {
+			job_steward_add = @b3_jobs
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_worker_coop_empire = yes
+			}
+		}
+		text = job_steward_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner.federation
+			owner.federation = { has_federation_perk = all_the_priests_2 }
+		}
+		text = job_high_priest_effect_desc
 	}
 
 	prerequisites = {
@@ -92,24 +168,8 @@ building_sacred_nexus = {
 					has_make_spiritualist_perk = yes
 				}
 			}
-			#EC: Classic \/
-			AND = {
-				has_global_flag = ethic_civic_classic_active
-				NOR = {
-					has_valid_civic = civic_death_cult
-					has_valid_civic = civic_death_cult_corporate
-				}
-			}
-			#EC: Classic /\
 		}
 		NOT = { has_modifier = slave_colony }
-		OR = {
-			has_z_expanded_mod = no
-			AND = {
-				has_z_expanded_mod = yes
-				NOT = { has_planet_flag = planetary_station }
-			}
-		}
 	}
 
 	allow = {
@@ -181,50 +241,49 @@ building_sacred_nexus = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_megacorp = yes }
+			owner = {
+				is_megacorp = yes
+				is_worker_coop_empire = no
+			}
 		}
 		modifier = {
 			job_manager_add = 3
 		}
 	}
 
-	#zExpanded \/
-	triggered_planet_modifier = {
-		potential = {
-			has_z_expanded_mod = yes
+	triggered_desc = {
+		trigger = {
 			exists = owner
 			owner = {
-				has_valid_civic = civic_private_military_companies
-			}					
+				is_megacorp = yes
+				is_worker_coop_empire = no
+			}
 		}
-		modifier = {
-			job_chaplain_add = 3
-			job_logistics_officer_add = 3
-			job_priest_add = -3
-		}
+		text = job_manager_effect_desc
 	}
 
 	triggered_planet_modifier = {
 		potential = {
-			has_z_expanded_mod = yes
 			exists = owner
 			owner = {
-				has_valid_civic = civic_machine_cult
+				is_megacorp = yes
+				is_worker_coop_empire = yes
 			}
 		}
 		modifier = {
-			job_priest_add = -@b3_jobs
-			job_tech_priest_add = @b3_jobs
+			job_steward_add = 3
 		}
 	}
-	#zExpanded /\
 
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { is_megacorp = yes }
+			owner = {
+				is_megacorp = yes
+				is_worker_coop_empire = yes
+			}
 		}
-		text = job_manager_effect_desc
+		text = job_steward_effect_desc
 	}
 
 	triggered_desc = {
@@ -251,117 +310,10 @@ building_sacred_nexus = {
 	upgrades = {
 		"building_avb_temple_4"
 	}
-	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_global_flag = ethic_civic_classic_active
-				has_civic = civic_defenders_faith
-			}
-		}
-		modifier = {
-		job_priest_add = -3
-		job_templar_add = 3
-		}
-	}
 
 	triggered_desc = {
 		text = job_priest_effect_desc
 	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_global_flag = ethic_civic_classic_active
-				OR = {
-					has_civic = civic_imperial_cult
-					has_civic = civic_divine_council
-					has_civic = civic_spiritual_democracy
-					has_civic = civic_exalted_priesthood
-				}
-			}
-		}
-		modifier = {
-			job_high_priest_add = 1
-		}
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				has_global_flag = ethic_civic_classic_active
-				has_civic = civic_defenders_faith
-			}
-		}
-		text = job_templar_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				has_global_flag = ethic_civic_classic_active
-				OR = {
-					has_civic = civic_imperial_cult
-					has_civic = civic_divine_council
-					has_civic = civic_spiritual_democracy
-					has_civic = civic_exalted_priesthood
-				}
-			}
-		}
-		text = job_high_priest_effect_desc
-	}
-	#EC: Bug \/
-	inline_script = {
-		script = "buildings/bugged_temple_effects"
-		BUGGED_TEMPLARS = 3
-		HIGH_PRIEST = 1
-	}
-	#EC: Bug /\
-	#PT \/
-	triggered_planet_modifier = {
-		potential = {
-			has_pt_mod = yes
-			exists = owner.federation
-			owner.federation = { has_federation_perk = all_the_priests_2 }
-			owner = {
-				has_tradition = tr_plentiful_aspiration_3
-			}
-		}
-		modifier = {
-			job_priest_add = 3
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_pt_mod = yes
-			exists = owner
-			owner = { is_megacorp = no }
-			owner = {
-				has_tradition = tr_plentiful_aspiration_3
-			}
-		}
-		modifier = {
-			job_priest_add = 3
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_pt_mod = yes
-			exists = owner
-			owner = { is_megacorp = yes }
-			owner = {
-				has_tradition = tr_plentiful_aspiration_3
-			}
-		}
-		modifier = {
-			job_manager_add = 3
-		}
-	}
-	#PT /\
 }
 # Hive Minds
 building_hive_confluence = {
@@ -374,13 +326,6 @@ building_hive_confluence = {
 		exists = owner
 		owner = {
 			is_hive_empire = yes
-		}
-		OR = {
-			has_z_expanded_mod = no
-			AND = {
-				has_z_expanded_mod = yes
-				NOT = { has_planet_flag = planetary_station }
-			}
 		}
 	}
 
@@ -402,22 +347,15 @@ building_hive_confluence = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			trigger = {
-				has_z_expanded_mod = no
-			}
 			minerals = @b3_minerals
 			exotic_gases = @b3_rare_cost
 		}
 		upkeep = {
-			trigger = {
-				has_z_expanded_mod = no
-			}
 			energy = @b3_upkeep
 			exotic_gases = @b3_rare_upkeep
 		}
 		upkeep = {
 			trigger = {
-				has_z_expanded_mod = no
 				exists = owner
 				owner = {
 					has_edict = synaptic_reinforcement
@@ -425,123 +363,11 @@ building_hive_confluence = {
 			}
 			energy = 2
 		}
-		cost = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					is_lithoid_empire = yes
-				}
-			}
-			minerals = @b3_minerals
-			exotic_gases = @b3_rare_cost
-		}
-		cost = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					NOT = { has_valid_civic = civic_integrated_bioarchitecture }
-					is_lithoid_empire = no
-				}
-			}
-			minerals = @b3_hive_minerals
-			food = @b3_hive_food
-			exotic_gases = @b3_rare_cost
-		}
-		cost = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					has_valid_civic = civic_integrated_bioarchitecture
-					is_lithoid_empire = no
-				}
-			}
-			food = @b3_minerals
-			exotic_gases = @b3_rare_cost
-		}
-		upkeep = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					is_lithoid_empire = no
-					NOT = { has_valid_civic = civic_integrated_bioarchitecture }
-				}
-			}
-			energy = @b3_upkeep_hive
-			food = @b3_upkeep_food
-			exotic_gases = @b3_rare_upkeep
-		}
-		upkeep = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					is_lithoid_empire = yes
-					NOT = { has_valid_civic = civic_integrated_bioarchitecture }
-				}
-			}
-			energy = @b3_upkeep
-			exotic_gases = @b3_rare_upkeep
-		}
-		upkeep = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					is_lithoid_empire = no
-					has_edict = synaptic_reinforcement
-				}
-			}
-			energy = 1
-			food = 1
-		}
-		upkeep = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					is_lithoid_empire = yes
-					has_edict = synaptic_reinforcement
-				}
-			}
-			energy = 1
-			minerals = 1
-		}
 	}
 
 	planet_modifier = {
 		job_synapse_drone_add = @b3_jobs
 	}
-	#PT \/
-	triggered_planet_modifier = {
-		potential = {
-			has_pt_mod = yes
-			exists = owner
-			owner = {
-				has_tradition = tr_plentiful_aspiration_3
-			}
-		}
-		modifier = {
-			job_synapse_drone_add = @b3_jobs
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_pt_mod = yes
-			exists = owner
-			owner = { is_hive_empire = yes }
-			owner = {
-				has_tradition = tr_plentiful_aspiration_3
-			}
-		}
-		modifier = {
-			job_synapse_drone_add = 4
-		}
-	}
-	#PT /\
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -603,14 +429,6 @@ building_system_conflux = {
 				is_servitor_empire = yes
 			}
 		}
-
-		OR = {
-			has_z_expanded_mod = no
-			AND = {
-				has_z_expanded_mod = yes
-				NOT = { has_planet_flag = planetary_station }
-			}
-		}
 	}
 
 	allow = {
@@ -668,21 +486,6 @@ building_system_conflux = {
 	upgrades = {
 		building_avb_machine_unity_4
 	}
-	#PT \/
-	triggered_planet_modifier = {
-		potential = {
-			has_pt_mod = yes
-			exists = owner
-			owner = { is_machine_empire = yes }
-			owner = {
-				has_tradition = tr_plentiful_aspiration_3
-			}
-		}
-		modifier = {
-			job_coordinator_add = 4
-		}
-	}
-	#PT /\
 }
 
 # Servitors
@@ -693,36 +496,12 @@ building_organic_paradise = {
 	category = unity
 	potential = {
 		exists = owner
-		owner = {
-			OR = {
-				has_valid_civic = civic_machine_servitor
-				AND = {
-					has_z_expanded_mod = yes
-					OR = {
-						is_servitor_empire = yes
-						has_valid_civic = civic_machine_consciousness
-					}
-				}
-			}
-		}
-		OR = {
-			has_z_expanded_mod = no
-			AND = {
-				has_z_expanded_mod = yes
-				NOT = { has_planet_flag = planetary_station }
-			}
-		}
+		owner = { has_valid_civic = civic_machine_servitor }
 	}
 
 	destroy_trigger = {
 		exists = owner
-		owner = {
-			NOR = {
-				has_valid_civic = civic_machine_servitor
-				is_servitor_empire = yes
-				has_valid_civic = civic_machine_consciousness
-			}
-		}
+		NOT = { owner = { has_valid_civic = civic_machine_servitor } }
 	}
 
 	convert_to = {
@@ -735,31 +514,6 @@ building_organic_paradise = {
 		job_artisan_drone_add = 2
 		job_maintenance_drone_add = 1
 	}
-	#zExpanded \/
-	triggered_planet_modifier = {
-		potential = {
-			has_z_expanded_mod = yes
-			exists = owner
-			owner = {
-				is_servitor_empire = yes
-			}
-		}
-		modifier = {
-			job_servitor_caretaker_drone_add = 1
-			job_maintenance_drone_add = -1
-		}
-	}
-	triggered_desc = {
-		trigger = {
-			has_z_expanded_mod = yes
-			exists = owner
-			owner = {
-				is_servitor_empire = yes
-			}
-		}
-		text = job_servitor_caretaker_drone_effect_desc
-	}
-	#zExpanded /\
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -787,13 +541,7 @@ building_organic_paradise = {
 	prerequisites = { "tech_paradise_dome" }
 
 	show_tech_unlock_if = {
-		owner = {
-			OR = {
-				has_valid_civic = civic_machine_servitor
-				is_servitor_empire = yes 
-				has_valid_civic = civic_machine_consciousness 
-			}
-		}
+		owner = { has_valid_civic = civic_machine_servitor }
 	}
 
 	# Here we try to adress the second issue that the AI cant evaluate the pop job output of the bio trophy given the happiness trigger that was put inplace to guard against players exploiting bio trophies
@@ -927,7 +675,10 @@ building_sacrificial_temple_3 = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_megacorp = yes }
+			owner = {
+				is_megacorp = yes
+				is_worker_coop_empire = no
+			}
 		}
 		modifier = {
 			job_manager_add = 2
@@ -937,9 +688,36 @@ building_sacrificial_temple_3 = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { is_megacorp = yes }
+			owner = {
+				is_megacorp = yes
+				is_worker_coop_empire = no
+			}
 		}
 		text = job_manager_effect_desc
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_megacorp = yes
+				is_worker_coop_empire = yes
+			}
+		}
+		modifier = {
+			job_steward_add = 2
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_megacorp = yes
+				is_worker_coop_empire = yes
+			}
+		}
+		text = job_steward_effect_desc
 	}
 
 	triggered_planet_modifier = {
@@ -965,63 +743,6 @@ building_sacrificial_temple_3 = {
 	show_tech_unlock_if = {
 		is_death_cult_empire = yes
 	}
-	#EC: Bug \/
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = bug_branch_active
-			exists = owner
-			owner = {
-				is_bugged_governmental_spiritualist = yes
-			}
-		}
-		modifier = {
-			job_high_priest_add = 2
-		}
-	}
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_bugged_governmental_spiritualist = yes
-			}
-		}
-		text = job_high_priest_effect_desc
-	}
-	inline_script = { # Bug Branch
-		script = "buildings/bugged_temple_effects"
-		BUGGED_TEMPLARS = 3
-		HIGH_PRIEST = 1
-	}
-	#EC: Bug /\
-	#PT \/
-	triggered_planet_modifier = {
-		potential = {
-			has_pt_mod = yes
-			exists = owner
-			owner = { is_megacorp = no }
-			owner = {
-				has_tradition = tr_plentiful_aspiration_3
-			}
-		}
-		modifier = {
-			job_death_priest_add = 1
-			job_mortal_initiate_add = 1
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_pt_mod = yes
-			exists = owner
-			owner = { is_megacorp = yes }
-			owner = {
-				has_tradition = tr_plentiful_aspiration_3
-			}
-		}
-		modifier = {
-			job_manager_add = 2
-		}
-	}
-	#PT /\
 }
 
 ####
@@ -1043,13 +764,6 @@ building_hypercomms_forum = {
 				is_gestalt = yes
 				is_megacorp = yes
 				is_memorialist_empire = yes
-			}
-		}
-		OR = {
-			has_z_expanded_mod = no
-			AND = {
-				has_z_expanded_mod = yes
-				NOT = { has_planet_flag = planetary_station }
 			}
 		}
 	}
@@ -1094,17 +808,6 @@ building_hypercomms_forum = {
 	planet_modifier = {
 		planet_jobs_unity_produces_mult = 0.15
 		job_culture_worker_add = @b3_jobs
-	}
-	#zExpanded
-	triggered_planet_modifier = {
-		potential = {
-			has_z_expanded_mod = yes
-			exists = owner
-			owner = { has_valid_civic = civic_ethical_hedonism }
-		}
-		modifier = {
-			job_culture_worker_add = 3
-		}
 	}
 	triggered_desc = {
 		text = building_hypercomms_forum_effect
@@ -1220,13 +923,6 @@ building_simulation_3 = {
 			is_machine_empire = yes
 			is_memorialist_empire = no
 		}
-		OR = {
-			has_z_expanded_mod = no
-			AND = {
-				has_z_expanded_mod = yes
-				NOT = { has_planet_flag = planetary_station }
-			}
-		}
 	}
 
 	allow = {
@@ -1306,13 +1002,6 @@ building_sensorium_3 = {
 		owner = {
 			is_hive_empire = yes
 			is_memorialist_empire = no
-		}
-		OR = {
-			has_z_expanded_mod = no
-			AND = {
-				has_z_expanded_mod = yes
-				NOT = { has_planet_flag = planetary_station }
-			}
 		}
 	}
 
@@ -1482,20 +1171,6 @@ building_galactic_memorial_3 = {
 		}
 		pop_government_ethic_attraction = 0.20
 	}
-	
-	#Tomb/Relic worlds with z Expanded
-	triggered_planet_modifier = {
-		potential = {
-			has_z_expanded_mod = yes
-			exists = owner
-			owner = { is_gestalt = no }
-			OR = {
-				is_planet_class = pc_nuked
-				is_planet_class = pc_relic
-			}
-		}
-		planet_jobs_unity_produces_mult = 0.20
-	}
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -1507,6 +1182,7 @@ building_galactic_memorial_3 = {
 		}
 		planet_crime_no_happiness_add = -20
 	}
+
 
 	show_tech_unlock_if = {
 		is_memorialist_empire = yes

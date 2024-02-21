@@ -20,34 +20,9 @@ building_research_lab_3 = {
 		}
 	}
 	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = no }
-		}
-		modifier = {
-			job_researcher_add = @b3_jobs
-		}
-	}
-	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_hive_empire = yes }
-		}
-		modifier = {
-			job_brain_drone_add = @b3_jobs
-		}
-	}
-	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-		}
-		modifier = {
-			job_calculator_add = @b3_jobs
-		}
+	inline_script = {
+		script = jobs/researchers_add
+		AMOUNT = @b3_jobs
 	}
 
 	triggered_planet_modifier = {
@@ -108,30 +83,6 @@ building_research_lab_3 = {
 		"tech_basic_science_lab_3"
 	}
 	
-	triggered_desc = {
-		trigger = { 
-			exists = owner
-			owner = { is_gestalt = no } 
-		}
-		text = job_researcher_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = { 
-			exists = owner
-			owner = { is_hive_empire = yes } 
-		}
-		text = job_brain_drone_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = { 
-			exists = owner
-			owner = { is_machine_empire = yes } 
-		}
-		text = job_calculator_effect_desc
-	}	
-	
 	upgrades = {
 		"building_avb_research_lab_4"
 	}
@@ -140,7 +91,9 @@ building_research_lab_3 = {
 #
 building_institute = {
 	base_buildtime = @b2_time
-	base_cap_amount = 1
+	empire_limit = {
+		base = 1
+	}
 
 	category = research
 
@@ -172,19 +125,6 @@ building_institute = {
 		has_major_upgraded_capital = yes
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_global_flag = ethic_civic_classic_active
-				has_valid_civic = civic_innovative_economy
-			}
-		}
-		modifier = {
-			planet_jobs_unity_produces_mult = 0.1
-			planet_housing_add = 3
-		}
-	}
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -197,25 +137,14 @@ building_institute = {
 		}
 	}
 	
+	country_modifier = {
+		country_scientist_cap_add = 1
+		all_technology_research_speed = 0.05
+	}
+
 	planet_modifier = {
-		planet_researchers_produces_mult = 0.15
 		job_head_researcher_add = 1
 	}
-	#EC: Bug \/
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = bug_branch_active
-			exists = owner
-			owner = {
-				has_civic = civic_bugged_research_cooperatives
-			}
-		}
-		modifier = {
-			planet_jobs_unity_produces_mult = 0.05
-
-		}
-	}
-	#EC: Bug /\
 	prerequisites = {
 		"tech_global_research_initiative"
 	}
@@ -251,7 +180,9 @@ building_institute = {
 #
 building_supercomputer = {
 	base_buildtime = @b2_time
-	base_cap_amount = 1
+	empire_limit = {
+		base = 1
+	}
 	icon = building_institute
 
 	category = research
@@ -268,14 +199,6 @@ building_supercomputer = {
 
 	allow = {
 		has_major_upgraded_capital = yes
-		OR = {
-			owner = { is_ai = no }
-			planet_resource_compare = {
-				resource = physics_research
-				value > 60
-			}
-			has_designation = col_research
-		}
 	}
 	
 	destroy_trigger = {
@@ -302,49 +225,19 @@ building_supercomputer = {
 		}
 	}
 	
-	planet_modifier = {
-		planet_researchers_produces_mult = 0.15
+	country_modifier = {
+		country_scientist_cap_add = 1
+		all_technology_research_speed = 0.05
 	}
 	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_hive_empire = yes }
-		}
-		modifier = {
-			job_brain_drone_add = 1
-		}
-	}
-	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-		}
-		modifier = {	
-			job_calculator_add = 1
-		}
+	inline_script = {
+		script = jobs/researchers_add
+		AMOUNT = 2
 	}
 	
 	prerequisites = {
 		"tech_global_research_initiative"
 	}
-
-	triggered_desc = {
-		trigger = { 
-			exists = owner
-			owner = { is_hive_empire = yes } 
-		}
-		text = job_brain_drone_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = { 
-			exists = owner
-			owner = { is_machine_empire = yes } 
-		}
-		text = job_calculator_effect_desc
-	}	
 	
 	show_tech_unlock_if = { 
 		is_gestalt = yes
@@ -354,26 +247,6 @@ building_supercomputer = {
 		"building_avb_supercomputer_2"
 		"building_eutab_hypercomputing_complex"
 	}
-	#EC: Bug \/
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = bug_branch_active
-			exists = owner
-			owner = { has_civic = civic_bugged_machine_researcher }
-		}
-		modifier = {
-			job_bugged_examinatron_add = 1
-		}
-	}
-	triggered_desc = {
-		trigger = {
-			has_global_flag = bug_branch_active
-			exists = owner
-			owner = { has_civic = civic_bugged_machine_researcher }
-		}
-		text = job_bugged_examinatron_effect_desc
-	}
-	#EC: Bug /\
 	ai_resource_production = {
 		trigger = {
 			planet_resource_compare = {
