@@ -10,6 +10,7 @@ avb_colonies_scaling = { # counting colonies and adding as 0.1x
 		}
 		mode = add
 	}
+	mult = 0.1
 	min = 1
 }
 zoo_curator_trade_output = {

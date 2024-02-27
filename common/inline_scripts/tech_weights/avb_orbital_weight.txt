@@ -33,4 +33,12 @@ modifier = {
 		}
 		count > 1
 	}
-}	
+}
+modifier = {
+	factor = 0
+	NOT = {
+		any_owned_planet = {
+			avb_has_orbital_ring = no
+		}
+	}
+}

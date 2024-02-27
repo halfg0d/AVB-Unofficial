@@ -1,3 +1,9 @@
+avb_has_orbital_ring = {
+	exists = planet
+	planet = {
+		exists = orbital_defence
+	}
+}
 has_any_orb_flag = {
 	OR = {
 		has_planet_flag = avb_orb_robot_assembly_1
@@ -185,6 +191,64 @@ is_building_similar_to_ranger = {
 					#AVB
 					has_building = building_avb_ranger_lodge_2
 				}
+			}
+		}
+	}
+}
+orb_foundry_active = {
+	OR = {
+		#Vanilla
+		has_active_building = building_foundry_1
+		has_active_building = building_foundry_2
+		has_active_building = building_foundry_3
+		#AVB
+		has_active_building = building_avb_foundry_4
+		has_active_building = building_avb_foundry_5
+		has_active_building = building_avb_foundry_6
+	}
+}
+is_building_similar_to_foundry = {
+	planet = {
+		custom_tooltip = {
+			fail_text = "avb_orb_is_building_similar_to_foundry_fail"
+			OR = {
+				#Vanilla
+				has_building = building_foundry_1
+				has_building = building_foundry_2
+				has_building = building_foundry_3
+				#AVB
+				has_building = building_avb_foundry_4
+				has_building = building_avb_foundry_5
+				has_building = building_avb_foundry_6
+			}
+		}
+	}
+}
+orb_factory_active = {
+	OR = {
+		#Vanilla
+		has_active_building = building_factory_1
+		has_active_building = building_factory_2
+		has_active_building = building_factory_3
+		#AVB
+		has_active_building = building_avb_factory_4
+		has_active_building = building_avb_factory_5
+		has_active_building = building_avb_factory_6
+	}
+}
+is_building_similar_to_factory = {
+	planet = {
+		custom_tooltip = {
+			fail_text = "avb_orb_is_building_similar_to_factory_fail"
+			OR = {
+				#Vanilla
+				has_building = building_factory_1
+				has_building = building_factory_2
+				has_building = building_factory_3
+				#AVB
+				has_building = building_avb_factory_4
+				has_building = building_avb_factory_5
+				has_building = building_avb_factory_6
 			}
 		}
 	}

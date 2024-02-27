@@ -1,7 +1,7 @@
 ###			###
 ###  Tier 1	###
 ###			###
-triggered_country_modifier = {
+triggered_planet_modifier = {
 	potential = {
 		exists = planet
 		planet = {
@@ -15,7 +15,7 @@ triggered_country_modifier = {
 ###			###
 ###  Tier 2	###
 ###			###
-triggered_country_modifier = {
+triggered_planet_modifier = {
 	potential = {
 		exists = planet
 		planet = {
@@ -29,7 +29,7 @@ triggered_country_modifier = {
 ###			###
 ###  Tier 3	###
 ###			###
-triggered_country_modifier = {
+triggered_planet_modifier = {
 	potential = {
 		exists = planet
 		planet = {

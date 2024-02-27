@@ -101,3 +101,10 @@ has_plentiful_tradition_mod = {
 has_clone_full_path = {
 	has_country_flag = clone_army_full_potential
 }
+has_any_organic_assembly_building = {
+	OR = {
+		has_building = building_clone_vats
+		has_building = building_clone_army_clone_vat
+		has_building = building_posthumous_employment_center
+	}
+}

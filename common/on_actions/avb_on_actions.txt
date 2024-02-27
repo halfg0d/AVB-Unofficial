@@ -24,6 +24,8 @@ on_building_upgraded = {
 		avb_orb_up.42 #t3 paradise
 		avb_orb_up.51 #t2 ranger
 		avb_orb_up.52 #t3 ranger
+		avb_orb_up.61 #t2 foundry
+		avb_orb_up.62 #t3 foundry
 	}
 }
 on_pop_assembled = {

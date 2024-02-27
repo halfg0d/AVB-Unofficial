@@ -11,7 +11,7 @@ building_avb_military_academy_2 = {
 	}
 
 	allow = {
-		has_fully_upgraded_capital = yes
+		has_upgraded_capital_4 = yes
 	}
 	
 	country_modifier = {
@@ -86,7 +86,6 @@ building_avb_dread_encampment_2 = {
 		owner = { has_valid_civic = civic_reanimated_armies }
 	}
 
-	
 	allow = {
 		has_fully_upgraded_capital = yes
 	}
@@ -101,7 +100,7 @@ building_avb_dread_encampment_2 = {
 			minerals = @avb_b3_minerals
 		}			
 		upkeep = {
-			energy = @avb_b3_upkeep
+			energy = @avb_b2_upkeep
 		}
 	}
 	
@@ -156,11 +155,11 @@ building_avb_stronghold_3 = {
 		category = planet_buildings_strongholds
 		cost = {
 			minerals = @avb_b3_minerals
-			volatile_motes = 100
+			volatile_motes = @avb_b3_rare_cost
 		}			
 		upkeep = {
 			energy = @avb_b3_upkeep
-			volatile_motes = 2
+			volatile_motes = @avb_b3_rare_upkeep
 		}
 	}
 	
@@ -230,11 +229,11 @@ building_avb_stronghold_4 = {
 		category = planet_buildings_strongholds
 		cost = {
 			minerals = @avb_b4_minerals
-			volatile_motes = 150
+			volatile_motes = @avb_b4_rare_cost
 		}			
 		upkeep = {
 			energy = @avb_b4_upkeep
-			volatile_motes = 3
+			volatile_motes = @avb_b4_rare_upkeep
 		}
 	}
 	
@@ -298,12 +297,12 @@ building_avb_stronghold_5 = {
 	resources = {
 		category = planet_buildings_strongholds
 		cost = {
-			minerals = @avb_b4_minerals
-			volatile_motes = 200
+			minerals = @avb_b5_minerals
+			volatile_motes = @avb_b5_rare_cost
 		}			
 		upkeep = {
-			energy = @avb_b4_upkeep
-			volatile_motes = 5
+			energy = @avb_b5_upkeep
+			volatile_motes = @avb_b5_rare_upkeep
 		}
 	}
 	
@@ -357,10 +356,13 @@ building_avb_planetary_shield_generator_2 = {
 		}
 	}
 	
-	
 	destroy_trigger = {
 		exists = owner
 		owner = { is_ai = yes }
+		is_capital = no
+		solar_system = { is_bottleneck_system = no }
+		num_buildings = { type = building_stronghold value < 1 }
+		num_buildings = { type = building_fortress value < 1 }
 	}
 	
 	upgrades = {
@@ -375,11 +377,11 @@ building_avb_planetary_shield_generator_2 = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b4_minerals
-			exotic_gases = 50
+			exotic_gases = @avb_b4_rare_cost
 		}			
 		upkeep = {
 			energy = @avb_b4_upkeep
-			exotic_gases = 4
+			exotic_gases = @avb_b4_rare_upkeep
 		}
 	}
 	prerequisites = {
@@ -432,13 +434,13 @@ building_avb_planetary_shield_generator_3 = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b5_minerals
-			exotic_gases = 200
-			rare_crystals = 100
+			exotic_gases = @avb_b5_rare_cost
+			rare_crystals = @avb_b4_rare_cost
 		}			
 		upkeep = {
 			energy = @avb_b5_upkeep
-			exotic_gases = 12
-			rare_crystals = 4
+			exotic_gases = @avb_b5_rare_upkeep
+			rare_crystals = @avb_b4_rare_upkeep
 		}
 	}
 	prerequisites = {
@@ -487,13 +489,13 @@ building_avb_dark_matter_planetary_shield_generator = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b6_minerals
-			exotic_gases = 150
-			sr_dark_matter = 100
+			exotic_gases = @avb_b5_rare_cost
+			sr_dark_matter = @avb_b4_rare_cost
 		}			
 		upkeep = {
 			energy = @avb_b6_upkeep
-			exotic_gases = 8
-			sr_dark_matter = 4
+			exotic_gases = @avb_b5_rare_upkeep
+			sr_dark_matter = @avb_b4_rare_upkeep
 		}
 	}
 	

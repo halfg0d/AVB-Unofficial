@@ -2,7 +2,7 @@
 # Science buildings
 #############
 building_avb_research_lab_4 = {
-	base_buildtime = @avb_r4_time
+	base_buildtime = @avb_b4_time
 	can_build = no
 
 	category = research
@@ -56,12 +56,12 @@ building_avb_research_lab_4 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_r4_minerals
-			exotic_gases = @avb_r4_rare_cost
+			minerals = @avb_b4_minerals
+			exotic_gases = @avb_b4_rare_cost
 		}
 		upkeep = {
-			energy = @avb_r4_upkeep
-			exotic_gases = @avb_r4_rare_upkeep
+			energy = @avb_b4_upkeep
+			exotic_gases = @avb_b4_rare_upkeep
 		}
 		upkeep = {
 			trigger = {
@@ -87,7 +87,7 @@ building_avb_research_lab_4 = {
 }
 
 building_avb_research_lab_5 = {
-	base_buildtime = @avb_r5_time
+	base_buildtime = @avb_b5_time
 	can_build = no
 
 	category = research
@@ -140,12 +140,12 @@ building_avb_research_lab_5 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_r5_minerals
-			exotic_gases = @avb_r5_rare_cost
+			minerals = @avb_b5_minerals
+			exotic_gases = @avb_b5_rare_cost
 		}
 		upkeep = {
-			energy = @avb_r5_upkeep
-			exotic_gases = @avb_r5_rare_upkeep
+			energy = @avb_b5_upkeep
+			exotic_gases = @avb_b5_rare_upkeep
 		}
 		upkeep = {
 			trigger = {
@@ -171,7 +171,7 @@ building_avb_research_lab_5 = {
 }
 
 building_avb_research_lab_6 = {
-	base_buildtime = @avb_r6_time
+	base_buildtime = @avb_b6_time
 	can_build = no
 
 	category = research
@@ -224,12 +224,12 @@ building_avb_research_lab_6 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_r6_minerals
-			exotic_gases = @avb_r6_rare_cost
+			minerals = @avb_b6_minerals
+			exotic_gases = @avb_b6_rare_cost
 		}
 		upkeep = {
-			energy = @avb_r6_upkeep
-			exotic_gases = @avb_r6_rare_upkeep
+			energy = @avb_b6_upkeep
+			exotic_gases = @avb_b6_rare_upkeep
 		}
 		upkeep = {
 			trigger = {
@@ -251,7 +251,7 @@ building_avb_research_lab_6 = {
 }
 
 building_avb_institute_2 = {
-	base_buildtime = @avb_r4_time
+	base_buildtime = @avb_b4_time
 	can_build = no
 
 	category = research
@@ -286,12 +286,12 @@ building_avb_institute_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_r4_minerals
-			exotic_gases = @avb_r4_rare_cost
+			minerals = @avb_b4_minerals
+			exotic_gases = @avb_b4_rare_cost
 		}
 		upkeep = {
-			energy = @avb_r4_upkeep
-			exotic_gases = @avb_r4_rare_upkeep
+			energy = @avb_b4_upkeep
+			exotic_gases = @avb_b4_rare_upkeep
 		}
 	}
 	country_modifier = {
@@ -362,11 +362,11 @@ building_avb_supercomputer_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_r4_minerals
-			exotic_gases = @avb_r4_rare_cost
+			minerals = @avb_b4_minerals
+			exotic_gases = @avb_b4_rare_cost
 		}
 		upkeep = {
-			energy = @avb_r4_upkeep
+			energy = @avb_b4_upkeep
 		}
 	}
 

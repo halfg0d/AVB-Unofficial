@@ -1,0 +1,103 @@
+###			###
+###  Tier 1	###
+###			###
+triggered_planet_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			NOR = {
+				has_planet_flag = avb_orb_foundry_2
+				has_planet_flag = avb_orb_foundry_3
+			}
+		}
+		exists = owner
+		owner = {
+			is_catalytic_empire = no
+		}
+	}
+	planet_metallurgists_alloys_produces_add = 1
+	planet_metallurgists_minerals_upkeep_add = 2
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			NOR = {
+				has_planet_flag = avb_orb_foundry_2
+				has_planet_flag = avb_orb_foundry_3
+			}
+		}
+		exists = owner
+		owner = {
+			is_catalytic_empire = yes
+		}
+	}
+	planet_metallurgists_alloys_produces_add = 1.25
+	planet_metallurgists_food_upkeep_add = 3
+}
+###			###
+###  Tier 2	###
+###			###
+triggered_planet_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_foundry_2
+            orb_foundry_active = yes
+		}
+		exists = owner
+		owner = {
+			is_catalytic_empire = no
+		}
+	}
+	planet_metallurgists_alloys_produces_add = 2
+	planet_metallurgists_minerals_upkeep_add = 4
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_foundry_2
+            orb_foundry_active = yes
+		}
+		exists = owner
+		owner = {
+			is_catalytic_empire = yes
+		}
+	}
+	planet_metallurgists_alloys_produces_add = 2.5
+	planet_metallurgists_food_upkeep_add = 6
+}
+###			###
+###  Tier 3	###
+###			###
+triggered_planet_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_foundry_3
+            orb_foundry_active = yes
+		}
+		exists = owner
+		owner = {
+			is_catalytic_empire = no
+		}
+	}
+	planet_metallurgists_alloys_produces_add = 3
+	planet_metallurgists_minerals_upkeep_add = 6
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_foundry_3
+            orb_foundry_active = yes
+		}
+		exists = owner
+		owner = {
+			is_catalytic_empire = yes
+		}
+	}
+	planet_metallurgists_alloys_produces_add = 3.75
+	planet_metallurgists_food_upkeep_add = 9
+}

@@ -1,1 +1,2 @@
 has_warrior_culture = { always = no }
+is_habitat = { is_planet_class = pc_habitat }

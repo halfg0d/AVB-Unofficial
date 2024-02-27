@@ -2,10 +2,10 @@
 ## Limited by deposits ##
 #########################
 
-@avb_d4_time = 960
+@avb_b3_time = 960
 
 building_avb_gas_extractors_2 = {
-	base_buildtime = @avb_d4_time
+	base_buildtime = @avb_b3_time
 	icon = building_gas_extractors
 	can_build = no
 
@@ -45,10 +45,10 @@ building_avb_gas_extractors_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_d4_minerals
+			minerals = @avb_b3_minerals
 		}
 		upkeep = {
-			energy = @avb_d4_upkeep
+			energy = @avb_b3_upkeep
 		}
 	}	
 	
@@ -58,7 +58,7 @@ building_avb_gas_extractors_2 = {
 }
 
 building_avb_crystal_mines_2 = {
-	base_buildtime = @avb_d4_time
+	base_buildtime = @avb_b3_time
 	can_build = no
 
 	category = resource
@@ -96,10 +96,10 @@ building_avb_crystal_mines_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_d4_minerals
+			minerals = @avb_b3_minerals
 		}
 		upkeep = {
-			energy = @avb_d4_upkeep
+			energy = @avb_b3_upkeep
 		}
 	}	
 	
@@ -109,7 +109,7 @@ building_avb_crystal_mines_2 = {
 }
 
 building_avb_mote_harvesters_2 = {
-	base_buildtime = @avb_d4_time
+	base_buildtime = @avb_b3_time
 	can_build = no
 
 	category = resource
@@ -148,10 +148,10 @@ building_avb_mote_harvesters_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_d4_minerals
+			minerals = @avb_b3_minerals
 		}
 		upkeep = {
-			energy = @avb_d4_upkeep
+			energy = @avb_b3_upkeep
 		}
 	}	
 	
@@ -161,7 +161,7 @@ building_avb_mote_harvesters_2 = {
 }
 
 building_avb_betharian_power_plant_2 = {
-	base_buildtime = @avb_d4_time
+	base_buildtime = @avb_b3_time
 	can_build = no
 
 	category = resource
@@ -180,10 +180,10 @@ building_avb_betharian_power_plant_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_d4_minerals
+			minerals = @avb_b3_minerals
 		}
 		produces = {
-			energy = @avb_d4_upkeep
+			energy = @avb_b3_upkeep
 		}
 	}
 
@@ -198,7 +198,7 @@ building_avb_betharian_power_plant_2 = {
 }
 
 building_avb_xeno_zoo_2 = {
-	base_buildtime = @avb_d4_time
+	base_buildtime = @avb_b3_time
 	can_build = no
 
 	category = amenity
@@ -258,10 +258,10 @@ building_avb_xeno_zoo_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_d4_minerals
+			minerals = @avb_b3_minerals
 		}
 		upkeep = {
-			energy = @avb_d4_upkeep
+			energy = @avb_b3_upkeep
 		}
 	}
 	triggered_planet_modifier = {

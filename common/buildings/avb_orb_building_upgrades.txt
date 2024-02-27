@@ -410,3 +410,141 @@ building_avb_orb_ring_connection_ranger_3 = {
 	prerequisites = { "tech_ring_avb_ranger_3" }
 }
 ###Ranger /\
+
+###Foundry \/
+building_avb_orb_ring_connection_foundry_2 = {
+	icon = building_avb_orb_ring_connection
+	base_buildtime = @avb_orb_time_t2
+	can_build = no
+	position_priority = 101
+
+	category = government
+
+	potential = {
+		exists = planet
+		planet = {
+			exists = orbital_defence
+			has_planet_flag = avb_orb_foundry_1
+		}
+	}
+	allow = {
+		has_building = building_avb_orb_ring_connection
+		is_building_similar_to_foundry = yes
+	}
+	destroy_trigger = {
+		exists = planet
+		planet = {
+			NOT = { exists = orbital_defence }
+		}
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @orb_t2_alloy_cost
+		}
+	}
+	prerequisites = { "tech_ring_avb_foundry_2" }
+}
+building_avb_orb_ring_connection_foundry_3 = {
+	icon = building_avb_orb_ring_connection
+	base_buildtime = @avb_orb_time_t3
+	can_build = no
+	position_priority = 101
+
+	category = government
+
+	potential = {
+		exists = planet
+		planet = {
+			exists = orbital_defence
+			has_planet_flag = avb_orb_foundry_2
+		}
+	}
+	allow = {
+		has_building = building_avb_orb_ring_connection
+		is_building_similar_to_foundry = yes
+	}
+	destroy_trigger = {
+		exists = planet
+		planet = {
+			NOT = { exists = orbital_defence }
+		}
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @orb_t3_alloy_cost
+		}
+	}
+	prerequisites = { "tech_ring_avb_foundry_3" }
+}
+###Foundry /\
+
+###Factory \/
+building_avb_orb_ring_connection_factory_2 = {
+	icon = building_avb_orb_ring_connection
+	base_buildtime = @avb_orb_time_t2
+	can_build = no
+	position_priority = 101
+
+	category = government
+
+	potential = {
+		exists = planet
+		planet = {
+			exists = orbital_defence
+			has_planet_flag = avb_orb_factory_1
+		}
+	}
+	allow = {
+		has_building = building_avb_orb_ring_connection
+		is_building_similar_to_factory = yes
+	}
+	destroy_trigger = {
+		exists = planet
+		planet = {
+			NOT = { exists = orbital_defence }
+		}
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @orb_t2_alloy_cost
+		}
+	}
+	prerequisites = { "tech_ring_avb_factory_2" }
+}
+building_avb_orb_ring_connection_factory_3 = {
+	icon = building_avb_orb_ring_connection
+	base_buildtime = @avb_orb_time_t3
+	can_build = no
+	position_priority = 101
+
+	category = government
+
+	potential = {
+		exists = planet
+		planet = {
+			exists = orbital_defence
+			has_planet_flag = avb_orb_factory_2
+		}
+	}
+	allow = {
+		has_building = building_avb_orb_ring_connection
+		is_building_similar_to_factory = yes
+	}
+	destroy_trigger = {
+		exists = planet
+		planet = {
+			NOT = { exists = orbital_defence }
+		}
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @orb_t3_alloy_cost
+		}
+	}
+	prerequisites = { "tech_ring_avb_factory_3" }
+}
+###Factory /\

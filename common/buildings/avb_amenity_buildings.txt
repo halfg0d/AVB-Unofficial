@@ -59,12 +59,12 @@ building_avb_residence_3 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_a3_minerals
-			rare_crystals = @avb_a3_rare_cost
+			minerals = @avb_b3_minerals
+			rare_crystals = @avb_b3_rare_cost
 		}
 		upkeep = {
-			energy = 3
-			rare_crystals = @avb_a3_rare_upkeep
+			energy = @avb_b3_upkeep
+			rare_crystals = @avb_b3_rare_upkeep
 		}
 	}
 	
@@ -141,12 +141,12 @@ building_avb_residence_4 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_a4_minerals
-			rare_crystals = @avb_a4_rare_cost
+			minerals = @avb_b4_minerals
+			rare_crystals = @avb_b4_rare_cost
 		}
 		upkeep = {
-			energy = 3
-			rare_crystals = @avb_a4_rare_upkeep
+			energy = @avb_b4_upkeep
+			rare_crystals = @avb_b4_rare_upkeep
 		}
 	}
 	
@@ -223,12 +223,12 @@ building_avb_residence_5 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_a5_minerals
-			rare_crystals = @avb_a5_rare_cost
+			minerals = @avb_b5_minerals
+			rare_crystals = @avb_b5_rare_cost
 		}
 		upkeep = {
-			energy = 3
-			rare_crystals = @avb_a5_rare_upkeep
+			energy = @avb_b5_rare_upkeep
+			rare_crystals = @avb_b5_rare_upkeep
 		}
 	}
 	
@@ -251,19 +251,18 @@ building_avb_communal_housing_3 = {
 	category = amenity
 
 	potential = {
+		OR = {
+			is_habitat = no
+			exists = owner
+			owner = {
+				is_void_dweller_empire = yes
+			}
+		}
+		NOT = { has_modifier = slave_colony }
+		exists = owner
 		owner = {
 			is_regular_empire = yes
 			has_valid_civic = civic_shared_burden
-		}
-
-		OR = {
-			is_habitat = no
-			AND = {
-				exists = owner
-				owner = {
-					is_void_dweller_empire = yes
-				}
-			}
 		}
 	}
 	
@@ -318,12 +317,12 @@ building_avb_communal_housing_3 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_a3_minerals
-			rare_crystals = @avb_a3_rare_cost
+			minerals = @avb_b3_minerals
+			rare_crystals = @avb_b3_rare_cost
 		}
 		upkeep = {
-			energy = 3
-			rare_crystals = @avb_a3_rare_upkeep
+			energy = @avb_b3_upkeep
+			rare_crystals = @avb_b3_rare_upkeep
 		}
 	}
 	
@@ -343,19 +342,18 @@ building_avb_communal_housing_4 = {
 	category = amenity
 
 	potential = {
+		OR = {
+			is_habitat = no
+			exists = owner
+			owner = {
+				is_void_dweller_empire = yes
+			}
+		}
+		NOT = { has_modifier = slave_colony }
+		exists = owner
 		owner = {
 			is_regular_empire = yes
 			has_valid_civic = civic_shared_burden
-		}
-
-		OR = {
-			is_habitat = no
-			AND = {
-				exists = owner
-				owner = {
-					is_void_dweller_empire = yes
-				}
-			}
 		}
 	}
 	
@@ -410,12 +408,12 @@ building_avb_communal_housing_4 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_a4_minerals
-			rare_crystals = @avb_a4_rare_cost
+			minerals = @avb_b4_minerals
+			rare_crystals = @avb_b4_rare_cost
 		}
 		upkeep = {
-			energy = 3
-			rare_crystals = @avb_a4_rare_upkeep
+			energy = @avb_b4_upkeep
+			rare_crystals = @avb_b4_rare_upkeep
 		}
 	}
 	
@@ -435,19 +433,18 @@ building_avb_communal_housing_5 = {
 	category = amenity
 
 	potential = {
+		OR = {
+			is_habitat = no
+			exists = owner
+			owner = {
+				is_void_dweller_empire = yes
+			}
+		}
+		NOT = { has_modifier = slave_colony }
+		exists = owner
 		owner = {
 			is_regular_empire = yes
 			has_valid_civic = civic_shared_burden
-		}
-
-		OR = {
-			is_habitat = no
-			AND = {
-				exists = owner
-				owner = {
-					is_void_dweller_empire = yes
-				}
-			}
 		}
 	}
 	
@@ -500,12 +497,12 @@ building_avb_communal_housing_5 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_a5_minerals
-			rare_crystals = @avb_a5_rare_cost
+			minerals = @avb_b5_minerals
+			rare_crystals = @avb_b5_rare_cost
 		}
 		upkeep = {
-			energy = 3
-			rare_crystals = @avb_a5_rare_upkeep
+			energy = @avb_b5_upkeep
+			rare_crystals = @avb_b5_rare_upkeep
 		}
 	}
 	
@@ -561,12 +558,12 @@ building_avb_drone_storage_3 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @b3_minerals
-			rare_crystals = 100
+			minerals = @avb_b3_minerals
+			rare_crystals = @avb_b3_rare_cost
 		}
 		upkeep = {
-			energy = 6
-			rare_crystals = 2
+			energy = @avb_b3_upkeep
+			rare_crystals = @avb_b3_rare_upkeep
 		}
 	}
 	
@@ -625,12 +622,12 @@ building_avb_drone_storage_4 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = 1200
-			rare_crystals = 150
+			minerals = @avb_b4_minerals
+			rare_crystals = @avb_b4_rare_cost
 		}
 		upkeep = {
-			energy = 10
-			rare_crystals = 4
+			energy = @avb_b4_upkeep
+			rare_crystals = @avb_b4_rare_upkeep
 		}
 	}
 	
@@ -692,12 +689,12 @@ building_avb_warren_3 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_a3_minerals
-			rare_crystals = @avb_a3_rare_cost
+			minerals = @avb_b3_minerals
+			rare_crystals = @avb_b3_rare_cost
 		}
 		upkeep = {
-			energy = 3
-			rare_crystals = @avb_a3_rare_upkeep
+			energy = @avb_b3_upkeep
+			rare_crystals = @avb_b3_rare_upkeep
 		}
 	}
 	
@@ -761,12 +758,12 @@ building_avb_warren_4 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_a4_minerals
-			rare_crystals = @avb_a4_rare_cost
+			minerals = @avb_b4_minerals
+			rare_crystals = @avb_b4_rare_cost
 		}
 		upkeep = {
-			energy = 3
-			rare_crystals = @avb_a4_rare_upkeep
+			energy = @avb_b4_upkeep
+			rare_crystals = @avb_b4_rare_upkeep
 		}
 	}
 	
@@ -782,28 +779,14 @@ building_avb_holo_theatre_3 = {
 	category = amenity
 	
 	potential = {
-		NOT = {	has_modifier = slave_colony	}
-		owner = {
-			is_regular_empire = yes
-			NOT = { has_valid_civic = civic_dystopian_society }
-		}
-		OR = {
-			owner = {
-				NOT = { is_ai = yes }
-			}
-			AND = {
-				NOT = { has_available_jobs = entertainer }
-				NOT = { has_forbidden_jobs = entertainer }
-			}
-		}
-		NOT = { has_building = building_low_tech_capital }
+		always = yes
 	}
 
 	destroy_trigger = {
 		exists = owner
+		owner = { has_valid_civic = civic_dystopian_society }
 		OR = {
 			owner = { is_regular_empire = no }
-			owner = { has_valid_civic = civic_dystopian_society }
 			has_modifier = slave_colony
 		}
 	}
@@ -852,11 +835,11 @@ building_avb_holo_theatre_3 = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b3_minerals
-			exotic_gases = 100
+			exotic_gases = @avb_b3_rare_cost
 		}
 		upkeep = {
 			energy = @avb_b3_upkeep
-			exotic_gases = 2
+			exotic_gases = @avb_b3_rare_upkeep
 		}
 	}
 	
@@ -896,28 +879,14 @@ building_avb_holo_theatre_4 = {
 	category = amenity
 	
 	potential = {
-		NOT = {	has_modifier = slave_colony	}
-		owner = {
-			is_regular_empire = yes
-			NOT = { has_valid_civic = civic_dystopian_society }
-		}
-		OR = {
-			owner = {
-				NOT = { is_ai = yes }
-			}
-			AND = {
-				NOT = { has_available_jobs = entertainer }
-				NOT = { has_forbidden_jobs = entertainer }
-			}
-		}
-		NOT = { has_building = building_low_tech_capital }
+		always = yes
 	}
 
 	destroy_trigger = {
 		exists = owner
+		owner = { has_valid_civic = civic_dystopian_society }
 		OR = {
 			owner = { is_regular_empire = no }
-			owner = { has_valid_civic = civic_dystopian_society }
 			has_modifier = slave_colony
 		}
 	}
@@ -966,11 +935,11 @@ building_avb_holo_theatre_4 = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b4_minerals
-			exotic_gases = 150
+			exotic_gases = @avb_b4_rare_cost
 		}
 		upkeep = {
 			energy = @avb_b4_upkeep
-			exotic_gases = 4
+			exotic_gases = @avb_b4_rare_upkeep
 		}
 	}
 	
@@ -1006,7 +975,7 @@ building_avb_clinic_3 = {
 	category = amenity
 	
 	potential = {
-		has_building = building_hospital
+		always = yes
 	}
 	
 	allow = {
@@ -1053,11 +1022,11 @@ building_avb_clinic_3 = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b3_minerals
-			exotic_gases = 100
+			exotic_gases = @avb_b3_rare_cost
 		}
 		upkeep = {
 			energy = @avb_b3_upkeep
-			exotic_gases = 2
+			exotic_gases = @avb_b3_rare_upkeep
 		}
 	}
 	
@@ -1070,7 +1039,7 @@ building_avb_clinic_3 = {
 	}
 	
 	show_tech_unlock_if = {
-		is_regular_empire = no
+		is_gestalt = no
 	}
 
 	triggered_desc = {
@@ -1085,7 +1054,7 @@ building_avb_clinic_4 = {
 	category = amenity
 	
 	potential = {
-        has_building = building_avb_clinic_3
+        always = yes
 	}
 	
 	allow = {
@@ -1132,11 +1101,11 @@ building_avb_clinic_4 = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b4_minerals
-			exotic_gases = 150
+			exotic_gases = @avb_b4_rare_cost
 		}
 		upkeep = {
 			energy = @avb_b4_upkeep
-			exotic_gases = 4
+			exotic_gases = @avb_b4_rare_upkeep
 		}
 	}
 	
@@ -1145,7 +1114,7 @@ building_avb_clinic_4 = {
 	}
 	
 	show_tech_unlock_if = {
-		is_regular_empire = yes
+		is_gestalt = no
 	}
 
 	triggered_desc = {
@@ -1285,7 +1254,7 @@ building_avb_overseer_homes_2 = {
 }
 
 building_avb_ranger_lodge_2 = {
-	base_buildtime = @avb_a2_time
+	base_buildtime = @avb_b2_time
 	can_build = no
 	category = amenity
 
@@ -1322,7 +1291,7 @@ building_avb_ranger_lodge_2 = {
 	}
 
 	planet_modifier = {
-		job_ranger_add = @avb_a2_jobs
+		job_ranger_add = @avb_b2_jobs
 		deposit_blockers_natural_unity_produces_add = 4
 	}
 	inline_script = amenity_buildings/avb_ranger_resolutions
@@ -1331,10 +1300,10 @@ building_avb_ranger_lodge_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_a2_minerals
+			minerals = @avb_b2_minerals
 		}
 		upkeep = {
-			energy = @avb_a2_upkeep
+			energy = @avb_b2_upkeep
 		}
 	}
 	prerequisites = {

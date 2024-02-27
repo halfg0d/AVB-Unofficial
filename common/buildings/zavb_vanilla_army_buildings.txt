@@ -9,38 +9,10 @@ building_military_academy = {
 	}
 	can_be_ruined = no
 	category = army
-	
-	potential = {
-		exists = owner
-		owner = {
-			OR = {
-				NOT = { has_global_flg = bug_branch_active }
-				AND = {
-					has_global_flag = bug_branch_active
-					is_bugged_reanimator = no #EC: Bug <<
-				}
-			}
-			OR = {
-				has_z_expanded_mod = no
-				AND = {
-					has_z_expanded_mod = yes
-					NOT = { has_valid_civic = civic_machine_terminator }
-				}
-			}
-		}
-		OR = {
-			has_z_expanded_mod = no
-			AND = {
-				has_z_expanded_mod = yes
-				NOT = { has_planet_flag = planetary_station }
-			}
-		}
-	}
 
 	allow = {
 		has_major_upgraded_capital = yes
 	}
-
 	country_modifier = {
 		country_commander_cap_add = 1
 		country_naval_cap_mult = 0.05
@@ -64,37 +36,6 @@ building_military_academy = {
 			job_evaluator_add = 2
 		}
 	}
-	#zExpanded \/
-	triggered_planet_modifier = {
-		potential = {
-			has_z_expanded_mod = yes
-		}
-		modifier = {
-			planet_army_build_speed_mult = 0.5
-		}
-	}
-	triggered_country_modifier = {
-		potential = {
-			has_z_expanded_mod = yes
-			exists = army_leader
-		}
-		modifier = {
-			empire_size_colonies_mult = 0.1
-		}
-	}
-	#zExpanded /\
-	#EC: Classic \/
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = ethic_civic_classic_active
-			exists = owner
-			owner = { has_civic = civic_martial_brotherhood }
-		}
-		modifier = {
-			planet_housing_add = 2
-		}
-	}
-	#EC: Classic /\
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -105,23 +46,9 @@ building_military_academy = {
 			energy = @b2_upkeep
 			volatile_motes = @b2_rare_upkeep
 		}
-		produces = {
-			trigger = {
-				owner = {
-					has_global_flag = ethic_civic_classic_active
-					has_civic = civic_martial_brotherhood
-				}
-			}
-			unity = 5
-		}
 	}
-	
 	prerequisites = {
 		"tech_centralized_command"
-	}
-
-	show_tech_unlock_if = {
-		NOT = { has_valid_civic = civic_machine_terminator }
 	}
 
 	triggered_desc = {
@@ -135,19 +62,9 @@ building_military_academy = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { is_gestalt = yes }
+			owner = { is_gestalt = no }
 		}
 		text = job_evaluator_effect_desc
-	}
-	triggered_desc = { #zExpanded
-		trigger = {
-			has_z_expanded_mod = yes
-		}
-		text = building_military_academy_tooltip
-	}
-	upgrades = {
-		"building_avb_military_academy_2"
-		"building_eutab_battle_praxeum"
 	}
 }
 
@@ -160,21 +77,8 @@ building_dread_encampment = {
 
 	potential = {
 		exists = owner
-		owner = {
-			OR = {
-				has_valid_civic = civic_reanimated_armies
-				is_bugged_reanimator = yes
-			}
-		}
-		OR = {
-			has_z_expanded_mod = no
-			AND = {
-				has_z_expanded_mod = yes
-				NOT = { has_planet_flag = planetary_station }
-			}
-		}
+		owner = { has_valid_civic = civic_reanimated_armies }
 	}
-
 	allow = {
 		has_upgraded_capital = yes
 	}
@@ -182,25 +86,6 @@ building_dread_encampment = {
 	planet_modifier = {
 		job_necromancer_add = 2
 	}
-	#zExpanded \/
-	triggered_planet_modifier = {
-		potential = {
-			has_z_expanded_mod = yes
-		}
-		modifier = {
-			planet_army_build_speed_mult = 0.5
-		}
-	}
-	triggered_country_modifier = {
-		potential = {
-			has_z_expanded_mod = yes
-			exists = army_leader
-		}
-		modifier = {
-			empire_size_colonies_mult = 0.1
-		}
-	}
-	#zExpanded /\
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -208,14 +93,6 @@ building_dread_encampment = {
 		}
 		upkeep = {
 			energy = @b1_upkeep
-		}
-		upkeep = {
-			trigger = { 
-				has_z_expanded_mod = yes
-				exists = army_leader
-			}
-			energy = @b2_upkeep
-			unity = @b2_upkeep
 		}
 	}
 
@@ -225,20 +102,6 @@ building_dread_encampment = {
 		}
 		text = job_necromancer_effect_desc
 	}
-	#zExpanded \/
-	triggered_desc = {
-		trigger = {
-			always = yes
-		}
-		text = building_military_academy_tooltip
-	}
-	#trick the ai into building this
-	ai_resource_production = {
-		trigger = { always = yes }
-		alloys = 8
-		minerals = 8
-	}
-	#zExpanded /\
 }
 
 building_fortress = {
@@ -253,82 +116,25 @@ building_fortress = {
 		has_upgraded_capital = yes
 	}
 
-	destroy_trigger = {
-		has_plentiful_tradition_mod = yes
-		exists = owner
-		owner = { is_ai = yes }
-		OR = {
-			AND = {
-				num_buildings = { type = building_fortress value > 1 }
-				free_building_slots = 0
-				owner = {
-					is_militarist = no
-					used_naval_capacity_percent < 0.4
-				}
-			}
-			AND = {
-				num_buildings = { type = building_fortress value > 2 }
-				free_building_slots = 0
-				owner = {
-					is_militarist = yes
-					used_naval_capacity_percent < 0.4
-				}
-			}
-		}
-	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { 
-				is_gestalt = no 
-				NOT = {
-					has_civic = civic_private_militaries
-				}
-			}
+			owner = { is_gestalt = no }
 		}
 		modifier = {
 			job_soldier_add = @b2_jobs
 		}
 	}
-	#EC: Classic \/
-	triggered_planet_modifier = {
-        potential = {
-			has_global_flag = ethic_civic_classic_active
-            exists = owner
-            owner = {
-                has_civic = civic_private_militaries
-            }
-        }
-        modifier = {
-            job_soldier_add = @b2_jobs
-            job_mercenary_add = @b2_jobs
-        }
-    }
-	#EC: Classc /\
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = { is_gestalt = yes }
-        }
-        modifier = {
-            job_warrior_drone_add = @b2_jobs
-        }
-    }
-	#EC: Bug \/
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = bug_branch_active
-			exists = owner
-			owner = {
-				is_bugged_private_militaries = yes
-			}
 		}
 		modifier = {
-			job_bugged_mercenary_add = 2
+			job_warrior_drone_add = @b2_jobs
 		}
 	}
-	#EC: Bug /\
+
 	resources = {
 		category = planet_buildings_strongholds
 		cost = {
@@ -339,88 +145,28 @@ building_fortress = {
 			energy = 1
 			volatile_motes = @b2_rare_upkeep
 		}
-		produces = {
-            trigger = {
-                exists = owner
-                owner = {
-                    has_active_tradition = tr_unyielding_resistance_is_frugal
-                }
-            }
-            unity = 3
-        }
 	}
-	#zExpanded \/
-	triggered_planet_modifier = {
-		potential = {
-			has_z_expanded_mod = yes
-			exists = owner
-			owner = {
-				has_active_tradition = tr_domination_imperious_architecture
-				is_gestalt = no
-			}					
-		}
-		modifier = {
-			planet_housing_add = 1
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_z_expanded_mod = yes
-			exists = owner
-			owner = {
-				has_active_tradition = tr_domination_synaptic_extensions
-			}					
-		}
-		modifier = {
-			planet_housing_add = 2
-		}
-	}
-	#zExpanded /\
+
 	prerequisites = {
 		"tech_global_defense_grid"
 	}
-	
-	triggered_desc = {
-        trigger = {
-            exists = owner
-            owner = {
-                is_gestalt = yes
-            }
-        }
-        text = job_warrior_drone_effect_desc
-    }
-    triggered_desc = {
-        trigger = {
-            exists = owner
-            owner = {
-                is_gestalt = no
-            }
-        }
-        text = job_soldier_effect_desc
-    }
-    triggered_desc = {
-        trigger = {
-            exists = owner
-            owner = {
-				has_global_flag = ethic_civic_classic_active
-                has_civic = civic_private_militaries
-            }
-        }
-        text = job_mercenary_effect_desc
-    }
+
 	triggered_desc = {
 		trigger = {
-			has_global_flag = bug_branch_active
 			exists = owner
-			owner = {
-				is_bugged_private_militaries = yes
-			}
+			owner = { is_gestalt = yes }
 		}
-		text = job_bugged_mercenary_effect_desc
+		text = job_warrior_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_soldier_effect_desc
 	}
 	upgrades = {
 		"building_avb_stronghold_3"
-		"building_citadel"
 	}
 }
 
@@ -475,28 +221,7 @@ building_planetary_shield_generator = {
 		upkeep = {
 			energy = @b2_upkeep
 		}
-		produces = {
-			trigger = {
-				owner = {
-					has_global_flag = ethic_civic_classic_active
-					has_civic = civic_inwards_perfection
-				}
-			}
-			unity = 10
-		}
 	}
-	#EC: Bug \/
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = bug_branch_active
-			exists = owner
-			owner = { has_civic = civic_inwards_perfection }
-		}
-		modifier = {
-			planet_jobs_unity_produces_mult = 0.2
-		}
-	}
-	#EC: Bug /\
 	prerequisites = {
 		"tech_planetary_shield_generator"
 	}
