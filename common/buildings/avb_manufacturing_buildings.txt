@@ -15,6 +15,7 @@ building_avb_foundry_4 = {
 	destroy_trigger = {
 		OR = {
 			has_modifier = resort_colony
+			has_modifier = slave_colony
 			has_modifier = crucible_colony
 			AND = {
 				exists = owner
@@ -23,31 +24,18 @@ building_avb_foundry_4 = {
 				}
 				has_any_industry_district = no
 			}
-			#zExpanded \/
-			OR = {
-				AND = {
-					has_z_expanded_mod = no
-					has_modifier = slave_colony
-				}
-				AND = {
-					has_z_expanded_mod = yes
-					owner = {
-						NOR = {
-							has_valid_civic = civic_indentured_assets
-							has_valid_civic = civic_slaver_guilds
-						}
-					}
-				}
-			}
-			#zExpanded /\
 		}
 	}
 
 	resources = {
 		category = planet_buildings
-		inline_script = {
-			script = "manufactury/avb_foundry_resources"
-			tier = 4
+		cost = {
+			minerals = @avb_b4_minerals
+			volatile_motes = @avb_b4_rare_cost
+		}
+		upkeep = {
+			energy = @avb_b4_upkeep
+			volatile_motes = @avb_b4_rare_upkeep
 		}
 	}
 
@@ -58,48 +46,62 @@ building_avb_foundry_4 = {
 	upgrades = {
 		building_avb_foundry_5
 	}
-	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_catalytic_empire = no
+			}
+		}
+		modifier = {
+			planet_metallurgists_alloys_produces_add = 3
+			planet_metallurgists_minerals_upkeep_add = 6
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_catalytic_empire = yes
+			}
+		}
+		modifier = {
+			planet_metallurgists_alloys_produces_add = 3.75
+			planet_metallurgists_food_upkeep_add = 9
+		}
+	}
+	#Ringworld bonus
+	triggered_planet_modifier = {
+		potential = {
+			has_ringworld_output_boost = yes
+			exists = owner
+			owner = {
+				is_catalytic_empire = no
+			}
+		}
+		modifier = {
+			planet_metallurgists_alloys_produces_add = 1
+			planet_metallurgists_minerals_upkeep_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_ringworld_output_boost = yes
+			exists = owner
+			owner = {
+				is_catalytic_empire = yes
+			}
+		}
+		modifier = {
+			planet_metallurgists_alloys_produces_add = 1.25
+			planet_metallurgists_food_upkeep_add = 3
+		}
+	}
 	inline_script = {
-		script = "manufactury/avb_foundry_jobs"
-		tier = 4
-	}
-	inline_script = "manufactury/avb_foundry_job_desc"
-	
-	ai_resource_production = {
-		alloys = 16
-		trigger = {
-			always = yes
-		}
-	}
-	ai_resource_production = {
-		alloys = 16
-		trigger = {
-			planet_resource_compare = {
-				resource = alloys
-				value >= 16
-				type = produces
-			}
-		}
-	}
-	ai_resource_production = {
-		alloys = 16
-		trigger = {
-			planet_resource_compare = {
-				resource = alloys
-				value >= 32
-				type = produces
-			}
-		}
-	}
-	ai_resource_production = {
-		alloys = 16
-		trigger = {
-			planet_resource_compare = {
-				resource = alloys
-				value >= 48
-				type = produces
-			}
-		}
+		script = jobs/foundry_add
+		AMOUNT = @b1_jobs
 	}
 }
 
@@ -116,6 +118,7 @@ building_avb_foundry_5 = {
 	destroy_trigger = {
 		OR = {
 			has_modifier = resort_colony
+			has_modifier = slave_colony
 			has_modifier = crucible_colony
 			AND = {
 				exists = owner
@@ -124,31 +127,18 @@ building_avb_foundry_5 = {
 				}
 				has_any_industry_district = no
 			}
-			#zExpanded \/
-			OR = {
-				AND = {
-					has_z_expanded_mod = no
-					has_modifier = slave_colony
-				}
-				AND = {
-					has_z_expanded_mod = yes
-					owner = {
-						NOR = {
-							has_valid_civic = civic_indentured_assets
-							has_valid_civic = civic_slaver_guilds
-						}
-					}
-				}
-			}
-			#zExpanded /\
 		}
 	}
 
 	resources = {
 		category = planet_buildings
-		inline_script = {
-			script = "manufactury/avb_foundry_resources"
-			tier = 5
+		cost = {
+			minerals = @avb_b5_minerals
+			volatile_motes = @avb_b5_rare_cost
+		}
+		upkeep = {
+			energy = @avb_b5_upkeep
+			volatile_motes = @avb_b5_rare_upkeep
 		}
 	}
 
@@ -160,47 +150,62 @@ building_avb_foundry_5 = {
 		building_avb_foundry_6
 	}
 	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_catalytic_empire = no
+			}
+		}
+		modifier = {
+			planet_metallurgists_alloys_produces_add = 4
+			planet_metallurgists_minerals_upkeep_add = 8
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_catalytic_empire = yes
+			}
+		}
+		modifier = {
+			planet_metallurgists_alloys_produces_add = 5
+			planet_metallurgists_food_upkeep_add = 12
+		}
+	}
+	#Ringworld bonus
+	triggered_planet_modifier = {
+		potential = {
+			has_ringworld_output_boost = yes
+			exists = owner
+			owner = {
+				is_catalytic_empire = no
+			}
+		}
+		modifier = {
+			planet_metallurgists_alloys_produces_add = 1
+			planet_metallurgists_minerals_upkeep_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_ringworld_output_boost = yes
+			exists = owner
+			owner = {
+				is_catalytic_empire = yes
+			}
+		}
+		modifier = {
+			planet_metallurgists_alloys_produces_add = 1.25
+			planet_metallurgists_food_upkeep_add = 3
+		}
+	}
 	inline_script = {
-		script = manufactury/avb_foundry_jobs
-		tier = 5
-	}
-	inline_script = "manufactury/avb_foundry_job_desc"
-	
-	ai_resource_production = {
-		alloys = 16
-		trigger = {
-			always = yes
-		}
-	}
-	ai_resource_production = {
-		alloys = 16
-		trigger = {
-			planet_resource_compare = {
-				resource = alloys
-				value >= 16
-				type = produces
-			}
-		}
-	}
-	ai_resource_production = {
-		alloys = 16
-		trigger = {
-			planet_resource_compare = {
-				resource = alloys
-				value >= 32
-				type = produces
-			}
-		}
-	}
-	ai_resource_production = {
-		alloys = 16
-		trigger = {
-			planet_resource_compare = {
-				resource = alloys
-				value >= 48
-				type = produces
-			}
-		}
+		script = jobs/foundry_add
+		AMOUNT = @b1_jobs
 	}
 }
 
@@ -217,6 +222,7 @@ building_avb_foundry_6 = {
 	destroy_trigger = {
 		OR = {
 			has_modifier = resort_colony
+			has_modifier = slave_colony
 			has_modifier = crucible_colony
 			AND = {
 				exists = owner
@@ -225,79 +231,80 @@ building_avb_foundry_6 = {
 				}
 				has_any_industry_district = no
 			}
-			#zExpanded \/
-			OR = {
-				AND = {
-					has_z_expanded_mod = no
-					has_modifier = slave_colony
-				}
-				AND = {
-					has_z_expanded_mod = yes
-					owner = {
-						NOR = {
-							has_valid_civic = civic_indentured_assets
-							has_valid_civic = civic_slaver_guilds
-						}
-					}
-				}
-			}
-			#zExpanded /\
 		}
 	}
 
 	resources = {
 		category = planet_buildings
-		inline_script = {
-			script = "manufactury/avb_foundry_resources"
-			tier = 6
+		cost = {
+			minerals = @avb_b6_minerals
+			volatile_motes = @avb_b6_rare_cost
+		}
+		upkeep = {
+			energy = @avb_b6_upkeep
+			volatile_motes = @avb_b6_rare_upkeep
 		}
 	}
 
 	prerequisites = {
 		"tech_avb_alloys_5"
 	}	
-	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_catalytic_empire = no
+			}
+		}
+		modifier = {
+			planet_metallurgists_alloys_produces_add = 5
+			planet_metallurgists_minerals_upkeep_add = 10
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_catalytic_empire = yes
+			}
+		}
+		modifier = {
+			planet_metallurgists_alloys_produces_add = 6.25
+			planet_metallurgists_food_upkeep_add = 15
+		}
+	}
+	#Ringworld bonus
+	triggered_planet_modifier = {
+		potential = {
+			has_ringworld_output_boost = yes
+			exists = owner
+			owner = {
+				is_catalytic_empire = no
+			}
+		}
+		modifier = {
+			planet_metallurgists_alloys_produces_add = 1
+			planet_metallurgists_minerals_upkeep_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_ringworld_output_boost = yes
+			exists = owner
+			owner = {
+				is_catalytic_empire = yes
+			}
+		}
+		modifier = {
+			planet_metallurgists_alloys_produces_add = 1.25
+			planet_metallurgists_food_upkeep_add = 3
+		}
+	}
 	inline_script = {
-		script = manufactury/avb_foundry_jobs
-		tier = 6
-	}
-	inline_script = "manufactury/avb_foundry_job_desc"
-	
-	ai_resource_production = {
-		alloys = 16
-		trigger = {
-			always = yes
-		}
-	}
-	ai_resource_production = {
-		alloys = 16
-		trigger = {
-			planet_resource_compare = {
-				resource = alloys
-				value >= 16
-				type = produces
-			}
-		}
-	}
-	ai_resource_production = {
-		alloys = 16
-		trigger = {
-			planet_resource_compare = {
-				resource = alloys
-				value >= 32
-				type = produces
-			}
-		}
-	}
-	ai_resource_production = {
-		alloys = 16
-		trigger = {
-			planet_resource_compare = {
-				resource = alloys
-				value >= 48
-				type = produces
-			}
-		}
+		script = jobs/foundry_add
+		AMOUNT = @b1_jobs
 	}
 }
 
@@ -343,15 +350,25 @@ building_avb_factory_4 = {
 			}
 		}
 	}
-	inline_script = {
-		script = "manufactury/avb_factory_modifiers"
-		tier = 4
+	planet_modifier = {
+		planet_artisans_consumer_goods_produces_add = 3
+		planet_artisans_minerals_upkeep_add = 3
 	}
-	inline_script = {
-		script = "manufactury/avb_factory_jobs"
-		tier = 4
+
+	triggered_planet_modifier = {
+		potential = {
+			has_ringworld_output_boost = yes
+		}
+		modifier = {
+			planet_artisans_consumer_goods_produces_add = 1
+			planet_artisans_minerals_upkeep_add = 1
+		}
 	}
-	
+
+	inline_script = {
+		script = jobs/factory_add
+		AMOUNT = @b1_jobs
+	}
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -392,72 +409,6 @@ building_avb_factory_4 = {
 		"tech_avb_luxuries_3"
 	}
 	
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_gestalt = no
-				is_crafter_empire = no
-			}
-		}
-		text = job_artisan_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_gestalt = no
-				is_crafter_empire = yes
-			}
-		}
-		text = job_artificer_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-		}
-		text = job_artisan_drone_effect_desc
-	}
-	
-	ai_resource_production = {
-		consumer_goods = 24
-		trigger = {
-			always = yes
-		}
-	}
-	ai_resource_production = {
-		consumer_goods = 24
-		trigger = {
-			planet_resource_compare = {
-				resource = consumer_goods
-				value >= 24
-				type = produces
-			}
-		}
-	}
-	ai_resource_production = {
-		consumer_goods = 20
-		trigger = {
-			planet_resource_compare = {
-				resource = consumer_goods
-				value >= 44
-				type = produces
-			}
-		}
-	}
-	ai_resource_production = {
-		consumer_goods = 20
-		trigger = {
-			planet_resource_compare = {
-				resource = consumer_goods
-				value >= 64
-				type = produces
-			}
-		}
-	}
 }
 
 building_avb_factory_5 = {
@@ -503,13 +454,25 @@ building_avb_factory_5 = {
 		}
 	}
 	
-	inline_script = {
-		script = "manufactury/avb_factory_modifiers"
-		tier = 5
+	
+	planet_modifier = {
+		planet_artisans_consumer_goods_produces_add = 4
+		planet_artisans_minerals_upkeep_add = 4
 	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_ringworld_output_boost = yes
+		}
+		modifier = {
+			planet_artisans_consumer_goods_produces_add = 1
+			planet_artisans_minerals_upkeep_add = 1
+		}
+	}
+
 	inline_script = {
-		script = "manufactury/avb_factory_jobs"
-		tier = 5
+		script = jobs/factory_add
+		AMOUNT = @b1_jobs
 	}
 	
 	resources = {
@@ -550,59 +513,6 @@ building_avb_factory_5 = {
 	
 	prerequisites = {
 		"tech_avb_luxuries_4"
-	}
-	
-	triggered_desc = {
-		trigger = { 
-			exists = owner
-			owner = { is_gestalt = no } 
-		}
-		text = job_artisan_effect_desc
-	}
-	
-	triggered_desc = {
-		trigger = { 
-			exists = owner
-			owner = { is_gestalt = yes } 
-		}
-		text = job_artisan_drone_effect_desc
-	}
-	
-	ai_resource_production = {
-		consumer_goods = 24
-		trigger = {
-			always = yes
-		}
-	}
-	ai_resource_production = {
-		consumer_goods = 24
-		trigger = {
-			planet_resource_compare = {
-				resource = consumer_goods
-				value >= 24
-				type = produces
-			}
-		}
-	}
-	ai_resource_production = {
-		consumer_goods = 20
-		trigger = {
-			planet_resource_compare = {
-				resource = consumer_goods
-				value >= 44
-				type = produces
-			}
-		}
-	}
-	ai_resource_production = {
-		consumer_goods = 20
-		trigger = {
-			planet_resource_compare = {
-				resource = consumer_goods
-				value >= 64
-				type = produces
-			}
-		}
 	}
 }
 
@@ -650,13 +560,25 @@ building_avb_factory_6 = {
 	}
 	
 	
-	inline_script = {
-		script = "manufactury/avb_factory_modifiers"
-		tier = 6
+	
+	planet_modifier = {
+		planet_artisans_consumer_goods_produces_add = 5
+		planet_artisans_minerals_upkeep_add = 5
 	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_ringworld_output_boost = yes
+		}
+		modifier = {
+			planet_artisans_consumer_goods_produces_add = 1
+			planet_artisans_minerals_upkeep_add = 1
+		}
+	}
+
 	inline_script = {
-		script = "manufactury/avb_factory_jobs"
-		tier = 6
+		script = jobs/factory_add
+		AMOUNT = @b1_jobs
 	}
 	
 	resources = {
@@ -694,59 +616,6 @@ building_avb_factory_6 = {
 	prerequisites = {
 		"tech_avb_luxuries_5"
 	}
-	
-	triggered_desc = {
-		trigger = { 
-			exists = owner
-			owner = { is_gestalt = no } 
-		}
-		text = job_artisan_effect_desc
-	}
-	
-	triggered_desc = {
-		trigger = { 
-			exists = owner
-			owner = { is_gestalt = yes } 
-		}
-		text = job_artisan_drone_effect_desc
-	}
-	
-	ai_resource_production = {
-		consumer_goods = 24
-		trigger = {
-			always = yes
-		}
-	}
-	ai_resource_production = {
-		consumer_goods = 24
-		trigger = {
-			planet_resource_compare = {
-				resource = consumer_goods
-				value >= 24
-				type = produces
-			}
-		}
-	}
-	ai_resource_production = {
-		consumer_goods = 20
-		trigger = {
-			planet_resource_compare = {
-				resource = consumer_goods
-				value >= 44
-				type = produces
-			}
-		}
-	}
-	ai_resource_production = {
-		consumer_goods = 20
-		trigger = {
-			planet_resource_compare = {
-				resource = consumer_goods
-				value >= 64
-				type = produces
-			}
-		}
-	}
 }
 
 building_avb_refinery_2 = {
@@ -761,10 +630,6 @@ building_avb_refinery_2 = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
 			has_modifier = crucible_colony
-			AND = {
-				has_z_expanded_mod = yes
-				has_planet_flag = planetary_station
-			}
 		}
 	}
 	
@@ -772,38 +637,10 @@ building_avb_refinery_2 = {
 		has_major_upgraded_capital = yes
 	}
 	
-	destroy_trigger = {
-		free_building_slots = 0
-		exists = owner
-		owner = {
-			is_ai = yes
-			has_monthly_income = {
-				resource = exotic_gases
-				value > 12
-			}
-		}
+	inline_script = {
+		script = jobs/refiner_add
+		AMOUNT = 3
 	}
-	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = no }					
-		}
-		modifier = {
-			job_gas_refiner_add = 3
-		}
-	}
-	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }					
-		}
-		modifier = {
-			job_gas_refiner_drone_add = 3
-		}
-	}
-	
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -822,46 +659,6 @@ building_avb_refinery_2 = {
 	upgrades = {
 		building_avb_refinery_3
 	}
-	
-	triggered_desc = {
-		trigger = { 
-			exists = owner
-			owner = { is_gestalt = no } 
-		}
-		text = job_gas_refiner_effect_desc
-	}	
-	
-	triggered_desc = {
-		trigger = { 
-			exists = owner
-			owner = { is_gestalt = yes } 
-		}
-		text = job_gas_refiner_drone_effect_desc
-	}
-
-	ai_resource_production = {
-		exotic_gases = 1
-		trigger = {
-			always = yes
-		}
-	}
-	#zExpanded \/
-	triggered_planet_modifier = {
-		potential = {
-			has_z_expanded_mod = yes
-			exists = owner
-			owner = {
-				is_ai = yes
-				str_force_gases = yes
-			}
-			NOT = { has_building = building_refinery }
-		}
-		modifier = {
-			job_starnet_spice_melange_farmer_add = 2
-			job_starnet_spice_melange_antifarmer_add = -2
-		}
-	}
-	#zExpanded /\
 }
 
 building_avb_refinery_3 = {
@@ -876,10 +673,6 @@ building_avb_refinery_3 = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
 			has_modifier = crucible_colony
-			AND = {
-				has_z_expanded_mod = yes
-				has_planet_flag = planetary_station
-			}
 		}
 	}
 	
@@ -887,36 +680,9 @@ building_avb_refinery_3 = {
 		has_upgraded_capital_4 = yes
 	}
 	
-	destroy_trigger = {
-		free_building_slots = 0
-		exists = owner
-		owner = {
-			is_ai = yes
-			has_monthly_income = {
-				resource = exotic_gases
-				value > 16
-			}
-		}
-	}
-	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = no }					
-		}
-		modifier = {
-			job_gas_refiner_add = 5
-		}
-	}
-	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }					
-		}
-		modifier = {
-			job_gas_refiner_drone_add = 5
-		}
+	inline_script = {
+		script = jobs/refiner_add
+		AMOUNT = 5
 	}
 	
 	resources = {
@@ -933,69 +699,6 @@ building_avb_refinery_3 = {
 	prerequisites = {
 		"tech_avb_exotic_gases_3"
 	}
-	
-	triggered_desc = {
-		trigger = { 
-			exists = owner
-			owner = { is_gestalt = no } 
-		}
-		text = job_gas_refiner_effect_desc
-	}	
-	
-	triggered_desc = {
-		trigger = { 
-			exists = owner
-			owner = { is_gestalt = yes } 
-		}
-		text = job_gas_refiner_drone_effect_desc
-	}
-	
-	ai_weight = {
-		weight = 0
-		modifier = {
-			weight = 50
-			owner = {
-				has_monthly_income = {
-					resource = exotic_gases
-					value < 5
-				}
-			}
-			buildings_build_building = yes
-		}
-		modifier = {
-			weight = 200
-			owner = {
-				has_monthly_income = {
-					resource = exotic_gases
-					value < 1
-				}
-			}
-		}
-	}
-
-	ai_resource_production = {
-		exotic_gases = 1
-		trigger = {
-			always = yes
-		}
-	}
-	#zExpanded \/
-	triggered_planet_modifier = {
-		potential = {
-			has_z_expanded_mod = yes
-			exists = owner
-			owner = {
-				is_ai = yes
-				str_force_gases = yes
-			}
-			NOT = { has_building = building_refinery }
-		}
-		modifier = {
-			job_starnet_spice_melange_farmer_add = 2
-			job_starnet_spice_melange_antifarmer_add = -2
-		}
-	}
-	#zExpanded /\
 }
 
 building_avb_chemical_plant_2 = {
@@ -1017,36 +720,9 @@ building_avb_chemical_plant_2 = {
 		has_major_upgraded_capital = yes
 	}
 	
-	destroy_trigger = {
-		free_building_slots = 0
-		exists = owner
-		owner = {
-			is_ai = yes
-			has_monthly_income = {
-				resource = volatile_motes
-				value > 12
-			}
-		}
-	}
-	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = no }					
-		}
-		modifier = {
-			job_chemist_add = 3
-		}
-	}
-	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }					
-		}
-		modifier = {
-			job_chemist_drone_add = 3
-		}
+	inline_script = {
+		script = jobs/chemist_add
+		AMOUNT = 3
 	}
 	
 	resources = {
@@ -1067,46 +743,6 @@ building_avb_chemical_plant_2 = {
 	prerequisites = {
 		"tech_avb_volatile_motes_2"
 	}
-	
-	triggered_desc = {
-		trigger = { 
-			exists = owner
-			owner = { is_gestalt = no } 
-		}
-		text = job_chemist_effect_desc
-	}	
-	
-	triggered_desc = {
-		trigger = { 
-			exists = owner
-			owner = { is_gestalt = yes } 
-		}
-		text = job_chemist_drone_effect_desc
-	}
-
-	ai_resource_production = {
-		volatile_motes = 1
-		trigger = {
-			always = yes
-		}
-	}
-	#zExpanded \/ ~ IDK why
-	triggered_planet_modifier = {
-		potential = {
-			has_z_expanded_mod = yes
-			exists = owner
-			owner = {
-				is_ai = yes
-				str_force_motes = yes
-			}
-			NOT = { has_building = building_avb_chemical_plant_2 }
-		}
-		modifier = {
-			job_starnet_spice_melange_farmer_add = 2
-			job_starnet_spice_melange_antifarmer_add = -2
-		}
-	}
-	#zExpanded /\
 }
 
 building_avb_chemical_plant_3 = {
@@ -1128,36 +764,10 @@ building_avb_chemical_plant_3 = {
 		has_upgraded_capital_4 = yes
 	}
 	
-	destroy_trigger = {
-		free_building_slots = 0
-		exists = owner
-		owner = {
-			is_ai = yes
-			has_monthly_income = {
-				resource = volatile_motes
-				value > 16
-			}
-		}
-	}
 	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = no }					
-		}
-		modifier = {
-			job_chemist_add = 5
-		}
-	}
-	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }					
-		}
-		modifier = {
-			job_chemist_drone_add = 5
-		}
+	inline_script = {
+		script = jobs/chemist_add
+		AMOUNT = 5
 	}
 	
 	resources = {
@@ -1174,46 +784,6 @@ building_avb_chemical_plant_3 = {
 	prerequisites = {
 		"tech_avb_volatile_motes_3"
 	}
-	
-	triggered_desc = {
-		trigger = { 
-			exists = owner
-			owner = { is_gestalt = no } 
-		}
-		text = job_chemist_effect_desc
-	}	
-	
-	triggered_desc = {
-		trigger = { 
-			exists = owner
-			owner = { is_gestalt = yes } 
-		}
-		text = job_chemist_drone_effect_desc
-	}
-
-	ai_resource_production = {
-		volatile_motes = 1
-		trigger = {
-			always = yes
-		}
-	}
-	#zExpanded \/ ~ IDK why
-	triggered_planet_modifier = {
-		potential = {
-			has_z_expanded_mod = yes
-			exists = owner
-			owner = {
-				is_ai = yes
-				str_force_motes = yes
-			}
-			NOT = { has_building = building_avb_chemical_plant_3 }
-		}
-		modifier = {
-			job_starnet_spice_melange_farmer_add = 2
-			job_starnet_spice_melange_antifarmer_add = -2
-		}
-	}
-	#zExpanded /\
 }
 
 building_avb_crystal_plant_2 = {
@@ -1228,10 +798,6 @@ building_avb_crystal_plant_2 = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
 			has_modifier = crucible_colony
-			AND = {
-				has_z_expanded_mod = yes
-				has_planet_flag = planetary_station
-			}
 		}
 	}
 	
@@ -1239,36 +805,9 @@ building_avb_crystal_plant_2 = {
 		has_major_upgraded_capital = yes
 	}
 	
-	destroy_trigger = {
-		free_building_slots = 0
-		exists = owner
-		owner = {
-			is_ai = yes
-			has_monthly_income = {
-				resource = rare_crystals
-				value > 12
-			}
-		}
-	}
-	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = no }					
-		}
-		modifier = {
-			job_translucer_add = 3
-		}
-	}
-	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }					
-		}
-		modifier = {
-			job_translucer_drone_add = 3
-		}
+	inline_script = {
+		script = jobs/translucer_add
+		AMOUNT = 3
 	}
 	
 	resources = {
@@ -1289,46 +828,6 @@ building_avb_crystal_plant_2 = {
 	prerequisites = {
 		"tech_avb_rare_crystals_2"
 	}
-	
-	triggered_desc = {
-		trigger = { 
-			exists = owner
-			owner = { is_gestalt = no } 
-		}
-		text = job_translucer_effect_desc
-	}	
-	
-	triggered_desc = {
-		trigger = { 
-			exists = owner
-			owner = { is_gestalt = yes } 
-		}
-		text = job_translucer_drone_effect_desc
-	}
-
-	#zExpaned \/
-	triggered_planet_modifier = {
-		potential = {
-			has_z_expanded_mod = yes
-			exists = owner
-			owner = {
-				is_ai = yes
-				str_force_crystals = yes
-			}
-			NOT = { has_building = building_crystal_plant }
-		}
-		modifier = {
-			job_starnet_spice_melange_farmer_add = 2
-			job_starnet_spice_melange_antifarmer_add = -2
-		}
-	}
-	#zExpanded /\
-	ai_resource_production = {
-		rare_crystals = 1
-		trigger = {
-			always = yes
-		}
-	}
 }
 
 building_avb_crystal_plant_3 = {
@@ -1343,10 +842,6 @@ building_avb_crystal_plant_3 = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
 			has_modifier = crucible_colony
-			AND = {
-				has_z_expanded_mod = yes
-				has_planet_flag = planetary_station
-			}
 		}
 	}
 	
@@ -1354,36 +849,9 @@ building_avb_crystal_plant_3 = {
 		has_upgraded_capital_4 = yes
 	}
 	
-	destroy_trigger = {
-		free_building_slots = 0
-		exists = owner
-		owner = {
-			is_ai = yes
-			has_monthly_income = {
-				resource = rare_crystals
-				value > 16
-			}
-		}
-	}
-	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = no }					
-		}
-		modifier = {
-			job_translucer_add = 5
-		}
-	}
-	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }					
-		}
-		modifier = {
-			job_translucer_drone_add = 5
-		}
+	inline_script = {
+		script = jobs/translucer_add
+		AMOUNT = 5
 	}
 	
 	resources = {
@@ -1399,46 +867,6 @@ building_avb_crystal_plant_3 = {
 	
 	prerequisites = {
 		"tech_avb_rare_crystals_3"
-	}
-	
-	triggered_desc = {
-		trigger = { 
-			exists = owner
-			owner = { is_gestalt = no } 
-		}
-		text = job_translucer_effect_desc
-	}	
-	
-	triggered_desc = {
-		trigger = { 
-			exists = owner
-			owner = { is_gestalt = yes } 
-		}
-		text = job_translucer_drone_effect_desc
-	}
-	
-	#zExpaned \/
-	triggered_planet_modifier = {
-		potential = {
-			has_z_expanded_mod = yes
-			exists = owner
-			owner = {
-				is_ai = yes
-				str_force_crystals = yes
-			}
-			NOT = { has_building = building_crystal_plant }
-		}
-		modifier = {
-			job_starnet_spice_melange_farmer_add = 2
-			job_starnet_spice_melange_antifarmer_add = -2
-		}
-	}
-	#zExpanded /\
-	ai_resource_production = {
-		rare_crystals = 1
-		trigger = {
-			always = yes
-		}
 	}
 }
 
@@ -1469,35 +897,12 @@ building_avb_nanite_transmuter_2 = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
 			has_modifier = crucible_colony
-			AND = {
-				has_z_expanded_mod = yes
-				has_planet_flag = planetary_station
-			}
 		}
 	}
 	
 	allow = {
 		has_fully_upgraded_capital = yes
 	}
-	#zExpanded \/
-	triggered_planet_modifier = {
-		potential = {
-			has_z_expanded_mod = yes
-			exists = owner
-			owner = { is_ai = yes }
-			NOT = { has_building = building_ministry_production }
-			or = {
-				has_factory_designation = yes
-				has_foundry_designation = yes
-				has_industrial_designation = yes
-			}
-		}
-		modifier = {
-			job_starnet_spice_melange_farmer_add = 1
-			job_starnet_spice_melange_antifarmer_add = -1
-		}
-	}
-	#zExpanded /\
 	
 	resources = {
 		category = planet_buildings
@@ -1548,7 +953,7 @@ building_avb_ministry_production_2 = {
 	
 	potential = {
 		exists = owner
-		owner = { is_gestalt = no }
+		owner = { is_regular_empire = yes }
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
@@ -1564,7 +969,7 @@ building_avb_ministry_production_2 = {
 	destroy_trigger = {
 		exists = owner
 		OR = {
-			owner = { is_gestalt = yes }
+			owner = { is_regular_empire = no }
 			has_modifier = resort_colony
 			has_modifier = slave_colony
 			AND = {
@@ -1578,24 +983,6 @@ building_avb_ministry_production_2 = {
 	
 	allow = {
 		has_fully_upgraded_capital = yes
-		or = {
-			owner = { is_ai = no }
-			planet_resource_compare = {
-				resource = alloys
-				value > 40
-			}
-			planet_resource_compare = {
-				resource = consumer_goods
-				value > 80
-			}
-			has_designation = col_foundry
-			has_designation = col_factory
-			has_designation = col_ecu_foundry
-			has_designation = col_mac_foundry
-			has_designation = col_habitat_factory
-			has_designation = col_habitat_foundry
-		}
-
 	}
 	
 	planet_modifier = {
@@ -1625,26 +1012,11 @@ building_avb_ministry_production_2 = {
 	}
 	
 	show_tech_unlock_if = { 
-		is_gestalt = no
+		is_regular_empire = yes
 	}
 	
 	ai_resource_production = {
-		trigger = { always = yes }
-		alloys = 3
-		consumer_goods = 6
-	}
-	ai_resource_production = {
-		alloys = 3
-		trigger = {
-			planet_resource_compare = {
-				resource = alloys
-				value >= 20
-				type = produces
-			}
-		}
-	}
-	ai_resource_production = {
-		alloys = 3
+		alloys = 6
 		trigger = {
 			planet_resource_compare = {
 				resource = alloys
@@ -1654,21 +1026,11 @@ building_avb_ministry_production_2 = {
 		}
 	}
 	ai_resource_production = {
-		consumer_goods = 5
+		consumer_goods = 8
 		trigger = {
 			planet_resource_compare = {
 				resource = consumer_goods
-				value >= 33
-				type = produces
-			}
-		}
-	}
-	ai_resource_production = {
-		consumer_goods = 5
-		trigger = {
-			planet_resource_compare = {
-				resource = consumer_goods
-				value >= 66
+				value >= 50
 				type = produces
 			}
 		}
@@ -1689,7 +1051,7 @@ building_avb_production_center_2 = {
 		}
 		NOT = { has_modifier = crucible_colony }
 	}
-	
+
 	destroy_trigger = {
 		exists = owner
 		OR = {
@@ -1704,23 +1066,6 @@ building_avb_production_center_2 = {
 	
 	allow = {
 		has_fully_upgraded_capital = yes
-		OR = {
-			owner = { is_ai = no }
-			planet_resource_compare = {
-				resource = alloys
-				value > 40
-			}
-			planet_resource_compare = {
-				resource = consumer_goods
-				value > 80
-			}
-			has_designation = col_foundry
-			has_designation = col_factory
-			has_designation = col_ecu_foundry
-			has_designation = col_mac_foundry
-			has_designation = col_habitat_factory
-			has_designation = col_habitat_foundry
-		}
 	}
 	
 	planet_modifier = {
@@ -1743,7 +1088,10 @@ building_avb_production_center_2 = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_hive_empire = yes }
+			owner = {
+				is_hive_empire = yes
+				is_catalytic_empire = no
+			}
 		}
 		job_alloy_drone_add = 3
 	}
@@ -1751,19 +1099,47 @@ building_avb_production_center_2 = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_machine_empire = yes }
+			owner = {
+				is_hive_empire = yes
+				is_catalytic_empire = yes
+			}
+		}
+		job_catalytic_drone_add = 3
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				is_catalytic_empire = no
+			}
 		}
 		job_fabricator_add = 2
 	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				is_catalytic_empire = yes
+			}
+		}
+		job_catalytic_drone_add = 2
+	}
 	
-	prerequisites = {
-		"tech_avb_global_production_strategy_2"
+	show_tech_unlock_if = { 
+		is_gestalt = yes
 	}
 	
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { is_hive_empire = yes }
+			owner = {
+				is_hive_empire = yes
+				is_catalytic_empire = no
+			}
 		}
 		text = job_alloy_drone_effect_desc
 	}
@@ -1771,39 +1147,31 @@ building_avb_production_center_2 = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { is_machine_empire = yes }
+			owner = {
+				is_machine_empire = yes
+				is_catalytic_empire = no
+			}
 		}
 		text = job_fabricator_effect_desc
-	}	
-	
-	show_tech_unlock_if = { 
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+				is_catalytic_empire = yes
+			}
+		}
+		text = job_catalytic_drone_effect_desc
+	}
+
+	show_tech_unlock_if = {
 		is_gestalt = yes
 	}
-	
+
 	ai_resource_production = {
-		trigger = { always = yes }
-		alloys = 3
-	}
-	ai_resource_production = {
-		trigger = {
-			owner = {
-				country_uses_consumer_goods = yes
-			}
-		}
-		consumer_goods = 6
-	}
-	ai_resource_production = {
-		alloys = 3
-		trigger = {
-			planet_resource_compare = {
-				resource = alloys
-				value >= 20
-				type = produces
-			}
-		}
-	}
-	ai_resource_production = {
-		alloys = 3
+		alloys = 6
 		trigger = {
 			planet_resource_compare = {
 				resource = alloys
@@ -1813,23 +1181,75 @@ building_avb_production_center_2 = {
 		}
 	}
 	ai_resource_production = {
-		consumer_goods = 5
+		consumer_goods = 8
 		trigger = {
+			owner = { country_uses_consumer_goods = yes }
 			planet_resource_compare = {
 				resource = consumer_goods
-				value >= 33
+				value >= 50
 				type = produces
 			}
 		}
 	}
-	ai_resource_production = {
-		consumer_goods = 5
-		trigger = {
-			planet_resource_compare = {
-				resource = consumer_goods
-				value >= 66
-				type = produces
+}
+building_avb_archaeo_refinery_2 = {
+	base_buildtime = @avb_f4_time
+	can_build = no
+	category = manufacturing
+
+	potential = {
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = crucible_colony
+		}
+		owner = { has_technology = tech_avb_archaeo_refinery_2 }
+	}
+
+	inline_script = {
+		script = jobs/chemist_add
+		AMOUNT = 2
+	}
+
+	inline_script = {
+		script = jobs/refiner_add
+		AMOUNT = 2
+	}
+
+	inline_script = {
+		script = jobs/translucer_add
+		AMOUNT = 2
+	}
+
+	planet_modifier = {
+		planet_jobs_exotic_gases_produces_mult = 0.4
+		planet_jobs_rare_crystals_produces_mult = 0.4
+		planet_jobs_volatile_motes_produces_mult = 0.4
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				has_ascension_perk = ap_archaeoengineers
 			}
 		}
+		planet_jobs_exotic_gases_produces_mult = 0.15
+		planet_jobs_rare_crystals_produces_mult = 0.15
+		planet_jobs_volatile_motes_produces_mult = 0.15
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_f4_minerals
+			minor_artifacts = @avb_f4_rare_cost
+		}
+		upkeep = {
+			energy = @avb_f4_upkeep
+		}
+	}
+
+	prerequisites = {
+		"tech_avb_archaeo_refinery_2"
 	}
 }

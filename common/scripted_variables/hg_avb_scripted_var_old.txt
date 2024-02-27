@@ -22,11 +22,13 @@
 @avb_b5_minerals = 4000
 @avb_b5_upkeep = 18
 @avb_b5_jobs = 24
-@avb_b5_rare_cost = 250
-@avb_b5_rare_upkeep = 6
+@avb_b5_rare_cost = 350
+@avb_b5_rare_upkeep = 8
 
 @avb_b6_time = 3500
 @avb_b6_minerals = 5400
+@avb_b6_rare_cost = 550
+@avb_b5_rare_upkeep = 11
 @avb_b6_upkeep = 26
 
 ##

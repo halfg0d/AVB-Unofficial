@@ -21,6 +21,7 @@ planet_event = {
 	hide_window = yes
 
 	trigger = {
+		always = no
 		last_building_changed = building_avb_posthumous_employment_center_2
 		has_building = building_avb_posthumous_employment_center_2
 	}
@@ -43,6 +44,7 @@ planet_event = {
 	hide_window = yes
 
 	trigger = {
+		always = no
 		last_created_pop = {
 			has_trait = trait_zombie
 		}
@@ -66,6 +68,7 @@ planet_event = {
 	hide_window = yes
 	
 	trigger = {
+		always = no
 		NOT = { has_building = building_avb_posthumous_employment_center_2 }
 		any_owned_pop = {
 			has_modifier = avb_zombie_buff

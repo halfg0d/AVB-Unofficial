@@ -18,44 +18,9 @@ building_avb_research_lab_4 = {
 			has_modifier = crucible_colony
 		}
 	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_civic = civic_technocracy }
-		}
-		modifier = {
-			job_researcher_add = -3
-			job_head_researcher_add = 1
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = no }
-		}
-		modifier = {
-			job_researcher_add = @avb_r4_jobs
-		}
-	}
-	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_hive_empire = yes }
-		}
-		modifier = {
-			job_brain_drone_add = @avb_r4_jobs
-		}
-	}
-	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-		}
-		modifier = {
-			job_calculator_add = @avb_r4_jobs
-		}
+	inline_script = {
+		script = jobs/researchers_add
+		AMOUNT = 8
 	}
 	
 	triggered_planet_modifier = {
@@ -119,30 +84,6 @@ building_avb_research_lab_4 = {
 	prerequisites = {
 		"tech_avb_basic_science_lab_4"
 	}
-	
-	triggered_desc = {
-		trigger = { 
-			exists = owner
-			owner = { is_gestalt = no } 
-		}
-		text = job_researcher_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = { 
-			exists = owner
-			owner = { is_hive_empire = yes } 
-		}
-		text = job_brain_drone_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = { 
-			exists = owner
-			owner = { is_machine_empire = yes } 
-		}
-		text = job_calculator_effect_desc
-	}	
 }
 
 building_avb_research_lab_5 = {
@@ -162,46 +103,10 @@ building_avb_research_lab_5 = {
 			has_modifier = crucible_colony
 		}
 	}
-	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = no }
-		}
-		modifier = {
-			job_researcher_add = @avb_r5_jobs
-		}
+	inline_script = {
+		script = jobs/researchers_add
+		AMOUNT = 10
 	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_civic = civic_technocracy }
-		}
-		modifier = {
-			job_researcher_add = -4
-			job_head_researcher_add = 2
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_hive_empire = yes }
-		}
-		modifier = {
-			job_brain_drone_add = @avb_r5_jobs
-		}
-	}
-	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-		}
-		modifier = {
-			job_calculator_add = @avb_r5_jobs
-		}
-	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -263,30 +168,6 @@ building_avb_research_lab_5 = {
 	prerequisites = {
 		"tech_avb_basic_science_lab_5"
 	}
-	
-	triggered_desc = {
-		trigger = { 
-			exists = owner
-			owner = { is_gestalt = no } 
-		}
-		text = job_researcher_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = { 
-			exists = owner
-			owner = { is_hive_empire = yes } 
-		}
-		text = job_brain_drone_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = { 
-			exists = owner
-			owner = { is_machine_empire = yes } 
-		}
-		text = job_calculator_effect_desc
-	}	
 }
 
 building_avb_research_lab_6 = {
@@ -306,46 +187,10 @@ building_avb_research_lab_6 = {
 			has_modifier = crucible_colony
 		}
 	}
-	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = no }
-		}
-		modifier = {
-			job_researcher_add = @avb_r6_jobs
-		}
+	inline_script = {
+		script = jobs/researchers_add
+		AMOUNT = 12
 	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_civic = civic_technocracy }
-		}
-		modifier = {
-			job_researcher_add = -6
-			job_head_researcher_add = 3
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_hive_empire = yes }
-		}
-		modifier = {
-			job_brain_drone_add = @avb_r6_jobs
-		}
-	}
-	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-		}
-		modifier = {
-			job_calculator_add = @avb_r6_jobs
-		}
-	}
-	
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -403,30 +248,6 @@ building_avb_research_lab_6 = {
 	prerequisites = {
 		"tech_avb_basic_science_lab_6"
 	}
-	
-	triggered_desc = {
-		trigger = { 
-			exists = owner
-			owner = { is_gestalt = no } 
-		}
-		text = job_researcher_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = { 
-			exists = owner
-			owner = { is_hive_empire = yes } 
-		}
-		text = job_brain_drone_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = { 
-			exists = owner
-			owner = { is_machine_empire = yes } 
-		}
-		text = job_calculator_effect_desc
-	}	
 }
 
 building_avb_institute_2 = {
@@ -442,7 +263,7 @@ building_avb_institute_2 = {
 			has_modifier = crucible_colony
 		}
 		exists = owner
-		owner = { is_gestalt = no }
+		owner = { is_regular_empire = yes }
 	}
 
 	destroy_trigger = {
@@ -462,20 +283,6 @@ building_avb_institute_2 = {
 	allow = {
 		has_upgraded_capital_4 = yes
 	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_global_flag = ethic_civic_classic_active
-				has_valid_civic = civic_innovative_economy
-			}
-		}
-		modifier = {
-			planet_jobs_unity_produces_mult = 0.1
-			planet_housing_add = 3
-		}
-	}
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -487,27 +294,11 @@ building_avb_institute_2 = {
 			exotic_gases = @avb_r4_rare_upkeep
 		}
 	}
-	
-	#EC: Bug \/
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = bug_branch_active
-			exists = owner
-			owner = {
-				has_civic = civic_bugged_research_cooperatives
-			}
-		}
-		modifier = {
-			planet_jobs_unity_produces_mult = 0.1
-
-		}
-	}
-	#EC: Bug /\
-	
 	country_modifier = {
 		country_scientist_cap_add = 2
 		all_technology_research_speed = 0.1
 	}
+
 	planet_modifier = {
 		job_head_researcher_add = 2
 	}
@@ -520,37 +311,20 @@ building_avb_institute_2 = {
 		text = job_head_researcher_effect_desc
 	}
 	
-	show_tech_unlock_if = { 
-		is_gestalt = no
+	show_tech_unlock_if = {
+		is_regular_empire = yes
 	}
-	
-	ai_resource_production = {
-		trigger = { always = yes }
-		physics_research = 3
-		society_research = 3
-		engineering_research = 3
-	}
+
 	ai_resource_production = {
 		trigger = {
 			planet_resource_compare = {
 				resource = physics_research
-				value >= 20
+				value >= 30
 			}
 		}
-		physics_research = 3
-		society_research = 3
-		engineering_research = 3
-	}
-	ai_resource_production = {
-		trigger = {
-			planet_resource_compare = {
-				resource = physics_research
-				value >= 40
-			}
-		}
-		physics_research = 3
-		society_research = 3
-		engineering_research = 3
+		physics_research = 5
+		society_research = 5
+		engineering_research = 5
 	}
 }
 
@@ -573,14 +347,6 @@ building_avb_supercomputer_2 = {
 
 	allow = {
 		has_upgraded_capital_4 = yes
-		OR = {
-			owner = { is_ai = no }
-			planet_resource_compare = {
-				resource = physics_research
-				value > 60
-			}
-			has_designation = col_research
-		}
 	}
 	
 	destroy_trigger = {
@@ -589,7 +355,7 @@ building_avb_supercomputer_2 = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
 			has_modifier = crucible_colony
-			owner = { is_gestalt = no }
+			owner = { is_regular_empire = yes }
 		}
 	}
 	
@@ -612,76 +378,19 @@ building_avb_supercomputer_2 = {
 		country_scientist_cap_add = 2
 		all_technology_research_speed = 0.1
 	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_hive_empire = yes }
-		}
-		modifier = {
-			job_brain_drone_add = 4
-		}
-	}
-	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-		}
-		modifier = {	
-			job_calculator_add = 4
-		}
+
+	inline_script = {
+		script = jobs/researchers_add
+		AMOUNT = 3
 	}
 	
 	prerequisites = {
 		"tech_avb_global_research_initiative_2"
 	}
-
-	triggered_desc = {
-		trigger = { 
-			exists = owner
-			owner = { is_hive_empire = yes } 
-		}
-		text = job_brain_drone_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = { 
-			exists = owner
-			owner = { is_machine_empire = yes } 
-		}
-		text = job_calculator_effect_desc
-	}	
-	
-	show_tech_unlock_if = { 
+	show_tech_unlock_if = {
 		is_gestalt = yes
 	}
-	
-	#EC: Bug \/
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = bug_branch_active
-			exists = owner
-			owner = { has_civic = civic_bugged_machine_researcher }
-		}
-		modifier = {
-			job_bugged_examinatron_add = 2
-		}
-	}
-	triggered_desc = {
-		trigger = {
-			has_global_flag = bug_branch_active
-			exists = owner
-			owner = { has_civic = civic_bugged_machine_researcher }
-		}
-		text = job_bugged_examinatron_effect_desc
-	}
-	#EC: Bug /\
-	ai_resource_production = {
-		trigger = { always = yes }
-		physics_research = 3
-		society_research = 3
-		engineering_research = 3
-	}
+
 	ai_resource_production = {
 		trigger = {
 			planet_resource_compare = {
@@ -703,5 +412,192 @@ building_avb_supercomputer_2 = {
 		physics_research = 3
 		society_research = 3
 		engineering_research = 3
+	}
+}
+
+building_avb_archaeostudies_faculty_2 = {
+	base_buildtime = @avb_f4_time
+
+	can_build = no
+	category = research
+
+	potential = {
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = crucible_colony
+		}
+		exists = owner
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = crucible_colony
+		}
+	}
+
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_f4_minerals
+			minor_artifacts = 100
+		}
+		upkeep = {
+			energy = 35
+		}
+	}
+	inline_script = {
+		script = jobs/archaeoengineers_add
+		BASE_AMOUNT = 4
+		AP_AMOUNT = 3
+	}
+
+	country_modifier = {
+		category_archaeostudies_research_speed_mult = 1.5
+		country_resource_max_minor_artifacts_add = 2000
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_ascension_perk = ap_archaeoengineers
+			}
+		}
+		country_resource_max_minor_artifacts_add = 2000
+	}
+
+	triggered_country_modifier = {
+		potential = { 
+			planet = { 
+				is_planet_class = pc_relic
+			} 
+		}
+		category_archaeostudies_research_speed_mult = 1
+	}
+
+	prerequisites = {
+		"tech_avb_archaeostudies_faculty_2"
+	}
+
+	triggered_desc = {
+		text = building_archaeostudies_faculty_relic_effect
+	}
+}
+
+building_avb_vultaum_reality_computer_2 = {
+	base_buildtime = @avb_f4_time
+
+	can_build = no
+	category = research
+
+	potential = {
+		exists = owner
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = crucible_colony
+		}
+	}
+
+	allow = {
+		has_upgraded_capital_4 = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = crucible_colony
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_f4_minerals
+			minor_artifacts = 60
+		}
+		upkeep = {
+			energy = @avb_f4_upkeep
+		}
+	}
+
+	planet_modifier = {
+		planet_researchers_physics_research_produces_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_ascension_perk = ap_archaeoengineers }
+		}
+		planet_researchers_physics_research_produces_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_head_researcher_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_brain_drone_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_calculator_add = 2
+		}
+	}
+
+	prerequisites = {
+		"tech_avb_vultaum_reality_computer_2"
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_head_researcher_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		text = job_brain_drone_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		text = job_calculator_effect_desc
 	}
 }
