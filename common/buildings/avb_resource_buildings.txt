@@ -915,6 +915,6 @@ building_avb_bio_reactor_3 = {
 	}
 
 	prerequisites = {
-		tech_bio_reactor_2
+		tech_bio_reactor_3
 	}
 }
