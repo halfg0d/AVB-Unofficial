@@ -30,12 +30,26 @@ building_avb_foundry_4 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_b4_minerals
-			volatile_motes = @avb_b4_rare_cost
+			minerals = @avb_b3_minerals
+			volatile_motes = @avb_b3_rare_cost
 		}
 		upkeep = {
-			energy = @avb_b4_upkeep
-			volatile_motes = @avb_b4_rare_upkeep
+			energy = @avb_b3_upkeep
+			volatile_motes = @avb_b3_rare_upkeep
+		}
+		cost = {
+			trigger = {
+				has_ringworld_output_boost = yes
+			}
+			minerals = 700
+			volatile_motes = 500
+		}
+		upkeep = {
+			trigger = {
+				has_ringworld_output_boost = yes
+			}
+			energy = 7
+			volatile_motes = 4
 		}
 	}
 
@@ -133,12 +147,26 @@ building_avb_foundry_5 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_b5_minerals
-			volatile_motes = @avb_b5_rare_cost
+			minerals = @avb_b4_minerals
+			volatile_motes = @avb_b4_rare_cost
 		}
 		upkeep = {
-			energy = @avb_b5_upkeep
-			volatile_motes = @avb_b5_rare_upkeep
+			energy = @avb_b4_upkeep
+			volatile_motes = @avb_b4_rare_upkeep
+		}
+		cost = {
+			trigger = {
+				has_ringworld_output_boost = yes
+			}
+			minerals = 700
+			volatile_motes = 500
+		}
+		upkeep = {
+			trigger = {
+				has_ringworld_output_boost = yes
+			}
+			energy = 7
+			volatile_motes = 4
 		}
 	}
 
@@ -237,12 +265,26 @@ building_avb_foundry_6 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_b6_minerals
-			volatile_motes = @avb_b6_rare_cost
+			minerals = @avb_b5_minerals
+			volatile_motes = @avb_b5_rare_cost
 		}
 		upkeep = {
-			energy = @avb_b6_upkeep
-			volatile_motes = @avb_b6_rare_upkeep
+			energy = @avb_b5_upkeep
+			volatile_motes = @avb_b5_rare_upkeep
+		}
+		cost = {
+			trigger = {
+				has_ringworld_output_boost = yes
+			}
+			minerals = 700
+			volatile_motes = 500
+		}
+		upkeep = {
+			trigger = {
+				has_ringworld_output_boost = yes
+			}
+			energy = 7
+			volatile_motes = 4
 		}
 	}
 
@@ -372,32 +414,26 @@ building_avb_factory_4 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			trigger = {
-				has_ringworld_output_boost = no
-			}
 			minerals = @avb_b3_minerals
-			rare_crystals = 150	
-		}	
+			volatile_motes = @avb_b3_rare_cost
+		}
+		upkeep = {
+			energy = @avb_b3_upkeep
+			volatile_motes = @avb_b3_rare_upkeep
+		}
 		cost = {
 			trigger = {
 				has_ringworld_output_boost = yes
 			}
-			minerals = 1800
-			rare_crystals = 800
-		}
-		upkeep = {
-			trigger = {
-				has_ringworld_output_boost = no
-			}
-			energy = @avb_b3_upkeep
-			rare_crystals = 4
+			minerals = 700
+			volatile_motes = 500
 		}
 		upkeep = {
 			trigger = {
 				has_ringworld_output_boost = yes
 			}
-			energy = 18
-			rare_crystals = 10
+			energy = 7
+			volatile_motes = 4
 		}
 	}	
 	
@@ -478,32 +514,26 @@ building_avb_factory_5 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			trigger = {
-				has_ringworld_output_boost = no
-			}
 			minerals = @avb_b4_minerals
-			rare_crystals = 180	
-		}	
+			volatile_motes = @avb_b4_rare_cost
+		}
+		upkeep = {
+			energy = @avb_b4_upkeep
+			volatile_motes = @avb_b4_rare_upkeep
+		}
 		cost = {
 			trigger = {
 				has_ringworld_output_boost = yes
 			}
-			minerals = 2000
-			rare_crystals = 960
-		}
-		upkeep = {
-			trigger = {
-				has_ringworld_output_boost = no
-			}
-			energy = @avb_b4_upkeep
-			rare_crystals = 4
+			minerals = 700
+			volatile_motes = 500
 		}
 		upkeep = {
 			trigger = {
 				has_ringworld_output_boost = yes
 			}
-			energy = 22
-			rare_crystals = 12
+			energy = 7
+			volatile_motes = 4
 		}
 	}	
 	
@@ -584,32 +614,26 @@ building_avb_factory_6 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			trigger = {
-				has_ringworld_output_boost = no
-			}
 			minerals = @avb_b5_minerals
-			rare_crystals = 220	
-		}	
+			volatile_motes = @avb_b5_rare_cost
+		}
+		upkeep = {
+			energy = @avb_b5_upkeep
+			volatile_motes = @avb_b5_rare_upkeep
+		}
 		cost = {
 			trigger = {
 				has_ringworld_output_boost = yes
 			}
-			minerals = 2600
-			rare_crystals = 1240
-		}
-		upkeep = {
-			trigger = {
-				has_ringworld_output_boost = no
-			}
-			energy = @avb_b5_upkeep
-			rare_crystals = 4
+			minerals = 700
+			volatile_motes = 500
 		}
 		upkeep = {
 			trigger = {
 				has_ringworld_output_boost = yes
 			}
-			energy = 25
-			rare_crystals = 14
+			energy = 7
+			volatile_motes = 4
 		}
 	}	
 	
@@ -645,7 +669,7 @@ building_avb_refinery_2 = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b3_minerals
-			exotic_gases = 100
+			exotic_gases = @avb_b3_rare_cost
 		}	
 		upkeep = {
 			energy = @avb_b3_upkeep
@@ -689,7 +713,7 @@ building_avb_refinery_3 = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b4_minerals
-			exotic_gases = 200
+			exotic_gases = @avb_b4_rare_cost
 		}	
 		upkeep = {
 			energy = @avb_b4_upkeep
@@ -729,7 +753,7 @@ building_avb_chemical_plant_2 = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b3_minerals
-			volatile_motes = 100
+			volatile_motes = @avb_b3_rare_cost
 		}	
 		upkeep = {
 			energy = @avb_b3_upkeep
@@ -774,7 +798,7 @@ building_avb_chemical_plant_3 = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b4_minerals
-			volatile_motes = 200
+			volatile_motes = @avb_b4_rare_cost
 		}	
 		upkeep = {
 			energy = @avb_b4_upkeep
@@ -814,7 +838,7 @@ building_avb_crystal_plant_2 = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b3_minerals
-			rare_crystals = 100
+			rare_crystals = @avb_b3_rare_cost
 		}	
 		upkeep = {
 			energy = @avb_b3_upkeep
@@ -858,7 +882,7 @@ building_avb_crystal_plant_3 = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b4_minerals
-			rare_crystals = 200
+			rare_crystals = @avb_b4_rare_cost
 		}	
 		upkeep = {
 			energy = @avb_b4_upkeep
@@ -945,7 +969,7 @@ building_avb_nanite_transmuter_2 = {
 }
 
 building_avb_ministry_production_2 = {
-	base_buildtime = @avb_b4_time
+	base_buildtime = @avb_b3_time
 	icon = building_avb_production_center_2
 	can_build = no
 
@@ -994,12 +1018,12 @@ building_avb_ministry_production_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_b4_minerals
-			volatile_motes = 50
-			rare_crystals = 50
+			minerals = @avb_b3_minerals
+			volatile_motes = @avb_b3_rare_cost
+			rare_crystals = @avb_b3_rare_cost
 		}
 		upkeep = {
-			energy = @avb_b4_upkeep
+			energy = @avb_b3_upkeep
 		}
 	}
 	
@@ -1038,7 +1062,7 @@ building_avb_ministry_production_2 = {
 }
 
 building_avb_production_center_2 = {
-	base_buildtime = @avb_b4_time
+	base_buildtime = @avb_b3_time
 	can_build = no
 
 	category = manufacturing
@@ -1076,12 +1100,12 @@ building_avb_production_center_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_b4_minerals
-			volatile_motes = 50
-			rare_crystals = 50
+			minerals = @avb_b3_minerals
+			volatile_motes = @avb_b3_rare_cost
+			rare_crystals = @avb_b3_rare_cost
 		}
 		upkeep = {
-			energy = @avb_b4_upkeep
+			energy = @avb_b3_upkeep
 		}
 	}
 
@@ -1165,11 +1189,6 @@ building_avb_production_center_2 = {
 		}
 		text = job_catalytic_drone_effect_desc
 	}
-
-	show_tech_unlock_if = {
-		is_gestalt = yes
-	}
-
 	ai_resource_production = {
 		alloys = 6
 		trigger = {
@@ -1193,11 +1212,12 @@ building_avb_production_center_2 = {
 	}
 }
 building_avb_archaeo_refinery_2 = {
-	base_buildtime = @avb_f4_time
+	base_buildtime = @avb_b4_time
 	can_build = no
 	category = manufacturing
 
 	potential = {
+		avb_hg_changes = yes
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
@@ -1241,11 +1261,11 @@ building_avb_archaeo_refinery_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_f4_minerals
-			minor_artifacts = @avb_f4_rare_cost
+			minerals = @avb_b4_minerals
+			minor_artifacts = @avb_b4_rare_cost
 		}
 		upkeep = {
-			energy = @avb_f4_upkeep
+			energy = @avb_b4_upkeep
 		}
 	}
 

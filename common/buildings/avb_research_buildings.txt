@@ -446,8 +446,8 @@ building_avb_archaeostudies_faculty_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_f4_minerals
-			minor_artifacts = 100
+			minerals = @avb_b4_minerals
+			minor_artifacts = @avb_b4_rare_cost
 		}
 		upkeep = {
 			energy = 35

@@ -10,6 +10,7 @@ building_avb_hydroponics_farm_3 = {
 	category = resource
 
 	potential = {
+		avb_hg_changes = yes
 		exists = owner
 		owner = {
 			OR = {
@@ -287,6 +288,7 @@ building_avb_mineral_mine_1 = {
 	allow = { always = yes }
 
 	potential = {
+		avb_hg_changes = yes
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = crucible_colony
@@ -364,6 +366,9 @@ building_avb_mineral_mine_1 = {
 		upkeep = {
 			energy = @b1_upkeep
 		}
+		produces = {
+			minerals = 10
+		}
 	}
 
 	prerequisites = {
@@ -391,6 +396,7 @@ building_avb_mineral_mine_2 = {
 		has_upgraded_capital = yes
 	}
 	potential = {
+		avb_hg_changes = yes
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = crucible_colony
@@ -469,6 +475,9 @@ building_avb_mineral_mine_2 = {
 			energy = @b2_upkeep
 			volatile_motes = @b2_rare_upkeep
 		}
+		produces = {
+			minerals = 20
+		}
 	}
 
 	prerequisites = {
@@ -495,6 +504,7 @@ building_avb_mineral_mine_3 = {
 		has_major_upgraded_capital = yes
 	}
 	potential = {
+		avb_hg_changes = yes
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = crucible_colony
@@ -575,6 +585,9 @@ building_avb_mineral_mine_3 = {
 			energy = @b3_upkeep
 			volatile_motes = @b3_rare_upkeep
 		}
+		produces = {
+			minerals = 40
+		}
 	}
 
 	prerequisites = {
@@ -598,6 +611,7 @@ building_avb_energy_1 = {
 	allow = { always = yes }
 
 	potential = {
+		avb_hg_changes = yes
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = crucible_colony
@@ -661,6 +675,9 @@ building_avb_energy_1 = {
 		upkeep = {
 			energy = @b1_upkeep
 		}
+		produces = {
+			energy = 10
+		}
 	}
 	prerequisites = {
 		tech_power_plant_2
@@ -688,6 +705,7 @@ building_avb_energy_2 = {
 	}
 
 	potential = {
+		avb_hg_changes = yes
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = crucible_colony
@@ -762,6 +780,9 @@ building_avb_energy_2 = {
 			energy = @b2_upkeep
 			exotic_gases = @b2_rare_upkeep
 		}
+		produces = {
+			energy = 20
+		}
 	}
 	prerequisites = {
 		tech_power_plant_4
@@ -790,6 +811,7 @@ building_avb_energy_3 = {
 	}
 
 	potential = {
+		avb_hg_changes = yes
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = crucible_colony
@@ -856,6 +878,9 @@ building_avb_energy_3 = {
 			energy = @b3_upkeep
 			exotic_gases = @b3_rare_upkeep
 		}
+		produces = {
+			energy = 40
+		}
 	}
 	
 	prerequisites = {
@@ -871,12 +896,13 @@ building_avb_energy_3 = {
 }
 
 building_avb_resource_silo_3 = {
-	base_buildtime = @avb_rs4_time
+	base_buildtime = @avb_b3_time
 	can_build = no
 
 	category = resource
 	
 	potential = {
+		avb_hg_changes = yes
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
@@ -930,10 +956,10 @@ building_avb_resource_silo_3 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_rs5_minerals
+			minerals = @avb_b3_minerals
 		}
 		upkeep = {
-			energy = @avb_rs5_upkeep
+			energy = @avb_b3_upkeep
 		}		
 	}
 	

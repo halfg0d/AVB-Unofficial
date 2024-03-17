@@ -68,7 +68,7 @@ building_avb_noble_estates_2 = {
 }
 
 building_avb_slave_processing_2 = {
-	base_buildtime = @avb_b3_time
+	base_buildtime = @avb_b2_time
 	can_build = no
 
 	category = government
@@ -115,10 +115,10 @@ building_avb_slave_processing_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_b3_minerals
+			minerals = @avb_b2_minerals
 		}
 		upkeep = {
-			energy = @avb_b3_upkeep
+			energy = @avb_b2_upkeep
 		}
 	}
 	triggered_desc = {
@@ -168,12 +168,12 @@ building_avb_enforcement_3 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_b4_minerals
-			volatile_motes = @avb_b4_rare_cost
+			minerals = @avb_b3_minerals
+			volatile_motes = @avb_b3_rare_cost
 		}
 		upkeep = {
-			energy = @avb_b4_upkeep
-			volatile_motes = @avb_b4_rare_upkeep
+			energy = @avb_b2_upkeep
+			volatile_motes = @avb_b3_rare_upkeep
 		}
 	}
 	
@@ -195,7 +195,7 @@ building_avb_enforcement_3 = {
 }
 
 building_avb_enforcement_4 = {
-	base_buildtime = @avb_b5_time
+	base_buildtime = @avb_b4_time
 
 	category = government
 	can_build = no
@@ -228,12 +228,12 @@ building_avb_enforcement_4 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_b5_minerals
-			volatile_motes = @avb_b5_rare_cost
+			minerals = @avb_b4_minerals
+			volatile_motes = @avb_b4_rare_cost
 		}
 		upkeep = {
-			energy = @avb_b5_upkeep
-			volatile_motes = @avb_b5_rare_upkeep
+			energy = @avb_b3_upkeep
+			volatile_motes = @avb_b4_rare_upkeep
 		}
 	}
 	
@@ -251,7 +251,7 @@ building_avb_enforcement_4 = {
 }
 
 building_avb_sentinel_posts_2 = {
-	base_buildtime = @avb_b3_time 
+	base_buildtime = @avb_b2_time 
 	can_build = no
 
 	category = government
@@ -360,11 +360,11 @@ building_avb_psi_corps_2 = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b3_minerals
-			sr_zro = @avb_b3_rare_cost
+			sr_zro = @avb_b2_rare_cost
 		}
 		upkeep = {
 			energy = @avb_b3_upkeep
-			sr_zro = @avb_b3_rare_upkeep
+			sr_zro = @avb_b2_rare_upkeep
 		}
 	}
 	
@@ -378,7 +378,7 @@ building_avb_psi_corps_2 = {
 }
 
 building_avb_psi_corps_3 = {
-	base_buildtime = @avb_b5_time
+	base_buildtime = @avb_b4_time
 	can_build = no
 
 	category = government
@@ -422,12 +422,12 @@ building_avb_psi_corps_3 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_b5_minerals
-			sr_zro = @avb_b5_rare_cost
+			minerals = @avb_b4_minerals
+			sr_zro = @avb_b3_rare_cost
 		}
 		upkeep = {
-			energy = @avb_b5_upkeep
-			sr_zro = @avb_b5_rare_upkeep
+			energy = @avb_b4_upkeep
+			sr_zro = @avb_b3_rare_upkeep
 		}
 	}
 	
@@ -441,12 +441,13 @@ building_avb_psi_corps_3 = {
 }
 
 building_avb_grand_embassy_2 = {
-	base_buildtime = @b4_time
+	base_buildtime = @avb_b4_time
 	can_build = no
 
 	category = government
 
 	potential = {
+		avb_hg_changes = yes
 		exists = owner
 		owner = { is_regular_empire = yes }
 
@@ -498,12 +499,12 @@ building_avb_grand_embassy_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @b4_minerals
-			rare_crystals = @b4_rare_cost
+			minerals = @avb_b4_minerals
+			rare_crystals = @avb_b4_rare_cost
 		}
 		upkeep = {
-			energy = @b4_upkeep
-			rare_crystals = @b4_rare_upkeep
+			energy = @avb_b4_upkeep
+			rare_crystals = @avb_b4_rare_upkeep
 		}
 	}
 
@@ -514,7 +515,8 @@ building_avb_grand_embassy_2 = {
 	show_tech_unlock_if = {
 		is_regular_empire = yes
 	}
-}###
+}
+###
 ### Zoo Administration
 ###
 building_avb_zoo_administration = {
@@ -527,6 +529,7 @@ building_avb_zoo_administration = {
 		tech_avb_xeno_zoo_2
 	}
 	potential = {
+		avb_hg_changes = yes
 		is_artificial = no
 		has_modifier = resort_colony
 		planet = {

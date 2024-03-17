@@ -4,7 +4,7 @@
 
 #Regular
 building_avb_monument_4 = {
-	base_buildtime = @avb_u4_time
+	base_buildtime = @avb_b4_time
 	can_build = no
 
 	category = unity
@@ -57,13 +57,13 @@ building_avb_monument_4 = {
 			multiplier = owner.trigger:num_ascension_perks
 		}
 		cost = {
-			minerals = @avb_u4_minerals
+			minerals = @avb_b4_minerals
 		}
 	}
 
 	planet_modifier = {
 		planet_jobs_unity_produces_mult = 0.2
-		job_culture_worker_add = @avb_u4_jobs
+		job_culture_worker_add = @avb_b4_jobs
 	}
 
 	triggered_desc = {
@@ -88,7 +88,7 @@ building_avb_monument_4 = {
 	}
 }
 building_avb_monument_5 = {
-	base_buildtime = @avb_u5_time
+	base_buildtime = @avb_b5_time
 	can_build = no
 
 	category = unity
@@ -138,13 +138,13 @@ building_avb_monument_5 = {
 			multiplier = owner.trigger:num_ascension_perks
 		}
 		cost = {
-			minerals = @avb_u5_minerals
+			minerals = @avb_b5_minerals
 		}
 	}
 
 	planet_modifier = {
 		planet_jobs_unity_produces_mult = 0.25
-		job_culture_worker_add = @avb_u5_jobs
+		job_culture_worker_add = @avb_b5_jobs
 	}
 	triggered_desc = {
 		text = building_avb_monument_effect_5
@@ -168,7 +168,7 @@ building_avb_monument_5 = {
 	}
 }
 building_avb_monument_6 = {
-	base_buildtime = @avb_u6_time
+	base_buildtime = @avb_b6_time
 	can_build = no
 
 	category = unity
@@ -218,13 +218,13 @@ building_avb_monument_6 = {
 			multiplier = owner.trigger:num_ascension_perks
 		}
 		cost = {
-			minerals = @avb_u6_minerals
+			minerals = @avb_b6_minerals
 		}
 	}
 
 	planet_modifier = {
 		planet_jobs_unity_produces_mult = 0.3
-		job_culture_worker_add = @avb_u6_jobs
+		job_culture_worker_add = @avb_b6_jobs
 	}
 
 	triggered_desc = {
@@ -251,7 +251,7 @@ building_avb_monument_6 = {
 ##################
 
 building_avb_bureaucratic_4 = {
-	base_buildtime = @avb_u4_time
+	base_buildtime = @avb_b4_time
 	can_build = no
 
 	category = unity
@@ -291,12 +291,12 @@ building_avb_bureaucratic_4 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_u4_minerals
-			rare_crystals = @avb_u4_rare_cost
+			minerals = @avb_b4_minerals
+			rare_crystals = @avb_b4_rare_cost
 		}
 		upkeep = {
-			energy = @avb_u4_upkeep
-			rare_crystals = @avb_u4_rare_upkeep
+			energy = @avb_b4_upkeep
+			rare_crystals = @avb_b4_rare_upkeep
 		}
 	}
 
@@ -321,7 +321,7 @@ building_avb_bureaucratic_4 = {
 }
 
 building_avb_bureaucratic_5 = {
-	base_buildtime = @avb_u5_time
+	base_buildtime = @avb_b5_time
 	can_build = no
 
 	category = unity
@@ -361,12 +361,12 @@ building_avb_bureaucratic_5 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_u5_minerals
-			rare_crystals = @avb_u5_rare_cost
+			minerals = @avb_b5_minerals
+			rare_crystals = @avb_b5_rare_cost
 		}
 		upkeep = {
-			energy = @avb_u5_upkeep
-			rare_crystals = @avb_u5_rare_upkeep
+			energy = @avb_b5_upkeep
+			rare_crystals = @avb_b5_rare_upkeep
 		}
 	}
 
@@ -390,7 +390,7 @@ building_avb_bureaucratic_5 = {
 }
 
 building_avb_bureaucratic_6 = {
-	base_buildtime = @avb_u6_time
+	base_buildtime = @avb_b6_time
 	can_build = no
 
 	category = unity
@@ -430,12 +430,12 @@ building_avb_bureaucratic_6 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_u6_minerals
-			rare_crystals = @avb_u6_rare_cost
+			minerals = @avb_b6_minerals
+			rare_crystals = @avb_b6_rare_cost
 		}
 		upkeep = {
-			energy = @avb_u6_upkeep
-			rare_crystals = @avb_u6_rare_upkeep
+			energy = @avb_b6_upkeep
+			rare_crystals = @avb_b6_rare_upkeep
 		}
 	}
 
@@ -455,7 +455,7 @@ building_avb_bureaucratic_6 = {
 }
 #Spiritualists
 building_avb_temple_4 = {
-	base_buildtime = @avb_u4_time
+	base_buildtime = @avb_b4_time
 	can_build = no
 
 	category = unity
@@ -504,12 +504,12 @@ building_avb_temple_4 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_u4_minerals
-			rare_crystals = @avb_u4_rare_cost
+			minerals = @avb_b4_minerals
+			rare_crystals = @avb_b4_rare_cost
 		}
 		upkeep = {
-			energy = @avb_u4_upkeep
-			rare_crystals = @avb_u4_rare_upkeep
+			energy = @avb_b4_upkeep
+			rare_crystals = @avb_b4_rare_upkeep
 		}
 	}
 	planet_modifier = {
@@ -537,7 +537,7 @@ building_avb_temple_4 = {
 	}
 }
 building_avb_temple_5 = {
-	base_buildtime = @avb_u5_time
+	base_buildtime = @avb_b5_time
 	can_build = no
 
 	category = unity
@@ -586,12 +586,12 @@ building_avb_temple_5 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_u5_minerals
-			rare_crystals = @avb_u5_rare_cost
+			minerals = @avb_b5_minerals
+			rare_crystals = @avb_b5_rare_cost
 		}
 		upkeep = {
-			energy = @avb_u5_upkeep
-			rare_crystals = @avb_u5_rare_upkeep
+			energy = @avb_b5_upkeep
+			rare_crystals = @avb_b5_rare_upkeep
 		}
 	}
 	planet_modifier = {
@@ -619,7 +619,7 @@ building_avb_temple_5 = {
 	}
 }
 building_avb_temple_6 = {
-	base_buildtime = @avb_u6_time
+	base_buildtime = @avb_b6_time
 	can_build = no
 
 	category = unity
@@ -668,12 +668,12 @@ building_avb_temple_6 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_u6_minerals
-			rare_crystals = @avb_u6_rare_cost
+			minerals = @avb_b6_minerals
+			rare_crystals = @avb_b6_rare_cost
 		}
 		upkeep = {
-			energy = @avb_u6_upkeep
-			rare_crystals = @avb_u6_rare_upkeep
+			energy = @avb_b6_upkeep
+			rare_crystals = @avb_b6_rare_upkeep
 		}
 	}
 	planet_modifier = {
@@ -703,7 +703,7 @@ building_avb_temple_6 = {
 ##################
 
 building_avb_machine_unity_4 = {
-	base_buildtime = @avb_u4_time
+	base_buildtime = @avb_b4_time
 	can_build = no
 	icon = building_avb_monument_4
 
@@ -743,12 +743,12 @@ building_avb_machine_unity_4 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_u4_minerals
-			rare_crystals = @avb_u4_rare_cost
+			minerals = @avb_b4_minerals
+			rare_crystals = @avb_b4_rare_cost
 		}
 		upkeep = {
-			energy = @avb_u4_upkeep
-			rare_crystals = @avb_u4_rare_upkeep
+			energy = @avb_b4_upkeep
+			rare_crystals = @avb_b4_rare_upkeep
 		}
 	}
 
@@ -772,7 +772,7 @@ building_avb_machine_unity_4 = {
 	}
 }
 building_avb_machine_unity_5 = {
-	base_buildtime = @avb_u5_time
+	base_buildtime = @avb_b5_time
 	can_build = no
 	icon = building_avb_monument_5
 
@@ -812,12 +812,12 @@ building_avb_machine_unity_5 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_u5_minerals
-			rare_crystals = @avb_u5_rare_cost
+			minerals = @avb_b5_minerals
+			rare_crystals = @avb_b5_rare_cost
 		}
 		upkeep = {
-			energy = @avb_u5_upkeep
-			rare_crystals = @avb_u5_rare_upkeep
+			energy = @avb_b5_upkeep
+			rare_crystals = @avb_b5_rare_upkeep
 		}
 	}
 
@@ -843,7 +843,7 @@ building_avb_machine_unity_5 = {
 	}
 }
 building_avb_machine_unity_6 = {
-	base_buildtime = @avb_u6_time
+	base_buildtime = @avb_b6_time
 	can_build = no
 	icon = building_avb_monument_6
 
@@ -883,12 +883,12 @@ building_avb_machine_unity_6 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_u6_minerals
-			rare_crystals = @avb_u6_rare_cost
+			minerals = @avb_b6_minerals
+			rare_crystals = @avb_b6_rare_cost
 		}
 		upkeep = {
-			energy = @avb_u6_upkeep
-			rare_crystals = @avb_u6_rare_upkeep
+			energy = @avb_b6_upkeep
+			rare_crystals = @avb_b6_rare_upkeep
 		}
 	}
 
@@ -913,7 +913,7 @@ building_avb_machine_unity_6 = {
 # Hive Minds
 ##################
 building_avb_hive_unity_4 = {
-	base_buildtime = @avb_u4_time
+	base_buildtime = @avb_b4_time
 	can_build = no
 
 	category = unity
@@ -944,12 +944,12 @@ building_avb_hive_unity_4 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_u4_minerals
-			exotic_gases = @avb_u4_rare_cost
+			minerals = @avb_b4_minerals
+			exotic_gases = @avb_b4_rare_cost
 		}
 		upkeep = {
-			energy = @avb_u4_upkeep
-			exotic_gases = @avb_u4_rare_upkeep
+			energy = @avb_b4_upkeep
+			exotic_gases = @avb_b4_rare_upkeep
 		}
 		upkeep = {
 			trigger = {
@@ -1010,7 +1010,7 @@ building_avb_hive_unity_4 = {
 	}
 }
 building_avb_hive_unity_5 = {
-	base_buildtime = @avb_u5_time
+	base_buildtime = @avb_b5_time
 	can_build = no
 
 	category = unity
@@ -1041,12 +1041,12 @@ building_avb_hive_unity_5 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_u5_minerals
-			exotic_gases = @avb_u5_rare_cost
+			minerals = @avb_b5_minerals
+			exotic_gases = @avb_b5_rare_cost
 		}
 		upkeep = {
-			energy = @avb_u5_upkeep
-			exotic_gases = @avb_u5_rare_upkeep
+			energy = @avb_b5_upkeep
+			exotic_gases = @avb_b5_rare_upkeep
 		}
 		upkeep = {
 			trigger = {
@@ -1106,7 +1106,7 @@ building_avb_hive_unity_5 = {
 	}
 }
 building_avb_hive_unity_6 = {
-	base_buildtime = @avb_u6_time
+	base_buildtime = @avb_b6_time
 	can_build = no
 
 	category = unity
@@ -1137,12 +1137,12 @@ building_avb_hive_unity_6 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_u6_minerals
-			exotic_gases = @avb_u6_rare_cost
+			minerals = @avb_b6_minerals
+			exotic_gases = @avb_b6_rare_cost
 		}
 		upkeep = {
-			energy = @avb_u6_upkeep
-			exotic_gases = @avb_u6_rare_upkeep
+			energy = @avb_b6_upkeep
+			exotic_gases = @avb_b6_rare_upkeep
 		}
 		upkeep = {
 			trigger = {
@@ -1202,7 +1202,7 @@ building_avb_hive_unity_6 = {
 }
 #Death Cult
 building_avb_death_temple_4 = {
-	base_buildtime = @avb_u4_time
+	base_buildtime = @avb_b4_time
 	can_build = no
 
 	category = unity
@@ -1236,13 +1236,13 @@ building_avb_death_temple_4 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_u4_minerals
-			exotic_gases = @avb_u4_rare_cost
+			minerals = @avb_b4_minerals
+			exotic_gases = @avb_b4_rare_cost
 		}
 		upkeep = {
-			energy = @avb_u4_upkeep
-			exotic_gases = @avb_u4_rare_upkeep
-			volatile_motes = @avb_u4_rare_upkeep
+			energy = @avb_b4_upkeep
+			exotic_gases = @avb_b4_rare_upkeep
+			volatile_motes = @avb_b4_rare_upkeep
 		}
 	}
 	inline_script = {
@@ -1267,7 +1267,7 @@ building_avb_death_temple_4 = {
 	}
 }
 building_avb_death_temple_5 = {
-	base_buildtime = @avb_u5_time
+	base_buildtime = @avb_b5_time
 	can_build = no
 
 	category = unity
@@ -1301,13 +1301,13 @@ building_avb_death_temple_5 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_u5_minerals
-			exotic_gases = @avb_u5_rare_cost
+			minerals = @avb_b5_minerals
+			exotic_gases = @avb_b5_rare_cost
 		}
 		upkeep = {
-			energy = @avb_u5_upkeep
-			exotic_gases = @avb_u5_rare_upkeep
-			volatile_motes = @avb_u5_rare_upkeep
+			energy = @avb_b5_upkeep
+			exotic_gases = @avb_b5_rare_upkeep
+			volatile_motes = @avb_b5_rare_upkeep
 		}
 	}
 
@@ -1332,7 +1332,7 @@ building_avb_death_temple_5 = {
 	}
 }
 building_avb_death_temple_6 = {
-	base_buildtime = @avb_u6_time
+	base_buildtime = @avb_b6_time
 	can_build = no
 
 	category = unity
@@ -1366,13 +1366,13 @@ building_avb_death_temple_6 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_u6_minerals
-			exotic_gases = @avb_u6_rare_cost
+			minerals = @avb_b6_minerals
+			exotic_gases = @avb_b6_rare_cost
 		}
 		upkeep = {
-			energy = @avb_u6_upkeep
-			exotic_gases = @avb_u6_rare_upkeep
-			volatile_motes = @avb_u6_rare_upkeep
+			energy = @avb_b6_upkeep
+			exotic_gases = @avb_b6_rare_upkeep
+			volatile_motes = @avb_b6_rare_upkeep
 		}
 	}
 
@@ -1396,7 +1396,7 @@ building_avb_death_temple_6 = {
 
 #Memorialist
 building_avb_monument_memorial_4 = {
-	base_buildtime = @avb_u4_time
+	base_buildtime = @avb_b4_time
 	can_build = no
 	category = unity
 
@@ -1435,12 +1435,12 @@ building_avb_monument_memorial_4 = {
 			multiplier = owner.trigger:num_ascension_perks
 		}
 		cost = {
-			minerals = @avb_u4_minerals
-			exotic_gases = @avb_u4_rare_cost
+			minerals = @avb_b4_minerals
+			exotic_gases = @avb_b4_rare_cost
 		}
 		upkeep = {
-			minerals = @avb_u4_upkeep
-			exotic_gases = @avb_u4_rare_upkeep
+			minerals = @avb_b4_upkeep
+			exotic_gases = @avb_b4_rare_upkeep
 		}
 	}
 
@@ -1461,7 +1461,7 @@ building_avb_monument_memorial_4 = {
 	}
 }
 building_avb_monument_memorial_5 = {
-	base_buildtime = @avb_u5_time
+	base_buildtime = @avb_b5_time
 	can_build = no
 	category = unity
 
@@ -1500,12 +1500,12 @@ building_avb_monument_memorial_5 = {
 			multiplier = owner.trigger:num_ascension_perks
 		}
 		cost = {
-			minerals = @avb_u5_minerals
-			exotic_gases = @avb_u5_rare_cost
+			minerals = @avb_b5_minerals
+			exotic_gases = @avb_b5_rare_cost
 		}
 		upkeep = {
-			minerals = @avb_u5_upkeep
-			exotic_gases = @avb_u5_rare_upkeep
+			minerals = @avb_b5_upkeep
+			exotic_gases = @avb_b5_rare_upkeep
 		}
 	}
 
@@ -1530,7 +1530,7 @@ building_avb_monument_memorial_5 = {
 	}
 }
 building_avb_monument_memorial_6 = {
-	base_buildtime = @avb_u6_time
+	base_buildtime = @avb_b6_time
 	can_build = no
 	category = unity
 
@@ -1569,12 +1569,12 @@ building_avb_monument_memorial_6 = {
 			multiplier = owner.trigger:num_ascension_perks
 		}
 		cost = {
-			minerals = @avb_u6_minerals
-			exotic_gases = @avb_u6_rare_cost
+			minerals = @avb_b6_minerals
+			exotic_gases = @avb_b6_rare_cost
 		}
 		upkeep = {
-			minerals = @avb_u6_upkeep
-			exotic_gases = @avb_u6_rare_upkeep
+			minerals = @avb_b6_upkeep
+			exotic_gases = @avb_b6_rare_upkeep
 		}
 	}
 
@@ -1602,7 +1602,7 @@ building_avb_monument_memorial_6 = {
 
 #Megacorp
 building_avb_monument_corp_4 = {
-	base_buildtime = @avb_u4_time
+	base_buildtime = @avb_b4_time
 	can_build = no
 	icon = building_avb_monument_4
 
@@ -1648,7 +1648,7 @@ building_avb_monument_corp_4 = {
 			multiplier = owner.trigger:num_ascension_perks
 		}
 		cost = {
-			minerals = @avb_u4_minerals
+			minerals = @avb_b4_minerals
 		}
 	}
 
@@ -1677,7 +1677,7 @@ building_avb_monument_corp_4 = {
 	}
 }
 building_avb_monument_corp_5 = {
-	base_buildtime = @avb_u5_time
+	base_buildtime = @avb_b5_time
 	can_build = no
 	icon = building_avb_monument_5
 
@@ -1723,7 +1723,7 @@ building_avb_monument_corp_5 = {
 			multiplier = owner.trigger:num_ascension_perks
 		}
 		cost = {
-			minerals = @avb_u5_minerals
+			minerals = @avb_b5_minerals
 		}
 	}
 
@@ -1752,7 +1752,7 @@ building_avb_monument_corp_5 = {
 	}
 }
 building_avb_monument_corp_6 = {
-	base_buildtime = @avb_u6_time
+	base_buildtime = @avb_b6_time
 	can_build = no
 	icon = building_avb_monument_6
 
@@ -1798,7 +1798,7 @@ building_avb_monument_corp_6 = {
 			multiplier = owner.trigger:num_ascension_perks
 		}
 		cost = {
-			minerals = @avb_u6_minerals
+			minerals = @avb_b6_minerals
 		}
 	}
 
@@ -1825,7 +1825,7 @@ building_avb_monument_corp_6 = {
 }
 #Hive
 building_avb_monument_hive_4 = {
-	base_buildtime = @avb_u4_time
+	base_buildtime = @avb_b4_time
 	can_build = no
 	icon = building_avb_holo_theatre_4
 
@@ -1872,7 +1872,7 @@ building_avb_monument_hive_4 = {
 			multiplier = owner.trigger:num_ascension_perks
 		}
 		cost = {
-			minerals = @avb_u4_minerals
+			minerals = @avb_b4_minerals
 		}
 	}
 
@@ -1902,7 +1902,7 @@ building_avb_monument_hive_4 = {
 	}
 }
 building_avb_monument_hive_5 = {
-	base_buildtime = @avb_u5_time
+	base_buildtime = @avb_b5_time
 	can_build = no
 	icon = building_avb_holo_theatre_5
 
@@ -1949,7 +1949,7 @@ building_avb_monument_hive_5 = {
 			multiplier = owner.trigger:num_ascension_perks
 		}
 		cost = {
-			minerals = @avb_u5_minerals
+			minerals = @avb_b5_minerals
 		}
 	}
 
@@ -1979,7 +1979,7 @@ building_avb_monument_hive_5 = {
 	}
 }
 building_avb_monument_hive_6 = {
-	base_buildtime = @avb_u6_time
+	base_buildtime = @avb_b6_time
 	can_build = no
 	icon = building_avb_holo_theatre_6
 
@@ -2026,7 +2026,7 @@ building_avb_monument_hive_6 = {
 			multiplier = owner.trigger:num_ascension_perks
 		}
 		cost = {
-			minerals = @avb_u6_minerals
+			minerals = @avb_b6_minerals
 		}
 	}
 
@@ -2054,7 +2054,7 @@ building_avb_monument_hive_6 = {
 }
 #Machine
 building_avb_monument_machine_4 = {
-	base_buildtime = @avb_u4_time
+	base_buildtime = @avb_b4_time
 	can_build = no
 	icon = building_avb_holo_theatre_4
 
@@ -2101,7 +2101,7 @@ building_avb_monument_machine_4 = {
 			multiplier = owner.trigger:num_ascension_perks
 		}
 		cost = {
-			minerals = @avb_u4_minerals
+			minerals = @avb_b4_minerals
 		}
 	}
 
@@ -2132,7 +2132,7 @@ building_avb_monument_machine_4 = {
 	}
 }
 building_avb_monument_machine_5 = {
-	base_buildtime = @avb_u5_time
+	base_buildtime = @avb_b5_time
 	can_build = no
 	icon = building_avb_holo_theatre_5
 
@@ -2179,7 +2179,7 @@ building_avb_monument_machine_5 = {
 			multiplier = owner.trigger:num_ascension_perks
 		}
 		cost = {
-			minerals = @avb_u5_minerals
+			minerals = @avb_b5_minerals
 		}
 	}
 
@@ -2210,7 +2210,7 @@ building_avb_monument_machine_5 = {
 	}
 }
 building_avb_monument_machine_6 = {
-	base_buildtime = @avb_u6_time
+	base_buildtime = @avb_b6_time
 	can_build = no
 	icon = building_avb_holo_theatre_6
 
@@ -2257,7 +2257,7 @@ building_avb_monument_machine_6 = {
 			multiplier = owner.trigger:num_ascension_perks
 		}
 		cost = {
-			minerals = @avb_u6_minerals
+			minerals = @avb_b6_minerals
 		}
 	}
 
@@ -2286,7 +2286,7 @@ building_avb_monument_machine_6 = {
 }
 #Servitors
 building_avb_organic_sanctuary_3 = {
-	base_buildtime = @avb_u4_time
+	base_buildtime = @avb_b4_time
 	can_build = no
 	category = unity
 	
@@ -2386,7 +2386,7 @@ building_avb_organic_sanctuary_3 = {
 }
 
 building_avb_organic_sanctuary_4 = {
-	base_buildtime = @avb_u5_time
+	base_buildtime = @avb_b5_time
 	can_build = no
 	category = unity
 
@@ -2488,6 +2488,7 @@ building_avb_autocurating_vault_2 = {
 	category = unity
 
 	potential = {
+		avb_hg_changes = yes
 		exists = owner
 		NOT = { has_modifier = slave_colony }
 		owner = {
@@ -2626,6 +2627,7 @@ building_avb_citadel_of_faith_2 = {
 	category = unity
 
 	potential = {
+		avb_hg_changes = yes
 		exists = owner
 		owner = {
 			OR = {
@@ -2733,6 +2735,7 @@ building_avb_corporate_vault_2 = {
 	category = unity
 
 	potential = {
+		avb_hg_changes = yes
 		exists = owner
 		NOT = { has_modifier = slave_colony }
 		owner = {
@@ -2875,6 +2878,7 @@ building_avb_alpha_hub_2 = {
 	category = unity
 
 	potential = {
+		avb_hg_changes = yes
 		exists = owner
 		owner = { is_machine_empire = yes }
 	}
@@ -2960,6 +2964,7 @@ building_avb_league_offices_2 = {
 	category = unity
 
 	potential = {
+		avb_hg_changes = yes
 		exists = owner
 		owner = { has_technology = tech_avb_league_offices_2 }
 		NOT = { has_modifier = slave_colony }

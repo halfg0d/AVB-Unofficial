@@ -101,11 +101,9 @@ building_avb_residence_4 = {
 			}
 		}
 	}
-
 	allow = {
 		has_fully_upgraded_capital = yes
 	}
-	
 	destroy_trigger = {
 		exists = owner
 		OR = {
@@ -1336,7 +1334,6 @@ building_avb_ranger_lodge_2 = {
 		}
 	}
 }
-
 building_avb_toxic_bath_2 = {
 	base_buildtime = @avb_b2_time
 	category = amenity

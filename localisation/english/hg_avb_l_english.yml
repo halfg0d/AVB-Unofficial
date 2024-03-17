@@ -206,3 +206,8 @@
  building_avb_resource_silo_3_desc:0 "Monolithic warehouses, silos and chemical tanks equipped with spatial tensor field projectors, are capable of storing slightly larger quantities than their outer physical limits suggest."
  tech_avb_hydroponics_3:0 "Elicitor Replicator"
  tech_avb_hydroponics_3_desc:0 ""Further mastery over botany allow for a new era of controlled plant growth in the form of elicitric replication. Skipping the intermediate process of conventional plant growth this new generation of replicator can synthesize plant matter directly from other plants which have elicitric chemical. By extruding crops from arrays of replication grids the expected timescale for crop yield is measured in minutes instead of hours.""
+# Selection panel
+ avb_selection.1.name:0 "Additional Vanilla Buildings - Unofficial"
+ avb_selection.1.desc:0 "Select whether you want buildings introduced that are not part of the original mod. §RIt is not possible to change it later§!"
+ avb_selection.1.a:0 "§GIntroduce new buildings§!"
+ avb_selection.1.b:0 "§ROnly original buildings§!"

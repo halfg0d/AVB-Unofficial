@@ -1,9 +1,6 @@
 #########################
 ## Limited by deposits ##
 #########################
-
-@avb_b3_time = 960
-
 building_avb_gas_extractors_2 = {
 	base_buildtime = @avb_b3_time
 	icon = building_gas_extractors

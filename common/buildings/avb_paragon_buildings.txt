@@ -41,7 +41,9 @@ building_avb_paragon_memory_vaults_2 = {
 		}
 		text = building_paragon_memory_vaults_hive_desc
 	}
-
+	potential = {
+		avb_hg_changes = yes
+	}
 	allow = {
 		has_upgraded_capital_4 = yes
 		hidden_trigger = {

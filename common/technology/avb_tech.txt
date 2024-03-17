@@ -229,6 +229,7 @@ tech_avb_space_science_10 = {
 	}
 }
 
+# In Stellaris 3.11 was deleted, but there will be there for backup
 tech_avb_physics_4 = {
 	cost = @tier5cost2
 	area = physics
@@ -236,7 +237,7 @@ tech_avb_physics_4 = {
 	category = { computing }
 	prerequisites = { "tech_physics_3" }
 	weight = @tier5weight2
-	
+	potential = { always = no }
 	modifier = {
 		planet_researchers_physics_research_produces_mult = 0.2
 	}
@@ -257,6 +258,7 @@ tech_avb_physics_5 = {
 	category = { computing }
 	prerequisites = { "tech_avb_physics_4" }
 	weight = @avbtier6weight2
+	potential = { always = no }
 	
 	modifier = {
 		planet_researchers_physics_research_produces_mult = 0.2
@@ -279,6 +281,7 @@ tech_avb_physics_6 = {
 	prerequisites = { "tech_avb_physics_5" }
 	weight = @avbtier7weight2
 	
+	potential = { always = no }
 	modifier = {
 		planet_researchers_physics_research_produces_mult = 0.2
 	}
@@ -300,6 +303,7 @@ tech_avb_society_4 = {
 	prerequisites = { "tech_society_3" }
 	weight = @tier5weight2
 	
+	potential = { always = no }
 	modifier = {
 		planet_researchers_society_research_produces_mult = 0.2
 	}
@@ -321,6 +325,7 @@ tech_avb_society_5 = {
 	prerequisites = { "tech_avb_society_4" }
 	weight = @avbtier6weight2
 	
+	potential = { always = no }
 	modifier = {
 		planet_researchers_society_research_produces_mult = 0.2
 	}
@@ -342,6 +347,7 @@ tech_avb_society_6 = {
 	prerequisites = { "tech_avb_society_5" }
 	weight = @avbtier7weight2
 	
+	potential = { always = no }
 	modifier = {
 		planet_researchers_society_research_produces_mult = 0.2
 	}
@@ -363,6 +369,7 @@ tech_avb_engineering_4 = {
 	prerequisites = { "tech_society_3" }
 	weight = @tier5weight2
 	
+	potential = { always = no }
 	modifier = {
 		planet_researchers_engineering_research_produces_mult = 0.2
 	}
@@ -384,6 +391,7 @@ tech_avb_engineering_5 = {
 	prerequisites = { "tech_avb_engineering_4" }
 	weight = @avbtier6weight2
 	
+	potential = { always = no }
 	modifier = {
 		planet_researchers_engineering_research_produces_mult = 0.2
 	}
@@ -405,6 +413,7 @@ tech_avb_engineering_6 = {
 	prerequisites = { "tech_avb_engineering_5" }
 	weight = @avbtier7weight2
 	
+	potential = { always = no }
 	modifier = {
 		planet_researchers_engineering_research_produces_mult = 0.2
 	}

@@ -3,7 +3,7 @@
 #############
 
 building_avb_hydroponics_farm_2 = {
-	base_buildtime = @avb_rs4_time
+	base_buildtime = @avb_b2_time
 	can_build = no
 
 	category = resource
@@ -59,17 +59,17 @@ building_avb_hydroponics_farm_2 = {
 	}
 	
 	inline_script = {
-		script = jobs/farmers_add
+		script = jobs/farmeb_add
 		FARMER_AMOUNT = 5
 		ANGLER_AMOUNT = 4
 	}
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_rs4_minerals
+			minerals = @avb_b2_minerals
 		}
 		upkeep = {
-			energy = @avb_rs4_upkeep
+			energy = @avb_b2_upkeep
 		}
 	}	
 	prerequisites = {
@@ -87,7 +87,7 @@ building_avb_hydroponics_farm_2 = {
 }
 
 building_avb_food_processing_3 = {
-	base_buildtime = @avb_rs4_time
+	base_buildtime = @avb_b3_time
 	can_build = no
 	category = resource
 	
@@ -120,7 +120,7 @@ building_avb_food_processing_3 = {
 	}
 
 	planet_modifier = {
-		planet_farmers_food_produces_add = 3
+		planet_farmeb_food_produces_add = 3
 	}
 
 	triggered_planet_modifier = {
@@ -128,12 +128,12 @@ building_avb_food_processing_3 = {
 			has_ringworld_output_boost = yes
 		}
 		modifier = {
-			planet_farmers_food_produces_add = 2
+			planet_farmeb_food_produces_add = 2
 		}
 	}
 
 	inline_script = {
-		script = jobs/farmers_add
+		script = jobs/farmeb_add
 		FARMER_AMOUNT = 3
 		ANGLER_AMOUNT = 3
 	}
@@ -141,12 +141,12 @@ building_avb_food_processing_3 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_rs4_minerals
-			volatile_motes = @avb_rs4_rare_cost
+			minerals = @avb_b3_minerals
+			volatile_motes = @avb_b3_rare_cost
 		}
 		upkeep = {
-			energy = @avb_rs4_upkeep
-			volatile_motes = @avb_rs4_rare_upkeep
+			energy = @avb_b3_upkeep
+			volatile_motes = @avb_b3_rare_upkeep
 		}
 	}	
 	upgrades = {
@@ -159,7 +159,7 @@ building_avb_food_processing_3 = {
 }
 
 building_avb_food_processing_4 = {
-	base_buildtime = @avb_rs5_time
+	base_buildtime = @avb_b4_time
 	can_build = no
 	category = resource
 	allow = {
@@ -191,7 +191,7 @@ building_avb_food_processing_4 = {
 	}
 
 	planet_modifier = {
-		planet_farmers_food_produces_add = 4
+		planet_farmeb_food_produces_add = 4
 	}
 
 	triggered_planet_modifier = {
@@ -199,10 +199,10 @@ building_avb_food_processing_4 = {
 			has_ringworld_output_boost = yes
 		}
 		modifier = {
-			planet_farmers_food_produces_add = 2
+			planet_farmeb_food_produces_add = 2
 		}
 	}inline_script = {
-		script = jobs/farmers_add
+		script = jobs/farmer_add
 		FARMER_AMOUNT = 4
 		ANGLER_AMOUNT = 4
 	}
@@ -210,12 +210,12 @@ building_avb_food_processing_4 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_rs5_minerals
-			volatile_motes = @avb_rs5_rare_cost
+			minerals = @avb_b4_minerals
+			volatile_motes = @avb_b4_rare_cost
 		}
 		upkeep = {
-			energy = @avb_rs5_upkeep
-			volatile_motes = @avb_rs5_rare_upkeep
+			energy = @avb_b4_upkeep
+			volatile_motes = @avb_b4_rare_upkeep
 		}
 	}	
 	prerequisites = {
@@ -223,7 +223,7 @@ building_avb_food_processing_4 = {
 	}
 }
 building_avb_baol_organic_plant_2 = {
-	base_buildtime = @avb_f4_time
+	base_buildtime = @avb_b3_time
 	category = resource
 	can_build = no
 
@@ -250,7 +250,7 @@ building_avb_baol_organic_plant_2 = {
 	}
 
 	planet_modifier = {
-		planet_farmers_food_produces_add = 2
+		planet_farmeb_food_produces_add = 2
 	}
 
 	triggered_planet_modifier = {
@@ -259,7 +259,7 @@ building_avb_baol_organic_plant_2 = {
 				country_uses_consumer_goods = yes
 			}
 		}
-		planet_farmers_consumer_goods_produces_add = 1
+		planet_farmeb_consumer_goods_produces_add = 1
 	}
 
 	triggered_planet_modifier = {
@@ -268,30 +268,30 @@ building_avb_baol_organic_plant_2 = {
 				country_uses_consumer_goods = no
 			}
 		}
-		planet_farmers_energy_produces_add = 2
+		planet_farmeb_energy_produces_add = 2
 	}
 
 	triggered_planet_modifier = {
 		potential = {
 			owner = {
 				country_uses_consumer_goods = yes
-				has_ascension_perk = ap_archaeoengineers
+				has_ascension_perk = ap_archaeoengineeb
 			}
 		}
-		planet_farmers_consumer_goods_produces_add = 0.5
+		planet_farmeb_consumer_goods_produces_add = 0.5
 	}
 
 	triggered_planet_modifier = {
 		potential = {
 			owner = {
 				country_uses_consumer_goods = no
-				has_ascension_perk = ap_archaeoengineers
+				has_ascension_perk = ap_archaeoengineeb
 			}
 		}
-		planet_farmers_energy_produces_add = 1
+		planet_farmeb_energy_produces_add = 1
 	}
 	inline_script = {
-		script = jobs/farmers_add
+		script = jobs/farmeb_add
 		FARMER_AMOUNT = 3
 		ANGLER_AMOUNT = 3
 	}
@@ -299,8 +299,8 @@ building_avb_baol_organic_plant_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_f4_minerals
-			minor_artifacts = 50
+			minerals = @avb_b3_minerals
+			minor_artifacts = 150
 		}
 		upkeep = {
 			energy = 4
@@ -313,7 +313,7 @@ building_avb_baol_organic_plant_2 = {
 }
 
 building_avb_mineral_purification_3 = {
-	base_buildtime = @avb_rs4_time
+	base_buildtime = @avb_b3_time
 	can_build = no
 	category = resource
 
@@ -354,7 +354,7 @@ building_avb_mineral_purification_3 = {
 			NOT = { is_planet_class = pc_shattered_ring_habitable }
 		}
 		modifier = {
-			planet_miners_minerals_produces_add = 4
+			planet_mineb_minerals_produces_add = 4
 		}
 	}
 
@@ -363,8 +363,8 @@ building_avb_mineral_purification_3 = {
 			is_planet_class = pc_shattered_ring_habitable
 		}
 		modifier = {
-			planet_miners_minerals_produces_add = 2
-			planet_miners_alloys_produces_add = 1
+			planet_mineb_minerals_produces_add = 2
+			planet_mineb_alloys_produces_add = 1
 		}
 	}
 
@@ -373,12 +373,12 @@ building_avb_mineral_purification_3 = {
 			has_ringworld_output_boost = yes
 		}
 		modifier = {
-			planet_miners_minerals_produces_add = 2
+			planet_mineb_minerals_produces_add = 2
 		}
 	}
 
 	inline_script = {
-		script = jobs/miners_add
+		script = jobs/mineb_add
 		AMOUNT = 3
 	}
 
@@ -404,8 +404,8 @@ building_avb_mineral_purification_3 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_rs4_minerals
-			volatile_motes = @avb_rs4_rare_cost
+			minerals = @avb_b3_minerals
+			volatile_motes = @avb_b3_rare_cost
 		}
 		cost = {
 			trigger = {
@@ -413,12 +413,12 @@ building_avb_mineral_purification_3 = {
 					is_robot_empire = yes
 				}
 			}
-			minerals = @avb_rs4_minerals
+			minerals = @avb_b3_minerals
 			alloys = 250
 		}
 		upkeep = {
-			energy = @avb_rs4_upkeep
-			volatile_motes = @avb_rs4_rare_upkeep
+			energy = @avb_b3_upkeep
+			volatile_motes = @avb_b3_rare_upkeep
 		}
 	}
 	
@@ -432,7 +432,7 @@ building_avb_mineral_purification_3 = {
 }
 
 building_avb_mineral_purification_4 = {
-	base_buildtime = @avb_rs5_time
+	base_buildtime = @avb_b4_time
 	can_build = no
 	category = resource
 	
@@ -473,7 +473,7 @@ building_avb_mineral_purification_4 = {
 			NOT = { is_planet_class = pc_shattered_ring_habitable }
 		}
 		modifier = {
-			planet_miners_minerals_produces_add = 5
+			planet_miner_minerals_produces_add = 5
 		}
 	}
 
@@ -482,8 +482,8 @@ building_avb_mineral_purification_4 = {
 			is_planet_class = pc_shattered_ring_habitable
 		}
 		modifier = {
-			planet_miners_minerals_produces_add = 4
-			planet_miners_alloys_produces_add = 2
+			planet_miner_minerals_produces_add = 4
+			planet_miner_alloys_produces_add = 2
 		}
 	}
 
@@ -492,11 +492,11 @@ building_avb_mineral_purification_4 = {
 			has_ringworld_output_boost = yes
 		}
 		modifier = {
-			planet_miners_minerals_produces_add = 2
+			planet_miner_minerals_produces_add = 2
 		}
 	}
 	inline_script = {
-		script = jobs/miners_add
+		script = jobs/mineb_add
 		AMOUNT = 4
 	}
 	triggered_planet_modifier = {
@@ -520,8 +520,8 @@ building_avb_mineral_purification_4 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_rs5_minerals
-			volatile_motes = @avb_rs5_rare_cost
+			minerals = @avb_b4_minerals
+			volatile_motes = @avb_b4_rare_cost
 		}
 		cost = {
 			trigger = {
@@ -529,12 +529,12 @@ building_avb_mineral_purification_4 = {
 					is_robot_empire = yes
 				}
 			}
-			minerals = @avb_rs5_minerals
+			minerals = @avb_b5_minerals
 			alloys = 500
 		}
 		upkeep = {
-			energy = @avb_rs5_upkeep
-			volatile_motes = @avb_rs5_rare_upkeep
+			energy = @avb_b4_upkeep
+			volatile_motes = @avb_b4_rare_upkeep
 		}
 	}
 	
@@ -544,7 +544,7 @@ building_avb_mineral_purification_4 = {
 }
 
 building_avb_energy_grid_3 = {
-	base_buildtime = @avb_rs4_time
+	base_buildtime = @avb_b3_time
 	can_build = no
 	category = resource
 	
@@ -602,8 +602,8 @@ building_avb_energy_grid_3 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_rs4_minerals
-			exotic_gases = @avb_rs4_rare_cost
+			minerals = @avb_b3_minerals
+			exotic_gases = @avb_b3_rare_cost
 		}
 		cost = {
 			trigger = {
@@ -611,12 +611,12 @@ building_avb_energy_grid_3 = {
 					is_robot_empire = yes
 				}
 			}
-			minerals = @avb_rs4_minerals
+			minerals = @avb_b3_minerals
 			alloys = 250
 		}
 		upkeep = {
-			energy = @avb_rs4_upkeep
-			exotic_gases = @avb_rs4_rare_upkeep
+			energy = @avb_b3_upkeep
+			exotic_gases = @avb_b3_rare_upkeep
 		}
 	}	
 	
@@ -630,7 +630,7 @@ building_avb_energy_grid_3 = {
 }
 
 building_avb_energy_grid_4 = {
-	base_buildtime = @avb_rs5_time
+	base_buildtime = @avb_b4_time
 	can_build = no
 	category = resource
 	
@@ -678,7 +678,7 @@ building_avb_energy_grid_4 = {
 			}
 		}
 		modifier = {
-			job_technician_add = @avb_rs5_jobs
+			job_technician_add = @avb_b5_jobs
 		}
 	}
 
@@ -688,7 +688,7 @@ building_avb_energy_grid_4 = {
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		modifier = {
-			job_fe_acolyte_generator_add = @avb_rs5_jobs
+			job_fe_acolyte_generator_add = @avb_b5_jobs
 		}
 	}
 
@@ -698,7 +698,7 @@ building_avb_energy_grid_4 = {
 			owner = { is_gestalt = yes }
 		}
 		modifier = {
-			job_technician_drone_add = @avb_rs5_jobs
+			job_technician_drone_add = @avb_b5_jobs
 		}
 	}
 
@@ -722,8 +722,8 @@ building_avb_energy_grid_4 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_rs5_minerals
-			exotic_gases = @avb_rs5_rare_cost
+			minerals = @avb_b4_minerals
+			exotic_gases = @avb_b4_rare_cost
 		}
 		cost = {
 			trigger = {
@@ -731,12 +731,12 @@ building_avb_energy_grid_4 = {
 					is_robot_empire = yes
 				}
 			}
-			minerals = @avb_rs5_minerals
+			minerals = @avb_b4_minerals
 			alloys = 500
 		}
 		upkeep = {
-			energy = @avb_rs5_upkeep
-			exotic_gases = @avb_rs5_rare_upkeep
+			energy = @avb_b4_upkeep
+			exotic_gases = @avb_b4_rare_upkeep
 		}
 	}	
 	
@@ -746,7 +746,7 @@ building_avb_energy_grid_4 = {
 }
 
 building_avb_resource_silo_2 = {
-	base_buildtime = @avb_rs4_time
+	base_buildtime = @avb_b2_time
 	can_build = no
 
 	category = resource
@@ -772,7 +772,7 @@ building_avb_resource_silo_2 = {
 							has_active_tradition = tr_domination_modular_depot
 						}
 						is_active_resolution = "resolution_greatergood_balance_in_the_middle"
-						is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
+						is_active_resolution = "resolution_greatergood_univebal_prosperity_mandate"
 						owner = {
 							has_ascension_perk = ap_arcology_project
 							NOT = { has_technology = tech_mega_engineering }
@@ -805,10 +805,10 @@ building_avb_resource_silo_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_rs4_minerals
+			minerals = @avb_b2_minerals
 		}
 		upkeep = {
-			energy = @avb_rs4_upkeep
+			energy = @avb_b2_upkeep
 		}		
 	}
 	
@@ -849,7 +849,7 @@ building_avb_resource_silo_2 = {
 }
 
 building_avb_bio_reactor_3 = {
-	base_buildtime = @b2_time
+	base_buildtime = @avb_b3_time
 	can_build = no
 	category = resource
 
@@ -895,26 +895,26 @@ building_avb_bio_reactor_3 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @b3_minerals
+			minerals = @avb_b3_minerals
 		}
 		upkeep = {
-			food = @b3_upkeep
+			food = @avb_b3_upkeep
 		}
 	}
 
 	inline_script = {
-		script = jobs/farmers_add
+		script = jobs/farmeb_add
 		FARMER_AMOUNT = 3
 		ANGLER_AMOUNT = 3
 	}
 
 	planet_modifier = {
-		planet_farmers_food_produces_add = -4
-		planet_farmers_energy_produces_add = 3
-		planet_farmers_exotic_gases_produces_add = 0.15
+		planet_farmeb_food_produces_add = -4
+		planet_farmeb_energy_produces_add = 3
+		planet_farmeb_exotic_gases_produces_add = 0.15
 	}
 
 	prerequisites = {
-		tech_bio_reactor_3
+		tech_avb_bio_reactor_3
 	}
 }

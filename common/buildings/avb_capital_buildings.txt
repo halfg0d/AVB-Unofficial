@@ -10,8 +10,8 @@
 @capital_t5_min_pops = 120
 @capital_t6_min_pops = 150
 
-@capital_t6_cost = 10400
-@capital_t6_upkeep = 64
+@avb_b6_minerals = 10400
+@avb_b6_upkeep = 64
 
 @tier_3_capital_defense_armies = 8
 @tier_4_capital_defense_armies = 16
@@ -20,7 +20,7 @@
 @tier_7_capital_defense_armies = 40
 
 building_avb_capital_4 = {
-	base_buildtime = @avb_c4_time
+	base_buildtime = @avb_b4_time
 	capital = yes
 	can_build = no
 	can_demolish = no
@@ -83,10 +83,10 @@ building_avb_capital_4 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_c5_minerals
+			minerals = @avb_b4_minerals
 		}		
 		upkeep = {
-			energy = @avb_c5_upkeep
+			energy = @avb_b4_upkeep
 		}		
 	}
 	triggered_planet_modifier = {
@@ -424,10 +424,10 @@ building_avb_capital_5 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_c6_minerals
+			minerals = @avb_b5_minerals
 		}		
 		upkeep = {
-			energy = @avb_c6_upkeep
+			energy = @avb_b5_upkeep
 		}		
 	}
 	
@@ -766,10 +766,10 @@ building_avb_capital_6 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @capital_t6_cost
+			minerals = @avb_b6_minerals
 		}		
 		upkeep = {
-			energy = @capital_t6_upkeep
+			energy = @avb_b6_upkeep
 		}		
 	}
 	triggered_planet_modifier = {
@@ -1049,7 +1049,7 @@ building_avb_capital_6 = {
 #############
 
 building_avb_machine_capital_4 = {
-	base_buildtime = @avb_c4_time
+	base_buildtime = @avb_b4_time
 	capital = yes
 	can_build = no
 	can_demolish = no
@@ -1109,10 +1109,10 @@ building_avb_machine_capital_4 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_c5_minerals
+			minerals = @avb_b4_minerals
 		}			
 		upkeep = {
-			energy = @avb_c5_upkeep
+			energy = @avb_b4_upkeep
 		}
 	}
 	triggered_planet_modifier = {
@@ -1278,10 +1278,10 @@ building_avb_machine_capital_5 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_c6_minerals
+			minerals = @avb_b5_minerals
 		}			
 		upkeep = {
-			energy = @avb_c6_upkeep
+			energy = @avb_b5_upkeep
 		}
 	}
 	triggered_planet_modifier = {
@@ -1446,10 +1446,10 @@ building_avb_machine_capital_6 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @capital_t6_cost
+			minerals = @avb_b6_minerals
 		}			
 		upkeep = {
-			energy = @capital_t6_upkeep
+			energy = @avb_b6_upkeep
 		}
 	}
 	triggered_planet_modifier = {
@@ -1617,7 +1617,7 @@ building_avb_hive_capital_3 = {
 		potential = {
 			exists = owner
 			owner = { has_origin = origin_progenitor_hive }
-			is_planet_class = pc_hive
+			is_planet_class = pbive
 		}
 		job_spawning_drone_add = -1
 		job_offspring_drone_add = 1
@@ -1669,10 +1669,10 @@ building_avb_hive_capital_3 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_c_h3_minerals
+			minerals = @avb_b3_minerals
 		}
 		upkeep = {
-			energy = @avb_c_h3_upkeep_hive
+			energy = @avb_b3_upkeep
 		}
 	}
 	
@@ -1694,7 +1694,7 @@ building_avb_hive_capital_3 = {
 }
 
 building_avb_hive_capital_4 = {
-	base_buildtime = @avb_c4_time
+	base_buildtime = @avb_b4_time
 	capital = yes
 	can_build = no
 	can_demolish = no
@@ -1750,7 +1750,7 @@ building_avb_hive_capital_4 = {
 		potential = {
 			exists = owner
 			owner = { has_origin = origin_progenitor_hive }
-			is_planet_class = pc_hive
+			is_planet_class = pbive
 		}
 		job_spawning_drone_add = -1
 		job_offspring_drone_add = 1
@@ -1802,10 +1802,10 @@ building_avb_hive_capital_4 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_c_h4_minerals
+			minerals = @avb_b4_minerals
 		}
 		upkeep = {
-			energy = @avb_c_h4_upkeep_hive
+			energy = @avb_b4_upkeep
 		}
 	}
 	
@@ -1830,7 +1830,7 @@ building_avb_hive_capital_4 = {
 #############
 
 building_avb_hab_capital_3 = {
-	base_buildtime = @avb_c4_time
+	base_buildtime = @avb_b4_time
 	capital = yes
 	can_build = no
 	can_demolish = no
@@ -2324,7 +2324,7 @@ building_avb_hab_capital_3 = {
 #############
 
 building_avb_resort_capital_3 = {
-	base_buildtime = @avb_c4_time
+	base_buildtime = @avb_b4_time
 	capital = yes
 	can_build = no
 	can_demolish = no

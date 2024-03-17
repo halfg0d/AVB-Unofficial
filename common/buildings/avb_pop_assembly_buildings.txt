@@ -2,7 +2,7 @@
 # Robot buildings
 #############
 building_avb_robot_assembly_plant_2 = {
-	base_buildtime = @avb_b4_time
+	base_buildtime = @avb_b3_time
 	can_build = no
 
 	category = pop_assembly
@@ -129,7 +129,7 @@ building_avb_robot_assembly_plant_2 = {
 
 building_avb_machine_assembly_plant_2 = {
 	icon = building_avb_robot_assembly_plant_2
-	base_buildtime = @avb_b4_time
+	base_buildtime = @avb_b3_time
 	can_build = no
 
 	category = pop_assembly
@@ -344,6 +344,7 @@ building_avb_offspring_nest_2 = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b2_minerals
+			exotic_gases = 50
 		}
 		upkeep = {
 			energy = @avb_b2_upkeep
@@ -502,6 +503,7 @@ building_avb_clone_army_clone_vat_2 = {
 	category = pop_assembly
 
 	potential = {
+		avb_hg_changes = yes
 		exists = owner
 		owner = {
 			has_origin = origin_clone_army
@@ -572,6 +574,7 @@ building_avb_posthumous_employment_center_2 = {
 	category = pop_assembly
 
 	potential = {
+		avb_hg_changes = yes
 		exists = owner
 		OR = {
 			owner = { is_ai = no }
@@ -670,6 +673,7 @@ building_avb_toxic_bath_hive_2 = {
 	}
 
 	potential = {
+		avb_hg_changes = yes
 		owner = {
 			is_hive_empire = yes
 			has_valid_civic = civic_hive_toxic_baths
@@ -727,6 +731,7 @@ building_avb_toxic_bath_machine_2 = {
 	}
 
 	potential = {
+		avb_hg_changes = yes
 		owner = {
 			is_machine_empire = yes
 			has_valid_civic = civic_machine_toxic_baths

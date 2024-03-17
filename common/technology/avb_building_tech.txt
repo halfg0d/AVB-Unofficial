@@ -848,7 +848,7 @@ tech_avb_bio_reactor_3  = {
 		}
 		inline_script = {
 			script = technologies/rare_technologies_weight_modifiers
-			TECHNOLOGY = tech_bio_reactor_3
+			TECHNOLOGY = tech_avb_bio_reactor_3
 		}
 	}
 
