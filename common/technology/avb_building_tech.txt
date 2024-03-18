@@ -20,12 +20,6 @@ tech_avb_capital_4 = {
 	
 	weight_modifier = {
 		factor = 2
-		modifier = { # No tech without builded previous capital
-			factor = 0
-			NOT = {
-				any_owned_planet = { has_building = building_system_capital }
-			}
-		}
 		inline_script = tech_weights/avb_government_weight
 	}
 
@@ -54,12 +48,6 @@ tech_avb_capital_5 = {
 	}
 	weight_modifier = {
 		factor = 4
-		modifier = { # No tech without builded previous capital
-			factor = 0
-			NOT = {
-				any_owned_planet = { has_building = building_avb_capital_4 }
-			}
-		}
 		inline_script = "tech_weights/avb_government_weight"
 	}
 	
@@ -88,12 +76,6 @@ tech_avb_capital_6 = {
 	
 	weight_modifier = {
 		factor = 4
-		modifier = { # No tech without builded previous capital
-			factor = 0
-			NOT = {
-				any_owned_planet = { has_building = building_avb_capital_5 }
-			}
-		}
 		inline_script = "tech_weights/avb_government_weight"
 	}
 	
@@ -107,7 +89,7 @@ tech_avb_hab_capital_3 = {
 	area = society
 	tier = 5
 	category = { statecraft }
-	prerequisites = { "tech_starbase_5" "tech_avb_capital_4" "tech_habitat_1" }
+	prerequisites = { "tech_starbase_5" "tech_habitat_1" }
 	weight = @tier5weight3
 	
 	potential = {
@@ -132,7 +114,7 @@ tech_avb_hab_capital_3 = {
 				}
 			}
 		}
-		inline_script = "tech_weights/avb_government_weight"
+		inline_script = tech_weights/avb_government_weight
 	}
 	
 	ai_weight = {
