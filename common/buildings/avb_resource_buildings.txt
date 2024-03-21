@@ -120,7 +120,7 @@ building_avb_food_processing_3 = {
 	}
 
 	planet_modifier = {
-		planet_farmer_food_produces_add = 3
+		planet_farmers_food_produces_add = 3
 	}
 
 	triggered_planet_modifier = {
@@ -128,7 +128,7 @@ building_avb_food_processing_3 = {
 			has_ringworld_output_boost = yes
 		}
 		modifier = {
-			planet_farmer_food_produces_add = 2
+			planet_farmers_food_produces_add = 2
 		}
 	}
 
@@ -191,7 +191,7 @@ building_avb_food_processing_4 = {
 	}
 
 	planet_modifier = {
-		planet_farmer_food_produces_add = 4
+		planet_farmers_food_produces_add = 4
 	}
 
 	triggered_planet_modifier = {
@@ -199,9 +199,10 @@ building_avb_food_processing_4 = {
 			has_ringworld_output_boost = yes
 		}
 		modifier = {
-			planet_farmer_food_produces_add = 2
+			planet_farmers_food_produces_add = 2
 		}
-	}inline_script = {
+	}
+	inline_script = {
 		script = jobs/farmer_add
 		FARMER_AMOUNT = 4
 		ANGLER_AMOUNT = 4
@@ -250,7 +251,7 @@ building_avb_baol_organic_plant_2 = {
 	}
 
 	planet_modifier = {
-		planet_farmer_food_produces_add = 2
+		planet_farmers_food_produces_add = 2
 	}
 
 	triggered_planet_modifier = {
@@ -259,7 +260,7 @@ building_avb_baol_organic_plant_2 = {
 				country_uses_consumer_goods = yes
 			}
 		}
-		planet_farmer_consumer_goods_produces_add = 1
+		planet_farmers_consumer_goods_produces_add = 1
 	}
 
 	triggered_planet_modifier = {
@@ -268,27 +269,27 @@ building_avb_baol_organic_plant_2 = {
 				country_uses_consumer_goods = no
 			}
 		}
-		planet_farmer_energy_produces_add = 2
+		planet_farmers_energy_produces_add = 2
 	}
 
 	triggered_planet_modifier = {
 		potential = {
 			owner = {
 				country_uses_consumer_goods = yes
-				has_ascension_perk = ap_archaeoengineeb
+				has_ascension_perk = ap_archaeoengineers
 			}
 		}
-		planet_farmer_consumer_goods_produces_add = 0.5
+		planet_farmers_consumer_goods_produces_add = 0.5
 	}
 
 	triggered_planet_modifier = {
 		potential = {
 			owner = {
 				country_uses_consumer_goods = no
-				has_ascension_perk = ap_archaeoengineeb
+				has_ascension_perk = ap_archaeoengineers
 			}
 		}
-		planet_farmer_energy_produces_add = 1
+		planet_farmers_energy_produces_add = 1
 	}
 	inline_script = {
 		script = jobs/farmer_add
@@ -354,7 +355,7 @@ building_avb_mineral_purification_3 = {
 			NOT = { is_planet_class = pc_shattered_ring_habitable }
 		}
 		modifier = {
-			planet_miner_minerals_produces_add = 4
+			planet_miners_minerals_produces_add = 4
 		}
 	}
 
@@ -363,8 +364,8 @@ building_avb_mineral_purification_3 = {
 			is_planet_class = pc_shattered_ring_habitable
 		}
 		modifier = {
-			planet_miner_minerals_produces_add = 2
-			planet_miner_alloys_produces_add = 1
+			planet_miners_minerals_produces_add = 2
+			planet_miners_alloys_produces_add = 1
 		}
 	}
 
@@ -373,7 +374,7 @@ building_avb_mineral_purification_3 = {
 			has_ringworld_output_boost = yes
 		}
 		modifier = {
-			planet_miner_minerals_produces_add = 2
+			planet_miners_minerals_produces_add = 2
 		}
 	}
 
@@ -473,7 +474,7 @@ building_avb_mineral_purification_4 = {
 			NOT = { is_planet_class = pc_shattered_ring_habitable }
 		}
 		modifier = {
-			planet_miner_minerals_produces_add = 5
+			planet_miners_minerals_produces_add = 5
 		}
 	}
 
@@ -482,8 +483,8 @@ building_avb_mineral_purification_4 = {
 			is_planet_class = pc_shattered_ring_habitable
 		}
 		modifier = {
-			planet_miner_minerals_produces_add = 4
-			planet_miner_alloys_produces_add = 2
+			planet_miners_minerals_produces_add = 4
+			planet_miners_alloys_produces_add = 2
 		}
 	}
 
@@ -492,7 +493,7 @@ building_avb_mineral_purification_4 = {
 			has_ringworld_output_boost = yes
 		}
 		modifier = {
-			planet_miner_minerals_produces_add = 2
+			planet_miners_minerals_produces_add = 2
 		}
 	}
 	inline_script = {
@@ -909,9 +910,9 @@ building_avb_bio_reactor_3 = {
 	}
 
 	planet_modifier = {
-		planet_farmer_food_produces_add = -4
-		planet_farmer_energy_produces_add = 3
-		planet_farmer_exotic_gases_produces_add = 0.15
+		planet_farmers_food_produces_add = -4
+		planet_farmers_energy_produces_add = 3
+		planet_farmers_exotic_gases_produces_add = 0.15
 	}
 
 	prerequisites = {

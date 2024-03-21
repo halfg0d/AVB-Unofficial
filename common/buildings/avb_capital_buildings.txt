@@ -2,6 +2,7 @@
 # Capital buildings
 #############
 @buildings_t3 = 3
+@buildings_t4 = 4
 @buildings_t5 = 5
 @buildings_t6 = 6
 @buildings_t7 = 7
@@ -361,7 +362,7 @@ building_avb_capital_4 = {
 }
 
 building_avb_capital_5 = {
-	base_buildtime = @avb_c5_time
+	base_buildtime = @avb_b5_time
 	capital = yes
 	can_build = no
 	can_demolish = no
@@ -703,7 +704,7 @@ building_avb_capital_5 = {
 }
 
 building_avb_capital_6 = {
-	base_buildtime = @avb_c6_time
+	base_buildtime = @avb_b6_time
 	capital = yes
 	can_build = no
 	can_demolish = no
@@ -1100,7 +1101,7 @@ building_avb_machine_capital_4 = {
 		job_replicator_add = 3
 		job_patrol_drone_add = 4
 		job_maintenance_drone_add = 6
-		planet_max_buildings_add = @buildings_t4
+		planet_max_buildings_add = @buildings_t5
 		defense_armies_add = @tier_5_capital_defense_armies
 	}
 	inline_script = {
@@ -1219,7 +1220,7 @@ building_avb_machine_capital_4 = {
 }
 
 building_avb_machine_capital_5 = {
-	base_buildtime = @avb_c5_time
+	base_buildtime = @avb_b5_time
 	capital = yes
 	can_build = no
 	can_demolish = no
@@ -1266,7 +1267,7 @@ building_avb_machine_capital_5 = {
 		job_replicator_add = 3
 		job_patrol_drone_add = 5
 		job_maintenance_drone_add = 7
-		planet_max_buildings_add = @buildings_t5
+		planet_max_buildings_add = @buildings_t6
 		defense_armies_add = @tier_6_capital_defense_armies
 	}
 	inline_script = {
@@ -1388,7 +1389,7 @@ building_avb_machine_capital_5 = {
 }
 
 building_avb_machine_capital_6 = {
-	base_buildtime = @avb_c6_time
+	base_buildtime = @avb_b6_time
 	capital = yes
 	can_build = no
 	can_demolish = no
@@ -1561,7 +1562,7 @@ building_avb_machine_capital_6 = {
 #############
 
 building_avb_hive_capital_3 = {
-	base_buildtime = @avb_c3_time
+	base_buildtime = @avb_b3_time
 	capital = yes
 	can_build = no
 	can_demolish = no

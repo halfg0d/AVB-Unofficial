@@ -51,7 +51,7 @@
 @avb_b4_jobs = 8
 @avb_b4_rare_cost = 250
 @avb_b4_rare_upkeep = 6
-
+# TODO: change in many buidings rare resource upkeep
 @avb_b5_time = 2400
 @avb_b5_minerals = 4000
 @avb_b5_upkeep = 18
