@@ -59,7 +59,7 @@ building_avb_hydroponics_farm_2 = {
 	}
 	
 	inline_script = {
-		script = jobs/farmer_add
+		script = jobs/farmers_add
 		FARMER_AMOUNT = 5
 		ANGLER_AMOUNT = 4
 	}
@@ -133,7 +133,7 @@ building_avb_food_processing_3 = {
 	}
 
 	inline_script = {
-		script = jobs/farmer_add
+		script = jobs/farmers_add
 		FARMER_AMOUNT = 3
 		ANGLER_AMOUNT = 3
 	}
@@ -203,7 +203,7 @@ building_avb_food_processing_4 = {
 		}
 	}
 	inline_script = {
-		script = jobs/farmer_add
+		script = jobs/farmers_add
 		FARMER_AMOUNT = 4
 		ANGLER_AMOUNT = 4
 	}
@@ -292,7 +292,7 @@ building_avb_baol_organic_plant_2 = {
 		planet_farmers_energy_produces_add = 1
 	}
 	inline_script = {
-		script = jobs/farmer_add
+		script = jobs/farmers_add
 		FARMER_AMOUNT = 3
 		ANGLER_AMOUNT = 3
 	}
@@ -379,7 +379,7 @@ building_avb_mineral_purification_3 = {
 	}
 
 	inline_script = {
-		script = jobs/miner_add
+		script = jobs/miners_add
 		AMOUNT = 3
 	}
 
@@ -497,7 +497,7 @@ building_avb_mineral_purification_4 = {
 		}
 	}
 	inline_script = {
-		script = jobs/miner_add
+		script = jobs/miners_add
 		AMOUNT = 4
 	}
 	triggered_planet_modifier = {
@@ -904,7 +904,7 @@ building_avb_bio_reactor_3 = {
 	}
 
 	inline_script = {
-		script = jobs/farmer_add
+		script = jobs/farmers_add
 		FARMER_AMOUNT = 3
 		ANGLER_AMOUNT = 3
 	}

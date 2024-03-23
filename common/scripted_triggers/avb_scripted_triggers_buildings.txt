@@ -3,32 +3,14 @@ has_upgraded_capital_4 = {
         limit = { has_modifier = resort_colony }
         custom_tooltip = {
 		    fail_text = "requires_building_resort_capital_3"
-		    OR = {
-		    	has_building = building_avb_resort_capital_3
-		    	#ACOT
-		    	has_building = building_ae_ancient_palace
-		    	has_building = building_ae_ancient_control_center
-		    	has_building = building_ae_ancient_hive_cluster
-		    	has_building = building_dm_ancient_control_center
-		    	has_building = building_dm_ancient_palace
-		    	has_building = building_dm_ancient_hive_cluster
-		    }
+			has_building = building_avb_resort_capital_3
 	    }
     }
     else_if = {
         limit = { has_modifier = slave_colony }
         custom_tooltip = {
             fail_text = "requires_building_slave_capital_3"
-            OR = {
-                has_building = building_avb_slave_capital_3
-                #ACOT
-                has_building = building_ae_ancient_palace
-                has_building = building_ae_ancient_control_center
-                has_building = building_ae_ancient_hive_cluster
-                has_building = building_dm_ancient_control_center
-                has_building = building_dm_ancient_palace
-                has_building = building_dm_ancient_hive_cluster
-            }
+			has_building = building_avb_slave_capital_3
         }
     }
     else_if = {
@@ -46,17 +28,6 @@ has_upgraded_capital_4 = {
 				has_building = building_imperial_hive_capital
 				#AVB
 				has_building = building_avb_hab_capital_3
-				#ACOT
-				has_building = building_dm_ancient_palace
-				has_building = building_ae_ancient_palace
-				has_building = building_dm_ancient_hive_cluster
-				has_building = building_ae_ancient_hive_cluster
-				has_building = building_dm_ancient_control_center 
-				has_building = building_ae_ancient_control_center				
-				has_building = building_heaven_sanctuary
-				has_building = building_ancient_palace
-				has_building = building_eternal_palace
-				has_building = building_phanon_tower
 			}
 		}
 	}
@@ -68,15 +39,6 @@ has_upgraded_capital_4 = {
 		    	has_building = building_avb_hive_capital_3
 		    	has_building = building_avb_hive_capital_4
 		    	has_building = building_imperial_hive_capital
-		    	#ACOT
-			    has_building = building_ae_ancient_palace
-			    has_building = building_ae_ancient_control_center
-			    has_building = building_ae_ancient_hive_cluster
-		    	has_building = building_dm_ancient_control_center
-		    	has_building = building_dm_ancient_palace
-		    	has_building = building_dm_ancient_hive_cluster
-		    	#GIGA
-		    	has_building = building_giga_elysium_host_hive_major_capital
 		    }
         }
     }
@@ -89,17 +51,6 @@ has_upgraded_capital_4 = {
 				has_building = building_avb_machine_capital_5
 				has_building = building_avb_machine_capital_6
 				has_building = building_imperial_machine_capital
-				#ACOT
-				has_building = building_ae_ancient_palace
-				has_building = building_ae_ancient_control_center
-				has_building = building_ae_ancient_hive_cluster
-				has_building = building_dm_ancient_control_center
-				has_building = building_dm_ancient_palace
-				has_building = building_dm_ancient_hive_cluster
-				#GIGA
-				has_building = building_giga_elysium_host_machine_major_capital
-				#EMEX
-				has_building = building_bok_capital_3
 			}
         }
     }
@@ -111,15 +62,6 @@ has_upgraded_capital_4 = {
 			    has_building = building_avb_capital_5
 			    has_building = building_avb_capital_6
 			    has_building = building_imperial_capital
-			    #ACOT
-			    has_building = building_ae_ancient_palace
-			    has_building = building_ae_ancient_control_center
-			    has_building = building_ae_ancient_hive_cluster
-			    has_building = building_dm_ancient_control_center
-			    has_building = building_dm_ancient_palace
-			    has_building = building_dm_ancient_hive_cluster
-			    #GIGA
-			    has_building = building_giga_elysium_host_major_capital
             }
         }
     }
@@ -134,15 +76,6 @@ has_upgraded_capital_5 = {
 		    	has_building = building_avb_hive_capital_3
 		    	has_building = building_avb_hive_capital_4
 		    	has_building = building_imperial_hive_capital
-		    	#ACOT
-			    has_building = building_ae_ancient_palace
-			    has_building = building_ae_ancient_control_center
-			    has_building = building_ae_ancient_hive_cluster
-		    	has_building = building_dm_ancient_control_center
-		    	has_building = building_dm_ancient_palace
-		    	has_building = building_dm_ancient_hive_cluster
-		    	#GIGA
-		    	has_building = building_giga_elysium_host_hive_major_capital
 		    }
         }
     }
@@ -154,17 +87,6 @@ has_upgraded_capital_5 = {
 				has_building = building_avb_machine_capital_5
 				has_building = building_avb_machine_capital_6
 				has_building = building_imperial_machine_capital
-				#ACOT
-				has_building = building_ae_ancient_palace
-				has_building = building_ae_ancient_control_center
-				has_building = building_ae_ancient_hive_cluster
-				has_building = building_dm_ancient_control_center
-				has_building = building_dm_ancient_palace
-				has_building = building_dm_ancient_hive_cluster
-				#GIGA
-				has_building = building_giga_elysium_host_machine_major_capital
-				#EMEX
-				has_building = building_bok_capital_3
 			}
         }
     }
@@ -175,15 +97,6 @@ has_upgraded_capital_5 = {
 			    has_building = building_avb_capital_5
 			    has_building = building_avb_capital_6
 			    has_building = building_imperial_capital
-			    #ACOT
-			    has_building = building_ae_ancient_palace
-			    has_building = building_ae_ancient_control_center
-			    has_building = building_ae_ancient_hive_cluster
-			    has_building = building_dm_ancient_control_center
-			    has_building = building_dm_ancient_palace
-			    has_building = building_dm_ancient_hive_cluster
-			    #GIGA
-			    has_building = building_giga_elysium_host_major_capital
             }
         }
     }
@@ -193,19 +106,10 @@ has_upgraded_capital_6 = {
     if = {
         limit = { owner = { is_hive_empire = yes } }
         custom_tooltip = {
-            fail_text = "requires_building_hive_capital_3"
+            fail_text = "requires_building_hive_capital_4"
 		    OR = {
 		    	has_building = building_avb_hive_capital_4
 		    	has_building = building_imperial_hive_capital
-		    	#ACOT
-			    has_building = building_ae_ancient_palace
-			    has_building = building_ae_ancient_control_center
-			    has_building = building_ae_ancient_hive_cluster
-		    	has_building = building_dm_ancient_control_center
-		    	has_building = building_dm_ancient_palace
-		    	has_building = building_dm_ancient_hive_cluster
-		    	#GIGA
-		    	has_building = building_giga_elysium_host_hive_major_capital
 		    }
         }
     }
@@ -216,35 +120,15 @@ has_upgraded_capital_6 = {
 			OR = {
 				has_building = building_avb_machine_capital_6
 				has_building = building_imperial_machine_capital
-				#ACOT
-				has_building = building_ae_ancient_palace
-				has_building = building_ae_ancient_control_center
-				has_building = building_ae_ancient_hive_cluster
-				has_building = building_dm_ancient_control_center
-				has_building = building_dm_ancient_palace
-				has_building = building_dm_ancient_hive_cluster
-				#GIGA
-				has_building = building_giga_elysium_host_machine_major_capital
-				#EMEX
-				has_building = building_bok_capital_3
 			}
         }
     }
     else = {
         custom_tooltip = {
-            fail_text = "requires_building_capital_4"
+            fail_text = "requires_building_capital_6"
             OR = {
 			    has_building = building_avb_capital_6
 			    has_building = building_imperial_capital
-			    #ACOT
-			    has_building = building_ae_ancient_palace
-			    has_building = building_ae_ancient_control_center
-			    has_building = building_ae_ancient_hive_cluster
-			    has_building = building_dm_ancient_control_center
-			    has_building = building_dm_ancient_palace
-			    has_building = building_dm_ancient_hive_cluster
-			    #GIGA
-			    has_building = building_giga_elysium_host_major_capital
             }
         }
     }

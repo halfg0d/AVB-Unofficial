@@ -406,8 +406,8 @@
  building_avb_energy_grid_4_desc:0 "Replacing outdated planetary energy distribution networks, this facility provides a connection to our empire-wide energy repository, an energy flux-matrix that permeates all of subspace. What is now known as the E-sphere, provides all connected planets with the capability of injecting and withdrawing energy directly, effectively reducing transmission loss to zero and removing all distribution inefficiencies."
  building_avb_resource_silo_2:0 "Resource Depository"
  building_avb_resource_silo_2_desc:0 "Monolithic warehouses, silos and chemical tanks equipped with spatial tensor field projectors, are capable of storing slightly larger quantities than their outer physical limits suggest."
- building_avb_bio_reactor_2:0 "Matter-Energy Converter"
- building_avb_bio_reactor_2_desc:0 "This upgraded facility replaces older systems with an array of matter annihilation fields that converts biological matter to energy with a perfect efficiency rate. With systems capable of annihilating biological matter directly the need to first reduce organisms to a fine mulch is no longer needed, removing the benefit of interrupting natural biological processes within the organisms, so this facility also boasts enhanced soundproofing."
+ building_avb_bio_reactor_3:0 "Matter-Energy Converter"
+ building_avb_bio_reactor_3_desc:0 "This upgraded facility replaces older systems with an array of matter annihilation fields that converts biological matter to energy with a perfect efficiency rate. With systems capable of annihilating biological matter directly the need to first reduce organisms to a fine mulch is no longer needed, removing the benefit of interrupting natural biological processes within the organisms, so this facility also boasts enhanced soundproofing."
  
  #Manufacturing
  building_avb_foundry_4:0 "Alloy Synth-Battery"
