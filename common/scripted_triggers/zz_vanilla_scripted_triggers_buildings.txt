@@ -8,6 +8,7 @@ has_upgraded_capital = {
 				has_building = building_resort_major_capital
 				#AVB
 				has_building = building_avb_resort_capital_3
+			}
 		}
 	}
 	else_if = {
