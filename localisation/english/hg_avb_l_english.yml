@@ -113,7 +113,6 @@
  building_avb_ranger_lodge_2_desc:0 "Highly advanced ranger quarter where are created with hydroponics to take care of rare plants in our flora paradise."
  tech_avb_ranger_lodge_2:0 "Ranger Lodge Hydroponic Addon"
  tech_avb_ranger_lodge_2_desc:0 "Now we are able to use hydroponics to grow rare plants in special controllable environment."
- has_avb_ranger_lodge_2:0 "$TRIGGER_FAIL$§RThis blocker will not be removeable as long as the §Y$building_avb_ranger_lodge_2$§! exists.§!"
 
 #First Contact Buildings
  building_avb_archaeo_refinery_2:0 "Ancient Advanced Refinery"

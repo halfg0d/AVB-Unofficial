@@ -1273,6 +1273,15 @@ building_avb_ranger_lodge_2 = {
 
 	allow = {
 		has_fully_upgraded_capital = yes
+		custom_tooltip = {
+			fail_text = no_free_district_for_ranger_lodge
+			planet = {
+				num_free_districts = {
+					type = any
+					value > 1
+				}
+			}
+		}
 	}
 
 	destroy_trigger = {
