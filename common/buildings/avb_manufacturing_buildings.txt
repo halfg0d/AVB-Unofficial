@@ -1156,7 +1156,9 @@ building_avb_production_center_2 = {
 	show_tech_unlock_if = { 
 		is_gestalt = yes
 	}
-	
+	prerequisites = {
+		"tech_avb_global_production_strategy_2"
+	}
 	triggered_desc = {
 		trigger = {
 			exists = owner

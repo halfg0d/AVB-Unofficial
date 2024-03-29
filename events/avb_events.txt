@@ -119,7 +119,7 @@ planet_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		last_building_changed = building_avb_hab_capital_3
+		last_building_changed = building_avb_hab_capital_4
 	}
 
 	immediate = {

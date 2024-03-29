@@ -38,6 +38,8 @@ building_avb_orb_ring_connection = {
 		building_avb_orb_ring_connection_ranger_3
 		building_avb_orb_ring_connection_foundry_2
 		building_avb_orb_ring_connection_foundry_3
+		building_avb_orb_ring_connection_factory_2
+		building_avb_orb_ring_connection_factory_3
 	}
 	## Upgrades /\
 

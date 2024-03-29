@@ -15,6 +15,7 @@
  avb_orb_building_ranger:0 "$sm_ring_avb_ranger$:"
  avb_orb_building_paradise:0 "$sm_ring_avb_paradise$:"
  avb_orb_building_foundry:0 "$sm_ring_alloys_hub$:"
+ avb_orb_building_factory:0 "$sm_ring_consumer_goods_hub$:"
 
 #Robot/Machine Assembly
  sm_ring_avb_robot_assembly:0 "Semi-Automation Machine Assembly"

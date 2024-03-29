@@ -141,6 +141,7 @@ orb_paradise_active = {
 		#AVB
 		has_active_building = building_avb_organic_sanctuary_3
 		has_active_building = building_avb_organic_sanctuary_4
+		has_active_building = building_avb_organic_sanctuary_5
 
 	}
 }
@@ -160,6 +161,7 @@ is_building_similar_to_organic_paradise = {
 					#AVB
 					has_building = building_avb_organic_sanctuary_3
 					has_building = building_avb_organic_sanctuary_4
+					has_building = building_avb_organic_sanctuary_5
 				}
 			}
 		}

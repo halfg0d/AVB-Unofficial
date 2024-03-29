@@ -5,6 +5,7 @@
 ##Modifier \/
 triggered_planet_modifier = {
 	potential = {
+		always = no
 		exists = planet
 		planet = {
 			orb_paradise_active = yes
@@ -41,6 +42,7 @@ triggered_planet_modifier = {
 ##Modifier \/
 triggered_planet_modifier = {
 	potential = {
+		always = no
 		exists = planet
 		planet = {
 			orb_paradise_active = yes
@@ -77,6 +79,7 @@ triggered_planet_modifier = {
 ##Modifier \/
 triggered_planet_modifier = {
 	potential = {
+		always = no
 		exists = planet
 		planet = {
 			orb_paradise_active = yes

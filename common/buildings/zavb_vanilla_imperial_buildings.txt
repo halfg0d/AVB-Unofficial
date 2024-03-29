@@ -20,7 +20,7 @@ building_imperial_capital = {
 
 	convert_to = {
 		building_avb_capital_6
-		building_avb_hab_capital_3
+		building_avb_hab_capital_4
 		building_avb_hive_capital_4
 		building_avb_machine_capital_6
 		building_ancient_control_center
@@ -348,7 +348,7 @@ building_imperial_machine_capital = {
 
 	convert_to = {
 		building_avb_capital_6
-		building_avb_hab_capital_3
+		building_avb_hab_capital_4
 		building_avb_hive_capital_4
 		building_avb_machine_capital_6
 		building_ancient_control_center
@@ -521,7 +521,7 @@ building_imperial_hive_capital = {
 
 	convert_to = {
 		building_avb_capital_6
-		building_avb_hab_capital_3
+		building_avb_hab_capital_4
 		building_avb_hive_capital_4
 		building_avb_machine_capital_6
 		building_ancient_control_center

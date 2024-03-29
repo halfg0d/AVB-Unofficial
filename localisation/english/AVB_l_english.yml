@@ -17,8 +17,8 @@
  tech_avb_capital_6:0 "Universal Executive Intelligence"
  tech_avb_capital_6_desc:0 "With greater expansion of the immense executive branch the dependence on inflexible AIs is a hindrance to the governing body necessary to manage trillions of civil matters and legislative issues across the galaxy. The neural interfaces and subspace communication networks in every civilian district utilizes a small percentage of every citizen's neural strata. The complex task of maintaining order in a vast empire is now partially automated by the Executive Intelligence, or the collective intelligence created from the neural strata of every citizen. The executive branch now automatically expands with the population and employs the will of the people directly."
  
- tech_avb_hab_capital_3:0 "Autonomous Executive Nexus"
- tech_avb_hab_capital_3_desc:0 "The central executive authority providing administration for the entire monolithic habitat has reached maximum capacity and requires a more sophisticated solution to expand bureaucratic systems to accommodate an even larger population. A restricted level 5 micro-sentient AI with full executive control over every internal system provides a level of efficiency typically only found on long established planetside facilities, making the internal operations of every waste management, heat exchanger and data control system on the habitat work in unison with the precision of a biological organism."
+ tech_avb_hab_capital_4:0 "Autonomous Executive Nexus"
+ tech_avb_hab_capital_4_desc:0 "The central executive authority providing administration for the entire monolithic habitat has reached maximum capacity and requires a more sophisticated solution to expand bureaucratic systems to accommodate an even larger population. A restricted level 5 micro-sentient AI with full executive control over every internal system provides a level of efficiency typically only found on long established planetside facilities, making the internal operations of every waste management, heat exchanger and data control system on the habitat work in unison with the precision of a biological organism."
  tech_avb_resort_capital_3:0 "Orbital Visitor Reception"
  tech_avb_resort_capital_3_desc:0 "The expansion of visitor reception facilities and resort administration into space is now feasible with a dedicated orbital reception hall attached to planetside transport stations and offices by a series of space elevators. With the increase in tourism and demand for additional resort complexes shuttle programs are overwhelmed, so the use of orbital elevators increases visitor throughput and overall comfort as guests descend to the surface in elevators that are practically five star resorts. The expansion of executive facilities in orbit allows for greater organization and a top down view on the vast leisure resorts covering the planetary surface."
  tech_avb_slave_capital_3:0 "Governor's Enclave"
@@ -346,8 +346,8 @@
  building_avb_hive_capital_4:0 "Hive Apex"
  building_avb_hive_capital_4_desc:0 "The beating heart from which our highest level coordination routines are devised and distributed. This sprawling complex dwarfs every other structure on the planet, radiating the intelligence and authority that the teeming quintillions of drones enforce."
  
- building_avb_hab_capital_3:0 "Habitat Executive Nexus"
- building_avb_hab_capital_3_desc:0 "A vast complex of administration buildings, surrounding an array of computer mainframes and data distribution hubs, hosts a grade 5 civil AI. With a real time computational capacity exceeding that of most planetary installations the habitat environmental management systems are run with the efficiency of a biological organism."
+ building_avb_hab_capital_4:0 "Habitat Executive Nexus"
+ building_avb_hab_capital_4_desc:0 "A vast complex of administration buildings, surrounding an array of computer mainframes and data distribution hubs, hosts a grade 5 civil AI. With a real time computational capacity exceeding that of most planetary installations the habitat environmental management systems are run with the efficiency of a biological organism."
  
  building_avb_resort_capital_3:0 "Resort Space Elevator"
  building_avb_resort_capital_3_desc:0 "These Immense visitor reception halls and administration buildings, attached to an orbital reception facility by a space elevator, provides a comfortable and high capacity replacement to overwhelmed shuttle craft as well as an orbital administration center to coordinate continent spanning resorts."
@@ -586,7 +586,7 @@
  requires_building_capital_4:1 "§RRequires §Y$building_avb_capital_4$§! on planet.§!"
  requires_building_machine_capital_4:1 "§RRequires §Y$building_avb_machine_capital_4$§! on planet.§!"
  requires_building_hive_capital_3:1 "§RRequires §Y$building_avb_hive_capital_3$§! on planet.§!"
- requires_building_hab_capital_3:1 "§RRequires §Y$building_avb_hab_capital_3$§! on planet.§!"
+ requires_building_hab_capital_3:1 "§RRequires §Y$building_avb_hab_capital_4$§! on planet.§!"
  requires_building_resort_capital_3:1 "§RRequires §Y$building_avb_resort_capital_3$§! on planet.§!"
  requires_building_slave_capital_3:1 "§RRequires §Y$building_avb_slave_capital_3$§! on planet.§!"
  

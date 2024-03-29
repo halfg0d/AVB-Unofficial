@@ -84,49 +84,53 @@ tech_avb_capital_6 = {
 	}
 }
 
-tech_avb_hab_capital_3 = {
+tech_avb_hab_capital_4 = {
 	cost = @tier5cost3
-	area = society
-	tier = 5
-	category = { statecraft }
-	prerequisites = { "tech_starbase_5" "tech_habitat_1" }
-	weight = @tier5weight3
-	
+	area = engineering
+	category = { voidcraft }
+	tier = 4
+	prerequisites = { "tech_habitat_3" "tech_avb_capital_4" }
+	weight = @tier4weight3
+	is_rare = yes
+
 	potential = {
-		any_owned_planet = {
-			OR = {
-				is_habitat = yes
-				is_planet_class = pc_habitat
-			}
+		OR = {
+			has_origin = origin_void_dwellers
+			host_has_dlc = "Utopia"
 		}
 	}
-	
-	gateway = capital
-	
+
+	modifier = {
+		habitat_max_districts_add = 1
+	}
+
 	weight_modifier = {
-		factor = 4
-		modifier = { # can't get without any habitat in empire
+		modifier = {
 			factor = 0
-			any_owned_planet = {
-				NOR = {
-					is_planet_class = pc_habitat 
-					is_pd_habitat = yes
+			NOT = {
+				any_owned_planet = {
+					is_planet_class = pc_habitat
 				}
 			}
 		}
-		inline_script = tech_weights/avb_government_weight
+		modifier = {
+			factor = 10
+			has_origin = origin_void_dwellers
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_avb_habitat_4
+		}
 	}
-	
+
 	ai_weight = {
-		factor = @capital_tech_ai_factor
-		modifier = { # can't get without any habitat in empire
-			factor = 0
-			any_owned_planet = {
-				NOR = {
-					is_habitat = yes
-					is_planet_class = pc_habitat 
-					is_pd_habitat = yes
-				}
+		modifier = {
+			factor = 100
+			OR = {
+				has_origin = origin_void_dwellers
+				has_origin = origin_toxic_knights
+				has_country_flag = payback_habitat
+				has_valid_civic = civic_void_hive
 			}
 		}
 	}
@@ -1779,7 +1783,10 @@ tech_avb_residence_5 = {
 	weight = @avbtier6weight1
 	
 	potential = {
-		is_gestalt = no
+		OR = {
+			is_gestalt = no
+			has_valid_civic = civic_machine_servitor
+		}
 	}
 
 	weight_modifier = {	
@@ -1832,7 +1839,6 @@ tech_avb_housing_3 = {
 		factor = 2
 	}
 }
-
 tech_avb_housing_4 = {
 	cost = @tier5cost1
 	area = engineering
@@ -1860,7 +1866,33 @@ tech_avb_housing_4 = {
 		factor = 2
 	}
 }
-#
+tech_avb_housing_5 = {
+	cost = @avbtier6cost1
+	area = engineering
+	tier = 6
+	category = { industry }
+	prerequisites = { "tech_avb_housing_4" }
+	weight = @avbtier6weight1
+	
+	modifier = {
+		planet_building_build_speed_mult = 0.10
+	}
+	
+	weight_modifier = {
+		factor = 1.5
+		modifier = {
+			factor = 0
+			has_valid_civic = civic_agrarian_idyll
+		}
+		modifier = {
+			factor = value:avb_colonies_scaling
+		}
+	}
+	
+	ai_weight = {
+		factor = 2
+	}
+}
 
 tech_avb_self_assembling_components_2 = {
 	cost = @tier5cost3
@@ -1869,6 +1901,30 @@ tech_avb_self_assembling_components_2 = {
 	category = { industry }	
 	weight = @tier5weight3
 	prerequisites = { "tech_self_assembling_components" }
+	
+	modifier = {
+		planet_pop_assembly_mult = 0.10
+	}
+	
+	potential = {
+		is_machine_empire = yes
+	}
+	
+	weight_modifier = {
+		factor = 1.5 
+	}
+	
+	ai_weight = {
+		factor = 4
+	}
+}
+tech_avb_self_assembling_components_3 = {
+	cost = @avbtier6cost3
+	area = engineering
+	tier = 6
+	category = { industry }	
+	weight = @avbtier6weight3
+	prerequisites = { "tech_avb_self_assembling_components_2" }
 	
 	modifier = {
 		planet_pop_assembly_mult = 0.10

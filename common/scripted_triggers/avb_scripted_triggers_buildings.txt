@@ -27,7 +27,7 @@ has_upgraded_capital_4 = {
 				has_building = building_imperial_machine_capital
 				has_building = building_imperial_hive_capital
 				#AVB
-				has_building = building_avb_hab_capital_3
+				has_building = building_avb_hab_capital_4
 			}
 		}
 	}

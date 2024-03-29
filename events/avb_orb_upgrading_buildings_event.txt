@@ -282,3 +282,50 @@ planet_event = {
 		set_planet_flag = avb_orb_foundry_3
 	}
 }
+#Factory
+planet_event = {
+	id = avb_orb_up.71
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		last_building_changed = building_avb_orb_ring_connection_factory_2
+		has_building = building_avb_orb_ring_connection_factory_2
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_factory_1
+		}
+		exists = owner
+		is_building_similar_to_factory = yes
+	}
+
+	immediate = {
+		remove_building = building_avb_orb_ring_connection_factory_2
+		add_building = building_avb_orb_ring_connection
+		remove_planet_flag = avb_orb_factory_1
+		set_planet_flag = avb_orb_factory_2
+	}
+}
+planet_event = {
+	id = avb_orb_up.72
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		last_building_changed = building_avb_orb_ring_connection_factory_3
+		has_building = building_avb_orb_ring_connection_factory_3
+		exists = planet
+		planet = {
+			has_planet_flag = avb_orb_factory_2
+		}
+		exists = owner
+		is_building_similar_to_factory = yes
+	}
+
+	immediate = {
+		remove_building = building_avb_orb_ring_connection_factory_3
+		add_building = building_avb_orb_ring_connection
+		remove_planet_flag = avb_orb_factory_2
+		set_planet_flag = avb_orb_factory_3
+	}
+}

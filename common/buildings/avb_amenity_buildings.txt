@@ -628,13 +628,74 @@ building_avb_drone_storage_4 = {
 			rare_crystals = @avb_b4_rare_upkeep
 		}
 	}
-	
+	upgrades = {
+		building_avb_drone_storage_5
+	}
 	
 	prerequisites = {
 		"tech_avb_self_assembling_components_2" 
 	}
 }
+building_avb_drone_storage_5 = {
+	base_buildtime = @avb_b5_time
+	can_build = no
 
+	category = amenity
+
+	allow = {
+		has_upgraded_capital_4 = yes
+	}
+	potential = {
+		exists = owner
+		owner = { is_machine_empire = yes }
+	}
+	
+	destroy_trigger = {
+		exists = owner
+		owner = { is_machine_empire = no }
+	}
+	
+	convert_to = {
+		building_avb_residence_5
+		building_avb_warren_5
+		building_avb_communal_housing_5
+		building_avb_organic_sanctuary_5
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 48
+		planet_amenities_add = 32
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_active_tradition = tr_domination_imperious_architecture
+			}					
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_b5_minerals
+			rare_crystals = @avb_b5_rare_cost
+		}
+		upkeep = {
+			energy = @avb_b5_upkeep
+			rare_crystals = @avb_b5_rare_upkeep
+		}
+	}
+	
+	
+	prerequisites = {
+		"tech_avb_self_assembling_components_3" 
+	}
+}
 #Hive housing
 building_avb_warren_3 = {
 	base_buildtime = @avb_b3_time
@@ -764,12 +825,77 @@ building_avb_warren_4 = {
 			rare_crystals = @avb_b4_rare_upkeep
 		}
 	}
-	
+	upgrades = {
+		building_avb_warren_5
+	}
 	prerequisites = {
 		"tech_avb_housing_4" 
 	}
 }
+building_avb_warren_5 = {
+	base_buildtime = @avb_b5_time
+	can_build = no
+	
+	category = amenity
+	
+	potential = {
+		exists = owner
+		owner = { is_hive_empire = yes }
+	}
 
+	allow = {
+		has_upgraded_capital_4 = yes
+	}
+	
+	show_tech_unlock_if = { 
+		owner = { is_hive_empire = yes }
+	}
+	
+	destroy_trigger = {
+		exists = owner
+		owner = { is_hive_empire = no }
+	}
+	
+	convert_to = {
+		building_avb_residence_5
+		building_avb_drone_storage_5
+		building_avb_communal_housing_5
+		building_avb_organic_sanctuary_5
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 60
+		planet_amenities_add = 32
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_active_tradition = tr_domination_imperious_architecture
+			}					
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_b5_minerals
+			rare_crystals = @avb_b5_rare_cost
+		}
+		upkeep = {
+			energy = @avb_b5_upkeep
+			rare_crystals = @avb_b5_rare_upkeep
+		}
+	}
+	
+	prerequisites = {
+		"tech_avb_housing_5" 
+	}
+}
 building_avb_holo_theatre_3 = {
 	base_buildtime = @avb_b3_time
 	can_build = no

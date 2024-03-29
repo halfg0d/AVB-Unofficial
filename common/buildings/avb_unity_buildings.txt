@@ -2425,7 +2425,9 @@ building_avb_organic_sanctuary_4 = {
 		text = job_bio_trophy_effect_desc
 	}
 	prerequisites = { "tech_avb_residence_4" }
-	
+	upgrades = {
+		building_avb_organic_sanctuary_5
+	}
 	show_tech_unlock_if = {
 		owner = { has_valid_civic = civic_machine_servitor }
 	}
@@ -2472,6 +2474,97 @@ building_avb_organic_sanctuary_4 = {
 			planet_resource_compare = {
 				resource = consumer_goods
 				value >= 100
+				type = produces
+			}
+		}
+	}
+}
+building_avb_organic_sanctuary_5 = {
+	base_buildtime = @avb_b6_time
+	can_build = no
+	category = unity
+
+	potential = {
+		exists = owner
+		owner = { has_valid_civic = civic_machine_servitor }
+	}
+	destroy_trigger = {
+		exists = owner
+		NOT = { owner = { has_valid_civic = civic_machine_servitor } }
+	}
+	
+	convert_to = {
+		building_avb_residence_5
+		building_avb_communal_housing_5
+	}
+		
+	planet_modifier = {
+		#planet_housing_add = 20
+		job_bio_trophy_add = 50
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_b5_minerals
+			exotic_gases = @avb_b5_rare_cost
+		}
+		upkeep = {
+			energy = @avb_b5_upkeep
+			exotic_gases = @avb_b5_rare_upkeep
+		}
+	}
+	triggered_desc = {
+		text = job_bio_trophy_effect_desc
+	}
+	prerequisites = { "tech_avb_residence_5" }
+	
+	show_tech_unlock_if = {
+		owner = { has_valid_civic = civic_machine_servitor }
+	}
+	#science
+	ai_resource_production = {
+		unity = 50
+		physics_research = 50
+
+		trigger = {
+			has_unemployed_pop_of_category = bio_trophy
+
+			planet_resource_compare = {
+				resource = physics_research
+				value >= 120
+				type = produces
+			}
+		}
+	}
+
+	#alloys
+	ai_resource_production = {
+		unity = 50
+		alloys = 50
+
+		trigger = {
+			has_unemployed_pop_of_category = bio_trophy
+
+			planet_resource_compare = {
+				resource = alloys
+				value >= 120
+				type = produces
+			}
+		}
+	}
+
+	#cgs
+	ai_resource_production = {
+		unity = 50
+		consumer_goods = 50
+
+		trigger = {
+			has_unemployed_pop_of_category = bio_trophy
+
+			planet_resource_compare = {
+				resource = consumer_goods
+				value >= 120
 				type = produces
 			}
 		}

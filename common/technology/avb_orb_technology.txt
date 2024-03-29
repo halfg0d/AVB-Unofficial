@@ -772,6 +772,7 @@ tech_ring_avb_factory_2 = {
 	}
 }
 tech_ring_avb_factory_3 = {
+	icon = tech_ring_avb_factory_2
 	cost = @orb_tier4cost3
 	area = engineering
 	tier = 4

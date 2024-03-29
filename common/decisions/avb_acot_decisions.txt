@@ -161,10 +161,10 @@ decision_transform_into_awesome = {
 			
 			if = {
 				limit = {
-					has_building = building_avb_hab_capital_3
+					has_building = building_avb_hab_capital_4
 				 }
 				 
-				 remove_building = building_avb_hab_capital_3	
+				 remove_building = building_avb_hab_capital_4	
 			}
 			
 			if = {
@@ -496,10 +496,10 @@ decision_transform_into_awesome_hive = {
 			
 			if = {
 				limit = {
-					has_building = building_avb_hab_capital_3
+					has_building = building_avb_hab_capital_4
 				 }
 				 
-				 remove_building = building_avb_hab_capital_3	
+				 remove_building = building_avb_hab_capital_4	
 			}
 
 			add_building = building_dm_ancient_hive_cluster	
