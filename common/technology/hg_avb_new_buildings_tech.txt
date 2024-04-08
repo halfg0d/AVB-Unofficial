@@ -484,3 +484,42 @@ tech_avb_hydroponics_3 = {
 		factor = 4
 	}
 }
+tech_avb_necrophage_3 = {
+	cost = @tier4cost3
+	area = society
+	tier = 4
+	category = { biology }
+	prerequisites = { "tech_glandular_acclimation" }
+	weight = @tier4weight3
+
+	potential = {
+		avb_hg_changes = yes
+		has_origin = origin_necrophage
+		has_trait = trait_necrophage
+	}
+
+	weight_modifier = {
+		factor = 1.5	# genetech needs to be a bit more common
+		modifier = {
+			factor = 1.25
+			has_authority = auth_hive_mind
+		}
+		modifier = {
+			factor = 1.25
+			has_origin = origin_necrophage
+			has_trait = trait_necrophage
+		}
+		modifier = {
+			factor = 2
+			has_relic = r_pox_sample
+		}
+	}
+
+	ai_weight = {
+		modifier = {
+			factor = 2
+			has_origin = origin_necrophage
+			has_trait = trait_necrophage
+		}
+	}
+}

@@ -220,3 +220,13 @@
  building_avb_warren_5_desc:0 "This colossal warren maximizes the utilization of our most advanced spatial tensor field generators, autonomously expanding its internal structure beyond exterior constraints, resulting in a warren density surpassing previous capacity by orders of magnitude. During full mobilization, the swarms of drones emanating from the depths of this warren can trigger seismic disturbances and obscure daylight for hours."
  building_avb_drone_storage_5:0 "Advanced Autonomous Drone Storage Complex"
  building_avb_drone_storage_5_desc:0 "The replacement of outdated self-assemblers with universal constructors enables all resident drones in this storage complex to self-assemble and replicate all internal components independently, utilizing microscopic modular cybernetics. With the complete removal of all maintenance routines, this expanded storage complex now consists of towering arrays of drone bays, approximately double the previous capacity. Additionally, the complex automatically reduces the size of dispersed parts to save space."
+# Necrophages T3
+ building_avb_necrophage_3:0 "Dreary Palace"
+ building_avb_necrophage_3_desc:0 "The Dreary Palace is the final place for those awaiting their apotheosis as [This.Owner.GetSpeciesNamePlural]. With comfortable chambers at their disposal, they can still dwell in comfort in their original forms.""
+ building_avb_necrophage_3_desc_hive:0 "In the dreary palace, those awaiting their transformation into drones [This.Owner.GetAdj], have at their disposal comfortable chambers, where they can spend the remainder of their lives outside the Hive."
+ building_avb_necrophage_3_tooltip:0 "The Elevation Ceremony will be appearing every 5 years."
+ tech_avb_necrophage_3:0 "The Ceremony at the dreary palace"
+ tech_avb_necrophage_3_desc:0 "Amidst the somber walls of the dreary palace, individuals on the brink of transformation find solace in the access to comfortable chambers. Here, they can rest from the fear of their new identity, enveloping themselves in the peace of their final days. In the shadows of the palace's corridors, they reflect on the impending transformation, finding moments of quiet introspection and perhaps even fleeting glimpses of the world beyond. In these chambers, they are free to reminisce, to dream, and to savor the fleeting moments of autonomy before merging into the unknown."
+ job_necro_apprentice_effect_desc_base:0 "Once every [This.getNecrophageTime] years, £job_necro_apprentice£ $job_necro_apprentice_plural$ are transformed into §Y[This.Owner.GetSpeciesNamePlural]§! in an §YElevation Ritual§!."
+ necrophageTimeV: "§Y10§!"
+ necrophageTimeAVB: "§Y5§!"

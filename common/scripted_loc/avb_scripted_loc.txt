@@ -1,0 +1,14 @@
+defined_text = {
+	name = getNecrophageTime
+	random = no
+	text = {
+		trigger = {
+			avb_hg_changes = yes
+			planet = {
+				has_building = building_avb_necrophage_3
+			}
+		}
+		localization_key = necrophageTimeAVB
+	}
+	default = necrophageTimeV
+}
