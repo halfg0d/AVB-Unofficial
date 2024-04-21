@@ -320,12 +320,12 @@ building_avb_mineral_purification_3 = {
 
 	desc = {
 		trigger = { NOT = { is_planet_class = pc_shattered_ring_habitable } }
-		text = building_mineral_purification_hub_desc
+		text = building_avb_mineral_purification_3_desc
 	}
 
 	desc = {
 		trigger = { is_planet_class = pc_shattered_ring_habitable }
-		text = building_scrap_processing_hub_desc
+		text = building_avb_mineral_purification_3_scrap_desc
 	}
 
 	allow = {
@@ -439,12 +439,12 @@ building_avb_mineral_purification_4 = {
 	
 	desc = {
 		trigger = { NOT = { is_planet_class = pc_shattered_ring_habitable } }
-		text = building_mineral_purification_hub_desc
+		text = building_avb_mineral_purification_4_desc
 	}
 
 	desc = {
 		trigger = { is_planet_class = pc_shattered_ring_habitable }
-		text = building_scrap_processing_hub_desc
+		text = building_avb_mineral_purification_4_scrap_desc
 	}
 
 	allow = {
