@@ -770,3 +770,158 @@ building_avb_toxic_bath_machine_2 = {
 		}
 	}
 }
+
+# Necrophages
+
+building_avb_necrophage_3 = {
+	base_buildtime = @avb_b3_time
+	can_build = no
+	position_priority = 100
+
+	category = pop_assembly
+
+	desc = {
+		trigger = {
+			OR = {
+				NOT = { exists = owner }
+				owner = { is_hive_empire = no }
+			}
+		}
+		text = building_avb_necrophage_3_desc
+	}
+	desc = {
+		trigger = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		text = building_avb_necrophage_3_desc_hive
+	}
+
+	potential = {
+		avb_hg_changes = yes
+		exists = owner
+		owner = {
+			has_origin = origin_necrophage
+			has_trait = trait_necrophage
+			NOR = {
+				has_valid_civic = civic_fanatic_purifiers
+				has_valid_civic = civic_hive_devouring_swarm
+			}
+			is_ai = no #the AI will just kill all its necrophytes
+		}
+	}
+
+	allow = {
+		has_upgraded_capital_4 = yes
+		hidden_trigger = {
+			if = {
+				limit = {
+					owner = { is_ai = yes }
+				}
+				any_owned_species = {
+					species_can_be_necrophaged = yes
+				}
+			}
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = {
+				OR = {
+					NOT = { has_origin = origin_necrophage }
+					NOT = { has_trait = trait_necrophage }
+				}
+			}
+			AND = {
+				owner = { is_ai = yes }
+				NOT = {
+					any_owned_species = {
+						species_can_be_necrophaged = yes
+					}
+				}
+			}
+		}
+	}
+
+	planet_modifier = {
+		job_necro_apprentice_add = 8
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_hive
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		job_necro_apprentice_add = 4
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_b3_minerals
+			exotic_gases = @avb_b3_rare_cost
+		}
+		upkeep = {
+			energy = @avb_b3_upkeep
+			exotic_gases = @avb_b3_rare_upkeep
+		}
+	}
+
+	prerequisites = {
+		tech_avb_necrophage_3
+	}
+	show_tech_unlock_if = {
+		has_origin = origin_necrophage
+		has_trait = trait_necrophage
+	}
+
+	triggered_desc = {
+		text = job_necro_apprentice_effect_desc
+		trigger = {
+			exists = owner
+			owner = {
+				is_lithoid_empire = no
+				is_hive_empire = no
+			}
+		}
+	}
+	triggered_desc = {
+		text = job_necro_apprentice_effect_lithoid_desc
+		trigger = {
+			exists = owner
+			owner = {
+				is_lithoid_empire = yes
+				is_hive_empire = no
+			}
+		}
+	}
+	triggered_desc = {
+		text = job_necro_apprentice_effect_hive_desc
+		trigger = {
+			exists = owner
+			owner = {
+				is_lithoid_empire = no
+				is_hive_empire = yes
+			}
+		}
+	}
+	triggered_desc = {
+		text = job_necro_apprentice_effect_hive_lithoid_desc
+		trigger = {
+			exists = owner
+			owner = {
+				is_lithoid_empire = yes
+				is_hive_empire = yes
+			}
+		}
+	}
+	triggered_desc = {
+		text = necrophage_elevation_timer_tooltip
+		trigger = {
+			has_planet_flag = necrophage_elevation_timer
+		}
+	}
+}

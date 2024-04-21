@@ -55,3 +55,8 @@ on_colony_yearly_pulse = {
 		#avb.11
 	}
 }
+on_colony_5_year_pulse = {
+	events = {
+		avb_necroids.1 #Apotheosis for non-necrophage pops to necrophage
+	}
+}
