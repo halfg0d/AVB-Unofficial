@@ -16,6 +16,7 @@ building_avb_robot_assembly_plant_2 = {
 		}
 		owner = {
 			is_regular_empire = yes
+			is_individual_machine = no
 			NOT = { has_policy_flag = robots_outlawed }
 			OR = {
 				is_ai = no
@@ -62,6 +63,49 @@ building_avb_robot_assembly_plant_2 = {
 	planet_modifier = {
 		job_roboticist_add = 3
 	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					has_origin = origin_mechanists
+					is_individual_machine = yes
+					has_country_flag = synthetic_empire
+				}
+			}
+			any_owned_pop = {
+				has_auto_modding_trait = yes
+			}
+		}
+		modifier = {
+			auto_mod_monthly_add = 4
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = synth_unscheduled_updates
+			}
+		}
+		modifier = {
+			planet_pop_assembly_mult = 0.1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = synth_safe_updates
+			}
+		}
+		modifier = {
+			planet_pop_assembly_mult = -0.1
+			planet_stability_add = 5
+		}
+	}
 	
 	resources = {
 		category = planet_buildings
@@ -78,29 +122,7 @@ building_avb_robot_assembly_plant_2 = {
 		"tech_avb_robot_assembly_plant_2"
 	}
 	triggered_desc = {
-		trigger = {
-			OR = {
-				NOT = { exists = owner }
-				AND = {
-					exists = owner
-					owner = {
-						NOT = { has_policy_flag = roboticist_output_build_cyborgs }
-					}
-				}
-			}
-
-		}
 		text = job_roboticist_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				has_policy_flag = roboticist_output_build_cyborgs
-			}
-		}
-		text = job_roboticist_cyborg_effect_desc
 	}
 
 	triggered_desc = {
@@ -113,9 +135,6 @@ building_avb_robot_assembly_plant_2 = {
 					exists = assembling_species
 					assembling_species = { is_organic_species = yes }
 					exists = owner
-					owner = {
-						NOT = { has_policy_flag = roboticist_output_build_cyborgs }
-					}
 				}
 			}
 		}
@@ -136,8 +155,13 @@ building_avb_machine_assembly_plant_2 = {
 	
 	potential = {
 		exists = owner
-		owner = { is_machine_empire = yes }
-		NOT = { has_modifier = crucible_colony }
+		owner = {
+			OR = {
+				is_machine_empire = yes
+				is_individual_machine = yes
+			}
+		}
+		NOT = { has_modifier = gestation_colony }
 	}
 	allow = {
 		has_fully_upgraded_capital = yes
@@ -163,8 +187,41 @@ building_avb_machine_assembly_plant_2 = {
 		}
 	}
 	
-	planet_modifier = {
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+		}
 		job_replicator_add = 6
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_individual_machine = yes
+			}
+		}
+		job_roboticist_add = 4
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					is_machine_empire = yes
+					is_individual_machine = yes
+				}
+			}
+			any_owned_pop = {
+				has_auto_modding_trait = yes
+			}
+		}
+		modifier = {
+			auto_mod_monthly_add = 4
+		}
 	}
 	
 	resources = {
@@ -180,8 +237,24 @@ building_avb_machine_assembly_plant_2 = {
 	}
 	
 	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+		}
 		text = job_replicator_effect_desc
-	}	
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_individual_machine = yes
+			}
+		}
+		text = job_roboticist_effect_desc
+	}
 	
 	prerequisites = {
 		"tech_avb_machine_assembly_plant_2"
@@ -225,6 +298,35 @@ building_avb_spawning_pool_2 = {
 	planet_modifier = {
 		job_spawning_drone_add = 2
 	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_gene_tailoring
+			}
+			any_owned_pop = {
+				has_auto_modding_trait = yes
+			}
+		}
+		modifier = {
+			auto_mod_monthly_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_origin = origin_overtuned
+			}
+			any_owned_pop = {
+				has_auto_modding_trait = yes
+			}
+		}
+		modifier = {
+			auto_mod_monthly_add = 2
+		}
+	}
 
 	triggered_planet_modifier = {
 		potential = {
@@ -232,7 +334,7 @@ building_avb_spawning_pool_2 = {
 			owner = { has_active_tradition = tr_cybernetics_modular_cybernetics_hive }
 		}
 		modifier = {
-			job_cyber_drone_add = 2
+			job_augmentor_drone_add = 2
 		}
 	}
 
@@ -253,7 +355,6 @@ building_avb_spawning_pool_2 = {
 	prerequisites = {
 		"tech_avb_spawning_pool_2"
 	}
-	
 	triggered_desc = {
 		trigger = {
 			NAND = {
@@ -286,7 +387,7 @@ building_avb_spawning_pool_2 = {
 				has_active_tradition = tr_cybernetics_modular_cybernetics_hive
 			}
 		}
-		text = job_cyber_drone_effect_desc
+		text = job_augmentor_drone_assembly_desc
 	}
 
 	triggered_desc = {
@@ -336,7 +437,7 @@ building_avb_offspring_nest_2 = {
 			owner = { has_active_tradition = tr_cybernetics_modular_cybernetics_hive }
 		}
 		modifier = {
-			job_cyber_drone_add = 2
+			job_augmentor_drone_add = 2
 		}
 	}
 
@@ -369,7 +470,7 @@ building_avb_offspring_nest_2 = {
 				has_active_tradition = tr_cybernetics_modular_cybernetics_hive
 			}
 		}
-		text = job_cyber_drone_effect_desc
+		text = job_augmentor_drone_assembly_desc
 	}
 
 	triggered_desc = {
@@ -423,6 +524,35 @@ building_avb_clone_vats_2 = {
 
 	planet_modifier = {
 		planet_pop_assembly_organic_add = 6
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_gene_tailoring
+			}
+			any_owned_pop = {
+				has_auto_modding_trait = yes
+			}
+		}
+		modifier = {
+			auto_mod_monthly_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_origin = origin_overtuned
+			}
+			any_owned_pop = {
+				has_auto_modding_trait = yes
+			}
+		}
+		modifier = {
+			auto_mod_monthly_add = 2
+		}
 	}
 
 	triggered_planet_modifier = {
@@ -732,9 +862,15 @@ building_avb_toxic_bath_machine_2 = {
 
 	potential = {
 		avb_hg_changes = yes
-		owner = {
-			is_machine_empire = yes
-			has_valid_civic = civic_machine_toxic_baths
+		OR = {
+			AND = {
+				owner = { is_machine_empire = yes }
+				owner = { has_toxic_baths = yes }
+			}
+			AND = {
+				owner = { is_individual_machine = yes }
+				owner = { has_toxic_baths = yes }
+			}
 		}
 	}
 	prerequisites = {
@@ -743,21 +879,48 @@ building_avb_toxic_bath_machine_2 = {
 	destroy_trigger = {
 		exists = owner
 		OR = {
-			owner = { is_machine_empire = no }
 			owner = {
-				NOT = { has_valid_civic = civic_machine_toxic_baths }
+				NOR = {
+					is_machine_empire = no
+					is_individual_machine = no
+				}
+			}
+			owner = {
+				has_toxic_baths = no
 			}
 		}
 	}
-	planet_modifier = {
-		job_bath_attendant_machine_add = @avb_b2_jobs
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_machine_empire = yes }
+		}
+		job_bath_attendant_machine_add = @b1_jobs
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_individual_machine = yes }
+		}
+		job_bath_attendant_individual_machine_add = @b1_jobs
 	}
 
 	triggered_desc = {
 		trigger = {
 			exists = owner
+			owner = {
+				is_individual_machine = no
+			}
 		}
 		text = job_toxic_baths_effect_machine_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_individual_machine = yes
+			}
+		}
+		text = job_toxic_baths_effect_machine_desc_2
 	}
 
 	resources = {

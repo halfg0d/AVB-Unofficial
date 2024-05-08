@@ -24,14 +24,6 @@ triggered_desc = {
 
 triggered_planet_modifier = {
 	potential = {
-		exists = owner.federation
-		owner.federation = { has_federation_perk = all_the_priests_2 }
-	}
-	job_high_priest_add = 1
-}
-
-triggered_planet_modifier = {
-	potential = {
 		exists = owner
 		owner = {
 			is_megacorp = yes
@@ -76,10 +68,4 @@ triggered_desc = {
 	text = job_steward_effect_desc
 }
 
-triggered_desc = {
-	trigger = {
-		exists = owner.federation
-		owner.federation = { has_federation_perk = all_the_priests_2 }
-	}
-	text = job_high_priest_effect_desc
-}
+inline_script = buildings/job_high_priest_variants_add_saintly_hierarchy

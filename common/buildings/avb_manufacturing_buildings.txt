@@ -16,7 +16,6 @@ building_avb_foundry_4 = {
 		OR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 			AND = {
 				exists = owner
 				owner = {
@@ -133,7 +132,6 @@ building_avb_foundry_5 = {
 		OR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 			AND = {
 				exists = owner
 				owner = {
@@ -251,7 +249,6 @@ building_avb_foundry_6 = {
 		OR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 			AND = {
 				exists = owner
 				owner = {
@@ -368,7 +365,6 @@ building_avb_factory_4 = {
 		NOT = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 		}
 	}
 
@@ -376,7 +372,6 @@ building_avb_factory_4 = {
 		OR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 
 			AND = {
 				exists = owner
@@ -465,7 +460,6 @@ building_avb_factory_5 = {
 		NOT = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 		}
 	}
 	
@@ -473,7 +467,6 @@ building_avb_factory_5 = {
 		OR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 
 			AND = {
 				exists = owner
@@ -564,7 +557,6 @@ building_avb_factory_6 = {
 		NOT = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 		}
 	}
 	
@@ -572,7 +564,6 @@ building_avb_factory_6 = {
 		OR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 
 			AND = {
 				exists = owner
@@ -653,7 +644,6 @@ building_avb_refinery_2 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 		}
 	}
 	
@@ -696,7 +686,6 @@ building_avb_refinery_3 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 		}
 	}
 	
@@ -736,7 +725,6 @@ building_avb_chemical_plant_2 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 		}
 	}	
 
@@ -780,7 +768,6 @@ building_avb_chemical_plant_3 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 		}
 	}
 
@@ -821,7 +808,6 @@ building_avb_crystal_plant_2 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 		}
 	}
 	
@@ -865,7 +851,6 @@ building_avb_crystal_plant_3 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 		}
 	}
 	
@@ -920,7 +905,6 @@ building_avb_nanite_transmuter_2 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 		}
 	}
 	
@@ -1073,7 +1057,6 @@ building_avb_production_center_2 = {
 			owner = { is_ai = no }
 			has_any_industry_district = yes
 		}
-		NOT = { has_modifier = crucible_colony }
 	}
 
 	destroy_trigger = {
@@ -1084,7 +1067,6 @@ building_avb_production_center_2 = {
 				owner = { is_ai = yes }
 				has_any_industry_district = no
 			}
-			has_modifier = crucible_colony
 		}
 	}
 	
@@ -1223,7 +1205,6 @@ building_avb_archaeo_refinery_2 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 		}
 		owner = { has_technology = tech_avb_archaeo_refinery_2 }
 	}

@@ -14,7 +14,6 @@ building_foundry_3 = {
 		OR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 			AND = {
 				exists = owner
 				owner = {
@@ -142,7 +141,6 @@ building_factory_3 = {
 		NOT = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 		}
 	}
 
@@ -150,7 +148,6 @@ building_factory_3 = {
 		OR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 
 			AND = {
 				exists = owner
@@ -238,7 +235,6 @@ building_refinery = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 		}
 	}
 
@@ -275,7 +271,6 @@ building_chemical_plant = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 		}
 	}
 
@@ -312,7 +307,6 @@ building_crystal_plant = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 		}
 	}
 
@@ -366,7 +360,6 @@ building_nanite_transmuter = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 		}
 	}
 
@@ -522,7 +515,6 @@ building_production_center = {
 			owner = { is_ai = no }
 			has_any_industry_district = yes
 		}
-		NOT = { has_modifier = crucible_colony }
 	}
 
 	destroy_trigger = {
@@ -678,7 +670,6 @@ building_archaeo_refinery = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 		}
 		owner = { has_technology = tech_archaeo_refinery }
 	}

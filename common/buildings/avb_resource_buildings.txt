@@ -115,7 +115,6 @@ building_avb_food_processing_3 = {
 			}
 			is_planet_class = pc_machine
 			has_modifier = resort_colony
-			has_modifier = crucible_colony
 		}
 	}
 
@@ -186,7 +185,6 @@ building_avb_food_processing_4 = {
 			}
 			is_planet_class = pc_machine
 			has_modifier = resort_colony
-			has_modifier = crucible_colony
 		}
 	}
 
@@ -233,7 +231,6 @@ building_avb_baol_organic_plant_2 = {
 		NOR = {
 			is_planet_class = pc_machine
 			has_modifier = resort_colony
-			has_modifier = crucible_colony
 		}
 	}
 
@@ -246,7 +243,6 @@ building_avb_baol_organic_plant_2 = {
 			}
 			is_planet_class = pc_machine
 			has_modifier = resort_colony
-			has_modifier = crucible_colony
 		}
 	}
 
@@ -330,16 +326,14 @@ building_avb_mineral_purification_3 = {
 
 	allow = {
 		has_fully_upgraded_capital = yes
-		NOR = {
+		NOT = {
 			has_modifier = resort_colony
-			has_modifier = crucible_colony
 		}
 	}
 	
 	destroy_trigger = {
 		OR = {
 			has_modifier = resort_colony
-			has_modifier = crucible_colony
 			AND = {
 				exists = owner
 				owner = {
@@ -451,14 +445,12 @@ building_avb_mineral_purification_4 = {
 		has_upgraded_capital_4 = yes
 		NOR = {
 			has_modifier = resort_colony
-			has_modifier = crucible_colony
 		}
 	}
 	
 	destroy_trigger = {
 		OR = {
 			has_modifier = resort_colony
-			has_modifier = crucible_colony
 			AND = {
 				exists = owner
 				owner = {
@@ -556,7 +548,6 @@ building_avb_energy_grid_3 = {
 	destroy_trigger = {
 		OR = {
 			has_modifier = resort_colony
-			has_modifier = crucible_colony
 			AND = {
 				exists = owner
 				owner = {
@@ -642,7 +633,6 @@ building_avb_energy_grid_4 = {
 	destroy_trigger = {
 		OR = {
 			has_modifier = resort_colony
-			has_modifier = crucible_colony
 			AND = {
 				exists = owner
 				owner = {
@@ -669,40 +659,6 @@ building_avb_energy_grid_4 = {
 		script = jobs/technicians_add
 		AMOUNT = 4
 	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
-		}
-		modifier = {
-			job_technician_add = @avb_b5_jobs
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_fallen_empire_spiritualist = yes }
-		}
-		modifier = {
-			job_fe_acolyte_generator_add = @avb_b5_jobs
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }
-		}
-		modifier = {
-			job_technician_drone_add = @avb_b5_jobs
-		}
-	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -756,7 +712,6 @@ building_avb_resource_silo_2 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 		}
 	}
 	
@@ -773,7 +728,7 @@ building_avb_resource_silo_2 = {
 							has_active_tradition = tr_domination_modular_depot
 						}
 						is_active_resolution = "resolution_greatergood_balance_in_the_middle"
-						is_active_resolution = "resolution_greatergood_univebal_prosperity_mandate"
+						is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
 						owner = {
 							has_ascension_perk = ap_arcology_project
 							NOT = { has_technology = tech_mega_engineering }
@@ -863,7 +818,6 @@ building_avb_bio_reactor_3 = {
 		NOR = {
 			is_planet_class = pc_machine
 			has_modifier = resort_colony
-			has_modifier = crucible_colony
 		}
 
 		OR = {
@@ -883,7 +837,6 @@ building_avb_bio_reactor_3 = {
 			}
 			is_planet_class = pc_machine
 			has_modifier = resort_colony
-			has_modifier = crucible_colony
 			AND = {
 				owner = {
 					is_ai = yes
