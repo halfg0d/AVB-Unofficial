@@ -62,6 +62,7 @@ building_avb_robot_assembly_plant_2 = {
 	planet_modifier = {
 		job_roboticist_add = 3
 	}
+	inline_script = building_ring/robot_assembly3
 	
 	resources = {
 		category = planet_buildings
@@ -72,6 +73,11 @@ building_avb_robot_assembly_plant_2 = {
 		upkeep = {
 			energy = @avb_b3_upkeep
 			rare_crystals = @avb_b3_rare_upkeep
+		}
+		inline_script = {
+			script = building_resources/avb_ringworld_resources
+			RARE = rare_crystals
+			TRIGGER = "avb_hg_changes = yes"
 		}
 	}
 	prerequisites = {
@@ -166,6 +172,7 @@ building_avb_machine_assembly_plant_2 = {
 	planet_modifier = {
 		job_replicator_add = 6
 	}
+	inline_script = building_ring/robot_assembly3
 	
 	resources = {
 		category = planet_buildings
@@ -176,6 +183,11 @@ building_avb_machine_assembly_plant_2 = {
 		upkeep = {
 			energy = @avb_b3_upkeep
 			rare_crystals = @avb_b3_rare_upkeep
+		}
+		inline_script = {
+			script = building_resources/avb_ringworld_resources
+			RARE = rare_crystals
+			TRIGGER = "avb_hg_changes = yes"
 		}
 	}
 	
@@ -434,6 +446,7 @@ building_avb_clone_vats_2 = {
 			planet_pop_assembly_organic_add = 1.5
 		}
 	}
+	inline_script = building_ring/clone3
 	resources = {
 		category = planet_buildings
 
@@ -475,6 +488,18 @@ building_avb_clone_vats_2 = {
 				owner = { is_lithoid_empire = yes }
 			}
 			minerals = 60
+		}
+		inline_script = {
+			script = building_resources/avb_ringworld_resources
+			RARE = food
+			TRIGGER = "avb_hg_changes = yes
+			owner = { is_lithoid_empire = no }"
+		}
+		inline_script = {
+			script = building_resources/avb_ringworld_resources
+			RARE = minerals
+			TRIGGER = "avb_hg_changes = yes
+			owner = { is_lithoid_empire = yes }"
 		}
 	}
 	triggered_desc = {

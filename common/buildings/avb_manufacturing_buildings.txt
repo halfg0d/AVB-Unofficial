@@ -37,19 +37,10 @@ building_avb_foundry_4 = {
 			energy = @avb_b3_upkeep
 			volatile_motes = @avb_b3_rare_upkeep
 		}
-		cost = {
-			trigger = {
-				has_ringworld_output_boost = yes
-			}
-			minerals = 700
-			volatile_motes = 500
-		}
-		upkeep = {
-			trigger = {
-				has_ringworld_output_boost = yes
-			}
-			energy = 7
-			volatile_motes = 4
+		inline_script = {
+			script = building_resources/avb_ringworld_resources
+			RARE = volatile_motes
+			TRIGGER = " "
 		}
 	}
 
@@ -85,34 +76,9 @@ building_avb_foundry_4 = {
 			planet_metallurgists_food_upkeep_add = 9
 		}
 	}
-	#Ringworld bonus
-	triggered_planet_modifier = {
-		potential = {
-			has_ringworld_output_boost = yes
-			exists = owner
-			owner = {
-				is_catalytic_empire = no
-			}
-		}
-		modifier = {
-			planet_metallurgists_alloys_produces_add = 1
-			planet_metallurgists_minerals_upkeep_add = 2
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			has_ringworld_output_boost = yes
-			exists = owner
-			owner = {
-				is_catalytic_empire = yes
-			}
-		}
-		modifier = {
-			planet_metallurgists_alloys_produces_add = 1.25
-			planet_metallurgists_food_upkeep_add = 3
-		}
-	}
+	# Ringworld Bonus
+	inline_script = building_ring/foundry2
+	
 	inline_script = {
 		script = jobs/foundry_add
 		AMOUNT = @b1_jobs
@@ -154,19 +120,10 @@ building_avb_foundry_5 = {
 			energy = @avb_b4_upkeep
 			volatile_motes = @avb_b4_rare_upkeep
 		}
-		cost = {
-			trigger = {
-				has_ringworld_output_boost = yes
-			}
-			minerals = 700
-			volatile_motes = 500
-		}
-		upkeep = {
-			trigger = {
-				has_ringworld_output_boost = yes
-			}
-			energy = 7
-			volatile_motes = 4
+		inline_script = {
+			script = building_resources/avb_ringworld_resources
+			RARE = volatile_motes
+			TRIGGER = " "
 		}
 	}
 
@@ -203,34 +160,9 @@ building_avb_foundry_5 = {
 			planet_metallurgists_food_upkeep_add = 12
 		}
 	}
-	#Ringworld bonus
-	triggered_planet_modifier = {
-		potential = {
-			has_ringworld_output_boost = yes
-			exists = owner
-			owner = {
-				is_catalytic_empire = no
-			}
-		}
-		modifier = {
-			planet_metallurgists_alloys_produces_add = 1
-			planet_metallurgists_minerals_upkeep_add = 2
-		}
-	}
+	# Ringworld Bonus
+	inline_script = building_ring/foundry3
 
-	triggered_planet_modifier = {
-		potential = {
-			has_ringworld_output_boost = yes
-			exists = owner
-			owner = {
-				is_catalytic_empire = yes
-			}
-		}
-		modifier = {
-			planet_metallurgists_alloys_produces_add = 1.25
-			planet_metallurgists_food_upkeep_add = 3
-		}
-	}
 	inline_script = {
 		script = jobs/foundry_add
 		AMOUNT = @b1_jobs
@@ -272,19 +204,10 @@ building_avb_foundry_6 = {
 			energy = @avb_b5_upkeep
 			volatile_motes = @avb_b5_rare_upkeep
 		}
-		cost = {
-			trigger = {
-				has_ringworld_output_boost = yes
-			}
-			minerals = 700
-			volatile_motes = 500
-		}
-		upkeep = {
-			trigger = {
-				has_ringworld_output_boost = yes
-			}
-			energy = 7
-			volatile_motes = 4
+		inline_script = {
+			script = building_resources/avb_ringworld_resources
+			RARE = volatile_motes
+			TRIGGER = " "
 		}
 	}
 
@@ -316,34 +239,9 @@ building_avb_foundry_6 = {
 			planet_metallurgists_food_upkeep_add = 15
 		}
 	}
-	#Ringworld bonus
-	triggered_planet_modifier = {
-		potential = {
-			has_ringworld_output_boost = yes
-			exists = owner
-			owner = {
-				is_catalytic_empire = no
-			}
-		}
-		modifier = {
-			planet_metallurgists_alloys_produces_add = 1
-			planet_metallurgists_minerals_upkeep_add = 2
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			has_ringworld_output_boost = yes
-			exists = owner
-			owner = {
-				is_catalytic_empire = yes
-			}
-		}
-		modifier = {
-			planet_metallurgists_alloys_produces_add = 1.25
-			planet_metallurgists_food_upkeep_add = 3
-		}
-	}
+	# Ringworld Bonus
+	inline_script = building_ring/foundry3
+	
 	inline_script = {
 		script = jobs/foundry_add
 		AMOUNT = @b1_jobs
@@ -397,15 +295,8 @@ building_avb_factory_4 = {
 		planet_artisans_minerals_upkeep_add = 3
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			has_ringworld_output_boost = yes
-		}
-		modifier = {
-			planet_artisans_consumer_goods_produces_add = 1
-			planet_artisans_minerals_upkeep_add = 1
-		}
-	}
+	# Ringworld Bonus
+	inline_script = building_ring/factory2
 
 	inline_script = {
 		script = jobs/factory_add
@@ -415,25 +306,16 @@ building_avb_factory_4 = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b3_minerals
-			volatile_motes = @avb_b3_rare_cost
+			rare_crystals = @avb_b3_rare_cost
 		}
 		upkeep = {
 			energy = @avb_b3_upkeep
-			volatile_motes = @avb_b3_rare_upkeep
+			rare_crystals = @avb_b3_rare_upkeep
 		}
-		cost = {
-			trigger = {
-				has_ringworld_output_boost = yes
-			}
-			minerals = 700
-			volatile_motes = 500
-		}
-		upkeep = {
-			trigger = {
-				has_ringworld_output_boost = yes
-			}
-			energy = 7
-			volatile_motes = 4
+		inline_script = {
+			script = building_resources/avb_ringworld_resources
+			RARE = rare_crystals
+			TRIGGER = " "
 		}
 	}	
 	
@@ -496,15 +378,8 @@ building_avb_factory_5 = {
 		planet_artisans_minerals_upkeep_add = 4
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			has_ringworld_output_boost = yes
-		}
-		modifier = {
-			planet_artisans_consumer_goods_produces_add = 1
-			planet_artisans_minerals_upkeep_add = 1
-		}
-	}
+	# Ringworld Bonus
+	inline_script = building_ring/factory3
 
 	inline_script = {
 		script = jobs/factory_add
@@ -515,25 +390,16 @@ building_avb_factory_5 = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b4_minerals
-			volatile_motes = @avb_b4_rare_cost
+			rare_crystals = @avb_b4_rare_cost
 		}
 		upkeep = {
 			energy = @avb_b4_upkeep
-			volatile_motes = @avb_b4_rare_upkeep
+			rare_crystals = @avb_b4_rare_upkeep
 		}
-		cost = {
-			trigger = {
-				has_ringworld_output_boost = yes
-			}
-			minerals = 700
-			volatile_motes = 500
-		}
-		upkeep = {
-			trigger = {
-				has_ringworld_output_boost = yes
-			}
-			energy = 7
-			volatile_motes = 4
+		inline_script = {
+			script = building_resources/avb_ringworld_resources
+			RARE = rare_crystals
+			TRIGGER = " "
 		}
 	}	
 	
@@ -596,15 +462,8 @@ building_avb_factory_6 = {
 		planet_artisans_minerals_upkeep_add = 5
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			has_ringworld_output_boost = yes
-		}
-		modifier = {
-			planet_artisans_consumer_goods_produces_add = 1
-			planet_artisans_minerals_upkeep_add = 1
-		}
-	}
+	# Ringworld Bonus
+	inline_script = building_ring/factory3
 
 	inline_script = {
 		script = jobs/factory_add
@@ -615,25 +474,16 @@ building_avb_factory_6 = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b5_minerals
-			volatile_motes = @avb_b5_rare_cost
+			rare_crystals = @avb_b5_rare_cost
 		}
 		upkeep = {
 			energy = @avb_b5_upkeep
-			volatile_motes = @avb_b5_rare_upkeep
+			rare_crystals = @avb_b5_rare_upkeep
 		}
-		cost = {
-			trigger = {
-				has_ringworld_output_boost = yes
-			}
-			minerals = 700
-			volatile_motes = 500
-		}
-		upkeep = {
-			trigger = {
-				has_ringworld_output_boost = yes
-			}
-			energy = 7
-			volatile_motes = 4
+		inline_script = {
+			script = building_resources/avb_ringworld_resources
+			RARE = rare_crystals
+			TRIGGER = " "
 		}
 	}	
 	

@@ -1,0 +1,16 @@
+# Ringworld Bonus
+inline_script = building_ring/factory2
+triggered_planet_modifier = {
+	potential = {
+		avb_hg_changes = yes
+		has_ringworld_output_boost = yes
+		exists = owner
+		owner = {
+			has_technology = tech_ring_avb_factory_3
+		}
+	}
+	modifier = {
+		planet_artisans_consumer_goods_produces_add = 1
+		planet_artisans_minerals_upkeep_add = 1
+	}
+}

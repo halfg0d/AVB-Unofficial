@@ -111,3 +111,17 @@ has_any_organic_assembly_building = {
 avb_hg_changes = {
 	has_global_flag = avb_hg_allow
 }
+
+hg_test = {
+	count_owned_planet = {
+		limit = {
+			orb_foundry_active = yes
+		}
+		count >= 1
+	}
+	NOT = {
+		any_owned_planet = {
+			avb_has_orbital_ring = yes
+		}
+	}
+}

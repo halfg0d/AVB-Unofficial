@@ -86,35 +86,9 @@ building_foundry_3 = {
 			planet_metallurgists_food_upkeep_add = 6
 		}
 	}
-
-	triggered_planet_modifier = {
-		potential = {
-			has_ringworld_output_boost = yes
-			exists = owner
-			owner = {
-				is_catalytic_empire = no
-			}
-		}
-		modifier = {
-			planet_metallurgists_alloys_produces_add = 1
-			planet_metallurgists_minerals_upkeep_add = 2
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			has_ringworld_output_boost = yes
-			exists = owner
-			owner = {
-				is_catalytic_empire = yes
-			}
-		}
-		modifier = {
-			planet_metallurgists_alloys_produces_add = 1.25
-			planet_metallurgists_food_upkeep_add = 3
-		}
-	}
-
+	# Ringworld Bonus
+	inline_script = building_ring/foundry1
+	
 	inline_script = {
 		script = jobs/foundry_add
 		AMOUNT = @b1_jobs
@@ -173,15 +147,8 @@ building_factory_3 = {
 		planet_artisans_minerals_upkeep_add = 2
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			has_ringworld_output_boost = yes
-		}
-		modifier = {
-			planet_artisans_consumer_goods_produces_add = 1
-			planet_artisans_minerals_upkeep_add = 1
-		}
-	}
+	# Ringworld Bonus
+	inline_script = building_ring/factory1
 
 	inline_script = {
 		script = jobs/factory_add

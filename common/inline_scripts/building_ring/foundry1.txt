@@ -1,0 +1,29 @@
+## Vanilla T3
+# Ringworld Bonus
+triggered_planet_modifier = {
+	potential = {
+		has_ringworld_output_boost = yes
+		exists = owner
+		owner = {
+			is_catalytic_empire = no
+		}
+	}
+	modifier = {
+		planet_metallurgists_alloys_produces_add = 1
+		planet_metallurgists_minerals_upkeep_add = 2
+	}
+}
+
+triggered_planet_modifier = {
+	potential = {
+		has_ringworld_output_boost = yes
+		exists = owner
+		owner = {
+			is_catalytic_empire = yes
+		}
+	}
+	modifier = {
+		planet_metallurgists_alloys_produces_add = 1.25
+		planet_metallurgists_food_upkeep_add = 3
+	}
+}

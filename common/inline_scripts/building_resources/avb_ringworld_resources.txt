@@ -1,0 +1,16 @@
+cost = {
+	trigger = {
+		$TRIGGER$
+		has_ringworld_output_boost = yes
+	}
+	minerals = 300
+	$RARE$ = 150
+}
+upkeep = {
+	trigger = {
+		$TRIGGER$
+		has_ringworld_output_boost = yes
+	}
+	energy = 3
+	$RARE$ = 2
+}

@@ -148,6 +148,11 @@ building_avb_food_processing_3 = {
 			energy = @avb_b3_upkeep
 			volatile_motes = @avb_b3_rare_upkeep
 		}
+		inline_script = {
+			script = building_resources/avb_ringworld_resources
+			RARE = volatile_motes
+			TRIGGER = " "
+		}
 	}	
 	upgrades = {
 		building_avb_food_processing_4
@@ -217,6 +222,11 @@ building_avb_food_processing_4 = {
 		upkeep = {
 			energy = @avb_b4_upkeep
 			volatile_motes = @avb_b4_rare_upkeep
+		}
+		inline_script = {
+			script = building_resources/avb_ringworld_resources
+			RARE = volatile_motes
+			TRIGGER = " "
 		}
 	}	
 	prerequisites = {
@@ -421,6 +431,11 @@ building_avb_mineral_purification_3 = {
 			energy = @avb_b3_upkeep
 			volatile_motes = @avb_b3_rare_upkeep
 		}
+		inline_script = {
+			script = building_resources/avb_ringworld_resources
+			RARE = volatile_motes
+			TRIGGER = " "
+		}
 	}
 	
 	upgrades = {
@@ -537,6 +552,11 @@ building_avb_mineral_purification_4 = {
 			energy = @avb_b4_upkeep
 			volatile_motes = @avb_b4_rare_upkeep
 		}
+		inline_script = {
+			script = building_resources/avb_ringworld_resources
+			RARE = volatile_motes
+			TRIGGER = " "
+		}
 	}
 	
 	prerequisites = {
@@ -618,6 +638,11 @@ building_avb_energy_grid_3 = {
 		upkeep = {
 			energy = @avb_b3_upkeep
 			exotic_gases = @avb_b3_rare_upkeep
+		}
+		inline_script = {
+			script = building_resources/avb_ringworld_resources
+			RARE = exotic_gases
+			TRIGGER = " "
 		}
 	}	
 	
@@ -738,6 +763,11 @@ building_avb_energy_grid_4 = {
 		upkeep = {
 			energy = @avb_b4_upkeep
 			exotic_gases = @avb_b4_rare_upkeep
+		}
+		inline_script = {
+			script = building_resources/avb_ringworld_resources
+			RARE = exotic_gases
+			TRIGGER = " "
 		}
 	}	
 	

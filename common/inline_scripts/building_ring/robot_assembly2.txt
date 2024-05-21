@@ -1,0 +1,13 @@
+# Ringworld Bonus
+inline_script = building_ring/robot_assembly1
+triggered_planet_modifier = {
+    potential = {
+		avb_hg_changes = yes
+		has_ringworld_output_boost = yes
+        exists = owner
+		owner = {
+			has_technology = tech_ring_avb_robot_assembly_2
+		}
+    }
+    planet_pop_assembly_add = 1
+}

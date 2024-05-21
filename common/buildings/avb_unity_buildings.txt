@@ -2311,6 +2311,7 @@ building_avb_organic_sanctuary_3 = {
 		#planet_housing_add = 20
 		job_bio_trophy_add = 30
 	}
+	inline_script = building_ring/paradise2
 	
 	resources = {
 		category = planet_buildings
@@ -2409,6 +2410,7 @@ building_avb_organic_sanctuary_4 = {
 		#planet_housing_add = 20
 		job_bio_trophy_add = 40
 	}
+	inline_script = building_ring/paradise3
 	
 	resources = {
 		category = planet_buildings
@@ -2502,6 +2504,7 @@ building_avb_organic_sanctuary_5 = {
 		#planet_housing_add = 20
 		job_bio_trophy_add = 50
 	}
+	inline_script = building_ring/paradise3
 	
 	resources = {
 		category = planet_buildings

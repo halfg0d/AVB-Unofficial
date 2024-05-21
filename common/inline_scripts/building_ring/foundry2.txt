@@ -1,0 +1,34 @@
+# Ringworld Bonus
+inline_script = building_ring/foundry1
+# AVB T4
+triggered_planet_modifier = {
+	potential = {
+		avb_hg_changes = yes
+		has_ringworld_output_boost = yes
+		exists = owner
+		owner = {
+			is_catalytic_empire = no
+			has_technology = tech_ring_avb_foundry_2
+		}
+	}
+	modifier = {
+		planet_metallurgists_alloys_produces_add = 1
+		planet_metallurgists_minerals_upkeep_add = 2
+	}
+}
+
+triggered_planet_modifier = {
+	potential = {
+		avb_hg_changes = yes
+		has_ringworld_output_boost = yes
+		exists = owner
+		owner = {
+			is_catalytic_empire = yes
+			has_technology = tech_ring_avb_foundry_2
+		}
+	}
+	modifier = {
+		planet_metallurgists_alloys_produces_add = 1.25
+		planet_metallurgists_food_upkeep_add = 3
+	}
+}

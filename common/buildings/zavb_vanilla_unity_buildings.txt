@@ -1568,7 +1568,7 @@ building_organic_paradise = {
 	planet_modifier = {
 		job_bio_trophy_add = 20
 	}
-
+	inline_script = building_ring/paradise1
 	resources = {
 		category = planet_buildings
 		cost = {
