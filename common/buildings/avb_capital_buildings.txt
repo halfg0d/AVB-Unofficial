@@ -54,7 +54,7 @@ building_avb_capital_4 = {
 	}
 	
 	allow = {
-		num_pops >= @capital_t4_min_pops
+		num_sapient_pops >= @capital_t4_min_pops
 	}
 	
 	prerequisites = {
@@ -395,7 +395,7 @@ building_avb_capital_5 = {
 	}
 	
 	allow = {
-		num_pops >= @capital_t5_min_pops
+		num_sapient_pops >= @capital_t5_min_pops
 	}
 	
 	prerequisites = {
@@ -737,7 +737,7 @@ building_avb_capital_6 = {
 	}
 	
 	allow = {
-		num_pops >= @capital_t6_min_pops
+		num_sapient_pops >= @capital_t6_min_pops
 	}
 	
 	prerequisites = {
@@ -1080,7 +1080,7 @@ building_avb_machine_capital_4 = {
 	}
 	
 	allow = {
-		num_pops >= @capital_t4_min_pops
+		num_sapient_pops >= @capital_t4_min_pops
 	}
 	
 	prerequisites = {
@@ -1250,7 +1250,7 @@ building_avb_machine_capital_5 = {
 	}
 	
 	allow = {
-		num_pops >= @capital_t5_min_pops
+		num_sapient_pops >= @capital_t5_min_pops
 	}
 	
 	prerequisites = {
@@ -1419,7 +1419,7 @@ building_avb_machine_capital_6 = {
 	}
 	
 	allow = {
-		num_pops >= @capital_t6_min_pops
+		num_sapient_pops >= @capital_t6_min_pops
 	}
 	
 	prerequisites = {
@@ -1591,7 +1591,7 @@ building_avb_hive_capital_3 = {
 	}
 	
 	allow = {
-		num_pops >= 50
+		num_sapient_pops >= 50
 	}
 	
 	prerequisites = {
@@ -1724,7 +1724,7 @@ building_avb_hive_capital_4 = {
 	}
 	
 	allow = {
-		num_pops >= @capital_t4_min_pops
+		num_sapient_pops >= @capital_t4_min_pops
 	}
 	
 	prerequisites = {
@@ -2351,7 +2351,7 @@ building_avb_hab_capital_4 = {
 	}
 	
 	allow = {
-		num_pops >= 50
+		num_sapient_pops >= 50
 	}
 	
 	prerequisites = {
@@ -2848,7 +2848,7 @@ building_avb_resort_capital_3 = {
 	}
 	
 	allow = {
-		num_pops >= 40
+		num_sapient_pops >= 40
 	}
 	
 	prerequisites = {
@@ -3029,7 +3029,7 @@ building_avb_slave_capital_3 = {
 	}
 	
 	allow = {
-		num_pops >= 40
+		num_sapient_pops >= 40
 	}
 	
 	convert_to = {

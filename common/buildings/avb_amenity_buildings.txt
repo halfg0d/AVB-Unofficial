@@ -9,7 +9,7 @@ building_avb_residence_3 = {
 	
 	potential = {
 		OR = {
-			is_habitat = no
+			NOT = { is_planet_class = pc_habitat }
 			AND = {
 				exists = owner
 				owner = {
@@ -92,7 +92,7 @@ building_avb_residence_4 = {
 	
 	potential = {
 		OR = {
-			is_habitat = no
+			NOT = { is_planet_class = pc_habitat }
 			AND = {
 				exists = owner
 				owner = {
@@ -172,7 +172,7 @@ building_avb_residence_5 = {
 	
 	potential = {
 		OR = {
-			is_habitat = no
+			NOT = { is_planet_class = pc_habitat }
 			AND = {
 				exists = owner
 				owner = {
@@ -249,18 +249,18 @@ building_avb_communal_housing_3 = {
 	category = amenity
 
 	potential = {
-		OR = {
-			is_habitat = no
-			exists = owner
-			owner = {
-				is_void_dweller_empire = yes
-			}
-		}
-		NOT = { has_modifier = slave_colony }
-		exists = owner
 		owner = {
 			is_regular_empire = yes
 			has_valid_civic = civic_shared_burden
+		}
+		OR = {
+			NOT = { is_planet_class = pc_habitat }
+			AND = {
+				exists = owner
+				owner = {
+					is_void_dweller_empire = yes
+				}
+			}
 		}
 	}
 	
@@ -340,18 +340,18 @@ building_avb_communal_housing_4 = {
 	category = amenity
 
 	potential = {
-		OR = {
-			is_habitat = no
-			exists = owner
-			owner = {
-				is_void_dweller_empire = yes
-			}
-		}
-		NOT = { has_modifier = slave_colony }
-		exists = owner
 		owner = {
 			is_regular_empire = yes
 			has_valid_civic = civic_shared_burden
+		}
+		OR = {
+			NOT = { is_planet_class = pc_habitat }
+			AND = {
+				exists = owner
+				owner = {
+					is_void_dweller_empire = yes
+				}
+			}
 		}
 	}
 	
@@ -431,18 +431,18 @@ building_avb_communal_housing_5 = {
 	category = amenity
 
 	potential = {
-		OR = {
-			is_habitat = no
-			exists = owner
-			owner = {
-				is_void_dweller_empire = yes
-			}
-		}
-		NOT = { has_modifier = slave_colony }
-		exists = owner
 		owner = {
 			is_regular_empire = yes
 			has_valid_civic = civic_shared_burden
+		}
+		OR = {
+			NOT = { is_planet_class = pc_habitat }
+			AND = {
+				exists = owner
+				owner = {
+					is_void_dweller_empire = yes
+				}
+			}
 		}
 	}
 	
@@ -1141,6 +1141,35 @@ building_avb_clinic_3 = {
 	planet_modifier = {
 		job_healthcare_add = @avb_b3_jobs
 	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_gene_tailoring
+			}
+			any_owned_pop = {
+				has_auto_modding_trait = yes
+			}
+		}
+		modifier = {
+			auto_mod_monthly_add = 2
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_origin = origin_overtuned
+			}
+			any_owned_pop = {
+				has_auto_modding_trait = yes
+			}
+		}
+		modifier = {
+			auto_mod_monthly_add = 2
+		}
+	}
 	
 	resources = {
 		category = planet_buildings
@@ -1163,7 +1192,7 @@ building_avb_clinic_3 = {
 	}
 	
 	show_tech_unlock_if = {
-		is_gestalt = no
+		is_regular_empire = yes
 	}
 
 	triggered_desc = {
@@ -1219,6 +1248,35 @@ building_avb_clinic_4 = {
 	
 	planet_modifier = {
 		job_healthcare_add = @avb_b4_jobs
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_gene_tailoring
+			}
+			any_owned_pop = {
+				has_auto_modding_trait = yes
+			}
+		}
+		modifier = {
+			auto_mod_monthly_add = 2
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_origin = origin_overtuned
+			}
+			any_owned_pop = {
+				has_auto_modding_trait = yes
+			}
+		}
+		modifier = {
+			auto_mod_monthly_add = 2
+		}
 	}
 
 	resources = {
@@ -1486,6 +1544,7 @@ building_avb_toxic_bath_2 = {
 				has_valid_civic = civic_toxic_baths
 				has_valid_civic = civic_corporate_toxic_baths
 			}
+			is_individual_machine = no
 		}
 	}
 	destroy_trigger = {
@@ -1506,7 +1565,10 @@ building_avb_toxic_bath_2 = {
 	prerequisites = {
 		tech_avb_toxic_bath_2
 	}
-	planet_modifier = {
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_individual_machine = no }
+		}
 		job_bath_attendant_add = @avb_b2_jobs
 	}
 

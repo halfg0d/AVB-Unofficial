@@ -15,7 +15,6 @@ building_research_lab_3 = {
 		OR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 		}
 	}
 
@@ -98,7 +97,6 @@ building_institute = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 		}
 		exists = owner
 		owner = { is_regular_empire = yes }
@@ -109,7 +107,6 @@ building_institute = {
 		OR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 			owner = { is_regular_empire = no }
 		}
 	}
@@ -186,7 +183,6 @@ building_supercomputer = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 		}
 	}
 
@@ -199,7 +195,6 @@ building_supercomputer = {
 		OR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 			owner = { is_regular_empire = yes }
 		}
 	}
@@ -277,7 +272,6 @@ building_archaeostudies_faculty = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 		}
 		exists = owner
 	}
@@ -287,7 +281,6 @@ building_archaeostudies_faculty = {
 		OR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 		}
 	}
 
@@ -313,7 +306,7 @@ building_archaeostudies_faculty = {
 	}
 
 	country_modifier = {
-		category_archaeostudies_research_speed_mult = 1.0
+		category_archaeostudies_research_speed_mult = 0.5
 		country_resource_max_minor_artifacts_add = 1000
 	}
 
@@ -355,7 +348,6 @@ building_vultaum_reality_computer = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 		}
 	}
 
@@ -368,7 +360,6 @@ building_vultaum_reality_computer = {
 		OR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 		}
 	}
 
@@ -411,7 +402,7 @@ building_vultaum_reality_computer = {
 			owner = { is_hive_empire = yes }
 		}
 		modifier = {
-			job_brain_drone_add = 2
+			job_brain_drone_add = 1
 		}
 	}
 

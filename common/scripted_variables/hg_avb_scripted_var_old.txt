@@ -66,6 +66,7 @@
 @avb_b6_upkeep = 26
 @avb_b6_jobs = 12
 
+@avb_fe_sr_cost = 200
 ##
 ## New Value System
 ##

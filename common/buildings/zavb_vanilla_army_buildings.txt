@@ -10,8 +10,22 @@ building_military_academy = {
 	can_be_ruined = no
 	category = army
 
+	potential = {
+		exists = owner
+		owner = { NOT = { has_valid_civic = civic_reanimated_armies } }
+		NOT = { has_modifier = resort_colony }
+	}
+
 	allow = {
-		has_major_upgraded_capital = yes
+		OR = {
+			has_major_upgraded_capital = yes
+			AND = {
+				exists = owner
+				owner = {
+					has_valid_civic = civic_machine_tactical_algorithms
+				}
+			}
+		}
 	}
 	country_modifier = {
 		country_commander_cap_add = 1
@@ -36,14 +50,51 @@ building_military_academy = {
 			job_evaluator_add = 2
 		}
 	}
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_machine_tactical_algorithms }
+
+		}
+		ship_evasion_mult = 0.02
+		ship_tracking_mult = 0.01
+		ship_shield_penetration_add = 0.05
+		ship_armor_penetration_add = 0.05
+		mult = owner.value:tactical_algorithms_scaling_mult
+	}
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_machine_tactical_algorithms }
+
+		}
+		ship_shield_hardening_add = 0.1
+		mult = owner.value:tactical_algorithms_enclave_scaling_mult
+	}
 	resources = {
 		category = planet_buildings
 		cost = {
 			minerals = @b2_minerals
+		}
+		cost = {
+			trigger = {
+				exists = owner
+				owner = {
+					NOT = { has_valid_civic = civic_machine_tactical_algorithms }
+				}
+			}
 			volatile_motes = @b2_rare_cost
 		}
 		upkeep = {
 			energy = @b2_upkeep
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					NOT = { has_valid_civic = civic_machine_tactical_algorithms }
+				}
+			}
 			volatile_motes = @b2_rare_upkeep
 		}
 	}
@@ -203,10 +254,6 @@ building_planetary_shield_generator = {
 	destroy_trigger = {
 		exists = owner
 		owner = { is_ai = yes }
-		is_capital = no
-		solar_system = { is_bottleneck_system = no }
-		num_buildings = { type = building_stronghold value < 1 }
-		num_buildings = { type = building_fortress value < 1 }
 	}
 	
 	planet_modifier = {

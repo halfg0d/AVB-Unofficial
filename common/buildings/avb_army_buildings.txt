@@ -7,11 +7,22 @@ building_avb_military_academy_2 = {
 	category = army
 	
 	potential = {
-		always = yes
+		exists = owner
+		owner = { NOT = { has_valid_civic = civic_reanimated_armies } }
+		NOT = { has_modifier = resort_colony }
 	}
 
 	allow = {
-		has_upgraded_capital_4 = yes
+		OR = {
+			has_upgraded_capital_4 = yes
+			AND = {
+				has_major_upgraded_capital = yes
+				exists = owner
+				owner = {
+					has_valid_civic = civic_machine_tactical_algorithms
+				}
+			}
+		}
 	}
 	
 	country_modifier = {
@@ -36,16 +47,75 @@ building_avb_military_academy_2 = {
 			job_evaluator_add = 4
 		}
 	}
+	# +50%
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_machine_tactical_algorithms }
+
+		}
+		ship_evasion_mult = 0.03
+		ship_tracking_mult = 0.015
+		ship_shield_penetration_add = 0.075
+		ship_armor_penetration_add = 0.075
+		mult = owner.value:tactical_algorithms_scaling_mult
+	}
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_machine_tactical_algorithms }
+
+		}
+		ship_shield_hardening_add = 0.15
+		mult = owner.value:tactical_algorithms_enclave_scaling_mult
+	}
 
 	resources = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b3_minerals
-			volatile_motes = @avb_b3_rare_cost
-		}			
+		}
 		upkeep = {
 			energy = @avb_b3_upkeep
 			volatile_motes = @avb_b3_rare_upkeep
+		}
+		# Machines with civic
+		cost = {
+			trigger = {
+				exists = owner
+				owner = {
+					NOT = { has_valid_civic = civic_machine_tactical_algorithms }
+				}
+			}
+			volatile_motes = @avb_b3_rare_cost
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					NOT = { has_valid_civic = civic_machine_tactical_algorithms }
+				}
+			}
+			volatile_motes = @avb_b3_rare_upkeep
+		}
+		# Machines with civic
+		cost = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_valid_civic = civic_machine_tactical_algorithms
+				}
+			}
+			volatile_motes = @b2_rare_cost
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_valid_civic = civic_machine_tactical_algorithms
+				}
+			}
+			volatile_motes = @b2_rare_upkeep
 		}
 	}
 	
@@ -359,10 +429,6 @@ building_avb_planetary_shield_generator_2 = {
 	destroy_trigger = {
 		exists = owner
 		owner = { is_ai = yes }
-		is_capital = no
-		solar_system = { is_bottleneck_system = no }
-		num_buildings = { type = building_stronghold value < 1 }
-		num_buildings = { type = building_fortress value < 1 }
 	}
 	
 	upgrades = {

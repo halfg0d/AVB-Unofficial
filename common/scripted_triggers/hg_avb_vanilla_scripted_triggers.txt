@@ -50,16 +50,6 @@ has_any_generator_district_or_building = {
 	}
 }
 
-is_pd_crucible = {
-	OR = { 
-		is_planet_class = pc_crucible 
-		is_planet_class = pc_shroud_crucible 
-		is_planet_class = pc_clean_crucible
-	}
-}
-has_z_expanded_mod = {
-	has_global_flag = expanded_pops_active
-}
 is_toxic_origin1_trigger = {
 	has_planet_flag = toxic_knights_habitat
 }
@@ -69,43 +59,17 @@ is_toxic_origin2_trigger = {
 		owner = { has_origin = origin_toxic_knights }
 	}
 }
-
-has_plentiful_tradition_mod = {
-	OR = {
-		any_country = {
-			has_ascension_perk = ap_plentiful_traditions_vast_slave_procreation
-			has_ascension_perk = ap_total_assimilation
-			has_tradition = tr_plentiful_aspiration_3
-			has_tradition = tr_plentiful_affinity_adopt
-			has_tradition = tr_plentiful_anguish_adopt
-			has_tradition = tr_plentiful_aspiration_adopt
-			has_tradition = tr_plentiful_assault_adopt
-			has_tradition = tr_plentiful_biogenesis_adopt
-			has_tradition = tr_plentiful_dedication_adopt
-			has_tradition = tr_plentiful_defence_adopt
-			has_tradition = tr_plentiful_endure_adopt
-			has_tradition = tr_plentiful_experimentalism_adopt
-			has_tradition = tr_plentiful_faith_adopt
-			has_tradition = tr_plentiful_genetic_cyborg_adopt
-			has_tradition = tr_plentiful_industry_adopt
-			has_tradition = tr_plentiful_kleptocracy_adopt
-			has_tradition = tr_plentiful_malice_adopt
-			has_tradition = tr_plentiful_mutagenesis_adopt
-			has_tradition = tr_plentiful_mysticism_adopt
-			has_tradition = tr_plentiful_order_adopt
-			has_tradition = tr_plentiful_robotics_adopt
-			has_tradition = tr_plentiful_transformation_adopt
-		}
-	}
-}
 has_clone_full_path = {
 	has_country_flag = clone_army_full_potential
 }
 has_any_organic_assembly_building = {
 	OR = {
+		# Vanilla
 		has_building = building_clone_vats
 		has_building = building_clone_army_clone_vat
 		has_building = building_posthumous_employment_center
+		has_building = building_spawning_pool
+		has_building = building_offspring_nest
 	}
 }
 avb_hg_changes = {

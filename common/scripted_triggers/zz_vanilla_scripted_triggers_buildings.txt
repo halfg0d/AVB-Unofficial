@@ -35,6 +35,7 @@ has_upgraded_capital = {
 			OR = {
 				has_building = building_hab_capital
 				has_building = building_hab_major_capital
+				has_building = building_hab_system_capital
 				has_building = building_imperial_capital
 				has_building = building_imperial_machine_capital
 				has_building = building_imperial_hive_capital

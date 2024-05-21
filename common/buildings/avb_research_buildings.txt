@@ -15,7 +15,6 @@ building_avb_research_lab_4 = {
 		OR = {
 			has_modifier = slave_colony
 			has_modifier = resort_colony
-			has_modifier = crucible_colony
 		}
 	}
 	inline_script = {
@@ -100,7 +99,6 @@ building_avb_research_lab_5 = {
 		OR = {
 			has_modifier = slave_colony
 			has_modifier = resort_colony
-			has_modifier = crucible_colony
 		}
 	}
 	inline_script = {
@@ -184,7 +182,6 @@ building_avb_research_lab_6 = {
 		OR = {
 			has_modifier = slave_colony
 			has_modifier = resort_colony
-			has_modifier = crucible_colony
 		}
 	}
 	inline_script = {
@@ -260,7 +257,6 @@ building_avb_institute_2 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 		}
 		exists = owner
 		owner = { is_regular_empire = yes }
@@ -271,7 +267,6 @@ building_avb_institute_2 = {
 		OR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 			owner = { is_regular_empire = no }
 		}
 	}
@@ -341,7 +336,6 @@ building_avb_supercomputer_2 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 		}
 	}
 
@@ -354,7 +348,6 @@ building_avb_supercomputer_2 = {
 		OR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 			owner = { is_regular_empire = yes }
 		}
 	}
@@ -426,7 +419,6 @@ building_avb_archaeostudies_faculty_2 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 		}
 		exists = owner
 	}
@@ -436,7 +428,6 @@ building_avb_archaeostudies_faculty_2 = {
 		OR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 		}
 	}
 
@@ -461,7 +452,7 @@ building_avb_archaeostudies_faculty_2 = {
 	}
 
 	country_modifier = {
-		category_archaeostudies_research_speed_mult = 1.5
+		category_archaeostudies_research_speed_mult = 1.0
 		country_resource_max_minor_artifacts_add = 2000
 	}
 
@@ -504,7 +495,6 @@ building_avb_vultaum_reality_computer_2 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 		}
 	}
 
@@ -517,7 +507,6 @@ building_avb_vultaum_reality_computer_2 = {
 		OR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 		}
 	}
 

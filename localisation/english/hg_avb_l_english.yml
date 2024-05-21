@@ -233,3 +233,64 @@
 # Scrap Purificaton
  building_avb_mineral_purification_3_scrap_desc:0 "This facility is capable of isolating useful quantities of tertiary elements from scavenged fragments of ring using purification systems equipped with sophisticated matter interrogation fields capable of categorizing quark spin within primary centrifuges. By removing rare element extraction from manufacturing stages this facility boosts overall mineral output planet wide."
  building_avb_mineral_purification_4_scrap_desc:0 "$building_avb_mineral_purification_4_desc$"
+# Lathe Buildings
+ tech_avb_lathe_resonator_2: "$building_avb_lathe_resonator_2$"
+ tech_avb_lathe_resonator_2_desc: "$building_avb_lathe_resonator_2_desc$"
+ tech_avb_lathe_overclocker_2: "$building_avb_lathe_overclocker_2$"
+ tech_avb_lathe_overclocker_2_desc: "$building_avb_lathe_overclocker_2_desc$"
+ tech_avb_lathe_preserver_2: "$building_avb_lathe_preserver_2$"
+ tech_avb_lathe_preserver_2_desc: "$building_avb_lathe_preserver_2_desc$"
+ tech_avb_lathe_life_support_2: "$building_avb_lathe_life_support_2$"
+ tech_avb_lathe_life_support_2_desc: "$building_avb_lathe_life_support_2_desc$"
+ tech_avb_lathe_cogitator_2: "$building_avb_lathe_cogitator_2$"
+ tech_avb_lathe_cogitator_2_desc: "$building_avb_lathe_cogitator_2_desc$"
+ tech_avb_lathe_validator_2: "$building_avb_lathe_validator_2$"
+ tech_avb_lathe_validator_2_desc: "$building_avb_lathe_validator_2_desc$"
+
+
+ building_avb_lathe_resonator_2: "Advanced Synaptic Resonator"
+ building_avb_lathe_resonator_2_desc: "Resonators harness and redirect the cognitive potential of stray thoughts and autonomic systems, leading every single chip to increase the efficiency of its closest processing neighbors."
+ lathe_resonator_tt: "§Y$job_neural_chip_plural$§! Output: §G+1%§! per §Y$job_neural_chip_plural$§!\n(Current Value: §G+[num_neural_chips]%§!)"
+
+ building_avb_lathe_stabilisator_2: "Advanced Neural Stabilizer"
+ building_avb_lathe_stabilisator_2_desc: "Stabilization systems filter out the computing noise generated when physical distress overcomes Neural Chips. The reduction in interferences means an increase in global output."
+
+ building_avb_lathe_overclocker_2: "Advanced Synaptic Overclocker"
+ building_avb_lathe_overclocker_2_desc: "The Lathe has been designed to preserve its installed Neural Chips, keeping them productive for as long as possible. The overclocker can override these commands, resulting in a higher and faster output, but it comes with an increased failure rate."
+
+ building_avb_lathe_preserver_2: "Advanced Synaptic Preserver"
+ building_avb_lathe_preserver_2_desc: "The organic components of the network are especially vulnerable to energetic fluctuations, which can cause rapid axonal degeneration. The Preserver strives to reduce these fluctuations to protect the Synaptic Lathe's frailer parts."
+
+ building_avb_lathe_reactor_2: "Advanced Reactor"
+ building_avb_lathe_reactor_2_desc: "The more chips plugged into the network, the more energy is required to maintain it. Installing additional reactors will mitigate the complex logistics inherent in powering the Synaptic Lathe."
+
+ building_avb_lathe_life_support_2: "Advanced Synaptic Sustainer"
+ building_avb_lathe_life_support_2_desc: "Dedicated facilities organize the maintenance of the Lathe's critical components, allowing us to support more chips and a healthier network environment."
+
+ building_avb_lathe_cogitator_2: "Advanced Synaptic Cogitator"
+ building_avb_lathe_cogitator_2_desc: "Calculating hyperspatial supply chains is complex. Rerouting some processing power to the task will help even the largest fleet to delve deeper into enemy territory."
+ building_avb_lathe_cogitator_2_tt: "§YNaval Capacity§!: §G+1.5%§! per §Y$job_neural_chip_plural$§!\n(Current Value: §G+[num_neural_chips]%§!)\n§YShip Experience Gain§!: §G+3%§! per §Y$job_neural_chip_plural$§!\n(Current Value: §G+[num_neural_chips_double]%§!)"
+
+ building_avb_lathe_validator_2: "Advanced Synaptic Validator"
+ building_avb_lathe_validator_2_desc: "While the primary purpose of the validator's specialized functions is to help formulate infinity theses, it can also be applied to more general aspects of computing."
+ building_avb_lathe_validator_2_tt: "$mod_category_computing_research_speed_mult$: §G+1.5%§! per §Y$job_neural_chip_plural$§!\n(Current Value: §G+[num_neural_chips]%§!)"
+
+ building_avb_lathe_capital_4: "Processing Unit: Multi-Vectorial"
+ building_avb_lathe_capital_4_desc: "This upgraded processing unit streamlines computations through the creation of negative space vectors. This dimensional compartmentalization of processes yields extraordinary results in efficiency and stability."
+# Nanotech Buildings
+ building_avb_nanolab_3: "Nanite Research Megaplex"
+ building_avb_nanolab_3_desc: "These immense facilities dedicated to scientific research are equipped with the latest nanite technologies, enabling the most destructive and enigmatic experiments."
+ building_avb_nanotech_cauldron_2: "Nanotech Mega Cauldron"
+ building_avb_nanotech_cauldron_2_desc: "Operating at a molecular level, the swarm can easily reconfigure mineral structures into sturdy alloy lattices."
+ building_avb_nanotech_mining: "Nanite Mining Plant"
+ building_avb_nanotech_mining_desc: "Those little machines are capable of separating minerals in ground, that's very effective as resources gathering."
+ building_avb_nanotech_mining_2: "Nanite Mining Hub"
+ building_avb_nanotech_mining_2_desc: "Those little machines are capable of separating minerals in ground, that's very effective as resources gathering."
+ tech_avb_nanolab_3: "$building_avb_nanolab_3$"
+ tech_avb_nanolab_3_desc: "$building_avb_nanolab_3_desc$"
+ tech_avb_nanotech_cauldron_2: "$building_avb_nanotech_cauldron_2$"
+ tech_avb_nanotech_cauldron_2_desc: "$building_avb_nanotech_cauldron_2_desc$"
+ tech_avb_nanotech_mining: "$building_avb_nanotech_mining$"
+ tech_avb_nanotech_mining_desc: "$building_avb_nanotech_mining_desc$"
+ tech_avb_nanotech_mining_2: "$building_avb_nanotech_mining_2$"
+ tech_avb_nanotech_mining_2_desc: "$building_avb_nanotech_mining_2_desc$"

@@ -28,7 +28,7 @@ building_imperial_capital = {
 	}
 
 	allow = {
-		num_pops >= @capital_t6_min_pops
+		num_sapient_pops >= @capital_t6_min_pops
 	}
 	prerequisites = {
 	}
@@ -356,7 +356,7 @@ building_imperial_machine_capital = {
 	}
 
 	allow = {
-		num_pops >= @capital_t6_min_pops
+		num_sapient_pops >= @capital_t6_min_pops
 	}
 
 	prerequisites = {
@@ -529,7 +529,7 @@ building_imperial_hive_capital = {
 	}
 
 	allow = {
-		num_pops >= @capital_t6_min_pops
+		num_sapient_pops >= @capital_t6_min_pops
 	}
 
 	prerequisites = {

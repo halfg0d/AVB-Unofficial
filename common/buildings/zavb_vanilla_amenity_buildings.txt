@@ -23,7 +23,6 @@ building_paradise_dome = {
 
 	allow = {
 		has_upgraded_capital = yes
-		owner = { is_ai = no }
 	}
 	
 	destroy_trigger = {
@@ -82,7 +81,6 @@ building_paradise_dome = {
 	
 	upgrades = {
 		"building_avb_residence_3"
-		"building_eutab_gaia_district"
 	}
 }
 
@@ -94,18 +92,20 @@ building_communal_housing_large = {
 	category = amenity
 
 	potential = {
-		OR = {
-			is_habitat = no
-			exists = owner
-			owner = {
-				is_void_dweller_empire = yes
-			}
-		}
-		NOT = { has_modifier = slave_colony }
-		exists = owner
+		has_building = building_communal_housing
 		owner = {
 			is_regular_empire = yes
 			has_valid_civic = civic_shared_burden
+		}
+
+		OR = {
+			NOT = { is_planet_class = pc_habitat }
+			AND = {
+				exists = owner
+				owner = {
+					is_void_dweller_empire = yes
+				}
+			}
 		}
 	}
 	
@@ -314,7 +314,6 @@ building_expanded_warren = {
 building_hyper_entertainment_forum = {
 	base_buildtime = @b2_time
 	can_build = no
-	icon = building_hyper_entertainment_forum
 
 	category = amenity
 	
@@ -450,7 +449,7 @@ building_hospital = {
 	destroy_trigger = {
 		exists = owner
 		OR = {
-			owner = { is_gestalt = yes }
+			owner = { is_regular_empire = no }
 			has_modifier = slave_colony
 			AND = {
 				buildings_stop_pop = yes
@@ -465,13 +464,30 @@ building_hospital = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { 
-				has_global_flag = ethic_civic_classic_active
-				has_policy_flag = public_healthcare 
+			owner = {
+				has_technology = tech_gene_tailoring
+			}
+			any_owned_pop = {
+				has_auto_modding_trait = yes
 			}
 		}
 		modifier = {
-			job_healthcare_add = 2
+			auto_mod_monthly_add = 2
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_origin = origin_overtuned
+			}
+			any_owned_pop = {
+				has_auto_modding_trait = yes
+			}
+		}
+		modifier = {
+			auto_mod_monthly_add = 2
 		}
 	}
 	resources = {
@@ -491,7 +507,7 @@ building_hospital = {
 	}
 	
 	show_tech_unlock_if = {
-		is_gestalt = no
+		is_regular_empire = yes
 	}
 
 	triggered_desc = {
@@ -506,7 +522,6 @@ building_hospital = {
 building_maintenance_depot = {
 	base_buildtime = 240
 	can_build = no
-	icon = building_maintenance_depot
 	
 	category = amenity
 	
@@ -599,7 +614,7 @@ building_overseer_homes = {
 	destroy_trigger = {
 		exists = owner
 		OR = {
-			owner = { is_gestalt = yes }
+			owner = { is_regular_empire = no }
 			NOT = { has_modifier = slave_colony }
 		}
 	}
@@ -736,11 +751,12 @@ building_toxic_bath = {
 	potential = {
 		NOT = { has_modifier = slave_colony }
 		owner = {
-			is_gestalt = no
+			is_regular_empire = yes
 			OR = {
 				has_valid_civic = civic_toxic_baths
 				has_valid_civic = civic_corporate_toxic_baths
 			}
+			is_individual_machine = no
 		}
 	}
 	destroy_trigger = {
@@ -758,7 +774,10 @@ building_toxic_bath = {
 			has_modifier = slave_colony
 		}
 	}
-	planet_modifier = {
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_individual_machine = no }
+		}
 		job_bath_attendant_add = @b1_jobs
 	}
 
