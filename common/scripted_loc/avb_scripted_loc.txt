@@ -12,3 +12,8 @@ defined_text = {
 	}
 	default = necrophageTimeV
 }
+
+defined_text = {
+	name = num_virtual_production_mult
+	value = value:num_virtual_production_mult_script
+}

@@ -924,3 +924,152 @@ tech_avb_nanotech_mining_2 = {
 		factor = @ai_research_lab_factor
 	}
 }
+tech_avb_virtual_maintenance_1 = {
+	area = physics
+	category = { computing }
+	tier = 4
+	is_rare = yes
+	cost = @tier4cost3
+	weight = @tier4weight3
+	potential = {
+		has_machine_age_dlc = yes
+		avb_hg_changes = yes
+		owner = {
+			has_tradition = tr_virtuality_finish
+			is_virtual_empire = yes
+		}
+	}
+	modifier = {
+		custom_tooltip = tech_avb_virtual_maintenance_effect
+	}
+	weight_modifier = {
+		factor = 10
+		inline_script = tech_weights/avb_virtual_weight
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_avb_virtual_maintenance_1
+		}
+	}
+	ai_weight = {
+		factor = @ai_research_lab_factor
+		inline_script = tech_weights/avb_virtual_weight
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_avb_virtual_maintenance_1
+		}
+	}
+}
+tech_avb_virtual_maintenance_2 = {
+	area = physics
+	category = { computing }
+	tier = 5
+	is_rare = yes
+	cost = @tier5cost3
+	weight = @tier5weight3
+	prerequisites = {
+		tech_avb_virtual_maintenance_1
+	}
+	potential = {
+		has_machine_age_dlc = yes
+		avb_hg_changes = yes
+		owner = {
+			has_tradition = tr_virtuality_finish
+			is_virtual_empire = yes
+		}
+	}
+	modifier = {
+		custom_tooltip = tech_avb_virtual_maintenance_effect
+	}
+	weight_modifier = {
+		factor = 10
+		inline_script = tech_weights/avb_virtual_weight
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_avb_virtual_maintenance_2
+		}
+	}
+	ai_weight = {
+		factor = @ai_research_lab_factor
+		inline_script = tech_weights/avb_virtual_weight
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_avb_virtual_maintenance_2
+		}
+	}
+}
+tech_avb_virtual_maintenance_3 = {
+	area = physics
+	category = { computing }
+	tier = 6
+	is_rare = yes
+	cost = @avbtier6cost3
+	weight = @avbtier6weight3
+	prerequisites = {
+		tech_avb_virtual_maintenance_2
+	}
+	potential = {
+		has_machine_age_dlc = yes
+		avb_hg_changes = yes
+		owner = {
+			has_tradition = tr_virtuality_finish
+			is_virtual_empire = yes
+		}
+	}
+	modifier = {
+		custom_tooltip = tech_avb_virtual_maintenance_effect
+	}
+	weight_modifier = {
+		factor = 10
+		inline_script = tech_weights/avb_virtual_weight
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_avb_virtual_maintenance_3
+		}
+	}
+	ai_weight = {
+		factor = @ai_research_lab_factor
+		inline_script = tech_weights/avb_virtual_weight
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_avb_virtual_maintenance_3
+		}
+	}
+}
+tech_avb_virtual_server = {
+	area = physics
+	category = { computing }
+	tier = 7
+	is_rare = yes
+	cost = @avbtier7cost3
+	weight = @avbtier7weight3
+	prerequisites = {
+		tech_avb_virtual_maintenance_3
+	}
+	potential = {
+		has_machine_age_dlc = yes
+		avb_hg_changes = yes
+		owner = {
+			has_tradition = tr_virtuality_finish
+			is_virtual_empire = yes
+		}
+	}
+	modifier = {
+		custom_tooltip = tech_avb_virtual_server_effect
+	}
+	weight_modifier = {
+		factor = 10
+		inline_script = tech_weights/avb_virtual_weight
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_avb_virtual_server
+		}
+	}
+	ai_weight = {
+		factor = @ai_research_lab_factor
+		inline_script = tech_weights/avb_virtual_weight
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_avb_virtual_server
+		}
+	}
+}

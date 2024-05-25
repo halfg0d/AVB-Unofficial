@@ -1,8 +1,8 @@
-version="1.6.2"
+version="1.6.3"
 tags={
 	"Buildings"
 }
 name="Additional Vanilla Buildings - Unofficial"
 picture="thumbnail.png"
-supported_version="3.12.1"
+supported_version="3.12.2"
 remote_file_id="2916082557"

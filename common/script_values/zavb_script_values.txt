@@ -1,0 +1,102 @@
+virtuality_concentrated_production_mult = {
+	# Vanilla
+	base = 1.75
+	modifier = {
+		add = 0.25
+		owner = {
+			has_technology = tech_avb_virtual_server
+		}
+	}
+	# Virtual Colonial System Breakthrough
+	complex_trigger_modifier = {
+		trigger = count_owned_planet
+		trigger_scope = owner
+		mult = 0.25
+		mode = subtract
+	}
+	# Virtual Systems Maintenance I
+	complex_trigger_modifier = {
+		trigger = count_owned_planet
+		trigger_scope = owner
+		parameters = {
+			limit = {
+				owner = {
+					has_technology = tech_avb_virtual_maintenance_1
+				}
+			}
+		}
+		mult = 0.05
+		mode = add
+	}
+	# Virtual Systems Maintenance II
+	complex_trigger_modifier = {
+		trigger = count_owned_planet
+		trigger_scope = owner
+		parameters = {
+			limit = {
+				owner = {
+					has_technology = tech_avb_virtual_maintenance_2
+				}
+			}
+		}
+		mult = 0.05
+		mode = add
+	}
+	# Virtual Systems Maintenance III
+	complex_trigger_modifier = {
+		trigger = count_owned_planet
+		trigger_scope = owner
+		parameters = {
+			limit = {
+				owner = {
+					has_technology = tech_avb_virtual_maintenance_3
+				}
+			}
+		}
+		mult = 0.05
+		mode = add
+	}
+	# Virtual Planetary Server
+	# TODO:
+	complex_trigger_modifier = {
+		trigger = count_owned_planet
+		trigger_scope = owner
+		parameters = {
+			limit = {
+				planet = {
+					has_building = building_avb_virtual_server
+				}
+			}
+		}
+		mult = 0.06
+		mode = add
+	}
+}
+# 5> num colonies get penalty
+avb_virtuality_num_colonies = {
+	base = -1.5
+	complex_trigger_modifier = {
+		trigger = count_owned_planet
+		trigger_scope = owner
+		mult = 0.5
+		mode = add
+	}
+	# Colonies with Virtual Server count as 1
+	complex_trigger_modifier = {
+		trigger = count_owned_planet
+		trigger_scope = planet
+		parameters = {
+			limit = {
+				has_building = building_avb_virtual_server
+			}
+		}
+		mult = 0.5
+		mode = add
+	}
+	min = 1
+}
+num_virtual_production_mult_script = {
+	base = 100
+	mult = value:virtuality_concentrated_production_mult
+	# mult = 100
+}
