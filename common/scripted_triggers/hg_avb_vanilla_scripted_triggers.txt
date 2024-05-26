@@ -1,55 +1,3 @@
-has_research_building = {
-	OR = {
-		has_building = building_research_lab_1
-		has_building = building_research_lab_2
-		has_building = building_research_lab_3
-		has_building = building_institute
-		has_building = building_supercomputer
-		#AVB
-		has_building = building_avb_research_lab_4
-		has_building = building_avb_research_lab_5
-		has_building = building_avb_research_lab_6
-		has_building = building_avb_institute_2
-		has_building = building_avb_supercomputer_2 
-		#ACOT
-        has_building = building_enigmatic_lab
-        has_building = building_fe_institute
-        has_building = building_ae_enigmatic_lab
-        has_building = building_ae_institute
-        has_building = building_phanon_enigmatic_lab
-        has_building = building_phanon_institute
-        has_building = building_stellarite_enigmatic_lab
-        has_building = building_stellarite_institute
-		#EUTAB
-		eutab_has_research_building = yes
-	}
-}
-has_any_farming_district_or_buildings = {
-	OR = {
-		has_district = district_farming
-		has_district = district_rw_farming
-		has_district = district_farming_uncapped
-		has_building = building_hydroponics_farm
-		#AVB
-		has_building = building_avb_hydroponics_farm_2
-		#EUTAB
-		eutab_has_farming_building = yes
-	}
-}
-has_any_generator_district_or_building = {
-	OR = {
-		has_district = district_generator
-		has_district = district_hab_energy
-		has_district = district_generator_uncapped
-		has_district = district_rw_generator
-		has_building = building_betharian_power_plant
-		#AVB
-		has_building = building_avb_betharian_power_plant_2
-		#EUTAB
-		eutab_has_generator_building = yes
-	}
-}
-
 is_toxic_origin1_trigger = {
 	has_planet_flag = toxic_knights_habitat
 }
@@ -62,30 +10,29 @@ is_toxic_origin2_trigger = {
 has_clone_full_path = {
 	has_country_flag = clone_army_full_potential
 }
-has_any_organic_assembly_building = {
-	OR = {
-		# Vanilla
-		has_building = building_clone_vats
-		has_building = building_clone_army_clone_vat
-		has_building = building_posthumous_employment_center
-		has_building = building_spawning_pool
-		has_building = building_offspring_nest
-	}
-}
 avb_hg_changes = {
 	has_global_flag = avb_hg_allow
 }
-
-hg_test = {
-	count_owned_planet = {
-		limit = {
-			orb_foundry_active = yes
-		}
-		count >= 1
+has_avb_research_building = {
+	OR = {
+		has_building = building_avb_research_lab_4
+		has_building = building_avb_research_lab_5
+		has_building = building_avb_research_lab_6
+		has_building = building_avb_institute_2
+		has_building = building_avb_supercomputer_2 
 	}
-	NOT = {
-		any_owned_planet = {
-			avb_has_orbital_ring = yes
-		}
+}
+has_avb_farming_building = {
+	OR = {
+		has_building = building_avb_hydroponics_farm_2
+		has_building = building_avb_hydroponics_farm_3
+	}
+}
+has_avb_generator_building = {
+	OR = {
+		has_building = building_avb_betharian_power_plant_2
+		has_building = building_avb_energy_1
+		has_building = building_avb_energy_2
+		has_building = building_avb_energy_3
 	}
 }

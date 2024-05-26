@@ -21,6 +21,12 @@ has_any_orb_flag = {
 		has_planet_flag = avb_orb_ranger_1
 		has_planet_flag = avb_orb_ranger_2
 		has_planet_flag = avb_orb_ranger_3
+		has_planet_flag = avb_orb_foundry_1
+		has_planet_flag = avb_orb_foundry_2
+		has_planet_flag = avb_orb_foundry_3
+		has_planet_flag = avb_orb_factory_1
+		has_planet_flag = avb_orb_factory_2
+		has_planet_flag = avb_orb_factory_3
 	}
 }
 has_organic_assembly_building = {

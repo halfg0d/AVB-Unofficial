@@ -4,7 +4,7 @@
 
 #Farming Buildings
 building_avb_hydroponics_farm_3 = {
-	base_buildtime = @avb_rs5_time
+	base_buildtime = @avb_b4time
 	can_build = no
 
 	category = resource
@@ -86,7 +86,7 @@ building_avb_hydroponics_farm_3 = {
 			}
 		}
 		modifier = {
-			job_farmer_add = @avb_rs5_jobs
+			job_farmer_add = @avb_b4jobs
 		}
 	}
 	
@@ -96,7 +96,7 @@ building_avb_hydroponics_farm_3 = {
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		modifier = {
-			job_fe_acolyte_farm_add = @avb_rs5_jobs
+			job_fe_acolyte_farm_add = @avb_b4jobs
 		}
 	}
 
@@ -116,7 +116,7 @@ building_avb_hydroponics_farm_3 = {
 			owner = { is_gestalt = yes }
 		}
 		modifier = {
-			job_agri_drone_add = @avb_rs5_jobs
+			job_agri_drone_add = @avb_b4jobs
 		}
 	}
 
@@ -131,98 +131,17 @@ building_avb_hydroponics_farm_3 = {
 			}
 		}
 		modifier = {
-			job_angler_add = @avb_rs5_jobs
+			job_angler_add = @avb_b4jobs
 		}
 	}
 
 	resources = {
 		category = planet_buildings
 		cost = {
-			trigger = {
-				has_z_expanded_mod = no
-			}
-			minerals = @avb_rs5_minerals
+			minerals = @avb_b4minerals
 		}
 		upkeep = {
-			trigger = {
-				has_z_expanded_mod = no
-			}
-			energy = @avb_rs5_upkeep
-		}
-		cost = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					OR = {
-						is_lithoid_empire = yes
-						AND = {
-							is_hive_empire = no
-							is_civic_plant_organic = no
-						}
-					}
-				}
-			}
-			minerals = @avb_rs5_minerals
-		}
-		cost = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					NOT = { has_valid_civic = civic_integrated_bioarchitecture }
-					OR = {
-						is_hive_empire = yes
-						is_civic_plant_organic = yes
-					}
-					is_lithoid_empire = no
-				}
-			}
-			minerals = @avb_rs5_hive_minerals
-			food = @avb_rs5_hive_food
-		}
-		cost = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					has_valid_civic = civic_integrated_bioarchitecture
-					is_lithoid_empire = no
-				}
-			}
-			food = @avb_rs5_minerals
-		}
-		upkeep = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					is_lithoid_empire = no
-					OR = {
-						is_hive_empire = yes
-						is_civic_plant_organic = yes
-					}
-				}
-			}
-			energy = @avb_rs5_upkeep_hive
-			food = @avb_rs5_upkeep_food
-		}
-		upkeep = {
-			trigger = {
-				has_z_expanded_mod = yes
-				exists = owner
-				owner = {
-					OR = {
-						is_lithoid_empire = yes
-						AND = {
-							is_hive_empire = no
-							is_civic_plant_organic = no
-						}
-					}
-					NOT = { has_valid_civic = civic_integrated_bioarchitecture }
-				}
-			}
-			energy = @avb_rs5_upkeep
+			energy = @avb_b4upkeep
 		}
 	}	
 
@@ -940,7 +859,7 @@ building_avb_resource_silo_3 = {
 			owner = { is_gestalt = no }
 		}
 		modifier = {
-			job_clerk_add = @avb_rs5_jobs
+			job_clerk_add = @avb_b4jobs
 		}
 	}
 	triggered_planet_modifier = {

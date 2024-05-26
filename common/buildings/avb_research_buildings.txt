@@ -485,7 +485,7 @@ building_avb_archaeostudies_faculty_2 = {
 }
 
 building_avb_vultaum_reality_computer_2 = {
-	base_buildtime = @avb_f4_time
+	base_buildtime = @avb_b4_time
 
 	can_build = no
 	category = research
@@ -513,11 +513,11 @@ building_avb_vultaum_reality_computer_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_f4_minerals
+			minerals = @avb_b4_minerals
 			minor_artifacts = 60
 		}
 		upkeep = {
-			energy = @avb_f4_upkeep
+			energy = @avb_b4_upkeep
 		}
 	}
 

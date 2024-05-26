@@ -283,7 +283,7 @@ building_avb_stronghold_4 = {
 			owner = { is_gestalt = no }
 		}
 		modifier = {
-			job_soldier_add = 12
+			job_soldier_add = @avb_b4_jobs
 		}
 	}
 	triggered_planet_modifier = {
@@ -292,7 +292,7 @@ building_avb_stronghold_4 = {
 			owner = { is_gestalt = yes }
 		}
 		modifier = {
-			job_warrior_drone_add = 12
+			job_warrior_drone_add = @avb_b4_jobs
 		}
 	}
 	resources = {
@@ -352,7 +352,7 @@ building_avb_stronghold_5 = {
 			}
 		}
 		modifier = {
-			job_soldier_add = @avb_b4_jobs
+			job_soldier_add = @avb_b5_jobs
 		}
 	}
 	triggered_planet_modifier = {
@@ -361,7 +361,7 @@ building_avb_stronghold_5 = {
 			owner = { is_gestalt = yes }
 		}
 		modifier = {
-			job_warrior_drone_add = @avb_b4_jobs
+			job_warrior_drone_add = @avb_b5_jobs
 		}
 	}
 	resources = {

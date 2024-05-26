@@ -3,7 +3,7 @@
 # Trade buildings
 #############
 building_avb_commercial_3 = {
-	base_buildtime = @avb_t4_time
+	base_buildtime = @avb_b4_time
 	can_build = no
 
 	category = trade
@@ -33,12 +33,12 @@ building_avb_commercial_3 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_t4_minerals
-			rare_crystals = @avb_t4_rare_cost
+			minerals = @avb_b4_minerals
+			rare_crystals = @avb_b4_rare_cost
 		}	
 		upkeep = {
-			energy = @avb_t4_upkeep
-			rare_crystals = @avb_t4_rare_upkeep
+			energy = @avb_b4_upkeep
+			rare_crystals = @avb_b4_rare_upkeep
 		}		
 	}
 
@@ -68,7 +68,7 @@ building_avb_commercial_3 = {
 }
 
 building_avb_commercial_4 = {
-	base_buildtime = @avb_t5_time
+	base_buildtime = @avb_b5_time
 	can_build = no
 
 	category = trade
@@ -101,12 +101,12 @@ building_avb_commercial_4 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_t5_minerals
-			rare_crystals = @avb_t5_rare_cost
+			minerals = @avb_b5_minerals
+			rare_crystals = @avb_b5_rare_cost
 		}	
 		upkeep = {
-			energy = @avb_t5_upkeep
-			rare_crystals = @avb_t5_rare_upkeep
+			energy = @avb_b5_upkeep
+			rare_crystals = @avb_b5_rare_upkeep
 		}
 	}
 	upgrades = {
@@ -135,7 +135,7 @@ building_avb_commercial_4 = {
 }
 
 building_avb_commercial_5 = {
-	base_buildtime = @avb_t6_time
+	base_buildtime = @avb_b6_time
 	can_build = no
 
 	category = trade
@@ -168,12 +168,12 @@ building_avb_commercial_5 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_t6_minerals
-			rare_crystals = @avb_t6_rare_cost
+			minerals = @avb_b6_minerals
+			rare_crystals = @avb_b6_rare_cost
 		}	
 		upkeep = {
-			energy = @avb_t6_upkeep
-			rare_crystals = @avb_t6_rare_upkeep
+			energy = @avb_b6_upkeep
+			rare_crystals = @avb_b6_rare_upkeep
 		}
 	}
 	prerequisites = {
@@ -198,7 +198,7 @@ building_avb_commercial_5 = {
 }
 
 building_avb_galactic_stock_exchange_2 = {
-	base_buildtime = @avb_t4_time
+	base_buildtime = @avb_b4_time
 	can_build = no
 
 	category = trade
@@ -241,12 +241,12 @@ building_avb_galactic_stock_exchange_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_t4_minerals
-			rare_crystals = @avb_t4_rare_cost
+			minerals = @avb_b4_minerals
+			rare_crystals = @avb_b4_rare_cost
 		}
 		upkeep = {
-			energy = @avb_t4_upkeep
-			rare_crystals = @avb_t4_rare_upkeep
+			energy = @avb_b4_upkeep
+			rare_crystals = @avb_b4_rare_upkeep
 		}
 	}
 	
