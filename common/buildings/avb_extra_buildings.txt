@@ -755,16 +755,6 @@ building_avb_energy_2 = {
 			}
 		}
 	}
-	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_regular_empire = yes }
-		}
-		modifier = {
-			job_technician_add = @b2_jobs
-		}
-	}
 
 	inline_script = {
 		script = jobs/technicians_add

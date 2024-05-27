@@ -940,6 +940,7 @@ tech_avb_virtual_maintenance_1 = {
 		}
 	}
 	modifier = {
+		country_physics_research_produces_mult = 0.05
 		custom_tooltip = tech_avb_virtual_maintenance_effect
 	}
 	weight_modifier = {
@@ -978,6 +979,7 @@ tech_avb_virtual_maintenance_2 = {
 		}
 	}
 	modifier = {
+		country_physics_research_produces_mult = 0.05
 		custom_tooltip = tech_avb_virtual_maintenance_effect
 	}
 	weight_modifier = {
@@ -1016,6 +1018,7 @@ tech_avb_virtual_maintenance_3 = {
 		}
 	}
 	modifier = {
+		country_physics_research_produces_mult = 0.05
 		custom_tooltip = tech_avb_virtual_maintenance_effect
 	}
 	weight_modifier = {
@@ -1070,6 +1073,42 @@ tech_avb_virtual_server = {
 		inline_script = {
 			script = technologies/rare_technologies_weight_modifiers
 			TECHNOLOGY = tech_avb_virtual_server
+		}
+	}
+}
+tech_avb_modular_buildings = {
+	area = engineering
+	category = {
+		industry
+	}
+	tier = 5
+	cost = @tier5cost1
+	weight = @tier5weight1
+	prerequisites = {
+		"tech_modular_engineering"
+	}
+	potential = {
+		has_machine_age_dlc = yes
+		avb_hg_changes = yes
+		owner = {
+			has_tradition = tr_modularity_finish
+		}
+	}
+	modifier = {
+		country_sr_living_metal_produces_mult = 0.1
+	}
+	weight_modifier = {
+		factor = 1
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_avb_modular_buildings
+		}
+	}
+	ai_weight = {
+		factor = @ai_research_lab_factor
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_avb_modular_buildings
 		}
 	}
 }

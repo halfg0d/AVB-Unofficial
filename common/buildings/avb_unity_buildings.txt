@@ -2706,7 +2706,7 @@ building_avb_autocurating_vault_2 = {
 
 building_avb_citadel_of_faith_2 = {
 	base_buildtime = @b2_time
-
+	can_build = no
 
 	category = unity
 
