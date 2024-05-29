@@ -677,7 +677,7 @@ building_avb_lathe_validator_2 = {
 building_avb_modular_building = {
 	base_buildtime = @avb_b2_time
 	category = manufacturing
-
+	base_cap_amount = 1
 	potential = {
 		owner = {
 			has_tradition = tr_modularity_finish

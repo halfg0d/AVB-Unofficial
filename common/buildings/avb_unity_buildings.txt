@@ -2570,7 +2570,7 @@ building_avb_organic_sanctuary_5 = {
 
 building_avb_autocurating_vault_2 = {
 	base_buildtime = @b4_time
-
+	can_build = no
 	icon = building_avb_unity_booster_5
 	category = unity
 
@@ -2848,6 +2848,7 @@ building_avb_citadel_of_faith_2 = {
 building_avb_corporate_vault_2 = {
 	base_buildtime = @b3_time
 
+	can_build = no
 	icon = building_avb_unity_booster_5
 
 	category = unity
@@ -2992,6 +2993,7 @@ building_avb_alpha_hub_2 = {
 	icon = building_avb_unity_booster_5
 	category = unity
 
+	can_build = no
 	potential = {
 		avb_hg_changes = yes
 		exists = owner
