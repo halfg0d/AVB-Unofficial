@@ -222,3 +222,106 @@ livestock_zoo_beast = {
 		}
 	}
 }
+
+xeno_zoo_animal = {
+	category = pre_sapients
+	is_capped_by_modifier = no
+	clothes_texture_index = 2
+	contributes_to_diplo_weight = no
+
+	possible_pre_triggers = {
+		is_sapient = no
+	}
+
+	possible = {
+		planet = {
+			exists = owner
+			owner = {
+				has_policy_flag = pre_sapients_protect
+				NOT = { has_valid_civic = civic_warrior_culture }
+			}
+			OR = {
+				has_active_building = building_xeno_zoo
+				has_active_building = building_avb_xeno_zoo_2
+				has_active_building = building_avb_zoo_administration
+				has_deposit = d_genesis_preserve
+			}
+		}
+	}
+
+	resources = {
+		category = pop_category_pre_sapients
+		upkeep = {
+			trigger = {
+				is_pre_sapient_lithoid = no
+			}
+			food = 1
+		}
+		upkeep = {
+			trigger = {
+				is_pre_sapient_lithoid = yes
+			}
+			minerals = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		planet_amenities_add = 1
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+	}
+
+	weight = {
+		weight = 5000
+	}
+}
+
+xeno_zoo_beast = {
+	category = pre_sapients
+	is_capped_by_modifier = no
+	clothes_texture_index = 2
+	contributes_to_diplo_weight = no
+
+	possible_pre_triggers = {
+		is_sapient = no
+	}
+
+	possible = {
+		planet = {
+			exists = owner
+			owner = {
+				has_policy_flag = pre_sapients_protect
+				has_valid_civic = civic_warrior_culture
+			}
+			OR = {
+				has_active_building = building_xeno_zoo
+				has_active_building = building_avb_xeno_zoo_2
+				has_active_building = building_avb_zoo_administration
+			}
+		}
+	}
+
+	resources = {
+		category = pop_category_pre_sapients
+		upkeep = {
+			trigger = {
+				is_pre_sapient_lithoid = no
+			}
+			food = 1
+		}
+		upkeep = {
+			trigger = {
+				is_pre_sapient_lithoid = yes
+			}
+			minerals = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		planet_amenities_add = 1
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+	}
+
+	weight = {
+		weight = 5000
+	}
+}

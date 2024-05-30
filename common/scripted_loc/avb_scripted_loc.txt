@@ -12,3 +12,22 @@ defined_text = {
 	}
 	default = necrophageTimeV
 }
+
+defined_text = {
+	name = num_virtual_production_mult
+	value = value:num_virtual_production_mult_script
+}
+
+defined_text = {
+	name = digital_trait_bonus
+	text = {
+		trigger = {
+			avb_hg_changes = yes
+			owner = {
+				has_technology = tech_avb_virtual_server
+			}
+		}
+		localization_key = trait_robot_digital_2_tt_AVB1
+	}
+	default = trait_robot_digital_2_tt_AVB2
+}

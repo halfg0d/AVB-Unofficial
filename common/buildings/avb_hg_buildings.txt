@@ -1,0 +1,43 @@
+building_avb_virtual_server = {
+	base_buildtime = @avb_b4_time
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	position_priority = 1
+	base_cap_amount = 1
+
+	category = government
+
+	potential = {
+		has_machine_age_dlc = yes
+		avb_hg_changes = yes
+		exists = owner
+		owner = {
+			is_virtual_empire = yes
+			has_tradition = tr_virtuality_finish
+		}
+	}
+	allow = {
+		has_upgraded_capital_4 = yes
+	}
+
+	prerequisites = { "tech_avb_virtual_server" }
+	show_tech_unlock_if = {
+		has_machine_age_dlc = yes
+		avb_hg_changes = yes
+		is_virtual_empire = yes
+	}
+	triggered_desc = {
+		text = building_avb_virtual_server_tooltip
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_b4_minerals
+		}		
+		upkeep = {
+			energy = @avb_b4_upkeep
+			mult = value:avb_virtuality_num_colonies
+		}		
+	}
+}

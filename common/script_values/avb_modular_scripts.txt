@@ -1,0 +1,281 @@
+# Foundry
+num_foundry_tier = {
+	base = 0
+	modifier = {
+		add = 1
+		planet = {
+			has_active_building = building_foundry_1
+		}
+	}
+	modifier = {
+		add = 2
+		planet = {
+			has_active_building = building_foundry_2
+		}
+	}
+	modifier = {
+		add = 3
+		planet = {
+			has_active_building = building_foundry_3
+		}
+	}
+	modifier = {
+		add = 4
+		planet = {
+			has_active_building = building_avb_foundry_4
+		}
+	}
+	modifier = {
+		add = 5
+		planet = {
+			has_active_building = building_avb_foundry_5
+		}
+	}
+	modifier = {
+		add = 5
+		planet = {
+			has_active_building = building_avb_foundry_6
+		}
+	}
+}
+# Factory
+num_factory_tier = {
+	base = 0
+	modifier = {
+		add = 1
+		planet = {
+			has_active_building = building_factory_1
+		}
+	}
+	modifier = {
+		add = 2
+		planet = {
+			has_active_building = building_factory_2
+		}
+	}
+	modifier = {
+		add = 3
+		planet = {
+			has_active_building = building_factory_3
+		}
+	}
+	modifier = {
+		add = 4
+		planet = {
+			has_active_building = building_avb_factory_4
+		}
+	}
+	modifier = {
+		add = 5
+		planet = {
+			has_active_building = building_avb_factory_5
+		}
+	}
+	modifier = {
+		add = 5
+		planet = {
+			has_active_building = building_avb_factory_6
+		}
+	}
+}
+# Food
+num_food_processing_tier = {
+	base = 0
+	modifier = {
+		add = 1
+		planet = {
+			has_active_building = building_food_processing_facility
+		}
+	}
+	modifier = {
+		add = 2
+		planet = {
+			has_active_building = building_food_processing_center
+		}
+	}
+	modifier = {
+		add = 3
+		planet = {
+			has_active_building = building_avb_food_processing_3
+		}
+	}
+	modifier = {
+		add = 4
+		planet = {
+			has_active_building = building_avb_food_processing_4
+		}
+	}
+}
+# Mineral
+num_mineral_purification_tier = {
+	base = 0
+	modifier = {
+		add = 1
+		planet = {
+			has_active_building = building_mineral_purification_plant
+		}
+	}
+	modifier = {
+		add = 2
+		planet = {
+			has_active_building = building_mineral_purification_hub
+		}
+	}
+	modifier = {
+		add = 3
+		planet = {
+			has_active_building = building_avb_mineral_purification_3
+		}
+	}
+	modifier = {
+		add = 4
+		planet = {
+			has_active_building = building_avb_mineral_purification_4
+		}
+	}
+}
+# Energy
+num_energy_grid_tier = {
+	base = 0
+	modifier = {
+		add = 1
+		planet = {
+			has_active_building = building_energy_grid
+		}
+	}
+	modifier = {
+		add = 2
+		planet = {
+			has_active_building = building_energy_nexus
+		}
+	}
+	modifier = {
+		add = 3
+		planet = {
+			has_active_building = building_avb_energy_grid_3
+		}
+	}
+	modifier = {
+		add = 4
+		planet = {
+			has_active_building = building_avb_energy_grid_4
+		}
+	}
+}
+# Research
+num_research_tier = {
+	base = 0
+	modifier = {
+		add = 1
+		planet = {
+			has_active_building = building_institute
+		}
+	}
+	modifier = {
+		add = 2
+		planet = {
+			has_active_building = building_avb_institute_2
+		}
+	}
+	modifier = {
+		add = 1
+		planet = {
+			has_active_building = building_supercomputer
+		}
+	}
+	modifier = {
+		add = 2
+		planet = {
+			has_active_building = building_avb_supercomputer_2
+		}
+	}
+}
+# Refinery
+num_refinery_tier = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = num_buildings
+		parameters = {
+			type = building_refinery
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = num_buildings
+		parameters = {
+			type = building_avb_refinery_2
+		}
+		mode = add
+		mult = 2
+	}
+	complex_trigger_modifier = {
+		trigger = num_buildings
+		parameters = {
+			type = building_avb_refinery_3
+		}
+		mode = add
+		mult = 3
+	}
+}
+# Crystal Plant
+num_crystal_plant_tier = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = num_buildings
+		parameters = {
+			type = building_crystal_plant
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = num_buildings
+		parameters = {
+			type = building_crystal_plant_2
+		}
+		mode = add
+		mult = 2
+	}
+	complex_trigger_modifier = {
+		trigger = num_buildings
+		parameters = {
+			type = building_avb_crystal_plant_2
+		}
+		mode = add
+		mult = 2
+	}
+	complex_trigger_modifier = {
+		trigger = num_buildings
+		parameters = {
+			type = building_avb_crystal_plant_3
+		}
+		mode = add
+		mult = 3
+	}
+}
+# Chemical Plant
+num_chemical_plant_tier = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = num_buildings
+		parameters = {
+			type = building_chemical_plant
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = num_buildings
+		parameters = {
+			type = building_avb_chemical_plant_2
+		}
+		mode = add
+		mult = 2
+	}
+	complex_trigger_modifier = {
+		trigger = num_buildings
+		parameters = {
+			type = building_avb_chemical_plant_3
+		}
+		mode = add
+		mult = 3
+	}
+}

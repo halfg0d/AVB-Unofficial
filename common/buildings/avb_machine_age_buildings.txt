@@ -672,3 +672,42 @@ building_avb_lathe_validator_2 = {
 	additional_ai_weight = 200
 	ai_weight_coefficient = 1.2
 }
+
+# Modular
+building_avb_modular_building = {
+	base_buildtime = @avb_b2_time
+	category = manufacturing
+	base_cap_amount = 1
+	potential = {
+		owner = {
+			has_tradition = tr_modularity_finish
+		}
+	}
+	allow = {
+		has_upgraded_capital = yes
+	}
+	destroy_trigger = {
+		owner = {
+			NOT = {
+				has_tradition = tr_modularity_finish
+			}
+		}
+	}
+	prerequisites = {
+		"tech_avb_modular_buildings"
+	}
+
+	inline_script = modular_buildings/main
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			sr_living_metal = @avb_b2_rare_cost
+			minerals = @avb_b2_minerals
+		}
+		upkeep = {
+			sr_living_metal = @avb_b2_rare_upkeep
+			energy = @avb_b2_upkeep
+		}
+	}
+}

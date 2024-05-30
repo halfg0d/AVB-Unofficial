@@ -36,3 +36,77 @@ has_avb_generator_building = {
 		has_building = building_avb_energy_3
 	}
 }
+has_any_foundry_tier = {
+	OR = {
+		has_[[active]active_]building = building_foundry_1
+		has_[[active]active_]building = building_foundry_2
+		has_[[active]active_]building = building_foundry_3
+		has_[[active]active_]building = building_avb_foundry_4
+		has_[[active]active_]building = building_avb_foundry_5
+		has_[[active]active_]building = building_avb_foundry_6
+	}
+}
+has_any_factory_tier = {
+	OR = {
+		has_[[active]active_]building = building_factory_1
+		has_[[active]active_]building = building_factory_2
+		has_[[active]active_]building = building_factory_3
+		has_[[active]active_]building = building_avb_factory_4
+		has_[[active]active_]building = building_avb_factory_5
+		has_[[active]active_]building = building_avb_factory_6
+	}
+}
+has_any_food_processing_tier = {
+	OR = {
+		has_[[active]active_]building = building_food_processing_facility
+		has_[[active]active_]building = building_food_processing_center
+		has_[[active]active_]building = building_avb_food_processing_3
+		has_[[active]active_]building = building_avb_food_processing_4
+	}
+}
+has_any_energy_grid_tier = {
+	OR = {
+		has_[[active]active_]building = building_energy_grid
+		has_[[active]active_]building = building_energy_nexus
+		has_[[active]active_]building = building_avb_energy_grid_3
+		has_[[active]active_]building = building_avb_energy_grid_4
+	}
+}
+has_any_mineral_purification_tier = {
+	OR = {
+		has_[[active]active_]building = building_mineral_purification_plant
+		has_[[active]active_]building = building_mineral_purification_hub
+		has_[[active]active_]building = building_avb_mineral_purification_3
+		has_[[active]active_]building = building_avb_mineral_purification_4
+	}
+}
+has_any_research_tier = {
+	OR = {
+		has_[[active]active_]building = building_institute
+		has_[[active]active_]building = building_avb_institute_2
+		has_[[active]active_]building = building_supercomputer
+		has_[[active]active_]building = building_avb_supercomputer_2
+	}
+}
+has_any_refinery_tier = {
+	OR = {
+		has_[[active]active_]building = building_refinery
+		has_[[active]active_]building = building_avb_refinery_2
+		has_[[active]active_]building = building_avb_refinery_3
+	}
+}
+has_any_crystal_plant_tier = {
+	OR = {
+		has_[[active]active_]building = building_crystal_plant
+		has_[[active]active_]building = building_crystal_plant_2
+		has_[[active]active_]building = building_avb_crystal_plant_2
+		has_[[active]active_]building = building_avb_crystal_plant_3
+	}
+}
+has_any_chemical_plant_tier = {
+	OR = {
+		has_[[active]active_]building = building_chemical_plant
+		has_[[active]active_]building = building_avb_chemical_plant_2
+		has_[[active]active_]building = building_avb_chemical_plant_3
+	}
+}
