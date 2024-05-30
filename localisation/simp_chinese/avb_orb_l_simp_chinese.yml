@@ -1,4 +1,4 @@
-l_simp_chinese:
+﻿l_simp_chinese:
  building_avb_orb_ring_connection:0 "Ring Connection Administration"
  building_avb_orb_ring_connection_desc:1 "A large buildings which connect our planet with orbital ring to better functioning infrastructure."
  avb_orb_is_building_similar_to_x_fail:1 "Doesn't exist building to improve"

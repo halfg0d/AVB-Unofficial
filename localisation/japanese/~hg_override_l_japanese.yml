@@ -1,2 +1,2 @@
-l_japanese:
+﻿l_japanese:
  job_necro_apprentice_effect_desc_base:0 "Once every [This.getNecrophageTime] years, £job_necro_apprentice£ $job_necro_apprentice_plural$ are transformed into §Y[This.Owner.GetSpeciesNamePlural]§! in an §YElevation Ritual§!."

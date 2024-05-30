@@ -1,4 +1,4 @@
-l_japanese:
+﻿l_japanese:
  building_avb_dread_encampment_2:0 "Dread Encampment"
  building_avb_dread_encampment_2_desc:1 "It is best to shield the activities of the necromancers from the tender eyes of the public as they raise undead hordes to fight in our armies."
  job_necromancer_effect_desc:3 "£job_necromancer£ $job_necromancer_plural$ turn £consumer_goods£ §Y$consumer_goods$§! into £physics£ £society£ §YResearch Points§! and £mod_country_naval_cap_add£ §Y$MOD_COUNTRY_NAVAL_CAP_ADD$§!, and spawn £defense_army£ §YUndead Defense Armies§!\nGrants access to the £building£ §Y$holding_dread_outpost$§! Holding"
