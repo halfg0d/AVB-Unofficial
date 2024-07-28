@@ -410,7 +410,7 @@ building_avb_supercomputer_2 = {
 }
 
 building_avb_archaeostudies_faculty_2 = {
-	base_buildtime = @avb_f4_time
+	base_buildtime = @avb_b4_time
 
 	can_build = no
 	category = research
