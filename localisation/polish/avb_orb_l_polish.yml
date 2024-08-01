@@ -47,7 +47,7 @@
  tech_ring_avb_clone_vats_3:0 "$tech_ring_avb_clone_vats_1$"
  tech_ring_avb_clone_vats_3_desc:0 "$tech_ring_avb_clone_vats_1_desc$"
 
- avb_orb_is_building_similar_to_clone_fail:1 "Doesn't exist building to improve. You have to build supported building which create organic pops."
+ avb_orb_is_building_similar_to_clone_vats_fail:1 "Doesn't exist building to improve. You have to build supported building which create organic pops."
 #Institute
  sm_ring_avb_institute:0 "Orbital Research Bank"
  sm_ring_avb_institute_desc:0 "ORB is online. You have accsess to better communication with every researcher."

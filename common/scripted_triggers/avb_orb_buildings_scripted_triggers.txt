@@ -58,7 +58,12 @@ is_building_similar_to_robot_assembly = {
 		if = {
 			limit = {
 				exists = owner
-				owner = { is_regular_empire = yes }
+				owner = {
+					OR = {
+						is_individual_machine = yes
+						is_regular_empire = yes
+					}
+				}
 			}
 			custom_tooltip = {
 				fail_text = "avb_orb_is_building_similar_to_robot_fail"
