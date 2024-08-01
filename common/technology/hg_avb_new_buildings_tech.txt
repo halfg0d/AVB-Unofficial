@@ -53,6 +53,7 @@ tech_avb_toxic_bath_2 = {
 	
 	potential = {
 		is_gestalt = no
+		is_individual_machine = no
 		has_toxic_baths = yes
 		avb_hg_changes = yes
 	}
@@ -96,7 +97,10 @@ tech_avb_toxic_bath_machine_2 = {
 	weight = @tier4weight1
 	
 	potential = {
-		is_machine_empire = yes
+		OR = {
+			is_individual_machine = yes
+			is_machine_empire = yes
+		}
 		has_toxic_baths = yes
 		avb_hg_changes = yes
 	}
