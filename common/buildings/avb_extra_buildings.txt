@@ -70,69 +70,10 @@ building_avb_hydroponics_farm_3 = {
 		}
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-				OR = {
-					is_anglers_empire = no
-					AND = {
-						is_anglers_empire = yes
-						NOT = { PREV = { planet = { is_wet = yes } } }
-					}
-				}
-			}
-		}
-		modifier = {
-			job_farmer_add = @avb_b4jobs
-		}
-	}
-	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_fallen_empire_spiritualist = yes }
-		}
-		modifier = {
-			job_fe_acolyte_farm_add = @avb_b4jobs
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_origin = origin_void_dwellers }
-		}
-		modifier = {
-			job_farmer_add = 1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }
-		}
-		modifier = {
-			job_agri_drone_add = @avb_b4jobs
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-				is_anglers_empire = yes
-				PREV = { planet = { is_wet = yes } }
-			}
-		}
-		modifier = {
-			job_angler_add = @avb_b4jobs
-		}
+	inline_script = {
+		script = jobs/farmers_add
+		FARMER_AMOUNT = 7
+		ANGLER_AMOUNT = 6
 	}
 
 	resources = {
@@ -144,49 +85,6 @@ building_avb_hydroponics_farm_3 = {
 			energy = @avb_b4upkeep
 		}
 	}	
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_gestalt = yes }
-		}
-		text = job_agri_drone_effect_desc
-	}
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-				OR = {
-					is_anglers_empire = no
-					AND = {
-						is_anglers_empire = yes
-						NOT = { PREV = { planet = { is_wet = yes } } }
-					}
-				}
-			}
-		}
-		text = job_farmer_effect_desc
-	}
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_fallen_empire_spiritualist = yes }
-		}
-		text = job_fe_acolyte_farm_effect_desc
-	}
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_fallen_empire_spiritualist = no
-				is_anglers_empire = yes
-				PREV = { planet = { is_wet = yes } }
-			}
-		}
-		text = job_aqu_angler_effect_desc
-	}
 	prerequisites = {
 		tech_avb_hydroponics_3
 	}
@@ -849,7 +747,7 @@ building_avb_resource_silo_3 = {
 			owner = { is_gestalt = no }
 		}
 		modifier = {
-			job_clerk_add = @avb_b4jobs
+			job_clerk_add = @avb_b4_jobs
 		}
 	}
 	triggered_planet_modifier = {
