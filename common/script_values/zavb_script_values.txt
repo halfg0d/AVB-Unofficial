@@ -21,6 +21,13 @@ virtuality_concentrated_production_mult = {
 		mult = 0.05
 		mode = add
 	}
+	# Colonies
+	complex_trigger_modifier = {
+		trigger = count_owned_planet
+		trigger_scope = owner
+		mult = 0.25
+		mode = subtract
+	}
 }
 # 5> num colonies get penalty
 avb_virtuality_num_colonies = {

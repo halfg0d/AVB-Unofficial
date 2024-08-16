@@ -300,10 +300,78 @@ building_avb_bureaucratic_4 = {
 		}
 	}
 
-	
-	inline_script = {
-		script = unity_buildings/avb_bureaucratic
-		job_add = 8
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_megacorp = no
+				is_worker_coop_empire = no
+			}
+		}
+		modifier = {
+			job_bureaucrat_add = @avb_b4_jobs
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_megacorp = no
+				is_worker_coop_empire = no
+			}
+		}
+		text = job_bureaucrat_effect_desc
+	}
+
+
+	inline_script = buildings/job_high_priest_variants_add_saintly_hierarchy
+
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_megacorp = yes
+				is_worker_coop_empire = no
+			}
+		}
+		modifier = {
+			job_manager_add = @avb_b4_jobs
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_megacorp = yes
+				is_worker_coop_empire = no
+			}
+		}
+		text = job_manager_effect_desc
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_worker_coop_empire = yes
+			}
+		}
+		modifier = {
+			job_steward_add = @avb_b4_jobs
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_worker_coop_empire = yes
+			}
+		}
+		text = job_steward_effect_desc
 	}
 
 	prerequisites = {
@@ -370,9 +438,78 @@ building_avb_bureaucratic_5 = {
 		}
 	}
 
-	inline_script = {
-		script = unity_buildings/avb_bureaucratic
-		job_add = 10
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_megacorp = no
+				is_worker_coop_empire = no
+			}
+		}
+		modifier = {
+			job_bureaucrat_add = @avb_b5_jobs
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_megacorp = no
+				is_worker_coop_empire = no
+			}
+		}
+		text = job_bureaucrat_effect_desc
+	}
+
+
+	inline_script = buildings/job_high_priest_variants_add_saintly_hierarchy
+
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_megacorp = yes
+				is_worker_coop_empire = no
+			}
+		}
+		modifier = {
+			job_manager_add = @avb_b5_jobs
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_megacorp = yes
+				is_worker_coop_empire = no
+			}
+		}
+		text = job_manager_effect_desc
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_worker_coop_empire = yes
+			}
+		}
+		modifier = {
+			job_steward_add = @avb_b5_jobs
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_worker_coop_empire = yes
+			}
+		}
+		text = job_steward_effect_desc
 	}
 
 	prerequisites = {
@@ -438,10 +575,78 @@ building_avb_bureaucratic_6 = {
 			rare_crystals = @avb_b6_rare_upkeep
 		}
 	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_megacorp = no
+				is_worker_coop_empire = no
+			}
+		}
+		modifier = {
+			job_bureaucrat_add = @avb_b6_jobs
+		}
+	}
 
-	inline_script = {
-		script = unity_buildings/avb_bureaucratic
-		job_add = 12
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_megacorp = no
+				is_worker_coop_empire = no
+			}
+		}
+		text = job_bureaucrat_effect_desc
+	}
+
+
+	inline_script = buildings/job_high_priest_variants_add_saintly_hierarchy
+
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_megacorp = yes
+				is_worker_coop_empire = no
+			}
+		}
+		modifier = {
+			job_manager_add = @avb_b6_jobs
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_megacorp = yes
+				is_worker_coop_empire = no
+			}
+		}
+		text = job_manager_effect_desc
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_worker_coop_empire = yes
+			}
+		}
+		modifier = {
+			job_steward_add = @avb_b6_jobs
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_worker_coop_empire = yes
+			}
+		}
+		text = job_steward_effect_desc
 	}
 	prerequisites = {
 		"tech_avb_bureaucratic_6"
