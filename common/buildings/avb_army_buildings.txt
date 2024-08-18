@@ -199,7 +199,7 @@ building_avb_stronghold_3 = {
 		JOB = @avb_b3_jobs
 		COST = 3
 		ALLOW = "has_major_upgraded_capital = yes"
-		UPGRADES = "building_avb_stronghold_4"
+		UPGRADES = "building_avb_stronghold_4 building_avb_stronghold_4_mb"
 		PREREQUISITES = "tech_avb_stronghold_3"
 		POTENTIAL = "avb_has_mb_tech = no"
 	}
@@ -215,7 +215,7 @@ building_avb_stronghold_3_mb = {
 		JOB = @avb_b3_jobs
 		COST = 3
 		ALLOW = "has_major_upgraded_capital = yes"
-		UPGRADES = "building_avb_stronghold_4"
+		UPGRADES = "building_avb_stronghold_4 building_avb_stronghold_4_mb"
 		PREREQUISITES = "tech_avb_stronghold_3"
 		POTENTIAL = "avb_has_mb_tech = yes"
 	}
@@ -232,7 +232,7 @@ building_avb_stronghold_4 = {
 		JOB = @avb_b4_jobs
 		COST = 4
 		ALLOW = "has_fully_upgraded_capital = yes"
-		UPGRADES = "building_avb_stronghold_5"
+		UPGRADES = "building_avb_stronghold_5 building_avb_stronghold_5_mb"
 		PREREQUISITES = "tech_avb_stronghold_4"
 		POTENTIAL = "avb_has_mb_tech = no"
 	}
@@ -248,7 +248,7 @@ building_avb_stronghold_4_mb = {
 		JOB = @avb_b4_jobs
 		COST = 4
 		ALLOW = "has_fully_upgraded_capital = yes"
-		UPGRADES = "building_avb_stronghold_5"
+		UPGRADES = "building_avb_stronghold_5 building_avb_stronghold_5_mb"
 		PREREQUISITES = "tech_avb_stronghold_4"
 		POTENTIAL = "avb_has_mb_tech = yes"
 	}

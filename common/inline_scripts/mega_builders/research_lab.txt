@@ -1,4 +1,4 @@
-base_buildtime = $TIER$
+base_buildtime = $TIME$
 can_build = no
 category = research
 

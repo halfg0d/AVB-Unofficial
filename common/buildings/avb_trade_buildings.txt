@@ -12,7 +12,7 @@ building_avb_commercial_3 = {
 		COST = 4
 		ALLOW = "has_fully_upgraded_capital = yes"
 		PREREQUISITES = "tech_avb_interstellar_economics_2"
-		UPGRADES = "building_avb_commercial_4"
+		UPGRADES = "building_avb_commercial_4 building_avb_commercial_4_mb"
 		POTENTIAL = "
 		avb_has_mb_tech = no
 		exists = owner
@@ -34,7 +34,7 @@ building_avb_commercial_3_mb = {
 		COST = 4
 		ALLOW = "has_fully_upgraded_capital = yes"
 		PREREQUISITES = "tech_avb_interstellar_economics_2"
-		UPGRADES = "building_avb_commercial_4"
+		UPGRADES = "building_avb_commercial_4 building_avb_commercial_4_mb"
 		POTENTIAL = "
 		avb_has_mb_tech = yes
 		exists = owner
@@ -58,7 +58,7 @@ building_avb_commercial_4 = {
 		COST = 5
 		ALLOW = "has_upgraded_capital_4 = yes"
 		PREREQUISITES = "tech_avb_interstellar_economics_3"
-		UPGRADES = "building_avb_commercial_5"
+		UPGRADES = "building_avb_commercial_5 building_avb_commercial_5_mb"
 		POTENTIAL = "
 		avb_has_mb_tech = no
 		exists = owner
@@ -80,7 +80,7 @@ building_avb_commercial_4_mb = {
 		COST = 5
 		ALLOW = "has_upgraded_capital_4 = yes"
 		PREREQUISITES = "tech_avb_interstellar_economics_3"
-		UPGRADES = "building_avb_commercial_5"
+		UPGRADES = "building_avb_commercial_5 building_avb_commercial_5_mb"
 		POTENTIAL = "
 		avb_has_mb_tech = yes
 		exists = owner

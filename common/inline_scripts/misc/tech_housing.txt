@@ -1,0 +1,70 @@
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			has_technology = tech_avb_housing_3
+			NOT = { has_valid_civic = civic_agrarian_idyll }
+		}
+	}
+	modifier = {
+		planet_housing_add = $HOUSING$
+	}
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			has_technology = tech_avb_housing_4
+			NOT = { has_valid_civic = civic_agrarian_idyll }
+		}
+	}
+	modifier = {
+		planet_housing_add = $HOUSING$
+	}
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			has_technology = tech_avb_housing_5
+			NOT = { has_valid_civic = civic_agrarian_idyll }
+		}
+	}
+	modifier = {
+		planet_housing_add = $HOUSING$
+	}
+}
+# gestalt
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_regular_empire = no
+			has_technology = tech_avb_housing_3
+			NOT = { has_valid_civic = civic_agrarian_idyll }
+		}
+	}
+	job_maintenance_drone_add = $JOB$
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_regular_empire = no
+			has_technology = tech_avb_housing_4
+			NOT = { has_valid_civic = civic_agrarian_idyll }
+		}
+	}
+	job_maintenance_drone_add = $JOB$
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_regular_empire = no
+			has_technology = tech_avb_housing_5
+			NOT = { has_valid_civic = civic_agrarian_idyll }
+		}
+	}
+	job_maintenance_drone_add = $JOB$
+}
