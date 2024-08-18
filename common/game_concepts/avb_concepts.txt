@@ -1,0 +1,3 @@
+concept_mb_list = {
+	icon = "gfx/interface/icons/technologies/tech_avb_mega_builders.dds"
+}

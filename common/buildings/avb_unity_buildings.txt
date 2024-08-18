@@ -249,14 +249,19 @@ building_avb_monument_6 = {
 ##################
 # Bureaucrats
 ##################
-
 building_avb_bureaucratic_4 = {
-	base_buildtime = @avb_b4_time
-	can_build = no
-
-	category = unity
-
-	potential = {
+	icon = building_avb_bureaucratic_4
+	inline_script = {
+		script = mega_builders/bureaucratic
+		TIME = @avb_b4_time
+		JOB = 8
+		COST = 4
+		CONVERT = 4
+		ALLOW = "has_major_upgraded_capital = yes"
+		PREREQUISITES = "tech_avb_bureaucratic_4"
+		UPGRADES = "building_avb_bureaucratic_5"
+		POTENTIAL = "
+		avb_has_mb_tech = no
 		exists = owner
 		owner = {
 			is_regular_empire = yes
@@ -264,69 +269,55 @@ building_avb_bureaucratic_4 = {
 			has_make_spiritualist_perk = no
 		}
 		NOT = { has_modifier = slave_colony }
+		"
 	}
-
-	allow = {
-		has_major_upgraded_capital = yes
-	}
-
-	destroy_trigger = {
-		exists = owner
-		owner = {
-			OR = {
-				is_gestalt = yes
-				is_spiritualist = yes
-				has_make_spiritualist_perk = yes
-			}
-		}
-	}
-
-	convert_to = {
-		building_avb_hive_unity_4
-		building_avb_machine_unity_4
-		building_avb_temple_4
-		building_avb_death_temple_4
-	}
-
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @avb_b4_minerals
-			rare_crystals = @avb_b4_rare_cost
-		}
-		upkeep = {
-			energy = @avb_b4_upkeep
-			rare_crystals = @avb_b4_rare_upkeep
-		}
-	}
-
-	
-	inline_script = {
-		script = unity_buildings/avb_bureaucratic
-		job_add = 8
-	}
-
-	prerequisites = {
-		"tech_avb_bureaucratic_4"
-	}
-
 	show_tech_unlock_if = {
 		is_regular_empire = yes
 		is_spiritualist = no
 		has_make_spiritualist_perk = no
 	}
-	upgrades = {
-		building_avb_bureaucratic_5
+}
+building_avb_bureaucratic_4_mb = {
+	icon = building_avb_bureaucratic_4
+	inline_script = {
+		script = mega_builders/bureaucratic
+		TIME = @avb_mb_b4_time
+		JOB = 8
+		COST = 4
+		CONVERT = 4
+		ALLOW = "has_major_upgraded_capital = yes"
+		PREREQUISITES = "tech_avb_bureaucratic_4"
+		UPGRADES = "building_avb_bureaucratic_5"
+		POTENTIAL = "
+		avb_has_mb_tech = yes
+		exists = owner
+		owner = {
+			is_regular_empire = yes
+			is_spiritualist = no
+			has_make_spiritualist_perk = no
+		}
+		NOT = { has_modifier = slave_colony }
+		"
+	}
+	show_tech_unlock_if = {
+		is_regular_empire = yes
+		is_spiritualist = no
+		has_make_spiritualist_perk = no
 	}
 }
-
 building_avb_bureaucratic_5 = {
-	base_buildtime = @avb_b5_time
-	can_build = no
-
-	category = unity
-
-	potential = {
+	icon = building_avb_bureaucratic_5
+	inline_script = {
+		script = mega_builders/bureaucratic
+		TIME = @avb_b5_time
+		JOB = 10
+		COST = 5
+		CONVERT = 5
+		ALLOW = "has_fully_upgraded_capital = yes"
+		PREREQUISITES = "tech_avb_bureaucratic_5"
+		UPGRADES = "building_avb_bureaucratic_6"
+		POTENTIAL = "
+		avb_has_mb_tech = no
 		exists = owner
 		owner = {
 			is_regular_empire = yes
@@ -334,68 +325,27 @@ building_avb_bureaucratic_5 = {
 			has_make_spiritualist_perk = no
 		}
 		NOT = { has_modifier = slave_colony }
+		"
 	}
-
-	allow = {
-		has_fully_upgraded_capital = yes
-	}
-
-	destroy_trigger = {
-		exists = owner
-		owner = {
-			OR = {
-				is_gestalt = yes
-				is_spiritualist = yes
-				has_make_spiritualist_perk = yes
-			}
-		}
-	}
-
-	convert_to = {
-		building_avb_temple_5
-		building_avb_hive_unity_5
-		building_avb_machine_unity_5
-		building_avb_death_temple_5
-	}
-
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @avb_b5_minerals
-			rare_crystals = @avb_b5_rare_cost
-		}
-		upkeep = {
-			energy = @avb_b5_upkeep
-			rare_crystals = @avb_b5_rare_upkeep
-		}
-	}
-
-	inline_script = {
-		script = unity_buildings/avb_bureaucratic
-		job_add = 10
-	}
-
-	prerequisites = {
-		"tech_avb_bureaucratic_5"
-	}
-
 	show_tech_unlock_if = {
 		is_regular_empire = yes
 		is_spiritualist = no
 		has_make_spiritualist_perk = no
 	}
-	upgrades = {
-		building_avb_bureaucratic_6
-	}
 }
-
-building_avb_bureaucratic_6 = {
-	base_buildtime = @avb_b6_time
-	can_build = no
-
-	category = unity
-
-	potential = {
+building_avb_bureaucratic_5_mb = {
+	icon = building_avb_bureaucratic_5
+	inline_script = {
+		script = mega_builders/bureaucratic
+		TIME = @avb_mb_b5_time
+		JOB = 10
+		COST = 5
+		CONVERT = 5
+		ALLOW = "has_fully_upgraded_capital = yes"
+		PREREQUISITES = "tech_avb_bureaucratic_5"
+		UPGRADES = "building_avb_bureaucratic_6"
+		POTENTIAL = "
+		avb_has_mb_tech = yes
 		exists = owner
 		owner = {
 			is_regular_empire = yes
@@ -403,50 +353,64 @@ building_avb_bureaucratic_6 = {
 			has_make_spiritualist_perk = no
 		}
 		NOT = { has_modifier = slave_colony }
+		"
 	}
-
-	allow = {
-		has_upgraded_capital_4 = yes
+	show_tech_unlock_if = {
+		is_regular_empire = yes
+		is_spiritualist = no
+		has_make_spiritualist_perk = no
 	}
-
-	destroy_trigger = {
+}
+building_avb_bureaucratic_6 = {
+	icon = building_avb_bureaucratic_6
+	inline_script = {
+		script = mega_builders/bureaucratic
+		TIME = @avb_b6_time
+		JOB = 12
+		COST = 6
+		CONVERT = 6
+		ALLOW = "has_upgraded_capital_4 = yes"
+		PREREQUISITES = "tech_avb_bureaucratic_6"
+		UPGRADES = ""
+		POTENTIAL = "
+		avb_has_mb_tech = no
 		exists = owner
 		owner = {
-			OR = {
-				is_gestalt = yes
-				is_spiritualist = yes
-				has_make_spiritualist_perk = yes
-			}
+			is_regular_empire = yes
+			is_spiritualist = no
+			has_make_spiritualist_perk = no
 		}
+		NOT = { has_modifier = slave_colony }
+		"
 	}
-
-	convert_to = {
-		building_avb_temple_6
-		building_avb_hive_unity_6
-		building_avb_machine_unity_6
-		building_avb_death_temple_6
+	show_tech_unlock_if = {
+		is_regular_empire = yes
+		is_spiritualist = no
+		has_make_spiritualist_perk = no
 	}
-
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @avb_b6_minerals
-			rare_crystals = @avb_b6_rare_cost
-		}
-		upkeep = {
-			energy = @avb_b6_upkeep
-			rare_crystals = @avb_b6_rare_upkeep
-		}
-	}
-
+}
+building_avb_bureaucratic_6_mb = {
+	icon = building_avb_bureaucratic_6
 	inline_script = {
-		script = unity_buildings/avb_bureaucratic
-		job_add = 12
+		script = mega_builders/bureaucratic
+		TIME = @avb_mb_b6_time
+		JOB = 12
+		COST = 6
+		CONVERT = 6
+		ALLOW = "has_upgraded_capital_4 = yes"
+		PREREQUISITES = "tech_avb_bureaucratic_6"
+		UPGRADES = ""
+		POTENTIAL = "
+		avb_has_mb_tech = yes
+		exists = owner
+		owner = {
+			is_regular_empire = yes
+			is_spiritualist = no
+			has_make_spiritualist_perk = no
+		}
+		NOT = { has_modifier = slave_colony }
+		"
 	}
-	prerequisites = {
-		"tech_avb_bureaucratic_6"
-	}
-
 	show_tech_unlock_if = {
 		is_regular_empire = yes
 		is_spiritualist = no
@@ -454,13 +418,21 @@ building_avb_bureaucratic_6 = {
 	}
 }
 #Spiritualists
+
 building_avb_temple_4 = {
-	base_buildtime = @avb_b4_time
-	can_build = no
-
-	category = unity
-
-	potential = {
+	icon = building_avb_temple_4
+	inline_script = {
+		script = mega_builders/temple
+		TIME = @avb_b4_time
+		JOB = 8
+		COST = 4
+		MODIFIER = 0.2
+		CONVERT = 4
+		ALLOW = "has_fully_upgraded_capital = yes"
+		UPGRADES = "building_avb_temple_5"
+		PREREQUISITES = "tech_avb_temple_4"
+		POTENTIAL = "
+		avb_has_mb_tech = no
 		exists = owner
 		owner = {
 			OR = {
@@ -471,58 +443,8 @@ building_avb_temple_4 = {
 				}
 			}
 		}
-		NOT = { has_modifier = slave_colony }
+		NOT = { has_modifier = slave_colony }"
 	}
-
-	allow = {
-		has_fully_upgraded_capital = yes
-	}
-
-	destroy_trigger = {
-		exists = owner
-		OR = {
-			owner = {
-				OR = {
-					AND = {
-						is_spiritualist = no
-						has_make_spiritualist_perk = no
-					}
-					is_gestalt = yes
-				}
-			}
-			has_modifier = slave_colony
-		}
-	}
-
-	convert_to = {
-		building_avb_bureaucratic_4
-		building_avb_hive_unity_4
-		building_avb_machine_unity_4
-		building_avb_death_temple_4
-	}
-
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @avb_b4_minerals
-			rare_crystals = @avb_b4_rare_cost
-		}
-		upkeep = {
-			energy = @avb_b4_upkeep
-			rare_crystals = @avb_b4_rare_upkeep
-		}
-	}
-	planet_modifier = {
-		pop_ethic_spiritualist_attraction_mult = 0.2
-	}
-	inline_script = {
-		script = jobs/priests_add
-		AMOUNT = 8
-	}
-	prerequisites = {
-		"tech_avb_temple_4"
-	}
-
 	show_tech_unlock_if = {
 		OR = {
 			is_spiritualist = yes
@@ -532,17 +454,59 @@ building_avb_temple_4 = {
 			}
 		}
 	}
-	upgrades = {
-		"building_avb_temple_5"
+}
+building_avb_temple_4_mb = {
+	icon = building_avb_temple_4
+	inline_script = {
+		script = mega_builders/temple
+		TIME = @avb_mb_b4_time
+		JOB = 8
+		COST = 4
+		MODIFIER = 0.2
+		CONVERT = 4
+		ALLOW = "has_fully_upgraded_capital = yes"
+		UPGRADES = "building_avb_temple_5"
+		PREREQUISITES = "tech_avb_temple_4"
+		POTENTIAL = "
+		avb_has_mb_tech = yes
+		exists = owner
+		owner = {
+			OR = {
+				is_spiritualist = yes
+				AND = {
+					is_gestalt = no
+					has_make_spiritualist_perk = yes
+				}
+			}
+		}
+		NOT = { has_modifier = slave_colony }"
+	}
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+		avb_has_mb_tech = yes
+		OR = {
+			is_spiritualist = yes
+			AND = {
+				is_gestalt = no
+				has_make_spiritualist_perk = yes
+			}
+		}
 	}
 }
 building_avb_temple_5 = {
-	base_buildtime = @avb_b5_time
-	can_build = no
-
-	category = unity
-
-	potential = {
+	icon = building_avb_temple_5
+	inline_script = {
+		script = mega_builders/temple
+		TIME = @avb_b5_time
+		JOB = 10
+		COST = 5
+		MODIFIER = 0.25
+		CONVERT = 5
+		ALLOW = "has_upgraded_capital_4 = yes"
+		UPGRADES = "building_avb_temple_6"
+		PREREQUISITES = "tech_avb_temple_5"
+		POTENTIAL = "
+		avb_has_mb_tech = no
 		exists = owner
 		owner = {
 			OR = {
@@ -553,58 +517,8 @@ building_avb_temple_5 = {
 				}
 			}
 		}
-		NOT = { has_modifier = slave_colony }
+		NOT = { has_modifier = slave_colony }"
 	}
-
-	allow = {
-		has_upgraded_capital_4 = yes
-	}
-
-	destroy_trigger = {
-		exists = owner
-		OR = {
-			owner = {
-				OR = {
-					AND = {
-						is_spiritualist = no
-						has_make_spiritualist_perk = no
-					}
-					is_gestalt = yes
-				}
-			}
-			has_modifier = slave_colony
-		}
-	}
-
-	convert_to = {
-		building_avb_bureaucratic_5
-		building_avb_hive_unity_5
-		building_avb_machine_unity_5
-		building_avb_death_temple_5
-	}
-
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @avb_b5_minerals
-			rare_crystals = @avb_b5_rare_cost
-		}
-		upkeep = {
-			energy = @avb_b5_upkeep
-			rare_crystals = @avb_b5_rare_upkeep
-		}
-	}
-	planet_modifier = {
-		pop_ethic_spiritualist_attraction_mult = 0.25
-	}
-	inline_script = {
-		script = jobs/priests_add
-		AMOUNT = 10
-	}
-	prerequisites = {
-		"tech_avb_temple_5"
-	}
-
 	show_tech_unlock_if = {
 		OR = {
 			is_spiritualist = yes
@@ -614,17 +528,59 @@ building_avb_temple_5 = {
 			}
 		}
 	}
-	upgrades = {
-		"building_avb_temple_6"
+}
+building_avb_temple_5_mb = {
+	icon = building_avb_temple_5
+	inline_script = {
+		script = mega_builders/temple
+		TIME = @avb_mb_b5_time
+		JOB = 10
+		COST = 5
+		MODIFIER = 0.25
+		CONVERT = 5
+		ALLOW = "has_upgraded_capital_4 = yes"
+		UPGRADES = "building_avb_temple_6"
+		PREREQUISITES = "tech_avb_temple_5"
+		POTENTIAL = "
+		avb_has_mb_tech = yes
+		exists = owner
+		owner = {
+			OR = {
+				is_spiritualist = yes
+				AND = {
+					is_gestalt = no
+					has_make_spiritualist_perk = yes
+				}
+			}
+		}
+		NOT = { has_modifier = slave_colony }"
+	}
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+		avb_has_mb_tech = yes
+		OR = {
+			is_spiritualist = yes
+			AND = {
+				is_gestalt = no
+				has_make_spiritualist_perk = yes
+			}
+		}
 	}
 }
 building_avb_temple_6 = {
-	base_buildtime = @avb_b6_time
-	can_build = no
-
-	category = unity
-
-	potential = {
+	icon = building_avb_temple_6
+	inline_script = {
+		script = mega_builders/temple
+		TIME = @avb_b6_time
+		JOB = 12
+		COST = 6
+		MODIFIER = 0.3
+		CONVERT = 6
+		ALLOW = "has_upgraded_capital_5 = yes"
+		UPGRADES = ""
+		PREREQUISITES = "tech_avb_temple_6"
+		POTENTIAL = "
+		avb_has_mb_tech = no
 		exists = owner
 		owner = {
 			OR = {
@@ -635,58 +591,8 @@ building_avb_temple_6 = {
 				}
 			}
 		}
-		NOT = { has_modifier = slave_colony }
+		NOT = { has_modifier = slave_colony }"
 	}
-
-	allow = {
-		has_upgraded_capital_5 = yes
-	}
-
-	destroy_trigger = {
-		exists = owner
-		OR = {
-			owner = {
-				OR = {
-					AND = {
-						is_spiritualist = no
-						has_make_spiritualist_perk = no
-					}
-					is_gestalt = yes
-				}
-			}
-			has_modifier = slave_colony
-		}
-	}
-
-	convert_to = {
-		building_avb_bureaucratic_6
-		building_avb_hive_unity_6
-		building_avb_machine_unity_6
-		building_avb_death_temple_6
-	}
-
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @avb_b6_minerals
-			rare_crystals = @avb_b6_rare_cost
-		}
-		upkeep = {
-			energy = @avb_b6_upkeep
-			rare_crystals = @avb_b6_rare_upkeep
-		}
-	}
-	planet_modifier = {
-		pop_ethic_spiritualist_attraction_mult = 0.3
-	}
-	inline_script = {
-		script = jobs/priests_add
-		AMOUNT = 12
-	}
-	prerequisites = {
-		"tech_avb_temple_6"
-	}
-
 	show_tech_unlock_if = {
 		OR = {
 			is_spiritualist = yes
@@ -697,19 +603,61 @@ building_avb_temple_6 = {
 		}
 	}
 }
-
+building_avb_temple_6_mb = {
+	icon = building_avb_temple_6
+	inline_script = {
+		script = mega_builders/temple
+		TIME = @avb_mb_b6_time
+		JOB = 12
+		COST = 6
+		MODIFIER = 0.3
+		CONVERT = 6
+		ALLOW = "has_upgraded_capital_5 = yes"
+		UPGRADES = ""
+		PREREQUISITES = "tech_avb_temple_6"
+		POTENTIAL = "
+		avb_has_mb_tech = yes
+		exists = owner
+		owner = {
+			OR = {
+				is_spiritualist = yes
+				AND = {
+					is_gestalt = no
+					has_make_spiritualist_perk = yes
+				}
+			}
+		}
+		NOT = { has_modifier = slave_colony }"
+	}
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+		avb_has_mb_tech = yes
+		OR = {
+			is_spiritualist = yes
+			AND = {
+				is_gestalt = no
+				has_make_spiritualist_perk = yes
+			}
+		}
+	}
+}
 ##################
 # Machine
 ##################
 
 building_avb_machine_unity_4 = {
-	base_buildtime = @avb_b4_time
-	can_build = no
 	icon = building_avb_monument_4
-
-	category = unity
-
-	potential = {
+	inline_script = {
+		script = mega_builders/machine
+		TIME = @avb_b4_time
+		JOB = 8
+		COST = 4
+		CONVERT = 4
+		ALLOW = "has_major_upgraded_capital = yes"
+		UPGRADES = "building_avb_machine_unity_5"
+		PREREQUISITES = "tech_avb_bureaucratic_4"
+		POTENTIAL = "
+		avb_has_mb_tech = no
 		exists = owner
 		owner = {
 			is_machine_empire = yes
@@ -717,68 +665,119 @@ building_avb_machine_unity_4 = {
 				has_valid_civic = civic_machine_servitor
 			}
 		}
+		"
 	}
-
-	allow = {
-		has_major_upgraded_capital = yes
-	}
-
-	destroy_trigger = {
-		exists = owner
-		owner = {
-			OR = {
-				is_machine_empire = no
-				has_valid_civic = civic_machine_servitor
-			}
-		}
-	}
-
-	convert_to = {
-		building_avb_temple_4
-		building_avb_hive_unity_4
-		building_avb_bureaucratic_4
-		building_avb_death_temple_4
-	}
-
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @avb_b4_minerals
-			rare_crystals = @avb_b4_rare_cost
-		}
-		upkeep = {
-			energy = @avb_b4_upkeep
-			rare_crystals = @avb_b4_rare_upkeep
-		}
-	}
-
-	inline_script = {
-		script = unity_buildings/avb_machine_node
-		coordinator = 8
-	}
-
-	prerequisites = {
-		"tech_avb_bureaucratic_4"
-	}
-
 	show_tech_unlock_if = {
 		is_machine_empire = yes
 		NOT = {
 			has_valid_civic = civic_machine_servitor
 		}
 	}
-	upgrades = {
-		building_avb_machine_unity_5
+}
+building_avb_machine_unity_4_mb = {
+	icon = building_avb_monument_4
+	inline_script = {
+		script = mega_builders/machine
+		TIME = @avb_mb_b4_time
+		JOB = 8
+		COST = 4
+		CONVERT = 4
+		ALLOW = "has_major_upgraded_capital = yes"
+		UPGRADES = "building_avb_machine_unity_5"
+		PREREQUISITES = "tech_avb_bureaucratic_4"
+		POTENTIAL = "
+		avb_has_mb_tech = yes
+		exists = owner
+		owner = {
+			is_machine_empire = yes
+			NOT = {
+				has_valid_civic = civic_machine_servitor
+			}
+		}
+		"
+	}
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+		avb_has_mb_tech = yes
+		is_machine_empire = yes
+		NOT = {
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+}
+building_avb_machine_unity_4 = {
+	icon = building_avb_monument_4
+	inline_script = {
+		script = mega_builders/machine
+		TIME = @avb_b4_time
+		JOB = 8
+		COST = 4
+		CONVERT = 4
+		ALLOW = "has_major_upgraded_capital = yes"
+		UPGRADES = "building_avb_machine_unity_5"
+		PREREQUISITES = "tech_avb_bureaucratic_4"
+		POTENTIAL = "
+		avb_has_mb_tech = no
+		exists = owner
+		owner = {
+			is_machine_empire = yes
+			NOT = {
+				has_valid_civic = civic_machine_servitor
+			}
+		}
+		"
+	}
+	show_tech_unlock_if = {
+		is_machine_empire = yes
+		NOT = {
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+}
+building_avb_machine_unity_4_mb = {
+	icon = building_avb_monument_4
+	inline_script = {
+		script = mega_builders/machine
+		TIME = @avb_mb_b4_time
+		JOB = 8
+		COST = 4
+		CONVERT = 4
+		ALLOW = "has_major_upgraded_capital = yes"
+		UPGRADES = "building_avb_machine_unity_5"
+		PREREQUISITES = "tech_avb_bureaucratic_4"
+		POTENTIAL = "
+		avb_has_mb_tech = yes
+		exists = owner
+		owner = {
+			is_machine_empire = yes
+			NOT = {
+				has_valid_civic = civic_machine_servitor
+			}
+		}
+		"
+	}
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+		avb_has_mb_tech = yes
+		is_machine_empire = yes
+		NOT = {
+			has_valid_civic = civic_machine_servitor
+		}
 	}
 }
 building_avb_machine_unity_5 = {
-	base_buildtime = @avb_b5_time
-	can_build = no
 	icon = building_avb_monument_5
-
-	category = unity
-
-	potential = {
+	inline_script = {
+		script = mega_builders/machine
+		TIME = @avb_b5_time
+		JOB = 10
+		COST = 5
+		CONVERT = 5
+		ALLOW = "has_fully_upgraded_capital = yes"
+		UPGRADES = "building_avb_machine_unity_6"
+		PREREQUISITES = "tech_avb_bureaucratic_5"
+		POTENTIAL = "
+		avb_has_mb_tech = no
 		exists = owner
 		owner = {
 			is_machine_empire = yes
@@ -786,70 +785,28 @@ building_avb_machine_unity_5 = {
 				has_valid_civic = civic_machine_servitor
 			}
 		}
+		"
 	}
-
-	allow = {
-		has_fully_upgraded_capital = yes
-	}
-
-	destroy_trigger = {
-		exists = owner
-		owner = {
-			OR = {
-				is_machine_empire = no
-				has_valid_civic = civic_machine_servitor
-			}
-		}
-	}
-
-	convert_to = {
-		building_avb_temple_5
-		building_avb_hive_unity_5
-		building_avb_bureaucratic_5
-		building_avb_death_temple_5
-	}
-
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @avb_b5_minerals
-			rare_crystals = @avb_b5_rare_cost
-		}
-		upkeep = {
-			energy = @avb_b5_upkeep
-			rare_crystals = @avb_b5_rare_upkeep
-		}
-	}
-
-	
-	inline_script = {
-		script = unity_buildings/avb_machine_node
-		coordinator = 10
-	}
-
-
-	prerequisites = {
-		"tech_avb_bureaucratic_5"
-	}
-
 	show_tech_unlock_if = {
 		is_machine_empire = yes
 		NOT = {
 			has_valid_civic = civic_machine_servitor
 		}
 	}
-	upgrades = {
-		building_avb_machine_unity_6
-	}
 }
-building_avb_machine_unity_6 = {
-	base_buildtime = @avb_b6_time
-	can_build = no
-	icon = building_avb_monument_6
-
-	category = unity
-
-	potential = {
+building_avb_machine_unity_5_mb = {
+	icon = building_avb_monument_5
+	inline_script = {
+		script = mega_builders/machine
+		TIME = @avb_mb_b5_time
+		JOB = 10
+		COST = 5
+		CONVERT = 5
+		ALLOW = "has_fully_upgraded_capital = yes"
+		UPGRADES = "building_avb_machine_unity_6"
+		PREREQUISITES = "tech_avb_bureaucratic_5"
+		POTENTIAL = "
+		avb_has_mb_tech = yes
 		exists = owner
 		owner = {
 			is_machine_empire = yes
@@ -857,52 +814,71 @@ building_avb_machine_unity_6 = {
 				has_valid_civic = civic_machine_servitor
 			}
 		}
+		"
 	}
-
-	allow = {
-		has_upgraded_capital_4 = yes
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+		avb_has_mb_tech = yes
+		is_machine_empire = yes
+		NOT = {
+			has_valid_civic = civic_machine_servitor
+		}
 	}
-
-	destroy_trigger = {
+}
+building_avb_machine_unity_6 = {
+	icon = building_avb_monument_6
+	inline_script = {
+		script = mega_builders/machine
+		TIME = @avb_b5_time
+		JOB = 12
+		COST = 6
+		CONVERT = 6
+		ALLOW = "has_upgraded_capital_4 = yes"
+		UPGRADES = ""
+		PREREQUISITES = "tech_avb_bureaucratic_6"
+		POTENTIAL = "
+		avb_has_mb_tech = no
 		exists = owner
 		owner = {
-			OR = {
-				is_machine_empire = no
+			is_machine_empire = yes
+			NOT = {
 				has_valid_civic = civic_machine_servitor
 			}
 		}
+		"
 	}
-
-	convert_to = {
-		building_avb_temple_6
-		building_avb_hive_unity_6
-		building_avb_bureaucratic_6
-		building_avb_death_temple_6
-	}
-
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @avb_b6_minerals
-			rare_crystals = @avb_b6_rare_cost
-		}
-		upkeep = {
-			energy = @avb_b6_upkeep
-			rare_crystals = @avb_b6_rare_upkeep
-		}
-	}
-
-	inline_script = {
-		script = unity_buildings/avb_machine_node
-		coordinator = 12
-	}
-
-
-	prerequisites = {
-		"tech_avb_bureaucratic_6"
-	}
-
 	show_tech_unlock_if = {
+		is_machine_empire = yes
+		NOT = {
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+}
+building_avb_machine_unity_6_mb = {
+	icon = building_avb_monument_6
+	inline_script = {
+		script = mega_builders/machine
+		TIME = @avb_mb_b5_time
+		JOB = 12
+		COST = 6
+		CONVERT = 6
+		ALLOW = "has_upgraded_capital_4 = yes"
+		UPGRADES = ""
+		PREREQUISITES = "tech_avb_bureaucratic_6"
+		POTENTIAL = "
+		avb_has_mb_tech = yes
+		exists = owner
+		owner = {
+			is_machine_empire = yes
+			NOT = {
+				has_valid_civic = civic_machine_servitor
+			}
+		}
+		"
+	}
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+		avb_has_mb_tech = yes
 		is_machine_empire = yes
 		NOT = {
 			has_valid_civic = civic_machine_servitor
@@ -913,475 +889,298 @@ building_avb_machine_unity_6 = {
 # Hive Minds
 ##################
 building_avb_hive_unity_4 = {
-	base_buildtime = @avb_b4_time
-	can_build = no
-
-	category = unity
-
-	potential = {
+	icon = building_avb_hive_unity_4
+	inline_script = {
+		script = mega_builders/hive
+		TIME = @avb_b4_time
+		JOB = 8
+		CONVERT = 4
+		COST = 4
+		ALLOW = "has_fully_upgraded_capital = yes"
+		UPGRADES = "building_avb_hive_unity_5"
+		PREREQUISITES = "tech_avb_hive_unity_4"
+		POTENTIAL = "
+		avb_has_mb_tech = no
 		exists = owner
 		owner = {
-			is_hive_empire = yes
-		}
+		is_hive_empire = yes
+		}"
 	}
-
-	allow = {
-		has_fully_upgraded_capital = yes
+	show_tech_unlock_if = {
+		is_hive_empire = yes
 	}
-
-	destroy_trigger = {
+}
+building_avb_hive_unity_4_mb = {
+	icon = building_avb_hive_unity_4
+	inline_script = {
+		script = mega_builders/hive
+		TIME = @avb_mb_b4_time
+		JOB = 8
+		CONVERT = 4
+		COST = 4
+		ALLOW = "has_fully_upgraded_capital = yes"
+		UPGRADES = "building_avb_hive_unity_5"
+		PREREQUISITES = "tech_avb_hive_unity_4"
+		POTENTIAL = "
+		avb_has_mb_tech = yes
 		exists = owner
-		owner = { is_hive_empire = no }
+		owner = {
+		is_hive_empire = yes
+		}"
 	}
-
-	convert_to = {
-		building_avb_temple_4
-		building_avb_machine_unity_4
-		building_avb_bureaucratic_4
-		building_avb_death_temple_4
-	}
-
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @avb_b4_minerals
-			exotic_gases = @avb_b4_rare_cost
-		}
-		upkeep = {
-			energy = @avb_b4_upkeep
-			exotic_gases = @avb_b4_rare_upkeep
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = {
-					has_edict = synaptic_reinforcement
-				}
-			}
-			energy = 2
-		}
-	}
-
-	planet_modifier = {
-		job_synapse_drone_add = 8
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_active_tradition = tr_domination_synaptic_extensions
-			}
-		}
-		modifier = {
-			planet_housing_add = 2
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_edict = synaptic_reinforcement
-			}
-		}
-		job_maintenance_drone_add = 1
-	}
-
-	prerequisites = {
-		tech_avb_hive_unity_4
-	}
-
-	triggered_desc = {
-		text = job_synapse_drone_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				has_edict = synaptic_reinforcement
-			}
-		}
-		text = job_maintenance_drone_effect_desc
-	}
-	upgrades = {
-		"building_avb_hive_unity_5"
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+		avb_has_mb_tech = yes
+		is_hive_empire = yes
 	}
 }
 building_avb_hive_unity_5 = {
-	base_buildtime = @avb_b5_time
-	can_build = no
-
-	category = unity
-
-	potential = {
+	icon = building_avb_hive_unity_5
+	inline_script = {
+		script = mega_builders/hive
+		TIME = @avb_b5_time
+		JOB = 10
+		CONVERT = 5
+		COST = 5
+		ALLOW = "has_upgraded_capital_4 = yes"
+		UPGRADES = "building_avb_hive_unity_6"
+		PREREQUISITES = "tech_avb_hive_unity_5"
+		POTENTIAL = "
+		avb_has_mb_tech = no
 		exists = owner
 		owner = {
-			is_hive_empire = yes
-		}
+		is_hive_empire = yes
+		}"
 	}
-
-	allow = {
-		has_upgraded_capital_4 = yes
+	show_tech_unlock_if = {
+		is_hive_empire = yes
 	}
-
-	destroy_trigger = {
+}
+building_avb_hive_unity_5_mb = {
+	icon = building_avb_hive_unity_5
+	inline_script = {
+		script = mega_builders/hive
+		TIME = @avb_mb_b5_time
+		JOB = 10
+		CONVERT = 5
+		COST = 5
+		ALLOW = "has_upgraded_capital_4 = yes"
+		UPGRADES = "building_avb_hive_unity_6"
+		PREREQUISITES = "tech_avb_hive_unity_5"
+		POTENTIAL = "
+		avb_has_mb_tech = yes
 		exists = owner
-		owner = { is_hive_empire = no }
+		owner = {
+		is_hive_empire = yes
+		}"
 	}
-
-	convert_to = {
-		building_avb_temple_5
-		building_avb_machine_unity_5
-		building_avb_bureaucratic_5
-		building_avb_death_temple_5
-	}
-
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @avb_b5_minerals
-			exotic_gases = @avb_b5_rare_cost
-		}
-		upkeep = {
-			energy = @avb_b5_upkeep
-			exotic_gases = @avb_b5_rare_upkeep
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = {
-					has_edict = synaptic_reinforcement
-				}
-			}
-			energy = 2
-		}
-	}
-
-	planet_modifier = {
-		job_synapse_drone_add = 8
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_active_tradition = tr_domination_synaptic_extensions
-			}
-		}
-		modifier = {
-			planet_housing_add = 2
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_edict = synaptic_reinforcement
-			}
-		}
-		job_maintenance_drone_add = 1
-	}
-
-	prerequisites = {
-		tech_avb_hive_unity_5
-	}
-
-	triggered_desc = {
-		text = job_synapse_drone_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				has_edict = synaptic_reinforcement
-			}
-		}
-		text = job_maintenance_drone_effect_desc
-	}
-	upgrades = {
-		"building_avb_hive_unity_6"
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+		avb_has_mb_tech = yes
+		is_hive_empire = yes
 	}
 }
 building_avb_hive_unity_6 = {
-	base_buildtime = @avb_b6_time
-	can_build = no
-
-	category = unity
-
-	potential = {
+	icon = building_avb_hive_unity_6
+	inline_script = {
+		script = mega_builders/hive
+		TIME = @avb_b6_time
+		JOB = 12
+		CONVERT = 6
+		COST = 6
+		ALLOW = "has_upgraded_capital_5 = yes"
+		UPGRADES = ""
+		PREREQUISITES = "tech_avb_hive_unity_6"
+		POTENTIAL = "
+		avb_has_mb_tech = no
 		exists = owner
 		owner = {
-			is_hive_empire = yes
-		}
+		is_hive_empire = yes
+		}"
 	}
-
-	allow = {
-		has_upgraded_capital_4 = yes
+	show_tech_unlock_if = {
+		is_hive_empire = yes
 	}
-
-	destroy_trigger = {
+}
+building_avb_hive_unity_6_mb = {
+	icon = building_avb_hive_unity_6
+	inline_script = {
+		script = mega_builders/hive
+		TIME = @avb_mb_b6_time
+		JOB = 12
+		CONVERT = 6
+		COST = 6
+		ALLOW = "has_upgraded_capital_5 = yes"
+		UPGRADES = ""
+		PREREQUISITES = "tech_avb_hive_unity_6"
+		POTENTIAL = "
+		avb_has_mb_tech = yes
 		exists = owner
-		owner = { is_hive_empire = no }
+		owner = {
+		is_hive_empire = yes
+		}"
 	}
-
-	convert_to = {
-		building_avb_temple_6
-		building_avb_machine_unity_6
-		building_avb_bureaucratic_6
-		building_avb_death_temple_6
-	}
-
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @avb_b6_minerals
-			exotic_gases = @avb_b6_rare_cost
-		}
-		upkeep = {
-			energy = @avb_b6_upkeep
-			exotic_gases = @avb_b6_rare_upkeep
-		}
-		upkeep = {
-			trigger = {
-				has_z_expanded_mod = no
-				exists = owner
-				owner = {
-					has_edict = synaptic_reinforcement
-				}
-			}
-			energy = 2
-		}
-	}
-
-	planet_modifier = {
-		job_synapse_drone_add = 12
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_active_tradition = tr_domination_synaptic_extensions
-			}
-		}
-		modifier = {
-			planet_housing_add = 2
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_edict = synaptic_reinforcement
-			}
-		}
-		job_maintenance_drone_add = 1
-	}
-
-	prerequisites = {
-		tech_avb_hive_unity_6
-	}
-
-	triggered_desc = {
-		text = job_synapse_drone_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				has_edict = synaptic_reinforcement
-			}
-		}
-		text = job_maintenance_drone_effect_desc
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+		avb_has_mb_tech = yes
+		is_hive_empire = yes
 	}
 }
 #Death Cult
 building_avb_death_temple_4 = {
-	base_buildtime = @avb_b4_time
-	can_build = no
-
-	category = unity
-
-	potential = {
+	icon = building_avb_death_temple_4
+	inline_script = {
+		script = mega_builders/death_temple
+		TIME = @avb_b4_time
+		JOB = 4
+		COST = 4
+		MODIFIER = 0.2
+		CONVERT = 4
+		ALLOW = "has_fully_upgraded_capital = yes"
+		UPGRADES = "building_avb_death_temple_5"
+		PREREQUISITES = "tech_avb_temple_4"
+		POTENTIAL = "
+		avb_has_mb_tech = no
 		exists = owner
 		owner = {
 			is_death_cult_empire = yes
 		}
 		NOT = { has_modifier = slave_colony }
+		"
 	}
-
-	allow = {
-		has_fully_upgraded_capital = yes
-	}
-
-	destroy_trigger = {
-		exists = owner
-		OR = {
-			owner = { is_death_cult_empire = no }
-			has_modifier = slave_colony
-		}
-	}
-
-	convert_to = {
-		building_avb_hive_unity_4
-		building_avb_machine_unity_4
-		building_avb_bureaucratic_4
-		building_avb_temple_4
-	}
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @avb_b4_minerals
-			exotic_gases = @avb_b4_rare_cost
-		}
-		upkeep = {
-			energy = @avb_b4_upkeep
-			exotic_gases = @avb_b4_rare_upkeep
-			volatile_motes = @avb_b4_rare_upkeep
-		}
-	}
-	inline_script = {
-		script = unity_buildings/avb_death_temple
-		modifier = 0.2
-		death_priest_base = 4
-		mortal_initiate_base = 4
-	}
-
-	prerequisites = {
-		"tech_avb_temple_4"
-	}
-
 	show_tech_unlock_if = {
 		is_death_cult_empire = yes
 	}
-	upgrades = {
-		building_avb_death_temple_5
+}
+building_avb_death_temple_4_mb = {
+	icon = building_avb_death_temple_4
+	inline_script = {
+		script = mega_builders/death_temple
+		TIME = @avb_mb_b4_time
+		JOB = 4
+		COST = 4
+		MODIFIER = 0.2
+		CONVERT = 4
+		ALLOW = "has_fully_upgraded_capital = yes"
+		UPGRADES = "building_avb_death_temple_5"
+		PREREQUISITES = "tech_avb_temple_4"
+		POTENTIAL = "
+		avb_has_mb_tech = yes
+		exists = owner
+		owner = {
+			is_death_cult_empire = yes
+		}
+		NOT = { has_modifier = slave_colony }
+		"
+	}
+	show_tech_unlock_if = {
+		is_death_cult_empire = yes
+		avb_hg_changes = yes
+		avb_has_mb_tech = yes
 	}
 }
 building_avb_death_temple_5 = {
-	base_buildtime = @avb_b5_time
-	can_build = no
-
-	category = unity
-
-	potential = {
+	icon = building_avb_death_temple_5
+	inline_script = {
+		script = mega_builders/death_temple
+		TIME = @avb_b5_time
+		JOB = 5
+		COST = 5
+		MODIFIER = 0.25
+		CONVERT = 5
+		ALLOW = "has_upgraded_capital_4 = yes"
+		UPGRADES = "building_avb_death_temple_6"
+		PREREQUISITES = "tech_avb_temple_5"
+		POTENTIAL = "
+		avb_has_mb_tech = no
 		exists = owner
 		owner = {
 			is_death_cult_empire = yes
 		}
 		NOT = { has_modifier = slave_colony }
+		"
 	}
-
-	allow = {
-		has_upgraded_capital_4 = yes
-	}
-
-	destroy_trigger = {
-		exists = owner
-		OR = {
-			owner = { is_death_cult_empire = no }
-			has_modifier = slave_colony
-		}
-	}
-
-	convert_to = {
-		building_avb_hive_unity_5
-		building_avb_machine_unity_5
-		building_avb_bureaucratic_5
-		building_avb_temple_5
-	}
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @avb_b5_minerals
-			exotic_gases = @avb_b5_rare_cost
-		}
-		upkeep = {
-			energy = @avb_b5_upkeep
-			exotic_gases = @avb_b5_rare_upkeep
-			volatile_motes = @avb_b5_rare_upkeep
-		}
-	}
-
-	inline_script = {
-		script = unity_buildings/avb_death_temple
-		modifier = 0.25
-		death_priest_base = 5
-		mortal_initiate_base = 5
-	}
-	prerequisites = {
-		"tech_avb_temple_5"
-	}
-
 	show_tech_unlock_if = {
 		is_death_cult_empire = yes
 	}
-	upgrades = {
-		building_avb_death_temple_6
+}
+building_avb_death_temple_5_mb = {
+	icon = building_avb_death_temple_5
+	inline_script = {
+		script = mega_builders/death_temple
+		TIME = @avb_mb_b5_time
+		JOB = 5
+		COST = 5
+		MODIFIER = 0.25
+		CONVERT = 5
+		ALLOW = "has_upgraded_capital_4 = yes"
+		UPGRADES = "building_avb_death_temple_6"
+		PREREQUISITES = "tech_avb_temple_5"
+		POTENTIAL = "
+		avb_has_mb_tech = yes
+		exists = owner
+		owner = {
+			is_death_cult_empire = yes
+		}
+		NOT = { has_modifier = slave_colony }
+		"
+	}
+	show_tech_unlock_if = {
+		is_death_cult_empire = yes
+		avb_hg_changes = yes
+		avb_has_mb_tech = yes
 	}
 }
 building_avb_death_temple_6 = {
-	base_buildtime = @avb_b6_time
-	can_build = no
-
-	category = unity
-
-	potential = {
+	icon = building_avb_death_temple_6
+	inline_script = {
+		script = mega_builders/death_temple
+		TIME = @avb_b6_time
+		JOB = 6
+		COST = 6
+		MODIFIER = 0.3
+		CONVERT = 6
+		ALLOW = "has_upgraded_capital_5 = yes"
+		UPGRADES = ""
+		PREREQUISITES = "tech_avb_temple_6"
+		POTENTIAL = "
+		avb_has_mb_tech = no
 		exists = owner
 		owner = {
 			is_death_cult_empire = yes
 		}
 		NOT = { has_modifier = slave_colony }
+		"
 	}
-
-	allow = {
-		has_upgraded_capital_5 = yes
-	}
-
-	destroy_trigger = {
-		exists = owner
-		OR = {
-			owner = { is_death_cult_empire = no }
-			has_modifier = slave_colony
-		}
-	}
-
-	convert_to = {
-		building_avb_hive_unity_6
-		building_avb_machine_unity_6
-		building_avb_bureaucratic_6
-		building_avb_temple_6
-	}
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @avb_b6_minerals
-			exotic_gases = @avb_b6_rare_cost
-		}
-		upkeep = {
-			energy = @avb_b6_upkeep
-			exotic_gases = @avb_b6_rare_upkeep
-			volatile_motes = @avb_b6_rare_upkeep
-		}
-	}
-
-	inline_script = {
-		script = unity_buildings/avb_death_temple
-		modifier = 0.3
-		death_priest_base = 6
-		mortal_initiate_base = 6
-	}
-	prerequisites = {
-		"tech_avb_temple_6"
-	}
-
 	show_tech_unlock_if = {
 		is_death_cult_empire = yes
+	}
+}
+building_avb_death_temple_6_mb = {
+	icon = building_avb_death_temple_6
+	inline_script = {
+		script = mega_builders/death_temple
+		TIME = @avb_mb_b6_time
+		JOB = 6
+		COST = 6
+		MODIFIER = 0.3
+		CONVERT = 6
+		ALLOW = "has_upgraded_capital_5 = yes"
+		UPGRADES = ""
+		PREREQUISITES = "tech_avb_temple_6"
+		POTENTIAL = "
+		avb_has_mb_tech = yes
+		exists = owner
+		owner = {
+			is_death_cult_empire = yes
+		}
+		NOT = { has_modifier = slave_colony }
+		"
+	}
+	show_tech_unlock_if = {
+		is_death_cult_empire = yes
+		avb_hg_changes = yes
+		avb_has_mb_tech = yes
 	}
 }
 
@@ -2276,292 +2075,165 @@ building_avb_monument_machine_6 = {
 	}
 }
 #Servitors
+# building_avb_research_lab_4_mb = {
+# 	icon = building_avb_research_lab_4
+# 	inline_script = {
+# 		script = mega_builders/commercial
+# 		JOB = 8
+# 		COST = 3
+# 		TIME = @avb_mb_b4_time
+# 		ALLOW = "has_fully_upgraded_capital = yes"
+# 		PREREQUISITES = "tech_avb_basic_science_lab_4"
+# 		UPGRADES = "building_avb_research_lab_5"
+# 		POTENTIAL = "avb_has_mb_tech = yes"
+# 	}
+# 	show_tech_unlock_if = {
+# 		avb_hg_changes = yes
+# 		avb_has_mb_tech = yes
+# 	}
+# }
 building_avb_organic_sanctuary_3 = {
-	base_buildtime = @avb_b4_time
-	can_build = no
-	category = unity
-	
-	potential = {
+	icon = building_avb_organic_sanctuary_3
+	inline_script = {
+		script = mega_builders/sanctuary
+		TIME = @avb_b4_time
+		COST = 3
+		JOB = 30
+		CONVERT = 3
+		SCRIPT = 2
+		ALLOW = "always = yes"
+		UPGRADES = "building_avb_organic_sanctuary_4"
+		PREREQUISITES = "tech_avb_residence_3"
+		POTENTIAL = "
+		avb_has_mb_tech = no
 		exists = owner
 		owner = {	
 			has_valid_civic = civic_machine_servitor
-		}
+		}"
 	}
-
-	destroy_trigger = {
-		exists = owner
-		NOT = { owner = { has_valid_civic = civic_machine_servitor } }
-	}
-	
-	convert_to = {
-		building_avb_residence_3
-		building_avb_communal_housing_3
-	}
-		
-	planet_modifier = {
-		#planet_housing_add = 20
-		job_bio_trophy_add = 30
-	}
-	inline_script = building_ring/paradise2
-	
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @avb_b3_minerals
-			exotic_gases = @avb_b3_rare_cost
-		}
-		upkeep = {
-			energy = @avb_b3_upkeep
-			exotic_gases = @avb_b3_rare_upkeep
-		}
-	}
-	
-	triggered_desc = {
-		text = job_bio_trophy_effect_desc
-	}
-	prerequisites = { "tech_avb_residence_3" }
-	
 	show_tech_unlock_if = {
 		owner = { has_valid_civic = civic_machine_servitor }
-	}
-	
-	upgrades = {
-		"building_avb_organic_sanctuary_4"
-	}
-	#science
-	ai_resource_production = {
-		unity = 30
-		physics_research = 30
-
-		trigger = {
-			has_unemployed_pop_of_category = bio_trophy
-
-			planet_resource_compare = {
-				resource = physics_research
-				value >= 100
-				type = produces
-			}
-		}
-	}
-
-	#alloys
-	ai_resource_production = {
-		unity = 30
-		alloys = 30
-
-		trigger = {
-			has_unemployed_pop_of_category = bio_trophy
-
-			planet_resource_compare = {
-				resource = alloys
-				value >= 100
-				type = produces
-			}
-		}
-	}
-
-	#cgs
-	ai_resource_production = {
-		unity = 30
-		consumer_goods = 30
-
-		trigger = {
-			has_unemployed_pop_of_category = bio_trophy
-
-			planet_resource_compare = {
-				resource = consumer_goods
-				value >= 100
-				type = produces
-			}
-		}
 	}
 }
-
-building_avb_organic_sanctuary_4 = {
-	base_buildtime = @avb_b5_time
-	can_build = no
-	category = unity
-
-	potential = {
+building_avb_organic_sanctuary_3_mb = {
+	icon = building_avb_organic_sanctuary_3
+	inline_script = {
+		script = mega_builders/sanctuary
+		TIME = @avb_mb_b4_time
+		COST = 3
+		JOB = 30
+		CONVERT = 3
+		SCRIPT = 2
+		ALLOW = "always = yes"
+		UPGRADES = "building_avb_organic_sanctuary_4"
+		PREREQUISITES = "tech_avb_residence_3"
+		POTENTIAL = "
+		avb_has_mb_tech = yes
 		exists = owner
+		owner = {	
+			has_valid_civic = civic_machine_servitor
+		}"
+	}
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+		avb_has_mb_tech = yes
 		owner = { has_valid_civic = civic_machine_servitor }
 	}
-
-	destroy_trigger = {
+}
+building_avb_organic_sanctuary_4 = {
+	icon = building_avb_organic_sanctuary_4
+	inline_script = {
+		script = mega_builders/sanctuary
+		TIME = @avb_b5_time
+		COST = 4
+		JOB = 40
+		CONVERT = 4
+		SCRIPT = 3
+		ALLOW = "always = yes"
+		UPGRADES = "building_avb_organic_sanctuary_5"
+		PREREQUISITES = "tech_avb_residence_4"
+		POTENTIAL = "
+		avb_has_mb_tech = no
 		exists = owner
-		NOT = { owner = { has_valid_civic = civic_machine_servitor } }
-	}
-	
-	convert_to = {
-		building_avb_residence_4
-		building_avb_communal_housing_4
-	}
-		
-	planet_modifier = {
-		#planet_housing_add = 20
-		job_bio_trophy_add = 40
-	}
-	inline_script = building_ring/paradise3
-	
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @avb_b4_minerals
-			exotic_gases = @avb_b4_rare_cost
-		}
-		upkeep = {
-			energy = @avb_b4_upkeep
-			exotic_gases = @avb_b4_rare_upkeep
-		}
-	}
-	triggered_desc = {
-		text = job_bio_trophy_effect_desc
-	}
-	prerequisites = { "tech_avb_residence_4" }
-	upgrades = {
-		building_avb_organic_sanctuary_5
+		owner = {	
+			has_valid_civic = civic_machine_servitor
+		}"
 	}
 	show_tech_unlock_if = {
 		owner = { has_valid_civic = civic_machine_servitor }
 	}
-	#science
-	ai_resource_production = {
-		unity = 40
-		physics_research = 40
-
-		trigger = {
-			has_unemployed_pop_of_category = bio_trophy
-
-			planet_resource_compare = {
-				resource = physics_research
-				value >= 100
-				type = produces
-			}
-		}
+}
+building_avb_organic_sanctuary_4_mb = {
+	icon = building_avb_organic_sanctuary_4
+	inline_script = {
+		script = mega_builders/sanctuary
+		TIME = @avb_mb_b5_time
+		COST = 4
+		JOB = 40
+		CONVERT = 4
+		SCRIPT = 3
+		ALLOW = "always = yes"
+		UPGRADES = "building_avb_organic_sanctuary_5"
+		PREREQUISITES = "tech_avb_residence_4"
+		POTENTIAL = "
+		avb_has_mb_tech = yes
+		exists = owner
+		owner = {	
+			has_valid_civic = civic_machine_servitor
+		}"
 	}
-
-	#alloys
-	ai_resource_production = {
-		unity = 40
-		alloys = 40
-
-		trigger = {
-			has_unemployed_pop_of_category = bio_trophy
-
-			planet_resource_compare = {
-				resource = alloys
-				value >= 100
-				type = produces
-			}
-		}
-	}
-
-	#cgs
-	ai_resource_production = {
-		unity = 40
-		consumer_goods = 40
-
-		trigger = {
-			has_unemployed_pop_of_category = bio_trophy
-
-			planet_resource_compare = {
-				resource = consumer_goods
-				value >= 100
-				type = produces
-			}
-		}
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+		avb_has_mb_tech = yes
+		owner = { has_valid_civic = civic_machine_servitor }
 	}
 }
 building_avb_organic_sanctuary_5 = {
-	base_buildtime = @avb_b6_time
-	can_build = no
-	category = unity
-
-	potential = {
+	icon = building_avb_organic_sanctuary_5
+	inline_script = {
+		script = mega_builders/sanctuary
+		TIME = @avb_b6_time
+		COST = 5
+		JOB = 50
+		CONVERT = 5
+		SCRIPT = 3
+		ALLOW = "always = yes"
+		UPGRADES = ""
+		PREREQUISITES = "tech_avb_residence_5"
+		POTENTIAL = "
+		avb_has_mb_tech = no
 		exists = owner
-		owner = { has_valid_civic = civic_machine_servitor }
+		owner = {	
+			has_valid_civic = civic_machine_servitor
+		}"
 	}
-	destroy_trigger = {
-		exists = owner
-		NOT = { owner = { has_valid_civic = civic_machine_servitor } }
-	}
-	
-	convert_to = {
-		building_avb_residence_5
-		building_avb_communal_housing_5
-	}
-		
-	planet_modifier = {
-		#planet_housing_add = 20
-		job_bio_trophy_add = 50
-	}
-	inline_script = building_ring/paradise3
-	
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @avb_b5_minerals
-			exotic_gases = @avb_b5_rare_cost
-		}
-		upkeep = {
-			energy = @avb_b5_upkeep
-			exotic_gases = @avb_b5_rare_upkeep
-		}
-	}
-	triggered_desc = {
-		text = job_bio_trophy_effect_desc
-	}
-	prerequisites = { "tech_avb_residence_5" }
-	
 	show_tech_unlock_if = {
 		owner = { has_valid_civic = civic_machine_servitor }
 	}
-	#science
-	ai_resource_production = {
-		unity = 50
-		physics_research = 50
-
-		trigger = {
-			has_unemployed_pop_of_category = bio_trophy
-
-			planet_resource_compare = {
-				resource = physics_research
-				value >= 120
-				type = produces
-			}
-		}
+}
+building_avb_organic_sanctuary_5_mb = {
+	icon = building_avb_organic_sanctuary_5
+	inline_script = {
+		script = mega_builders/sanctuary
+		TIME = @avb_mb_b6_time
+		COST = 5
+		JOB = 50
+		CONVERT = 5
+		SCRIPT = 3
+		ALLOW = "always = yes"
+		UPGRADES = ""
+		PREREQUISITES = "tech_avb_residence_5"
+		POTENTIAL = "
+		avb_has_mb_tech = yes
+		exists = owner
+		owner = {	
+			has_valid_civic = civic_machine_servitor
+		}"
 	}
-
-	#alloys
-	ai_resource_production = {
-		unity = 50
-		alloys = 50
-
-		trigger = {
-			has_unemployed_pop_of_category = bio_trophy
-
-			planet_resource_compare = {
-				resource = alloys
-				value >= 120
-				type = produces
-			}
-		}
-	}
-
-	#cgs
-	ai_resource_production = {
-		unity = 50
-		consumer_goods = 50
-
-		trigger = {
-			has_unemployed_pop_of_category = bio_trophy
-
-			planet_resource_compare = {
-				resource = consumer_goods
-				value >= 120
-				type = produces
-			}
-		}
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+		avb_has_mb_tech = yes
+		owner = { has_valid_civic = civic_machine_servitor }
 	}
 }
 ##################

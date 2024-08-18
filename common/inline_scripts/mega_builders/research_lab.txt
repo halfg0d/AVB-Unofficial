@@ -1,0 +1,82 @@
+base_buildtime = $TIER$
+can_build = no
+category = research
+
+potential = {
+	$POTENTIAL$
+}
+
+allow = {
+	$ALLOW$
+}
+
+destroy_trigger = {
+	OR = {
+		has_modifier = slave_colony
+		has_modifier = resort_colony
+	}
+}
+inline_script = {
+	script = jobs/researchers_add
+	AMOUNT = $JOB$
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = no
+			is_galactic_community_member = yes
+		}
+		is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
+		has_modifier = pm_extradimensional_experimentation
+	}
+	modifier = {
+		job_dimensional_portal_researcher_add = 1
+	}
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = yes
+			is_galactic_community_member = yes
+		}
+		is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
+		has_modifier = pm_extradimensional_experimentation
+	}
+	modifier = {
+		job_dimensional_portal_researcher_gestalt_add = 1
+	}
+}
+
+resources = {
+	category = planet_buildings
+	cost = {
+		minerals = @avb_b$COST$_minerals
+		exotic_gases = @avb_b$COST$_rare_cost
+	}
+	upkeep = {
+		energy = @avb_b$COST$_upkeep
+		exotic_gases = @avb_b$COST$_rare_upkeep
+	}
+	upkeep = {
+		trigger = {
+			owner = {
+				is_galactic_community_member = yes
+			}
+			is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
+			planet = {
+				has_modifier = pm_extradimensional_experimentation
+			}
+		}
+		sr_zro = 1
+	}
+}
+prerequisites = {
+	$PREREQUISITES$
+}
+upgrades = {
+	$UPGRADES$
+}

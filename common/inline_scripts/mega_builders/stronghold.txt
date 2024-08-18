@@ -1,0 +1,68 @@
+base_buildtime = $TIME$
+can_build = no
+planetary_ftl_inhibitor = yes
+position_priority = 100
+can_be_ruined = no
+category = army
+
+potential = {
+	$POTENTIAL$
+}
+allow = {
+	$ALLOW$
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = no }
+	}
+	modifier = {
+		job_soldier_add = $JOB$
+	}
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = yes }
+	}
+	modifier = {
+		job_warrior_drone_add = $JOB$
+	}
+}
+resources = {
+	category = planet_buildings_strongholds
+	cost = {
+		minerals = @avb_b$COST$_minerals
+		volatile_motes = @avb_b$COST$_rare_cost
+	}			
+	upkeep = {
+		energy = @avb_b$COST$_upkeep
+		volatile_motes = @avb_b$COST$_rare_upkeep
+	}
+}
+
+prerequisites = {
+	$PREREQUISITES$
+}
+upgrades = {
+	$UPGRADES$
+}
+
+triggered_desc = {
+	trigger = {
+		exists = owner
+		owner = {
+			is_gestalt = yes
+		}
+	}
+	text = job_warrior_drone_effect_desc
+}
+triggered_desc = {
+	trigger = {
+		exists = owner
+		owner = {
+			is_gestalt = no
+		}
+	}
+	text = job_soldier_effect_desc
+}

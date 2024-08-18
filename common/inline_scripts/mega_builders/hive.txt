@@ -1,0 +1,92 @@
+base_buildtime = $TIME$
+can_build = no
+
+category = unity
+
+potential = {
+	$POTENTIAL$
+}
+
+allow = {
+	$ALLOW$
+}
+
+destroy_trigger = {
+	exists = owner
+	owner = { is_hive_empire = no }
+}
+
+convert_to = {
+	building_avb_temple_$CONVERT$
+	building_avb_machine_unity_$CONVERT$
+	building_avb_bureaucratic_$CONVERT$
+	building_avb_death_temple_$CONVERT$
+}
+
+resources = {
+	category = planet_buildings
+	cost = {
+		minerals = @avb_b$COST$_minerals
+		exotic_gases = @avb_b$COST$_rare_cost
+	}
+	upkeep = {
+		energy = @avb_b$COST$_upkeep
+		exotic_gases = @avb_b$COST$_rare_upkeep
+	}
+	upkeep = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_edict = synaptic_reinforcement
+			}
+		}
+		energy = 2
+	}
+}
+
+planet_modifier = {
+	job_synapse_drone_add = $JOB$
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			has_active_tradition = tr_domination_synaptic_extensions
+		}
+	}
+	modifier = {
+		planet_housing_add = 2
+	}
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			has_edict = synaptic_reinforcement
+		}
+	}
+	job_maintenance_drone_add = 1
+}
+
+prerequisites = {
+	$PREREQUISITES$
+}
+upgrades = {
+	$UPGRADES$
+}
+
+triggered_desc = {
+	text = job_synapse_drone_effect_desc
+}
+
+triggered_desc = {
+	trigger = {
+		exists = owner
+		owner = {
+			has_edict = synaptic_reinforcement
+		}
+	}
+	text = job_maintenance_drone_effect_desc
+}

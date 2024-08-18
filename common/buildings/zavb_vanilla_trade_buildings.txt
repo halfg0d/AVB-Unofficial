@@ -80,7 +80,8 @@ building_commercial_megaplex = {
 		}
 	}
 	upgrades = {
-		building_avb_commercial_3
+		"building_avb_commercial_3"
+		"building_avb_commercial_3_mb"
 	}
 }
 

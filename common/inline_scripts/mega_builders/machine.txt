@@ -1,0 +1,53 @@
+base_buildtime = $TIME$
+can_build = no
+
+category = unity
+
+potential = {
+	$POTENTIAL$
+}
+
+allow = {
+	$ALLOW$
+}
+
+destroy_trigger = {
+	exists = owner
+	owner = {
+		OR = {
+			is_machine_empire = no
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+}
+
+convert_to = {
+	building_avb_temple_$CONVERT$
+	building_avb_hive_unity_$CONVERT$
+	building_avb_bureaucratic_$CONVERT$
+	building_avb_death_temple_$CONVERT$
+}
+
+resources = {
+	category = planet_buildings
+	cost = {
+		minerals = @avb_b$COST$_minerals
+		rare_crystals = @avb_b$COST$_rare_cost
+	}
+	upkeep = {
+		energy = @avb_b$COST$_upkeep
+		rare_crystals = @avb_b$COST$_rare_upkeep
+	}
+}
+
+inline_script = {
+	script = unity_buildings/avb_machine_node
+	coordinator = $JOB$
+}
+
+prerequisites = {
+	$PREREQUISITES$
+}
+upgrades = {
+	$UPGRADES$
+}

@@ -221,7 +221,8 @@ building_bureaucratic_3 = {
 		has_make_spiritualist_perk = no
 	}
 	upgrades = {
-		building_avb_bureaucratic_4
+		"building_avb_bureaucratic_4"
+		"building_avb_bureaucratic_4_mb"
 	}
 }
 
@@ -310,7 +311,8 @@ building_sacred_nexus = {
 		}
 	}
 	upgrades = {
-		building_avb_temple_4
+		"building_avb_temple_4"
+		"building_avb_temple_4_mb"
 	}
 }
 
@@ -486,7 +488,8 @@ building_hive_confluence = {
 		text = job_maintenance_drone_effect_desc
 	}
 	upgrades = {
-		building_avb_hive_unity_4
+		"building_avb_hive_unity_4"
+		"building_avb_hive_unity_4_mb"
 	}
 }
 
@@ -563,7 +566,8 @@ building_sacrificial_temple_3 = {
 		is_death_cult_empire = yes
 	}
 	upgrades = {
-		building_avb_death_temple_4
+		"building_avb_death_temple_4"
+		"building_avb_death_temple_4_mb"
 	}
 }
 
@@ -774,7 +778,8 @@ building_simulation_3 = {
 		is_memorialist_empire = no
 	}
 	upgrades = {
-		building_avb_monument_machine_4
+		"building_avb_monument_machine_4"
+		"building_avb_monument_machine_4_mb"
 	}
 }
 
@@ -934,7 +939,8 @@ building_sensorium_3 = {
 		is_memorialist_empire = no
 	}
 	upgrades = {
-		building_avb_monument_hive_4
+		"building_avb_monument_hive_4"
+		"building_avb_monument_hive_4_mb"
 	}
 }
 
@@ -1519,7 +1525,8 @@ building_organic_paradise = {
 		owner = { has_valid_civic = civic_machine_servitor }
 	}
 	upgrades = {
-		building_avb_organic_sanctuary_3
+		"building_avb_organic_sanctuary_3"
+		"building_avb_organic_sanctuary_3_mb"
 	}
 	# Here we try to adress the second issue that the AI cant evaluate the pop job output of the bio trophy given the happiness trigger that was put inplace to guard against players exploiting bio trophies
 

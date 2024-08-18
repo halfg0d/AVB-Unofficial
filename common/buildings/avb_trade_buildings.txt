@@ -3,197 +3,141 @@
 # Trade buildings
 #############
 building_avb_commercial_3 = {
-	base_buildtime = @avb_b4_time
-	can_build = no
-
-	category = trade
-	
-	allow = {
-		has_fully_upgraded_capital = yes
-	}
-	
-	potential = {
+	icon = building_avb_commercial_3
+	inline_script = {
+		script = mega_builders/commercial
+		TIME = @avb_b4_time
+		CLERK = 5
+		TRADER = 3
+		COST = 4
+		ALLOW = "has_fully_upgraded_capital = yes"
+		PREREQUISITES = "tech_avb_interstellar_economics_2"
+		UPGRADES = "building_avb_commercial_4"
+		POTENTIAL = "
+		avb_has_mb_tech = no
 		exists = owner
 		owner = { is_gestalt = no }
 		NOT = { has_modifier = slave_colony }
+		"
 	}
-	
-	destroy_trigger = {
-		exists = owner
-		OR = {
-			owner = { is_regular_empire = no }
-			has_modifier = slave_colony
-		}
-	}
-	inline_script = {
-		script = trade_buildings/avb_commercials
-		clerk_add = 5
-		trader_add = 3
-	}
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @avb_b4_minerals
-			rare_crystals = @avb_b4_rare_cost
-		}	
-		upkeep = {
-			energy = @avb_b4_upkeep
-			rare_crystals = @avb_b4_rare_upkeep
-		}		
-	}
-
-	upgrades = {
-		building_avb_commercial_4
-	}
-	
-	prerequisites = {
-		"tech_avb_interstellar_economics_2"
-	}
-	
 	show_tech_unlock_if = {
 		is_regular_empire = yes
 	}
-	ai_resource_production = {
-		energy = 6
-		trigger = {
-			OR = {
-				num_unemployed >= 10
-				num_assigned_jobs = {
-				job = servant
-					value >= 10
-				}
-			}
-		}
+}
+building_avb_commercial_3_mb = {
+	icon = building_avb_commercial_3
+	inline_script = {
+		script = mega_builders/commercial
+		TIME = @avb_mb_b4_time
+		CLERK = 5
+		TRADER = 3
+		COST = 4
+		ALLOW = "has_fully_upgraded_capital = yes"
+		PREREQUISITES = "tech_avb_interstellar_economics_2"
+		UPGRADES = "building_avb_commercial_4"
+		POTENTIAL = "
+		avb_has_mb_tech = yes
+		exists = owner
+		owner = { is_gestalt = no }
+		NOT = { has_modifier = slave_colony }
+		"
+	}
+	show_tech_unlock_if = {
+		is_regular_empire = yes
+		avb_hg_changes = yes
+		avb_has_mb_tech = yes
 	}
 }
-
 building_avb_commercial_4 = {
-	base_buildtime = @avb_b5_time
-	can_build = no
-
-	category = trade
-	
-	allow = {
-		has_upgraded_capital_4 = yes
-	}
-	
-	potential = {
+	icon = building_avb_commercial_4
+	inline_script = {
+		script = mega_builders/commercial
+		TIME = @avb_b5_time
+		CLERK = 6
+		TRADER = 4
+		COST = 5
+		ALLOW = "has_upgraded_capital_4 = yes"
+		PREREQUISITES = "tech_avb_interstellar_economics_3"
+		UPGRADES = "building_avb_commercial_5"
+		POTENTIAL = "
+		avb_has_mb_tech = no
 		exists = owner
 		owner = { is_gestalt = no }
 		NOT = { has_modifier = slave_colony }
+		"
 	}
-	
-	destroy_trigger = {
-		exists = owner
-		OR = {
-			owner = { is_gestalt = yes }
-			has_modifier = slave_colony
-		}
-	}
-	
-	
-	inline_script = {
-		script = trade_buildings/avb_commercials
-		clerk_add = 6
-		trader_add = 4
-	}
-
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @avb_b5_minerals
-			rare_crystals = @avb_b5_rare_cost
-		}	
-		upkeep = {
-			energy = @avb_b5_upkeep
-			rare_crystals = @avb_b5_rare_upkeep
-		}
-	}
-	upgrades = {
-		building_avb_commercial_5
-	}
-	
-	prerequisites = {
-		"tech_avb_interstellar_economics_3"
-	}
-	
-	show_tech_unlock_if = { 
+	show_tech_unlock_if = {
 		is_regular_empire = yes
-	}
-	ai_resource_production = {
-		energy = 6
-		trigger = {
-			OR = {
-				num_unemployed >= 10
-				num_assigned_jobs = {
-					job = servant
-					value >= 10
-				}
-			}
-		}
 	}
 }
-
-building_avb_commercial_5 = {
-	base_buildtime = @avb_b6_time
-	can_build = no
-
-	category = trade
-	
-	allow = {
-		has_upgraded_capital_5 = yes
-	}
-	
-	potential = {
+building_avb_commercial_4_mb = {
+	icon = building_avb_commercial_4
+	inline_script = {
+		script = mega_builders/commercial
+		TIME = @avb_mb_b5_time
+		CLERK = 6
+		TRADER = 4
+		COST = 5
+		ALLOW = "has_upgraded_capital_4 = yes"
+		PREREQUISITES = "tech_avb_interstellar_economics_3"
+		UPGRADES = "building_avb_commercial_5"
+		POTENTIAL = "
+		avb_has_mb_tech = yes
 		exists = owner
 		owner = { is_gestalt = no }
 		NOT = { has_modifier = slave_colony }
+		"
 	}
-	
-	destroy_trigger = {
-		exists = owner
-		OR = {
-			owner = { is_gestalt = yes }
-			has_modifier = slave_colony
-		}
+	show_tech_unlock_if = {
+		is_regular_empire = yes
+		avb_hg_changes = yes
+		avb_has_mb_tech = yes
 	}
-
-	
+}
+building_avb_commercial_5 = {
+	icon = building_avb_commercial_5
 	inline_script = {
-		script = trade_buildings/avb_commercials
-		clerk_add = 7
-		trader_add = 5
+		script = mega_builders/commercial
+		TIME = @avb_b5_time
+		CLERK = 7
+		TRADER = 6
+		COST = 6
+		ALLOW = "has_upgraded_capital_5 = yes"
+		PREREQUISITES = "tech_avb_interstellar_economics_4"
+		UPGRADES = ""
+		POTENTIAL = "
+		avb_has_mb_tech = no
+		exists = owner
+		owner = { is_gestalt = no }
+		NOT = { has_modifier = slave_colony }
+		"
 	}
-	
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @avb_b6_minerals
-			rare_crystals = @avb_b6_rare_cost
-		}	
-		upkeep = {
-			energy = @avb_b6_upkeep
-			rare_crystals = @avb_b6_rare_upkeep
-		}
-	}
-	prerequisites = {
-		"tech_avb_interstellar_economics_4"
-	}
-	
-	show_tech_unlock_if = { 
+	show_tech_unlock_if = {
 		is_regular_empire = yes
 	}
-	ai_resource_production = {
-		energy = 6
-		trigger = {
-			OR = {
-				num_unemployed >= 10
-				num_assigned_jobs = {
-					job = servant
-					value >= 10
-				}
-			}
-		}
+}
+building_avb_commercial_5_mb = {
+	icon = building_avb_commercial_5
+	inline_script = {
+		script = mega_builders/commercial
+		TIME = @avb_mb_b5_time
+		CLERK = 7
+		TRADER = 6
+		COST = 6
+		ALLOW = "has_upgraded_capital_5 = yes"
+		PREREQUISITES = "tech_avb_interstellar_economics_4"
+		UPGRADES = ""
+		POTENTIAL = "
+		avb_has_mb_tech = yes
+		exists = owner
+		owner = { is_gestalt = no }
+		NOT = { has_modifier = slave_colony }
+		"
+	}
+	show_tech_unlock_if = {
+		is_regular_empire = yes
+		avb_hg_changes = yes
+		avb_has_mb_tech = yes
 	}
 }
 

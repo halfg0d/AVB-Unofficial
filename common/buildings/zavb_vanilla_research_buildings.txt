@@ -81,7 +81,8 @@ building_research_lab_3 = {
 		"tech_basic_science_lab_3"
 	}
 	upgrades = {
-		building_avb_research_lab_4
+		"building_avb_research_lab_4"
+		"building_avb_research_lab_4_mb"
 	}
 }
 

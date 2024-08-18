@@ -22,7 +22,11 @@ virtuality_concentrated_production_mult = {
 		mode = add
 	}
 }
-# 5> num colonies get penalty
+# math here calculate for 1 server
+# Building upkeep * (0,5 * planets without server + 1 * planets with server)
+# MIN 12 * 1
+# MAX (0% pop production)
+### 12 * 10 
 avb_virtuality_num_colonies = {
 	base = 1
 	complex_trigger_modifier = {

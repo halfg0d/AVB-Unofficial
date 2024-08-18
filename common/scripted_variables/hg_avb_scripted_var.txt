@@ -66,3 +66,10 @@
 @avb_b6_jobs = 12
 
 @avb_fe_sr_cost = 200
+
+# Mega Builders
+@avb_mb_b2_time = 240
+@avb_mb_b3_time = 300
+@avb_mb_b4_time = 600
+@avb_mb_b5_time = 1200
+@avb_mb_b6_time = 1750

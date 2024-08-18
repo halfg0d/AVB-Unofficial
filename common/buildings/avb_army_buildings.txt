@@ -192,214 +192,104 @@ building_avb_dread_encampment_2 = {
 }
 
 building_avb_stronghold_3 = {
-	base_buildtime = @avb_b2_time
-	can_build = no
-	planetary_ftl_inhibitor = yes
-	position_priority = 100
-	can_be_ruined = no
-	category = army
-	
-	potential = { always = yes }
-	allow = {
-		has_major_upgraded_capital = yes
+	icon = building_avb_stronghold_3
+	inline_script = {
+		script = mega_builders/stronghold
+		TIME = @avb_b2_time
+		JOB = @avb_b3_jobs
+		COST = 3
+		ALLOW = "has_major_upgraded_capital = yes"
+		UPGRADES = "building_avb_stronghold_4"
+		PREREQUISITES = "tech_avb_stronghold_3"
+		POTENTIAL = "avb_has_mb_tech = no"
 	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = no }
-		}
-		modifier = {
-			job_soldier_add = @avb_b3_jobs
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }
-		}
-		modifier = {
-			job_warrior_drone_add = @avb_b3_jobs
-		}
-	}
-	resources = {
-		category = planet_buildings_strongholds
-		cost = {
-			minerals = @avb_b3_minerals
-			volatile_motes = @avb_b3_rare_cost
-		}			
-		upkeep = {
-			energy = @avb_b3_upkeep
-			volatile_motes = @avb_b3_rare_upkeep
-		}
-	}
-	
-	prerequisites = {
-		"tech_avb_stronghold_3"
-	}
-	
-	triggered_desc = {
-        trigger = {
-            exists = owner
-            owner = {
-                is_gestalt = yes
-            }
-        }
-        text = job_warrior_drone_effect_desc
-    }
-    triggered_desc = {
-        trigger = {
-            exists = owner
-            owner = {
-                is_gestalt = no
-            }
-        }
-        text = job_soldier_effect_desc
-    }
-	upgrades = {
-		"building_avb_stronghold_4"
+	show_tech_unlock_if = {
+		always = yes
 	}
 }
-
+building_avb_stronghold_3_mb = {
+	icon = building_avb_stronghold_3
+	inline_script = {
+		script = mega_builders/stronghold
+		TIME = @avb_mb_b2_time
+		JOB = @avb_b3_jobs
+		COST = 3
+		ALLOW = "has_major_upgraded_capital = yes"
+		UPGRADES = "building_avb_stronghold_4"
+		PREREQUISITES = "tech_avb_stronghold_3"
+		POTENTIAL = "avb_has_mb_tech = yes"
+	}
+	show_tech_unlock_if = {
+		avb_has_mb_tech = yes
+		avb_hg_changes = yes
+	}
+}
 building_avb_stronghold_4 = {
-	base_buildtime = @avb_b3_time
-	can_build = no
-	planetary_ftl_inhibitor = yes
-	position_priority = 100
-
-	category = army
-	
-	potential = { always = yes }
-	allow = {
-		has_fully_upgraded_capital = yes
+	icon = building_avb_stronghold_4
+	inline_script = {
+		script = mega_builders/stronghold
+		TIME = @avb_b3_time
+		JOB = @avb_b4_jobs
+		COST = 4
+		ALLOW = "has_fully_upgraded_capital = yes"
+		UPGRADES = "building_avb_stronghold_5"
+		PREREQUISITES = "tech_avb_stronghold_4"
+		POTENTIAL = "avb_has_mb_tech = no"
 	}
-	
-	upgrades = {
-		building_avb_stronghold_5
+	show_tech_unlock_if = {
+		always = yes
 	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = no }
-		}
-		modifier = {
-			job_soldier_add = @avb_b4_jobs
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }
-		}
-		modifier = {
-			job_warrior_drone_add = @avb_b4_jobs
-		}
-	}
-	resources = {
-		category = planet_buildings_strongholds
-		cost = {
-			minerals = @avb_b4_minerals
-			volatile_motes = @avb_b4_rare_cost
-		}			
-		upkeep = {
-			energy = @avb_b4_upkeep
-			volatile_motes = @avb_b4_rare_upkeep
-		}
-	}
-	
-	prerequisites = {
-		"tech_avb_stronghold_4"
-	}
-	
-	triggered_desc = {
-        trigger = {
-            exists = owner
-            owner = {
-                is_gestalt = yes
-            }
-        }
-        text = job_warrior_drone_effect_desc
-    }
-    triggered_desc = {
-        trigger = {
-            exists = owner
-            owner = {
-                is_gestalt = no
-            }
-        }
-        text = job_soldier_effect_desc
-    }
 }
-
+building_avb_stronghold_4_mb = {
+	icon = building_avb_stronghold_4
+	inline_script = {
+		script = mega_builders/stronghold
+		TIME = @avb_mb_b3_time
+		JOB = @avb_b4_jobs
+		COST = 4
+		ALLOW = "has_fully_upgraded_capital = yes"
+		UPGRADES = "building_avb_stronghold_5"
+		PREREQUISITES = "tech_avb_stronghold_4"
+		POTENTIAL = "avb_has_mb_tech = yes"
+	}
+	show_tech_unlock_if = {
+		avb_has_mb_tech = yes
+		avb_hg_changes = yes
+	}
+}
 building_avb_stronghold_5 = {
-	base_buildtime = @avb_b4_time
-	can_build = no
-	planetary_ftl_inhibitor = yes
-	position_priority = 100
-
-	category = army
-	
-	potential = { always = yes }
-	allow = {
-		has_upgraded_capital_4 = yes
+	icon = building_avb_stronghold_5
+	inline_script = {
+		script = mega_builders/stronghold
+		TIME = @avb_b4_time
+		JOB = @avb_b5_jobs
+		COST = 5
+		ALLOW = "has_upgraded_capital_4 = yes"
+		UPGRADES = ""
+		PREREQUISITES = "tech_avb_stronghold_5"
+		POTENTIAL = "avb_has_mb_tech = no"
 	}
-	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { 
-				is_gestalt = no
-			}
-		}
-		modifier = {
-			job_soldier_add = @avb_b5_jobs
-		}
+	show_tech_unlock_if = {
+		always = yes
 	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }
-		}
-		modifier = {
-			job_warrior_drone_add = @avb_b5_jobs
-		}
-	}
-	resources = {
-		category = planet_buildings_strongholds
-		cost = {
-			minerals = @avb_b5_minerals
-			volatile_motes = @avb_b5_rare_cost
-		}			
-		upkeep = {
-			energy = @avb_b5_upkeep
-			volatile_motes = @avb_b5_rare_upkeep
-		}
-	}
-	
-	prerequisites = {
-		"tech_avb_stronghold_5"
-	}
-	
-	triggered_desc = {
-        trigger = {
-            exists = owner
-            owner = {
-                is_gestalt = yes
-            }
-        }
-        text = job_warrior_drone_effect_desc
-    }
-    triggered_desc = {
-        trigger = {
-            exists = owner
-            owner = {
-                is_gestalt = no
-            }
-        }
-        text = job_soldier_effect_desc
-    }
 }
-
+building_avb_stronghold_5_mb = {
+	icon = building_avb_stronghold_5
+	inline_script = {
+		script = mega_builders/stronghold
+		TIME = @avb_mb_b4_time
+		JOB = @avb_b5_jobs
+		COST = 5
+		ALLOW = "has_upgraded_capital_4 = yes"
+		UPGRADES = ""
+		PREREQUISITES = "tech_avb_stronghold_5"
+		POTENTIAL = "avb_has_mb_tech = yes"
+	}
+	show_tech_unlock_if = {
+		avb_has_mb_tech = yes
+		avb_hg_changes = yes
+	}
+}
 building_avb_planetary_shield_generator_2 = {
 	base_buildtime = @avb_b4_time
 	can_build = no

@@ -1,0 +1,53 @@
+base_buildtime = $TIME$
+can_build = no
+
+category = unity
+
+potential = {
+	$POTENTIAL$
+}
+
+allow = {
+	$ALLOW$
+}
+
+destroy_trigger = {
+	exists = owner
+	OR = {
+		owner = { is_death_cult_empire = no }
+		has_modifier = slave_colony
+	}
+}
+
+convert_to = {
+	building_avb_hive_unity_$CONVERT$
+	building_avb_machine_unity_$CONVERT$
+	building_avb_bureaucratic_$CONVERT$
+	building_avb_temple_$CONVERT$
+}
+resources = {
+	category = planet_buildings
+	cost = {
+		minerals = @avb_b$COST$_minerals
+		exotic_gases = @avb_b$COST$_rare_cost
+	}
+	upkeep = {
+		energy = @avb_b$COST$_upkeep
+		exotic_gases = @avb_b$COST$_rare_upkeep
+		volatile_motes = @avb_b$COST$_rare_upkeep
+	}
+}
+inline_script = {
+	script = unity_buildings/avb_death_temple
+	modifier = $MODIFIER$
+	death_priest_base = $JOB$
+	mortal_initiate_base = $JOB$
+}
+
+prerequisites = {
+	$PREREQUISITES$
+}
+
+upgrades = {
+	$UPGRADES$
+}

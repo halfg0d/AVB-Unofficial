@@ -1,0 +1,60 @@
+base_buildtime = $TIME$
+can_build = no
+
+category = unity
+
+potential = {
+	$POTENTIAL$
+}
+
+allow = {
+	$ALLOW$
+}
+
+destroy_trigger = {
+	exists = owner
+	OR = {
+		owner = {
+			OR = {
+				AND = {
+					is_spiritualist = no
+					has_make_spiritualist_perk = no
+				}
+				is_gestalt = yes
+			}
+		}
+		has_modifier = slave_colony
+	}
+}
+
+convert_to = {
+	building_avb_bureaucratic_$CONVERT$
+	building_avb_hive_unity_$CONVERT$
+	building_avb_machine_unity_$CONVERT$
+	building_avb_death_temple_$CONVERT$
+}
+
+resources = {
+	category = planet_buildings
+	cost = {
+		minerals = @avb_b$COST$_minerals
+		rare_crystals = @avb_b$COST$_rare_cost
+	}
+	upkeep = {
+		energy = @avb_b$COST$_upkeep
+		rare_crystals = @avb_b$COST$_rare_upkeep
+	}
+}
+planet_modifier = {
+	pop_ethic_spiritualist_attraction_mult = $MODIFIER$
+}
+inline_script = {
+	script = jobs/priests_add
+	AMOUNT = $JOB$
+}
+prerequisites = {
+	$PREREQUISITES$
+}
+upgrades = {
+	$UPGRADES$
+}
