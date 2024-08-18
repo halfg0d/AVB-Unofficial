@@ -1,0 +1,94 @@
+base_buildtime = $TIME$
+can_build = no
+category = unity
+
+allow = {
+	$ALLOW$
+}
+potential = {
+	$POTENTIAL$
+}
+
+destroy_trigger = {
+	exists = owner
+	NOT = { owner = { has_valid_civic = civic_machine_servitor } }
+}
+
+convert_to = {
+	building_avb_residence_$CONVERT$
+	building_avb_communal_housing_$CONVERT$
+}
+	
+planet_modifier = {
+	job_bio_trophy_add = $JOB$
+}
+inline_script = building_ring/paradise$SCRIPT$
+
+resources = {
+	category = planet_buildings
+	cost = {
+		minerals = @avb_b$COST$_minerals
+		exotic_gases = @avb_b$COST$_rare_cost
+	}
+	upkeep = {
+		energy = @avb_b$COST$_upkeep
+		exotic_gases = @avb_b$COST$_rare_upkeep
+	}
+}
+
+triggered_desc = {
+	text = job_bio_trophy_effect_desc
+}
+prerequisites = { $PREREQUISITES$ }
+
+
+upgrades = {
+	$UPGRADES$
+}
+#science
+ai_resource_production = {
+	unity = $JOB$
+	physics_research = $JOB$
+
+	trigger = {
+		has_unemployed_pop_of_category = bio_trophy
+
+		planet_resource_compare = {
+			resource = physics_research
+			value >= 100
+			type = produces
+		}
+	}
+}
+
+#alloys
+ai_resource_production = {
+	unity = $JOB$
+	alloys = $JOB$
+
+	trigger = {
+		has_unemployed_pop_of_category = bio_trophy
+
+		planet_resource_compare = {
+			resource = alloys
+			value >= 100
+			type = produces
+		}
+	}
+}
+
+#cgs
+ai_resource_production = {
+	unity = $JOB$
+	consumer_goods = $JOB$
+
+	trigger = {
+		has_unemployed_pop_of_category = bio_trophy
+
+		planet_resource_compare = {
+			resource = consumer_goods
+			value >= 100
+			type = produces
+		}
+	}
+}

@@ -1,0 +1,57 @@
+base_buildtime = $TIME$
+can_build = no
+
+category = trade
+
+allow = {
+	$ALLOW$
+}
+
+potential = {
+	$POTENTIAL$
+}
+
+destroy_trigger = {
+	exists = owner
+	OR = {
+		owner = { is_regular_empire = no }
+		has_modifier = slave_colony
+	}
+}
+inline_script = {
+	script = trade_buildings/avb_commercials
+	clerk_add = $CLERK$
+	trader_add = $TRADER$
+}
+resources = {
+	category = planet_buildings
+	cost = {
+		minerals = @avb_b$COST$_minerals
+		rare_crystals = @avb_b$COST$_rare_cost
+	}	
+	upkeep = {
+		energy = @avb_b$COST$_upkeep
+		rare_crystals = @avb_b$COST$_rare_upkeep
+	}		
+}
+
+upgrades = {
+	$UPGRADES$
+}
+
+prerequisites = {
+	$PREREQUISITES$
+}
+
+ai_resource_production = {
+	energy = 6
+	trigger = {
+		OR = {
+			num_unemployed >= 10
+			num_assigned_jobs = {
+			job = servant
+				value >= 10
+			}
+		}
+	}
+}

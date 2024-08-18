@@ -110,3 +110,8 @@ has_any_chemical_plant_tier = {
 		has_[[active]active_]building = building_avb_chemical_plant_3
 	}
 }
+avb_has_mb_tech = {
+	owner = {
+		has_technology = tech_avb_mega_builders
+	}
+}

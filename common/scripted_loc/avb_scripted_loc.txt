@@ -31,3 +31,8 @@ defined_text = {
 	}
 	default = trait_robot_digital_2_tt_AVB2
 }
+
+defined_text = {
+	name = mb_list
+	default = mb_list
+}

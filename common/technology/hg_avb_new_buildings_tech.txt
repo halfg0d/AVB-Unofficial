@@ -1116,3 +1116,37 @@ tech_avb_modular_buildings = {
 		}
 	}
 }
+
+# Mega Builders
+tech_avb_mega_builders = {
+	area = engineering
+	category = {
+		industry
+	}
+	tier = 6
+	cost = @avbtier6cost1
+	weight = @avbtier6weight1
+	prerequisites = {
+		"tech_mega_engineering"
+	}
+	potential = {
+		avb_hg_changes = yes
+		OR = {
+			has_technology = tech_avb_capital_6
+			AND = {
+				is_hive_empire = yes
+				has_technology = tech_avb_capital_4
+			}
+		}
+	}
+	modifier = {
+		custom_tooltip = tech_avb_mega_builders_tooltip
+	}
+	weight_modifier = {
+		weight = @tier5weight1
+		modifier = {
+			factor = 10
+			has_ascension_perk = ap_master_builders
+		}
+	}
+}
