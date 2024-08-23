@@ -1824,7 +1824,7 @@ tech_avb_housing_3 = {
 	weight = @tier4weight1
 	
 	modifier = {
-		planet_building_build_speed_mult = 0.10
+		description = district_housing_tech_effect
 	}
 	
 	weight_modifier = {
@@ -1848,7 +1848,7 @@ tech_avb_housing_4 = {
 	weight = @tier5weight1
 	
 	modifier = {
-		planet_building_build_speed_mult = 0.10
+		description = district_housing_tech_effect
 	}
 	
 	weight_modifier = {
@@ -1875,7 +1875,7 @@ tech_avb_housing_5 = {
 	weight = @avbtier6weight1
 	
 	modifier = {
-		planet_building_build_speed_mult = 0.10
+		description = district_housing_tech_effect
 	}
 	
 	weight_modifier = {

@@ -259,7 +259,7 @@ building_avb_bureaucratic_4 = {
 		CONVERT = 4
 		ALLOW = "has_major_upgraded_capital = yes"
 		PREREQUISITES = "tech_avb_bureaucratic_4"
-		UPGRADES = "building_avb_bureaucratic_5"
+		UPGRADES = "building_avb_bureaucratic_5 building_avb_bureaucratic_5_mb"
 		POTENTIAL = "
 		avb_has_mb_tech = no
 		exists = owner
@@ -287,7 +287,7 @@ building_avb_bureaucratic_4_mb = {
 		CONVERT = 4
 		ALLOW = "has_major_upgraded_capital = yes"
 		PREREQUISITES = "tech_avb_bureaucratic_4"
-		UPGRADES = "building_avb_bureaucratic_5"
+		UPGRADES = "building_avb_bureaucratic_5 building_avb_bureaucratic_5_mb"
 		POTENTIAL = "
 		avb_has_mb_tech = yes
 		exists = owner
@@ -315,7 +315,7 @@ building_avb_bureaucratic_5 = {
 		CONVERT = 5
 		ALLOW = "has_fully_upgraded_capital = yes"
 		PREREQUISITES = "tech_avb_bureaucratic_5"
-		UPGRADES = "building_avb_bureaucratic_6"
+		UPGRADES = "building_avb_bureaucratic_6 building_avb_bureaucratic_6_mb"
 		POTENTIAL = "
 		avb_has_mb_tech = no
 		exists = owner
@@ -343,7 +343,7 @@ building_avb_bureaucratic_5_mb = {
 		CONVERT = 5
 		ALLOW = "has_fully_upgraded_capital = yes"
 		PREREQUISITES = "tech_avb_bureaucratic_5"
-		UPGRADES = "building_avb_bureaucratic_6"
+		UPGRADES = "building_avb_bureaucratic_6 building_avb_bureaucratic_6_mb"
 		POTENTIAL = "
 		avb_has_mb_tech = yes
 		exists = owner
@@ -429,7 +429,7 @@ building_avb_temple_4 = {
 		MODIFIER = 0.2
 		CONVERT = 4
 		ALLOW = "has_fully_upgraded_capital = yes"
-		UPGRADES = "building_avb_temple_5"
+		UPGRADES = "building_avb_temple_5 building_avb_temple_5_mb"
 		PREREQUISITES = "tech_avb_temple_4"
 		POTENTIAL = "
 		avb_has_mb_tech = no
@@ -465,7 +465,7 @@ building_avb_temple_4_mb = {
 		MODIFIER = 0.2
 		CONVERT = 4
 		ALLOW = "has_fully_upgraded_capital = yes"
-		UPGRADES = "building_avb_temple_5"
+		UPGRADES = "building_avb_temple_5 building_avb_temple_5_mb"
 		PREREQUISITES = "tech_avb_temple_4"
 		POTENTIAL = "
 		avb_has_mb_tech = yes
@@ -503,7 +503,7 @@ building_avb_temple_5 = {
 		MODIFIER = 0.25
 		CONVERT = 5
 		ALLOW = "has_upgraded_capital_4 = yes"
-		UPGRADES = "building_avb_temple_6"
+		UPGRADES = "building_avb_temple_6 building_avb_temple_6_mb"
 		PREREQUISITES = "tech_avb_temple_5"
 		POTENTIAL = "
 		avb_has_mb_tech = no
@@ -539,7 +539,7 @@ building_avb_temple_5_mb = {
 		MODIFIER = 0.25
 		CONVERT = 5
 		ALLOW = "has_upgraded_capital_4 = yes"
-		UPGRADES = "building_avb_temple_6"
+		UPGRADES = "building_avb_temple_6 building_avb_temple_6_mb"
 		PREREQUISITES = "tech_avb_temple_5"
 		POTENTIAL = "
 		avb_has_mb_tech = yes
@@ -654,7 +654,7 @@ building_avb_machine_unity_4 = {
 		COST = 4
 		CONVERT = 4
 		ALLOW = "has_major_upgraded_capital = yes"
-		UPGRADES = "building_avb_machine_unity_5"
+		UPGRADES = "building_avb_machine_unity_5 building_avb_machine_unity_5_mb"
 		PREREQUISITES = "tech_avb_bureaucratic_4"
 		POTENTIAL = "
 		avb_has_mb_tech = no
@@ -683,67 +683,7 @@ building_avb_machine_unity_4_mb = {
 		COST = 4
 		CONVERT = 4
 		ALLOW = "has_major_upgraded_capital = yes"
-		UPGRADES = "building_avb_machine_unity_5"
-		PREREQUISITES = "tech_avb_bureaucratic_4"
-		POTENTIAL = "
-		avb_has_mb_tech = yes
-		exists = owner
-		owner = {
-			is_machine_empire = yes
-			NOT = {
-				has_valid_civic = civic_machine_servitor
-			}
-		}
-		"
-	}
-	show_tech_unlock_if = {
-		avb_hg_changes = yes
-		avb_has_mb_tech = yes
-		is_machine_empire = yes
-		NOT = {
-			has_valid_civic = civic_machine_servitor
-		}
-	}
-}
-building_avb_machine_unity_4 = {
-	icon = building_avb_monument_4
-	inline_script = {
-		script = mega_builders/machine
-		TIME = @avb_b4_time
-		JOB = 8
-		COST = 4
-		CONVERT = 4
-		ALLOW = "has_major_upgraded_capital = yes"
-		UPGRADES = "building_avb_machine_unity_5"
-		PREREQUISITES = "tech_avb_bureaucratic_4"
-		POTENTIAL = "
-		avb_has_mb_tech = no
-		exists = owner
-		owner = {
-			is_machine_empire = yes
-			NOT = {
-				has_valid_civic = civic_machine_servitor
-			}
-		}
-		"
-	}
-	show_tech_unlock_if = {
-		is_machine_empire = yes
-		NOT = {
-			has_valid_civic = civic_machine_servitor
-		}
-	}
-}
-building_avb_machine_unity_4_mb = {
-	icon = building_avb_monument_4
-	inline_script = {
-		script = mega_builders/machine
-		TIME = @avb_mb_b4_time
-		JOB = 8
-		COST = 4
-		CONVERT = 4
-		ALLOW = "has_major_upgraded_capital = yes"
-		UPGRADES = "building_avb_machine_unity_5"
+		UPGRADES = "building_avb_machine_unity_5 building_avb_machine_unity_5_mb"
 		PREREQUISITES = "tech_avb_bureaucratic_4"
 		POTENTIAL = "
 		avb_has_mb_tech = yes
@@ -774,7 +714,7 @@ building_avb_machine_unity_5 = {
 		COST = 5
 		CONVERT = 5
 		ALLOW = "has_fully_upgraded_capital = yes"
-		UPGRADES = "building_avb_machine_unity_6"
+		UPGRADES = "building_avb_machine_unity_6 building_avb_machine_unity_6_mb"
 		PREREQUISITES = "tech_avb_bureaucratic_5"
 		POTENTIAL = "
 		avb_has_mb_tech = no
@@ -803,7 +743,7 @@ building_avb_machine_unity_5_mb = {
 		COST = 5
 		CONVERT = 5
 		ALLOW = "has_fully_upgraded_capital = yes"
-		UPGRADES = "building_avb_machine_unity_6"
+		UPGRADES = "building_avb_machine_unity_6 building_avb_machine_unity_6_mb"
 		PREREQUISITES = "tech_avb_bureaucratic_5"
 		POTENTIAL = "
 		avb_has_mb_tech = yes
@@ -897,7 +837,7 @@ building_avb_hive_unity_4 = {
 		CONVERT = 4
 		COST = 4
 		ALLOW = "has_fully_upgraded_capital = yes"
-		UPGRADES = "building_avb_hive_unity_5"
+		UPGRADES = "building_avb_hive_unity_5 building_avb_hive_unity_5_mb"
 		PREREQUISITES = "tech_avb_hive_unity_4"
 		POTENTIAL = "
 		avb_has_mb_tech = no
@@ -919,7 +859,7 @@ building_avb_hive_unity_4_mb = {
 		CONVERT = 4
 		COST = 4
 		ALLOW = "has_fully_upgraded_capital = yes"
-		UPGRADES = "building_avb_hive_unity_5"
+		UPGRADES = "building_avb_hive_unity_5 building_avb_hive_unity_5_mb"
 		PREREQUISITES = "tech_avb_hive_unity_4"
 		POTENTIAL = "
 		avb_has_mb_tech = yes
@@ -943,7 +883,7 @@ building_avb_hive_unity_5 = {
 		CONVERT = 5
 		COST = 5
 		ALLOW = "has_upgraded_capital_4 = yes"
-		UPGRADES = "building_avb_hive_unity_6"
+		UPGRADES = "building_avb_hive_unity_6 building_avb_hive_unity_6_mb"
 		PREREQUISITES = "tech_avb_hive_unity_5"
 		POTENTIAL = "
 		avb_has_mb_tech = no
@@ -965,7 +905,7 @@ building_avb_hive_unity_5_mb = {
 		CONVERT = 5
 		COST = 5
 		ALLOW = "has_upgraded_capital_4 = yes"
-		UPGRADES = "building_avb_hive_unity_6"
+		UPGRADES = "building_avb_hive_unity_6 building_avb_hive_unity_6_mb"
 		PREREQUISITES = "tech_avb_hive_unity_5"
 		POTENTIAL = "
 		avb_has_mb_tech = yes
@@ -1037,7 +977,7 @@ building_avb_death_temple_4 = {
 		MODIFIER = 0.2
 		CONVERT = 4
 		ALLOW = "has_fully_upgraded_capital = yes"
-		UPGRADES = "building_avb_death_temple_5"
+		UPGRADES = "building_avb_death_temple_5 building_avb_death_temple_5_mb"
 		PREREQUISITES = "tech_avb_temple_4"
 		POTENTIAL = "
 		avb_has_mb_tech = no
@@ -1062,7 +1002,7 @@ building_avb_death_temple_4_mb = {
 		MODIFIER = 0.2
 		CONVERT = 4
 		ALLOW = "has_fully_upgraded_capital = yes"
-		UPGRADES = "building_avb_death_temple_5"
+		UPGRADES = "building_avb_death_temple_5 building_avb_death_temple_5_mb"
 		PREREQUISITES = "tech_avb_temple_4"
 		POTENTIAL = "
 		avb_has_mb_tech = yes
@@ -1089,7 +1029,7 @@ building_avb_death_temple_5 = {
 		MODIFIER = 0.25
 		CONVERT = 5
 		ALLOW = "has_upgraded_capital_4 = yes"
-		UPGRADES = "building_avb_death_temple_6"
+		UPGRADES = "building_avb_death_temple_6 building_avb_death_temple_6 building_avb_death_temple_6_mb"
 		PREREQUISITES = "tech_avb_temple_5"
 		POTENTIAL = "
 		avb_has_mb_tech = no
@@ -1114,7 +1054,7 @@ building_avb_death_temple_5_mb = {
 		MODIFIER = 0.25
 		CONVERT = 5
 		ALLOW = "has_upgraded_capital_4 = yes"
-		UPGRADES = "building_avb_death_temple_6"
+		UPGRADES = "building_avb_death_temple_6 building_avb_death_temple_6 building_avb_death_temple_6_mb"
 		PREREQUISITES = "tech_avb_temple_5"
 		POTENTIAL = "
 		avb_has_mb_tech = yes
@@ -2075,23 +2015,6 @@ building_avb_monument_machine_6 = {
 	}
 }
 #Servitors
-# building_avb_research_lab_4_mb = {
-# 	icon = building_avb_research_lab_4
-# 	inline_script = {
-# 		script = mega_builders/commercial
-# 		JOB = 8
-# 		COST = 3
-# 		TIME = @avb_mb_b4_time
-# 		ALLOW = "has_fully_upgraded_capital = yes"
-# 		PREREQUISITES = "tech_avb_basic_science_lab_4"
-# 		UPGRADES = "building_avb_research_lab_5"
-# 		POTENTIAL = "avb_has_mb_tech = yes"
-# 	}
-# 	show_tech_unlock_if = {
-# 		avb_hg_changes = yes
-# 		avb_has_mb_tech = yes
-# 	}
-# }
 building_avb_organic_sanctuary_3 = {
 	icon = building_avb_organic_sanctuary_3
 	inline_script = {
@@ -2102,7 +2025,7 @@ building_avb_organic_sanctuary_3 = {
 		CONVERT = 3
 		SCRIPT = 2
 		ALLOW = "always = yes"
-		UPGRADES = "building_avb_organic_sanctuary_4"
+		UPGRADES = "building_avb_organic_sanctuary_4 building_avb_organic_sanctuary_4_mb"
 		PREREQUISITES = "tech_avb_residence_3"
 		POTENTIAL = "
 		avb_has_mb_tech = no
@@ -2125,7 +2048,7 @@ building_avb_organic_sanctuary_3_mb = {
 		CONVERT = 3
 		SCRIPT = 2
 		ALLOW = "always = yes"
-		UPGRADES = "building_avb_organic_sanctuary_4"
+		UPGRADES = "building_avb_organic_sanctuary_4 building_avb_organic_sanctuary_4_mb"
 		PREREQUISITES = "tech_avb_residence_3"
 		POTENTIAL = "
 		avb_has_mb_tech = yes
@@ -2150,7 +2073,7 @@ building_avb_organic_sanctuary_4 = {
 		CONVERT = 4
 		SCRIPT = 3
 		ALLOW = "always = yes"
-		UPGRADES = "building_avb_organic_sanctuary_5"
+		UPGRADES = "building_avb_organic_sanctuary_5 building_avb_organic_sanctuary_5_mb"
 		PREREQUISITES = "tech_avb_residence_4"
 		POTENTIAL = "
 		avb_has_mb_tech = no
@@ -2173,7 +2096,7 @@ building_avb_organic_sanctuary_4_mb = {
 		CONVERT = 4
 		SCRIPT = 3
 		ALLOW = "always = yes"
-		UPGRADES = "building_avb_organic_sanctuary_5"
+		UPGRADES = "building_avb_organic_sanctuary_5 building_avb_organic_sanctuary_5_mb"
 		PREREQUISITES = "tech_avb_residence_4"
 		POTENTIAL = "
 		avb_has_mb_tech = yes

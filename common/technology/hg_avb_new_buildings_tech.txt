@@ -1130,6 +1130,8 @@ tech_avb_mega_builders = {
 		"tech_mega_engineering"
 	}
 	potential = {
+		has_berg = no # Until update
+		is_ai = no # AI would be too stupid to use it properly even it's only uprgrading a building
 		avb_hg_changes = yes
 		OR = {
 			has_technology = tech_avb_capital_6

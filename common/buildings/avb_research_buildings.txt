@@ -10,7 +10,7 @@ building_avb_research_lab_4 = {
 		TIME = @avb_b4_time
 		ALLOW = "has_fully_upgraded_capital = yes"
 		PREREQUISITES = "tech_avb_basic_science_lab_4"
-		UPGRADES = "building_avb_research_lab_5"
+		UPGRADES = "building_avb_research_lab_5 building_avb_research_lab_5_mb"
 		POTENTIAL = "avb_has_mb_tech = no"
 	}
 }
@@ -23,7 +23,7 @@ building_avb_research_lab_4_mb = {
 		TIME = @avb_mb_b4_time
 		ALLOW = "has_fully_upgraded_capital = yes"
 		PREREQUISITES = "tech_avb_basic_science_lab_4"
-		UPGRADES = "building_avb_research_lab_5"
+		UPGRADES = "building_avb_research_lab_5 building_avb_research_lab_5_mb"
 		POTENTIAL = "avb_has_mb_tech = yes"
 	}
 	show_tech_unlock_if = {
@@ -40,7 +40,7 @@ building_avb_research_lab_5 = {
 		TIME = @avb_b5_time
 		ALLOW = "has_upgraded_capital_4 = yes"
 		PREREQUISITES = "tech_avb_basic_science_lab_5"
-		UPGRADES = "building_avb_research_lab_6"
+		UPGRADES = "building_avb_research_lab_6 building_avb_research_lab_6_mb"
 		POTENTIAL = "avb_has_mb_tech = no"
 	}	
 }
@@ -53,7 +53,7 @@ building_avb_research_lab_5_mb = {
 		TIME = @avb_mb_b5_time
 		ALLOW = "has_upgraded_capital_4 = yes"
 		PREREQUISITES = "tech_avb_basic_science_lab_5"
-		UPGRADES = "building_avb_research_lab_6"
+		UPGRADES = "building_avb_research_lab_6 building_avb_research_lab_6_mb"
 		POTENTIAL = "avb_has_mb_tech = yes"
 	}
 	show_tech_unlock_if = {
