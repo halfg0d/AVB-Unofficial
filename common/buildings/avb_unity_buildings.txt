@@ -2747,7 +2747,7 @@ building_avb_alpha_hub_2 = {
 	}
 }
 building_avb_league_offices_2 = {
-	base_buildtime = @avb_f4_time
+	base_buildtime = @avb_b4_time
 
 	can_build = no
 	category = unity

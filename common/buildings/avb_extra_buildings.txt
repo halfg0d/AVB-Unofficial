@@ -4,7 +4,7 @@
 
 #Farming Buildings
 building_avb_hydroponics_farm_3 = {
-	base_buildtime = @avb_b4time
+	base_buildtime = @avb_b4_time
 	can_build = no
 
 	category = resource
@@ -79,10 +79,10 @@ building_avb_hydroponics_farm_3 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_b4minerals
+			minerals = @avb_b4_minerals
 		}
 		upkeep = {
-			energy = @avb_b4upkeep
+			energy = @avb_b4_upkeep
 		}
 	}	
 	prerequisites = {

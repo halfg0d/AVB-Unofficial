@@ -868,10 +868,10 @@ building_avb_toxic_bath_hive_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_a2_minerals
+			minerals = @avb_b2_minerals
 		}
 		upkeep = {
-			energy = @avb_a2_upkeep
+			energy = @avb_b2_upkeep
 		}
 	}
 }

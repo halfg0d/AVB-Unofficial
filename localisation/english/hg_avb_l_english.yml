@@ -359,7 +359,7 @@
  building_avb_temple_6_mb_desc:0 "$building_avb_temple_6_desc$"
 ### Machine
  building_avb_machine_unity_4_mb:0 "$building_avb_machine_unity_4$ $mb_postname$"
- building_avb_machine_unity_4_mb_desc:0 "$building_avb_machine_unity_4_desc$
+ building_avb_machine_unity_4_mb_desc:0 "$building_avb_machine_unity_4_desc$"
  building_avb_machine_unity_5_mb:0 "$building_avb_machine_unity_5$ $mb_postname$"
  building_avb_machine_unity_5_mb_desc:0 "$building_avb_machine_unity_5_desc$
  building_avb_machine_unity_6_mb:0 "$building_avb_machine_unity_6$ $mb_postname$"
