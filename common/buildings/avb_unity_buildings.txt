@@ -300,6 +300,7 @@ building_avb_bureaucratic_4_mb = {
 		"
 	}
 	show_tech_unlock_if = {
+		avb_has_mb_tech = yes
 		is_regular_empire = yes
 		is_spiritualist = no
 		has_make_spiritualist_perk = no
@@ -356,6 +357,7 @@ building_avb_bureaucratic_5_mb = {
 		"
 	}
 	show_tech_unlock_if = {
+		avb_has_mb_tech = yes
 		is_regular_empire = yes
 		is_spiritualist = no
 		has_make_spiritualist_perk = no
@@ -412,6 +414,7 @@ building_avb_bureaucratic_6_mb = {
 		"
 	}
 	show_tech_unlock_if = {
+		avb_has_mb_tech = yes
 		is_regular_empire = yes
 		is_spiritualist = no
 		has_make_spiritualist_perk = no

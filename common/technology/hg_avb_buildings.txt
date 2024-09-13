@@ -521,6 +521,7 @@ tech_avb_bureaucratic_4 = {
 	}
 	potential = {
 		is_hive_empire = no
+		NOT = { has_valid_civic = civic_machine_servitor }
 	}
 	weight_modifier = {
 		factor = 4
@@ -545,6 +546,7 @@ tech_avb_bureaucratic_5 = {
 	}
 	potential = {
 		is_hive_empire = no
+		NOT = { has_valid_civic = civic_machine_servitor }
 	}
 	weight_modifier = {
 		inline_script = "tech_weights/avb_government_weight"
@@ -568,6 +570,7 @@ tech_avb_bureaucratic_6 = {
 	}
 	potential = {
 		is_hive_empire = no
+		NOT = { has_valid_civic = civic_machine_servitor }
 	}
 	weight_modifier = {
 		inline_script = "tech_weights/avb_government_weight"

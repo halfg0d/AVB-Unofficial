@@ -250,7 +250,7 @@
 
  building_avb_lathe_resonator_2: "Advanced Synaptic Resonator"
  building_avb_lathe_resonator_2_desc: "Resonators harness and redirect the cognitive potential of stray thoughts and autonomic systems, leading every single chip to increase the efficiency of its closest processing neighbors."
- lathe_resonator_tt: "§Y$job_neural_chip_plural$§! Output: §G+1%§! per §Y$job_neural_chip_plural$§!\n(Current Value: §G+[num_neural_chips]%§!)"
+ building_avb_lathe_resonator_2_tt: "§Y$job_neural_chip_plural$§! Output: §G+2%§! per §Y$job_neural_chip_plural$§!\n(Current Value: §G+[num_neural_chips_double]%§!)"
 
  building_avb_lathe_stabilisator_2: "Advanced Neural Stabilizer"
  building_avb_lathe_stabilisator_2_desc: "Stabilization systems filter out the computing noise generated when physical distress overcomes Neural Chips. The reduction in interferences means an increase in global output."
@@ -379,9 +379,9 @@
  building_avb_death_temple_6_mb:0 "$building_avb_death_temple_6$ $mb_postname$"
  building_avb_death_temple_6_mb_desc:0 "$building_avb_death_temple_6_desc$"
 ### Organic Sanctuary
- building_avb_organic_sanctuary_3_mb:0 "$building_avb_organic_sanctuary_3$ mb_postname$"
+ building_avb_organic_sanctuary_3_mb:0 "$building_avb_organic_sanctuary_3$ $mb_postname$"
  building_avb_organic_sanctuary_3_mb_desc:0 "$building_avb_organic_sanctuary_3_desc$"
- building_avb_organic_sanctuary_4_mb:0 "$building_avb_organic_sanctuary_4$ mb_postname$"
+ building_avb_organic_sanctuary_4_mb:0 "$building_avb_organic_sanctuary_4$ $mb_postname$"
  building_avb_organic_sanctuary_4_mb_desc:0 "$building_avb_organic_sanctuary_4_desc$"
- building_avb_organic_sanctuary_5_mb:0 "$building_avb_organic_sanctuary_5$ mb_postname$"
+ building_avb_organic_sanctuary_5_mb:0 "$building_avb_organic_sanctuary_5$ $mb_postname$"
  building_avb_organic_sanctuary_5_mb_desc:0 "$building_avb_organic_sanctuary_5_desc$"
