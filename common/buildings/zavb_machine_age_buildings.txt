@@ -164,6 +164,7 @@ building_lathe_super_capital = {
 		planet_max_districts_add = 4
 		planet_housing_add = 100
 		planet_amenities_add = 50
+		planet_stability_add = 40
 	}
 
 	triggered_planet_modifier = {
@@ -338,7 +339,7 @@ building_lathe_overclocker = {
 			planet_neural_chips_society_research_produces_add = 1
 			planet_neural_chips_engineering_research_produces_add = 1
 			planet_neural_chips_advanced_logic_produces_add = 0.5
-			pop_purge_speed = 1
+			pop_purge_speed = 0.75
 		}
 	}
 
@@ -575,7 +576,7 @@ building_lathe_validator = {
 	}
 
 	planet_modifier = {
-		planet_stability_add = -20
+		planet_stability_add = -10
 	}
 
 	triggered_country_modifier = {
@@ -600,4 +601,222 @@ building_lathe_validator = {
 	ai_estimate_without_unemployment = yes
 	additional_ai_weight = 200
 	ai_weight_coefficient = 1.2
+}
+#####################
+#	Natural Design	#
+#####################
+
+building_transcendental_retreat = {
+	base_buildtime = @b2_time
+	base_cap_amount = 1
+
+	category = pop_assembly
+
+	potential = {
+		exists = owner
+		owner = { has_valid_civic = civic_natural_design }
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	allow = {
+		always = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = {
+				NOT = {
+					has_valid_civic = civic_natural_design
+				}
+			}
+			has_modifier = slave_colony
+			has_modifier = resort_colony
+		}
+	}
+
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+		}
+		pop_growth_speed = 0.025
+		planet_doctors_unity_produces_add = 1
+		mult = owner.value:transcendental_growth
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_jobs_produces_mult = 0.1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		modifier = {
+			job_healthcare_add = 1
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b3_minerals
+		}
+		upkeep = {
+			energy = @b3_upkeep
+		}
+	}
+
+	triggered_desc = {
+		text = natural_design_ascension_bonus
+	}
+
+	triggered_desc = {
+		text = job_healthcare_effect_desc
+	}
+
+	prerequisites = {}
+	upgrades = {
+		building_avb_transcendental_retreat_2
+	}
+}
+
+building_hive_transcendental_retreat = {
+	base_buildtime = @b2_time
+	base_cap_amount = 1
+
+	category = pop_assembly
+
+	potential = {
+		exists = owner
+		owner = { has_valid_civic = civic_hive_natural_design }
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	allow = {
+		always = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = {
+				NOT = {
+					has_valid_civic = civic_hive_natural_design
+				}
+			}
+			has_modifier = slave_colony
+			has_modifier = resort_colony
+		}
+	}
+
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+		}
+		pop_growth_speed = 0.025
+		planet_pop_assemblers_unity_produces_add = 1
+		mult = owner.value:transcendental_growth
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_jobs_produces_mult = 0.1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				is_scope_valid = no
+				AND = {
+					exists = owner
+					owner = {
+						NOT = {
+							has_origin = origin_progenitor_hive
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			job_spawning_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_origin = origin_progenitor_hive
+			}
+		}
+		modifier = {
+			job_offspring_drone_add = 1
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b3_minerals
+		}
+		upkeep = {
+			energy = @b3_upkeep
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			is_scope_valid = yes
+		}
+		text = natural_design_hive_ascension_bonus
+	}
+
+	triggered_desc = {
+		trigger = {
+			is_scope_valid = no
+		}
+		text = natural_design_hive_ascension_bonus_no_scope
+	}
+
+	triggered_desc = {
+		trigger = {
+			OR = {
+				is_scope_valid = no
+				AND = {
+					exists = owner
+					owner = {
+						NOT = {
+							has_origin = origin_progenitor_hive
+						}
+					}
+				}
+			}
+		}
+		text = job_spawning_drone_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_origin = origin_progenitor_hive
+			}
+		}
+		text = job_offspring_drone_effect_desc
+	}
+
+	prerequisites = {}
+	upgrades = {
+		building_avb_hive_transcendental_retreat_2
+	}
 }

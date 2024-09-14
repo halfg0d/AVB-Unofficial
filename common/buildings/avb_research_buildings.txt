@@ -102,6 +102,7 @@ building_avb_institute_2 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 		exists = owner
 		owner = { is_regular_empire = yes }
@@ -181,6 +182,7 @@ building_avb_supercomputer_2 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -264,6 +266,7 @@ building_avb_archaeostudies_faculty_2 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 		exists = owner
 	}
@@ -340,6 +343,7 @@ building_avb_vultaum_reality_computer_2 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 

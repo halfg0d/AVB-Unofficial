@@ -1152,3 +1152,24 @@ tech_avb_mega_builders = {
 		}
 	}
 }
+# Natural Design
+tech_avb_transcendental_retreat_2 = {
+	area = society
+	category = {
+		biology
+	}
+	tier = 3
+	cost = @tier3cost1
+	weight = @tier3cost1
+	is_rare = yes
+	prerequisites = {
+		"tech_avb_capital_4"
+	}
+	potential = {
+		avb_hg_changes = yes
+		is_natural_design_empire = yes
+	}
+	modifier = {
+		pop_growth_speed_reduction = -0.1
+	}
+}

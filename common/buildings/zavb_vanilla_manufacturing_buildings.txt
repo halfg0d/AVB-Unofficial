@@ -492,7 +492,6 @@ building_production_center = {
 				owner = { is_ai = yes }
 				has_any_industry_district = no
 			}
-			has_modifier = crucible_colony
 		}
 	}
 

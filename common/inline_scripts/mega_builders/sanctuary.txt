@@ -45,6 +45,7 @@ prerequisites = { $PREREQUISITES$ }
 upgrades = {
 	$UPGRADES$
 }
+ai_weight_coefficient = 1.2
 #science
 ai_resource_production = {
 	unity = $JOB$

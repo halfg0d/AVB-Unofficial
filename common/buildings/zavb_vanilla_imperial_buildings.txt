@@ -66,7 +66,7 @@ building_imperial_capital = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_active_tradition = tr_synthetics_finish }
+			owner = { has_active_tradition = tr_synthetics_prefabricated_components }
 		}
 		job_roboticist_add = 1
 	}
@@ -267,7 +267,7 @@ building_imperial_capital = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { has_active_tradition = tr_synthetics_finish }
+			owner = { has_active_tradition = tr_synthetics_prefabricated_components }
 		}
 		text = job_roboticist_effect_desc
 	}
@@ -430,7 +430,7 @@ building_imperial_machine_capital = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_active_tradition = tr_synthetics_finish_machine }
+			owner = { has_active_tradition = tr_synthetics_prefabricated_components_machine }
 		}
 		modifier = {
 			job_replicator_add = 1

@@ -585,7 +585,7 @@ building_avb_machine_capital_4 = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_active_tradition = tr_synthetics_finish_machine }
+			owner = { has_active_tradition = tr_synthetics_prefabricated_components_machine }
 		}
 		modifier = {
 			job_replicator_add = 1
@@ -754,7 +754,7 @@ building_avb_machine_capital_5 = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_active_tradition = tr_synthetics_finish_machine }
+			owner = { has_active_tradition = tr_synthetics_prefabricated_components_machine }
 		}
 		modifier = {
 			job_replicator_add = 1
@@ -922,7 +922,7 @@ building_avb_machine_capital_6 = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_active_tradition = tr_synthetics_finish_machine }
+			owner = { has_active_tradition = tr_synthetics_prefabricated_components_machine }
 		}
 		modifier = {
 			job_replicator_add = 1
@@ -1361,7 +1361,7 @@ building_hab_system_capital = {
 			exists = owner
 			owner = {
 				is_machine_empire = yes
-				has_active_tradition = tr_synthetics_finish_machine
+				has_active_tradition = tr_synthetics_prefabricated_components_machine
 			}
 		}
 		modifier = {
@@ -1372,7 +1372,7 @@ building_hab_system_capital = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_active_tradition = tr_synthetics_finish }
+			owner = { has_active_tradition = tr_synthetics_prefabricated_components }
 		}
 		job_roboticist_add = 1
 	}
@@ -1651,7 +1651,7 @@ building_hab_system_capital = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { has_active_tradition = tr_synthetics_finish }
+			owner = { has_active_tradition = tr_synthetics_prefabricated_components }
 		}
 		text = job_roboticist_effect_desc
 	}
@@ -1856,7 +1856,7 @@ building_avb_hab_capital_4 = {
 			exists = owner
 			owner = {
 				is_machine_empire = yes
-				has_active_tradition = tr_synthetics_finish_machine
+				has_active_tradition = tr_synthetics_prefabricated_components_machine
 			}
 		}
 		modifier = {
@@ -1867,7 +1867,7 @@ building_avb_hab_capital_4 = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_active_tradition = tr_synthetics_finish }
+			owner = { has_active_tradition = tr_synthetics_prefabricated_components }
 		}
 		job_roboticist_add = 1
 	}
@@ -2145,7 +2145,7 @@ building_avb_hab_capital_4 = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { has_active_tradition = tr_synthetics_finish }
+			owner = { has_active_tradition = tr_synthetics_prefabricated_components }
 		}
 		text = job_roboticist_effect_desc
 	}
@@ -2314,7 +2314,7 @@ building_avb_resort_capital_3 = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_active_tradition = tr_synthetics_finish }
+			owner = { has_active_tradition = tr_synthetics_prefabricated_components }
 		}
 		job_roboticist_add = 1
 	}
@@ -2397,7 +2397,7 @@ building_avb_resort_capital_3 = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { has_active_tradition = tr_synthetics_finish }
+			owner = { has_active_tradition = tr_synthetics_prefabricated_components }
 		}
 		text = job_roboticist_effect_desc
 	}

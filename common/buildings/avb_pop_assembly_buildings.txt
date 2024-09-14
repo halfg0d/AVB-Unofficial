@@ -24,7 +24,6 @@ building_avb_robot_assembly_plant_2 = {
 				is_materialist = yes
 			}
 		}
-		NOT = { has_modifier = slave_colony }
 	}
 	
 	allow = {
@@ -44,7 +43,6 @@ building_avb_robot_assembly_plant_2 = {
 					has_policy_flag = robots_outlawed
 				}
 			}
-			has_modifier = slave_colony
 			AND = {
 				owner = { is_ai = yes }
 				free_district_slots = 0
@@ -167,7 +165,10 @@ building_avb_machine_assembly_plant_2 = {
 				is_individual_machine = yes
 			}
 		}
-		NOT = { has_modifier = gestation_colony }
+		NOR = {
+			has_modifier = gestation_colony 
+			has_modifier = resort_colony
+		}
 	}
 	allow = {
 		has_fully_upgraded_capital = yes
@@ -343,7 +344,7 @@ building_avb_spawning_pool_2 = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_active_tradition = tr_cybernetics_modular_cybernetics_hive }
+			owner = { has_active_tradition = tr_cybernetics_synaptic_sub_processing }
 		}
 		modifier = {
 			job_augmentor_drone_add = 2
@@ -396,7 +397,7 @@ building_avb_spawning_pool_2 = {
 		trigger = {
 			exists = owner
 			owner = {
-				has_active_tradition = tr_cybernetics_modular_cybernetics_hive
+				has_active_tradition = tr_cybernetics_synaptic_sub_processing
 			}
 		}
 		text = job_augmentor_drone_assembly_desc
@@ -446,7 +447,7 @@ building_avb_offspring_nest_2 = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_active_tradition = tr_cybernetics_modular_cybernetics_hive }
+			owner = { has_active_tradition = tr_cybernetics_synaptic_sub_processing }
 		}
 		modifier = {
 			job_augmentor_drone_add = 2
@@ -479,7 +480,7 @@ building_avb_offspring_nest_2 = {
 		trigger = {
 			exists = owner
 			owner = {
-				has_active_tradition = tr_cybernetics_modular_cybernetics_hive
+				has_active_tradition = tr_cybernetics_synaptic_sub_processing
 			}
 		}
 		text = job_augmentor_drone_assembly_desc

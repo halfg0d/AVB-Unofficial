@@ -13,7 +13,10 @@ building_military_academy = {
 	potential = {
 		exists = owner
 		owner = { NOT = { has_valid_civic = civic_reanimated_armies } }
-		NOT = { has_modifier = resort_colony }
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = penal_colony
+		}
 	}
 
 	allow = {
@@ -113,7 +116,7 @@ building_military_academy = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { is_gestalt = no }
+			owner = { is_gestalt = yes }
 		}
 		text = job_evaluator_effect_desc
 	}
@@ -177,9 +180,20 @@ building_fortress = {
 		potential = {
 			exists = owner
 			owner = { is_gestalt = no }
+			NOT = { has_modifier = slave_colony }
 		}
 		modifier = {
 			job_soldier_add = @b2_jobs
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+			has_modifier = slave_colony
+		}
+		modifier = {
+			job_battle_thrall_add = @b2_jobs
 		}
 	}
 	triggered_planet_modifier = {
@@ -219,8 +233,17 @@ building_fortress = {
 		trigger = {
 			exists = owner
 			owner = { is_gestalt = no }
+			NOT = { has_modifier = slave_colony }
 		}
 		text = job_soldier_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+			has_modifier = slave_colony
+		}
+		text = job_battle_thrall_effect_desc
 	}
 	upgrades = {
 		"building_avb_stronghold_3"
@@ -234,13 +257,11 @@ building_planetary_shield_generator = {
 	base_cap_amount = 1
 	position_priority = 100
 	can_be_ruined = no
-	#icon = building_planetary_shield_generator
 
 	category = army
 	
 	allow = {
 		has_upgraded_capital = yes
-		hidden_trigger = { owner = { is_ai = no } }
 		if = {
 			limit = {
 				exists = orbital_defence
@@ -259,14 +280,40 @@ building_planetary_shield_generator = {
 	
 	
 	destroy_trigger = {
-		exists = owner
-		owner = { is_ai = yes }
 	}
 	
 	planet_modifier = {
 		planet_orbital_bombardment_damage = -0.5
-		}
+	}
 
+	triggered_planet_modifier = {
+		potential = { has_cosmic_storms_dlc = yes }
+		planet_storm_devastation_mult = -0.5
+	}
+
+	inline_script = {
+		script = cosmic_storms/StormBuildingModifiers
+	}
+
+	on_built = {
+		if = {
+			limit = { has_cosmic_storms_dlc = yes }
+			solar_system = {
+				set_star_flag = storm_no_negative_effects
+				remove_modifier = storm_base_modifier
+			}
+		}
+	}
+
+	on_destroy = {
+		if = {
+			limit = { has_cosmic_storms_dlc = yes }
+			owner = { set_country_flag = shield_on_destroy } #an action when destroyed
+			solar_system = {
+				remove_star_flag = storm_no_negative_effects
+			}
+		}
+	}
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -282,5 +329,17 @@ building_planetary_shield_generator = {
 	
 	upgrades = {
 		building_avb_planetary_shield_generator_2
+	}
+	custom_storm_ai_weight = {
+		weight = 5
+		modifier = {
+			factor = 5
+			AND = {
+				exists = owner
+				solar_system = {
+					owner = { num_cosmic_storms_encountered >=2 }
+				}
+			}
+		}
 	}
 }

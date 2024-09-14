@@ -1,158 +1,160 @@
 #########################
 ## Limited by deposits ##
 #########################
-building_avb_gas_extractors_2 = {
-	base_buildtime = @avb_b3_time
-	icon = building_gas_extractors
-	can_build = no
 
-	category = resource
+# Deleted in 3.13 stay for future
+# building_avb_gas_extractors_2 = {
+# 	base_buildtime = @avb_b3_time
+# 	icon = building_gas_extractors
+# 	can_build = no
 
-	potential = {
-		NOR = {
-			has_modifier = resort_colony
-		}
-	}
-	
-	allow = {
-		has_major_upgraded_capital = yes
-	}
+# 	category = resource
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_regular_empire = yes }
-		}
-		modifier = {
-			job_gas_extractor_add = 2
-		}
-	}
+# 	potential = {
+# 		NOR = {
+# 			has_modifier = resort_colony
+# 		}
+# 	}
+	
+# 	allow = {
+# 		has_major_upgraded_capital = yes
+# 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }
-		}
-		modifier = {
-			job_gas_extraction_drone_add = 2
-		}
-	}
-	
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @avb_b3_minerals
-		}
-		upkeep = {
-			energy = @avb_b3_upkeep
-		}
-	}	
-	
-	prerequisites = {
-		"tech_avb_gas_extractors_2"
-	}
-}
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = { is_regular_empire = yes }
+# 		}
+# 		modifier = {
+# 			job_gas_extractor_add = 2
+# 		}
+# 	}
 
-building_avb_crystal_mines_2 = {
-	base_buildtime = @avb_b3_time
-	can_build = no
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = { is_gestalt = yes }
+# 		}
+# 		modifier = {
+# 			job_gas_extraction_drone_add = 2
+# 		}
+# 	}
+	
+# 	resources = {
+# 		category = planet_buildings
+# 		cost = {
+# 			minerals = @avb_b3_minerals
+# 		}
+# 		upkeep = {
+# 			energy = @avb_b3_upkeep
+# 		}
+# 	}	
+	
+# 	prerequisites = {
+# 		"tech_avb_gas_extractors_2"
+# 	}
+# }
 
-	category = resource
-	
-	potential = {
-		NOR = {
-			has_modifier = resort_colony
-		}
-	}
-	
-	allow = {
-		has_major_upgraded_capital = yes
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_regular_empire = yes }
-		}
-		modifier = {
-			job_crystal_miner_add = 2
-		}
-	}
+# building_avb_crystal_mines_2 = {
+# 	base_buildtime = @avb_b3_time
+# 	can_build = no
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }
-		}
-		modifier = {
-			job_crystal_mining_drone_add = 2
-		}
-	}
+# 	category = resource
 	
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @avb_b3_minerals
-		}
-		upkeep = {
-			energy = @avb_b3_upkeep
-		}
-	}	
+# 	potential = {
+# 		NOR = {
+# 			has_modifier = resort_colony
+# 		}
+# 	}
 	
-	prerequisites = {
-		"tech_avb_crystal_mines_2"
-	}
-}
+# 	allow = {
+# 		has_major_upgraded_capital = yes
+# 	}
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = { is_regular_empire = yes }
+# 		}
+# 		modifier = {
+# 			job_crystal_miner_add = 2
+# 		}
+# 	}
 
-building_avb_mote_harvesters_2 = {
-	base_buildtime = @avb_b3_time
-	can_build = no
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = { is_gestalt = yes }
+# 		}
+# 		modifier = {
+# 			job_crystal_mining_drone_add = 2
+# 		}
+# 	}
+	
+# 	resources = {
+# 		category = planet_buildings
+# 		cost = {
+# 			minerals = @avb_b3_minerals
+# 		}
+# 		upkeep = {
+# 			energy = @avb_b3_upkeep
+# 		}
+# 	}	
+	
+# 	prerequisites = {
+# 		"tech_avb_crystal_mines_2"
+# 	}
+# }
 
-	category = resource
-	
-	potential = {
-		NOR = {
-			has_modifier = resort_colony
-		}
-	}
-	
-	allow = {
-		has_major_upgraded_capital = yes
-	}
+# building_avb_mote_harvesters_2 = {
+# 	base_buildtime = @avb_b3_time
+# 	can_build = no
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_regular_empire = yes }
-		}
-		modifier = {
-			job_mote_harvester_add = 2
-		}
-	}
+# 	category = resource
+	
+# 	potential = {
+# 		NOR = {
+# 			has_modifier = resort_colony
+# 		}
+# 	}
+	
+# 	allow = {
+# 		has_major_upgraded_capital = yes
+# 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }
-		}
-		modifier = {
-			job_mote_harvesting_drone_add = 2
-		}
-	}
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = { is_regular_empire = yes }
+# 		}
+# 		modifier = {
+# 			job_mote_harvester_add = 2
+# 		}
+# 	}
+
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = { is_gestalt = yes }
+# 		}
+# 		modifier = {
+# 			job_mote_harvesting_drone_add = 2
+# 		}
+# 	}
 	
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @avb_b3_minerals
-		}
-		upkeep = {
-			energy = @avb_b3_upkeep
-		}
-	}	
+# 	resources = {
+# 		category = planet_buildings
+# 		cost = {
+# 			minerals = @avb_b3_minerals
+# 		}
+# 		upkeep = {
+# 			energy = @avb_b3_upkeep
+# 		}
+# 	}	
 	
-	prerequisites = {
-		"tech_avb_mote_harvesters_2"
-	}
-}
+# 	prerequisites = {
+# 		"tech_avb_mote_harvesters_2"
+# 	}
+# }
 
 building_avb_betharian_power_plant_2 = {
 	base_buildtime = @avb_b3_time
@@ -179,6 +181,9 @@ building_avb_betharian_power_plant_2 = {
 			energy = @avb_b3_upkeep
 		}
 	}
+	planet_modifier = {
+		planet_technician_energy_produces_add = 1
+	}
 
 	inline_script = {
 		script = jobs/technicians_add
@@ -204,6 +209,7 @@ building_avb_xeno_zoo_2 = {
 		planet = {
 			OR = {
 				has_deposit = d_alien_pets_deposit
+				has_deposit = d_avian_reserve
 				AND = {
 					exists = owner
 					owner = { has_policy_flag = pre_sapients_protect }
@@ -233,6 +239,7 @@ building_avb_xeno_zoo_2 = {
 			planet = {
 				NOR = {
 					has_deposit = d_alien_pets_deposit
+					has_deposit = d_avian_reserve
 					AND = {
 						exists = owner
 						owner = { has_policy_flag = pre_sapients_protect }

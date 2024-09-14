@@ -15,6 +15,7 @@ building_research_lab_3 = {
 		OR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -98,6 +99,7 @@ building_institute = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 		exists = owner
 		owner = { is_regular_empire = yes }
@@ -184,6 +186,7 @@ building_supercomputer = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -273,6 +276,7 @@ building_archaeostudies_faculty = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 		exists = owner
 	}
@@ -349,6 +353,7 @@ building_vultaum_reality_computer = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 

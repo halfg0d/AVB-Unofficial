@@ -17,6 +17,10 @@ building_avb_residence_3 = {
 				}
 			}
 		}
+		NOR = {	
+			has_modifier = slave_colony	
+			has_modifier = penal_colony	
+		}
 	}
 
 	allow = {
@@ -100,6 +104,10 @@ building_avb_residence_4 = {
 				}
 			}
 		}
+		NOR = {	
+			has_modifier = slave_colony	
+			has_modifier = penal_colony	
+		}
 	}
 	allow = {
 		has_fully_upgraded_capital = yes
@@ -179,6 +187,10 @@ building_avb_residence_5 = {
 					is_void_dweller_empire = yes
 				}
 			}
+		}
+		NOR = {	
+			has_modifier = slave_colony	
+			has_modifier = penal_colony	
 		}
 	}
 
@@ -261,6 +273,10 @@ building_avb_communal_housing_3 = {
 					is_void_dweller_empire = yes
 				}
 			}
+		}
+		NOR = {
+			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 	
@@ -353,6 +369,10 @@ building_avb_communal_housing_4 = {
 				}
 			}
 		}
+		NOR = {
+			has_modifier = slave_colony
+			has_modifier = penal_colony
+		}
 	}
 	
 	allow = {
@@ -443,6 +463,10 @@ building_avb_communal_housing_5 = {
 					is_void_dweller_empire = yes
 				}
 			}
+		}
+		NOR = {
+			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 	
@@ -929,6 +953,10 @@ building_avb_holo_theatre_3 = {
 				NOT = { has_forbidden_jobs = entertainer }
 			}
 		}
+		NOR = {	
+			has_modifier = slave_colony	
+			has_modifier = penal_colony	
+		}
 	}
 
 	triggered_planet_modifier = {
@@ -1028,6 +1056,10 @@ building_avb_holo_theatre_4 = {
 				NOT = { has_available_jobs = entertainer }
 				NOT = { has_forbidden_jobs = entertainer }
 			}
+		}
+		NOR = {	
+			has_modifier = slave_colony	
+			has_modifier = penal_colony	
 		}
 	}
 		
@@ -1130,7 +1162,6 @@ building_avb_clinic_3 = {
 		exists = owner
 		OR = {
 			owner = { is_regular_empire = no }
-			has_modifier = slave_colony
 			AND = {
 				buildings_stop_pop = yes
 				owner = { is_ai = yes }
@@ -1238,7 +1269,6 @@ building_avb_clinic_4 = {
 		exists = owner
 		OR = {
 			owner = { is_regular_empire = no }
-			has_modifier = slave_colony
 			AND = {
 				buildings_stop_pop = yes
 				owner = { is_ai = yes }

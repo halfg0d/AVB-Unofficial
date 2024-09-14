@@ -258,6 +258,7 @@ building_avb_lathe_capital_4 = {
 		planet_max_districts_add = 4
 		planet_housing_add = 150
 		planet_amenities_add = 75
+		planet_stability_add = 60
 	}
 
 	triggered_planet_modifier = {
@@ -649,7 +650,7 @@ building_avb_lathe_validator_2 = {
 	}
 
 	planet_modifier = {
-		planet_stability_add = -30
+		planet_stability_add = -20
 	}
 
 	triggered_country_modifier = {
@@ -671,4 +672,300 @@ building_avb_lathe_validator_2 = {
 	ai_estimate_without_unemployment = yes
 	additional_ai_weight = 200
 	ai_weight_coefficient = 1.2
+}
+
+#####################
+#	Natural Design	#
+#####################
+
+building_avb_transcendental_retreat_2 = {
+	base_buildtime = @avb_b3_time
+	can_build = no
+
+	category = pop_assembly
+
+	potential = {
+		exists = owner
+		owner = { has_valid_civic = civic_natural_design }
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = {
+				NOT = {
+					has_valid_civic = civic_natural_design
+				}
+			}
+			has_modifier = slave_colony
+			has_modifier = resort_colony
+		}
+	}
+
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+		}
+		pop_growth_speed = 0.025
+		planet_doctors_unity_produces_add = 1
+		mult = value:avb_transcendental_growth
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_jobs_produces_mult = 0.2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		modifier = {
+			job_healthcare_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			has_planetary_ascension_tier >= 1
+		}
+		job_healthcare_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			has_planetary_ascension_tier >= 5
+		}
+		job_healthcare_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			has_planetary_ascension_tier >= 10
+		}
+		job_healthcare_add = 1
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_b4_minerals
+		}
+		upkeep = {
+			energy = @avb_b4_upkeep
+		}
+	}
+
+	triggered_desc = {
+		text = avb_natural_design_ascension_bonus
+	}
+
+	triggered_desc = {
+		text = job_healthcare_effect_desc
+	}
+
+	prerequisites = {
+		tech_avb_transcendental_retreat_2
+	}
+	show_tech_unlock_if = {
+		is_regular_empire = yes
+	}
+}
+
+building_avb_hive_transcendental_retreat_2 = {
+	base_buildtime = @avb_b3_time
+	can_build = no
+	icon = building_avb_transcendental_retreat_2
+
+	category = pop_assembly
+
+	potential = {
+		exists = owner
+		owner = { has_valid_civic = civic_hive_natural_design }
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = {
+				NOT = {
+					has_valid_civic = civic_hive_natural_design
+				}
+			}
+			has_modifier = slave_colony
+			has_modifier = resort_colony
+		}
+	}
+
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+		}
+		pop_growth_speed = 0.025
+		planet_pop_assemblers_unity_produces_add = 1
+		mult = value:avb_transcendental_growth
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_jobs_produces_mult = 0.2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				is_scope_valid = no
+				AND = {
+					exists = owner
+					owner = {
+						NOT = {
+							has_origin = origin_progenitor_hive
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			job_spawning_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_origin = origin_progenitor_hive
+			}
+		}
+		modifier = {
+			job_offspring_drone_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { NOT = { has_origin = origin_progenitor_hive } }
+			has_planetary_ascension_tier >= 1
+		}
+		job_spawning_drone_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_origin = origin_progenitor_hive }
+			has_planetary_ascension_tier >= 1
+		}
+		job_offspring_drone_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { NOT = { has_origin = origin_progenitor_hive } }
+			has_planetary_ascension_tier >= 5
+		}
+		job_spawning_drone_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_origin = origin_progenitor_hive }
+			has_planetary_ascension_tier >= 5
+		}
+		job_offspring_drone_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { NOT = { has_origin = origin_progenitor_hive } }
+			has_planetary_ascension_tier >= 10
+		}
+		job_spawning_drone_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_origin = origin_progenitor_hive }
+			has_planetary_ascension_tier >= 10
+		}
+		job_offspring_drone_add = 1
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_b4_minerals
+		}
+		upkeep = {
+			energy = @avb_b4_upkeep
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			is_scope_valid = yes
+		}
+		text = avb_natural_design_hive_ascension_bonus
+	}
+
+	triggered_desc = {
+		trigger = {
+			is_scope_valid = no
+		}
+		text = avb_natural_design_hive_ascension_bonus_no_scope
+	}
+
+	triggered_desc = {
+		trigger = {
+			OR = {
+				is_scope_valid = no
+				AND = {
+					exists = owner
+					owner = {
+						NOT = {
+							has_origin = origin_progenitor_hive
+						}
+					}
+				}
+			}
+		}
+		text = job_spawning_drone_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_origin = origin_progenitor_hive
+			}
+		}
+		text = job_offspring_drone_effect_desc
+	}
+
+	prerequisites = {
+		tech_avb_transcendental_retreat_2
+	}
+	show_tech_unlock_if = {
+		is_hive_empire = yes
+	}
 }

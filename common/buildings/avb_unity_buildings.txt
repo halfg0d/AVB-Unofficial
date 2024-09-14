@@ -11,7 +11,10 @@ building_avb_monument_4 = {
 
 	potential = {
 		exists = owner
-		NOT = { has_modifier = slave_colony }
+		NOR = {	
+			has_modifier = slave_colony	
+			has_modifier = penal_colony	
+		}
 		owner = {
 			NOR = {
 				is_gestalt = yes
@@ -32,6 +35,7 @@ building_avb_monument_4 = {
 		exists = owner
 		OR = {
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 			owner = {
 				OR = {
 					is_gestalt = yes
@@ -95,7 +99,10 @@ building_avb_monument_5 = {
 
 	potential = {
 		exists = owner
-		NOT = { has_modifier = slave_colony }
+		NOR = {	
+			has_modifier = slave_colony	
+			has_modifier = penal_colony	
+		}
 		owner = {
 			NOR = {
 				is_gestalt = yes
@@ -113,6 +120,7 @@ building_avb_monument_5 = {
 		exists = owner
 		OR = {
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 			owner = {
 				OR = {
 					is_gestalt = yes
@@ -175,7 +183,10 @@ building_avb_monument_6 = {
 
 	potential = {
 		exists = owner
-		NOT = { has_modifier = slave_colony }
+		NOR = {	
+			has_modifier = slave_colony	
+			has_modifier = penal_colony	
+		}
 		owner = {
 			NOR = {
 				is_gestalt = yes
@@ -193,6 +204,7 @@ building_avb_monument_6 = {
 		exists = owner
 		OR = {
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 			owner = {
 				OR = {
 					is_gestalt = yes
@@ -2175,7 +2187,10 @@ building_avb_autocurating_vault_2 = {
 	potential = {
 		avb_hg_changes = yes
 		exists = owner
-		NOT = { has_modifier = slave_colony }
+		NOR = {
+			has_modifier = slave_colony
+			has_modifier = penal_colony
+		}
 		owner = {
 			is_machine_empire = no		# see 'building_alpha_hub'
 			is_megacorp = no			# see 'building_corporate_vault'
@@ -2320,7 +2335,10 @@ building_avb_citadel_of_faith_2 = {
 				}
 			}
 		}
-		NOT = { has_modifier = slave_colony }
+		NOR = {
+			has_modifier = slave_colony
+			has_modifier = penal_colony
+		}
 	}
 
 	allow = {
@@ -2454,7 +2472,10 @@ building_avb_corporate_vault_2 = {
 	potential = {
 		avb_hg_changes = yes
 		exists = owner
-		NOT = { has_modifier = slave_colony }
+		NOR = {
+			has_modifier = slave_colony
+			has_modifier = penal_colony
+		}
 		owner = {
 			is_megacorp = yes
 			is_spiritualist = no

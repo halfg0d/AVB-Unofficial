@@ -17,7 +17,10 @@ building_avb_commercial_3 = {
 		avb_has_mb_tech = no
 		exists = owner
 		owner = { is_gestalt = no }
-		NOT = { has_modifier = slave_colony }
+		NOR = {
+			has_modifier = slave_colony
+			has_modifier = penal_colony
+		}
 		"
 	}
 	show_tech_unlock_if = {
@@ -39,7 +42,10 @@ building_avb_commercial_3_mb = {
 		avb_has_mb_tech = yes
 		exists = owner
 		owner = { is_gestalt = no }
-		NOT = { has_modifier = slave_colony }
+		NOR = {
+			has_modifier = slave_colony
+			has_modifier = penal_colony
+		}
 		"
 	}
 	show_tech_unlock_if = {
@@ -63,7 +69,10 @@ building_avb_commercial_4 = {
 		avb_has_mb_tech = no
 		exists = owner
 		owner = { is_gestalt = no }
-		NOT = { has_modifier = slave_colony }
+		NOR = {
+			has_modifier = slave_colony
+			has_modifier = penal_colony
+		}
 		"
 	}
 	show_tech_unlock_if = {
@@ -85,7 +94,10 @@ building_avb_commercial_4_mb = {
 		avb_has_mb_tech = yes
 		exists = owner
 		owner = { is_gestalt = no }
-		NOT = { has_modifier = slave_colony }
+		NOR = {
+			has_modifier = slave_colony
+			has_modifier = penal_colony
+		}
 		"
 	}
 	show_tech_unlock_if = {
@@ -109,7 +121,10 @@ building_avb_commercial_5 = {
 		avb_has_mb_tech = no
 		exists = owner
 		owner = { is_gestalt = no }
-		NOT = { has_modifier = slave_colony }
+		NOR = {
+			has_modifier = slave_colony
+			has_modifier = penal_colony
+		}
 		"
 	}
 	show_tech_unlock_if = {
@@ -131,7 +146,10 @@ building_avb_commercial_5_mb = {
 		avb_has_mb_tech = yes
 		exists = owner
 		owner = { is_gestalt = no }
-		NOT = { has_modifier = slave_colony }
+		NOR = {
+			has_modifier = slave_colony
+			has_modifier = penal_colony
+		}
 		"
 	}
 	show_tech_unlock_if = {
@@ -148,8 +166,11 @@ building_avb_galactic_stock_exchange_2 = {
 	category = trade
 	
 	potential = {
-		NOT = { has_modifier = resort_colony }	
-		NOT = { has_modifier = slave_colony }
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = penal_colony
+			has_modifier = slave_colony
+		}
 	}
 	
 	destroy_trigger = {
@@ -158,6 +179,7 @@ building_avb_galactic_stock_exchange_2 = {
 			owner = { is_gestalt = yes }
 			has_modifier = slave_colony
 			has_modifier = resort_colony
+			has_modifier = penal_colony
 		}
 	}
 	

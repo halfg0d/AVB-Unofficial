@@ -14,6 +14,7 @@ destroy_trigger = {
 	OR = {
 		has_modifier = slave_colony
 		has_modifier = resort_colony
+		has_modifier = penal_colony
 	}
 }
 inline_script = {
