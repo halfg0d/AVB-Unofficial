@@ -1105,4 +1105,7 @@ building_avb_archaeo_refinery_2 = {
 	prerequisites = {
 		"tech_avb_archaeo_refinery_2"
 	}
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+	}
 }

@@ -44,6 +44,9 @@ building_avb_paragon_memory_vaults_2 = {
 	potential = {
 		avb_hg_changes = yes
 	}
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+	}
 	allow = {
 		has_upgraded_capital_4 = yes
 		hidden_trigger = {

@@ -514,6 +514,7 @@ building_avb_grand_embassy_2 = {
 
 	show_tech_unlock_if = {
 		is_regular_empire = yes
+		avb_hg_changes = yes
 	}
 }
 ###
@@ -628,4 +629,8 @@ building_avb_zoo_administration = {
 		text = job_avb_xeno_zoo_keeper_effect_desc
 	}
 	inline_script = misc/zoo_animals
+	
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+	}
 }

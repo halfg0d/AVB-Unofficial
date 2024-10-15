@@ -88,6 +88,9 @@ building_avb_hydroponics_farm_3 = {
 	prerequisites = {
 		tech_avb_hydroponics_3
 	}
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+	}
 	ai_resource_production = {
 		food = 3
 		trigger = {
@@ -175,6 +178,9 @@ building_avb_mineral_mine_1 = {
 		AMOUNT = 2
 	}
 
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+	}
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -301,6 +307,9 @@ building_avb_mineral_mine_2 = {
 		"tech_avb_mining_4"
 	}
 	
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+	}
 	upgrades = {
 		building_avb_mineral_mine_3
 	}
@@ -410,6 +419,10 @@ building_avb_mineral_mine_3 = {
 	prerequisites = {
 		"tech_avb_mining_6"
 	}
+	
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+	}
 	ai_resource_production = {
 		minerals = 40
 		trigger = {
@@ -500,6 +513,9 @@ building_avb_energy_1 = {
 		tech_power_plant_2
 	}
 	
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+	}
 	upgrades = {
 		building_avb_energy_2
 	}
@@ -595,6 +611,9 @@ building_avb_energy_2 = {
 		tech_power_plant_4
 	}
 	
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+	}
 	upgrades = {
 		building_avb_energy_3
 	}
@@ -694,6 +713,9 @@ building_avb_energy_3 = {
 		tech_avb_power_plant_6
 	}
 
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+	}
 	ai_resource_production = {
 		energy = 25
 		trigger = {
@@ -788,6 +810,9 @@ building_avb_resource_silo_3 = {
 		tech_avb_mining_5
 	}
 
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+	}
 	triggered_desc = {
 		trigger = {
 			exists = owner

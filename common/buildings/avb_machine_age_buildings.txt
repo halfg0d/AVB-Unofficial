@@ -17,6 +17,10 @@ building_avb_nanolab_3 = {
 	prerequisites = {
 		tech_avb_nanolab_3
 	}
+	
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+	}
 	allow = {
 		has_major_upgraded_capital = yes
 	}
@@ -114,6 +118,10 @@ building_avb_nanotech_cauldron_2 = {
 	prerequisites = {
 		tech_avb_nanotech_cauldron_2
 	}
+	
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+	}
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -174,6 +182,10 @@ building_avb_nanotech_mining = {
 	upgrades = {
 		building_avb_nanotech_mining_2
 	}
+	
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+	}
 }
 building_avb_nanotech_mining_2 = {
 	base_buildtime = @avb_b3_time
@@ -181,6 +193,10 @@ building_avb_nanotech_mining_2 = {
 	can_build = no
 	prerequisites = {
 		tech_avb_nanotech_mining_2
+	}
+	
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
 	}
 	potential = {
 		avb_hg_changes = yes
@@ -339,6 +355,9 @@ building_avb_lathe_resonator_2 = {
 	prerequisites = {
 		tech_avb_lathe_resonator_2
 	}
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+	}
 
 	triggered_desc = {
 		text = building_avb_lathe_resonator_2_tt
@@ -381,6 +400,9 @@ building_avb_lathe_stabilisator_2 = {
 		planet_stability_add = 30
 	}
 	
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+	}
 	ai_estimate_without_unemployment = yes
 	additional_ai_weight = 200
 	ai_weight_coefficient = 1.2
@@ -432,6 +454,9 @@ building_avb_lathe_overclocker_2 = {
 	prerequisites = {
 		tech_avb_lathe_overclocker_2
 	}
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+	}
 	
 	ai_estimate_without_unemployment = yes
 	additional_ai_weight = 200
@@ -474,6 +499,9 @@ building_avb_lathe_preserver_2 = {
 	prerequisites = {
 		tech_avb_lathe_preserver_2
 	}
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+	}
 	
 	ai_estimate_without_unemployment = yes
 	additional_ai_weight = 200
@@ -509,6 +537,9 @@ building_avb_lathe_reactor_2 = {
 	}
 	prerequisites = {
 		tech_avb_lathe_reactor_2
+	}
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
 	}
 	planet_modifier = {
 		planet_jobs_upkeep_mult = -0.25
@@ -557,6 +588,9 @@ building_avb_lathe_life_support_2 = {
 
 	prerequisites = {
 		tech_avb_lathe_life_support_2
+	}
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
 	}
 	
 	ai_estimate_without_unemployment = yes
@@ -614,6 +648,9 @@ building_avb_lathe_cogitator_2 = {
 	prerequisites = {
 		tech_avb_lathe_cogitator_2
 	}
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+	}
 	
 	ai_estimate_without_unemployment = yes
 	additional_ai_weight = 200
@@ -667,6 +704,9 @@ building_avb_lathe_validator_2 = {
 
 	prerequisites = {
 		tech_avb_lathe_validator_2
+	}
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
 	}
 	
 	ai_estimate_without_unemployment = yes

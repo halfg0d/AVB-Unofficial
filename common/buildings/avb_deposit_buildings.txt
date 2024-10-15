@@ -319,6 +319,9 @@ building_avb_xeno_zoo_2 = {
 		"tech_avb_xeno_zoo_2"
 	}
 	
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+	}
 	triggered_desc = {
 		text = job_xeno_zoo_keeper_effect_desc
 	}
