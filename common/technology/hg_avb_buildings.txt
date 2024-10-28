@@ -7,6 +7,7 @@ tech_avb_mote_harvesters_2 = {
 	prerequisites = { "tech_mine_volatile_motes" "tech_avb_capital_4" }
 	weight = @tier5weight1
 	potential = {
+		always = no
 		avb_hg_changes = yes
 	}
 	weight_modifier = {
@@ -48,6 +49,7 @@ tech_avb_gas_extractors_2 = {
 	weight = @tier5weight1
 	
 	potential = {
+		always = no
 		avb_hg_changes = yes
 	}
 	weight_modifier = {
@@ -88,6 +90,7 @@ tech_avb_crystal_mines_2 = {
 	weight = @tier5weight1
 	
 	potential = {
+		always = no
 		avb_hg_changes = yes
 	}
 	weight_modifier = {

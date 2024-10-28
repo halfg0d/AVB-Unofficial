@@ -828,3 +828,110 @@ building_avb_resource_silo_3 = {
 		text = job_clerk_effect_desc
 	}
 }
+building_avb_core_miner = {
+	base_buildtime = @avb_b3_time
+	base_cap_amount = 1
+	category = resource
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+	potential = {
+		avb_hg_changes = yes
+		is_artificial = no
+		OR = {
+			owner = { is_ai = no }
+			AND = {
+				owner = { is_ai = yes }
+				has_any_mining_district = yes
+			}
+		}
+	}
+	destroy_trigger = {
+		OR = {
+			planet = {
+				is_artificial = yes
+			}
+			AND = {
+				owner = { is_ai = yes }
+				has_any_mining_district = no
+			}
+		}
+	}
+	planet_modifier = {
+		custom_tooltip = avb_core_miner_tooltip
+		planet_miners_minerals_produces_add = 1
+		planet_miners_energy_produces_add = 0.5
+		planet_miners_alloys_produces_add = 0.25
+	}
+	triggered_planet_modifier = {
+		potential = {
+			planet = {
+				has_designation = col_mining
+			}
+		}
+		modifier = {
+			planet_miners_minerals_produces_add = 0.5
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			planet = {
+				has_designation = col_generator
+			}
+		}
+		modifier = {
+			planet_miners_energy_produces_add = 0.25
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			planet = {
+				has_designation = col_foundry
+			}
+		}
+		modifier = {
+			planet_miners_alloys_produces_add = 0.125
+		}
+	}
+	inline_script = {
+		script = jobs/miners_add
+		AMOUNT = 2
+	}
+	inline_script = {
+		script = jobs/technicians_add
+		AMOUNT = 2
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_b3_minerals
+			rare_crystals = @b2_rare_cost
+		}
+		upkeep = {
+			energy = @b2_upkeep
+			rare_crystals = @b2_rare_upkeep
+		}
+		produces = {
+			minerals = 50
+			energy = 50
+		}
+	}
+	prerequisites = {
+		"tech_avb_mineral_purification_4"
+	}
+	show_tech_unlock_if = {
+		avb_hg_changes = yes
+	}
+	ai_resource_production = {
+		minerals = 50
+		trigger = {
+			always = yes
+		}
+	}
+	ai_resource_production = {
+		energy = 50
+		trigger = {
+			always = yes
+		}
+	}
+}

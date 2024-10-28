@@ -250,7 +250,7 @@
 
  building_avb_lathe_resonator_2: "Advanced Synaptic Resonator"
  building_avb_lathe_resonator_2_desc: "Resonators harness and redirect the cognitive potential of stray thoughts and autonomic systems, leading every single chip to increase the efficiency of its closest processing neighbors."
- lathe_resonator_tt: "§Y$job_neural_chip_plural$§! Output: §G+1%§! per §Y$job_neural_chip_plural$§!\n(Current Value: §G+[num_neural_chips]%§!)"
+ building_avb_lathe_resonator_2_tt: "§Y$job_neural_chip_plural$§! Output: §G+2%§! per §Y$job_neural_chip_plural$§!\n(Current Value: §G+[num_neural_chips_double]%§!)"
 
  building_avb_lathe_stabilisator_2: "Advanced Neural Stabilizer"
  building_avb_lathe_stabilisator_2_desc: "Stabilization systems filter out the computing noise generated when physical distress overcomes Neural Chips. The reduction in interferences means an increase in global output."
@@ -359,7 +359,7 @@
  building_avb_temple_6_mb_desc:0 "$building_avb_temple_6_desc$"
 ### Machine
  building_avb_machine_unity_4_mb:0 "$building_avb_machine_unity_4$ $mb_postname$"
- building_avb_machine_unity_4_mb_desc:0 "$building_avb_machine_unity_4_desc$
+ building_avb_machine_unity_4_mb_desc:0 "$building_avb_machine_unity_4_desc$"
  building_avb_machine_unity_5_mb:0 "$building_avb_machine_unity_5$ $mb_postname$"
  building_avb_machine_unity_5_mb_desc:0 "$building_avb_machine_unity_5_desc$
  building_avb_machine_unity_6_mb:0 "$building_avb_machine_unity_6$ $mb_postname$"
@@ -379,9 +379,24 @@
  building_avb_death_temple_6_mb:0 "$building_avb_death_temple_6$ $mb_postname$"
  building_avb_death_temple_6_mb_desc:0 "$building_avb_death_temple_6_desc$"
 ### Organic Sanctuary
- building_avb_organic_sanctuary_3_mb:0 "$building_avb_organic_sanctuary_3$ mb_postname$"
+ building_avb_organic_sanctuary_3_mb:0 "$building_avb_organic_sanctuary_3$ $mb_postname$"
  building_avb_organic_sanctuary_3_mb_desc:0 "$building_avb_organic_sanctuary_3_desc$"
- building_avb_organic_sanctuary_4_mb:0 "$building_avb_organic_sanctuary_4$ mb_postname$"
+ building_avb_organic_sanctuary_4_mb:0 "$building_avb_organic_sanctuary_4$ $mb_postname$"
  building_avb_organic_sanctuary_4_mb_desc:0 "$building_avb_organic_sanctuary_4_desc$"
- building_avb_organic_sanctuary_5_mb:0 "$building_avb_organic_sanctuary_5$ mb_postname$"
+ building_avb_organic_sanctuary_5_mb:0 "$building_avb_organic_sanctuary_5$ $mb_postname$"
  building_avb_organic_sanctuary_5_mb_desc:0 "$building_avb_organic_sanctuary_5_desc$"
+### Natural Design
+ building_avb_transcendental_retreat_2:0 "OmniGenomic Nexus"
+ building_avb_transcendental_retreat_2_desc:0 "Located at the OmniGenomic Nexus, our team of experts is dedicated to preserving the perfection of nature's genetic code, harnessing its secrets to drive innovation in medicine and empower individuals to thrive."
+ tech_avb_transcendental_retreat_2:0 "Next Era of DNA Guarding"
+ tech_avb_transcendental_retreat_2_desc:0 "As we embark on the Next Era of DNA Guarding, we reaffirm our sacred oath to protect and preserve the perfection of our genetic code. This new frontier of bio-security will see evolve into an unparalleled bastion of genomic stewardship, where cutting-edge research and innovative technologies converge to safeguard the integrity of our DNA. With this bold initiative, we commit ourselves to a future where our genetic heritage remains untainted, a beacon of hope for generations yet to come."
+ building_avb_hive_transcendental_retreat_2:0 "OmniGenomic Garrison"
+ building_avb_hive_transcendental_retreat_2_desc:0 "The OmniGenomic Garrison is a frontier outpost where brain drones converge to study, preserve, and protect the perfection of nature's genetic code. Our discoveries here ripple out into the cosmos, illuminating the path forward for the patron's pursuit of wisdom."
+ avb_natural_design_ascension_bonus: "Provide §G+1§! $job_healthcare_plural$ at §YPlanetary Ascension§! tiers §G1§!, §G5§! and §G10§!. For each §YAscension Perk§! and every §Y2 Planetary Ascension§! tiers our Empire has taken: $TABBED_NEW_LINE$- £mod_pop_growth_speed£ $MOD_POP_GROWTH_SPEED$: §G+2.5%§! $TABBED_NEW_LINE$- $r_unity$ from £job_healthcare£ $job_healthcare_plural$: §G+1§!\n\n"
+ avb_natural_design_hive_ascension_bonus_no_scope: "Provide §G+1§! £job_spawning_drone£ $job_spawning_drone_plural$ at §YPlanetary Ascension§! tiers §G1§!, §G5§! and §G10§!. For each §YAscension Perk§! and every §Y2 Planetary Ascension§! tiers our Empire has taken: $TABBED_NEW_LINE$- £mod_pop_growth_speed£ $MOD_POP_GROWTH_SPEED$: §G+2.5%§! $TABBED_NEW_LINE$- $r_unity$ from £job_spawning_drone£  $job_spawning_drone_plural$: §G+1§!\n\n"
+ avb_natural_design_hive_ascension_bonus: "Provide §G+1§! [owner.GetPopAssemblersPluralWithIcon] at §YPlanetary Ascension§! tiers §G1§!, §G5§! and §G10§!. For each §YAscension Perk§! and every §Y2 Planetary Ascension§! tiers our Empire has taken: $TABBED_NEW_LINE$- £mod_pop_growth_speed£ $MOD_POP_GROWTH_SPEED$: §G+2.5%§! $TABBED_NEW_LINE$- $r_unity$ from [owner.GetPopAssemblersPluralWithIcon]: §G+1§!\n\n"
+### Core Miner
+ building_avb_core_miner:0 "Geomagnetic Core Mine"
+ building_avb_core_miner_desc:0 "Harnessing the extreme pressure and temperatures of the planet's liquid core, the Geomagnetic Core Mine extracts minerals of unparalleled purity and resilience. Advanced protective and cooling systems enable operation within this highly hazardous environment, providing our civilization with resources from the planet's deepest layers. This unique facility not only supports the economy but also drives technological advances in materials science and energy systems."
+ avb_core_miner_tooltip:0 "Jobs bonus increases by §G+50%§! on £minerals£ §YMining§!, £energy£ §YGenerator§! and £alloys£ §YFoundry§! designation."
+ mod_planet_miners_energy_produces_add:0 "£energy£ $energy$ from £job_miner£ [GetMinerPlural]"
