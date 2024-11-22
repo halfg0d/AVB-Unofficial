@@ -4,5 +4,5 @@ tags={
 }
 name="Additional Vanilla Buildings - Unofficial"
 picture="thumbnail.png"
-supported_version="3.14.*"
+supported_version="v3.14.*"
 remote_file_id="2916082557"
