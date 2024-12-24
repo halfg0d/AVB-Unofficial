@@ -318,10 +318,12 @@
 # Mega Builders
  tech_avb_mega_builders:0 "Mega Builder Construction"
  tech_avb_mega_builders_desc:0 "$tech_avb_mega_builders$ is a groundbreaking technology that enables your empire to initiate large-scale production of facilities on an unprecedented level. With advanced automation systems, efficient construction drones, and innovative production methods, the time required to build buildings has been drastically reduced. An empire mastering this technology will gain the ability to rapidly constructing wondrous constructs in a fraction of the time, becoming an unstoppable force in the galaxy."
- tech_avb_mega_builders_tooltip:1 "Some of AVB buildings have reduced building time.\n§HList of affected buildings: ['concept_mb_list']§!"
+ tech_avb_mega_builders_tooltip:1 "Some of buildings have reduced building time.\n§HList of affected buildings: ['concept_mb_list']§!"
  concept_mb_list:0 "Mega Builders List"
- concept_mb_list_desc:0 "Research labs T4-T6\nCommercials T3-T5\nStrongholds T3-T5\nBureaucratics T4-T6\nTemples T4-T6\nUplink Node T4-T6\nSynaptic T4-T6\nSacrificial Temples T4-T6\nOrganic Sanctuaries T3-T5"
+ concept_mb_list_desc:0 "Research labs\nCommercials\nStrongholds\nBureaucratics\nTemples\nUplink Node\nSynaptic\nSacrificial Temples\nOrganic Sanctuaries"
  mb_postname: "§M(MB)§!"
+ megabuilders_speed:0 "$tech_avb_mega_builders$"
+ megabuilders_speed_desc:0 "$tech_avb_mega_builders_desc$"
 ### Research Lab
  building_avb_research_lab_4_mb:0 "$building_avb_research_lab_4$ $mb_postname$"
  building_avb_research_lab_4_mb_desc:0 "$building_avb_research_lab_4_desc$"
@@ -361,7 +363,7 @@
  building_avb_machine_unity_4_mb:0 "$building_avb_machine_unity_4$ $mb_postname$"
  building_avb_machine_unity_4_mb_desc:0 "$building_avb_machine_unity_4_desc$"
  building_avb_machine_unity_5_mb:0 "$building_avb_machine_unity_5$ $mb_postname$"
- building_avb_machine_unity_5_mb_desc:0 "$building_avb_machine_unity_5_desc$
+ building_avb_machine_unity_5_mb_desc:0 "$building_avb_machine_unity_5_desc$"
  building_avb_machine_unity_6_mb:0 "$building_avb_machine_unity_6$ $mb_postname$"
  building_avb_machine_unity_6_mb_desc:0 "$building_avb_machine_unity_6_desc$"
 ### Hive

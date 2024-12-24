@@ -45,7 +45,3 @@ modifier = {
 	factor = 1.2
 	is_regular_empire = no
 }
-# more planets = higher chance
-modifier = {
-	factor = value:avb_colonies_scaling
-}

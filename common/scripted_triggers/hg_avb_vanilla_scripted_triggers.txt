@@ -111,6 +111,7 @@ has_any_chemical_plant_tier = {
 	}
 }
 avb_has_mb_tech = {
+	always = no
 	owner = {
 		has_technology = tech_avb_mega_builders
 	}

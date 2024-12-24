@@ -83,6 +83,19 @@ planet_event = {
 		}
 	}
 }
+country_event = {
+	id = avb.10
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		last_increased_tech = tech_avb_mega_builders
+	}
+	immediate = {
+		add_modifier = {
+			modifier = megabuilders_speed
+		}
+	}
+}
 namespace = avb_vat
 planet_event = {
 	id = avb_vat.1

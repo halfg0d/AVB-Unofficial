@@ -12,6 +12,9 @@ tech_avb_capital_4 = {
 	
 	gateway = capital
 	
+	potential = {
+		always = yes
+	}
 	
 	modifier = {
 		country_leader_cap_add = 1
@@ -146,6 +149,9 @@ tech_avb_resort_capital_3 = {
 	
 	gateway = capital
 	
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		factor = 4
 		modifier = {
@@ -155,9 +161,6 @@ tech_avb_resort_capital_3 = {
 		modifier = {
 			factor = 2.5
 			is_fanatic_xenophile = yes
-		}
-		modifier = {
-			factor = value:avb_colonies_scaling
 		}
 	}
 	
@@ -192,6 +195,9 @@ tech_avb_slave_capital_3 = {
 	
 	gateway = capital
 	
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		factor = 4
 		modifier = {
@@ -205,9 +211,6 @@ tech_avb_slave_capital_3 = {
 			owner = {
 				has_ethic = ethic_fanatic_authoritarian
 			}
-		}
-		modifier = {
-			factor = value:avb_colonies_scaling
 		}
 	}
 	
@@ -283,6 +286,9 @@ tech_avb_slave_processing_2 = {
 	
 	gateway = capital
 	
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		factor = 0.5
 		modifier = {
@@ -568,6 +574,9 @@ tech_avb_hydroponics_2 = {
 	prerequisites = { "tech_nano_vitality_crops" "tech_avb_capital_4" }
 	weight = @tier5weight1
 	
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		factor = 2
 		modifier = {
@@ -602,6 +611,9 @@ tech_avb_food_processing_3 = {
 	prerequisites = { "tech_food_processing_2" "tech_avb_capital_4" }
 	weight = @tier4weight1
 	
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		factor = 2
 		modifier = {
@@ -644,6 +656,9 @@ tech_avb_food_processing_4 = {
 	prerequisites = { "tech_avb_food_processing_3" "tech_avb_capital_5" }
 	weight = @tier5weight1
 	
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		factor = 2
 		modifier = {
@@ -686,6 +701,9 @@ tech_avb_mineral_purification_3 = {
 	prerequisites = { "tech_mineral_purification_2" "tech_galactic_administration" }
 	weight = @tier3weight3
 	
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		factor = 2
 		modifier = {
@@ -716,7 +734,10 @@ tech_avb_mineral_purification_4  = {
 	category = { industry }	
 	prerequisites = { "tech_avb_mineral_purification_3" "tech_avb_capital_5" }
 	weight = @tier4weight3
-	
+
+	potential = {
+		always = yes
+	}	
 	weight_modifier = {
 		factor = 2
 		modifier = {
@@ -748,6 +769,9 @@ tech_avb_power_hub_3 = {
 	prerequisites = { "tech_power_hub_2" "tech_galactic_administration"}
 	weight = @tier3weight3
 		
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		modifier = {
 			factor = 0
@@ -782,6 +806,9 @@ tech_avb_power_hub_4 = {
 	prerequisites = { "tech_avb_power_hub_3" "tech_avb_capital_5"}
 	weight = @tier4weight3
 		
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		modifier = {
 			factor = 0
@@ -808,7 +835,7 @@ tech_avb_power_hub_4 = {
 	}
 }
 
-tech_avb_bio_reactor_3  = {
+tech_avb_bio_reactor_3 = {
 	cost = @tier3cost1
 	area = society
 	tier = 3
@@ -817,6 +844,9 @@ tech_avb_bio_reactor_3  = {
 	weight = @tier3weight1
 	is_rare = yes
 
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		factor = 0.1
 		modifier = {
@@ -855,6 +885,9 @@ tech_avb_alloys_3 = {
 	prerequisites = { "tech_alloys_2" "tech_galactic_administration" }
 	weight = @tier4weight1
 	
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		factor = 2
 		modifier = { # No tech without builded previous cbuilding
@@ -879,6 +912,9 @@ tech_avb_alloys_4 = {
 	prerequisites = { "tech_avb_alloys_3" "tech_avb_capital_4" }
 	weight = @tier5weight1
 	
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		factor = 2
 		modifier = { # No tech without builded previous cbuilding
@@ -903,6 +939,9 @@ tech_avb_alloys_5 = {
 	prerequisites = { "tech_avb_alloys_4" "tech_avb_capital_5" }
 	weight = @avbtier6weight1
 	
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		factor = 2
 		modifier = { # No tech without builded previous cbuilding
@@ -960,9 +999,6 @@ tech_avb_luxuries_3 = {
 				}
 			} 
 		}
-		modifier = {
-			factor = value:avb_colonies_scaling
-		}
 	}
 	
 	ai_weight = {
@@ -1010,9 +1046,6 @@ tech_avb_luxuries_4 = {
 					}
 				}
 			} 
-		}
-		modifier = {
-			factor = value:avb_colonies_scaling
 		}
 	}
 	
@@ -1062,9 +1095,6 @@ tech_avb_luxuries_5 = {
 				}
 			} 
 		}
-		modifier = {
-			factor = value:avb_colonies_scaling
-		}
 	}
 	
 	ai_weight = {
@@ -1080,6 +1110,9 @@ tech_avb_exotic_gases_2 = {
 	prerequisites = { "tech_exotic_gases" "tech_galactic_administration" }
 	weight = @tier4weight1
 	
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		factor = 2
 		modifier = {
@@ -1117,6 +1150,9 @@ tech_avb_exotic_gases_3 = {
 	prerequisites = { "tech_avb_exotic_gases_2" "tech_avb_capital_5" }
 	weight = @avbtier6weight1
 	
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		factor = 2
 		modifier = {
@@ -1154,6 +1190,9 @@ tech_avb_volatile_motes_2 = {
 	prerequisites = { "tech_volatile_motes" "tech_galactic_administration" }
 	weight = @tier4weight1
 	
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		factor = 2
 		modifier = {
@@ -1191,6 +1230,9 @@ tech_avb_volatile_motes_3 = {
 	prerequisites = { "tech_avb_volatile_motes_2" "tech_avb_capital_5" }
 	weight = @avbtier6weight1
 	
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		factor = 2
 		modifier = {
@@ -1228,6 +1270,9 @@ tech_avb_rare_crystals_2 = {
 	prerequisites = { "tech_rare_crystals" "tech_galactic_administration" }
 	weight = @tier4weight1
 	
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		factor = 2
 		modifier = {
@@ -1265,6 +1310,9 @@ tech_avb_rare_crystals_3 = {
 	prerequisites = { "tech_avb_rare_crystals_2" "tech_avb_capital_5" }
 	weight = @avbtier6weight1
 	
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		factor = 2
 		modifier = {
@@ -1338,6 +1386,9 @@ tech_avb_global_production_strategy_2 = {
 	prerequisites = { "tech_avb_alloys_3" "tech_avb_luxuries_3" "tech_avb_capital_4" }
 	weight = @tier4weight1
 	
+	potential = {
+		always = yes
+	}
 	# unlocks Ministry of Production
 	
 	weight_modifier = {
@@ -1367,6 +1418,9 @@ tech_avb_basic_science_lab_4 = {
 	prerequisites = { "tech_basic_science_lab_3" "tech_galactic_administration" }
 	weight = @tier4weight1
 		
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		factor = 2
 		modifier = {
@@ -1391,9 +1445,6 @@ tech_avb_basic_science_lab_4 = {
 				
 				}
 			}
-		}
-		modifier = {
-			factor = value:avb_colonies_scaling
 		}
 	}
 	
@@ -1410,6 +1461,9 @@ tech_avb_basic_science_lab_5 = {
 	prerequisites = { "tech_avb_basic_science_lab_4" "tech_avb_capital_4" }
 	weight = @tier5weight1
 		
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		factor = 2
 		modifier = {
@@ -1434,9 +1488,6 @@ tech_avb_basic_science_lab_5 = {
 				
 				}
 			}
-		}
-		modifier = {
-			factor = value:avb_colonies_scaling
 		}
 	}
 	
@@ -1453,6 +1504,9 @@ tech_avb_basic_science_lab_6 = {
 	prerequisites = { "tech_avb_basic_science_lab_5" "tech_avb_capital_5" }
 	weight = @avbtier6weight1
 		
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		factor = 2
 		modifier = {
@@ -1478,9 +1532,6 @@ tech_avb_basic_science_lab_6 = {
 				}
 			}
 		}
-		modifier = {
-			factor = value:avb_colonies_scaling
-		}
 	}
 	
 	ai_weight = {
@@ -1496,6 +1547,9 @@ tech_avb_global_research_initiative_2 = {
 	prerequisites = { "tech_global_research_initiative" "tech_physics_3" "tech_avb_capital_4" }
 	weight = @tier5weight1
 	
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		factor = 1.5
 		modifier = {
@@ -1520,9 +1574,6 @@ tech_avb_global_research_initiative_2 = {
 				
 				}
 			}
-		}
-		modifier = {
-			factor = value:avb_colonies_scaling
 		}
 	}
 	
@@ -1723,11 +1774,7 @@ tech_avb_residence_3 = {
 				count > 1
 			}
 		}
-		modifier = {
-			factor = value:avb_colonies_scaling
-		}
 	}
-	
 	ai_weight = {
 		factor = 4
 	}
@@ -1763,9 +1810,6 @@ tech_avb_residence_4 = {
 				free_housing <= 0
 				count > 1
 			}
-		}
-		modifier = {
-			factor = value:avb_colonies_scaling
 		}
 	}
 	
@@ -1805,9 +1849,6 @@ tech_avb_residence_5 = {
 				count > 1
 			}
 		}
-		modifier = {
-			factor = value:avb_colonies_scaling
-		}
 	}
 	
 	ai_weight = {
@@ -1823,6 +1864,9 @@ tech_avb_housing_3 = {
 	prerequisites = { "tech_housing_2" }
 	weight = @tier4weight1
 	
+	potential = {
+		always = yes
+	}
 	modifier = {
 		description = district_housing_tech_effect
 	}
@@ -1847,6 +1891,9 @@ tech_avb_housing_4 = {
 	prerequisites = { "tech_avb_housing_3" }
 	weight = @tier5weight1
 	
+	potential = {
+		always = yes
+	}
 	modifier = {
 		description = district_housing_tech_effect
 	}
@@ -1856,9 +1903,6 @@ tech_avb_housing_4 = {
 		modifier = {
 			factor = 0
 			has_valid_civic = civic_agrarian_idyll
-		}
-		modifier = {
-			factor = value:avb_colonies_scaling
 		}
 	}
 	
@@ -1874,6 +1918,9 @@ tech_avb_housing_5 = {
 	prerequisites = { "tech_avb_housing_4" }
 	weight = @avbtier6weight1
 	
+	potential = {
+		always = yes
+	}
 	modifier = {
 		description = district_housing_tech_effect
 	}
@@ -1883,9 +1930,6 @@ tech_avb_housing_5 = {
 		modifier = {
 			factor = 0
 			has_valid_civic = civic_agrarian_idyll
-		}
-		modifier = {
-			factor = value:avb_colonies_scaling
 		}
 	}
 	
@@ -2137,6 +2181,9 @@ tech_avb_slave_huts_2 = {
 	
 	gateway = capital
 	
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		factor = 4
 		modifier = {
@@ -2189,6 +2236,9 @@ tech_avb_military_academy_2 = {
 		country_occupation_armies_add = 2
 	}	
 	
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		factor = 2
 		modifier = { # No tech without builded previous cbuilding
@@ -2221,6 +2271,9 @@ tech_avb_stronghold_3 = {
 		army_defense_health_mult = 0.10
 	}	
 	
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		factor = 2
 		modifier = { # No tech without builded previous cbuilding
@@ -2250,6 +2303,9 @@ tech_avb_stronghold_4 = {
 		army_defense_health_mult = 0.10
 	}	
 	
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		factor = 2
 		modifier = { # No tech without builded previous cbuilding
@@ -2280,6 +2336,9 @@ tech_avb_stronghold_5 = {
 		army_defense_health_mult = 0.10
 	}	
 	
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		factor = 2
 		modifier = { # No tech without builded previous cbuilding
@@ -2307,6 +2366,9 @@ tech_avb_planetary_shield_generator_2 = {
 	prerequisites = { "tech_planetary_shield_generator" "tech_shields_4" }
 	weight = @tier4weight1
 	
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		factor = 0.5
 		modifier = {
@@ -2332,6 +2394,9 @@ tech_avb_planetary_shield_generator_3 = {
 	prerequisites = { "tech_avb_planetary_shield_generator_2" "tech_shields_5" }
 	weight = @tier5weight1
 	
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		factor = 0.5
 		
@@ -2358,6 +2423,9 @@ tech_avb_dark_matter_planetary_shield_generator = {
 	prerequisites = { "tech_avb_planetary_shield_generator_3" "tech_dark_matter_deflector" }
 	weight = @avbtier7weight1
 	
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		factor = 0.5
 		

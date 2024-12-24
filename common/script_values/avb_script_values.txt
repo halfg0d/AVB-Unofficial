@@ -1,17 +1,14 @@
 avb_colonies_scaling = { # counting colonies and adding as 0.1x
 	base = 1
-	complex_trigger_modifier = {
-		trigger = count_owned_planet
-		trigger_scope = owner
-		parameters = {
-			limit = {	
-				is_colony = yes
-			}
-		}
-		mode = add
-	}
-	mult = 0.1
-	min = 1
+
+	# complex_trigger_modifier = {
+	# 	trigger = count_owned_planet
+	# 	trigger_scope = owner
+	# 	mode = add
+	# 	mult = 0.1
+	# }
+	
+	# min = 1
 }
 zoo_curator_trade_output = {
 	base = 2

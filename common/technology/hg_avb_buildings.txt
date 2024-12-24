@@ -523,6 +523,7 @@ tech_avb_bureaucratic_4 = {
 		country_edict_fund_add = 20
 	}
 	potential = {
+		is_spiritualist = no
 		is_hive_empire = no
 		NOT = { has_valid_civic = civic_machine_servitor }
 	}
@@ -681,6 +682,9 @@ tech_avb_hive_unity_4 = {
 		factor = 4
 	}
 
+	potential = {
+		always = yes
+	}
 	ai_weight = {
 		factor = 4
 	}
@@ -697,6 +701,9 @@ tech_avb_hive_unity_5 = {
 		factor = 4
 	}
 
+	potential = {
+		always = yes
+	}
 	ai_weight = {
 		factor = 4
 	}
@@ -713,6 +720,9 @@ tech_avb_hive_unity_6 = {
 		factor = 4
 	}
 
+	potential = {
+		always = yes
+	}
 	ai_weight = {
 		factor = 4
 	}
@@ -732,6 +742,9 @@ tech_avb_monument_4 = {
 		factor = 4
 	}
 
+	potential = {
+		always = yes
+	}
 	ai_weight = {
 		factor = 4
 	}
@@ -750,6 +763,9 @@ tech_avb_monument_5 = {
 	weight_modifier = {
 		factor = 4
 	}
+	potential = {
+		always = yes
+	}
 
 	ai_weight = {
 		factor = 4
@@ -767,6 +783,9 @@ tech_avb_monument_6 = {
 
 	weight_modifier = {
 		factor = 4
+	}
+	potential = {
+		always = yes
 	}
 
 	ai_weight = {

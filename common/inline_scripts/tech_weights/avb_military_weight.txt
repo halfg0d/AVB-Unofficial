@@ -7,6 +7,3 @@ modifier = {
 	factor = 2.5
 	is_fanatic_militarist = yes
 }
-modifier = {
-	factor = value:avb_colonies_scaling
-}

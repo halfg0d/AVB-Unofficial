@@ -603,6 +603,9 @@ tech_avb_space_mining_9 = {
 		station_gatherers_produces_mult = 0.10
 	}
 	
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		factor = 4
 	}
@@ -624,6 +627,9 @@ tech_avb_space_mining_10 = {
 		station_gatherers_produces_mult = 0.10
 	}
 	
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		factor = 4
 	}
@@ -646,6 +652,9 @@ tech_avb_space_defense_station_improvement_3 = {
 	modifier = {
 		starbase_upgrade_cost_mult = -0.15
 		starbase_upgrade_speed_mult = 0.25
+	}
+	potential = {
+		always = yes
 	}
 	
 	weight_modifier = {
@@ -683,6 +692,9 @@ tech_avb_space_defense_station_improvement_4 = {
 		starbase_upgrade_speed_mult = 0.25
 	}
 	
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		factor = 0.5
 		modifier = {
@@ -718,6 +730,9 @@ tech_avb_space_defense_station_improvement_5 = {
 		starbase_upgrade_speed_mult = 0.25
 	}
 	
+	potential = {
+		always = yes
+	}
 	weight_modifier = {
 		factor = 0.5
 		modifier = {
@@ -755,6 +770,9 @@ tech_avb_collective_production_methods_2 = {
 	}
 	
 	potential = {
+		always = yes
+	}
+	potential = {
 		has_authority = auth_hive_mind	
 	}
 	
@@ -780,7 +798,7 @@ tech_avb_collective_production_methods_3 = {
 	}
 	
 	potential = {
-		has_authority = auth_hive_mind	
+		is_hive_empire = yes
 	}
 	
 	weight_modifier = {
@@ -805,7 +823,7 @@ tech_avb_collective_production_methods_4 = {
 	}
 	
 	potential = {
-		has_authority = auth_hive_mind	
+		is_hive_empire = yes
 	}
 	
 	weight_modifier = {
@@ -830,7 +848,7 @@ tech_avb_resource_processing_algorithms_2 = {
 	}
 	
 	potential = {
-		has_authority = auth_machine_intelligence
+		is_machine_empire = yes
 	}
 	
 	weight_modifier = {
@@ -855,7 +873,7 @@ tech_avb_resource_processing_algorithms_3 = {
 	}
 	
 	potential = {
-		has_authority = auth_machine_intelligence
+		is_machine_empire = yes
 	}
 	
 	weight_modifier = {
@@ -880,7 +898,7 @@ tech_avb_resource_processing_algorithms_4 = {
 	}
 	
 	potential = {
-		has_authority = auth_machine_intelligence
+		is_machine_empire = yes
 	}
 	
 	weight_modifier = {
