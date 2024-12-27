@@ -10,6 +10,9 @@ is_toxic_origin2_trigger = {
 has_clone_full_path = {
 	has_country_flag = clone_army_full_potential
 }
+has_avb_mod = {
+	always = yes
+}
 avb_hg_changes = {
 	has_global_flag = avb_hg_allow
 }
