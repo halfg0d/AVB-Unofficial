@@ -74,3 +74,5 @@
 @avb_mb_b5_time = 1200
 @avb_mb_b6_time = 1750
 @avb_mega_builder_speed = 0.5
+
+@has_avb_mod = 1
