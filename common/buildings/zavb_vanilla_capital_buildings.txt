@@ -158,6 +158,7 @@ building_system_capital = {
 	}
 	upgrades = {
 		building_avb_capital_4
+		building_imperial_capital
 	}
 }
 
@@ -319,6 +320,7 @@ building_machine_system_capital = {
 	}
 	upgrades = {
 		"building_avb_machine_capital_4"
+		"building_imperial_machine_capital"
 	}
 }
 
@@ -451,6 +453,7 @@ building_hive_major_capital = {
 
 	upgrades = {
 		"building_avb_hive_capital_3"
+		"building_imperial_hive_capital"
 	}
 }
 
@@ -950,6 +953,7 @@ building_hab_system_capital = {
 
 	upgrades = {
 		"building_avb_hab_capital_4"
+		"building_imperial_capital"
 	}
 }
 #############

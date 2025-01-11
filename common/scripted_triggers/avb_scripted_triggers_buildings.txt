@@ -28,6 +28,9 @@ has_upgraded_capital_4 = {
 				has_building = building_imperial_hive_capital
 				#AVB
 				has_building = building_avb_hab_capital_4
+				has_building = building_avb_imperial_capital_2
+				has_building = building_avb_imperial_hive_capital_2
+				has_building = building_avb_imperial_machine_capital_2
 			}
 		}
 	}
@@ -38,7 +41,7 @@ has_upgraded_capital_4 = {
 		    OR = {
 		    	has_building = building_avb_hive_capital_3
 		    	has_building = building_avb_hive_capital_4
-		    	has_building = building_imperial_hive_capital
+				has_building = building_avb_imperial_hive_capital_2
 		    }
         }
     }
@@ -50,7 +53,7 @@ has_upgraded_capital_4 = {
 				has_building = building_avb_machine_capital_4
 				has_building = building_avb_machine_capital_5
 				has_building = building_avb_machine_capital_6
-				has_building = building_imperial_machine_capital
+				has_building = building_avb_imperial_machine_capital_2
 			}
         }
     }
@@ -61,7 +64,7 @@ has_upgraded_capital_4 = {
 			    has_building = building_avb_capital_4
 			    has_building = building_avb_capital_5
 			    has_building = building_avb_capital_6
-			    has_building = building_imperial_capital
+				has_building = building_avb_imperial_capital_2
             }
         }
     }
@@ -75,7 +78,7 @@ has_upgraded_capital_5 = {
 		    OR = {
 		    	has_building = building_avb_hive_capital_3
 		    	has_building = building_avb_hive_capital_4
-		    	has_building = building_imperial_hive_capital
+				has_building = building_avb_imperial_hive_capital_2
 		    }
         }
     }
@@ -86,7 +89,7 @@ has_upgraded_capital_5 = {
 			OR = {
 				has_building = building_avb_machine_capital_5
 				has_building = building_avb_machine_capital_6
-				has_building = building_imperial_machine_capital
+				has_building = building_avb_imperial_machine_capital_2
 			}
         }
     }
@@ -96,7 +99,7 @@ has_upgraded_capital_5 = {
             OR = {
 			    has_building = building_avb_capital_5
 			    has_building = building_avb_capital_6
-			    has_building = building_imperial_capital
+				has_building = building_avb_imperial_capital_2
             }
         }
     }
@@ -109,7 +112,7 @@ has_upgraded_capital_6 = {
             fail_text = "requires_building_hive_capital_4"
 		    OR = {
 		    	has_building = building_avb_hive_capital_4
-		    	has_building = building_imperial_hive_capital
+				has_building = building_avb_imperial_hive_capital_2
 		    }
         }
     }
@@ -119,7 +122,7 @@ has_upgraded_capital_6 = {
 			fail_text = "requires_building_machine_capital_6"
 			OR = {
 				has_building = building_avb_machine_capital_6
-				has_building = building_imperial_machine_capital
+				has_building = building_avb_imperial_machine_capital_2
 			}
         }
     }
@@ -128,7 +131,7 @@ has_upgraded_capital_6 = {
             fail_text = "requires_building_capital_6"
             OR = {
 			    has_building = building_avb_capital_6
-			    has_building = building_imperial_capital
+				has_building = building_avb_imperial_capital_2
             }
         }
     }

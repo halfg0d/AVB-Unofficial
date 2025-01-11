@@ -318,10 +318,12 @@
 # Mega Builders
  tech_avb_mega_builders:0 "Mega Builder Construction"
  tech_avb_mega_builders_desc:0 "$tech_avb_mega_builders$ is a groundbreaking technology that enables your empire to initiate large-scale production of facilities on an unprecedented level. With advanced automation systems, efficient construction drones, and innovative production methods, the time required to build buildings has been drastically reduced. An empire mastering this technology will gain the ability to rapidly constructing wondrous constructs in a fraction of the time, becoming an unstoppable force in the galaxy."
- tech_avb_mega_builders_tooltip:1 "Some of AVB buildings have reduced building time.\n§HList of affected buildings: ['concept_mb_list']§!"
+ tech_avb_mega_builders_tooltip:1 "Some of buildings have reduced building time.\n§HList of affected buildings: ['concept_mb_list']§!"
  concept_mb_list:0 "Mega Builders List"
- concept_mb_list_desc:0 "Research labs T4-T6\nCommercials T3-T5\nStrongholds T3-T5\nBureaucratics T4-T6\nTemples T4-T6\nUplink Node T4-T6\nSynaptic T4-T6\nSacrificial Temples T4-T6\nOrganic Sanctuaries T3-T5"
+ concept_mb_list_desc:0 "Research labs\nCommercials\nStrongholds\nBureaucratics\nTemples\nUplink Node\nSynaptic\nSacrificial Temples\nOrganic Sanctuaries"
  mb_postname: "§M(MB)§!"
+ megabuilders_speed:0 "$tech_avb_mega_builders$"
+ megabuilders_speed_desc:0 "$tech_avb_mega_builders_desc$"
 ### Research Lab
  building_avb_research_lab_4_mb:0 "$building_avb_research_lab_4$ $mb_postname$"
  building_avb_research_lab_4_mb_desc:0 "$building_avb_research_lab_4_desc$"
@@ -361,7 +363,7 @@
  building_avb_machine_unity_4_mb:0 "$building_avb_machine_unity_4$ $mb_postname$"
  building_avb_machine_unity_4_mb_desc:0 "$building_avb_machine_unity_4_desc$"
  building_avb_machine_unity_5_mb:0 "$building_avb_machine_unity_5$ $mb_postname$"
- building_avb_machine_unity_5_mb_desc:0 "$building_avb_machine_unity_5_desc$
+ building_avb_machine_unity_5_mb_desc:0 "$building_avb_machine_unity_5_desc$"
  building_avb_machine_unity_6_mb:0 "$building_avb_machine_unity_6$ $mb_postname$"
  building_avb_machine_unity_6_mb_desc:0 "$building_avb_machine_unity_6_desc$"
 ### Hive
@@ -399,4 +401,13 @@
  building_avb_core_miner:0 "Geomagnetic Core Mine"
  building_avb_core_miner_desc:0 "Harnessing the extreme pressure and temperatures of the planet's liquid core, the Geomagnetic Core Mine extracts minerals of unparalleled purity and resilience. Advanced protective and cooling systems enable operation within this highly hazardous environment, providing our civilization with resources from the planet's deepest layers. This unique facility not only supports the economy but also drives technological advances in materials science and energy systems."
  avb_core_miner_tooltip:0 "Jobs bonus increases by §G+50%§! on £minerals£ §YMining§!, £energy£ §YGenerator§! and £alloys£ §YFoundry§! designation."
- mod_planet_miners_energy_produces_add:0 "£energy£ $energy$ from £job_miner£ [GetMinerPlural]"
+ planet_miners_energy_produces_add:0 "£energy£ $energy$ from £job_miner£ [GetMinerPlural]"
+### AVB Imperial
+ building_avb_imperial_capital_2:0 "Imperial Grand Palace"
+ building_avb_imperial_capital_2_desc:0 "A giantic palace complex fit for greates empire history has ever seen and will see. If there is a bright center to the galaxy, this is it."
+ building_avb_imperial_machine_capital_2:0 "Imperial Grand Center"
+ building_avb_imperial_machine_capital_2_desc:0 "This colossal complex is the administrative heart of the greatest Galactic Imperium. Millions of AIs are constantly processing and evaluating the current state of the galaxy to help them in our way."
+ building_avb_imperial_hive_capital_2:0 "Imperial Grand Complex"
+ building_avb_imperial_hive_capital_2_desc:0 "From this massive structure, the Hive Mind governs the greatest Galactic Imperium in history. This is where the fate of the galaxy is decided by trillions connected neurons."
+ tech_avb_imperial_capital_t2:0 "Impierial Grand Structure"
+ tech_avb_imperial_capital_t2_desc:0 "After years of rulling our aspirions evolved to become more great than we are now. We will start with construction of the magnificient building we can build for our leader of the galaxy."

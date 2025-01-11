@@ -1174,3 +1174,33 @@ tech_avb_transcendental_retreat_2 = {
 		pop_growth_speed_reduction = -0.1
 	}
 }
+
+# Imperial Capital T2
+tech_avb_imperial_capital_t2 = {
+	area = society
+	category = {
+		statecraft
+	}
+	tier = 6
+	cost = @avbtier6cost2
+	weight = @avbtier6weight2
+	is_rare = no
+	
+	potential = {
+		is_galactic_emperor = yes
+		OR = {
+			AND = {
+				is_hive_empire = no
+				has_technology = tech_avb_capital_6
+			}
+			AND = {
+				is_hive_empire = yes
+				has_technology = tech_avb_capital_4
+			}
+		}
+	}
+
+	modifier = {
+		country_influence_produces_mult = 0.1
+	}
+}
