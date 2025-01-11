@@ -4,12 +4,8 @@
 @buildings_t8 = 8
 @tier_8_capital_defense_armies = 48
 
-@avb_b7_time = 4200
-@avb_b6_minerals = 12500
-@avb_b6_upkeep = 80
-
 building_avb_imperial_capital_2 = {
-	base_buildtime = @avb_b7_time
+	base_buildtime = @avb_b5_time
 	capital = yes
 	can_build = no
 	can_demolish = no
@@ -57,10 +53,10 @@ building_avb_imperial_capital_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_b7_minerals
+			minerals = @avb_b5_minerals
 		}		
 		upkeep = {
-			energy = @avb_b7_upkeep
+			energy = @avb_b5_upkeep
 		}		
 	}
 	inline_script = {
@@ -269,7 +265,7 @@ building_avb_imperial_hive_capital_2 = {
 	}
 }
 building_avb_imperial_machine_capital_2 = {
-	base_buildtime = @avb_b7_time
+	base_buildtime = @avb_b5_time
 	capital = yes
 	can_build = no
 	can_demolish = no
@@ -410,10 +406,10 @@ building_avb_imperial_machine_capital_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_b7_minerals
+			minerals = @avb_b5_minerals
 		}
 		upkeep = {
-			energy = @avb_b7_upkeep
+			energy = @avb_b5_upkeep
 		}
 	}
 
