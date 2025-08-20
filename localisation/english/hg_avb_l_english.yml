@@ -411,3 +411,6 @@
  building_avb_imperial_hive_capital_2_desc:0 "From this massive structure, the Hive Mind governs the greatest Galactic Imperium in history. This is where the fate of the galaxy is decided by trillions connected neurons."
  tech_avb_imperial_capital_t2:0 "Impierial Grand Structure"
  tech_avb_imperial_capital_t2_desc:0 "After years of rulling our aspirions evolved to become more great than we are now. We will start with construction of the magnificient building we can build for our leader of the galaxy."
+### Biogenesis update
+ building_avb_trophy_vault_2:0 "Trophy Vault T2"
+ building_avb_trophy_vault_2_desc:0 "It stores trophies like grand archive etc"

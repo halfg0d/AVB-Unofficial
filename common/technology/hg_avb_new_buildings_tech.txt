@@ -937,6 +937,7 @@ tech_avb_virtual_maintenance_1 = {
 	cost = @tier4cost3
 	weight = @tier4weight3
 	potential = {
+		always = no
 		has_machine_age_dlc = yes
 		avb_hg_changes = yes
 		owner = {
@@ -1093,6 +1094,7 @@ tech_avb_modular_buildings = {
 		"tech_modular_engineering"
 	}
 	potential = {
+		always = no
 		has_machine_age_dlc = yes
 		avb_hg_changes = yes
 		owner = {
@@ -1131,6 +1133,7 @@ tech_avb_mega_builders = {
 		"tech_mega_engineering"
 	}
 	potential = {
+		always = no
 		has_berg = no # Until update
 		is_ai = no # AI would be too stupid to use it properly even it's only uprgrading a building
 		avb_hg_changes = yes

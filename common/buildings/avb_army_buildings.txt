@@ -6,9 +6,16 @@ building_avb_military_academy_2 = {
 	can_build = no
 	category = army
 	
+	can_be_ruined = no
+	building_sets = {
+		fortress
+	}
 	potential = {
 		exists = owner
-		owner = { NOT = { has_valid_civic = civic_reanimated_armies } }
+		owner = {
+			is_wilderness_empire = no
+			NOT = { has_valid_civic = civic_reanimated_armies }
+		}
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = penal_colony
@@ -28,29 +35,6 @@ building_avb_military_academy_2 = {
 		}
 	}
 	
-	country_modifier = {
-		country_commander_cap_add = 2
-		country_naval_cap_mult = 0.1
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = no }
-		}
-		modifier = {
-			job_politician_add = 2
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }
-		}
-		modifier = {
-			job_evaluator_add = 4
-		}
-	}
-	# +50%
 	triggered_country_modifier = {
 		potential = {
 			exists = owner
@@ -71,6 +55,37 @@ building_avb_military_academy_2 = {
 		}
 		ship_shield_hardening_add = 0.15
 		mult = owner.value:tactical_algorithms_enclave_scaling_mult
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+			}
+		}
+		pop_soldier_bonus_workforce_mult = 0.225
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		pop_warrior_drone_bonus_workforce_mult = 0.225
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				has_active_building = building_order_keep
+				has_active_building = building_order_castle
+			}
+		}
+		pop_knight_bonus_workforce_mult = 0.075
+		pop_knight_commander_bonus_workforce_mult = 0.0375
 	}
 
 	resources = {
@@ -129,21 +144,9 @@ building_avb_military_academy_2 = {
 	show_tech_unlock_if = {
 		always = yes
 	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_gestalt = no }
-		}
-		text = job_politician_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_gestalt = yes }
-		}
-		text = job_evaluator_effect_desc
+	inline_script = {
+		script = jobs/soldiers_add
+		AMOUNT = 400
 	}
 }
 
@@ -154,6 +157,10 @@ building_avb_dread_encampment_2 = {
 	can_be_ruined = no
 	category = army
 	
+	building_sets = {
+		government
+		fortress
+	}
 	potential = {
 		exists = owner
 		owner = { has_valid_civic = civic_reanimated_armies }
@@ -163,8 +170,9 @@ building_avb_dread_encampment_2 = {
 		has_fully_upgraded_capital = yes
 	}
 	
-	planet_modifier = {
-		job_necromancer_add = 4
+	inline_script = {
+		script = jobs/soldiers_add
+		AMOUNT = 400
 	}
 
 	resources = {
@@ -186,111 +194,144 @@ building_avb_dread_encampment_2 = {
 		owner = { has_valid_civic = civic_reanimated_armies }
 	}
 	
-	triggered_desc = {
-		trigger = {
-			always = yes
-		}
-		text = job_necromancer_effect_desc
-	}
 }
 
 building_avb_stronghold_3 = {
-	icon = building_avb_stronghold_3
-	inline_script = {
-		script = mega_builders/stronghold
-		TIME = @avb_b2_time
-		JOB = @avb_b3_jobs
-		COST = 3
-		ALLOW = "has_major_upgraded_capital = yes"
-		UPGRADES = "building_avb_stronghold_4 building_avb_stronghold_4_mb"
-		PREREQUISITES = "tech_avb_stronghold_3"
-		POTENTIAL = "avb_has_mb_tech = no"
+	base_buildtime = @avb_b2_time
+	can_build = no
+	planetary_ftl_inhibitor = yes
+	position_priority = 100
+	can_be_ruined = no
+	category = army
+
+	building_sets = {
+		government
+		fortress
+	}
+
+	potential = {
+		owner = { is_wilderness_empire = no } # see 'building_planetary_carapace_2'
+	}
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+
+	resources = {
+		category = planet_buildings_strongholds
+		cost = {
+			minerals = @avb_b3_minerals
+			volatile_motes = @avb_b3_rare_cost
+		}
+		upkeep = {
+			energy = @avb_b2_upkeep
+			volatile_motes = @avb_b3_rare_upkeep
+		}
+	}
+
+	prerequisites = {
+		"tech_avb_stronghold_3"
 	}
 	show_tech_unlock_if = {
-		always = yes
+		is_wilderness_empire = no
 	}
-}
-building_avb_stronghold_3_mb = {
-	icon = building_avb_stronghold_3
+
 	inline_script = {
-		script = mega_builders/stronghold
-		TIME = @avb_mb_b2_time
-		JOB = @avb_b3_jobs
-		COST = 3
-		ALLOW = "has_major_upgraded_capital = yes"
-		UPGRADES = "building_avb_stronghold_4 building_avb_stronghold_4_mb"
-		PREREQUISITES = "tech_avb_stronghold_3"
-		POTENTIAL = "avb_has_mb_tech = yes"
+		script = jobs/soldiers_add
+		AMOUNT = 800
 	}
-	show_tech_unlock_if = {
-		avb_has_mb_tech = yes
-		avb_hg_changes = yes
+	upgrades = {
+		"building_avb_stronghold_4"
 	}
 }
 building_avb_stronghold_4 = {
-	icon = building_avb_stronghold_4
-	inline_script = {
-		script = mega_builders/stronghold
-		TIME = @avb_b3_time
-		JOB = @avb_b4_jobs
-		COST = 4
-		ALLOW = "has_fully_upgraded_capital = yes"
-		UPGRADES = "building_avb_stronghold_5 building_avb_stronghold_5_mb"
-		PREREQUISITES = "tech_avb_stronghold_4"
-		POTENTIAL = "avb_has_mb_tech = no"
+	base_buildtime = @avb_b3_time
+	can_build = no
+	planetary_ftl_inhibitor = yes
+	position_priority = 100
+	can_be_ruined = no
+	category = army
+
+	building_sets = {
+		government
+		fortress
+	}
+
+	potential = {
+		owner = { is_wilderness_empire = no } # see 'building_planetary_carapace_2'
+	}
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+
+	resources = {
+		category = planet_buildings_strongholds
+		cost = {
+			minerals = @avb_b4_minerals
+			volatile_motes = @avb_b4_rare_cost
+		}
+		upkeep = {
+			energy = @avb_b3_upkeep
+			volatile_motes = @avb_b4_rare_upkeep
+		}
+	}
+
+	prerequisites = {
+		"tech_avb_stronghold_4"
 	}
 	show_tech_unlock_if = {
-		always = yes
+		is_wilderness_empire = no
 	}
-}
-building_avb_stronghold_4_mb = {
-	icon = building_avb_stronghold_4
+
 	inline_script = {
-		script = mega_builders/stronghold
-		TIME = @avb_mb_b3_time
-		JOB = @avb_b4_jobs
-		COST = 4
-		ALLOW = "has_fully_upgraded_capital = yes"
-		UPGRADES = "building_avb_stronghold_5 building_avb_stronghold_5_mb"
-		PREREQUISITES = "tech_avb_stronghold_4"
-		POTENTIAL = "avb_has_mb_tech = yes"
+		script = jobs/soldiers_add
+		AMOUNT = 1000
 	}
-	show_tech_unlock_if = {
-		avb_has_mb_tech = yes
-		avb_hg_changes = yes
+	upgrades = {
+		"building_avb_stronghold_5"
 	}
 }
 building_avb_stronghold_5 = {
-	icon = building_avb_stronghold_5
-	inline_script = {
-		script = mega_builders/stronghold
-		TIME = @avb_b4_time
-		JOB = @avb_b5_jobs
-		COST = 5
-		ALLOW = "has_upgraded_capital_4 = yes"
-		UPGRADES = ""
-		PREREQUISITES = "tech_avb_stronghold_5"
-		POTENTIAL = "avb_has_mb_tech = no"
+	base_buildtime = @avb_b4_time
+	can_build = no
+	planetary_ftl_inhibitor = yes
+	position_priority = 100
+	can_be_ruined = no
+	category = army
+
+	building_sets = {
+		government
+		fortress
+	}
+
+	potential = {
+		owner = { is_wilderness_empire = no } # see 'building_planetary_carapace_2'
+	}
+	allow = {
+		has_upgraded_capital_4 = yes
+	}
+
+	resources = {
+		category = planet_buildings_strongholds
+		cost = {
+			minerals = @avb_b5_minerals
+			volatile_motes = @avb_b5_rare_cost
+		}
+		upkeep = {
+			energy = @avb_b4_upkeep
+			volatile_motes = @avb_b5_rare_upkeep
+		}
+	}
+
+	prerequisites = {
+		"tech_avb_stronghold_5"
 	}
 	show_tech_unlock_if = {
-		always = yes
+		is_wilderness_empire = no
 	}
-}
-building_avb_stronghold_5_mb = {
-	icon = building_avb_stronghold_5
+
 	inline_script = {
-		script = mega_builders/stronghold
-		TIME = @avb_mb_b4_time
-		JOB = @avb_b5_jobs
-		COST = 5
-		ALLOW = "has_upgraded_capital_4 = yes"
-		UPGRADES = ""
-		PREREQUISITES = "tech_avb_stronghold_5"
-		POTENTIAL = "avb_has_mb_tech = yes"
-	}
-	show_tech_unlock_if = {
-		avb_has_mb_tech = yes
-		avb_hg_changes = yes
+		script = jobs/soldiers_add
+		AMOUNT = 1200
 	}
 }
 building_avb_planetary_shield_generator_2 = {
@@ -299,14 +340,18 @@ building_avb_planetary_shield_generator_2 = {
 	position_priority = 100
 
 	category = army
-	potential = { always = yes }
+
+	building_sets = {
+		government
+		fortress
+	}
+	potential = {
+		owner = { is_wilderness_empire = no } # see 'building_ozone_thickener'
+	}
 	allow = {
-		has_fully_upgraded_capital = yes
-		hidden_trigger = { owner = { is_ai = no } }
+		has_major_upgraded_capital = yes
 		if = {
-			limit = {
-				exists = orbital_defence
-			}
+			limit = { exists = orbital_defence }
 			orbital_defence = {
 				exists = starbase
 				starbase = {
@@ -317,11 +362,6 @@ building_avb_planetary_shield_generator_2 = {
 				}
 			}
 		}
-	}
-	
-	destroy_trigger = {
-		exists = owner
-		owner = { is_ai = yes }
 	}
 	
 	upgrades = {
@@ -340,39 +380,26 @@ building_avb_planetary_shield_generator_2 = {
 		script = cosmic_storms/StormBuildingModifiers
 	}
 
-	on_built = {
-		if = {
-			limit = { has_cosmic_storms_dlc = yes }
-			solar_system = {
-				set_star_flag = storm_no_negative_effects
-				remove_modifier = storm_base_modifier
-			}
-		}
-	}
-
-	on_destroy = {
-		if = {
-			limit = { has_cosmic_storms_dlc = yes }
-			owner = { set_country_flag = shield_on_destroy } #an action when destroyed
-			solar_system = {
-				remove_star_flag = storm_no_negative_effects
-			}
-		}
+	inline_script = { # on_built & on_destroy behaviors
+		script = cosmic_storms/PlanetaryShieldOnBuiltDestroy
 	}
 
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_b4_minerals
-			exotic_gases = @avb_b4_rare_cost
+			minerals = @avb_b3_minerals
+			exotic_gases = @avb_b3_rare_cost
 		}			
 		upkeep = {
-			energy = @avb_b4_upkeep
-			exotic_gases = @avb_b4_rare_upkeep
+			energy = @avb_b3_upkeep
+			exotic_gases = @avb_b3_rare_upkeep
 		}
 	}
 	prerequisites = {
 		"tech_avb_planetary_shield_generator_2"
+	}
+	show_tech_unlock_if = {
+		is_wilderness_empire = no
 	}
 	custom_storm_ai_weight = {
 		weight = 5
@@ -389,16 +416,17 @@ building_avb_planetary_shield_generator_2 = {
 }
 
 building_avb_planetary_shield_generator_3 = {
-	base_buildtime = @avb_b5_time
+	base_buildtime = @avb_b4_time
 	can_build = no
 	position_priority = 100
 
 	category = army
 	
-	potential = { always = yes }
+	potential = {
+		owner = { is_wilderness_empire = no } # see 'building_ozone_thickener'
+	}
 	allow = {
-		has_upgraded_capital_5 = yes
-		hidden_trigger = { owner = { is_ai = no } }
+		has_fully_upgraded_capital = yes
 		if = {
 			limit = {
 				exists = orbital_defence
@@ -413,12 +441,6 @@ building_avb_planetary_shield_generator_3 = {
 				}
 			}
 		}
-	}
-	
-	
-	destroy_trigger = {
-		exists = owner
-		owner = { is_ai = yes }
 	}
 	
 	upgrades = {
@@ -438,40 +460,27 @@ building_avb_planetary_shield_generator_3 = {
 		script = cosmic_storms/StormBuildingModifiers
 	}
 
-	on_built = {
-		if = {
-			limit = { has_cosmic_storms_dlc = yes }
-			solar_system = {
-				set_star_flag = storm_no_negative_effects
-				remove_modifier = storm_base_modifier
-			}
-		}
-	}
-
-	on_destroy = {
-		if = {
-			limit = { has_cosmic_storms_dlc = yes }
-			owner = { set_country_flag = shield_on_destroy } #an action when destroyed
-			solar_system = {
-				remove_star_flag = storm_no_negative_effects
-			}
-		}
+	inline_script = { # on_built & on_destroy behaviors
+		script = cosmic_storms/PlanetaryShieldOnBuiltDestroy
 	}
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_b5_minerals
-			exotic_gases = @avb_b5_rare_cost
-			rare_crystals = @avb_b4_rare_cost
+			minerals = @avb_b4_minerals
+			exotic_gases = @avb_b4_rare_cost
+			rare_crystals = @avb_b3_rare_cost
 		}			
 		upkeep = {
-			energy = @avb_b5_upkeep
-			exotic_gases = @avb_b5_rare_upkeep
-			rare_crystals = @avb_b4_rare_upkeep
+			energy = @avb_b4_upkeep
+			exotic_gases = @avb_b4_rare_upkeep
+			rare_crystals = @avb_b3_rare_upkeep
 		}
 	}
 	prerequisites = {
 		"tech_avb_planetary_shield_generator_3"
+	}
+	show_tech_unlock_if = {
+		is_wilderness_empire = no
 	}
 	custom_storm_ai_weight = {
 		weight = 5
@@ -514,12 +523,6 @@ building_avb_dark_matter_planetary_shield_generator = {
 		}
 	}
 	
-	
-	destroy_trigger = {
-		exists = owner
-		owner = { is_ai = yes }
-	}
-	
 	planet_modifier = {
 		planet_orbital_bombardment_damage = -0.90
 	}
@@ -556,18 +559,19 @@ building_avb_dark_matter_planetary_shield_generator = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b6_minerals
-			exotic_gases = @avb_b5_rare_cost
 			sr_dark_matter = @avb_b4_rare_cost
 		}			
 		upkeep = {
 			energy = @avb_b6_upkeep
-			exotic_gases = @avb_b5_rare_upkeep
 			sr_dark_matter = @avb_b4_rare_upkeep
 		}
 	}
 	
 	prerequisites = {
 		"tech_avb_dark_matter_planetary_shield_generator"
+	}
+	show_tech_unlock_if = {
+		is_wilderness_empire = no
 	}
 	custom_storm_ai_weight = {
 		weight = 5

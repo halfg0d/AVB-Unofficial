@@ -1,13 +1,23 @@
-building_avb_paragon_memory_vaults_2 = {
-	base_buildtime = @b4_time
+#####################
+# Galactic Paragons Buildings
+#####################
+
+building_paragon_memory_vaults = {
+	base_buildtime = @b2_time
+	planet_limit = 1
 	category = unity
 	can_demolish = yes
 	can_be_ruined = yes
 	can_be_disabled = yes
 	is_essential = yes
-	can_build = no
-	prerequisites = {
-		"tech_avb_paragon_memory_vaults_2"
+	destroy_trigger = {
+
+	empire_limit = 1
+
+	building_sets = {
+		government
+		urban
+		unity
 	}
 	destroy_trigger = {
 		exists = owner
@@ -41,20 +51,203 @@ building_avb_paragon_memory_vaults_2 = {
 		}
 		text = building_paragon_memory_vaults_hive_desc
 	}
+
+	triggered_desc = {
+		text = memory_vault_tooltip
+	}
+
+	allow = {
+		has_upgraded_capital = yes
+		hidden_trigger = {
+			owner = {
+				OR = {
+					is_ai = no 
+					resource_stockpile_compare = { resource = minerals value >= 800 }
+				}
+			}
+		}
+	}
+
 	potential = {
-		avb_hg_changes = yes
+		custom_tooltip = {
+			text = EMPIRE_UNIQUE_BUILDING
+			owner = { is_memory_vault_empire = yes }
+		}
+		exists = planet
 	}
-	show_tech_unlock_if = {
-		avb_hg_changes = yes
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+		}
+
+		cost = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_wilderness_empire = yes
+				}
+			}
+			biomass = 200
+		}
+
+		produces = {
+			trigger = {
+				exists = owner
+			}
+			unity = 5
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = { is_variable_set = paragon_memory_vault }
+			}
+			unity = 5
+			multiplier = owner.paragon_memory_vault
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = { has_civic = civic_memory_vault_corporate }
+				owner = { is_variable_set = paragon_memory_vault }
+			}
+			trade = 10
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = { has_civic = civic_memory_vault_corporate }
+				owner = { is_variable_set = paragon_memory_vault }
+			}
+			trade = 10
+			multiplier = owner.paragon_memory_vault
+		}
+		upkeep = {
+			energy = @b2_upkeep
+		}
 	}
+
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					has_civic = civic_memory_vault
+					has_civic = civic_memory_vault_machine
+					has_civic = civic_memory_vault_hive
+				}
+			}
+		}
+		species_leader_exp_gain = 0.01
+	}
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					has_civic = civic_memory_vault
+					has_civic = civic_memory_vault_machine
+					has_civic = civic_memory_vault_hive
+				}
+				is_variable_set = paragon_memory_vault
+			}
+		}
+		species_leader_exp_gain = 0.01
+		mult = owner.paragon_memory_vault
+	}
+
+	inline_script = {
+		script = buildings/on_all_wilderness_buildings_districts
+	}
+
+	on_built = {
+		set_variable = {
+			which = paragon_memory_vault
+			value = 0
+		}
+	}
+
+	on_destroy = {
+		clear_variable = paragon_memory_vault
+	}
+	upgrades = {
+		"building_avb_paragon_memory_vaults_2"
+	}
+}
+building_avb_paragon_memory_vaults_2 = {
+	base_buildtime = @avb_b3_time
+	category = unity
+	can_demolish = yes
+	can_be_ruined = yes
+	can_be_disabled = yes
+	is_essential = yes
+	can_build = no
+
+	prerequisites = {
+		"tech_avb_paragon_memory_vaults_2"
+	}
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			is_memory_vault_empire = no
+		}
+	}
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			is_memory_vault_empire = no
+		}
+	}
+	desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				OR = {
+					has_civic = civic_memory_vault
+					has_civic = civic_memory_vault_corporate
+				}
+			}
+		}
+		text = building_paragon_memory_vaults_desc
+	}
+	desc = {
+		trigger = {
+			exists = owner
+			owner = { has_civic = civic_memory_vault_machine }
+		}
+		text = building_paragon_memory_vaults_machine_desc
+	}
+	desc = {
+		trigger = {
+			exists = owner
+			owner = { has_civic = civic_memory_vault_hive }
+		}
+		text = building_paragon_memory_vaults_hive_desc
+	}
+
+	triggered_desc = {
+		text = memory_vault_tooltip
+	}
+
+	potential = {
+		custom_tooltip = {
+			text = EMPIRE_UNIQUE_BUILDING
+			owner = { is_memory_vault_empire = yes }
+		}
+		exists = planet
+	}
+
 	allow = {
 		has_upgraded_capital_4 = yes
 		hidden_trigger = {
 			owner = {
 				OR = {
 					is_ai = no 
-					resource_stockpile_compare = { resource = minerals value >= 1200 }
-					resource_stockpile_compare = { resource = rare_crystals value >= 400 }
+					AND = {
+						resource_stockpile_compare = { resource = minerals value >= 1200 }
+						resource_stockpile_compare = { resource = rare_crystals value >= 400 }
+					}
 				}
 			}
 		}
@@ -64,6 +257,15 @@ building_avb_paragon_memory_vaults_2 = {
 		cost = {
 			minerals = @avb_b3_minerals
 			rare_crystals = @avb_b3_rare_cost
+		}
+		cost = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_wilderness_empire = yes
+				}
+			}
+			biomass = 800
 		}
 		produces = {
 			trigger = {
@@ -78,6 +280,23 @@ building_avb_paragon_memory_vaults_2 = {
 			}
 			unity = 7.5
 			multiplier = planet.paragon_memory_vault
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = { has_civic = civic_memory_vault_corporate }
+				owner = { is_variable_set = paragon_memory_vault }
+			}
+			trade = 15
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = { has_civic = civic_memory_vault_corporate }
+				owner = { is_variable_set = paragon_memory_vault }
+			}
+			trade = 15
+			multiplier = owner.paragon_memory_vault
 		}
 		upkeep = {
 			energy = @avb_b3_upkeep
@@ -113,7 +332,7 @@ building_avb_paragon_memory_vaults_2 = {
 				}
 			}
 		}
-		species_leader_exp_gain = 0.02
+		species_leader_exp_gain = 0.015
 	}
 	triggered_country_modifier = {
 		potential = {
@@ -124,11 +343,15 @@ building_avb_paragon_memory_vaults_2 = {
 					has_civic = civic_memory_vault_machine
 					has_civic = civic_memory_vault_hive
 				}
+				is_variable_set = paragon_memory_vault
 			}
-			planet = { is_variable_set = paragon_memory_vault }
 		}
-		species_leader_exp_gain = 0.02
-		mult = planet.paragon_memory_vault
+		species_leader_exp_gain = 0.015
+		mult = owner.paragon_memory_vault
+	}
+
+	inline_script = {
+		script = buildings/on_all_wilderness_buildings_districts
 	}
 
 	on_destroy = {

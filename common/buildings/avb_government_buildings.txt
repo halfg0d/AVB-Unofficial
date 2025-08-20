@@ -1,26 +1,28 @@
 #############
 # Government buildings
 #############
-building_avb_noble_estates_2 = {
-	base_buildtime = @avb_b3_time
-	can_build = no
+building_noble_estates = {
+	base_buildtime = @b2_time
+	icon = building_palace
+	planet_limit = 1
 
 	category = government
-	
+
+	building_sets = {
+		government
+		urban
+	}
+
 	potential = {
 		exists = owner
-		planet = {
-			or = {
-				has_building = building_noble_estates
-				owner = { is_ai = no }
-			}
+		owner = {
+			has_valid_civic = civic_aristocratic_elite
 		}
-		owner = { has_valid_civic = civic_aristocratic_elite }
 		NOT = { has_modifier = slave_colony }
 	}
-	
+
 	allow = {
-		has_fully_upgraded_capital = yes
+		has_upgraded_capital = yes
 		if = {
 			limit = {
 				exists = orbital_defence
@@ -36,6 +38,77 @@ building_avb_noble_estates_2 = {
 			}
 		}
 	}
+
+	destroy_trigger = {
+		exists = owner
+		NOT = {
+			owner = { has_civic = civic_aristocratic_elite }
+		}
+	}
+
+	planet_modifier = {
+		planet_housing_add = 100
+	}
+
+	inline_script = {
+		script = "jobs/politician_add"
+		AMOUNT = @building_static_jobs_low
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b1_minerals
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+
+	triggered_desc = {
+		text = job_noble_effect_desc
+	}
+	upgrades = {
+		building_avb_noble_estates_2
+	}
+}
+
+building_avb_noble_estates_2 = {
+	base_buildtime = @avb_b3_time
+	can_build = no
+
+	category = government
+	
+	building_sets = {
+		government
+		urban
+	}
+	potential = {
+		exists = owner
+		owner = {
+			has_valid_civic = civic_aristocratic_elite
+		}
+		NOT = { has_modifier = slave_colony }
+	}
+
+	allow = {
+		has_major_upgraded_capital = yes
+		if = {
+			limit = {
+				exists = orbital_defence
+			}
+			orbital_defence = {
+				exists = starbase
+				starbase = {
+					NOR = {
+						has_starbase_building = ring_noble_estates
+						is_starbase_building_building = ring_noble_estates
+					}
+				}
+			}
+		}
+	}
+
 	destroy_trigger = {
 		exists = owner
 		NOT = {
@@ -44,17 +117,21 @@ building_avb_noble_estates_2 = {
 	}
 	
 	planet_modifier = {
-		job_noble_add = 3
-		planet_housing_add = 3
+		planet_housing_add = 300
+	}
+
+	inline_script = {
+		script = "jobs/politician_add"
+		AMOUNT = 300
 	}
 
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @avb_b3_minerals
+			minerals = @avb_b2_minerals
 		}			
 		upkeep = {
-			energy = @avb_b3_upkeep
+			energy = @avb_b2_upkeep
 		}
 	}
 	
@@ -66,21 +143,30 @@ building_avb_noble_estates_2 = {
 		"tech_avb_noble_estates_2"
 	}
 }
-
-building_avb_slave_processing_2 = {
-	base_buildtime = @avb_b2_time
-	can_build = no
+building_slave_processing = {
+	base_buildtime = @b1_time
+	planet_limit = 1
 
 	category = government
 
+	building_sets = {
+		government
+		urban
+	}
+
 	potential = {
-		owner = { is_gestalt = no }
-		owner = { has_policy_flag = slavery_allowed }
+		owner = {
+			is_regular_empire = yes
+			OR = {
+				has_policy_flag = slavery_allowed
+				has_exploited_disconnected_drones = yes
+			}
+		}
 		NOT = { has_modifier = resort_colony }
 	}
-	
+
 	allow = {
-		has_upgraded_capital_4 = yes
+		has_upgraded_capital = yes
 		if = {
 			limit = {
 				exists = orbital_defence
@@ -96,12 +182,105 @@ building_avb_slave_processing_2 = {
 			}
 		}
 	}
-	
-	destroy_trigger = {
+
+	destroy_trigger = { # destroys if true
 		exists = owner
 		OR = {
-			owner = { is_regular_empire = no }
-			NOT = { owner = { has_policy_flag = slavery_allowed } }
+			owner = {
+				NOR = {
+					is_regular_empire = yes
+					has_policy_flag = slavery_allowed
+					has_exploited_disconnected_drones = yes
+				}
+			}
+			has_modifier = resort_colony
+		}
+	}
+
+	planet_modifier = {
+		planet_jobs_slave_produces_mult = 0.05
+		pop_cat_slave_political_power = -0.25
+		planet_resettlement_unemployed_mult = -0.50
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b1_minerals
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+
+	prerequisites = {
+		"tech_neural_implants"
+	}
+
+	triggered_desc = {
+		text = building_slave_processing_slave_army_effect_desc
+	}
+
+	triggered_desc = {
+		text = building_slave_processing_migrate_effect_desc
+	}
+	upgrades = {
+		building_avb_slave_processing_2
+	}
+}
+
+building_avb_slave_processing_2 = {
+	base_buildtime = @avb_b2_time
+	can_build = no
+
+	category = government
+
+	category = government
+
+	building_sets = {
+		government
+		urban
+	}
+
+	potential = {
+		owner = {
+			is_regular_empire = yes
+			OR = {
+				has_policy_flag = slavery_allowed
+				has_exploited_disconnected_drones = yes
+			}
+		}
+		NOT = { has_modifier = resort_colony }
+	}
+
+	allow = {
+		has_major_upgraded_capital = yes
+		if = {
+			limit = {
+				exists = orbital_defence
+			}
+			orbital_defence = {
+				exists = starbase
+				starbase = {
+					NOR = {
+						has_starbase_building = ring_slave_processing_facility
+						is_starbase_building_building = ring_slave_processing_facility
+					}
+				}
+			}
+		}
+	}
+
+	destroy_trigger = { # destroys if true
+		exists = owner
+		OR = {
+			owner = {
+				NOR = {
+					is_regular_empire = yes
+					has_policy_flag = slavery_allowed
+					has_exploited_disconnected_drones = yes
+				}
+			}
 			has_modifier = resort_colony
 		}
 	}
@@ -133,15 +312,22 @@ building_avb_slave_processing_2 = {
 		"tech_avb_slave_processing_2"
 	}
 }
-
-building_avb_enforcement_3 = {
-	base_buildtime = @avb_b3_time
+building_hall_judgment = {
+	base_buildtime = @b2_time
 
 	category = government
 	can_build = no
-	
+
+	building_sets = {
+		government
+		urban
+	}
+
 	potential = {
-		owner = { is_gestalt = no }
+		owner = {
+			is_regular_empire = yes
+			NOT = { has_valid_civic = civic_civil_education }
+		}
 		NOT = { has_modifier = slave_colony }
 		if = {
 			limit = {
@@ -151,16 +337,93 @@ building_avb_enforcement_3 = {
 			NOT = { has_available_jobs = enforcer }
 		}
 	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			OR = {
+				is_regular_empire = no
+				has_valid_civic = civic_civil_education
+			}
+		}
+	}
+
+	convert_to = {
+		building_center_of_guidance
+	}
+
+	planet_modifier = {
+		job_enforcer_add = 500
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+			volatile_motes = @b2_rare_cost
+		}
+		upkeep = {
+			energy = @b1_upkeep
+			volatile_motes = @b2_rare_upkeep
+		}
+	}
+
+	prerequisites = {
+		"tech_colonial_centralization"
+	}
+
+	triggered_desc = {
+		text = job_enforcer_effect_desc
+	}
+
+	show_tech_unlock_if = {
+		is_regular_empire = yes
+		NOT = { has_valid_civic = civic_civil_education }
+	}
+	upgrades = {
+		building_avb_enforcement_3
+	}
+}
+
+building_avb_enforcement_3 = {
+	base_buildtime = @avb_b3_time
+
+	category = government
+	can_build = no
+	
+	building_sets = {
+		government
+		urban
+	}
+	potential = {
+		owner = {
+			is_regular_empire = yes
+			NOT = { has_valid_civic = civic_civil_education }
+		}
+		NOT = { has_modifier = slave_colony }
+		if = {
+			limit = {
+				owner = { is_ai = yes }
+			}
+			NOT = { has_forbidden_jobs = enforcer }
+			NOT = { has_available_jobs = enforcer }
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			OR = {
+				is_regular_empire = no
+				has_valid_civic = civic_civil_education
+			}
+		}
+	}
 	
 	allow = {
 		has_fully_upgraded_capital = yes
 	}
 	
-	destroy_trigger = {
-		exists = owner
-		owner = { is_regular_empire = no }
-	}
-		
 	planet_modifier = {
 		job_enforcer_add = @avb_b3_jobs
 	}
@@ -186,7 +449,8 @@ building_avb_enforcement_3 = {
 	}
 	
 	show_tech_unlock_if = {
-		is_gestalt = no
+		is_regular_empire = yes
+		NOT = { has_valid_civic = civic_civil_education }
 	}
 	
 	upgrades = {
@@ -200,8 +464,15 @@ building_avb_enforcement_4 = {
 	category = government
 	can_build = no
 	
+	building_sets = {
+		government
+		urban
+	}
 	potential = {
-		owner = { is_gestalt = no }
+		owner = {
+			is_regular_empire = yes
+			NOT = { has_valid_civic = civic_civil_education }
+		}
 		NOT = { has_modifier = slave_colony }
 		if = {
 			limit = {
@@ -211,16 +482,21 @@ building_avb_enforcement_4 = {
 			NOT = { has_available_jobs = enforcer }
 		}
 	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			OR = {
+				is_regular_empire = no
+				has_valid_civic = civic_civil_education
+			}
+		}
+	}
+	
 	
 	allow = {
 		has_upgraded_capital_4 = yes
 	}
-	
-	destroy_trigger = {
-		exists = owner
-		owner = { is_regular_empire = no }
-	}
-		
 	planet_modifier = {
 		job_enforcer_add = @avb_b5_jobs
 	}
@@ -246,21 +522,146 @@ building_avb_enforcement_4 = {
 	}
 	
 	show_tech_unlock_if = {
-		is_gestalt = no
+		is_regular_empire = yes
+		NOT = { has_valid_civic = civic_civil_education }
 	}
 }
+#building_state_academy = {
+#	base_buildtime = @b1_time
+#	planet_limit = 3
+#	category = government
+#
+#	building_sets = {
+#		government
+#		urban
+#	}
+#
+#	potential = {
+#		owner = { has_valid_civic = civic_civil_education }
+#		NOT = { has_modifier = slave_colony }
+#	}
+#
+#	destroy_trigger = {
+#		exists = owner
+#		NOT = {	owner = { has_valid_civic = civic_civil_education } }
+#	}
+#
+#	convert_to = {
+#		building_precinct_house
+#	}
+#
+#	planet_modifier = {
+#		job_enforcer_add = 200
+#		planet_civilians_physics_research_produces_add = 0.5
+#		planet_civilians_society_research_produces_add = 0.5
+#		planet_civilians_engineering_research_produces_add = 0.5
+#		planet_civilians_consumer_goods_upkeep_add = 1
+#	}
+#
+#	resources = {
+#		category = planet_buildings
+#		cost = {
+#			minerals = @b1_minerals
+#		}
+#		upkeep = {
+#			energy = 2
+#		}
+#	}
+#
+#	prerequisites = {
+#		"tech_planetary_government"
+#	}
+#
+#	triggered_desc = {
+#		text = job_educator_effect_desc
+#	}
+#
+#	show_tech_unlock_if = {
+#		is_regular_empire = yes
+#		has_valid_civic = civic_civil_education
+#	}
+#
+#	upgrades = {
+#		building_center_of_guidance
+#	}
+#}
+#
+#building_center_of_guidance = {
+#	base_buildtime = @b2_time
+#
+#	category = government
+#	can_build = no
+#
+#	building_sets = {
+#		government
+#		urban
+#	}
+#
+#	potential = {
+#		owner = { has_valid_civic = civic_civil_education }
+#		NOT = { has_modifier = slave_colony }
+#	}
+#
+#	destroy_trigger = {
+#		exists = owner
+#		owner = { NOT = { has_valid_civic = civic_civil_education } }
+#	}
+#
+#	convert_to = {
+#		building_hall_judgment
+#	}
+#
+#
+#	planet_modifier = {
+#		job_enforcer_add = 500
+#		planet_civilians_physics_research_produces_add = 1
+#		planet_civilians_society_research_produces_add = 1
+#		planet_civilians_engineering_research_produces_add = 1
+#		planet_civilians_consumer_goods_upkeep_add = 2
+#	}
+#
+#	resources = {
+#		category = planet_buildings
+#		cost = {
+#			minerals = @b2_minerals
+#			volatile_motes = @b2_rare_cost
+#		}
+#		upkeep = {
+#			energy = @b1_upkeep
+#			volatile_motes = @b2_rare_upkeep
+#		}
+#	}
+#
+#	prerequisites = {
+#		"tech_colonial_centralization"
+#	}
+#
+#	triggered_desc = {
+#		text = job_educator_effect_desc
+#	}
+#
+#	show_tech_unlock_if = {
+#		is_regular_empire = yes
+#		has_valid_civic = civic_civil_education
+#	}
+#}
 
-building_avb_sentinel_posts_2 = {
-	base_buildtime = @avb_b2_time 
-	can_build = no
+building_sentinel_posts = {
+	base_buildtime = @b1_time
 
 	category = government
-	
+
+	building_sets = {
+		government
+		urban
+	}
+
 	potential = {
 		exists = owner
 		owner = { is_gestalt = yes }
+		owner = { is_wilderness_empire = no }
 	}
-	
+
 	allow = {
 		hidden_trigger = {
 			OR = {
@@ -273,7 +674,73 @@ building_avb_sentinel_posts_2 = {
 			}
 		}
 	}
+
+	destroy_trigger = {
+		exists = owner
+		NOT = {
+			owner = { is_gestalt = yes }
+		}
+	}
+
+	planet_modifier = {
+		job_patrol_drone_add = 200
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b1_minerals
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+
+	prerequisites = {
+		"tech_planetary_government"
+	}
+
+	triggered_desc = {
+		text = job_patrol_drone_effect_desc
+	}
+
+	show_tech_unlock_if = {
+		is_gestalt = yes
+	}
+	upgrades = {
+		building_avb_sentinel_posts_2
+	}
+}
+
+building_avb_sentinel_posts_2 = {
+	base_buildtime = @avb_b2_time 
+	can_build = no
+
+	category = government
 	
+	building_sets = {
+		government
+		urban
+	}
+	potential = {
+		exists = owner
+		owner = { is_gestalt = yes }
+		owner = { is_wilderness_empire = no }
+	}
+
+	allow = {
+		hidden_trigger = {
+			OR = {
+				owner = { is_ai = no }
+				AND = {
+					NOT = { has_building = building_sentinel_posts }
+					NOT = { has_forbidden_jobs = patrol_drone }
+					NOT = { has_available_jobs = patrol_drone }
+				}
+			}
+		}
+	}
+
 	destroy_trigger = {
 		exists = owner
 		NOT = {
@@ -282,7 +749,7 @@ building_avb_sentinel_posts_2 = {
 	}
 		
 	planet_modifier = {
-		job_patrol_drone_add = 4
+		job_patrol_drone_add = 400
 	}
 
 	resources = {
@@ -312,20 +779,28 @@ building_avb_sentinel_posts_2 = {
 # Ascension perks
 #############
 
-building_avb_psi_corps_2 = {
-	base_buildtime = @avb_b3_time
-	can_build = no
+#Psionic path
+building_psi_corps = {
+	base_buildtime = @b2_time
 
 	category = government
-	
+
+	building_sets = {
+		government
+		urban
+	}
+
+	planet_limit = 1
+
 	potential = {
 		host_has_dlc = "Utopia"
 		owner = { has_tradition = tr_psionics_psi_corps }
 		NOT = { has_modifier = resort_colony }
 		NOT = { has_modifier = slave_colony }
 	}
+
 	allow = {
-		has_upgraded_capital_4 = yes
+		has_major_upgraded_capital = yes
 		if = {
 			limit = {
 				exists = orbital_defence
@@ -350,11 +825,90 @@ building_avb_psi_corps_2 = {
 	}
 
 	planet_modifier = {
-		job_telepath_add = 4
+		job_telepath_add = 200
+		planet_stability_add = 5
+	}
+
+	triggered_planet_modifier = {
+		psionic_pop_bonus_workforce_mult = 1
+		mult = value:psionic_workforce_from_telepaths
+		# This is on the building instead of the jobs to prevent an infinite workforce loop
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = @b2_upkeep
+		}
+	}
+
+	triggered_desc = {
+		text = job_telepath_effect_desc
+	}
+
+	triggered_desc = {
+		text = psionic_bonus_workforce_from_telepaths_tt
+	}
+	upgrades = {
+		building_avb_psi_corps_2
+	}
+}
+
+building_avb_psi_corps_2 = {
+	base_buildtime = @avb_b3_time
+	can_build = no
+
+	category = government
+	
+	building_sets = {
+		government
+		urban
+	}
+	potential = {
+		host_has_dlc = "Utopia"
+		owner = { has_tradition = tr_psionics_psi_corps }
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+	allow = {
+		has_fully_upgraded_capital = yes
+		if = {
+			limit = {
+				exists = orbital_defence
+			}
+			orbital_defence = {
+				exists = starbase
+				starbase = {
+					NOR = {
+						has_starbase_building = ring_psi_corps
+						is_starbase_building_building = ring_psi_corps
+					}
+				}
+			}
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		NOT = {
+			owner = { has_tradition = tr_psionics_psi_corps }
+		}
+	}
+
+	planet_modifier = {
+		job_telepath_add = 400
 		planet_stability_add = 10
 	}
 	upgrades = {
 		building_avb_psi_corps_3
+	}
+	triggered_planet_modifier = {
+		psionic_pop_bonus_workforce_mult = 1
+		mult = value:psionic_workforce_from_telepaths
+		# This is on the building instead of the jobs to prevent an infinite workforce loop
 	}
 	resources = {
 		category = planet_buildings
@@ -372,6 +926,9 @@ building_avb_psi_corps_2 = {
 		text = job_telepath_effect_desc
 	}	
 	
+	triggered_desc = {
+		text = psionic_bonus_workforce_from_telepaths_tt
+	}
 	prerequisites = {
 		"tech_avb_psi_corps_2"
 	}
@@ -383,6 +940,10 @@ building_avb_psi_corps_3 = {
 
 	category = government
 	
+	building_sets = {
+		government
+		urban
+	}
 	potential = {
 		host_has_dlc = "Utopia"
 		owner = { has_tradition = tr_psionics_psi_corps }
@@ -390,7 +951,7 @@ building_avb_psi_corps_3 = {
 		NOT = { has_modifier = slave_colony }
 	}
 	allow = {
-		has_upgraded_capital_6 = yes
+		has_upgraded_capital_5 = yes
 		if = {
 			limit = {
 				exists = orbital_defence
@@ -415,10 +976,15 @@ building_avb_psi_corps_3 = {
 	}
 
 	planet_modifier = {
-		job_telepath_add = 8
+		job_telepath_add = 800
 		planet_stability_add = 20
 	}
 
+	triggered_planet_modifier = {
+		psionic_pop_bonus_workforce_mult = 1
+		mult = value:psionic_workforce_from_telepaths
+		# This is on the building instead of the jobs to prevent an infinite workforce loop
+	}
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -435,8 +1001,95 @@ building_avb_psi_corps_3 = {
 		text = job_telepath_effect_desc
 	}	
 	
+	triggered_desc = {
+		text = psionic_bonus_workforce_from_telepaths_tt
+	}
 	prerequisites = {
 		"tech_avb_psi_corps_3"
+	}
+}
+building_grand_embassy = {
+	base_buildtime = @b3_time
+	can_build = no
+
+	category = government
+
+	building_sets = {
+		government
+		urban
+	}
+
+	potential = {
+		exists = owner
+		owner = { is_regular_empire = yes }
+
+		planet = { is_capital = yes }
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	allow = {
+		has_major_upgraded_capital = yes
+		if = {
+			limit = {
+				exists = orbital_defence
+			}
+			orbital_defence = {
+				exists = starbase
+				starbase = {
+					NOR = {
+						has_starbase_building = ring_embassy_complex
+						is_starbase_building_building = ring_embassy_complex
+					}
+				}
+			}
+		}
+	}
+
+	destroy_trigger = {
+		OR = {
+			AND = {
+				exists = owner
+				owner = { is_regular_empire = no }
+			}
+			planet = { is_capital = no }
+		}
+	}
+
+	country_modifier = {
+		envoys_add = 2
+	}
+
+	inline_script = {
+		script = "jobs/politician_add"
+		AMOUNT = @building_static_jobs
+	}
+
+	triggered_desc = {
+		text = job_politician_effect_desc
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b3_minerals
+			rare_crystals = @b3_rare_cost
+		}
+		upkeep = {
+			energy = @b3_upkeep
+			rare_crystals = @b3_rare_upkeep
+		}
+	}
+
+	prerequisites = {
+		"tech_xeno_relations"
+	}
+
+	show_tech_unlock_if = {
+		is_regular_empire = yes
+	}
+	upgrades = {
+		building_avb_grand_embassy_2
 	}
 }
 
@@ -446,8 +1099,11 @@ building_avb_grand_embassy_2 = {
 
 	category = government
 
+	building_sets = {
+		government
+		urban
+	}
 	potential = {
-		avb_hg_changes = yes
 		exists = owner
 		owner = { is_regular_empire = yes }
 
@@ -488,12 +1144,9 @@ building_avb_grand_embassy_2 = {
 		envoys_add = 4
 	}
 
-	planet_modifier = {
-		job_politician_add = 4
-	}
-
-	triggered_desc = {
-		text = job_politician_effect_desc
+	inline_script = {
+		script = "jobs/politician_add"
+		AMOUNT = 400
 	}
 
 	resources = {
@@ -512,11 +1165,14 @@ building_avb_grand_embassy_2 = {
 		"tech_avb_xeno_relations_2"
 	}
 
+	triggered_desc = {
+		text = job_politician_effect_desc
+	}
 	show_tech_unlock_if = {
 		is_regular_empire = yes
-		avb_hg_changes = yes
 	}
 }
+
 ###
 ### Zoo Administration
 ###
@@ -530,6 +1186,7 @@ building_avb_zoo_administration = {
 		tech_avb_xeno_zoo_2
 	}
 	potential = {
+		always = no
 		avb_hg_changes = yes
 		is_artificial = no
 		has_modifier = resort_colony
