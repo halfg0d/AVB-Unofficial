@@ -8,15 +8,12 @@ tech_avb_posthumous_employment_center_2 = {
 	weight = @tier4weight1
 	
 	potential = {
-		avb_hg_changes = yes
 		has_valid_civic = civic_permanent_employment
 	}
 	weight_modifier = {
-		factor = 2
 	}
 	
 	ai_weight = {
-		factor = 5
 	}
 }
 
@@ -31,14 +28,11 @@ tech_avb_offspring_nest_2 = {
 	
 	potential = {
 		has_origin = origin_progenitor_hive
-		avb_hg_changes = yes
 	}
 	weight_modifier = {
-		factor = 2
 	}
 	
 	ai_weight = {
-		factor = 5
 	}
 }
 
@@ -55,14 +49,11 @@ tech_avb_toxic_bath_2 = {
 		is_gestalt = no
 		is_individual_machine = no
 		has_toxic_baths = yes
-		avb_hg_changes = yes
 	}
 	weight_modifier = {
-		factor = 2
 	}
 	
 	ai_weight = {
-		factor = 5
 	}
 }
 tech_avb_toxic_bath_hive_2 = {
@@ -77,14 +68,11 @@ tech_avb_toxic_bath_hive_2 = {
 	potential = {
 		is_hive_empire = yes
 		has_toxic_baths = yes
-		avb_hg_changes = yes
 	}
 	weight_modifier = {
-		factor = 2
 	}
 	
 	ai_weight = {
-		factor = 5
 	}
 }
 tech_avb_toxic_bath_machine_2 = {
@@ -102,14 +90,11 @@ tech_avb_toxic_bath_machine_2 = {
 			is_machine_empire = yes
 		}
 		has_toxic_baths = yes
-		avb_hg_changes = yes
 	}
 	weight_modifier = {
-		factor = 2
 	}
 	
 	ai_weight = {
-		factor = 5
 	}
 }
 
@@ -120,6 +105,7 @@ tech_avb_ranger_lodge_2 = {
 	category = { statecraft }
 	prerequisites = { "tech_hydroponics" "tech_colonization_3" }
 	potential = {
+		always = no
 		has_valid_civic = civic_environmentalist
 		avb_hg_changes = yes
 	}
@@ -143,7 +129,6 @@ tech_avb_archaeo_refinery_2 = {
 
 	potential = {
 		has_ancrel = yes
-		avb_hg_changes = yes
 	}
 
 	weight_modifier = {
@@ -152,25 +137,9 @@ tech_avb_archaeo_refinery_2 = {
 			has_ascension_perk = ap_technological_ascendancy
 		}
 		modifier = {
-			factor = 0.1
-			num_buildings = {  
-				type = building_archaeo_refinery
-				value < 1 
-				disabled = no
-				in_construction = no 
-			}
+			factor = 2
+			has_ascension_perk = ap_archaeoengineers
 		}
-		modifier = {
-			factor = 0.3
-			NOT = {
-				has_ascension_perk = ap_archaeoengineers
-			}
-		}
-		modifier = {
-			factor = 0
-			has_ancrel = no
-		}
-		inline_script = "technology/archaeotech_weight"
 	}
 }
 
@@ -186,11 +155,9 @@ tech_avb_baol_organic_plant_2 = {
 
 	potential = {
 		has_ancrel = yes
-		avb_hg_changes = yes
 	}
 
 	weight_modifier = {
-		factor = 2
 	}
 }
 
@@ -206,17 +173,12 @@ tech_avb_archaeostudies_faculty_2 = {
 
 	potential = {
 		has_ancrel = yes
-		avb_hg_changes = yes
 	}
 
 	weight_modifier = {
 		modifier = {
 			factor = @ap_technological_ascendancy_rare_tech
 			has_ascension_perk = ap_technological_ascendancy
-		}
-		modifier = {
-			factor = 0
-			has_ancrel = no
 		}
 		modifier = {
 			factor = 0.3
@@ -249,10 +211,8 @@ tech_avb_vultaum_reality_computer_2 = {
 
 	potential = {
 		has_ancrel = yes
-		avb_hg_changes = yes
 	}
 	weight_modifier = {
-		factor = 2
 	}
 }
 
@@ -268,10 +228,8 @@ tech_avb_league_offices_2 = {
 
 	potential = {
 		has_ancrel = yes
-		avb_hg_changes = yes
 	}
 	weight_modifier = {
-		factor = 2
 	}
 }
 
@@ -284,7 +242,6 @@ tech_avb_transcendent_faith_2 = {
 	weight = @tier5weight2
 
 	potential = {
-		avb_hg_changes = yes
 		OR = {
 			has_ethic = ethic_spiritualist
 			has_ethic = ethic_fanatic_spiritualist
@@ -312,7 +269,6 @@ tech_avb_autocurating_vault_2 = {
 	weight = @tier4weight1
 
 	potential = {
-		avb_hg_changes = yes
 		NOR = {
 			has_ethic = ethic_spiritualist
 			has_ethic = ethic_fanatic_spiritualist
@@ -338,7 +294,6 @@ tech_avb_xeno_relations_2 = {
 
 	potential = {
 		is_regular_empire = yes
-		avb_hg_changes = yes
 	}
 
 	modifier = {
@@ -396,16 +351,8 @@ tech_avb_paragon_memory_vaults_2 = {
 
 	potential = {
 		has_paragon_dlc = yes
-		avb_hg_changes = yes
 	}
 	weight_modifier = {
-		factor = 2
-		modifier = { # No tech without builded previous cbuilding
-			factor = 0
-			NOT = {
-				any_owned_planet = { has_building = building_paragon_memory_vaults }
-			}
-		}
 	}
 }
 tech_avb_clone_army_vats_2 = {
@@ -425,7 +372,6 @@ tech_avb_clone_army_vats_2 = {
 	potential = {
 		has_origin = origin_clone_army
 		has_clone_full_path = yes
-		avb_hg_changes = yes
 	}
 
 	weight_modifier = {
@@ -461,9 +407,6 @@ tech_avb_hydroponics_3 = {
 	category = { biology }	
 	prerequisites = { "tech_avb_hydroponics_2" }
 	weight = @avbtier6weight1
-	potential = {
-		avb_hg_changes = yes
-	}
 	weight_modifier = {
 		factor = 2
 		modifier = {
@@ -477,16 +420,9 @@ tech_avb_hydroponics_3 = {
 				}
 			}
 		}
-		modifier = { # No tech without builded previous building
-			factor = 0
-			NOT = {
-				any_owned_planet = { has_building = building_avb_hydroponics_farm_2 }
-			}
-		}
 	}
 	
 	ai_weight = {
-		factor = 4
 	}
 }
 tech_avb_necrophage_3 = {
@@ -498,7 +434,7 @@ tech_avb_necrophage_3 = {
 	weight = @tier4weight3
 
 	potential = {
-		avb_hg_changes = yes
+		alwyas = no
 		has_origin = origin_necrophage
 		has_trait = trait_necrophage
 	}
@@ -541,7 +477,6 @@ tech_avb_lathe_resonator_2 = {
 		tech_lathe_resonator
 	}
     potential = {
-		avb_hg_changes = yes
         has_machine_age_dlc = yes
         has_ascension_perk = ap_cosmogenesis
         has_technology = tech_cosmogenesis_world
@@ -586,7 +521,6 @@ tech_avb_lathe_overclocker_2 = {
 		tech_lathe_overclocker
 	}
     potential = {
-		avb_hg_changes = yes
         has_machine_age_dlc = yes
         has_ascension_perk = ap_cosmogenesis
         has_technology = tech_cosmogenesis_world
@@ -631,7 +565,6 @@ tech_avb_lathe_preserver_2 = {
 		tech_lathe_preserver
 	}
     potential = {
-		avb_hg_changes = yes
         has_machine_age_dlc = yes
         has_ascension_perk = ap_cosmogenesis
         has_technology = tech_cosmogenesis_world
@@ -676,7 +609,6 @@ tech_avb_lathe_life_support_2 = {
 		tech_lathe_life_support
 	}
     potential = {
-		avb_hg_changes = yes
         has_machine_age_dlc = yes
         has_ascension_perk = ap_cosmogenesis
         has_technology = tech_cosmogenesis_world
@@ -721,7 +653,6 @@ tech_avb_lathe_cogitator_2 = {
 		tech_lathe_cogitator
 	}
     potential = {
-		avb_hg_changes = yes
         has_machine_age_dlc = yes
         has_ascension_perk = ap_cosmogenesis
         has_technology = tech_cosmogenesis_world
@@ -766,7 +697,6 @@ tech_avb_lathe_validator_2 = {
 		tech_lathe_validator
 	}
     potential = {
-		avb_hg_changes = yes
         has_machine_age_dlc = yes
         has_ascension_perk = ap_cosmogenesis
         has_technology = tech_cosmogenesis_world
@@ -809,8 +739,7 @@ tech_avb_nanolab_3 = {
 	}
 	weight = @tier4weight1
 	potential = {
-		avb_hg_changes = yes
-        has_machine_age_dlc = yes
+        	has_machine_age_dlc = yes
 		owner = {
 			has_tradition = tr_nanotech_finish
 		}
@@ -838,8 +767,7 @@ tech_avb_nanotech_cauldron_2 = {
 	}
 	weight = @tier4weight1
 	potential = {
-		avb_hg_changes = yes
-        has_machine_age_dlc = yes
+		has_machine_age_dlc = yes
 		owner = {
 			has_tradition = tr_nanotech_finish
 		}
@@ -867,8 +795,7 @@ tech_avb_nanotech_mining = {
 	}
 	weight = @tier3weight1
 	potential = {
-		avb_hg_changes = yes
-        has_machine_age_dlc = yes
+		has_machine_age_dlc = yes
 		owner = {
 			has_tradition = tr_nanotech_1
 		}
@@ -904,8 +831,7 @@ tech_avb_nanotech_mining_2 = {
 		tech_avb_nanotech_mining
 	}
 	potential = {
-		avb_hg_changes = yes
-        has_machine_age_dlc = yes
+		has_machine_age_dlc = yes
 		owner = {
 			has_tradition = tr_nanotech_1
 		}
@@ -939,7 +865,6 @@ tech_avb_virtual_maintenance_1 = {
 	potential = {
 		always = no
 		has_machine_age_dlc = yes
-		avb_hg_changes = yes
 		owner = {
 			has_tradition = tr_virtuality_finish
 			is_virtual_empire = yes
@@ -978,7 +903,6 @@ tech_avb_virtual_maintenance_2 = {
 	}
 	potential = {
 		has_machine_age_dlc = yes
-		avb_hg_changes = yes
 		owner = {
 			has_tradition = tr_virtuality_finish
 			is_virtual_empire = yes
@@ -1017,7 +941,6 @@ tech_avb_virtual_maintenance_3 = {
 	}
 	potential = {
 		has_machine_age_dlc = yes
-		avb_hg_changes = yes
 		owner = {
 			has_tradition = tr_virtuality_finish
 			is_virtual_empire = yes
@@ -1056,7 +979,6 @@ tech_avb_virtual_server = {
 	}
 	potential = {
 		has_machine_age_dlc = yes
-		avb_hg_changes = yes
 		owner = {
 			has_tradition = tr_virtuality_finish
 			is_virtual_empire = yes
@@ -1096,7 +1018,6 @@ tech_avb_modular_buildings = {
 	potential = {
 		always = no
 		has_machine_age_dlc = yes
-		avb_hg_changes = yes
 		owner = {
 			has_tradition = tr_modularity_finish
 		}
@@ -1136,7 +1057,6 @@ tech_avb_mega_builders = {
 		always = no
 		has_berg = no # Until update
 		is_ai = no # AI would be too stupid to use it properly even it's only uprgrading a building
-		avb_hg_changes = yes
 		OR = {
 			has_technology = tech_avb_capital_6
 			AND = {
@@ -1170,11 +1090,10 @@ tech_avb_transcendental_retreat_2 = {
 		"tech_avb_capital_4"
 	}
 	potential = {
-		avb_hg_changes = yes
 		is_natural_design_empire = yes
 	}
 	modifier = {
-		pop_growth_speed_reduction = -0.1
+		bonus_pop_growth_mult = 0.1
 	}
 }
 

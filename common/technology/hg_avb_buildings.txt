@@ -6,13 +6,10 @@ tech_avb_mote_harvesters_2 = {
 	category = { particles }	
 	prerequisites = { "tech_mine_volatile_motes" "tech_avb_capital_4" }
 	weight = @tier5weight1
-	potential = {
-		always = no
-		avb_hg_changes = yes
-	}
+
 	weight_modifier = {
-		#factor = 0
 		factor = 2
+
 		modifier = {
 			factor = 0
 			NOT = {
@@ -20,8 +17,9 @@ tech_avb_mote_harvesters_2 = {
 					OR = {
 						has_deposit = d_dust_caverns
 						has_deposit = d_dust_desert
+						has_deposit = d_industrial_sector
 					}
-				}				
+				}
 				any_planet_within_border = {
 					OR = {
 						has_deposit = d_volatile_motes_1
@@ -30,12 +28,14 @@ tech_avb_mote_harvesters_2 = {
 						has_deposit = d_volatile_motes_4
 						has_deposit = d_volatile_motes_5
 					}
-				}	
+				}
 			}
 		}
 	}
+
 	ai_weight = {
-		factor = 5 #important resource
+		factor = @strategic_resource_ai_tech_factor #important resource
+
 	}
 }
 
@@ -48,12 +48,9 @@ tech_avb_gas_extractors_2 = {
 	prerequisites = { "tech_mine_exotic_gases" "tech_avb_capital_4" }
 	weight = @tier5weight1
 	
-	potential = {
-		always = no
-		avb_hg_changes = yes
-	}
 	weight_modifier = {
 		factor = 2
+
 		modifier = {
 			factor = 0
 			NOT = {
@@ -61,8 +58,10 @@ tech_avb_gas_extractors_2 = {
 					OR = {
 						has_deposit = d_bubbling_swamp
 						has_deposit = d_fuming_bog
+						has_deposit = d_industrial_sector
+						has_deposit = d_exotic_mountain
 					}
-				}				
+				}
 				any_planet_within_border = {
 					OR = {
 						has_deposit = d_exotic_gases_1
@@ -71,13 +70,13 @@ tech_avb_gas_extractors_2 = {
 						has_deposit = d_exotic_gases_4
 						has_deposit = d_exotic_gases_5
 					}
-				}	
+				}
 			}
 		}
 	}
-	
+
 	ai_weight = {
-		factor = 5 #important resource
+		factor = @strategic_resource_ai_tech_factor #important resource
 	}
 }
 
@@ -89,12 +88,13 @@ tech_avb_crystal_mines_2 = {
 	prerequisites = { "tech_mine_rare_crystals" "tech_avb_capital_4" }
 	weight = @tier5weight1
 	
-	potential = {
-		always = no
-		avb_hg_changes = yes
-	}
 	weight_modifier = {
 		factor = 2
+
+		modifier = {
+
+		}
+
 		modifier = {
 			factor = 0
 			NOT = {
@@ -103,8 +103,9 @@ tech_avb_crystal_mines_2 = {
 						has_deposit = d_crystalline_caverns
 						has_deposit = d_crystal_forest
 						has_deposit = d_crystal_reef
+						has_deposit = d_industrial_sector
 					}
-				}				
+				}
 				any_planet_within_border = {
 					OR = {
 						has_deposit = d_rare_crystals_1
@@ -113,14 +114,19 @@ tech_avb_crystal_mines_2 = {
 						has_deposit = d_rare_crystals_4
 						has_deposit = d_rare_crystals_5
 					}
-				}	
+				}
 			}
 		}
+		modifier = {
+			add = 1
+			has_country_flag = tech_mine_rare_crystals_culling_boost
+		}
 	}
-	
+
 	ai_weight = {
-		factor = 4 #strategic resource
-	}	
+		factor = @strategic_resource_ai_tech_factor #strategic resource
+
+	}
 }
 
 tech_avb_betharian_power_plant_2 = {
@@ -132,8 +138,9 @@ tech_avb_betharian_power_plant_2 = {
 	weight = @tier5weight2
 	
 	potential = {
-		avb_hg_changes = yes
+		always = no
 	}
+
 	weight_modifier = {
 		factor = 2
 		modifier = {
@@ -160,8 +167,8 @@ tech_avb_xeno_zoo_2 = {
 	weight = @tier5weight2
 	
 	potential = {
+		always = no
 		is_regular_empire = yes
-		avb_hg_changes = yes
 	}
 	
 	weight_modifier = {
@@ -258,7 +265,7 @@ tech_avb_power_plant_5 = {
 	}
 	
 	ai_weight = {
-		factor = 3	#power plants are good
+		factor = @technician_ai_factor
 	}
 }
 
@@ -283,7 +290,7 @@ tech_avb_power_plant_6 = {
 	}
 	
 	ai_weight = {
-		factor = 3	#power plants are good
+		factor = @technician_ai_factor
 	}
 }
 
@@ -308,7 +315,7 @@ tech_avb_power_plant_7 = {
 	}
 	
 	ai_weight = {
-		factor = 3	#power plants are good
+		factor = @technician_ai_factor
 	}
 }
 
@@ -333,7 +340,7 @@ tech_avb_power_plant_8 = {
 	}
 	
 	ai_weight = {
-		factor = 3	#power plants are good
+		factor = @technician_ai_factor
 	}
 }
 
@@ -350,18 +357,43 @@ tech_avb_crops_5 = {
 		starbase_constructions_food_produces_mult = 0.10
 	}
 	
+	potential = {
+		is_wilderness_empire = no
+	}
+
 	weight_modifier = {
 		modifier = {
 			factor = 0.01
-			is_machine_empire = yes
-			NOR = { 
-				has_valid_civic = civic_machine_servitor 
-				has_valid_civic = civic_machine_assimilator 	
+			OR = {
+				is_machine_empire = yes
+				is_lithoid_empire = yes
+				is_individual_machine = yes
+				has_origin = origin_synthetic_fertility
+			}
+			NOR = {
+				has_country_flag = non_lithoid_subspecies
+				has_valid_civic = civic_machine_servitor
+				has_valid_civic = civic_machine_assimilator
 				any_owned_planet = {
-					num_districts = { type = district_farming value > 0 }
+					OR = {
+						has_any_capped_planet_farming_district = yes
+						has_any_uncapped_farming_district = yes
+						has_any_agriculture_zone = yes
+					}
 				}
 			}
-		}	
+		}
+		modifier = {
+			factor = 0.5
+			OR = {
+				is_machine_empire = yes
+				is_lithoid_empire = yes
+				AND = {
+					is_individual_machine = yes
+					NOT = { has_country_flag = non_lithoid_subspecies }
+				}
+			}
+		}
 		modifier = {
 			factor = 1.25
 			has_ethic = ethic_pacifist
@@ -370,10 +402,18 @@ tech_avb_crops_5 = {
 			factor = 1.5
 			has_ethic = ethic_fanatic_pacifist
 		}
+		modifier = {
+			factor = 2
+			has_relic = r_pox_sample
+		}
+		modifier = {
+			factor = 2
+			country_uses_bio_ships = yes
+		}
 	}
-	
+
 	ai_weight = {
-		factor = 1.5 #farms are good
+		factor = @farming_ai_weight_factor
 		modifier = {
 			factor = 1.25
 			has_ethic = ethic_pacifist
@@ -401,15 +441,36 @@ tech_avb_crops_6 = {
 	weight_modifier = {
 		modifier = {
 			factor = 0.01
-			is_machine_empire = yes
-			NOR = { 
-				has_valid_civic = civic_machine_servitor 
-				has_valid_civic = civic_machine_assimilator 	
+			OR = {
+				is_machine_empire = yes
+				is_lithoid_empire = yes
+				is_individual_machine = yes
+				has_origin = origin_synthetic_fertility
+			}
+			NOR = {
+				has_country_flag = non_lithoid_subspecies
+				has_valid_civic = civic_machine_servitor
+				has_valid_civic = civic_machine_assimilator
 				any_owned_planet = {
-					num_districts = { type = district_farming value > 0 }
+					OR = {
+						has_any_capped_planet_farming_district = yes
+						has_any_uncapped_farming_district = yes
+						has_any_agriculture_zone = yes
+					}
 				}
 			}
-		}	
+		}
+		modifier = {
+			factor = 0.5
+			OR = {
+				is_machine_empire = yes
+				is_lithoid_empire = yes
+				AND = {
+					is_individual_machine = yes
+					NOT = { has_country_flag = non_lithoid_subspecies }
+				}
+			}
+		}
 		modifier = {
 			factor = 1.25
 			has_ethic = ethic_pacifist
@@ -418,10 +479,18 @@ tech_avb_crops_6 = {
 			factor = 1.5
 			has_ethic = ethic_fanatic_pacifist
 		}
+		modifier = {
+			factor = 2
+			has_relic = r_pox_sample
+		}
+		modifier = {
+			factor = 2
+			country_uses_bio_ships = yes
+		}
 	}
-	
+
 	ai_weight = {
-		factor = 1.5 #farms are good
+		factor = @farming_ai_weight_factor
 		modifier = {
 			factor = 1.25
 			has_ethic = ethic_pacifist
@@ -447,11 +516,10 @@ tech_avb_mining_4 = {
 	}
 	
 	weight_modifier = {
-		factor = 4
 	}
 	
 	ai_weight = {
-		factor = 4
+		factor = @ai_mining_factor
 	}
 }
 
@@ -469,11 +537,10 @@ tech_avb_mining_5 = {
 	}
 	
 	weight_modifier = {
-		factor = 4
 	}
 	
 	ai_weight = {
-		factor = 4
+		factor = @ai_mining_factor
 	}
 }
 
@@ -491,11 +558,10 @@ tech_avb_mining_6 = {
 	}
 	
 	weight_modifier = {
-		factor = 4
 	}
 	
 	ai_weight = {
-		factor = 4
+		factor = @ai_mining_factor
 	}
 }
 
@@ -522,12 +588,27 @@ tech_avb_bureaucratic_4 = {
 		NOT = { has_valid_civic = civic_machine_servitor }
 	}
 	weight_modifier = {
-		factor = 4
-		inline_script = "tech_weights/avb_government_weight"
+		modifier = {
+			factor = 0
+			num_owned_planets < 2
+		}
+		modifier = {
+			factor = 1.5
+			num_owned_planets > 2
+		}
+		modifier = {
+			factor = 1.5
+			num_owned_planets > 3
+		}
+		modifier = {
+			factor = 1.5
+			num_owned_planets > 4
+		}
+
 	}
 
 	ai_weight = {
-		factor = 4
+
 	}
 }
 
@@ -547,11 +628,27 @@ tech_avb_bureaucratic_5 = {
 		NOT = { has_valid_civic = civic_machine_servitor }
 	}
 	weight_modifier = {
-		inline_script = "tech_weights/avb_government_weight"
+		modifier = {
+			factor = 0
+			num_owned_planets < 2
+		}
+		modifier = {
+			factor = 1.5
+			num_owned_planets > 2
+		}
+		modifier = {
+			factor = 1.5
+			num_owned_planets > 3
+		}
+		modifier = {
+			factor = 1.5
+			num_owned_planets > 4
+		}
+
 	}
 
 	ai_weight = {
-		factor = 4
+
 	}
 }
 
@@ -571,11 +668,27 @@ tech_avb_bureaucratic_6 = {
 		NOT = { has_valid_civic = civic_machine_servitor }
 	}
 	weight_modifier = {
-		inline_script = "tech_weights/avb_government_weight"
+		modifier = {
+			factor = 0
+			num_owned_planets < 2
+		}
+		modifier = {
+			factor = 1.5
+			num_owned_planets > 2
+		}
+		modifier = {
+			factor = 1.5
+			num_owned_planets > 3
+		}
+		modifier = {
+			factor = 1.5
+			num_owned_planets > 4
+		}
+
 	}
 
 	ai_weight = {
-		factor = 4
+
 	}
 }
 
@@ -600,11 +713,9 @@ tech_avb_temple_4 = {
 	}
 	
 	weight_modifier = {
-		factor = 4
 	}
 
 	ai_weight = {
-		factor = 4
 	}
 }
 
@@ -628,11 +739,9 @@ tech_avb_temple_5 = {
 	}
 	
 	weight_modifier = {
-		factor = 4
 	}
 
 	ai_weight = {
-		factor = 4
 	}
 }
 
@@ -656,11 +765,9 @@ tech_avb_temple_6 = {
 	}
 	
 	weight_modifier = {
-		factor = 4
 	}
 
 	ai_weight = {
-		factor = 4
 	}
 }
 
@@ -673,14 +780,12 @@ tech_avb_hive_unity_4 = {
 	weight = @tier5weight2
 
 	weight_modifier = {
-		factor = 4
 	}
 
 	potential = {
 		always = yes
 	}
 	ai_weight = {
-		factor = 4
 	}
 }
 tech_avb_hive_unity_5 = {
@@ -692,14 +797,12 @@ tech_avb_hive_unity_5 = {
 	weight = @avbtier6weight2
 
 	weight_modifier = {
-		factor = 4
 	}
 
 	potential = {
 		always = yes
 	}
 	ai_weight = {
-		factor = 4
 	}
 }
 tech_avb_hive_unity_6 = {
@@ -711,14 +814,12 @@ tech_avb_hive_unity_6 = {
 	weight = @avbtier7weight2
 
 	weight_modifier = {
-		factor = 4
 	}
 
 	potential = {
 		always = yes
 	}
 	ai_weight = {
-		factor = 4
 	}
 }
 
@@ -733,14 +834,12 @@ tech_avb_monument_4 = {
 	#unlocks 3rd upgraded culture building
 
 	weight_modifier = {
-		factor = 4
 	}
 
 	potential = {
 		always = yes
 	}
 	ai_weight = {
-		factor = 4
 	}
 }
 
@@ -755,14 +854,12 @@ tech_avb_monument_5 = {
 	#unlocks 4th upgraded culture building
 
 	weight_modifier = {
-		factor = 4
 	}
 	potential = {
 		always = yes
 	}
 
 	ai_weight = {
-		factor = 4
 	}
 }
 tech_avb_monument_6 = {
@@ -776,13 +873,11 @@ tech_avb_monument_6 = {
 	#unlocks 5th upgraded culture building
 
 	weight_modifier = {
-		factor = 4
 	}
 	potential = {
 		always = yes
 	}
 
 	ai_weight = {
-		factor = 4
 	}
 }
