@@ -371,7 +371,7 @@ building_avb_food_processing_3 = {
 		}
 		upkeep = {
 			energy = @avb_b3_upkeep
-			extoci_gases = @avb_b3_rare_upkeep
+			exotic_gases = @avb_b3_rare_upkeep
 		}
 		inline_script = {
 			script = building_resources/avb_ringworld_resources
@@ -455,7 +455,7 @@ building_avb_food_processing_4 = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b4_minerals
-			extotic_gases = @avb_b4_rare_cost
+			exotic_gases = @avb_b4_rare_cost
 		}
 		upkeep = {
 			energy = @avb_b4_upkeep

@@ -192,12 +192,6 @@ tech_avb_xeno_zoo_2 = {
 				any_owned_planet = {
 					OR = {
 						has_deposit = d_alien_pets_deposit
-						any_owned_pop = {
-							OR = {
-								is_sapient = no
-								is_livestock = yes
-							}
-						}
 					}
 				}
 			}

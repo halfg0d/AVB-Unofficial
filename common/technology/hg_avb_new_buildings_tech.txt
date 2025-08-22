@@ -561,14 +561,14 @@ tech_avb_lathe_resonator_2 = {
             factor = 2
             any_owned_planet = {
                 is_planet_class = pc_cosmogenesis_world
-                num_pops >= 50
+                pop_amount >= 5000
             }
         }
         modifier = {
             factor = 2
             any_owned_planet = {
                 is_planet_class = pc_cosmogenesis_world
-                num_pops >= 100
+                pop_amount >= 10000
             }
         }
     }
@@ -606,14 +606,14 @@ tech_avb_lathe_overclocker_2 = {
             factor = 2
             any_owned_planet = {
                 is_planet_class = pc_cosmogenesis_world
-                num_pops >= 50
+                pop_amount >= 5000
             }
         }
         modifier = {
             factor = 2
             any_owned_planet = {
                 is_planet_class = pc_cosmogenesis_world
-                num_pops >= 100
+                pop_amount >= 10000
             }
         }
     }
@@ -651,14 +651,14 @@ tech_avb_lathe_preserver_2 = {
             factor = 2
             any_owned_planet = {
                 is_planet_class = pc_cosmogenesis_world
-                num_pops >= 50
+                pop_amount >= 5000
             }
         }
         modifier = {
             factor = 2
             any_owned_planet = {
                 is_planet_class = pc_cosmogenesis_world
-                num_pops >= 100
+                pop_amount >= 10000
             }
         }
     }
@@ -696,14 +696,14 @@ tech_avb_lathe_life_support_2 = {
             factor = 2
             any_owned_planet = {
                 is_planet_class = pc_cosmogenesis_world
-                num_pops >= 50
+                pop_amount >= 5000
             }
         }
         modifier = {
             factor = 2
             any_owned_planet = {
                 is_planet_class = pc_cosmogenesis_world
-                num_pops >= 100
+                pop_amount >= 10000
             }
         }
     }
@@ -741,14 +741,14 @@ tech_avb_lathe_cogitator_2 = {
             factor = 2
             any_owned_planet = {
                 is_planet_class = pc_cosmogenesis_world
-                num_pops >= 50
+                pop_amount >= 5000
             }
         }
         modifier = {
             factor = 2
             any_owned_planet = {
                 is_planet_class = pc_cosmogenesis_world
-                num_pops >= 100
+                pop_amount >= 10000
             }
         }
     }
@@ -786,14 +786,14 @@ tech_avb_lathe_validator_2 = {
             factor = 2
             any_owned_planet = {
                 is_planet_class = pc_cosmogenesis_world
-                num_pops >= 50
+                pop_amount >= 5000
             }
         }
         modifier = {
             factor = 2
             any_owned_planet = {
                 is_planet_class = pc_cosmogenesis_world
-                num_pops >= 100
+                pop_amount >= 10000
             }
         }
     }

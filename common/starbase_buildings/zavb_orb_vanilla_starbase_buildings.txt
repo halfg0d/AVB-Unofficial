@@ -1,406 +1,406 @@
-ring_psi_corps = {
-	icon = "GFX_orbitalring_psi_corps"
-	construction_days = 360
-
-	potential = {
-		host_has_dlc = "Utopia"
-		exists = owner
-		owner = {
-			has_tradition = tr_psionics_psi_corps
-		}
-		planet = {
-			NOR = {
-				has_modifier = resort_colony
-				has_modifier = slave_colony
-			}
-		}
-		is_orbital_ring = yes
-	}
-
-	possible = {
-		planet = {
-			NOR = {
-				has_building_construction = building_psi_corps
-				has_building = building_psi_corps
-			}
-		}
-	}
-
-	abort_trigger = {
-		exists = owner
-		NOT = {
-			owner = { has_tradition = tr_psionics_psi_corps }
-		}
-	}
-
-	destroy_trigger = {
-		exists = owner
-		NOT = {
-			owner = { has_tradition = tr_psionics_psi_corps }
-		}
-	}
-	inline_script = orbital_buildings/psi_corps
-	resources = {
-		category = starbase_buildings
-		cost = {
-			alloys = 200
-			rare_crystals = 300
-		}
-
-		upkeep = {
-			energy = 5
-			rare_crystals = 2
-		}
-		upkeep = {
-			trigger = {
-				owner = { has_technology = tech_avb_psi_corps_2 }
-			}
-			energy = 3
-			rare_crystals = 3
-		}
-		upkeep = {
-			trigger = {
-				owner = { has_technology = tech_avb_psi_corps_3 }
-			}
-			energy = 2
-			rare_crystals = 2
-		}
-	}
-
-	ai_build_at_chokepoint = yes
-	ai_build_outside_chokepoint = yes
-
-	ai_weight = {
-		weight = 50
-		modifier = {
-			factor = 4
-			planet = {
-				OR = {
-					has_designation = col_bureau
-					has_designation = col_bureau_spiritualist
-				}
-			}
-		}
-	}
-}
-
-ring_orbital_shield_generator = {
-	icon = "GFX_orbitalring_shield_generator"
-	construction_days = 360
-
-	potential = {
-		exists = owner
-		owner = {
-			has_technology = tech_planetary_shield_generator
-		}
-		is_orbital_ring = yes
-	}
-
-	possible = {
-		planet = {
-			NOR = {
-				has_building_construction = building_planetary_shield_generator
-				has_building = building_planetary_shield_generator
-				has_building_construction = building_avb_planetary_shield_generator_2
-				has_building = building_avb_planetary_shield_generator_2
-				has_building_construction = building_avb_planetary_shield_generator_3
-				has_building = building_avb_planetary_shield_generator_3
-				has_building_construction = building_avb_dark_matter_planetary_shield_generator
-				has_building = building_avb_dark_matter_planetary_shield_generator
-			}
-		}
-	}
-	inline_script = orbital_buildings/planetary_shield_generator
-
-	resources = {
-		category = starbase_buildings
-		cost = {
-			alloys = 200
-			rare_crystals = 300
-		}
-
-		upkeep = {
-			energy = 5
-			rare_crystals = 2
-		}
-		upkeep = {
-			trigger = {
-				owner = { has_technology = tech_avb_planetary_shield_generator_2 }
-			}
-			energy = 3
-			rare_crystals = 3
-		}
-		upkeep = {
-			trigger = {
-				owner = { has_technology = tech_avb_planetary_shield_generator_3 }
-			}
-			energy = 2
-			rare_crystals = 2
-		}
-		upkeep = {
-			trigger = {
-				owner = { has_technology = tech_avb_dark_matter_planetary_shield_generator }
-			}
-			sr_dark_matter = 3
-		}
-	}
-
-	show_in_tech = "tech_planetary_shield_generator"
-
-	ai_build_at_chokepoint = yes
-	ai_build_outside_chokepoint = yes
-
-	ai_weight = {
-		weight = 50
-		modifier = {
-			factor = 4
-			planet = {
-				has_designation = col_fortress
-			}
-		}
-	}
-}
-
-ring_galactic_stock_exchange = {
-	icon = "GFX_orbitalring_galactic_stock_exchange"
-	construction_days = 360
-
-	potential = {
-		exists = owner
-		owner = {
-			has_technology = tech_galactic_markets
-		}
-		is_orbital_ring = yes
-		planet = {
-			NOR = {
-				has_modifier = resort_colony
-				has_modifier = slave_colony
-			}
-		}
-	}
-
-	possible = {
-		planet = {
-			NOR = {
-				has_building_construction = building_galactic_stock_exchange
-				has_building = building_galactic_stock_exchange
-				has_building_construction = building_avb_galactic_stock_exchange_2
-				has_building = building_avb_galactic_stock_exchange_2
-			}
-		}
-	}
-
-	abort_trigger = {
-		exists = planet
-		planet = {
-			exists = owner
-			OR = {
-				owner = { is_regular_empire = no }
-				has_modifier = slave_colony
-				has_modifier = resort_colony
-			}
-		}
-	}
-
-	destroy_trigger = {
-		exists = planet
-		planet = {
-			exists = owner
-			OR = {
-				owner = { is_regular_empire = no }
-				has_modifier = slave_colony
-				has_modifier = resort_colony
-			}
-		}
-	}
-	inline_script = orbital_buildings/galactic_stock_exchange
-
-	resources = {
-		category = starbase_buildings
-		cost = {
-			alloys = 200
-			rare_crystals = 300
-		}
-
-		upkeep = {
-			energy = 5
-			rare_crystals = 2
-		}
-		upkeep = {
-			trigger = {
-				owner = { has_technology = tech_avb_galactic_markets_2 }
-			}
-			energy = 3
-			rare_crystals = 3
-		}
-	}
-
-	show_in_tech = "tech_galactic_markets"
-
-	ai_build_at_chokepoint = yes
-	ai_build_outside_chokepoint = yes
-
-	ai_weight = {
-		weight = 50
-		modifier = {
-			factor = 4
-			solar_system = {
-				has_system_trade_value >= 50
-			}
-		}
-	}
-}
-
-ring_noble_estates = {
-	icon = "GFX_orbitalring_noble_estates"
-	construction_days = 360
-
-	potential = {
-		exists = owner
-		owner = {
-			has_valid_civic = civic_aristocratic_elite
-		}
-		is_orbital_ring = yes
-		planet = {
-			NOR = {
-				has_modifier = slave_colony
-			}
-		}
-	}
-
-	possible = {
-		planet = {
-			NOR = {
-				has_building_construction = building_noble_estates
-				has_building = building_noble_estates
-				has_building_construction = building_avb_noble_estates_2
-				has_building = building_avb_noble_estates_2
-			}
-		}
-	}
-	inline_script = orbital_buildings/noble_estates
-	abort_trigger = {
-		exists = owner
-		NOT = {
-			owner = { has_civic = civic_aristocratic_elite }
-		}
-	}
-
-	destroy_trigger = {
-		exists = owner
-		NOT = {
-			owner = { has_civic = civic_aristocratic_elite }
-		}
-	}
-
-	resources = {
-		category = starbase_buildings
-		cost = {
-			alloys = 200
-			exotic_gases = 300
-		}
-
-		upkeep = {
-			energy = 5
-			exotic_gases = 2
-		}
-		upkeep = {
-			trigger = {
-				owner = { has_technology = tech_avb_noble_estates_2 }
-			}
-			energy = 3
-			exotic_gases = 3
-		}
-	}
-
-	ai_build_at_chokepoint = yes
-	ai_build_outside_chokepoint = yes
-
-	ai_weight = {
-		weight = 100
-	}
-}
-
-ring_slave_processing_facility = {
-	icon = "GFX_orbitalring_slave_processing_facility"
-	construction_days = 360
-
-	potential = {
-		exists = owner
-		owner = {
-			has_technology = tech_neural_implants
-			is_regular_empire = yes
-			has_policy_flag = slavery_allowed
-		}
-		is_orbital_ring = yes
-		planet = {
-			NOR = {
-				has_modifier = resort_colony
-			}
-		}
-	}
-
-	possible = {
-		planet = {
-			NOR = {
-				has_building_construction = building_slave_processing
-				has_building = building_slave_processing
-			}
-		}
-	}
-
-	abort_trigger = {
-		exists = owner
-		OR = {
-			owner = { is_regular_empire = no }
-			NOT = { owner = { has_policy_flag = slavery_allowed } }
-			AND = {
-				exists = planet
-				planet = { has_modifier = resort_colony }
-			}
-		}
-	}
-
-	destroy_trigger = {
-		exists = owner
-		OR = {
-			owner = { is_regular_empire = no }
-			NOT = { owner = { has_policy_flag = slavery_allowed } }
-			AND = {
-				exists = planet
-				planet = { has_modifier = resort_colony }
-			}
-		}
-	}
-	inline_script = orbital_buildings/slave_processing_facility
-	
-
-	resources = {
-		category = starbase_buildings
-		cost = {
-			alloys = 200
-			volatile_motes = 300
-		}
-
-		upkeep = {
-			energy = 5
-			volatile_motes = 2
-		}
-		upkeep = {
-			trigger = {
-				owner = { has_technology = tech_avb_slave_processing_2 }
-			}
-			energy = 3
-			volatile_motes = 3
-		}
-	}
-
-	show_in_tech = "tech_neural_implants"
-
-	ai_build_at_chokepoint = yes
-	ai_build_outside_chokepoint = yes
-
-	ai_weight = {
-		weight = 100
-	}
-}
+#ring_psi_corps = {
+#	icon = "GFX_orbitalring_psi_corps"
+#	construction_days = 360
+#
+#	potential = {
+#		host_has_dlc = "Utopia"
+#		exists = owner
+#		owner = {
+#			has_tradition = tr_psionics_psi_corps
+#		}
+#		planet = {
+#			NOR = {
+#				has_modifier = resort_colony
+#				has_modifier = slave_colony
+#			}
+#		}
+#		is_orbital_ring = yes
+#	}
+#
+#	possible = {
+#		planet = {
+#			NOR = {
+#				has_building_construction = building_psi_corps
+#				has_building = building_psi_corps
+#			}
+#		}
+#	}
+#
+#	abort_trigger = {
+#		exists = owner
+#		NOT = {
+#			owner = { has_tradition = tr_psionics_psi_corps }
+#		}
+#	}
+#
+#	destroy_trigger = {
+#		exists = owner
+#		NOT = {
+#			owner = { has_tradition = tr_psionics_psi_corps }
+#		}
+#	}
+#	inline_script = orbital_buildings/psi_corps
+#	resources = {
+#		category = starbase_buildings
+#		cost = {
+#			alloys = 200
+#			rare_crystals = 300
+#		}
+#
+#		upkeep = {
+#			energy = 5
+#			rare_crystals = 2
+#		}
+#		upkeep = {
+#			trigger = {
+#				owner = { has_technology = tech_avb_psi_corps_2 }
+#			}
+#			energy = 3
+#			rare_crystals = 3
+#		}
+#		upkeep = {
+#			trigger = {
+#				owner = { has_technology = tech_avb_psi_corps_3 }
+#			}
+#			energy = 2
+#			rare_crystals = 2
+#		}
+#	}
+#
+#	ai_build_at_chokepoint = yes
+#	ai_build_outside_chokepoint = yes
+#
+#	ai_weight = {
+#		weight = 50
+#		modifier = {
+#			factor = 4
+#			planet = {
+#				OR = {
+#					has_designation = col_bureau
+#					has_designation = col_bureau_spiritualist
+#				}
+#			}
+#		}
+#	}
+#}
+#
+#ring_orbital_shield_generator = {
+#	icon = "GFX_orbitalring_shield_generator"
+#	construction_days = 360
+#
+#	potential = {
+#		exists = owner
+#		owner = {
+#			has_technology = tech_planetary_shield_generator
+#		}
+#		is_orbital_ring = yes
+#	}
+#
+#	possible = {
+#		planet = {
+#			NOR = {
+#				has_building_construction = building_planetary_shield_generator
+#				has_building = building_planetary_shield_generator
+#				has_building_construction = building_avb_planetary_shield_generator_2
+#				has_building = building_avb_planetary_shield_generator_2
+#				has_building_construction = building_avb_planetary_shield_generator_3
+#				has_building = building_avb_planetary_shield_generator_3
+#				has_building_construction = building_avb_dark_matter_planetary_shield_generator
+#				has_building = building_avb_dark_matter_planetary_shield_generator
+#			}
+#		}
+#	}
+#	inline_script = orbital_buildings/planetary_shield_generator
+#
+#	resources = {
+#		category = starbase_buildings
+#		cost = {
+#			alloys = 200
+#			rare_crystals = 300
+#		}
+#
+#		upkeep = {
+#			energy = 5
+#			rare_crystals = 2
+#		}
+#		upkeep = {
+#			trigger = {
+#				owner = { has_technology = tech_avb_planetary_shield_generator_2 }
+#			}
+#			energy = 3
+#			rare_crystals = 3
+#		}
+#		upkeep = {
+#			trigger = {
+#				owner = { has_technology = tech_avb_planetary_shield_generator_3 }
+#			}
+#			energy = 2
+#			rare_crystals = 2
+#		}
+#		upkeep = {
+#			trigger = {
+#				owner = { has_technology = tech_avb_dark_matter_planetary_shield_generator }
+#			}
+#			sr_dark_matter = 3
+#		}
+#	}
+#
+#	show_in_tech = "tech_planetary_shield_generator"
+#
+#	ai_build_at_chokepoint = yes
+#	ai_build_outside_chokepoint = yes
+#
+#	ai_weight = {
+#		weight = 50
+#		modifier = {
+#			factor = 4
+#			planet = {
+#				has_designation = col_fortress
+#			}
+#		}
+#	}
+#}
+#
+#ring_galactic_stock_exchange = {
+#	icon = "GFX_orbitalring_galactic_stock_exchange"
+#	construction_days = 360
+#
+#	potential = {
+#		exists = owner
+#		owner = {
+#			has_technology = tech_galactic_markets
+#		}
+#		is_orbital_ring = yes
+#		planet = {
+#			NOR = {
+#				has_modifier = resort_colony
+#				has_modifier = slave_colony
+#			}
+#		}
+#	}
+#
+#	possible = {
+#		planet = {
+#			NOR = {
+#				has_building_construction = building_galactic_stock_exchange
+#				has_building = building_galactic_stock_exchange
+#				has_building_construction = building_avb_galactic_stock_exchange_2
+#				has_building = building_avb_galactic_stock_exchange_2
+#			}
+#		}
+#	}
+#
+#	abort_trigger = {
+#		exists = planet
+#		planet = {
+#			exists = owner
+#			OR = {
+#				owner = { is_regular_empire = no }
+#				has_modifier = slave_colony
+#				has_modifier = resort_colony
+#			}
+#		}
+#	}
+#
+#	destroy_trigger = {
+#		exists = planet
+#		planet = {
+#			exists = owner
+#			OR = {
+#				owner = { is_regular_empire = no }
+#				has_modifier = slave_colony
+#				has_modifier = resort_colony
+#			}
+#		}
+#	}
+#	inline_script = orbital_buildings/galactic_stock_exchange
+#
+#	resources = {
+#		category = starbase_buildings
+#		cost = {
+#			alloys = 200
+#			rare_crystals = 300
+#		}
+#
+#		upkeep = {
+#			energy = 5
+#			rare_crystals = 2
+#		}
+#		upkeep = {
+#			trigger = {
+#				owner = { has_technology = tech_avb_galactic_markets_2 }
+#			}
+#			energy = 3
+#			rare_crystals = 3
+#		}
+#	}
+#
+#	show_in_tech = "tech_galactic_markets"
+#
+#	ai_build_at_chokepoint = yes
+#	ai_build_outside_chokepoint = yes
+#
+#	ai_weight = {
+#		weight = 50
+#		modifier = {
+#			factor = 4
+#			solar_system = {
+#				has_system_trade_value >= 50
+#			}
+#		}
+#	}
+#}
+#
+#ring_noble_estates = {
+#	icon = "GFX_orbitalring_noble_estates"
+#	construction_days = 360
+#
+#	potential = {
+#		exists = owner
+#		owner = {
+#			has_valid_civic = civic_aristocratic_elite
+#		}
+#		is_orbital_ring = yes
+#		planet = {
+#			NOR = {
+#				has_modifier = slave_colony
+#			}
+#		}
+#	}
+#
+#	possible = {
+#		planet = {
+#			NOR = {
+#				has_building_construction = building_noble_estates
+#				has_building = building_noble_estates
+#				has_building_construction = building_avb_noble_estates_2
+#				has_building = building_avb_noble_estates_2
+#			}
+#		}
+#	}
+#	inline_script = orbital_buildings/noble_estates
+#	abort_trigger = {
+#		exists = owner
+#		NOT = {
+#			owner = { has_civic = civic_aristocratic_elite }
+#		}
+#	}
+#
+#	destroy_trigger = {
+#		exists = owner
+#		NOT = {
+#			owner = { has_civic = civic_aristocratic_elite }
+#		}
+#	}
+#
+#	resources = {
+#		category = starbase_buildings
+#		cost = {
+#			alloys = 200
+#			exotic_gases = 300
+#		}
+#
+#		upkeep = {
+#			energy = 5
+#			exotic_gases = 2
+#		}
+#		upkeep = {
+#			trigger = {
+#				owner = { has_technology = tech_avb_noble_estates_2 }
+#			}
+#			energy = 3
+#			exotic_gases = 3
+#		}
+#	}
+#
+#	ai_build_at_chokepoint = yes
+#	ai_build_outside_chokepoint = yes
+#
+#	ai_weight = {
+#		weight = 100
+#	}
+#}
+#
+#ring_slave_processing_facility = {
+#	icon = "GFX_orbitalring_slave_processing_facility"
+#	construction_days = 360
+#
+#	potential = {
+#		exists = owner
+#		owner = {
+#			has_technology = tech_neural_implants
+#			is_regular_empire = yes
+#			has_policy_flag = slavery_allowed
+#		}
+#		is_orbital_ring = yes
+#		planet = {
+#			NOR = {
+#				has_modifier = resort_colony
+#			}
+#		}
+#	}
+#
+#	possible = {
+#		planet = {
+#			NOR = {
+#				has_building_construction = building_slave_processing
+#				has_building = building_slave_processing
+#			}
+#		}
+#	}
+#
+#	abort_trigger = {
+#		exists = owner
+#		OR = {
+#			owner = { is_regular_empire = no }
+#			NOT = { owner = { has_policy_flag = slavery_allowed } }
+#			AND = {
+#				exists = planet
+#				planet = { has_modifier = resort_colony }
+#			}
+#		}
+#	}
+#
+#	destroy_trigger = {
+#		exists = owner
+#		OR = {
+#			owner = { is_regular_empire = no }
+#			NOT = { owner = { has_policy_flag = slavery_allowed } }
+#			AND = {
+#				exists = planet
+#				planet = { has_modifier = resort_colony }
+#			}
+#		}
+#	}
+#	inline_script = orbital_buildings/slave_processing_facility
+#	
+#
+#	resources = {
+#		category = starbase_buildings
+#		cost = {
+#			alloys = 200
+#			volatile_motes = 300
+#		}
+#
+#		upkeep = {
+#			energy = 5
+#			volatile_motes = 2
+#		}
+#		upkeep = {
+#			trigger = {
+#				owner = { has_technology = tech_avb_slave_processing_2 }
+#			}
+#			energy = 3
+#			volatile_motes = 3
+#		}
+#	}
+#
+#	show_in_tech = "tech_neural_implants"
+#
+#	ai_build_at_chokepoint = yes
+#	ai_build_outside_chokepoint = yes
+#
+#	ai_weight = {
+#		weight = 100
+#	}
+#}

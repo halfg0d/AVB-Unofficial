@@ -1,8 +1,4 @@
 ######################
-# Power Plants
-#####################
-
-######################
 # Build speed
 #####################
 
@@ -16,23 +12,32 @@ tech_avb_construction_templates_3 = {
 	weight = @avbtier6weight2
 	
 	modifier = {
-		planet_building_build_speed_mult = 0.25
+		planet_building_build_speed_mult = 0.50
+		empire_size_districts_mult = -0.10
 	}
 	
 	weight_modifier = {
 		factor = 0.5
-		
+		modifier = {
+			factor = 0.5
+			NOR = {
+				has_trait_in_council = { TRAIT = leader_trait_expertise_industry }
+				has_trait_in_council = { TRAIT = leader_trait_curator }
+			}
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_construction_templates
+		}
 		modifier = {
 			factor = 1.25
 			OR = {
 				has_ethic = ethic_militarist
 				has_ethic = ethic_fanatic_militarist
 			}
-		}
 	}
 	
 	ai_weight = {
-		factor = 4
 	}
 }
 
@@ -42,16 +47,27 @@ tech_avb_construction_templates_4 = {
 	tier = 9
 	is_rare = yes
 	category = { industry }		
-	prerequisites = { "tech_construction_templates" }
+	prerequisites = { "tech_avb_construction_templates_3"  }
 	weight = @avbtier9weight2
 	
 	modifier = {
-		planet_building_build_speed_mult = 0.25
+		planet_building_build_speed_mult = 0.50
+		empire_size_districts_mult = -0.10
 	}
 	
 	weight_modifier = {
 		factor = 0.5
-		
+		modifier = {
+			factor = 0.5
+			NOR = {
+				has_trait_in_council = { TRAIT = leader_trait_expertise_industry }
+				has_trait_in_council = { TRAIT = leader_trait_curator }
+			}
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_construction_templates
+		}
 		modifier = {
 			factor = 1.25
 			OR = {
@@ -62,7 +78,6 @@ tech_avb_construction_templates_4 = {
 	}
 	
 	ai_weight = {
-		factor = 4
 	}
 }
 
@@ -80,6 +95,7 @@ tech_avb_sapient_ai_2 = {
 	
 	modifier = {
 		all_technology_research_speed = 0.05
+		planet_researchers_upkeep_mult = 0.05
 	}
 	
 	potential = {
@@ -87,11 +103,13 @@ tech_avb_sapient_ai_2 = {
 	}
 	
 	weight_modifier = {	
-		factor = 4
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = scholarium }
+		}
 	}
 	
 	ai_weight = {
-		factor = 4
 	}
 }
 
@@ -105,18 +123,21 @@ tech_avb_positronic_implants_2 = {
 	
 	modifier = {
 		all_technology_research_speed = 0.05
+		planet_researchers_upkeep_mult = 0.05
 	}
 	
 	potential = {
-		is_regular_empire = no
+		is_gestalt = yes
 	}
 	
 	weight_modifier = {	
-		factor = 4
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = scholarium }
+		}
 	}
 	
 	ai_weight = {
-		factor = 4
 	}
 }
 
@@ -137,11 +158,9 @@ tech_avb_space_science_6 = {
 	}
 	
 	weight_modifier = {
-		factor = 4
 	}
 	
 	ai_weight = {
-		factor = 4
 	}
 }
 
@@ -158,11 +177,9 @@ tech_avb_space_science_7 = {
 	}
 	
 	weight_modifier = {
-		factor = 4
 	}
 	
 	ai_weight = {
-		factor = 4
 	}
 }
 
@@ -179,11 +196,9 @@ tech_avb_space_science_8 = {
 	}
 	
 	weight_modifier = {
-		factor = 4
 	}
 	
 	ai_weight = {
-		factor = 4
 	}
 }
 
@@ -200,11 +215,9 @@ tech_avb_space_science_9 = {
 	}
 	
 	weight_modifier = {
-		factor = 4
 	}
 	
 	ai_weight = {
-		factor = 4
 	}
 }
 
@@ -221,209 +234,422 @@ tech_avb_space_science_10 = {
 	}
 	
 	weight_modifier = {
-		factor = 4
 	}
 	
 	ai_weight = {
-		factor = 4
 	}
 }
 
 # In Stellaris 3.11 was deleted, but there will be there for backup
+# backup was usefull bring back in 4.0.*
 tech_avb_physics_4 = {
-	cost = @tier5cost2
+	cost = @tier5cost3
 	area = physics
 	tier = 5
-	category = { computing }
+	category = { field_manipulation }
 	prerequisites = { "tech_physics_3" }
-	weight = @tier5weight2
-	potential = { always = no }
-	modifier = {
-		planet_researchers_physics_research_produces_mult = 0.2
+	weight = @tier5weight3
+	potential = {
+		is_wilderness_empire = no
 	}
 	
 	weight_modifier = {
-		factor = 4
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
+		modifier = {
+			factor = 2
+			years_passed > 35
+		}
+		modifier = {
+			factor = 2
+			years_passed > 40
+		}
+
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = scholarium }
+		}
 	}
 	
 	ai_weight = {
-		weight = 10
+		factor = @ai_physics_tech_speed_factor
 	}
 }
 
 tech_avb_physics_5 = {
-	cost = @avbtier6cost2
+	cost = @avbtier6cost3
 	area = physics
 	tier = 6
-	category = { computing }
+	category = { field_manipulation }
 	prerequisites = { "tech_avb_physics_4" }
-	weight = @avbtier6weight2
-	potential = { always = no }
-	
-	modifier = {
-		planet_researchers_physics_research_produces_mult = 0.2
+	weight = @avbtier6weight3
+	potential = {
+		is_wilderness_empire = no
 	}
-	
 	weight_modifier = {
-		factor = 4
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
+		modifier = {
+			factor = 2
+			years_passed > 35
+		}
+		modifier = {
+			factor = 2
+			years_passed > 40
+		}
+
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = scholarium }
+		}
 	}
 	
 	ai_weight = {
-		weight = 10
+		factor = @ai_physics_tech_speed_factor
 	}
 }
 
 tech_avb_physics_6 = {
-	cost = @avbtier7cost2
+	cost = @avbtier7cost3
 	area = physics
 	tier = 7
-	category = { computing }
+	category = { field_manipulation }
 	prerequisites = { "tech_avb_physics_5" }
-	weight = @avbtier7weight2
+	weight = @avbtier7weight3
 	
-	potential = { always = no }
-	modifier = {
-		planet_researchers_physics_research_produces_mult = 0.2
+	potential = {
+		is_wilderness_empire = no
 	}
 	
 	weight_modifier = {
-		factor = 4
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
+		modifier = {
+			factor = 2
+			years_passed > 35
+		}
+		modifier = {
+			factor = 2
+			years_passed > 40
+		}
+
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = scholarium }
+		}
 	}
 	
 	ai_weight = {
-		weight = 10
+		factor = @ai_physics_tech_speed_factor
 	}
 }
 
 tech_avb_society_4 = {
-	cost = @tier5cost2
+	cost = @tier5cost3
 	area = society
 	tier = 5
 	category = { biology }	
 	prerequisites = { "tech_society_3" }
-	weight = @tier5weight2
+	weight = @tier5weight3
 	
-	potential = { always = no }
-	modifier = {
-		planet_researchers_society_research_produces_mult = 0.2
+	potential = {
+		is_wilderness_empire = no
 	}
-	
 	weight_modifier = {
-		factor = 4
+		modifier = {
+			factor = 0
+			NOR = {
+				has_technology = tech_mine_exotic_gases
+				has_technology = tech_exotic_gases
+				has_country_flag = has_market_access
+			}
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
+		modifier = {
+			factor = 2
+			years_passed > 35
+		}
+		modifier = {
+			factor = 2
+			years_passed > 40
+		}
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = scholarium }
+		}
+		modifier = {
+			factor = 2
+			has_relic = r_pox_sample
+		}
 	}
 	
 	ai_weight = {
-		weight = 10
+		factor = @ai_society_tech_speed_factor
 	}
 }
 
 tech_avb_society_5 = {
-	cost = @avbtier6cost2
+	cost = @avbtier6cost3
 	area = society
 	tier = 6
 	category = { biology }	
 	prerequisites = { "tech_avb_society_4" }
-	weight = @avbtier6weight2
+	weight = @avbtier6weight3
 	
-	potential = { always = no }
-	modifier = {
-		planet_researchers_society_research_produces_mult = 0.2
+	potential = {
+		is_wilderness_empire = no
 	}
 	
 	weight_modifier = {
 		factor = 4
+		modifier = {
+			factor = 0
+			NOR = {
+				has_technology = tech_mine_exotic_gases
+				has_technology = tech_exotic_gases
+				has_country_flag = has_market_access
+			}
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
+		modifier = {
+			factor = 2
+			years_passed > 35
+		}
+		modifier = {
+			factor = 2
+			years_passed > 40
+		}
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = scholarium }
+		}
+		modifier = {
+			factor = 2
+			has_relic = r_pox_sample
+		}
 	}
 	
 	ai_weight = {
-		weight = 10
+		factor = @ai_society_tech_speed_factor
 	}
 }
 
 tech_avb_society_6 = {
-	cost = @avbtier7cost2
+	cost = @avbtier7cost3
 	area = society
 	tier = 7
 	category = { biology }	
 	prerequisites = { "tech_avb_society_5" }
-	weight = @avbtier7weight2
+	weight = @avbtier7weight3
 	
-	potential = { always = no }
-	modifier = {
-		planet_researchers_society_research_produces_mult = 0.2
+	potential = {
+		is_wilderness_empire = no
 	}
-	
+
 	weight_modifier = {
-		factor = 4
+		modifier = {
+			factor = 0
+			NOR = {
+				has_technology = tech_mine_exotic_gases
+				has_technology = tech_exotic_gases
+				has_country_flag = has_market_access
+			}
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
+		modifier = {
+			factor = 2
+			years_passed > 35
+		}
+		modifier = {
+			factor = 2
+			years_passed > 40
+		}
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = scholarium }
+		}
+		modifier = {
+			factor = 2
+			has_relic = r_pox_sample
+		}
 	}
 	
 	ai_weight = {
-		weight = 10
+		factor = @ai_society_tech_speed_factor
 	}
 }
 
 tech_avb_engineering_4 = {
-	cost = @tier5cost2
+	cost = @tier5cost3
 	area = engineering
 	tier = 5
-	category = { industry }	
+	category = { materials }
 	prerequisites = { "tech_society_3" }
-	weight = @tier5weight2
+	weight = @tier5weight3
 	
-	potential = { always = no }
-	modifier = {
-		planet_researchers_engineering_research_produces_mult = 0.2
+	potential = {
+		is_wilderness_empire = no
 	}
-	
+
 	weight_modifier = {
-		factor = 4
+		modifier = {
+			factor = 5
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 5
+		}
+		modifier = {
+			factor = 2
+			years_passed > 10
+		}
+		modifier = {
+			factor = 2
+			years_passed > 15
+		}
+		modifier = {
+			factor = 2
+			years_passed > 20
+		}
+
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = scholarium }
+		}
 	}
-	
+
 	ai_weight = {
-		weight = 10
+		factor = @ai_engineering_tech_speed_factor
 	}
 }
 
 tech_avb_engineering_5 = {
-	cost = @avbtier6cost2
+	cost = @avbtier6cost3
 	area = engineering
 	tier = 6
-	category = { industry }	
+	category = { materials }
 	prerequisites = { "tech_avb_engineering_4" }
-	weight = @avbtier6weight2
+	weight = @avbtier6weight3
 	
-	potential = { always = no }
-	modifier = {
-		planet_researchers_engineering_research_produces_mult = 0.2
+	potential = {
+		is_wilderness_empire = no
 	}
-	
+
 	weight_modifier = {
-		factor = 4
+		modifier = {
+			factor = 5
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 5
+		}
+		modifier = {
+			factor = 2
+			years_passed > 10
+		}
+		modifier = {
+			factor = 2
+			years_passed > 15
+		}
+		modifier = {
+			factor = 2
+			years_passed > 20
+		}
+
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = scholarium }
+		}
 	}
-	
+
 	ai_weight = {
-		weight = 10
+		factor = @ai_engineering_tech_speed_factor
 	}
 }
 
 tech_avb_engineering_6 = {
-	cost = @avbtier7cost2
+	cost = @avbtier7cost3
 	area = engineering
 	tier = 7
-	category = { industry }	
+	category = { materials }
 	prerequisites = { "tech_avb_engineering_5" }
-	weight = @avbtier7weight2
+	weight = @avbtier7weight3
 	
-	potential = { always = no }
-	modifier = {
-		planet_researchers_engineering_research_produces_mult = 0.2
+	potential = {
+		is_wilderness_empire = no
 	}
-	
+
 	weight_modifier = {
-		factor = 4
+		modifier = {
+			factor = 5
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 5
+		}
+		modifier = {
+			factor = 2
+			years_passed > 10
+		}
+		modifier = {
+			factor = 2
+			years_passed > 15
+		}
+		modifier = {
+			factor = 2
+			years_passed > 20
+		}
+
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = scholarium }
+		}
 	}
-	
+
 	ai_weight = {
-		weight = 10
+		factor = @ai_engineering_tech_speed_factor
 	}
 }
 
@@ -448,7 +674,6 @@ tech_avb_advanced_metallurgy_3 = {
 	}
 
 	ai_weight = {
-		factor = 4
 	}
 }
 
@@ -469,7 +694,6 @@ tech_avb_advanced_metallurgy_4 = {
 	}
 
 	ai_weight = {
-		factor = 4
 	}
 }
 
@@ -486,10 +710,7 @@ tech_avb_consumer_good_refinement_3 = {
 	}
 
 	potential = {
-		OR = {
-			is_gestalt = no
-			has_valid_civic = civic_machine_servitor
-		}
+		country_uses_consumer_goods = yes
 	}
 
 	weight_modifier = {
@@ -497,7 +718,6 @@ tech_avb_consumer_good_refinement_3 = {
 	}
 
 	ai_weight = {
-		factor = 4
 	}
 }
 
@@ -514,10 +734,7 @@ tech_avb_consumer_good_refinement_4 = {
 	}
 
 	potential = {
-		OR = {
-			is_gestalt = no
-			has_valid_civic = civic_machine_servitor
-		}
+		country_uses_consumer_goods = yes
 	}
 
 	weight_modifier = {
@@ -525,7 +742,6 @@ tech_avb_consumer_good_refinement_4 = {
 	}
 
 	ai_weight = {
-		factor = 4
 	}
 }
 tech_avb_space_mining_6 = {
@@ -541,11 +757,9 @@ tech_avb_space_mining_6 = {
 	}
 	
 	weight_modifier = {
-		factor = 4
 	}
 	
 	ai_weight = {
-		factor = 4
 	}
 }
 
@@ -562,11 +776,9 @@ tech_avb_space_mining_7 = {
 	}
 	
 	weight_modifier = {
-		factor = 4
 	}
 	
 	ai_weight = {
-		factor = 4
 	}
 }
 
@@ -583,11 +795,9 @@ tech_avb_space_mining_8 = {
 	}
 	
 	weight_modifier = {
-		factor = 4
 	}
 	
 	ai_weight = {
-		factor = 4
 	}
 }
 
@@ -607,11 +817,9 @@ tech_avb_space_mining_9 = {
 		always = yes
 	}
 	weight_modifier = {
-		factor = 4
 	}
 	
 	ai_weight = {
-		factor = 4
 	}
 }
 
@@ -631,11 +839,9 @@ tech_avb_space_mining_10 = {
 		always = yes
 	}
 	weight_modifier = {
-		factor = 4
 	}
 	
 	ai_weight = {
-		factor = 4
 	}
 }
 
@@ -660,8 +866,19 @@ tech_avb_space_defense_station_improvement_3 = {
 	weight_modifier = {
 		factor = 0.5
 		modifier = {
-			factor = @ap_technological_ascendancy_rare_tech
-			has_ascension_perk = ap_technological_ascendancy
+			factor = 0.25
+			NOR = {
+				has_trait_in_council = { TRAIT = leader_trait_expertise_voidcraft }
+				has_trait_in_council = { TRAIT = leader_trait_curator }
+			}
+		}
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = bulwark }
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_space_defense_station_improvement
 		}
 		modifier = {
 			factor = 1.25
@@ -698,8 +915,19 @@ tech_avb_space_defense_station_improvement_4 = {
 	weight_modifier = {
 		factor = 0.5
 		modifier = {
-			factor = @ap_technological_ascendancy_rare_tech
-			has_ascension_perk = ap_technological_ascendancy
+			factor = 0.25
+			NOR = {
+				has_trait_in_council = { TRAIT = leader_trait_expertise_voidcraft }
+				has_trait_in_council = { TRAIT = leader_trait_curator }
+			}
+		}
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = bulwark }
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_space_defense_station_improvement
 		}
 		modifier = {
 			factor = 1.25
@@ -736,8 +964,19 @@ tech_avb_space_defense_station_improvement_5 = {
 	weight_modifier = {
 		factor = 0.5
 		modifier = {
-			factor = @ap_technological_ascendancy_rare_tech
-			has_ascension_perk = ap_technological_ascendancy
+			factor = 0.25
+			NOR = {
+				has_trait_in_council = { TRAIT = leader_trait_expertise_voidcraft }
+				has_trait_in_council = { TRAIT = leader_trait_curator }
+			}
+		}
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = bulwark }
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_space_defense_station_improvement
 		}
 		modifier = {
 			factor = 1.25
@@ -747,9 +986,9 @@ tech_avb_space_defense_station_improvement_5 = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
-		factor = 4
+
 	}
 }
 
@@ -768,20 +1007,14 @@ tech_avb_collective_production_methods_2 = {
 	modifier = {
 		planet_jobs_produces_mult = 0.05
 	}
-	
 	potential = {
-		always = yes
-	}
-	potential = {
-		has_authority = auth_hive_mind	
+		is_hive_empire = yes
 	}
 	
 	weight_modifier = {
-		factor = 4
 	}
 	
 	ai_weight = {
-		weight = 2
 	}
 }
 
@@ -796,17 +1029,14 @@ tech_avb_collective_production_methods_3 = {
 	modifier = {
 		planet_jobs_produces_mult = 0.05
 	}
-	
 	potential = {
 		is_hive_empire = yes
 	}
 	
 	weight_modifier = {
-		factor = 4
 	}
 	
 	ai_weight = {
-		weight = 2
 	}
 }
 
@@ -821,17 +1051,14 @@ tech_avb_collective_production_methods_4 = {
 	modifier = {
 		planet_jobs_produces_mult = 0.05
 	}
-	
 	potential = {
 		is_hive_empire = yes
 	}
 	
 	weight_modifier = {
-		factor = 4
 	}
 	
 	ai_weight = {
-		weight = 2
 	}
 }
 
@@ -852,11 +1079,9 @@ tech_avb_resource_processing_algorithms_2 = {
 	}
 	
 	weight_modifier = {
-		factor = 4
 	}
 	
 	ai_weight = {
-		weight = 2
 	}
 }
 
@@ -877,11 +1102,9 @@ tech_avb_resource_processing_algorithms_3 = {
 	}
 	
 	weight_modifier = {
-		factor = 4
 	}
 	
 	ai_weight = {
-		weight = 2
 	}
 }
 
@@ -902,10 +1125,8 @@ tech_avb_resource_processing_algorithms_4 = {
 	}
 	
 	weight_modifier = {
-		factor = 4
 	}
 	
 	ai_weight = {
-		weight = 2
 	}
 }

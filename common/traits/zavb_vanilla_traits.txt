@@ -1,11 +1,9 @@
 trait_zombie = {
 	cost = 0
-	potential_crossbreeding_chance = 0
 	opposites = { "trait_nerve_stapled" }
 	initial = no
 	randomized = no
 	advanced_trait = no
-	forced_happiness = yes
 	species_potential_add = {
 		always = no
 	}
@@ -18,28 +16,29 @@ trait_zombie = {
 	infertile = yes
 
 	allowed_archetypes = { BIOLOGICAL LITHOID }
+	tags = { organic negative upkeep pop_output blocks_leaders }
 	modifier = {
-		planet_jobs_produces_mult = -0.25
+		pop_bonus_workforce_mult = -0.25
+		civilian_and_maintenance_drone_cat_bonus_workforce_mult = -0.50
 		planet_pops_upkeep_mult = -1
 	}
-	triggered_pop_modifier = {
+	triggered_pop_group_modifier = {
 		potential = {
 			OR = {
 				is_pop_category = ruler
-				is_pop_category = specialist
+				is_specialist_category = yes
 			}
 		}
 		pop_demotion_time_mult = -10.0
 	}
-	triggered_pop_modifier = {
+	triggered_pop_group_modifier = {
 		potential = {
 			exists = planet
 			planet = {
 				has_active_building = building_avb_posthumous_employment_center_2
 			}
 		}
-		planet_jobs_produces_mult = 0.1
-		pop_job_trade_mult = 0.1
+		pop_bonus_workforce_mult = 0.1
 	}
 	icon = "gfx/interface/icons/traits/trait_zombie.dds"
 	custom_tooltip = TRAIT_ZOMBIE_EFFECT

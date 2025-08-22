@@ -45,7 +45,7 @@ avb_virtuality_num_colonies = {
 	# Colonies with Virtual Server count as 1
 	complex_trigger_modifier = {
 		trigger = count_owned_planet
-		trigger_scope = planet
+		trigger_scope = owner
 		parameters = {
 			limit = {
 				has_building = building_avb_virtual_server

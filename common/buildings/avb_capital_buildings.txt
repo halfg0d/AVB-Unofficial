@@ -1,21 +1,6 @@
 ############
 # Capital buildings
 #############
-@buildings_t1 = 1
-@buildings_t2 = 2
-@buildings_t3 = 3
-@buildings_t4 = 4
-@buildings_t5 = 5
-@buildings_t6 = 6
-@buildings_t7 = 7
-
-@tier_2_capital_defense_armies = 4
-@tier_3_capital_defense_armies = 8
-@tier_4_capital_defense_armies = 16
-@tier_5_capital_defense_armies = 24
-@tier_6_capital_defense_armies = 32
-@tier_7_capital_defense_armies = 40
-
 # Colony
 building_system_capital = {
 	base_buildtime = @b4_time
@@ -74,7 +59,6 @@ building_system_capital = {
 		planet_max_branch_office_buildings_add = 4
 		planet_defense_armies_add = @tier_4_capital_defense_armies
 	}
-
 	inline_script = {
 		script = buildings/on_all_capital_buildings
 	}
@@ -175,7 +159,7 @@ building_system_capital = {
 		"building_avb_capital_4"
 		"building_imperial_capital"
 	}
-	
+
 	additional_ai_weight = 100
 }
 building_avb_capital_4 = {
@@ -188,7 +172,7 @@ building_avb_capital_4 = {
 	position_priority = 0
 
 	category = government
-	
+
 	building_sets = {
 		government
 	}
@@ -201,35 +185,35 @@ building_avb_capital_4 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-		}		
+		}
 	}
-	
+
 	convert_to = {
 		building_hive_major_capital
 		building_avb_machine_capital_4
 		building_system_capital
 		building_resort_major_capital
-		building_slave_major_capital	
+		building_slave_major_capital
 		building_ancient_control_center
-		building_ancient_palace		
+		building_ancient_palace
 	}
-	
+
 	allow = {
-		num_sapient_pops >= @capital_t4_min_pops
+		sapient_pop_amount >= @capital_t4_min_pops
 	}
-	
+
 	prerequisites = {
 		"tech_avb_capital_4"
 	}
-	
-	show_tech_unlock_if = { 
+
+	show_tech_unlock_if = {
 		is_regular_empire = yes
 	}
-	
+
 	upgrades = {
 		building_avb_capital_5
 	}
-	
+
 	planet_modifier = {
 		job_enforcer_add = 500
 		planet_housing_add = 3000
@@ -291,12 +275,12 @@ building_avb_capital_4 = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b4_minerals
-		}		
+		}
 		upkeep = {
 			energy = @avb_b4_upkeep
-		}		
+		}
 	}
-	
+
 	triggered_desc = {
 		trigger = {
 			exists = owner
@@ -331,7 +315,7 @@ building_avb_capital_5 = {
 	position_priority = 0
 
 	category = government
-	
+
 	building_sets = {
 		government
 	}
@@ -344,31 +328,31 @@ building_avb_capital_5 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-		}		
+		}
 	}
-	
+
 	convert_to = {
 		building_avb_hive_capital_3
 		building_avb_machine_capital_5
 		building_avb_capital_4
 		building_avb_resort_capital_3
-		building_avb_slave_capital_3		
+		building_avb_slave_capital_3
 		building_ancient_control_center
-		building_ancient_palace		
+		building_ancient_palace
 	}
-	
+
 	allow = {
-		num_sapient_pops >= @capital_t5_min_pops
+		sapient_pop_amount >= @capital_t5_min_pops
 	}
-	
+
 	prerequisites = {
 		"tech_avb_capital_5"
 	}
-	
-	show_tech_unlock_if = { 
+
+	show_tech_unlock_if = {
 		is_regular_empire = yes
 	}
-	
+
 	planet_modifier = {
 		job_enforcer_add = 600
 		planet_housing_add = 3500
@@ -426,21 +410,21 @@ building_avb_capital_5 = {
 			pop_bonus_workforce_mult = 0.1
 		}
 	}
-	
+
 	upgrades = {
 		building_avb_capital_6
 	}
-	
+
 	resources = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b5_minerals
-		}		
+		}
 		upkeep = {
 			energy = @avb_b5_upkeep
-		}		
+		}
 	}
-	
+
 	triggered_desc = {
 		trigger = {
 			exists = owner
@@ -475,7 +459,7 @@ building_avb_capital_6 = {
 	position_priority = 0
 
 	category = government
-	
+
 	building_sets = {
 		government
 	}
@@ -488,9 +472,9 @@ building_avb_capital_6 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-		}		
+		}
 	}
-	
+
 	convert_to = {
 		building_avb_hive_capital_3
 		building_avb_machine_capital_6
@@ -500,19 +484,19 @@ building_avb_capital_6 = {
 		building_ancient_control_center
 		building_ancient_palace
 	}
-	
+
 	allow = {
-		num_sapient_pops >= @capital_t6_min_pops
+		sapient_pop_amount >= @capital_t6_min_pops
 	}
-	
+
 	prerequisites = {
 		"tech_avb_capital_6"
 	}
-	
-	show_tech_unlock_if = { 
+
+	show_tech_unlock_if = {
 		is_regular_empire = yes
 	}
-	
+
 	upgrades = {
 		building_avb_imperial_capital_2
 	}
@@ -577,10 +561,10 @@ building_avb_capital_6 = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b6_minerals
-		}		
+		}
 		upkeep = {
 			energy = @avb_b6_upkeep
-		}		
+		}
 	}
 	triggered_desc = {
 		trigger = {
@@ -767,7 +751,7 @@ building_machine_system_capital = {
 		"building_avb_machine_capital_4"
 		"building_imperial_machine_capital"
 	}
-	
+
 	additional_ai_weight = 100
 }
 building_avb_machine_capital_4 = {
@@ -780,7 +764,7 @@ building_avb_machine_capital_4 = {
 	position_priority = 0
 
 	category = government
-	
+
 	building_sets = {
 		government
 	}
@@ -794,7 +778,7 @@ building_avb_machine_capital_4 = {
 			is_fallen_empire = no
 		}
 	}
-	
+
 	convert_to = {
 		building_hive_major_capital
 		building_avb_capital_4
@@ -802,23 +786,23 @@ building_avb_machine_capital_4 = {
 		building_ancient_control_center
 		building_ancient_palace
 	}
-	
+
 	allow = {
-		num_sapient_pops >= @capital_t4_min_pops
+		sapient_pop_amount >= @capital_t4_min_pops
 	}
-	
+
 	prerequisites = {
 		"tech_avb_capital_4"
 	}
-	
-	show_tech_unlock_if = { 
+
+	show_tech_unlock_if = {
 		is_machine_empire = yes
 	}
-	
+
 	upgrades = {
 		building_avb_machine_capital_5
 	}
-	
+
 	planet_modifier = {
 		planet_housing_add = 3000
 		planet_amenities_add = 3000
@@ -902,7 +886,7 @@ building_avb_machine_capital_4 = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b4_minerals
-		}			
+		}
 		upkeep = {
 			energy = @avb_b4_upkeep
 		}
@@ -933,7 +917,7 @@ building_avb_machine_capital_5 = {
 	position_priority = 0
 
 	category = government
-	
+
 	building_sets = {
 		government
 	}
@@ -947,7 +931,7 @@ building_avb_machine_capital_5 = {
 			is_fallen_empire = no
 		}
 	}
-	
+
 	convert_to = {
 		building_avb_hive_capital_3
 		building_avb_capital_5
@@ -955,19 +939,19 @@ building_avb_machine_capital_5 = {
 		building_ancient_control_center
 		building_ancient_palace
 	}
-	
+
 	allow = {
-		num_sapient_pops >= @capital_t5_min_pops
+		sapient_pop_amount >= @capital_t5_min_pops
 	}
-	
+
 	prerequisites = {
 		"tech_avb_capital_5"
 	}
-	
-	show_tech_unlock_if = { 
+
+	show_tech_unlock_if = {
 		is_machine_empire = yes
 	}
-	
+
 	planet_modifier = {
 		planet_housing_add = 3500
 		planet_amenities_add = 3500
@@ -1054,7 +1038,7 @@ building_avb_machine_capital_5 = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b5_minerals
-		}			
+		}
 		upkeep = {
 			energy = @avb_b5_upkeep
 		}
@@ -1085,7 +1069,7 @@ building_avb_machine_capital_6 = {
 	position_priority = 0
 
 	category = government
-	
+
 	building_sets = {
 		government
 	}
@@ -1099,7 +1083,7 @@ building_avb_machine_capital_6 = {
 			is_fallen_empire = no
 		}
 	}
-	
+
 	convert_to = {
 		building_avb_hive_capital_3
 		building_avb_capital_6
@@ -1107,16 +1091,16 @@ building_avb_machine_capital_6 = {
 		building_ancient_control_center
 		building_ancient_palace
 	}
-	
+
 	allow = {
-		num_sapient_pops >= @capital_t6_min_pops
+		sapient_pop_amount >= @capital_t6_min_pops
 	}
-	
+
 	prerequisites = {
 		"tech_avb_capital_6"
 	}
-	
-	show_tech_unlock_if = { 
+
+	show_tech_unlock_if = {
 		is_machine_empire = yes
 	}
 	upgrades = {
@@ -1205,7 +1189,7 @@ building_avb_machine_capital_6 = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b6_minerals
-		}			
+		}
 		upkeep = {
 			energy = @avb_b6_upkeep
 		}
@@ -1336,19 +1320,6 @@ building_hive_major_capital = {
 			energy = @b2_upkeep
 		}
 	}
-
-	triggered_desc = {
-		text = job_synapse_drone_effect_desc
-	}
-
-	triggered_desc = {
-		text = job_logistics_drone_effect_desc
-	}
-
-	triggered_desc = {
-		text = job_patrol_drone_effect_desc
-	}
-	
 	additional_ai_weight = 100
 }
 building_avb_hive_capital_3 = {
@@ -1361,7 +1332,7 @@ building_avb_hive_capital_3 = {
 	position_priority = 0
 
 	category = government
-	
+
 	building_sets = {
 		government
 	}
@@ -1376,27 +1347,27 @@ building_avb_hive_capital_3 = {
 			is_wilderness_empire = no
 		}
 	}
-	
+
 	convert_to = {
 		building_machine_major_capital
 		building_major_capital
 		building_ancient_control_center
 		building_ancient_palace
 	}
-	
+
 	allow = {
 		sapient_pop_amount >= 5000
 	}
-	
+
 	prerequisites = {
 		"tech_galactic_administration"
 	}
-	
-	show_tech_unlock_if = { 
+
+	show_tech_unlock_if = {
 		is_hive_empire = yes
 		is_wilderness_empire = no
 	}
-	
+
 	planet_modifier = {
 		planet_housing_add = 3000
 		planet_amenities_add = 3000
@@ -1439,7 +1410,7 @@ building_avb_hive_capital_3 = {
 			pop_bonus_workforce_mult = 0.1
 		}
 	}
-	
+
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1449,21 +1420,9 @@ building_avb_hive_capital_3 = {
 			energy = @avb_b3_upkeep
 		}
 	}
-	
+
 	upgrades = {
 		building_avb_hive_capital_4
-	}
-	
-	triggered_desc = {
-		text = job_synapse_drone_effect_desc
-	}
-
-	triggered_desc = {
-		text = job_logistics_drone_effect_desc
-	}
-
-	triggered_desc = {
-		text = job_patrol_drone_effect_desc
 	}
 }
 
@@ -1477,7 +1436,7 @@ building_avb_hive_capital_4 = {
 	position_priority = 0
 
 	category = government
-	
+
 	building_sets = {
 		government
 	}
@@ -1492,27 +1451,27 @@ building_avb_hive_capital_4 = {
 			is_fallen_empire = no
 		}
 	}
-	
+
 	convert_to = {
 		building_machine_major_capital
 		building_major_capital
 		building_ancient_control_center
 		building_ancient_palace
 	}
-	
+
 	allow = {
-		num_sapient_pops >= @capital_t4_min_pops
+		sapient_pop_amount >= @capital_t4_min_pops
 	}
-	
+
 	prerequisites = {
 		"tech_avb_capital_4"
 	}
-	
-	show_tech_unlock_if = { 
+
+	show_tech_unlock_if = {
 		is_wilderness_empire = no
 		is_hive_empire = yes
 	}
-	
+
 	planet_modifier = {
 		planet_housing_add = 3500
 		planet_amenities_add = 3500
@@ -1555,7 +1514,7 @@ building_avb_hive_capital_4 = {
 			pop_bonus_workforce_mult = 0.1
 		}
 	}
-	
+
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1564,17 +1523,6 @@ building_avb_hive_capital_4 = {
 		upkeep = {
 			energy = @avb_b4_upkeep
 		}
-	}
-	triggered_desc = {
-		text = job_synapse_drone_effect_desc
-	}
-
-	triggered_desc = {
-		text = job_logistics_drone_effect_desc
-	}
-
-	triggered_desc = {
-		text = job_patrol_drone_effect_desc
 	}
 	upgrades = {
 		building_avb_imperial_hive_capital_2
@@ -1901,7 +1849,7 @@ building_hab_system_capital = {
 		"building_avb_hab_capital_4"
 		"building_imperial_capital"
 	}
-	
+
 	additional_ai_weight = 100
 }
 building_avb_hab_capital_4 = {
@@ -1915,7 +1863,7 @@ building_avb_hab_capital_4 = {
 
 	icon = building_system_capital
 	category = government
-	
+
 	building_sets = {
 		government
 	}
@@ -1931,24 +1879,24 @@ building_avb_hab_capital_4 = {
 	convert_to = {
 		building_hab_fe_capital
 	}
-	
+
 	allow = {
-		num_sapient_pops >= 50
+		sapient_pop_amount >= 5000
 	}
-	
+
 	prerequisites = {
 		"tech_avb_hab_capital_4"
 	}
-	
+
 	resources = {
 		category = planet_buildings
 		cost = {
 			minerals = 1200
-		}		
+		}
 		upkeep = {
 			energy = 6
 			alloys = 8
-		}		
+		}
 		upkeep = {
 			trigger = { owner = { has_active_tradition = tr_domination_adopt_void } }
 			alloys = -1
@@ -2358,7 +2306,7 @@ building_resort_major_capital = {
 	triggered_desc = {
 		text = job_resort_worker_effect_desc
 	}
-	
+
 	upgrades = {
 		"building_avb_resort_capital_3"
 	}
@@ -2375,38 +2323,38 @@ building_avb_resort_capital_3 = {
 	icon = building_system_capital
 
 	category = government
-	
+
 	building_sets = {
 		government
 	}
 	potential = {
 		has_modifier = resort_colony
 	}
-	
+
 	convert_to = {
 		building_hive_major_capital
 		building_machine_major_capital
-		building_major_capital	
+		building_major_capital
 		building_ancient_control_center
 		building_ancient_palace
 	}
-	
+
 	allow = {
-		num_sapient_pops >= 4000
+		sapient_pop_amount >= 4000
 	}
-	
+
 	prerequisites = {
 		"tech_avb_resort_capital_3"
 	}
-	
+
 	resources = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b3_minerals
-		}		
+		}
 		upkeep = {
 			energy = @avb_b3_upkeep
-		}			
+		}
 	}
 	planet_modifier = {
 		planet_housing_add = 1500
@@ -2610,7 +2558,7 @@ building_slave_major_capital = {
 	triggered_desc = {
 		text = job_slave_overseer_effect_desc
 	}
-	
+
 	upgrades = {
 		"building_avb_slave_capital_3"
 	}
@@ -2627,40 +2575,40 @@ building_avb_slave_capital_3 = {
 	icon = building_system_capital
 
 	category = government
-	
+
 	building_sets = {
 		government
 	}
 	potential = {
 		has_modifier = slave_colony
 	}
-	
+
 	allow = {
 		sapient_pop_amount >= 4000
 	}
-	
+
 	convert_to = {
 		building_hive_major_capital
 		building_machine_major_capital
-		building_major_capital	
+		building_major_capital
 		building_ancient_control_center
 		building_ancient_palace
 	}
-	
+
 	prerequisites = {
 		"tech_avb_slave_capital_3"
 	}
-	
+
 	resources = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b3_minerals
-		}		
+		}
 		upkeep = {
 			energy = @avb_b3_upkeep
-		}			
+		}
 	}
-	
+
 	planet_modifier = {
 		planet_housing_add = 1500
 		planet_amenities_add = 1500

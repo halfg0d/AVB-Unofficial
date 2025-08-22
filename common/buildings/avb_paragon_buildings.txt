@@ -10,8 +10,6 @@ building_paragon_memory_vaults = {
 	can_be_ruined = yes
 	can_be_disabled = yes
 	is_essential = yes
-	destroy_trigger = {
-
 	empire_limit = 1
 
 	building_sets = {
@@ -184,14 +182,13 @@ building_avb_paragon_memory_vaults_2 = {
 	is_essential = yes
 	can_build = no
 
+	building_sets = {
+		government
+		urban
+		unity
+	}
 	prerequisites = {
 		"tech_avb_paragon_memory_vaults_2"
-	}
-	destroy_trigger = {
-		exists = owner
-		owner = {
-			is_memory_vault_empire = no
-		}
 	}
 	destroy_trigger = {
 		exists = owner

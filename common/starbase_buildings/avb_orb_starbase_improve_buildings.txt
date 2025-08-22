@@ -1,976 +1,976 @@
-ring_avb_robot_assembly = {
-	icon = "GFX_orbitalring_avb_robot_assembly"
-	construction_days = @avb_orb_time
-
-	potential = {
-		exists = owner
-		owner = { 
-			has_technology = tech_ring_avb_robot_assembly_1
-			is_hive_empire = no
-			NOT = { has_policy_flag = robots_outlawed }
-			OR = {
-				is_ai = no
-				NOT = { has_ascension_perk = ap_engineered_evolution }
-				is_materialist = yes
-			}
-		}
-		planet = {
-			NOT = {
-				has_modifier = slave_colony
-			}
-		}
-		is_orbital_ring = yes
-	}
-	
-	show_in_tech = "tech_ring_avb_robot_assembly_1"
-
-	possible = {
-		planet = {
-			has_building = building_avb_orb_ring_connection
-		}
-		is_building_similar_to_robot_assembly = yes
-	}
-
-	on_finished = {
-		planet = {
-			set_planet_flag = avb_orb_robot_assembly_1
-		}
-	}
-	on_destroyed = {
-		planet = {
-			remove_planet_flag = avb_orb_robot_assembly_1
-			remove_planet_flag = avb_orb_robot_assembly_2
-			remove_planet_flag = avb_orb_robot_assembly_3
-		}
-	}
-
-	abort_trigger = {
-		exists = planet
-		planet = {
-			NOR = {
-				has_building = building_avb_orb_ring_connection
-				have_building_similar_to_robot_assembly = yes
-			}
-		}
-	}
-
-	inline_script = orbital_buildings/robot_assembly
-	resources = {
-		category = starbase_buildings
-		cost = {
-			alloys = @orb_t1_alloy_cost
-		}
-		upkeep = {
-			energy = @orb_t1_energy_upkeep
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				planet = {
-					has_planet_flag = avb_orb_robot_assembly_2
-				}
-			}
-			energy = @orb_t2_energy_upkeep
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				planet = {
-					has_planet_flag = avb_orb_robot_assembly_3
-				}
-			}
-			energy = @orb_t3_energy_upkeep
-		}
-	}
-	triggered_desc = {
-		trigger = {
-			OR = {
-				NOT = { exists = owner }
-				AND = {
-					exists = owner
-					owner = {
-						NOT = { has_policy_flag = roboticist_output_build_cyborgs }
-					}
-				}
-			}
-
-		}
-		text = job_roboticist_effect_desc
-	}
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				has_policy_flag = roboticist_output_build_cyborgs
-			}
-		}
-		text = job_roboticist_cyborg_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			OR = {
-				has_organic_assembly_building = yes
-				AND = {
-					exists = assembling_species
-					assembling_species = { is_organic_species = yes }
-					exists = owner
-					owner = {
-						NOT = { has_policy_flag = roboticist_output_build_cyborgs }
-					}
-				}
-			}
-		}
-		text = tooltip_organic_and_artificial_assembly_warning
-	}
-
-	ai_build_at_chokepoint = yes
-	ai_build_outside_chokepoint = yes
-
-	ai_weight = {
-		weight = 50
-	}
-}
-ring_avb_clone_vats = {
-	icon = "GFX_orbitalring_avb_clone_vats"
-	construction_days = @avb_orb_time
-
-	potential = {
-		exists = owner
-		owner = { 
-			has_technology = tech_ring_avb_clone_vats_1
-			has_tradition = tr_genetics_adopt
-		}
-		planet = {
-			NOT = {
-				has_modifier = resort_colony
-			}
-		}
-		is_orbital_ring = yes
-	}
-	
-	show_in_tech = "tech_ring_avb_clone_vats_1"
-
-	possible = {
-		planet = {
-			has_building = building_avb_orb_ring_connection
-		}
-		is_building_similar_to_clone_vats = yes
-	}
-
-	on_finished = {
-		planet = {
-			set_planet_flag = avb_orb_clone_vats_1
-		}
-	}
-	on_destroyed = {
-		planet = {
-			remove_planet_flag = avb_orb_clone_vats_1
-			remove_planet_flag = avb_orb_clone_vats_2
-			remove_planet_flag = avb_orb_clone_vats_3
-		}
-	}
-
-	abort_trigger = {
-		exists = planet
-		planet = {
-			NOR = {
-				has_building = building_avb_orb_ring_connection
-				is_building_similar_to_clone_vats = yes
-			}
-		}
-	}
-
-	inline_script = orbital_buildings/clone_vats
-	resources = {
-		category = starbase_buildings
-		cost = {
-			alloys = @orb_t1_clone_cost_alloy
-		}
-		cost = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid = no }
-			}
-			food = @orb_t1_clone_cost
-		}
-		cost = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid = yes }
-			}
-			minerals = @orb_t1_clone_cost
-		}
-		upkeep = {
-			energy = @orb_t1_clone_upkeep_energy
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid = no }
-			}
-			food = @orb_t1_clone_upkeep
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid = yes }
-			}
-			minerals = @orb_t1_clone_upkeep
-		}
-		
-		#Upkeeps Tier 2
-		upkeep = {
-			trigger = {
-				exists = owner
-				planet = { has_planet_flag = avb_orb_clone_vats_2 }
-			}
-			energy = @orb_t2_clone_upkeep_energy
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid = no }
-				planet = { has_planet_flag = avb_orb_clone_vats_2 }
-			}
-			food = @orb_t2_clone_upkeep
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid = yes }
-				planet = { has_planet_flag = avb_orb_clone_vats_2 }
-			}
-			minerals = @orb_t2_clone_upkeep
-		}
-		#Upkeep Tier 3
-		upkeep = {
-			trigger = {
-				exists = owner
-				planet = { has_planet_flag = avb_orb_clone_vats_3 }
-			}
-			energy = @orb_t3_clone_upkeep_energy
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid = no }
-				planet = { has_planet_flag = avb_orb_clone_vats_3 }
-			}
-			food = @orb_t3_clone_upkeep
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid = yes }
-				planet = { has_planet_flag = avb_orb_clone_vats_3 }
-			}
-			minerals = @orb_t3_clone_upkeep
-		}
-	}
-
-	ai_build_at_chokepoint = yes
-	ai_build_outside_chokepoint = yes
-
-	ai_weight = {
-		weight = 50
-	}
-}
-ring_avb_institute = {
-	icon = "GFX_orbitalring_avb_institute"
-	construction_days = @avb_orb_time
-
-	potential = {
-		exists = owner
-		owner = { has_technology = tech_ring_avb_institute_1 }
-		planet = {
-			NOR = {
-				has_modifier = resort_colony
-				has_modifier = slave_colony
-				has_modifier = crucible_colony
-			}
-		}
-		is_orbital_ring = yes
-	}
-
-	show_in_tech = "tech_ring_avb_institute_1"
-
-	possible = {
-		planet = {
-			has_building = building_avb_orb_ring_connection
-		}
-		is_building_similar_to_institute = yes
-	}
-	on_finished = {
-		planet = {
-			set_planet_flag = avb_orb_institute_1
-		}
-	}
-	on_destroyed = {
-		planet = {
-			remove_planet_flag = avb_orb_institute_1
-			remove_planet_flag = avb_orb_institute_2
-			remove_planet_flag = avb_orb_institute_3
-		}
-	}
-
-	abort_trigger = {
-		exists = planet
-		planet = {
-			NOR = {
-				has_building = building_avb_orb_ring_connection
-				is_building_similar_to_institute = yes
-			}
-		}
-	}
-
-	inline_script = orbital_buildings/institute
-	resources = {
-		category = starbase_buildings
-		cost = {
-			alloys = @orb_t1_alloy_cost
-		}
-		upkeep = {
-			energy = @orb_t1_energy_upkeep
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				planet = {
-					has_planet_flag = avb_orb_institute_2
-				}
-			}
-			energy = @orb_t2_energy_upkeep
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				planet = {
-					has_planet_flag = avb_orb_institute_3
-				}
-			}
-			energy = @orb_t3_energy_upkeep
-		}
-	}
-	##Desc AP \/
-	triggered_desc = {
-		trigger = {
-			OR = {
-				NOT = { exists = owner }
-				AND = {
-					exists = owner
-					owner = {
-						NOT = { has_ascension_perk = ap_technological_ascendancy }
-					}
-				}
-			}
-
-		}
-		text = avb_orb_ap_tech
-	}
-	##Desc AP /\
-
-	ai_build_at_chokepoint = yes
-	ai_build_outside_chokepoint = yes
-
-	ai_weight = {
-		weight = 50
-	}
-}
-ring_avb_hospital = {
-	icon = "GFX_orbitalring_avb_hospital"
-	construction_days = @avb_orb_time
-
-	potential = {
-		always = no
-		exists = owner
-		owner = {
-			OR = {
-				is_regular_empire = yes
-				AND = {
-					has_origin = origin_fear_of_the_dark
-					is_country_type = primitive
-				}
-			}
-		}
-		planet = {
-			NOT = { has_modifier = slave_colony }
-		}
-		is_orbital_ring = yes
-	}
-	possible = {
-		planet = {
-			has_building = building_avb_orb_ring_connection
-		}
-		is_building_similar_to_hospital = yes
-	}
-	resources = {
-		category = starbase_buildings
-		cost = {
-			alloys = @orb_t1_alloy_cost
-		}
-		upkeep = {
-			energy = @orb_t1_energy_upkeep
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				planet = {
-					has_planet_flag = avb_orb_hospital.2
-				}
-			}
-			energy = @orb_t2_energy_upkeep
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				planet = {
-					has_planet_flag = avb_orb_hospital.3
-				}
-			}
-			energy = @orb_t3_energy_upkeep
-		}
-	}
-
-	abort_trigger = {
-		have_building_similar_to_hospital = no
-	}
-
-	destroy_trigger = {
-		have_building_similar_to_hospital = no
-	}
-
-	###			###
-	###  Tier 1	###
-	###			###
-
-	##Modifier \/
-	triggered_planet_modifier = {
-		potential = {
-			exists = planet
-			planet = {
-				has_planet_flag = avb_orb_hospital.1
-				NOR = {
-					has_planet_flag = avb_orb_hospital.2
-					has_planet_flag = avb_orb_hospital.3
-				}
-			}
-			exists = owner
-		}
-		job_healthcare_add = 1
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = planet
-			planet = {
-				has_planet_flag = avb_orb_hospital.1
-				NOR = {
-					has_planet_flag = avb_orb_hospital.2
-					has_planet_flag = avb_orb_hospital.3
-				}
-			}
-			exists = owner
-		}
-		planet_healthcare_society_research_produces_add = 1
-	}
-	##Modifier /\
-
-	###			###
-	###  Tier 2	###
-	###			###
-
-	##Modifier \/
-	triggered_planet_modifier = {
-		potential = {
-			exists = planet
-			planet = {
-				has_planet_flag = avb_orb_hospital.1
-				has_planet_flag = avb_orb_hospital.2
-				NOT = {
-					has_planet_flag = avb_orb_hospital.3
-				}
-			}
-			exists = owner
-		}
-		job_healthcare_add = 2
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = planet
-			planet = {
-				has_planet_flag = avb_orb_hospital.1
-				has_planet_flag = avb_orb_hospital.2
-				NOT = {
-					has_planet_flag = avb_orb_hospital.3
-				}
-			}
-			exists = owner
-		}
-		planet_healthcare_society_research_produces_add = 2
-	}
-	##Modifier /\
-
-	###			###
-	###  Tier 3	###
-	###			###
-
-	##Modifier \/
-	triggered_planet_modifier = {
-		potential = {
-			exists = planet
-			planet = {
-				has_planet_flag = avb_orb_hospital.1
-				has_planet_flag = avb_orb_hospital.2
-				has_planet_flag = avb_orb_hospital.3
-			}
-			exists = owner
-		}
-		job_healthcare_add = 4
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = planet
-			planet = {
-				has_planet_flag = avb_orb_hospital.1
-				has_planet_flag = avb_orb_hospital.2
-				has_planet_flag = avb_orb_hospital.3
-			}
-			exists = owner
-		}
-		planet_healthcare_society_research_produces_add = 3
-	}
-	##Modifier /\
-
-	ai_build_at_chokepoint = yes
-	ai_build_outside_chokepoint = yes
-
-	ai_weight = {
-		weight = 50
-	}
-}
-ring_avb_paradise = {
-	icon = "GFX_orbitalring_avb_organic_paradise"
-	construction_days = @avb_orb_time
-
-	show_in_tech = "tech_ring_avb_paradise_1"
-	potential = {
-		exists = owner
-		owner = {
-			has_valid_civic = civic_machine_servitor
-			has_technology = tech_ring_avb_paradise_1
-		}
-		is_orbital_ring = yes
-	}
-	possible = {
-		planet = {
-			has_building = building_avb_orb_ring_connection
-		}
-		is_building_similar_to_organic_paradise = yes
-	}
-	on_finished = {
-		planet = {
-			set_planet_flag = avb_orb_paradise_1
-		}
-	}
-	on_destroyed = {
-		planet = {
-			remove_planet_flag = avb_orb_paradise_1
-			remove_planet_flag = avb_orb_paradise_2
-			remove_planet_flag = avb_orb_paradise_3
-		}
-	}
-
-	abort_trigger = {
-		exists = planet
-		planet = {
-			NOR = {
-				has_building = building_avb_orb_ring_connection
-				is_building_similar_to_organic_paradise = yes
-			}
-		}
-	}
-
-	inline_script = orbital_buildings/organic_paradise
-	resources = {
-		category = starbase_buildings
-		cost = {
-			alloys = @orb_t1_alloy_cost
-		}
-		upkeep = {
-			energy = @orb_t1_energy_upkeep
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				planet = {
-					has_planet_flag = avb_orb_paradise_2
-				}
-			}
-			energy = @orb_t2_energy_upkeep
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				planet = {
-					has_planet_flag = avb_orb_paradise_3
-				}
-			}
-			energy = @orb_t3_energy_upkeep
-		}
-	}
-
-	abort_trigger = {
-		is_building_similar_to_organic_paradise = no
-	}
-
-	destroy_trigger = {
-		is_building_similar_to_organic_paradise = no
-	}
-
-	
-
-	ai_build_at_chokepoint = yes
-	ai_build_outside_chokepoint = yes
-
-	ai_weight = {
-		weight = 50
-	}
-}
-ring_avb_ranger = {
-	icon = "GFX_orbitalring_avb_ranger_lodge"
-	construction_days = @avb_orb_time
-
-	show_in_tech = "tech_ring_avb_ranger_1"
-	potential = {
-		exists = owner
-		owner = {
-			has_valid_civic = civic_environmentalist
-			has_technology = tech_ring_avb_ranger_1
-		}
-		is_orbital_ring = yes
-	}
-	possible = {
-		planet = {
-			has_building = building_avb_orb_ring_connection
-		}
-		is_building_similar_to_organic_paradise = yes
-	}
-	on_finished = {
-		planet = {
-			set_planet_flag = avb_orb_ranger_1
-		}
-	}
-	on_destroyed = {
-		planet = {
-			remove_planet_flag = avb_orb_ranger_1
-			remove_planet_flag = avb_orb_ranger_2
-			remove_planet_flag = avb_orb_ranger_3
-		}
-	}
-
-	abort_trigger = {
-		exists = planet
-		planet = {
-			NOR = {
-				has_building = building_avb_orb_ring_connection
-				is_building_similar_to_ranger = yes
-			}
-		}
-	}
-
-	inline_script = orbital_buildings/ranger_lodge
-	resources = {
-		category = starbase_buildings
-		cost = {
-			alloys = @orb_t1_alloy_cost
-		}
-		upkeep = {
-			energy = @orb_t1_energy_upkeep
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				planet = {
-					has_planet_flag = avb_orb_ranger_2
-				}
-			}
-			energy = @orb_t2_energy_upkeep
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				planet = {
-					has_planet_flag = avb_orb_ranger_3
-				}
-			}
-			energy = @orb_t3_energy_upkeep
-		}
-	}
-
-	abort_trigger = {
-		is_building_similar_to_ranger = no
-	}
-
-	destroy_trigger = {
-		is_building_similar_to_ranger = no
-	}
-
-	
-
-	ai_build_at_chokepoint = yes
-	ai_build_outside_chokepoint = yes
-
-	ai_weight = {
-		weight = 50
-	}
-}
-
-ring_alloys_hub = {
-	icon = "GFX_orbitalring_alloy_hub"
-	starbase_type = orbital_ring
-	construction_days = @avb_orb_time
-
-	show_in_tech = "tech_alloys_2"
-	potential = {
-		exists = owner
-		owner = {
-			has_technology = tech_alloys_2
-		}
-		is_orbital_ring = yes
-	}
-	possible = {
-		always = yes
-	}
-	on_finished = {
-		planet = {
-			set_planet_flag = avb_orb_foundry_1
-		}
-	}
-	on_destroyed = {
-		planet = {
-			remove_planet_flag = avb_orb_foundry_1
-			remove_planet_flag = avb_orb_foundry_2
-			remove_planet_flag = avb_orb_foundry_3
-		}
-	}
-	inline_script = orbital_buildings/foundry
-	resources = {
-		category = starbase_buildings
-		cost = {
-			alloys = 200
-			volatile_motes = 300
-		}
-		upkeep = {
-			energy = 5
-			volatile_motes = 2
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				planet = {
-					has_planet_flag = avb_orb_foundry_2
-				}
-			}
-			energy = @orb_t2_energy_upkeep
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				planet = {
-					has_planet_flag = avb_orb_foundry_3
-				}
-			}
-			energy = @orb_t3_energy_upkeep
-		}
-		#Automation produce
-		produces = {
-			trigger = {
-				exists = owner
-				planet = {
-					has_planet_flag = avb_orb_foundry_2
-				}
-			}
-			alloys = @orb_t2_produce
-		}
-		produces = {
-			trigger = {
-				exists = owner
-				planet = {
-					has_planet_flag = avb_orb_foundry_3
-				}
-			}
-			alloys = @orb_t3_produce
-		}
-		#Upkeep Minerals
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = {
-					is_catalytic_empire = no
-				}
-				planet = {
-					has_planet_flag = avb_orb_foundry_2
-				}
-			}
-			minerals = @orb_t2_upkeep_minerals
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = {
-					is_catalytic_empire = no
-				}
-				planet = {
-					has_planet_flag = avb_orb_foundry_3
-				}
-			}
-			minerals = @orb_t3_upkeep_minerals
-		}
-		#Upkeep food
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = {
-					is_catalytic_empire = yes
-				}
-				planet = {
-					has_planet_flag = avb_orb_foundry_2
-				}
-			}
-			food = @orb_t2_upkeep_food
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = {
-					is_catalytic_empire = yes
-				}
-				planet = {
-					has_planet_flag = avb_orb_foundry_3
-				}
-			}
-			food = @orb_t3_upkeep_food
-		}
-	}
-	ai_build_at_chokepoint = yes
-	ai_build_outside_chokepoint = yes
-
-	ai_weight = {
-		weight = 100
-	}
-}
-
-ring_consumer_goods_hub = {
-	icon = "GFX_orbitalring_consumer_hub"
-	construction_days = 360
-	starbase_type = orbital_ring
-
-	show_in_tech = "tech_luxuries_2"
-	potential = {
-		exists = owner
-		owner = {
-			has_technology = tech_luxuries_2
-			country_uses_consumer_goods = yes
-		}
-		is_orbital_ring = yes
-	}
-	possible = {
-		always = yes
-	}
-	on_finished = {
-		planet = {
-			set_planet_flag = avb_orb_factory_1
-		}
-	}
-	on_destroyed = {
-		planet = {
-			remove_planet_flag = avb_orb_factory_1
-			remove_planet_flag = avb_orb_factory_2
-			remove_planet_flag = avb_orb_factory_3
-		}
-	}
-	planet_modifier = {
-		planet_artisans_consumer_goods_produces_add = 1
-		planet_artisans_minerals_upkeep_add = 1
-	}
-	inline_script = orbital_buildings/factory
-	resources = {
-		category = starbase_buildings
-		cost = {
-			alloys = 200
-			volatile_motes = 300
-		}
-		upkeep = {
-			energy = 5
-			volatile_motes = 2
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				planet = {
-					has_planet_flag = avb_orb_factory_2
-				}
-			}
-			energy = @orb_t2_energy_upkeep
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				planet = {
-					has_planet_flag = avb_orb_factory_3
-				}
-			}
-			energy = @orb_t3_energy_upkeep
-		}
-		#Automation produce
-		produces = {
-			trigger = {
-				exists = owner
-				planet = {
-					has_planet_flag = avb_orb_factory_2
-				}
-			}
-			consumer_goods = 10
-		}
-		produces = {
-			trigger = {
-				exists = owner
-				planet = {
-					has_planet_flag = avb_orb_factory_3
-				}
-			}
-			consumer_goods = 20
-		}
-		#Upkeep Minerals
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = {
-					is_catalytic_empire = no
-				}
-				planet = {
-					has_planet_flag = avb_orb_factory_2
-				}
-			}
-			minerals = 10
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = {
-					is_catalytic_empire = no
-				}
-				planet = {
-					has_planet_flag = avb_orb_factory_3
-				}
-			}
-			minerals = 20
-		}
-	}
-	ai_build_at_chokepoint = yes
-	ai_build_outside_chokepoint = yes
-
-	ai_weight = {
-		weight = 100
-	}
-}
+#ring_avb_robot_assembly = {
+#	icon = "GFX_orbitalring_avb_robot_assembly"
+#	construction_days = @avb_orb_time
+#
+#	potential = {
+#		exists = owner
+#		owner = { 
+#			has_technology = tech_ring_avb_robot_assembly_1
+#			is_hive_empire = no
+#			NOT = { has_policy_flag = robots_outlawed }
+#			OR = {
+#				is_ai = no
+#				NOT = { has_ascension_perk = ap_engineered_evolution }
+#				is_materialist = yes
+#			}
+#		}
+#		planet = {
+#			NOT = {
+#				has_modifier = slave_colony
+#			}
+#		}
+#		is_orbital_ring = yes
+#	}
+#	
+#	show_in_tech = "tech_ring_avb_robot_assembly_1"
+#
+#	possible = {
+#		planet = {
+#			has_building = building_avb_orb_ring_connection
+#		}
+#		is_building_similar_to_robot_assembly = yes
+#	}
+#
+#	on_finished = {
+#		planet = {
+#			set_planet_flag = avb_orb_robot_assembly_1
+#		}
+#	}
+#	on_destroyed = {
+#		planet = {
+#			remove_planet_flag = avb_orb_robot_assembly_1
+#			remove_planet_flag = avb_orb_robot_assembly_2
+#			remove_planet_flag = avb_orb_robot_assembly_3
+#		}
+#	}
+#
+#	abort_trigger = {
+#		exists = planet
+#		planet = {
+#			NOR = {
+#				has_building = building_avb_orb_ring_connection
+#				have_building_similar_to_robot_assembly = yes
+#			}
+#		}
+#	}
+#
+#	inline_script = orbital_buildings/robot_assembly
+#	resources = {
+#		category = starbase_buildings
+#		cost = {
+#			alloys = @orb_t1_alloy_cost
+#		}
+#		upkeep = {
+#			energy = @orb_t1_energy_upkeep
+#		}
+#		upkeep = {
+#			trigger = {
+#				exists = owner
+#				planet = {
+#					has_planet_flag = avb_orb_robot_assembly_2
+#				}
+#			}
+#			energy = @orb_t2_energy_upkeep
+#		}
+#		upkeep = {
+#			trigger = {
+#				exists = owner
+#				planet = {
+#					has_planet_flag = avb_orb_robot_assembly_3
+#				}
+#			}
+#			energy = @orb_t3_energy_upkeep
+#		}
+#	}
+#	triggered_desc = {
+#		trigger = {
+#			OR = {
+#				NOT = { exists = owner }
+#				AND = {
+#					exists = owner
+#					owner = {
+#						NOT = { has_policy_flag = roboticist_output_build_cyborgs }
+#					}
+#				}
+#			}
+#
+#		}
+#		text = job_roboticist_effect_desc
+#	}
+#	triggered_desc = {
+#		trigger = {
+#			exists = owner
+#			owner = {
+#				has_policy_flag = roboticist_output_build_cyborgs
+#			}
+#		}
+#		text = job_roboticist_cyborg_effect_desc
+#	}
+#
+#	triggered_desc = {
+#		trigger = {
+#			OR = {
+#				has_organic_assembly_building = yes
+#				AND = {
+#					exists = assembling_species
+#					assembling_species = { is_organic_species = yes }
+#					exists = owner
+#					owner = {
+#						NOT = { has_policy_flag = roboticist_output_build_cyborgs }
+#					}
+#				}
+#			}
+#		}
+#		text = tooltip_organic_and_artificial_assembly_warning
+#	}
+#
+#	ai_build_at_chokepoint = yes
+#	ai_build_outside_chokepoint = yes
+#
+#	ai_weight = {
+#		weight = 50
+#	}
+#}
+#ring_avb_clone_vats = {
+#	icon = "GFX_orbitalring_avb_clone_vats"
+#	construction_days = @avb_orb_time
+#
+#	potential = {
+#		exists = owner
+#		owner = { 
+#			has_technology = tech_ring_avb_clone_vats_1
+#			has_tradition = tr_genetics_adopt
+#		}
+#		planet = {
+#			NOT = {
+#				has_modifier = resort_colony
+#			}
+#		}
+#		is_orbital_ring = yes
+#	}
+#	
+#	show_in_tech = "tech_ring_avb_clone_vats_1"
+#
+#	possible = {
+#		planet = {
+#			has_building = building_avb_orb_ring_connection
+#		}
+#		is_building_similar_to_clone_vats = yes
+#	}
+#
+#	on_finished = {
+#		planet = {
+#			set_planet_flag = avb_orb_clone_vats_1
+#		}
+#	}
+#	on_destroyed = {
+#		planet = {
+#			remove_planet_flag = avb_orb_clone_vats_1
+#			remove_planet_flag = avb_orb_clone_vats_2
+#			remove_planet_flag = avb_orb_clone_vats_3
+#		}
+#	}
+#
+#	abort_trigger = {
+#		exists = planet
+#		planet = {
+#			NOR = {
+#				has_building = building_avb_orb_ring_connection
+#				is_building_similar_to_clone_vats = yes
+#			}
+#		}
+#	}
+#
+#	inline_script = orbital_buildings/clone_vats
+#	resources = {
+#		category = starbase_buildings
+#		cost = {
+#			alloys = @orb_t1_clone_cost_alloy
+#		}
+#		cost = {
+#			trigger = {
+#				exists = owner
+#				owner = { is_lithoid = no }
+#			}
+#			food = @orb_t1_clone_cost
+#		}
+#		cost = {
+#			trigger = {
+#				exists = owner
+#				owner = { is_lithoid = yes }
+#			}
+#			minerals = @orb_t1_clone_cost
+#		}
+#		upkeep = {
+#			energy = @orb_t1_clone_upkeep_energy
+#		}
+#		upkeep = {
+#			trigger = {
+#				exists = owner
+#				owner = { is_lithoid = no }
+#			}
+#			food = @orb_t1_clone_upkeep
+#		}
+#		upkeep = {
+#			trigger = {
+#				exists = owner
+#				owner = { is_lithoid = yes }
+#			}
+#			minerals = @orb_t1_clone_upkeep
+#		}
+#		
+#		#Upkeeps Tier 2
+#		upkeep = {
+#			trigger = {
+#				exists = owner
+#				planet = { has_planet_flag = avb_orb_clone_vats_2 }
+#			}
+#			energy = @orb_t2_clone_upkeep_energy
+#		}
+#		upkeep = {
+#			trigger = {
+#				exists = owner
+#				owner = { is_lithoid = no }
+#				planet = { has_planet_flag = avb_orb_clone_vats_2 }
+#			}
+#			food = @orb_t2_clone_upkeep
+#		}
+#		upkeep = {
+#			trigger = {
+#				exists = owner
+#				owner = { is_lithoid = yes }
+#				planet = { has_planet_flag = avb_orb_clone_vats_2 }
+#			}
+#			minerals = @orb_t2_clone_upkeep
+#		}
+#		#Upkeep Tier 3
+#		upkeep = {
+#			trigger = {
+#				exists = owner
+#				planet = { has_planet_flag = avb_orb_clone_vats_3 }
+#			}
+#			energy = @orb_t3_clone_upkeep_energy
+#		}
+#		upkeep = {
+#			trigger = {
+#				exists = owner
+#				owner = { is_lithoid = no }
+#				planet = { has_planet_flag = avb_orb_clone_vats_3 }
+#			}
+#			food = @orb_t3_clone_upkeep
+#		}
+#		upkeep = {
+#			trigger = {
+#				exists = owner
+#				owner = { is_lithoid = yes }
+#				planet = { has_planet_flag = avb_orb_clone_vats_3 }
+#			}
+#			minerals = @orb_t3_clone_upkeep
+#		}
+#	}
+#
+#	ai_build_at_chokepoint = yes
+#	ai_build_outside_chokepoint = yes
+#
+#	ai_weight = {
+#		weight = 50
+#	}
+#}
+#ring_avb_institute = {
+#	icon = "GFX_orbitalring_avb_institute"
+#	construction_days = @avb_orb_time
+#
+#	potential = {
+#		exists = owner
+#		owner = { has_technology = tech_ring_avb_institute_1 }
+#		planet = {
+#			NOR = {
+#				has_modifier = resort_colony
+#				has_modifier = slave_colony
+#				has_modifier = crucible_colony
+#			}
+#		}
+#		is_orbital_ring = yes
+#	}
+#
+#	show_in_tech = "tech_ring_avb_institute_1"
+#
+#	possible = {
+#		planet = {
+#			has_building = building_avb_orb_ring_connection
+#		}
+#		is_building_similar_to_institute = yes
+#	}
+#	on_finished = {
+#		planet = {
+#			set_planet_flag = avb_orb_institute_1
+#		}
+#	}
+#	on_destroyed = {
+#		planet = {
+#			remove_planet_flag = avb_orb_institute_1
+#			remove_planet_flag = avb_orb_institute_2
+#			remove_planet_flag = avb_orb_institute_3
+#		}
+#	}
+#
+#	abort_trigger = {
+#		exists = planet
+#		planet = {
+#			NOR = {
+#				has_building = building_avb_orb_ring_connection
+#				is_building_similar_to_institute = yes
+#			}
+#		}
+#	}
+#
+#	inline_script = orbital_buildings/institute
+#	resources = {
+#		category = starbase_buildings
+#		cost = {
+#			alloys = @orb_t1_alloy_cost
+#		}
+#		upkeep = {
+#			energy = @orb_t1_energy_upkeep
+#		}
+#		upkeep = {
+#			trigger = {
+#				exists = owner
+#				planet = {
+#					has_planet_flag = avb_orb_institute_2
+#				}
+#			}
+#			energy = @orb_t2_energy_upkeep
+#		}
+#		upkeep = {
+#			trigger = {
+#				exists = owner
+#				planet = {
+#					has_planet_flag = avb_orb_institute_3
+#				}
+#			}
+#			energy = @orb_t3_energy_upkeep
+#		}
+#	}
+#	##Desc AP \/
+#	triggered_desc = {
+#		trigger = {
+#			OR = {
+#				NOT = { exists = owner }
+#				AND = {
+#					exists = owner
+#					owner = {
+#						NOT = { has_ascension_perk = ap_technological_ascendancy }
+#					}
+#				}
+#			}
+#
+#		}
+#		text = avb_orb_ap_tech
+#	}
+#	##Desc AP /\
+#
+#	ai_build_at_chokepoint = yes
+#	ai_build_outside_chokepoint = yes
+#
+#	ai_weight = {
+#		weight = 50
+#	}
+#}
+#ring_avb_hospital = {
+#	icon = "GFX_orbitalring_avb_hospital"
+#	construction_days = @avb_orb_time
+#
+#	potential = {
+#		always = no
+#		exists = owner
+#		owner = {
+#			OR = {
+#				is_regular_empire = yes
+#				AND = {
+#					has_origin = origin_fear_of_the_dark
+#					is_country_type = primitive
+#				}
+#			}
+#		}
+#		planet = {
+#			NOT = { has_modifier = slave_colony }
+#		}
+#		is_orbital_ring = yes
+#	}
+#	possible = {
+#		planet = {
+#			has_building = building_avb_orb_ring_connection
+#		}
+#		is_building_similar_to_hospital = yes
+#	}
+#	resources = {
+#		category = starbase_buildings
+#		cost = {
+#			alloys = @orb_t1_alloy_cost
+#		}
+#		upkeep = {
+#			energy = @orb_t1_energy_upkeep
+#		}
+#		upkeep = {
+#			trigger = {
+#				exists = owner
+#				planet = {
+#					has_planet_flag = avb_orb_hospital.2
+#				}
+#			}
+#			energy = @orb_t2_energy_upkeep
+#		}
+#		upkeep = {
+#			trigger = {
+#				exists = owner
+#				planet = {
+#					has_planet_flag = avb_orb_hospital.3
+#				}
+#			}
+#			energy = @orb_t3_energy_upkeep
+#		}
+#	}
+#
+#	abort_trigger = {
+#		have_building_similar_to_hospital = no
+#	}
+#
+#	destroy_trigger = {
+#		have_building_similar_to_hospital = no
+#	}
+#
+#	###			###
+#	###  Tier 1	###
+#	###			###
+#
+#	##Modifier \/
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = planet
+#			planet = {
+#				has_planet_flag = avb_orb_hospital.1
+#				NOR = {
+#					has_planet_flag = avb_orb_hospital.2
+#					has_planet_flag = avb_orb_hospital.3
+#				}
+#			}
+#			exists = owner
+#		}
+#		job_healthcare_add = 1
+#	}
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = planet
+#			planet = {
+#				has_planet_flag = avb_orb_hospital.1
+#				NOR = {
+#					has_planet_flag = avb_orb_hospital.2
+#					has_planet_flag = avb_orb_hospital.3
+#				}
+#			}
+#			exists = owner
+#		}
+#		planet_healthcare_society_research_produces_add = 1
+#	}
+#	##Modifier /\
+#
+#	###			###
+#	###  Tier 2	###
+#	###			###
+#
+#	##Modifier \/
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = planet
+#			planet = {
+#				has_planet_flag = avb_orb_hospital.1
+#				has_planet_flag = avb_orb_hospital.2
+#				NOT = {
+#					has_planet_flag = avb_orb_hospital.3
+#				}
+#			}
+#			exists = owner
+#		}
+#		job_healthcare_add = 2
+#	}
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = planet
+#			planet = {
+#				has_planet_flag = avb_orb_hospital.1
+#				has_planet_flag = avb_orb_hospital.2
+#				NOT = {
+#					has_planet_flag = avb_orb_hospital.3
+#				}
+#			}
+#			exists = owner
+#		}
+#		planet_healthcare_society_research_produces_add = 2
+#	}
+#	##Modifier /\
+#
+#	###			###
+#	###  Tier 3	###
+#	###			###
+#
+#	##Modifier \/
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = planet
+#			planet = {
+#				has_planet_flag = avb_orb_hospital.1
+#				has_planet_flag = avb_orb_hospital.2
+#				has_planet_flag = avb_orb_hospital.3
+#			}
+#			exists = owner
+#		}
+#		job_healthcare_add = 4
+#	}
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = planet
+#			planet = {
+#				has_planet_flag = avb_orb_hospital.1
+#				has_planet_flag = avb_orb_hospital.2
+#				has_planet_flag = avb_orb_hospital.3
+#			}
+#			exists = owner
+#		}
+#		planet_healthcare_society_research_produces_add = 3
+#	}
+#	##Modifier /\
+#
+#	ai_build_at_chokepoint = yes
+#	ai_build_outside_chokepoint = yes
+#
+#	ai_weight = {
+#		weight = 50
+#	}
+#}
+#ring_avb_paradise = {
+#	icon = "GFX_orbitalring_avb_organic_paradise"
+#	construction_days = @avb_orb_time
+#
+#	show_in_tech = "tech_ring_avb_paradise_1"
+#	potential = {
+#		exists = owner
+#		owner = {
+#			has_valid_civic = civic_machine_servitor
+#			has_technology = tech_ring_avb_paradise_1
+#		}
+#		is_orbital_ring = yes
+#	}
+#	possible = {
+#		planet = {
+#			has_building = building_avb_orb_ring_connection
+#		}
+#		is_building_similar_to_organic_paradise = yes
+#	}
+#	on_finished = {
+#		planet = {
+#			set_planet_flag = avb_orb_paradise_1
+#		}
+#	}
+#	on_destroyed = {
+#		planet = {
+#			remove_planet_flag = avb_orb_paradise_1
+#			remove_planet_flag = avb_orb_paradise_2
+#			remove_planet_flag = avb_orb_paradise_3
+#		}
+#	}
+#
+#	abort_trigger = {
+#		exists = planet
+#		planet = {
+#			NOR = {
+#				has_building = building_avb_orb_ring_connection
+#				is_building_similar_to_organic_paradise = yes
+#			}
+#		}
+#	}
+#
+#	inline_script = orbital_buildings/organic_paradise
+#	resources = {
+#		category = starbase_buildings
+#		cost = {
+#			alloys = @orb_t1_alloy_cost
+#		}
+#		upkeep = {
+#			energy = @orb_t1_energy_upkeep
+#		}
+#		upkeep = {
+#			trigger = {
+#				exists = owner
+#				planet = {
+#					has_planet_flag = avb_orb_paradise_2
+#				}
+#			}
+#			energy = @orb_t2_energy_upkeep
+#		}
+#		upkeep = {
+#			trigger = {
+#				exists = owner
+#				planet = {
+#					has_planet_flag = avb_orb_paradise_3
+#				}
+#			}
+#			energy = @orb_t3_energy_upkeep
+#		}
+#	}
+#
+#	abort_trigger = {
+#		is_building_similar_to_organic_paradise = no
+#	}
+#
+#	destroy_trigger = {
+#		is_building_similar_to_organic_paradise = no
+#	}
+#
+#	
+#
+#	ai_build_at_chokepoint = yes
+#	ai_build_outside_chokepoint = yes
+#
+#	ai_weight = {
+#		weight = 50
+#	}
+#}
+#ring_avb_ranger = {
+#	icon = "GFX_orbitalring_avb_ranger_lodge"
+#	construction_days = @avb_orb_time
+#
+#	show_in_tech = "tech_ring_avb_ranger_1"
+#	potential = {
+#		exists = owner
+#		owner = {
+#			has_valid_civic = civic_environmentalist
+#			has_technology = tech_ring_avb_ranger_1
+#		}
+#		is_orbital_ring = yes
+#	}
+#	possible = {
+#		planet = {
+#			has_building = building_avb_orb_ring_connection
+#		}
+#		is_building_similar_to_organic_paradise = yes
+#	}
+#	on_finished = {
+#		planet = {
+#			set_planet_flag = avb_orb_ranger_1
+#		}
+#	}
+#	on_destroyed = {
+#		planet = {
+#			remove_planet_flag = avb_orb_ranger_1
+#			remove_planet_flag = avb_orb_ranger_2
+#			remove_planet_flag = avb_orb_ranger_3
+#		}
+#	}
+#
+#	abort_trigger = {
+#		exists = planet
+#		planet = {
+#			NOR = {
+#				has_building = building_avb_orb_ring_connection
+#				is_building_similar_to_ranger = yes
+#			}
+#		}
+#	}
+#
+#	inline_script = orbital_buildings/ranger_lodge
+#	resources = {
+#		category = starbase_buildings
+#		cost = {
+#			alloys = @orb_t1_alloy_cost
+#		}
+#		upkeep = {
+#			energy = @orb_t1_energy_upkeep
+#		}
+#		upkeep = {
+#			trigger = {
+#				exists = owner
+#				planet = {
+#					has_planet_flag = avb_orb_ranger_2
+#				}
+#			}
+#			energy = @orb_t2_energy_upkeep
+#		}
+#		upkeep = {
+#			trigger = {
+#				exists = owner
+#				planet = {
+#					has_planet_flag = avb_orb_ranger_3
+#				}
+#			}
+#			energy = @orb_t3_energy_upkeep
+#		}
+#	}
+#
+#	abort_trigger = {
+#		is_building_similar_to_ranger = no
+#	}
+#
+#	destroy_trigger = {
+#		is_building_similar_to_ranger = no
+#	}
+#
+#	
+#
+#	ai_build_at_chokepoint = yes
+#	ai_build_outside_chokepoint = yes
+#
+#	ai_weight = {
+#		weight = 50
+#	}
+#}
+#
+#ring_alloys_hub = {
+#	icon = "GFX_orbitalring_alloy_hub"
+#	starbase_type = orbital_ring
+#	construction_days = @avb_orb_time
+#
+#	show_in_tech = "tech_alloys_2"
+#	potential = {
+#		exists = owner
+#		owner = {
+#			has_technology = tech_alloys_2
+#		}
+#		is_orbital_ring = yes
+#	}
+#	possible = {
+#		always = yes
+#	}
+#	on_finished = {
+#		planet = {
+#			set_planet_flag = avb_orb_foundry_1
+#		}
+#	}
+#	on_destroyed = {
+#		planet = {
+#			remove_planet_flag = avb_orb_foundry_1
+#			remove_planet_flag = avb_orb_foundry_2
+#			remove_planet_flag = avb_orb_foundry_3
+#		}
+#	}
+#	inline_script = orbital_buildings/foundry
+#	resources = {
+#		category = starbase_buildings
+#		cost = {
+#			alloys = 200
+#			volatile_motes = 300
+#		}
+#		upkeep = {
+#			energy = 5
+#			volatile_motes = 2
+#		}
+#		upkeep = {
+#			trigger = {
+#				exists = owner
+#				planet = {
+#					has_planet_flag = avb_orb_foundry_2
+#				}
+#			}
+#			energy = @orb_t2_energy_upkeep
+#		}
+#		upkeep = {
+#			trigger = {
+#				exists = owner
+#				planet = {
+#					has_planet_flag = avb_orb_foundry_3
+#				}
+#			}
+#			energy = @orb_t3_energy_upkeep
+#		}
+#		#Automation produce
+#		produces = {
+#			trigger = {
+#				exists = owner
+#				planet = {
+#					has_planet_flag = avb_orb_foundry_2
+#				}
+#			}
+#			alloys = @orb_t2_produce
+#		}
+#		produces = {
+#			trigger = {
+#				exists = owner
+#				planet = {
+#					has_planet_flag = avb_orb_foundry_3
+#				}
+#			}
+#			alloys = @orb_t3_produce
+#		}
+#		#Upkeep Minerals
+#		upkeep = {
+#			trigger = {
+#				exists = owner
+#				owner = {
+#					is_catalytic_empire = no
+#				}
+#				planet = {
+#					has_planet_flag = avb_orb_foundry_2
+#				}
+#			}
+#			minerals = @orb_t2_upkeep_minerals
+#		}
+#		upkeep = {
+#			trigger = {
+#				exists = owner
+#				owner = {
+#					is_catalytic_empire = no
+#				}
+#				planet = {
+#					has_planet_flag = avb_orb_foundry_3
+#				}
+#			}
+#			minerals = @orb_t3_upkeep_minerals
+#		}
+#		#Upkeep food
+#		upkeep = {
+#			trigger = {
+#				exists = owner
+#				owner = {
+#					is_catalytic_empire = yes
+#				}
+#				planet = {
+#					has_planet_flag = avb_orb_foundry_2
+#				}
+#			}
+#			food = @orb_t2_upkeep_food
+#		}
+#		upkeep = {
+#			trigger = {
+#				exists = owner
+#				owner = {
+#					is_catalytic_empire = yes
+#				}
+#				planet = {
+#					has_planet_flag = avb_orb_foundry_3
+#				}
+#			}
+#			food = @orb_t3_upkeep_food
+#		}
+#	}
+#	ai_build_at_chokepoint = yes
+#	ai_build_outside_chokepoint = yes
+#
+#	ai_weight = {
+#		weight = 100
+#	}
+#}
+#
+#ring_consumer_goods_hub = {
+#	icon = "GFX_orbitalring_consumer_hub"
+#	construction_days = 360
+#	starbase_type = orbital_ring
+#
+#	show_in_tech = "tech_luxuries_2"
+#	potential = {
+#		exists = owner
+#		owner = {
+#			has_technology = tech_luxuries_2
+#			country_uses_consumer_goods = yes
+#		}
+#		is_orbital_ring = yes
+#	}
+#	possible = {
+#		always = yes
+#	}
+#	on_finished = {
+#		planet = {
+#			set_planet_flag = avb_orb_factory_1
+#		}
+#	}
+#	on_destroyed = {
+#		planet = {
+#			remove_planet_flag = avb_orb_factory_1
+#			remove_planet_flag = avb_orb_factory_2
+#			remove_planet_flag = avb_orb_factory_3
+#		}
+#	}
+#	planet_modifier = {
+#		planet_artisans_consumer_goods_produces_add = 1
+#		planet_artisans_minerals_upkeep_add = 1
+#	}
+#	inline_script = orbital_buildings/factory
+#	resources = {
+#		category = starbase_buildings
+#		cost = {
+#			alloys = 200
+#			volatile_motes = 300
+#		}
+#		upkeep = {
+#			energy = 5
+#			volatile_motes = 2
+#		}
+#		upkeep = {
+#			trigger = {
+#				exists = owner
+#				planet = {
+#					has_planet_flag = avb_orb_factory_2
+#				}
+#			}
+#			energy = @orb_t2_energy_upkeep
+#		}
+#		upkeep = {
+#			trigger = {
+#				exists = owner
+#				planet = {
+#					has_planet_flag = avb_orb_factory_3
+#				}
+#			}
+#			energy = @orb_t3_energy_upkeep
+#		}
+#		#Automation produce
+#		produces = {
+#			trigger = {
+#				exists = owner
+#				planet = {
+#					has_planet_flag = avb_orb_factory_2
+#				}
+#			}
+#			consumer_goods = 10
+#		}
+#		produces = {
+#			trigger = {
+#				exists = owner
+#				planet = {
+#					has_planet_flag = avb_orb_factory_3
+#				}
+#			}
+#			consumer_goods = 20
+#		}
+#		#Upkeep Minerals
+#		upkeep = {
+#			trigger = {
+#				exists = owner
+#				owner = {
+#					is_catalytic_empire = no
+#				}
+#				planet = {
+#					has_planet_flag = avb_orb_factory_2
+#				}
+#			}
+#			minerals = 10
+#		}
+#		upkeep = {
+#			trigger = {
+#				exists = owner
+#				owner = {
+#					is_catalytic_empire = no
+#				}
+#				planet = {
+#					has_planet_flag = avb_orb_factory_3
+#				}
+#			}
+#			minerals = 20
+#		}
+#	}
+#	ai_build_at_chokepoint = yes
+#	ai_build_outside_chokepoint = yes
+#
+#	ai_weight = {
+#		weight = 100
+#	}
+#}

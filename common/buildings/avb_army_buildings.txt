@@ -421,6 +421,10 @@ building_avb_planetary_shield_generator_3 = {
 	position_priority = 100
 
 	category = army
+	building_sets = {
+		government
+		fortress
+	}
 	
 	potential = {
 		owner = { is_wilderness_empire = no } # see 'building_ozone_thickener'
@@ -502,6 +506,10 @@ building_avb_dark_matter_planetary_shield_generator = {
 	can_build = no
 
 	category = army
+	building_sets = {
+		government
+		fortress
+	}
 	
 	potential = { always = yes }
 	allow = {

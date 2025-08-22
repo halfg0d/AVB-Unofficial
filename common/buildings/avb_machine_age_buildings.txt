@@ -1438,6 +1438,12 @@ building_avb_nanolab_3 = {
 	base_buildtime = @avb_b3_time
 	can_build = no
 
+	building_sets = {
+		research
+		physics
+		society
+		engineering
+	}
 	category = research
 
 	potential = {
@@ -1596,6 +1602,10 @@ building_avb_nanotech_mining = {
 			has_modifier = slave_colony
 		}
 	}
+	building_sets = {
+		government
+		mining
+	}
 
 	allow = {
 		always = yes
@@ -1631,6 +1641,10 @@ building_avb_nanotech_mining_2 = {
 	base_buildtime = @avb_b3_time
 	category = resource
 	can_build = no
+	building_sets = {
+		government
+		mining
+	}
 	prerequisites = {
 		tech_avb_nanotech_mining_2
 	}

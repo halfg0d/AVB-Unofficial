@@ -1702,7 +1702,7 @@ building_sacrificial_temple_3 = {
 		"building_avb_death_temple_4"
 	}
 }
-building_death_temple_4 = {
+building_avb_death_temple_4 = {
 	base_buildtime = @avb_b4_time
 	position_priority = 100
 	planet_limit = 1
@@ -1771,7 +1771,7 @@ building_death_temple_4 = {
 		"building_avb_death_temple_5"
 	}
 }
-building_death_temple_5 = {
+building_avb_death_temple_5 = {
 	base_buildtime = @avb_b5_time
 	position_priority = 100
 	planet_limit = 1
@@ -1840,7 +1840,7 @@ building_death_temple_5 = {
 		"building_avb_death_temple_6"
 	}
 }
-building_death_temple_6 = {
+building_avb_death_temple_5 = {
 	base_buildtime = @avb_b6_time
 	position_priority = 100
 	planet_limit = 1

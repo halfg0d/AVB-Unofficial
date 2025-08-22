@@ -1176,118 +1176,118 @@ building_avb_grand_embassy_2 = {
 ###
 ### Zoo Administration
 ###
-building_avb_zoo_administration = {
-	base_buildtime = @b3_time
-	can_build = yes
-	icon = building_avb_xeno_zoo_2
-	category = government
-
-	prerequisites = {
-		tech_avb_xeno_zoo_2
-	}
-	potential = {
-		always = no
-		avb_hg_changes = yes
-		is_artificial = no
-		has_modifier = resort_colony
-		planet = {
-			OR = {
-				AND = {
-					exists = owner
-					owner = { has_policy_flag = pre_sapients_protect }
-					any_owned_pop = {
-						is_sapient = no
-					}
-				}
-				any_owned_pop = {
-					is_livestock = yes
-				}
-			}
-		}
-	}
-	allow = {
-		has_upgraded_capital = yes
-	}
-	destroy_trigger = {
-		planet = {
-			OR = {
-				is_artificial = yes
-				NOT = { has_modifier = resort_colony }
-				NOR = {
-					AND = {
-						exists = owner
-						owner = { has_policy_flag = pre_sapients_protect }
-						any_owned_pop = {
-							is_sapient = no
-						}
-					}
-					any_owned_pop = {
-						is_livestock = yes
-					}
-				}
-			}
-		}
-	}
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @avb_b3_minerals
-		}
-		upkeep = {
-			energy = @avb_b3_upkeep
-		}
-	}
-	planet_modifier = {
-		job_avb_zoo_curator_add = 1
-		job_xeno_zoo_keeper_add = 3
-		planet_immigration_pull_mult = 0.5
-	}
-	triggered_planet_modifier = {
-		potential = {
-			planet = {
-				any_owned_pop = {
-					is_livestock = yes
-				}
-			}
-			exists = owner
-			owner = {
-				NOT = {
-					has_valid_civic = civic_warrior_culture
-				}
-			}
-		}
-		modifier = {
-			job_livestock_zoo_animal_add = 1
-		}
-		mult = value:livestock_number
-	}
-	triggered_planet_modifier = {
-		potential = {
-			planet = {
-				any_owned_pop = {
-					is_livestock = no
-				}
-			}
-			exists = owner
-			owner = {
-				has_valid_civic = civic_warrior_culture
-			}
-		}
-		modifier = {
-			job_livestock_zoo_beast_add = 1
-		}
-		mult = value:livestock_number
-	}
-	
-	triggered_desc = {
-		text = job_xeno_zoo_keeper_effect_desc
-	}
-	triggered_desc = {
-		text = job_avb_xeno_zoo_keeper_effect_desc
-	}
-	inline_script = misc/zoo_animals
-	
-	show_tech_unlock_if = {
-		avb_hg_changes = yes
-	}
-}
+#building_avb_zoo_administration = {
+#	base_buildtime = @b3_time
+#	can_build = yes
+#	icon = building_avb_xeno_zoo_2
+#	category = government
+#
+#	prerequisites = {
+#		tech_avb_xeno_zoo_2
+#	}
+#	potential = {
+#		always = no
+#		avb_hg_changes = yes
+#		is_artificial = no
+#		has_modifier = resort_colony
+#		planet = {
+#			OR = {
+#				AND = {
+#					exists = owner
+#					owner = { has_policy_flag = pre_sapients_protect }
+#					any_owned_pop = {
+#						is_sapient = no
+#					}
+#				}
+#				any_owned_pop = {
+#					is_livestock = yes
+#				}
+#			}
+#		}
+#	}
+#	allow = {
+#		has_upgraded_capital = yes
+#	}
+#	destroy_trigger = {
+#		planet = {
+#			OR = {
+#				is_artificial = yes
+#				NOT = { has_modifier = resort_colony }
+#				NOR = {
+#					AND = {
+#						exists = owner
+#						owner = { has_policy_flag = pre_sapients_protect }
+#						any_owned_pop = {
+#							is_sapient = no
+#						}
+#					}
+#					any_owned_pop = {
+#						is_livestock = yes
+#					}
+#				}
+#			}
+#		}
+#	}
+#	resources = {
+#		category = planet_buildings
+#		cost = {
+#			minerals = @avb_b3_minerals
+#		}
+#		upkeep = {
+#			energy = @avb_b3_upkeep
+#		}
+#	}
+#	planet_modifier = {
+#		job_avb_zoo_curator_add = 1
+#		job_xeno_zoo_keeper_add = 3
+#		planet_immigration_pull_mult = 0.5
+#	}
+#	triggered_planet_modifier = {
+#		potential = {
+#			planet = {
+#				any_owned_pop = {
+#					is_livestock = yes
+#				}
+#			}
+#			exists = owner
+#			owner = {
+#				NOT = {
+#					has_valid_civic = civic_warrior_culture
+#				}
+#			}
+#		}
+#		modifier = {
+#			job_livestock_zoo_animal_add = 1
+#		}
+#		mult = value:livestock_number
+#	}
+#	triggered_planet_modifier = {
+#		potential = {
+#			planet = {
+#				any_owned_pop = {
+#					is_livestock = no
+#				}
+#			}
+#			exists = owner
+#			owner = {
+#				has_valid_civic = civic_warrior_culture
+#			}
+#		}
+#		modifier = {
+#			job_livestock_zoo_beast_add = 1
+#		}
+#		mult = value:livestock_number
+#	}
+#	
+#	triggered_desc = {
+#		text = job_xeno_zoo_keeper_effect_desc
+#	}
+#	triggered_desc = {
+#		text = job_avb_xeno_zoo_keeper_effect_desc
+#	}
+#	inline_script = misc/zoo_animals
+#	
+#	show_tech_unlock_if = {
+#		avb_hg_changes = yes
+#	}
+#}

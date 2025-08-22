@@ -1,126 +1,126 @@
-# Foundry
-triggered_planet_modifier = {
-	potential = {
-		has_any_foundry_tier = {
-			active = yes
-		}
-		owner = {
-			is_catalytic_empire = no
-		}
-	}
-	modifier = {
-		planet_metallurgists_alloys_produces_add = 0.5
-		planet_metallurgists_minerals_upkeep_add = 1
-	}
-	mult = value:num_foundry_tier
-}
-triggered_planet_modifier = {
-	potential = {
-		has_any_foundry_tier = {
-			active = yes
-		}
-		owner = {
-			is_catalytic_empire = yes
-		}
-	}
-	modifier = {
-		planet_metallurgists_alloys_produces_add = 0.625
-		planet_metallurgists_food_upkeep_add = 1.5
-	}
-	mult = value:num_foundry_tier
-}
-# Factory
-triggered_planet_modifier = {
-	potential = {
-		has_any_factory_tier = {
-			active = yes
-		}
-	}
-	modifier = {
-		planet_artisans_consumer_goods_produces_add = 0.5
-		planet_artisans_minerals_upkeep_add = 0.5
-	}
-	mult = value:factory_tier
-}
-# Food
-triggered_planet_modifier = {
-	potential = {
-		has_any_food_processing_tier = {
-			active = yes
-		}
-	}
-	modifier = {
-		planet_farmers_food_produces_add = 0.5
-	}
-	mult = value:num_food_processing_tier
-}
-# Energy
-triggered_planet_modifier = {
-	potential = {
-		has_any_energy_grid_tier = {
-			active = yes
-		}
-	}
-	modifier = {
-		planet_technician_energy_produces_add = 0.5
-	}
-	mult = value:num_energy_grid_tier
-}
-# Minerals
-triggered_planet_modifier = {
-	potential = {
-		has_any_mineral_purification_tier = {
-			active = yes
-		}
-	}
-	modifier = {
-		planet_miners_minerals_produces_add = 0.5
-	}
-	mult = value:num_mineral_purification_tier
-}
-# Research
-triggered_planet_modifier = {
-	potential = {
-		has_any_research_tier = {
-			active = yes
-		}
-	}
-	modifier = {
-		planet_researchers_produces_mult = 0.05
-	}
-	mult = value:num_research_tier
-}
-# Rare
-triggered_planet_modifier = {
-	potential = {
-		has_any_refinery_tier = {
-			active = yes
-		}
-	}
-	modifier = {
-		planet_refiners_produces_mult = 0.05
-	}
-	mult = value:num_refinery_tier
-}
-triggered_planet_modifier = {
-	potential = {
-		has_any_chemical_plant_tier = {
-			active = yes
-		}
-	}
-	modifier = {
-		planet_chemists_produces_mult = 0.05
-	}
-	mult = value:num_chemical_plant_tier
-}
-triggered_planet_modifier = {
-	potential = {
-		has_any_crystal_plant_tier = {
-			active = yes
-		}
-	}
-	modifier = {
-		planet_translucers_produces_mult = 0.05
-	}
-	mult = value:num_crystal_plant_tier
-}
+## Foundry
+#triggered_planet_modifier = {
+#	potential = {
+#		has_any_foundry_tier = {
+#			active = yes
+#		}
+#		owner = {
+#			is_catalytic_empire = no
+#		}
+#	}
+#	modifier = {
+#		planet_metallurgists_alloys_produces_add = 0.5
+#		planet_metallurgists_minerals_upkeep_add = 1
+#	}
+#	mult = value:num_foundry_tier
+#}
+#triggered_planet_modifier = {
+#	potential = {
+#		has_any_foundry_tier = {
+#			active = yes
+#		}
+#		owner = {
+#			is_catalytic_empire = yes
+#		}
+#	}
+#	modifier = {
+#		planet_metallurgists_alloys_produces_add = 0.625
+#		planet_metallurgists_food_upkeep_add = 1.5
+#	}
+#	mult = value:num_foundry_tier
+#}
+## Factory
+#triggered_planet_modifier = {
+#	potential = {
+#		has_any_factory_tier = {
+#			active = yes
+#		}
+#	}
+#	modifier = {
+#		planet_artisans_consumer_goods_produces_add = 0.5
+#		planet_artisans_minerals_upkeep_add = 0.5
+#	}
+#	mult = value:factory_tier
+#}
+## Food
+#triggered_planet_modifier = {
+#	potential = {
+#		has_any_food_processing_tier = {
+#			active = yes
+#		}
+#	}
+#	modifier = {
+#		planet_farmers_food_produces_add = 0.5
+#	}
+#	mult = value:num_food_processing_tier
+#}
+## Energy
+#triggered_planet_modifier = {
+#	potential = {
+#		has_any_energy_grid_tier = {
+#			active = yes
+#		}
+#	}
+#	modifier = {
+#		planet_technician_energy_produces_add = 0.5
+#	}
+#	mult = value:num_energy_grid_tier
+#}
+## Minerals
+#triggered_planet_modifier = {
+#	potential = {
+#		has_any_mineral_purification_tier = {
+#			active = yes
+#		}
+#	}
+#	modifier = {
+#		planet_miners_minerals_produces_add = 0.5
+#	}
+#	mult = value:num_mineral_purification_tier
+#}
+## Research
+#triggered_planet_modifier = {
+#	potential = {
+#		has_any_research_tier = {
+#			active = yes
+#		}
+#	}
+#	modifier = {
+#		planet_researchers_produces_mult = 0.05
+#	}
+#	mult = value:num_research_tier
+#}
+## Rare
+#triggered_planet_modifier = {
+#	potential = {
+#		has_any_refinery_tier = {
+#			active = yes
+#		}
+#	}
+#	modifier = {
+#		planet_refiners_produces_mult = 0.05
+#	}
+#	mult = value:num_refinery_tier
+#}
+#triggered_planet_modifier = {
+#	potential = {
+#		has_any_chemical_plant_tier = {
+#			active = yes
+#		}
+#	}
+#	modifier = {
+#		planet_chemists_produces_mult = 0.05
+#	}
+#	mult = value:num_chemical_plant_tier
+#}
+#triggered_planet_modifier = {
+#	potential = {
+#		has_any_crystal_plant_tier = {
+#			active = yes
+#		}
+#	}
+#	modifier = {
+#		planet_translucers_produces_mult = 0.05
+#	}
+#	mult = value:num_crystal_plant_tier
+#}

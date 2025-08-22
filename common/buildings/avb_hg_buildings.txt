@@ -7,6 +7,9 @@ building_avb_virtual_server = {
 	base_cap_amount = 1
 
 	category = government
+	building_sets = {
+		government
+	}
 
 	potential = {
 		has_machine_age_dlc = yes
@@ -50,6 +53,9 @@ building_avb_modular_building = {
 		owner = {
 			has_tradition = tr_modularity_finish
 		}
+	}
+	building_sets = {
+		government
 	}
 	allow = {
 		has_upgraded_capital = yes

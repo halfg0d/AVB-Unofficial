@@ -39,7 +39,7 @@ modifier = {
 	NOT = {
 		any_owned_planet = {
 			OR = {
-				avb_has_orbital_ring = yes
+				#avb_has_orbital_ring = yes
 				has_ringworld_output_boost = yes
 			}
 		}

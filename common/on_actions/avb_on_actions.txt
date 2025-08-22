@@ -18,35 +18,35 @@ on_building_upgraded = {
 
 		avb_habitat.1 #Upgrade T3 habitat
 	#Upgrade Orbital Building
-		avb_orb_up.11 #t2 robot
-		avb_orb_up.12 #t3 robot
-		avb_orb_up.21 #t2 clone
-		avb_orb_up.22 #t3 clone
-		avb_orb_up.31 #t2 institute
-		avb_orb_up.32 #t3 institute
-		avb_orb_up.41 #t2 paradise
-		avb_orb_up.42 #t3 paradise
-		avb_orb_up.51 #t2 ranger
-		avb_orb_up.52 #t3 ranger
-		avb_orb_up.61 #t2 foundry
-		avb_orb_up.62 #t3 foundry
-		avb_orb_up.71 #t2 factory
-		avb_orb_up.72 #t3 factory
+		#avb_orb_up.11 #t2 robot
+		#avb_orb_up.12 #t3 robot
+		#avb_orb_up.21 #t2 clone
+		#avb_orb_up.22 #t3 clone
+		#avb_orb_up.31 #t2 institute
+		#avb_orb_up.32 #t3 institute
+		#avb_orb_up.41 #t2 paradise
+		#avb_orb_up.42 #t3 paradise
+		#avb_orb_up.51 #t2 ranger
+		#avb_orb_up.52 #t3 ranger
+		#avb_orb_up.61 #t2 foundry
+		#avb_orb_up.62 #t3 foundry
+		#avb_orb_up.71 #t2 factory
+		#avb_orb_up.72 #t3 factory
 	}
 }
 on_pop_assembled = {
 	events = {
-		avb.2
+		#avb.2
 	}
 }
 on_building_downgraded = {
 	events = {
-		avb.3
+		#avb.3
 	}
 }
 on_building_replaced = {
 	events = {
-		avb.3
+		#avb.3
 	}
 }
 on_colony_yearly_pulse = {
@@ -57,11 +57,12 @@ on_colony_yearly_pulse = {
 }
 on_colony_5_year_pulse = {
 	events = {
-		avb_necroids.1 #Apotheosis for non-necrophage pops to necrophage
+		#avb_necroids.1
+		#Apotheosis for non-necrophage pops to necrophage
 	}
 }
 on_tech_increased = {
 	events = {
-		avb.10
+		#avb.10
 	}
 }
