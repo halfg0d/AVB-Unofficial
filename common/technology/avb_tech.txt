@@ -35,6 +35,7 @@ tech_avb_construction_templates_3 = {
 				has_ethic = ethic_militarist
 				has_ethic = ethic_fanatic_militarist
 			}
+		}
 	}
 	
 	ai_weight = {

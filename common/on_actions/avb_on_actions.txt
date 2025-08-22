@@ -7,14 +7,14 @@ on_game_start = {
 }
 on_game_start_country = {
 	events = {
-		avb_selection.1
+	#	avb_selection.1
 	}
 }
 
 on_building_upgraded = {
 	events = {
-		avb.1
-		avb_vat.1
+	#	avb.1
+	#	avb_vat.1
 
 		avb_habitat.1 #Upgrade T3 habitat
 	#Upgrade Orbital Building

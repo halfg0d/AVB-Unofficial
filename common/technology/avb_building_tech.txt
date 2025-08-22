@@ -1101,11 +1101,8 @@ tech_avb_luxuries_3 = {
 	weight_modifier = {
 		factor = 2
 		modifier = {
-			factor = 2
-			modifier = {
-				factor = 1.5
-				is_specialist_subject_type = { TYPE = prospectorium }
-			}
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = prospectorium }
 		}
 	}
 	
@@ -1132,14 +1129,10 @@ tech_avb_luxuries_4 = {
 	weight_modifier = {
 		factor = 2
 		modifier = {
-			factor = 2
-			modifier = {
-				factor = 1.5
-				is_specialist_subject_type = { TYPE = prospectorium }
-			}
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = prospectorium }
 		}
 	}
-	
 	ai_weight = {
 		factor = @ai_civilian_factory_factor
 	}
@@ -1163,11 +1156,8 @@ tech_avb_luxuries_5 = {
 	weight_modifier = {
 		factor = 2
 		modifier = {
-			factor = 2
-			modifier = {
-				factor = 1.5
-				is_specialist_subject_type = { TYPE = prospectorium }
-			}
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = prospectorium }
 		}
 	}
 	
@@ -1507,18 +1497,7 @@ tech_avb_basic_science_lab_4 = {
 		}
 		modifier = {
 			factor = 1.5
-			OR = {
-				has_civic = civic_technocracy 
-				AND = {
-					has_global_flag = ethic_civic_classic_active
-					OR = {
-						has_civic = civic_cyber_dictatorship
-						has_civic = civic_science_directorate
-						has_civic = civic_cyber_demos_cratos
-					}
-				
-				}
-			}
+			has_civic = civic_technocracy
 		}
 	}
 	
@@ -1550,18 +1529,7 @@ tech_avb_basic_science_lab_5 = {
 		}
 		modifier = {
 			factor = 1.5
-			OR = {
-				has_civic = civic_technocracy 
-				AND = {
-					has_global_flag = ethic_civic_classic_active
-					OR = {
-						has_civic = civic_cyber_dictatorship
-						has_civic = civic_science_directorate
-						has_civic = civic_cyber_demos_cratos
-					}
-				
-				}
-			}
+			has_civic = civic_technocracy
 		}
 	}
 	
@@ -1593,18 +1561,7 @@ tech_avb_basic_science_lab_6 = {
 		}
 		modifier = {
 			factor = 1.5
-			OR = {
-				has_civic = civic_technocracy 
-				AND = {
-					has_global_flag = ethic_civic_classic_active
-					OR = {
-						has_civic = civic_cyber_dictatorship
-						has_civic = civic_science_directorate
-						has_civic = civic_cyber_demos_cratos
-					}
-				
-				}
-			}
+			has_civic = civic_technocracy
 		}
 	}
 	
@@ -1636,18 +1593,7 @@ tech_avb_global_research_initiative_2 = {
 		}
 		modifier = {
 			factor = 1.5
-			OR = {
-				has_civic = civic_technocracy 
-				AND = {
-					has_global_flag = ethic_civic_classic_active
-					OR = {
-						has_civic = civic_cyber_dictatorship
-						has_civic = civic_science_directorate
-						has_civic = civic_cyber_demos_cratos
-					}
-				
-				}
-			}
+			has_civic = civic_technocracy
 		}
 	}
 	
