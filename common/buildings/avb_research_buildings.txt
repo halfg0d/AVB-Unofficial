@@ -982,7 +982,7 @@ building_avb_physics_lab_6 = {
 	}
 
 	prerequisites = {
-		"tech_avb_physics_5"
+		"tech_avb_physics_6"
 	}
 
 	inline_script = {

@@ -437,16 +437,16 @@
  building_avb_engineering_facility_6: "Autonomous Systems Laboratory"
  building_avb_engineering_facility_6_desc: ""$tech_avb_engineering_6_desc$
  # Research Efficiency
- building_research_efficiency_2: "Algorithmic Insight Complex"
- building_research_efficiency_2_desc: "Leveraging advanced algorithms to sift through vast datasets, this complex accelerates hypothesis generation and testing for theoretical breakthroughs."
+ building_avb_research_efficiency_2: "Algorithmic Insight Complex"
+ building_avb_research_efficiency_2_desc: "Leveraging advanced algorithms to sift through vast datasets, this complex accelerates hypothesis generation and testing for theoretical breakthroughs."
 
- building_research_efficiency_3: "Predictive Modelling Hub"
- building_research_efficiency_3_desc: "Utilising cutting‑edge simulation platforms, the hub transforms raw data into predictive models that guide experimental design and reduce trial‑and‑error cycles."
+ building_avb_research_efficiency_3: "Predictive Modelling Hub"
+ building_avb_research_efficiency_3_desc: "Utilising cutting‑edge simulation platforms, the hub transforms raw data into predictive models that guide experimental design and reduce trial‑and‑error cycles."
 
  # Research Upkeep
- building_research_upkeep_2: "Centralised Materials Nexus"
- building_research_upkeep_2_desc: "This nexus consolidates raw‑material sourcing, quality control, and logistics to ensure uninterrupted access to high‑grade reagents for all research facilities."
+ building_avb_research_upkeep_2: "Centralised Materials Nexus"
+ building_avb_research_upkeep_2_desc: "This nexus consolidates raw‑material sourcing, quality control, and logistics to ensure uninterrupted access to high‑grade reagents for all research facilities."
 
- building_research_upkeep_3: "Integrated Logistics Outpost"
- building_research_upkeep_3_desc: "Combining automated transport networks with real‑time inventory tracking, the outpost guarantees timely delivery of consumables while cutting operational costs."
+ building_avb_research_upkeep_3: "Integrated Logistics Outpost"
+ building_avb_research_upkeep_3_desc: "Combining automated transport networks with real‑time inventory tracking, the outpost guarantees timely delivery of consumables while cutting operational costs."
 
