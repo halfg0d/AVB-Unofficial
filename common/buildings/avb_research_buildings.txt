@@ -721,3 +721,276 @@ building_vultaum_reality_computer = {
 		building_avb_vultaum_reality_computer_2
 	}
 }
+building_physics_lab_3 = {
+	can_build = no
+	base_buildtime = @b3_time
+	exempt_from_ai_planet_specialization = no
+
+	category = research
+
+	building_sets = {
+		research
+		physics
+	}
+
+	potential = {
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony
+			owner = { is_wilderness_empire = yes }
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b3_minerals
+			volatile_motes = @b3_rare_cost
+		}
+		upkeep = {
+			energy = @b3_upkeep
+			volatile_motes = @b3_rare_upkeep
+		}
+	}
+
+	inline_script = {
+		script = jobs/physicists_add
+		AMOUNT = @building_static_jobs
+	}
+
+	planet_modifier = {
+		planet_physicists_physics_research_produces_add = 2
+		physicist_jobs_bonus_workforce_mult = 0.15
+		planet_physicists_volatile_motes_upkeep_add = 0.5
+	}
+
+	prerequisites = {
+		"tech_physics_3"
+	}
+
+	inline_script = {
+		script = districts/ai_research_physics_extra_weighting
+		AMOUNT = 10
+	}
+
+	show_tech_unlock_if = {
+		is_wilderness_empire = no
+	}
+	upgrades = {
+		building_avb_physics_lab_4
+	}
+}
+building_avb_physics_lab_4 = {
+	can_build = no
+	base_buildtime = @avb_b4_time
+	exempt_from_ai_planet_specialization = no
+
+	category = research
+
+	building_sets = {
+		research
+		physics
+	}
+
+	potential = {
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony
+			owner = { is_wilderness_empire = yes }
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_b4_minerals
+			volatile_motes = @avb_b4_rare_cost
+		}
+		upkeep = {
+			energy = @avb_b4_upkeep
+			volatile_motes = @avb_b4_rare_upkeep
+		}
+	}
+
+	inline_script = {
+		script = jobs/physicists_add
+		AMOUNT = 400
+	}
+
+	planet_modifier = {
+		planet_physicists_physics_research_produces_add = 3
+		physicist_jobs_bonus_workforce_mult = 0.15
+		planet_physicists_volatile_motes_upkeep_add = 0.5
+	}
+
+	prerequisites = {
+		"tech_avb_physics_4"
+	}
+
+	inline_script = {
+		script = districts/ai_research_physics_extra_weighting
+		AMOUNT = 10
+	}
+
+	show_tech_unlock_if = {
+		is_wilderness_empire = no
+	}
+	upgrades = {
+		building_avb_physics_lab_5
+	}
+}
+building_avb_physics_lab_5 = {
+	can_build = no
+	base_buildtime = @avb_b5_time
+	exempt_from_ai_planet_specialization = no
+
+	category = research
+
+	building_sets = {
+		research
+		physics
+	}
+
+	potential = {
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony
+			owner = { is_wilderness_empire = yes }
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_b5_minerals
+			volatile_motes = @avb_b5_rare_cost
+		}
+		upkeep = {
+			energy = @avb_b5_upkeep
+			volatile_motes = @avb_b5_rare_upkeep
+		}
+	}
+
+	inline_script = {
+		script = jobs/physicists_add
+		AMOUNT = 600
+	}
+
+	planet_modifier = {
+		planet_physicists_physics_research_produces_add = 3.5
+		physicist_jobs_bonus_workforce_mult = 0.15
+		planet_physicists_volatile_motes_upkeep_add = 0.5
+	}
+
+	prerequisites = {
+		"tech_avb_physics_5"
+	}
+
+	inline_script = {
+		script = districts/ai_research_physics_extra_weighting
+		AMOUNT = 10
+	}
+
+	show_tech_unlock_if = {
+		is_wilderness_empire = no
+	}
+	upgrades = {
+		building_avb_physics_lab_6
+	}
+}
+building_avb_physics_lab_6 = {
+	can_build = no
+	base_buildtime = @avb_b6_time
+	exempt_from_ai_planet_specialization = no
+
+	category = research
+
+	building_sets = {
+		research
+		physics
+	}
+
+	potential = {
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony
+			owner = { is_wilderness_empire = yes }
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_b6_minerals
+			volatile_motes = @avb_b6_rare_cost
+		}
+		upkeep = {
+			energy = @avb_b6_upkeep
+			volatile_motes = @avb_b6_rare_upkeep
+		}
+	}
+
+	inline_script = {
+		script = jobs/physicists_add
+		AMOUNT = 800
+	}
+
+	planet_modifier = {
+		planet_physicists_physics_research_produces_add = 3.75
+		physicist_jobs_bonus_workforce_mult = 0.15
+		planet_physicists_volatile_motes_upkeep_add = 0.5
+	}
+
+	prerequisites = {
+		"tech_avb_physics_5"
+	}
+
+	inline_script = {
+		script = districts/ai_research_physics_extra_weighting
+		AMOUNT = 10
+	}
+
+	show_tech_unlock_if = {
+		is_wilderness_empire = no
+	}
+}
