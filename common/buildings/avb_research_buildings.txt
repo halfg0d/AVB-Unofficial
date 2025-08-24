@@ -1765,3 +1765,285 @@ building_avb_research_efficiency_3 = {
 		is_wilderness_empire = no
 	}
 }
+building_research_upkeep_1 = {
+	base_buildtime = @b2_time
+	planet_limit = 1
+	category = research
+
+	building_sets = {
+		research
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			is_wilderness_empire = no
+		}
+		NOT = {
+			has_modifier = resort_colony
+		}
+	}
+
+	allow = {
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony
+			owner = { is_wilderness_empire = yes }
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+			exotic_gases = @b3_rare_cost
+		}
+		upkeep = {
+			energy = @b2_upkeep
+			exotic_gases = @b3_rare_upkeep
+		}
+	}
+
+	planet_modifier = {
+		planet_researchers_upkeep_mult = -0.20
+	}
+
+	prerequisites = {
+		"tech_basic_science_lab_2"
+	}
+
+	ai_resource_production = {
+		consumer_goods = 5
+
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+			has_any_research_zone = yes
+		}
+	}
+
+	ai_resource_production = {
+		energy = 10
+
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+				is_hive_empire = no
+			}
+			has_any_research_zone = yes
+		}
+	}
+
+	ai_resource_production = {
+		minerals = 10
+
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+				is_hive_empire = yes
+			}
+			has_any_research_zone = yes
+		}
+	}
+
+	show_tech_unlock_if = {
+		is_wilderness_empire = no
+	}
+	upgrades = {
+		building_avb_research_upkeep_2
+	}
+}
+building_avb_research_upkeep_2 = {
+	base_buildtime = @avb_b3_time
+	planet_limit = 1
+	category = research
+
+	building_sets = {
+		research
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			is_wilderness_empire = no
+		}
+		NOT = {
+			has_modifier = resort_colony
+		}
+	}
+
+	allow = {
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony
+			owner = { is_wilderness_empire = yes }
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_b3_minerals
+			exotic_gases = @avb_b4_rare_cost
+		}
+		upkeep = {
+			energy = @avb_b3_upkeep
+			exotic_gases = @avb_b4_rare_upkeep
+		}
+	}
+
+	planet_modifier = {
+		planet_researchers_upkeep_mult = -0.25
+	}
+
+	prerequisites = {
+		"tech_avb_basic_science_lab_4"
+	}
+
+	ai_resource_production = {
+		consumer_goods = 5
+
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+			has_any_research_zone = yes
+		}
+	}
+
+	ai_resource_production = {
+		energy = 10
+
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+				is_hive_empire = no
+			}
+			has_any_research_zone = yes
+		}
+	}
+
+	ai_resource_production = {
+		minerals = 10
+
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+				is_hive_empire = yes
+			}
+			has_any_research_zone = yes
+		}
+	}
+
+	show_tech_unlock_if = {
+		is_wilderness_empire = no
+	}
+	upgrades = {
+		building_avb_research_upkeep_3
+	}
+}
+building_avb_research_upkeep_3 = {
+	base_buildtime = @avb_b4_time
+	planet_limit = 1
+	category = research
+
+	building_sets = {
+		research
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			is_wilderness_empire = no
+		}
+		NOT = {
+			has_modifier = resort_colony
+		}
+	}
+
+	allow = {
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony
+			owner = { is_wilderness_empire = yes }
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_b4_minerals
+			exotic_gases = @avb_b5_rare_cost
+		}
+		upkeep = {
+			energy = @avb_b4_upkeep
+			exotic_gases = @avb_b5_rare_upkeep
+		}
+	}
+
+	planet_modifier = {
+		planet_researchers_upkeep_mult = -0.3
+	}
+
+	prerequisites = {
+		"tech_avb_basic_science_lab_6"
+	}
+
+	ai_resource_production = {
+		consumer_goods = 5
+
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+			has_any_research_zone = yes
+		}
+	}
+
+	ai_resource_production = {
+		energy = 10
+
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+				is_hive_empire = no
+			}
+			has_any_research_zone = yes
+		}
+	}
+
+	ai_resource_production = {
+		minerals = 10
+
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+				is_hive_empire = yes
+			}
+			has_any_research_zone = yes
+		}
+	}
+
+	show_tech_unlock_if = {
+		is_wilderness_empire = no
+	}
+}
