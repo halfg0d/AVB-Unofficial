@@ -2047,3 +2047,5 @@ building_avb_research_upkeep_3 = {
 		is_wilderness_empire = no
 	}
 }
+=======
+>>>>>>> b9a9339 (Added 3 tiers of physics lab)
