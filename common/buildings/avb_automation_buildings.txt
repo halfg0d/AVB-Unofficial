@@ -1,0 +1,1001 @@
+building_automation_2 = {
+	base_buildtime = @b2_time
+	can_build = no
+	category = pop_assembly
+
+	building_sets = {
+		government
+		urban
+		farming
+		mining
+		generator
+	}
+
+	potential = {
+		always = no
+	}
+
+	allow = {
+		hidden_trigger = {
+			OR = {
+				owner = { is_ai = no }
+				NAND = {
+					free_district_slots = 0
+					free_building_slots <= 1
+					free_housing <= 0
+					free_jobs <= 0
+				}
+			}
+		}
+	}
+
+	destroy_trigger = {}
+
+	planet_modifier = {
+		district_automated_workforce = 0.5
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b3_minerals
+		}
+		upkeep = {
+			energy = @b4_upkeep
+			mult = value:count_any_districts
+		}
+		upkeep = {
+			energy = @b4_upkeep
+			mult = value:count_any_building
+		}
+	}
+
+	prerequisites = {
+		tech_construction_templates
+	}
+
+	show_tech_unlock_if = {
+		is_wilderness_empire = no
+	}
+
+	triggered_desc = {
+		text = automation_2_tooltip
+	}
+	upgrades = {
+		building_avb_automation_3
+	}
+}
+building_avb_automation_3 = {
+	base_buildtime = @avb_b3_time
+	can_build = no
+	category = pop_assembly
+
+	building_sets = {
+		government
+		urban
+		farming
+		mining
+		generator
+	}
+
+	potential = {
+		always = no
+	}
+
+	allow = {
+		hidden_trigger = {
+			OR = {
+				owner = { is_ai = no }
+				NAND = {
+					free_district_slots = 0
+					free_building_slots <= 1
+					free_housing <= 0
+					free_jobs <= 0
+				}
+			}
+		}
+	}
+
+	destroy_trigger = {}
+
+	planet_modifier = {
+		district_automated_workforce = 0.75
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_b4_minerals
+			rare_crystals = @avb_b3_rare_cost
+			exotic_gases = @avb_b3_rare_cost
+			volatile_motes = @avb_b3_rare_cost
+		}
+		upkeep = {
+			energy = @b4_upkeep
+			rare_crystals = 0.1
+			exotic_gases = 0.1
+			volatile_motes = 0.1
+			mult = value:count_any_districts
+		}
+		upkeep = {
+			energy = @b4_upkeep
+			rare_crystals = 0.1
+			exotic_gases = 0.1
+			volatile_motes = 0.1
+			mult = value:count_any_building
+		}
+	}
+
+	prerequisites = {
+		tech_avb_construction_templates_3
+	}
+
+	show_tech_unlock_if = {
+		is_wilderness_empire = no
+	}
+
+	triggered_desc = {
+		text = avb_automation_3_tooltip
+	}
+	upgrades = {
+		building_avb_automation_4
+	}
+}
+building_avb_automation_4 = {
+	base_buildtime = @avb_b4_time
+	can_build = no
+	category = pop_assembly
+
+	building_sets = {
+		government
+		urban
+		farming
+		mining
+		generator
+	}
+
+	potential = {
+		always = no
+	}
+
+	allow = {
+		hidden_trigger = {
+			OR = {
+				owner = { is_ai = no }
+				NAND = {
+					free_district_slots = 0
+					free_building_slots <= 1
+					free_housing <= 0
+					free_jobs <= 0
+				}
+			}
+		}
+	}
+
+	destroy_trigger = {}
+
+	planet_modifier = {
+		district_automated_workforce = 1
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_b5_minerals
+			sr_dark_matter = @avb_b4_rare_cost
+		}
+		upkeep = {
+			energy = @b4_upkeep
+			sr_dark_matter = 0.1
+			mult = value:count_any_districts
+		}
+		upkeep = {
+			energy = @b4_upkeep
+			sr_dark_matter = 0.1
+			mult = value:count_any_building
+		}
+	}
+
+	prerequisites = {
+		tech_avb_construction_templates_4
+	}
+
+	show_tech_unlock_if = {
+		is_wilderness_empire = no
+	}
+
+	triggered_desc = {
+		text = avb_automation_4_tooltip
+	}
+}
+building_automation_city_2 = {
+	base_buildtime = @b2_time
+	can_build = no
+	category = pop_assembly
+	icon = building_automation_2
+
+	building_sets = {
+		government
+		urban
+	}
+
+	potential = {
+		owner = { is_wilderness_empire = no }
+	}
+
+	allow = {
+		hidden_trigger = {
+			OR = {
+				owner = { is_ai = no }
+				NAND = {
+					free_district_slots = 0
+					free_building_slots <= 1
+					free_housing <= 0
+					free_jobs <= 0
+				}
+			}
+		}
+	}
+
+	destroy_trigger = {
+		owner = {
+			is_wilderness_empire = yes
+		}
+	}
+
+	planet_modifier = {
+		district_automated_workforce = 0.5
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b3_minerals
+		}
+		upkeep = {
+			energy = @b5_upkeep
+			mult = value:city_districts_value
+		}
+	}
+
+	prerequisites = {
+		tech_construction_templates
+	}
+
+	show_tech_unlock_if = {
+		always = no
+	}
+
+	triggered_desc = {
+		text = automation_city_2_tooltip
+	}
+	upgrades = {
+		building_avb_automation_city_3
+	}
+}
+building_avb_automation_city_3 = {
+	base_buildtime = @avb_b3_time
+	can_build = no
+	category = pop_assembly
+	icon = building_avb_automation_3
+
+	building_sets = {
+		government
+		urban
+	}
+
+	potential = {
+		owner = { is_wilderness_empire = no }
+	}
+
+	allow = {
+		hidden_trigger = {
+			OR = {
+				owner = { is_ai = no }
+				NAND = {
+					free_district_slots = 0
+					free_building_slots <= 1
+					free_housing <= 0
+					free_jobs <= 0
+				}
+			}
+		}
+	}
+
+	destroy_trigger = {
+		owner = {
+			is_wilderness_empire = yes
+		}
+	}
+
+	planet_modifier = {
+		district_automated_workforce = 0.75
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_b4_minerals
+			rare_crystals = @avb_b3_rare_cost
+			exotic_gases = @avb_b3_rare_cost
+			volatile_motes = @avb_b3_rare_cost
+		}
+		upkeep = {
+			energy = @b5_upkeep
+			rare_crystals = 0.1
+			exotic_gases = 0.1
+			volatile_motes = 0.1
+			mult = value:count_any_districts
+		}
+	}
+
+	prerequisites = {
+		tech_avb_construction_templates_3
+	}
+
+	show_tech_unlock_if = {
+		always = no
+	}
+
+	triggered_desc = {
+		text = avb_automation_city_3_tooltip
+	}
+	upgrades = {
+		building_avb_automation_city_4
+	}
+}
+building_avb_automation_city_4 = {
+	base_buildtime = @avb_b4_time
+	can_build = no
+	category = pop_assembly
+	icon = building_avb_automation_4
+
+	building_sets = {
+		government
+		urban
+	}
+
+	potential = {
+		owner = { is_wilderness_empire = no }
+	}
+
+	allow = {
+		hidden_trigger = {
+			OR = {
+				owner = { is_ai = no }
+				NAND = {
+					free_district_slots = 0
+					free_building_slots <= 1
+					free_housing <= 0
+					free_jobs <= 0
+				}
+			}
+		}
+	}
+
+	destroy_trigger = {
+		owner = {
+			is_wilderness_empire = yes
+		}
+	}
+
+	planet_modifier = {
+		district_automated_workforce = 1
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_b5_minerals
+			sr_dark_matter = @avb_b4_rare_cost
+		}
+		upkeep = {
+			energy = @b4_upkeep
+			sr_dark_matter = 0.1
+			mult = value:count_any_districts
+		}
+	}
+
+	prerequisites = {
+		tech_avb_construction_templates_4
+	}
+
+	show_tech_unlock_if = {
+		always = no
+	}
+
+	triggered_desc = {
+		text = avb_automation_city_4_tooltip
+	}
+}
+building_automation_generator_2 = {
+	base_buildtime = @b2_time
+	can_build = no
+	category = pop_assembly
+	icon = building_automation_2
+
+	building_sets = {
+		generator
+	}
+
+	potential = {
+		owner = { is_wilderness_empire = no }
+	}
+
+	allow = {
+		hidden_trigger = {
+			OR = {
+				owner = { is_ai = no }
+				NAND = {
+					free_district_slots = 0
+					free_building_slots <= 1
+					free_housing <= 0
+					free_jobs <= 0
+				}
+			}
+		}
+	}
+
+	destroy_trigger = {
+		owner = {
+			is_wilderness_empire = yes
+		}
+	}
+
+	planet_modifier = {
+		district_automated_workforce = 0.5
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b3_minerals
+		}
+		upkeep = {
+			energy = @b4_upkeep
+			mult = value:generator_districts_value
+		}
+	}
+
+	prerequisites = {
+		tech_construction_templates
+	}
+
+	show_tech_unlock_if = {
+		always = no
+	}
+
+	triggered_desc = {
+		text = automation_2_tooltip
+	}
+	upgrades = {
+		building_avb_automation_generator_3
+	}
+}
+building_avb_automation_generator_3 = {
+	base_buildtime = @avb_b3_time
+	can_build = no
+	category = pop_assembly
+	icon = building_avb_automation_3
+
+	building_sets = {
+		generator
+	}
+
+	potential = {
+		owner = { is_wilderness_empire = no }
+	}
+
+	allow = {
+		hidden_trigger = {
+			OR = {
+				owner = { is_ai = no }
+				NAND = {
+					free_district_slots = 0
+					free_building_slots <= 1
+					free_housing <= 0
+					free_jobs <= 0
+				}
+			}
+		}
+	}
+
+	destroy_trigger = {
+		owner = {
+			is_wilderness_empire = yes
+		}
+	}
+
+	planet_modifier = {
+		district_automated_workforce = 0.75
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_b4_minerals
+			rare_crystals = @avb_b3_rare_cost
+			exotic_gases = @avb_b3_rare_cost
+			volatile_motes = @avb_b3_rare_cost
+		}
+		upkeep = {
+			energy = @b4_upkeep
+			rare_crystals = 0.1
+			exotic_gases = 0.1
+			volatile_motes = 0.1
+			mult = value:generator_districts_value
+		}
+	}
+
+	prerequisites = {
+		tech_avb_construction_templates_3
+	}
+
+	show_tech_unlock_if = {
+		always = no
+	}
+
+	triggered_desc = {
+		text = avb_automation_3_tooltip
+	}
+	upgrades = {
+		building_avb_automation_generator_4
+	}
+}
+building_avb_automation_generator_4 = {
+	base_buildtime = @avb_b4_time
+	can_build = no
+	category = pop_assembly
+	icon = building_avb_automation_4
+
+	building_sets = {
+		generator
+	}
+
+	potential = {
+		owner = { is_wilderness_empire = no }
+	}
+
+	allow = {
+		hidden_trigger = {
+			OR = {
+				owner = { is_ai = no }
+				NAND = {
+					free_district_slots = 0
+					free_building_slots <= 1
+					free_housing <= 0
+					free_jobs <= 0
+				}
+			}
+		}
+	}
+
+	destroy_trigger = {
+		owner = {
+			is_wilderness_empire = yes
+		}
+	}
+
+	planet_modifier = {
+		district_automated_workforce = 1
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_b5_minerals
+			sr_dark_matter = @avb_b4_rare_cost
+		}
+		upkeep = {
+			energy = @b4_upkeep
+			sr_dark_matter = 0.1
+			mult = value:generator_districts_value
+		}
+	}
+
+	prerequisites = {
+		tech_avb_construction_templates_4
+	}
+
+	show_tech_unlock_if = {
+		always = no
+	}
+
+	triggered_desc = {
+		text = avb_automation_4_tooltip
+	}
+}
+building_automation_mining_2 = {
+	base_buildtime = @b2_time
+	can_build = no
+	category = pop_assembly
+	icon = building_automation_2
+
+	building_sets = {
+		mining
+	}
+
+	potential = {
+		owner = { is_wilderness_empire = no }
+	}
+
+	allow = {
+		hidden_trigger = {
+			OR = {
+				owner = { is_ai = no }
+				NAND = {
+					free_district_slots = 0
+					free_building_slots <= 1
+					free_housing <= 0
+					free_jobs <= 0
+				}
+			}
+		}
+	}
+
+	destroy_trigger = {
+		owner = {
+			is_wilderness_empire = yes
+		}
+	}
+
+	planet_modifier = {
+		district_automated_workforce = 0.5
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b3_minerals
+		}
+		upkeep = {
+			energy = @b4_upkeep
+			mult = value:mining_districts_value
+		}
+	}
+
+	prerequisites = {
+		tech_construction_templates
+	}
+
+	show_tech_unlock_if = {
+		always = no
+	}
+
+	triggered_desc = {
+		text = automation_2_tooltip
+	}
+	upgrades = {
+		building_avb_automation_mining_3
+	}
+}
+building_avb_automation_mining_3 = {
+	base_buildtime = @avb_b3_time
+	can_build = no
+	category = pop_assembly
+	icon = building_avb_automation_3
+
+	building_sets = {
+		mining
+	}
+
+	potential = {
+		owner = { is_wilderness_empire = no }
+	}
+
+	allow = {
+		hidden_trigger = {
+			OR = {
+				owner = { is_ai = no }
+				NAND = {
+					free_district_slots = 0
+					free_building_slots <= 1
+					free_housing <= 0
+					free_jobs <= 0
+				}
+			}
+		}
+	}
+
+	destroy_trigger = {
+		owner = {
+			is_wilderness_empire = yes
+		}
+	}
+
+	planet_modifier = {
+		district_automated_workforce = 0.75
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_b4_minerals
+			rare_crystals = @avb_b3_rare_cost
+			exotic_gases = @avb_b3_rare_cost
+			volatile_motes = @avb_b3_rare_cost
+		}
+		upkeep = {
+			energy = @b4_upkeep
+			rare_crystals = 0.1
+			exotic_gases = 0.1
+			volatile_motes = 0.1
+			mult = value:mining_districts_value
+		}
+	}
+
+	prerequisites = {
+		tech_avb_construction_templates_3
+	}
+
+	show_tech_unlock_if = {
+		always = no
+	}
+
+	triggered_desc = {
+		text = avb_automation_3_tooltip
+	}
+	upgrades = {
+		building_avb_automation_mining_4
+	}
+}
+building_avb_automation_mining_4 = {
+	base_buildtime = @avb_b4_time
+	can_build = no
+	category = pop_assembly
+	icon = building_avb_automation_4
+
+	building_sets = {
+		mining
+	}
+
+	potential = {
+		owner = { is_wilderness_empire = no }
+	}
+
+	allow = {
+		hidden_trigger = {
+			OR = {
+				owner = { is_ai = no }
+				NAND = {
+					free_district_slots = 0
+					free_building_slots <= 1
+					free_housing <= 0
+					free_jobs <= 0
+				}
+			}
+		}
+	}
+
+	destroy_trigger = {
+		owner = {
+			is_wilderness_empire = yes
+		}
+	}
+
+	planet_modifier = {
+		district_automated_workforce = 1
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_b5_minerals
+			sr_dark_matter = @avb_b4_rare_cost
+		}
+		upkeep = {
+			energy = @b4_upkeep
+			sr_dark_matter = 0.1
+			mult = value:mining_districts_value
+		}
+	}
+
+	prerequisites = {
+		tech_avb_construction_templates_4
+	}
+
+	show_tech_unlock_if = {
+		always = no
+	}
+
+	triggered_desc = {
+		text = avb_automation_4_tooltip
+	}
+}
+building_automation_farming_2 = {
+	base_buildtime = @b2_time
+	can_build = no
+	category = pop_assembly
+	icon = building_automation_2
+
+	building_sets = {
+		farming
+	}
+
+	potential = {
+		owner = { is_wilderness_empire = no }
+	}
+
+	allow = {
+		hidden_trigger = {
+			OR = {
+				owner = { is_ai = no }
+				NAND = {
+					free_district_slots = 0
+					free_building_slots <= 1
+					free_housing <= 0
+					free_jobs <= 0
+				}
+			}
+		}
+	}
+
+	destroy_trigger = {
+		owner = {
+			is_wilderness_empire = yes
+		}
+	}
+
+	planet_modifier = {
+		district_automated_workforce = 0.5
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b3_minerals
+		}
+		upkeep = {
+			energy = @b4_upkeep
+			mult = value:farming_districts_value
+		}
+	}
+
+	prerequisites = {
+		tech_construction_templates
+	}
+
+	show_tech_unlock_if = {
+		always = no
+	}
+
+	triggered_desc = {
+		text = automation_2_tooltip
+	}
+	upgrades = {
+		building_avb_automation_farming_3
+	}
+}
+building_avb_automation_farming_3 = {
+	base_buildtime = @avb_b3_time
+	can_build = no
+	category = pop_assembly
+	icon = building_avb_automation_3
+
+	building_sets = {
+		farming
+	}
+
+	potential = {
+		owner = { is_wilderness_empire = no }
+	}
+
+	allow = {
+		hidden_trigger = {
+			OR = {
+				owner = { is_ai = no }
+				NAND = {
+					free_district_slots = 0
+					free_building_slots <= 1
+					free_housing <= 0
+					free_jobs <= 0
+				}
+			}
+		}
+	}
+
+	destroy_trigger = {
+		owner = {
+			is_wilderness_empire = yes
+		}
+	}
+
+	planet_modifier = {
+		district_automated_workforce = 0.75
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_b4_minerals
+			rare_crystals = @avb_b3_rare_cost
+			exotic_gases = @avb_b3_rare_cost
+			volatile_motes = @avb_b3_rare_cost
+		}
+		upkeep = {
+			energy = @b4_upkeep
+			rare_crystals = 0.1
+			exotic_gases = 0.1
+			volatile_motes = 0.1
+			mult = value:farming_districts_value
+		}
+	}
+
+	prerequisites = {
+		tech_avb_construction_templates_3
+	}
+
+	show_tech_unlock_if = {
+		always = no
+	}
+
+	triggered_desc = {
+		text = avb_automation_3_tooltip
+	}
+	upgrades = {
+		building_avb_automation_farming_4
+	}
+}
+building_avb_automation_farming_4 = {
+	base_buildtime = @avb_b4_time
+	can_build = no
+	category = pop_assembly
+	icon = building_avb_automation_4
+
+	building_sets = {
+		farming
+	}
+
+	potential = {
+		owner = { is_wilderness_empire = no }
+	}
+
+	allow = {
+		hidden_trigger = {
+			OR = {
+				owner = { is_ai = no }
+				NAND = {
+					free_district_slots = 0
+					free_building_slots <= 1
+					free_housing <= 0
+					free_jobs <= 0
+				}
+			}
+		}
+	}
+
+	destroy_trigger = {
+		owner = {
+			is_wilderness_empire = yes
+		}
+	}
+
+	planet_modifier = {
+		district_automated_workforce = 1
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_b5_minerals
+			sr_dark_matter = @avb_b4_rare_cost
+		}
+		upkeep = {
+			energy = @b4_upkeep
+			sr_dark_matter = 0.1
+			mult = value:farming_districts_value
+		}
+	}
+
+	prerequisites = {
+		tech_avb_construction_templates_4
+	}
+
+	show_tech_unlock_if = {
+		always = no
+	}
+
+	triggered_desc = {
+		text = avb_automation_4_tooltip
+	}
+}
