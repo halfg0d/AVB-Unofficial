@@ -6,22 +6,42 @@
 ###############
 # COMMERCIALS
 ###############
-building_commercial_megaplex = {
-	base_buildtime = @b2_time
-	can_build = no
-	planet_limit = 1
+building_commercial_zone = {
+	base_buildtime = @b1_time
+	exempt_from_ai_planet_specialization = no
 	category = trade
 
 	building_sets = {
+		urban
 		trade
 	}
+
 	potential = {
 		exists = owner
-		owner = { is_regular_empire = yes }
+		owner = {
+			is_regular_empire = yes
+		}
 		NOR = {
 			has_modifier = slave_colony
 			has_modifier = penal_colony
 		}
+		NOT = { has_building = building_low_tech_capital }
+		OR = {
+			has_planet_flag = ignore_ai_building_limitations
+			owner = {
+				is_ai = no					
+			}
+			
+			# AI is allowed to build one of these unless they're a megacorp or this is a trade planet
+			owner = {
+				is_megacorp = yes	
+			}
+			has_any_trade_zone = yes
+			NOR = {
+				has_building = building_commercial_zone
+				has_building = building_commercial_megaplex
+			}
+		}	
 	}
 
 	destroy_trigger = {
@@ -32,17 +52,21 @@ building_commercial_megaplex = {
 			has_modifier = penal_colony
 		}
 	}
-	allow = {}
+
+	allow = {
+	}
+
+	convert_to = {
+		building_maintenance_depot
+	}
 
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @b2_minerals
-			rare_crystals = @b2_rare_cost
+			minerals = @b1_minerals
 		}
 		upkeep = {
-			energy = @b2_upkeep
-			rare_crystals = @b2_rare_upkeep
+			energy = @b1_upkeep
 		}
 	}
 
@@ -51,32 +75,17 @@ building_commercial_megaplex = {
 		AMOUNT = @building_static_jobs
 	}
 
-	planet_modifier = {
-		planet_traders_upkeep_mult = -0.20
-	}
 	prerequisites = {
-		"tech_interstellar_economics"
+		"tech_interplanetary_commerce"
 	}
 
 	show_tech_unlock_if = {
 		is_regular_empire = yes
 	}
+  upgrades = {
+    building_avb_commercial_3 
+  }
 
-	ai_resource_production = {
-		energy = 6
-		trigger = {
-			OR = {
-				num_unemployed >= 1000
-				num_assigned_jobs = {
-					job = servant
-					value >= 1000
-				}
-			}
-		}
-	}
-	upgrades = {
-		"building_avb_commercial_3"
-	}
 }
 
 building_avb_commercial_3 = {
@@ -121,11 +130,7 @@ building_avb_commercial_3 = {
 
 	inline_script = {
 		script = jobs/trader_add
-		AMOUNT = 400
-	}
-
-	planet_modifier = {
-		planet_traders_upkeep_mult = -0.30
+		AMOUNT = 600
 	}
 	prerequisites = {
 		"tech_avb_interstellar_economics_2"
@@ -193,11 +198,7 @@ building_avb_commercial_4 = {
 
 	inline_script = {
 		script = jobs/trader_add
-		AMOUNT = 600
-	}
-
-	planet_modifier = {
-		planet_traders_upkeep_mult = -0.45
+		AMOUNT = 800
 	}
 	prerequisites = {
 		"tech_avb_interstellar_economics_3"
@@ -265,11 +266,7 @@ building_avb_commercial_5 = {
 
 	inline_script = {
 		script = jobs/trader_add
-		AMOUNT = 800
-	}
-
-	planet_modifier = {
-		planet_traders_upkeep_mult = -0.675
+		AMOUNT = 1000
 	}
 	prerequisites = {
 		"tech_avb_interstellar_economics_4"
@@ -433,7 +430,7 @@ building_avb_galactic_stock_exchange_2 = {
 
 	inline_script = {
 		script = jobs/trader_add
-		AMOUNT = 400
+		AMOUNT = 600
 	}
 	resources = {
 		category = planet_buildings
