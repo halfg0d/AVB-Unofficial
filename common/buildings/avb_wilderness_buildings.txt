@@ -1,0 +1,681 @@
+
+@avb_b1_biomass = 250
+@avb_b2_biomass = 500
+@avb_b3_biomass = 900
+@avb_b4_biomass = 1700
+
+@avb_buildtime_2 = 480
+@avb_buildtime_3 = 720
+@avb_buildtime_4 = 960
+@avb_buildtime_5 = 1200
+@avb_buildtime_6 = 1440
+@avb_buildtime_7 = 1680
+
+building_avb_wilderness_capital_5 = {
+	icon = "avb_capital_wilderness_5"
+	ruined_icon = "wilderness_building_ruined"
+	base_buildtime = @avb_buildtime_5
+	capital = yes
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	position_priority = 0
+	capital_tier = 5
+
+	category = government
+
+	building_sets = {
+		government
+	}
+
+	potential = {
+		exists = owner
+		owner = { is_wilderness_empire = yes }
+	}
+
+	allow = {
+		num_free_districts = {
+			type = any
+			value = 0
+		}
+	}
+
+	prerequisites = {
+		"tech_galactic_administration"
+	}
+	show_tech_unlock_if = {
+		is_wilderness_empire = yes
+	}
+
+	convert_to = {
+		building_hive_major_capital
+		building_machine_major_capital
+		building_major_capital
+		building_resort_major_capital
+		building_slave_major_capital
+		building_ancient_control_center
+		building_ancient_palace
+		building_system_capital
+	}
+
+	planet_modifier = {
+		planet_housing_add = 2500
+		planet_amenities_add = 2500
+		job_coordinator_add = 400
+		job_logistics_drone_add = 600
+		job_patrol_drone_add = 400
+		planet_defense_armies_add = @tier_5_capital_defense_armies
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			food = @avb_b4_minerals
+			biomass = @avb_b4_biomass
+		}
+		upkeep = {
+			food = @avb_b5_upkeep
+		}
+	}
+
+	inline_script = {
+		script = buildings/on_all_capital_buildings
+	}
+
+	inline_script = {
+		script = buildings/on_all_wilderness_buildings_districts
+	}
+
+	# 'Improved Production' Technology effects:
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_capital_productivity_1 }
+		}
+		modifier = {
+			pop_bonus_workforce_mult = 0.1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_capital_productivity_2 }
+		}
+		modifier = {
+			pop_bonus_workforce_mult = 0.1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_capital_productivity_3 }
+		}
+		modifier = {
+			pop_bonus_workforce_mult = 0.1
+		}
+	}
+  upgrades = {
+    building_avb_wilderness_capital_6
+  }
+
+	ai_estimate_without_unemployment = yes
+}
+building_avb_wilderness_capital_6 = {
+	icon = "avb_capital_wilderness_6"
+	ruined_icon = "wilderness_building_ruined"
+	base_buildtime = @avb_buildtime_6
+	capital = yes
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	position_priority = 0
+	capital_tier = 6
+
+	category = government
+
+	building_sets = {
+		government
+	}
+
+	potential = {
+		exists = owner
+		owner = { is_wilderness_empire = yes }
+	}
+
+	allow = {
+		num_free_districts = {
+			type = any
+			value = 0
+		}
+	}
+
+	prerequisites = {
+		"tech_galactic_administration"
+	}
+	show_tech_unlock_if = {
+		is_wilderness_empire = yes
+	}
+
+	convert_to = {
+		building_hive_major_capital
+		building_machine_major_capital
+		building_major_capital
+		building_resort_major_capital
+		building_slave_major_capital
+		building_ancient_control_center
+		building_ancient_palace
+		building_system_capital
+	}
+
+	planet_modifier = {
+		planet_housing_add = 3000
+		planet_amenities_add = 3000
+		job_coordinator_add = 500
+		job_logistics_drone_add = 700
+		job_patrol_drone_add = 500
+		planet_defense_armies_add = @tier_6_capital_defense_armies
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			food = @avb_b5_minerals
+			biomass = @avb_b5_biomass
+		}
+		upkeep = {
+			food = @avb_b6_upkeep
+		}
+	}
+
+	inline_script = {
+		script = buildings/on_all_capital_buildings
+	}
+
+	inline_script = {
+		script = buildings/on_all_wilderness_buildings_districts
+	}
+
+	# 'Improved Production' Technology effects:
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_capital_productivity_1 }
+		}
+		modifier = {
+			pop_bonus_workforce_mult = 0.1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_capital_productivity_2 }
+		}
+		modifier = {
+			pop_bonus_workforce_mult = 0.1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_capital_productivity_3 }
+		}
+		modifier = {
+			pop_bonus_workforce_mult = 0.1
+		}
+	}
+  upgrades = {
+    building_avb_wilderness_capital_6
+  }
+	ai_estimate_without_unemployment = yes
+}
+# growing pops
+building_avb_cradle_of_rebirth_2 = {
+	icon = "avb_seed_cradle_3"
+	category = government
+	base_buildtime = @avb_b2_time
+	can_build = yes
+	can_demolish = yes
+	can_be_ruined = yes
+
+	building_sets = {
+		government
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			is_wilderness_empire = yes
+		}
+	}
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			is_wilderness_empire = no
+		}
+	}
+
+	inline_script = {
+		script = jobs/spawning_drone_add
+		AMOUNT = 200
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			food = @avb_b2_minerals
+			biomass = @avb_b4_biomass
+		}
+		upkeep = {
+			food = @avb_b2_upkeep
+		}
+	}
+
+	inline_script = {
+		script = buildings/on_all_wilderness_buildings_districts
+	}
+
+	ai_estimate_without_unemployment = yes
+	ai_weight_coefficient = 1.2
+	additional_ai_weight = 200
+}
+building_avb_tendril_cradle_5 = {
+	icon = "avb_tendril_cradle_building_5"
+	ruined_icon = "wilderness_building_ruined"
+	base_buildtime = @avb_buildtime_6
+	category = trade
+	can_build = no
+  can_demolish = yes
+
+	building_sets = {
+		government
+		trade
+	}
+
+	planet_limit = 1
+	potential = {
+		exists = owner
+		owner = { is_wilderness_empire = yes }
+	}
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+	destroy_trigger = {
+		exists = owner
+		owner = { is_wilderness_empire = no }
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_b5_minerals
+			biomass = @avb_b5_biomass
+			rare_crystals = @avb_b4_rare_cost
+		}
+		upkeep = {
+			minerals = @avb_b5_upkeep
+			rare_crystals = @avb_b4_rare_upkeep
+		}
+	}
+
+	planet_modifier = {
+		job_logistics_drone_add = 600
+		planet_pops_trade_produces_mult = 0.45
+	}
+
+	inline_script = {
+		script = buildings/on_all_wilderness_buildings_districts
+	}
+
+	ai_estimate_without_unemployment = yes
+}
+building_avb_brain_node_5 = {
+	icon = "avb_brain_node_5"
+	ruined_icon = "wilderness_building_ruined"
+	base_buildtime = @avb_buildtime_6
+	category = research
+	can_build = no
+  can_demolish = yes
+
+	building_sets = {
+		government
+		research
+	}
+
+	planet_limit = 1
+	potential = {
+		exists = owner
+		owner = { is_wilderness_empire = yes }
+	}
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+	destroy_trigger = {
+		exists = owner
+		owner = { is_wilderness_empire = no }
+	}
+
+	resources = {
+		category = planet_research_buildings
+		cost = {
+			minerals = @avb_b5_minerals
+			biomass = @avb_b5_biomass
+			exotic_gases = @avb_b4_rare_cost
+		}
+		upkeep = {
+			energy = @avb_b5_upkeep
+			exotic_gases = @avb_b4_rare_upkeep
+		}
+		upkeep = {
+			trigger = { has_planet_flag = has_science_ministry }
+			energy = 3
+			food = 1
+		}
+	}
+	prerequisites = {
+		"tech_avb_basic_science_lab_4"
+	}
+	planet_modifier = {
+		planet_physicists_physics_research_produces_add = 1.25
+		planet_biologists_society_research_produces_add = 1.25
+		planet_engineers_engineering_research_produces_add =1.25
+		pop_calculator_physicist_bonus_workforce_mult = 0.2
+		pop_calculator_biologist_bonus_workforce_mult = 0.2
+		pop_calculator_engineer_bonus_workforce_mult = 0.2
+	}
+
+	inline_script = {
+		script = jobs/researchers_add
+		AMOUNT = 240
+	}
+
+	inline_script = {
+		script = buildings/on_all_wilderness_buildings_districts
+	}
+  upgrades = {
+    building_avb_brain_node_6
+  }
+
+	ai_estimate_without_unemployment = yes
+
+	show_tech_unlock_if = {
+		is_wilderness_empire = yes
+	}
+}
+building_avb_brain_node_6 = {
+	icon = "avb_brain_node_6"
+	ruined_icon = "wilderness_building_ruined"
+	base_buildtime = @avb_buildtime_7
+	category = research
+	can_build = no
+  can_demolish = yes
+
+	building_sets = {
+		government
+		research
+	}
+
+	planet_limit = 1
+	potential = {
+		exists = owner
+		owner = { is_wilderness_empire = yes }
+	}
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+	destroy_trigger = {
+		exists = owner
+		owner = { is_wilderness_empire = no }
+	}
+
+	resources = {
+		category = planet_research_buildings
+		cost = {
+			minerals = @avb_b6_minerals
+			biomass = @avb_b6_biomass
+			exotic_gases = @avb_b5_rare_cost
+		}
+		upkeep = {
+			energy = @avb_b6_upkeep
+			exotic_gases = @avb_b5_rare_upkeep
+		}
+		upkeep = {
+			trigger = { has_planet_flag = has_science_ministry }
+			energy = 3
+			food = 1
+		}
+	}
+	prerequisites = {
+		"tech_avb_basic_science_lab_5"
+	}
+	planet_modifier = {
+		planet_physicists_physics_research_produces_add = 1.25
+		planet_biologists_society_research_produces_add = 1.25
+		planet_engineers_engineering_research_produces_add =1.25
+		pop_calculator_physicist_bonus_workforce_mult = 0.2
+		pop_calculator_biologist_bonus_workforce_mult = 0.2
+		pop_calculator_engineer_bonus_workforce_mult = 0.2
+	}
+
+	inline_script = {
+		script = jobs/researchers_add
+		AMOUNT = 300
+	}
+
+	inline_script = {
+		script = buildings/on_all_wilderness_buildings_districts
+	}
+
+	ai_estimate_without_unemployment = yes
+
+	show_tech_unlock_if = {
+		is_wilderness_empire = yes
+	}
+}
+building_avb_commensal_clearing_5 = {
+#	icon = "building_commensal_clearing_5"
+	ruined_icon = "wilderness_building_ruined"
+	base_buildtime = @avb_buildtime_5
+	category = unity
+	can_build = no
+    can_demolish = yes
+
+	building_sets = {
+		government
+		unity
+	}
+
+	planet_limit = 1
+	potential = {
+		exists = owner
+		owner = { is_wilderness_empire = yes }
+	}
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+	destroy_trigger = {
+		exists = owner
+		owner = { is_wilderness_empire = no }
+	}
+	convert_to = {
+		building_bureaucratic_3
+		building_sacred_nexus
+		building_hive_confluence
+		building_system_conflux
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_b4_minerals
+			biomass = @avb_b5_biomass
+			rare_crystals = @avb_b4_rare_cost
+		}
+		upkeep = {
+			energy = @avb_b4_upkeep
+			rare_crystals = @avb_b4_rare_upkeep
+		}
+	}
+	prerequisites = {
+		tech_avb_wilderness_confluence_2
+	}
+
+	inline_script = {
+		script = jobs/unity_jobs_add
+		AMOUNT = 600
+	}
+
+	planet_modifier = {
+		planet_bureaucrats_unity_produces_add = 1.25
+		pop_bureaucrat_bonus_workforce_mult = 0.2
+	}
+
+	inline_script = {
+		script = buildings/on_all_wilderness_buildings_districts
+	}
+  upgrades = {
+    building_avb_commensal_clearing_6
+  }
+
+	ai_estimate_without_unemployment = yes
+}
+building_avb_commensal_clearing_6 = {
+#	icon = "building_commensal_clearing_5"
+	ruined_icon = "wilderness_building_ruined"
+	base_buildtime = @avb_buildtime_6
+	category = unity
+	can_build = no
+    can_demolish = yes
+
+	building_sets = {
+		government
+		unity
+	}
+
+	planet_limit = 1
+	potential = {
+		exists = owner
+		owner = { is_wilderness_empire = yes }
+	}
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+	destroy_trigger = {
+		exists = owner
+		owner = { is_wilderness_empire = no }
+	}
+	convert_to = {
+		building_bureaucratic_3
+		building_sacred_nexus
+		building_hive_confluence
+		building_system_conflux
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_b5_minerals
+			biomass = @avb_b6_biomass
+			rare_crystals = @avb_b5_rare_cost
+		}
+		upkeep = {
+			energy = @avb_b5_upkeep
+			rare_crystals = @avb_b5_rare_upkeep
+		}
+	}
+	prerequisites = {
+		tech_avb_wilderness_confluence_3
+	}
+
+	inline_script = {
+		script = jobs/unity_jobs_add
+		AMOUNT = 800
+	}
+
+	planet_modifier = {
+		planet_bureaucrats_unity_produces_add = 1.25
+		pop_bureaucrat_bonus_workforce_mult = 0.2
+	}
+
+	inline_script = {
+		script = buildings/on_all_wilderness_buildings_districts
+	}
+	ai_estimate_without_unemployment = yes
+}
+building_avb_massive_growth_5 = {
+#	icon = "massive_growth_5"
+	ruined_icon = "wilderness_building_ruined"
+	base_buildtime = @avb_buildtime_4
+	category = resource
+	can_build = no
+    can_demolish = yes
+
+	building_sets = {
+		farming
+	}
+
+	planet_limit = 1
+	potential = {
+		exists = owner
+		owner = { is_wilderness_empire = yes }
+	}
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+	destroy_trigger = {
+		OR = {
+			AND = {
+				exists = owner
+				OR = {
+					owner = {
+						is_ai = yes
+						country_uses_food = no
+						is_wilderness_empire = no
+					}
+					AND = {
+						owner = { is_ai = yes }
+						has_any_farming_district_or_buildings = no
+					}
+				}
+			}
+			is_planet_class = pc_machine
+			has_modifier = resort_colony
+		}
+	}
+	prerequisites = {
+		"tech_avb_food_processing_3"
+	}
+	show_tech_unlock_if = {
+		is_wilderness_empire = yes
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_b5_minerals
+			exotic_gases = @avb_b4_rare_cost
+			biomass = @avb_b5_biomass
+		}
+		upkeep = {
+			minerals = @avb_b5_upkeep
+			exotic_gases = @avb_b4_rare_upkeep
+		}
+	}
+
+	planet_modifier = {
+		planet_farmers_food_produces_add = 3
+		pop_agri_drone_bonus_workforce_mult = 0.2
+	}
+
+	inline_script = {
+		script = jobs/farmers_add
+		AMOUNT = 600
+	}
+
+	inline_script = {
+		script = buildings/on_all_wilderness_buildings_districts
+	}
+
+	ai_estimate_without_unemployment = yes
+}
