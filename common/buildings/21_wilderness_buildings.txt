@@ -639,6 +639,9 @@ building_bioelectric_stimulator_4 = { # substitute for 'building_energy_nexus'
 		script = buildings/on_all_wilderness_buildings_districts
 	}
 
+  upgrades = {
+    building_avb_bioelectric_stimulator_5
+  }
 	ai_estimate_without_unemployment = yes
 
 }
@@ -706,6 +709,9 @@ building_churning_tunnels_4 = { # substitute for 'building_mineral_purification_
 		"tech_mineral_purification_2"
 	}
 
+  upgrades = {
+    building_avb_churning_tunnels_5
+  }
 	ai_estimate_without_unemployment = yes
 
 	show_tech_unlock_if = {
@@ -778,6 +784,9 @@ building_natural_furnace_3 = { # substitute for 'building_foundry_3'
 		script = buildings/on_all_wilderness_buildings_districts
 	}
 
+  upgrades = {
+    building_avb_natural_furnace_4
+  }
 	ai_estimate_without_unemployment = yes
 }
 
@@ -854,6 +863,9 @@ building_avatar_chamber_4 = { # substitute for 'building_sensorium_3'
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
+  upgrade = {
+    building_avb_avatar_chamber_6
+  }
 
 	ai_estimate_without_unemployment = yes
 }
@@ -900,6 +912,9 @@ building_mote_aggravator = { # substitute for 'building_chemical_plant'
 		script = buildings/on_all_wilderness_buildings_districts
 	}
 
+  upgrades = {
+    building_avb_mote_aggravator_2
+  }
 	ai_estimate_without_unemployment = yes
 }
 
@@ -944,6 +959,9 @@ building_churning_stomach = { # substitute for 'building_refinery'
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
+  upgrades = {
+    building_avb_churning_stomach_2
+  }
 
 	ai_estimate_without_unemployment = yes
 }
@@ -990,6 +1008,9 @@ building_crystal_growth = { # substitute for 'building_crystal_plant'
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
+  upgrades = {
+    building_avb_crystal_growth_2
+  }
 
 	ai_estimate_without_unemployment = yes
 }
@@ -1047,6 +1068,9 @@ building_planetary_carapace_2 = { # substitute for 'building_fortress'
 		script = buildings/on_all_wilderness_buildings_districts
 	}
 
+  upgrades = {
+    building_avb_planetary_carapace_3
+  }
 	ai_estimate_without_unemployment = yes
 }
 
@@ -1130,6 +1154,9 @@ building_ozone_thickener = {
 			}
 		}
 	}
+  upgrades = {
+    building_avb_ozone_thicker_2
+  }
 
 	ai_estimate_without_unemployment = yes
 }
@@ -1211,6 +1238,9 @@ building_subterranean_cache = { # substitute for 'building_resource_silo'
 	show_tech_unlock_if = {
 		is_wilderness_empire = yes
 	}
+  upgrades = {
+    building_avb_subterranean_cache_2
+  }
 
 	ai_estimate_without_unemployment = yes
 }
