@@ -40,21 +40,21 @@
 @avb_b3_time = 600
 @avb_b3_minerals = 1000
 @avb_b3_upkeep = 6
-@avb_b3_jobs = 6
+@avb_b3_jobs = 600
 @avb_b3_rare_cost = 150
 @avb_b3_rare_upkeep = 4
 
 @avb_b4_time = 1200
 @avb_b4_minerals = 2000
 @avb_b4_upkeep = 12
-@avb_b4_jobs = 8
+@avb_b4_jobs = 800
 @avb_b4_rare_cost = 250
 @avb_b4_rare_upkeep = 6
 
 @avb_b5_time = 2400
 @avb_b5_minerals = 4000
 @avb_b5_upkeep = 18
-@avb_b5_jobs = 10
+@avb_b5_jobs = 1000
 @avb_b5_rare_cost = 350
 @avb_b5_rare_upkeep = 8
 
@@ -63,7 +63,7 @@
 @avb_b6_rare_cost = 550
 @avb_b6_rare_upkeep = 11
 @avb_b6_upkeep = 26
-@avb_b6_jobs = 12
+@avb_b6_jobs = 1200
 
 @avb_fe_sr_cost = 200
 
