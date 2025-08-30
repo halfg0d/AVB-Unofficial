@@ -349,7 +349,7 @@ building_avb_betharian_power_plant_2 = {
 	inline_script = {
 		script = jobs/miners_add
 		AMOUNT = 600
-	
+  }	
 	prerequisites = {
 		"tech_avb_betharian_power_plant_2"
 	}

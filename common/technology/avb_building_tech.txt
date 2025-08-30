@@ -330,28 +330,10 @@ tech_avb_psi_corps_2 = {
 	}
 	
 	weight_modifier = {
-		factor = 2
-		modifier = {
-			factor = 2
-			is_spiritualist = yes
-		}
-		modifier = {
-			factor = 2.5
-			is_fanatic_spiritualist = yes
-		}
 	}
 	
 	ai_weight = {
-		factor = 6
-		modifier = {
-			factor = 2
-			is_spiritualist = yes
-		}
-		modifier = {
-			factor = 2.5
-			is_fanatic_spiritualist = yes
-		}
-	}
+  }
 }
 
 tech_avb_psi_corps_3 = {
@@ -370,27 +352,9 @@ tech_avb_psi_corps_3 = {
 	}
 	
 	weight_modifier = {
-		factor = 2
-		modifier = {
-			factor = 2
-			is_spiritualist = yes
-		}
-		modifier = {
-			factor = 2.5
-			is_fanatic_spiritualist = yes
-		}
 	}
 	
 	ai_weight = {
-		factor = 6
-		modifier = {
-			factor = 2
-			is_spiritualist = yes
-		}
-		modifier = {
-			factor = 2.5
-			is_fanatic_spiritualist = yes
-		}
 	}
 }
 
@@ -1014,18 +978,9 @@ tech_avb_alloys_3 = {
 		always = yes
 	}
 	weight_modifier = {
-		factor = 2
-		modifier = { # No tech without builded previous cbuilding
-			factor = 0
-			NOT = {
-				any_owned_planet = { has_building = building_foundry_3 }
-			}
-		}
-		inline_script = "tech_weights/avb_economy_weight"
 	}
 	
 	ai_weight = {
-		factor = 4
 	}
 }
 
@@ -1041,18 +996,9 @@ tech_avb_alloys_4 = {
 		always = yes
 	}
 	weight_modifier = {
-		factor = 2
-		modifier = { # No tech without builded previous cbuilding
-			factor = 0
-			NOT = {
-				any_owned_planet = { has_building = building_avb_foundry_4 }
-			}
-		}
-		inline_script = "tech_weights/avb_economy_weight"
 	}
 	
 	ai_weight = {
-		factor = 4
 	}
 }
 
@@ -1068,18 +1014,9 @@ tech_avb_alloys_5 = {
 		always = yes
 	}
 	weight_modifier = {
-		factor = 2
-		modifier = { # No tech without builded previous cbuilding
-			factor = 0
-			NOT = {
-				any_owned_planet = { has_building = building_avb_foundry_5 }
-			}
-		}
-		inline_script = "tech_weights/avb_economy_weight"
 	}
 	
 	ai_weight = {
-		factor = 4
 	}
 }
 
@@ -1486,15 +1423,6 @@ tech_avb_basic_science_lab_4 = {
 		always = yes
 	}
 	weight_modifier = {
-		factor = 2
-		modifier = {
-			factor = 2
-			is_materialist = yes
-		}
-		modifier = {
-			factor = 2.5
-			is_fanatic_materialist = yes
-		}
 		modifier = {
 			factor = 1.5
 			has_civic = civic_technocracy
@@ -1502,7 +1430,6 @@ tech_avb_basic_science_lab_4 = {
 	}
 	
 	ai_weight = {
-		factor = 4
 	}
 }
 
@@ -1518,15 +1445,6 @@ tech_avb_basic_science_lab_5 = {
 		always = yes
 	}
 	weight_modifier = {
-		factor = 2
-		modifier = {
-			factor = 2
-			is_materialist = yes
-		}
-		modifier = {
-			factor = 2.5
-			is_fanatic_materialist = yes
-		}
 		modifier = {
 			factor = 1.5
 			has_civic = civic_technocracy
@@ -1534,7 +1452,6 @@ tech_avb_basic_science_lab_5 = {
 	}
 	
 	ai_weight = {
-		factor = 4
 	}
 }
 
@@ -1550,15 +1467,6 @@ tech_avb_basic_science_lab_6 = {
 		always = yes
 	}
 	weight_modifier = {
-		factor = 2
-		modifier = {
-			factor = 2
-			is_materialist = yes
-		}
-		modifier = {
-			factor = 2.5
-			is_fanatic_materialist = yes
-		}
 		modifier = {
 			factor = 1.5
 			has_civic = civic_technocracy
@@ -1566,7 +1474,6 @@ tech_avb_basic_science_lab_6 = {
 	}
 	
 	ai_weight = {
-		factor = 4
 	}
 }
 
@@ -1582,15 +1489,6 @@ tech_avb_global_research_initiative_2 = {
 		always = yes
 	}
 	weight_modifier = {
-		factor = 1.5
-		modifier = {
-			factor = 2
-			is_materialist = yes
-		}
-		modifier = {
-			factor = 2.5
-			is_fanatic_materialist = yes
-		}
 		modifier = {
 			factor = 1.5
 			has_civic = civic_technocracy
@@ -1598,7 +1496,6 @@ tech_avb_global_research_initiative_2 = {
 	}
 	
 	ai_weight = {
-		factor = 4
 	}
 }
 
@@ -2270,12 +2167,9 @@ tech_avb_military_academy_2 = {
 				}
 			}
 		}
-		inline_script = tech_weights/avb_military_weight
 	}
 	
 	ai_weight = {
-		factor = 2
-		inline_script = tech_weights/avb_military_weight
 	}
 }
 
@@ -2295,19 +2189,9 @@ tech_avb_stronghold_3 = {
 		always = yes
 	}
 	weight_modifier = {
-		factor = 2
-		modifier = { # No tech without builded previous cbuilding
-			factor = 0
-			NOT = {
-				any_owned_planet = { has_building = building_fortress }
-			}
-		}
-		inline_script = "tech_weights/avb_military_weight"
 	}
 	
 	ai_weight = {
-		factor = 2
-		inline_script = tech_weights/avb_military_weight
 	}
 }
 
@@ -2327,19 +2211,9 @@ tech_avb_stronghold_4 = {
 		always = yes
 	}
 	weight_modifier = {
-		factor = 2
-		modifier = { # No tech without builded previous cbuilding
-			factor = 0
-			NOT = {
-				any_owned_planet = { has_building = building_avb_stronghold_3 }
-			}
-		}
-		inline_script = "tech_weights/avb_military_weight"
 	}
 	
 	ai_weight = {
-		factor = 2
-		inline_script = tech_weights/avb_military_weight
 	}
 }
 
@@ -2360,19 +2234,9 @@ tech_avb_stronghold_5 = {
 		always = yes
 	}
 	weight_modifier = {
-		factor = 2
-		modifier = { # No tech without builded previous cbuilding
-			factor = 0
-			NOT = {
-				any_owned_planet = { has_building = building_avb_stronghold_4 }
-			}
-		}
-		inline_script = "tech_weights/avb_military_weight"
 	}
 	
 	ai_weight = {
-		factor = 2
-		inline_script = tech_weights/avb_military_weight
 	}
 }
 

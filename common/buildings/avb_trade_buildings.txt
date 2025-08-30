@@ -374,7 +374,7 @@ building_galactic_stock_exchange = {
 	upgrades = {
 		building_avb_galactic_stock_exchange_2
 	}
-
+}
 building_avb_galactic_stock_exchange_2 = {
 	base_buildtime = @avb_b3_time
 	can_build = no
