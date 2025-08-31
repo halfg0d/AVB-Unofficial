@@ -475,3 +475,8 @@
  building_avb_automation_mining_4_desc: "$building_avb_automation_4_desc$"
  building_avb_automation_farming_4: "$building_avb_automation_4$"
  building_avb_automation_farming_4_desc: "$building_avb_automation_4_desc$"
+# Wilderness
+ building_avb_wilderness_capital_5: "Planetary Root Sanctum"
+ building_avb_wilderness_capital_5_desc: "A secluded enclave where the root network attains its peak complexity, fostering advanced symbiotic rituals that enhance collective resilience."
+ building_avb_wilderness_capital_6: "Planetary Root Citadel"
+ building_avb_wilderness_capital_6_desc: "The pinnacle of root architecture, a fortified nexus that channels the biosphere’s energy into structured bio‑engineering projects and interspecies governance."

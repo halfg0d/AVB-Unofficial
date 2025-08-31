@@ -135,7 +135,9 @@ building_system_capital_wilderness = {
 			pop_bonus_workforce_mult = 0.1
 		}
 	}
-  upgrades = {}
+  upgrades = {
+    building_avb_wilderness_capital_5
+  }
 
 	ai_estimate_without_unemployment = yes
 }
