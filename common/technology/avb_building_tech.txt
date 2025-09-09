@@ -425,7 +425,7 @@ tech_avb_robot_assembly_plant_2 = {
 	area = engineering
 	tier = 5
 	category = { industry }
-	prerequisites = { "tech_droid_workers" "tech_avb_capital_4" }
+	prerequisites = { "tech_robot_assembly_complex" "tech_avb_capital_4" }
 	weight = @tier5weight3
 
 	potential = {
