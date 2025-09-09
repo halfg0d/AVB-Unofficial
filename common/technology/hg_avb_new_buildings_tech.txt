@@ -351,6 +351,7 @@ tech_avb_paragon_memory_vaults_2 = {
 
 	potential = {
 		has_paragon_dlc = yes
+		is_memory_vault_empire = yes
 	}
 	weight_modifier = {
 	}
