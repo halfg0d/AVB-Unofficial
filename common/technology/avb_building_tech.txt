@@ -103,7 +103,7 @@ tech_avb_capital_6 = {
 	}
 }
 
-tech_avb_habitat_4 = {
+tech_avb_hab_capital_4 = {
 	cost = @tier5cost3
 	area = engineering
 	category = { voidcraft }
@@ -139,7 +139,7 @@ tech_avb_habitat_4 = {
 		}
 		inline_script = {
 			script = technologies/rare_technologies_weight_modifiers
-			TECHNOLOGY = tech_avb_habitat_4
+			TECHNOLOGY = tech_avb_hab_capital_4
 		}
 	}
 
