@@ -265,7 +265,7 @@ tech_avb_autocurating_vault_2 = {
 	area = society
 	category = { statecraft }
 	tier = 4
-	prerequisites = { "tech_autocurating_vault"}
+	prerequisites = { "tech_autocurating_vault" "tech_avb_capital4" }
 	weight = @tier4weight1
 
 	potential = {
