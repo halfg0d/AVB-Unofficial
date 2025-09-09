@@ -1415,7 +1415,7 @@ building_avb_holo_theatre_3 = {
 
 	inline_script = {
 		script = jobs/entertainers_add
-		AMOUNT = @avb_building_static_jobs_high
+		AMOUNT = 600
 	}
 
 	resources = {
@@ -1490,7 +1490,7 @@ building_avb_holo_theatre_4 = {
 
 	inline_script = {
 		script = jobs/entertainers_add
-		AMOUNT = @avb_building_static_jobs_high_2
+		AMOUNT = 800
 	}
 
 	resources = {
