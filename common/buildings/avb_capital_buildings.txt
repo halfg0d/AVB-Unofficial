@@ -10,7 +10,7 @@ building_system_capital = {
 	can_be_ruined = no
 	can_be_disabled = no
 	position_priority = 0
-
+	capital_tier = 4
 	category = government
 
 	building_sets = {
@@ -171,6 +171,7 @@ building_avb_capital_4 = {
 	can_be_disabled = no
 	position_priority = 0
 
+	capital_tier = 5
 	category = government
 
 	building_sets = {
@@ -314,7 +315,7 @@ building_avb_capital_5 = {
 	can_be_ruined = no
 	can_be_disabled = no
 	position_priority = 0
-
+	capital_tier = 6
 	category = government
 
 	building_sets = {
@@ -460,6 +461,7 @@ building_avb_capital_6 = {
 	can_be_disabled = no
 	position_priority = 0
 
+	capital_tier = 7
 	category = government
 
 	building_sets = {
@@ -501,7 +503,7 @@ building_avb_capital_6 = {
 	}
 
 	upgrades = {
-		building_avb_imperial_capital_2
+#		building_avb_imperial_capital_2
 	}
 	planet_modifier = {
 		job_enforcer_add = 700
@@ -607,6 +609,7 @@ building_machine_system_capital = {
 	can_be_disabled = no
 	position_priority = 0
 
+	capital_tier = 4
 	category = government
 
 	building_sets = {
@@ -766,6 +769,7 @@ building_avb_machine_capital_4 = {
 	can_be_disabled = no
 	position_priority = 0
 
+	capital_tier = 5
 	category = government
 
 	building_sets = {
@@ -922,6 +926,7 @@ building_avb_machine_capital_5 = {
 
 	category = government
 
+	capital_tier = 6
 	building_sets = {
 		government
 	}
@@ -1075,6 +1080,7 @@ building_avb_machine_capital_6 = {
 
 	category = government
 
+	capital_tier = 7
 	building_sets = {
 		government
 	}
@@ -1110,7 +1116,7 @@ building_avb_machine_capital_6 = {
 		is_machine_empire = yes
 	}
 	upgrades = {
-		building_avb_imperial_machine_capital_2
+		#building_avb_imperial_machine_capital_2
 	}
 	planet_modifier = {
 		planet_housing_add = 4000
@@ -1232,6 +1238,7 @@ building_hive_major_capital = {
 
 	category = government
 
+	capital_tier = 3
 	building_sets = {
 		government
 	}
@@ -1338,6 +1345,7 @@ building_avb_hive_capital_3 = {
 	position_priority = 0
 
 	category = government
+	capital_tier = 4
 
 	building_sets = {
 		government
@@ -1443,6 +1451,7 @@ building_avb_hive_capital_4 = {
 	position_priority = 0
 
 	category = government
+	capital_tier = 5
 
 	building_sets = {
 		government
@@ -1533,7 +1542,7 @@ building_avb_hive_capital_4 = {
 		}
 	}
 	upgrades = {
-		building_avb_imperial_hive_capital_2
+		#building_avb_imperial_hive_capital_2
 	}
 }
 
@@ -1552,6 +1561,7 @@ building_hab_system_capital = {
 	position_priority = 0
 
 	icon = building_system_capital
+	capital_tier = 4
 
 	category = government
 
@@ -1871,6 +1881,7 @@ building_avb_hab_capital_4 = {
 
 	icon = building_system_capital
 	category = government
+	capital_tier = 5
 
 	building_sets = {
 		government
@@ -1911,7 +1922,7 @@ building_avb_hab_capital_4 = {
 		}
 	}
 	upgrades = {
-		building_avb_imperial_capital_2
+		#building_avb_imperial_capital_2
 	}
 	planet_modifier = {
 		planet_housing_add = 1500
@@ -2189,6 +2200,7 @@ building_resort_major_capital = {
 	icon = building_major_capital
 
 	category = government
+	capital_tier = 3
 
 	building_sets = {
 		government
@@ -2331,6 +2343,7 @@ building_avb_resort_capital_3 = {
 	icon = building_system_capital
 
 	category = government
+	capital_tier = 4
 
 	building_sets = {
 		government
@@ -2470,6 +2483,7 @@ building_slave_major_capital = {
 	position_priority = 0
 
 	icon = building_major_capital
+	capital_tier = 3
 
 	category = government
 
@@ -2583,6 +2597,7 @@ building_avb_slave_capital_3 = {
 	icon = building_system_capital
 
 	category = government
+	capital_tier = 4
 
 	building_sets = {
 		government
