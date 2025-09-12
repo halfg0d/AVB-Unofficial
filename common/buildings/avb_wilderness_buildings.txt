@@ -976,9 +976,9 @@ building_avb_brain_node_5 = {
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
-  upgrades = {
-    building_avb_brain_node_6
-  }
+	upgrades = {
+	  building_avb_brain_node_6
+	}
 
 	ai_estimate_without_unemployment = yes
 

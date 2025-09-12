@@ -1485,6 +1485,16 @@ tech_avb_basic_science_lab_4 = {
 	potential = {
 		always = yes
 	}
+	technology_swap = { # Wilderness icon swap
+		name = tech_avb_wilderness_science_lab_4
+		inherit_icon = no
+		inherit_effects = yes
+		trigger = {
+			is_wilderness_empire = yes
+			NOT = {
+			has_ascension_perk = ap_weather_control }
+		}
+	}
 	weight_modifier = {
 		factor = 2
 		modifier = {
@@ -1517,6 +1527,16 @@ tech_avb_basic_science_lab_5 = {
 	potential = {
 		always = yes
 	}
+	technology_swap = { # Wilderness icon swap
+		name = tech_avb_wilderness_science_lab_5
+		inherit_icon = no
+		inherit_effects = yes
+		trigger = {
+			is_wilderness_empire = yes
+			NOT = {
+			has_ascension_perk = ap_weather_control }
+		}
+	}
 	weight_modifier = {
 		factor = 2
 		modifier = {
@@ -1547,7 +1567,7 @@ tech_avb_basic_science_lab_6 = {
 	weight = @avbtier6weight1
 		
 	potential = {
-		always = yes
+		is_wilderness_empire = no
 	}
 	weight_modifier = {
 		factor = 2
