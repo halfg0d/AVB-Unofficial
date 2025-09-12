@@ -143,6 +143,7 @@ building_system_capital_wilderness = {
 	ai_estimate_without_unemployment = yes
 }
 building_avb_wilderness_capital_5 = {
+	icon = "avb_capital_wilderness_5"
 	ruined_icon = "wilderness_building_ruined"
 	base_buildtime = @avb_buildtime_5
 	capital = yes
@@ -172,7 +173,7 @@ building_avb_wilderness_capital_5 = {
 	}
 
 	prerequisites = {
-		"tech_galactic_administration"
+		"tech_avb_capital_4"
 	}
 	show_tech_unlock_if = {
 		is_wilderness_empire = yes
@@ -252,6 +253,7 @@ building_avb_wilderness_capital_5 = {
 	ai_estimate_without_unemployment = yes
 }
 building_avb_wilderness_capital_6 = {
+	icon = "avb_capital_wilderness_6"
 	ruined_icon = "wilderness_building_ruined"
 	base_buildtime = @avb_buildtime_6
 	capital = yes
@@ -281,7 +283,7 @@ building_avb_wilderness_capital_6 = {
 	}
 
 	prerequisites = {
-		"tech_galactic_administration"
+		"tech_avb_capital_5"
 	}
 	show_tech_unlock_if = {
 		is_wilderness_empire = yes
