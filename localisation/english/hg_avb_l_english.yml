@@ -480,3 +480,12 @@
  building_avb_wilderness_capital_5_desc: "A secluded enclave where the root network attains its peak complexity, fostering advanced symbiotic rituals that enhance collective resilience."
  building_avb_wilderness_capital_6: "Planetary Root Citadel"
  building_avb_wilderness_capital_6_desc: "The pinnacle of root architecture, a fortified nexus that channels the biosphere’s energy into structured bio‑engineering projects and interspecies governance."
+ # Cradle
+ building_avb_cradle_rebirth_2: "Silken Skin"
+ building_avb_cradle_rebirth_2_tech: "The Cradle breathes with the echoes of countless spores and crystalline formations. It isn't built; it becomes, drawing sustenance from the planetary atmosphere through a network of interwoven root-like structures and bioluminescent filaments."
+ tech_avb_cradle_rebirth_2: "$building_avb_cradle_rebirth_2$"
+ tech_avb_cradle_rebirth_2_tech: "$building_avb_cradle_rebirth_2_desc$"
+ building_avb_cradle_rebirth_3: "Auraweave"
+ building_avb_cradle_rebirth_3_tech: "The structure is a vast, flowing network of bio-luminescent filaments – a shimmering web that feels like liquid light. It’s not about rigid containment; it's about an active, ever-shifting embrace of the planetary energies."
+ tech_avb_cradle_rebirth_3: "$building_avb_cradle_rebirth_3$"
+ tech_avb_cradle_rebirth_3_tech: "$building_avb_cradle_rebirth_3_desc$"

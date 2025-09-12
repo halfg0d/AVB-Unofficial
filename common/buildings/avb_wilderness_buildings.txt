@@ -616,24 +616,27 @@ building_cradle_of_rebirth = {
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
-  upgrades = {
-    building_avb_cradle_of_rebirth_2
-  }
+	upgrades = {
+		building_avb_cradle_rebirth_2
+	}
 
 	ai_estimate_without_unemployment = yes
 	ai_weight_coefficient = 1.2
 	additional_ai_weight = 200
 }
-building_avb_cradle_of_rebirth_2 = {
+building_avb_cradle_rebirth_2 = {
 	icon = "avb_seed_cradle_3"
 	category = government
-	base_buildtime = @avb_b2_time
-	can_build = yes
+	base_buildtime = @avb_b3_time
+	can_build = no
 	can_demolish = yes
 	can_be_ruined = yes
 
 	building_sets = {
 		government
+	}
+	allow = {
+		has_fully_upgraded_capital = yes
 	}
 
 	potential = {
@@ -651,14 +654,14 @@ building_avb_cradle_of_rebirth_2 = {
 
 	inline_script = {
 		script = jobs/spawning_drone_add
-		AMOUNT = 200
+		AMOUNT = 300
 	}
 
 	resources = {
 		category = planet_buildings
 		cost = {
 			food = @avb_b2_minerals
-			biomass = @avb_b4_biomass
+			biomass = @avb_b3_biomass
 		}
 		upkeep = {
 			food = @avb_b2_upkeep
@@ -668,7 +671,66 @@ building_avb_cradle_of_rebirth_2 = {
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
+	prerequisites = {
+		"tech_avb_cradle_rebirth_2"
+	}
+	upgrades = {
+		"building_avb_cradle_rebirth_3"
+	}
+	ai_estimate_without_unemployment = yes
+	ai_weight_coefficient = 1.2
+	additional_ai_weight = 200
+}
+building_avb_cradle_rebirth_3 = {
+	icon = "avb_seed_cradle_3"
+	category = government
+	base_buildtime = @avb_b4_time
+	can_build = no
+	can_demolish = yes
+	can_be_ruined = yes
 
+	building_sets = {
+		government
+	}
+	allow = {
+		has_upgraded_capital_5 = yes
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			is_wilderness_empire = yes
+		}
+	}
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			is_wilderness_empire = no
+		}
+	}
+
+	inline_script = {
+		script = jobs/spawning_drone_add
+		AMOUNT = 500
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			food = @avb_b3_minerals
+			biomass = @avb_b4_biomass
+		}
+		upkeep = {
+			food = @avb_b3_upkeep
+		}
+	}
+
+	inline_script = {
+		script = buildings/on_all_wilderness_buildings_districts
+	}
+	prerequisites = {
+		"tech_avb_cradle_rebirth_3"
+	}
 	ai_estimate_without_unemployment = yes
 	ai_weight_coefficient = 1.2
 	additional_ai_weight = 200
