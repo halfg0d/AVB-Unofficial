@@ -1976,7 +1976,7 @@ building_natural_furnace_3 = { # substitute for 'building_foundry_3'
 	ai_estimate_without_unemployment = yes
 }
 building_avb_natural_furnace_4 = {
-	#icon = "natural_furnace_4"
+	icon = "avb_natural_furnace_5"
 	ruined_icon = "wilderness_building_ruined"
 	base_buildtime = @avb_buildtime_4
 	category = resource
@@ -2045,7 +2045,7 @@ building_avb_natural_furnace_4 = {
 	ai_estimate_without_unemployment = yes
 }
 building_avb_natural_furnace_5 = {
-	#icon = "natural_furnace_4"
+	icon = "avb_natural_furnace_6"
 	ruined_icon = "wilderness_building_ruined"
 	base_buildtime = @avb_buildtime_5
 	category = resource
@@ -2114,7 +2114,7 @@ building_avb_natural_furnace_5 = {
 	ai_estimate_without_unemployment = yes
 }
 building_avb_natural_furnace_6 = {
-	#icon = "natural_furnace_4"
+	icon = "avb_natural_furnace_7"
 	ruined_icon = "wilderness_building_ruined"
 	base_buildtime = @avb_buildtime_6
 	category = resource

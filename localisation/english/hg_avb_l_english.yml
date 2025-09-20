@@ -491,9 +491,17 @@
  building_avb_cradle_rebirth_3_desc: "The structure is a vast, flowing network of bio-luminescent filaments – a shimmering web that feels like liquid light. It’s not about rigid containment; it's about an active, ever-shifting embrace of the planetary energies."
  tech_avb_cradle_rebirth_3: "$building_avb_cradle_rebirth_3$"
  tech_avb_cradle_rebirth_3_desc: "$building_avb_cradle_rebirth_3_desc$"
+ # Brain nodes
  building_avb_brain_node_5: "Synaptic Bloom"
  building_avb_brain_node_5_desc: "A colossal, geodesic dome constructed from interwoven bioluminescent vines and polished obsidian. It’s a nexus of exotic technology and symbiotic growth, meticulously shaping the environment to maximize research opportunities."
  building_avb_brain_node_6: "Chromatic Cascade"
  building_avb_brain_node_6_desc: "This structure is constructed of layered prisms and refractors, constantly cycling through a spectrum of light to stimulate specific neural pathways and detect subtle variations in the planetary atmosphere."
  tech_avb_wilderness_science_lab_4: "$building_avb_brain_node_5$"
  tech_avb_wilderness_science_lab_5: "$building_avb_brain_node_6$"
+ # Natural furnace
+ building_avb_natural_furnace_4: "Quantum-Entangled Smelter"
+ building_avb_natural_furnace_4_desc: "Quantum-entangled particles allow for instantaneous alloy composition adjustments, creating materials that self-repair and adapt to environmental changes."
+ building_avb_natural_furnace_5: "Quantum-Resonance Smelter"
+ building_avb_natural_furnace_5_desc: "Quantum resonance frequencies stabilize alloy structures at the molecular level, enabling temporary phase shifts and energy absorption capabilities."
+ building_avb_natural_furnace_6: "Quantum-Vacuum Smelter"
+ building_avb_natural_furnace_6_desc: "Harnessing quantum vacuum fluctuations, this smelter produces alloys with properties that temporarily exceed known physical limits, including the potential for matter-antimatter stability."
