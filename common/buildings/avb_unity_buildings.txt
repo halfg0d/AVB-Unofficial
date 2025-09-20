@@ -1011,6 +1011,7 @@ building_system_conflux = {
 	icon = building_hypercomms_forum
 	planet_limit = 1
 	category = unity
+	can_build = no
 
 	building_sets = {
 		unity
@@ -1081,6 +1082,7 @@ building_avb_machine_unity_4 = {
 	icon = building_avb_monument_4
 	planet_limit = 1
 	category = unity
+	can_build = no
 
 	building_sets = {
 		unity
@@ -1152,6 +1154,7 @@ building_avb_machine_unity_5 = {
 	icon = building_avb_monument_5
 	planet_limit = 1
 	category = unity
+	can_build = no
 
 	building_sets = {
 		unity
@@ -1223,6 +1226,7 @@ building_avb_machine_unity_6 = {
 	icon = building_avb_monument_6
 	planet_limit = 1
 	category = unity
+	can_build = no
 
 	building_sets = {
 		unity
@@ -2465,6 +2469,9 @@ building_simulation_3 = {
 		planet_maintenance_drones_minerals_upkeep_add = 0.25
 	}
 
+	triggered_desc = {
+		text = building_hypercomms_forum_effect
+	}
 	prerequisites = {
 		"tech_hypercomms_forum"
 	}
@@ -5282,7 +5289,7 @@ building_avb_league_offices_2 = {
 
 	inline_script = {
 		script = jobs/unity_jobs_add
-		AMOUNT = @avb_building_static_jobs
+		AMOUNT = 400
 	}
 
 	prerequisites = {

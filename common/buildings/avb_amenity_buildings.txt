@@ -2139,7 +2139,7 @@ building_avb_toxic_bath_2 = {
 	}
 	inline_script = {
 		script = jobs/healthcare_add
-		AMOUNT = @avb_building_static_jobs
+		AMOUNT = 400
 	}
 
 	resources = {

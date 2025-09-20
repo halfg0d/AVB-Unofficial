@@ -1685,3 +1685,158 @@ building_avb_nanotech_mining_2 = {
 		}
 	}
 }
+building_cyberdome = { # Cyber Imperial Collectivist
+	base_buildtime = @b3_time
+	planet_limit = 1
+
+	desc = {
+		text = building_cyberdome_desc
+	}
+
+	category = amenity
+
+	building_sets = {
+		government
+		urban
+	}
+
+	potential = {
+		owner = {
+			is_imperial_authority = yes
+			has_country_flag = cyber_collectivist
+		}
+		is_capital = yes
+	}
+
+	allow = {
+
+	}
+
+	destroy_trigger = {
+		OR = {
+			AND = {
+				exists = owner
+				owner = {
+					is_imperial_authority = no
+				}
+			}
+			AND = {
+				exists = planet
+				planet = {
+					is_capital = no
+				}
+			}
+		}
+	}
+
+	planet_modifier = {
+		job_cyberdome_spectator_add = 200
+		planet_entertainers_unity_produces_add = 1
+		planet_entertainers_alloys_upkeep_add = 0.5
+	}
+
+	# With edict
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_edict = neurocasted_spectacles
+			}
+		}
+		planet_housing_add = 5000
+		planet_resettlement_unemployed_destination_mult = 0.25
+		planet_pops_upkeep_mult = -0.1
+		job_cyberdome_duelist_per_pop = 0.05 # 1 job per 20 pops
+		job_cyberdome_spectator_per_pop = 0.1 # 1 job per 10 pops
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+		}
+		upkeep = {
+			energy = 3
+		}
+	}
+	upgrades = {
+		building_avb_cyberdome_2
+	}
+}
+
+building_avb_cyberdome_2 = {
+	base_buildtime = @avb_b4_time
+	planet_limit = 1
+	can_build = no
+
+	#desc = {
+	#	text = building_cyberdome_desc
+	#}
+
+	category = amenity
+
+	building_sets = {
+		government
+		urban
+	}
+
+	potential = {
+		owner = {
+			is_imperial_authority = yes
+			has_country_flag = cyber_collectivist
+		}
+		is_capital = yes
+	}
+
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+
+	destroy_trigger = {
+		OR = {
+			AND = {
+				exists = owner
+				owner = {
+					is_imperial_authority = no
+				}
+			}
+			AND = {
+				exists = planet
+				planet = {
+					is_capital = no
+				}
+			}
+		}
+	}
+
+	planet_modifier = {
+		job_cyberdome_spectator_add = 300
+		planet_entertainers_unity_produces_add = 1.5
+		planet_entertainers_alloys_upkeep_add = 0.75
+	}
+
+	# With edict
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_edict = neurocasted_spectacles
+			}
+		}
+		planet_housing_add = 7500
+		planet_resettlement_unemployed_destination_mult = 0.375
+		planet_pops_upkeep_mult = -0.15
+		job_cyberdome_duelist_per_pop = 0.075
+		job_cyberdome_spectator_per_pop = 0.15
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_b3_minerals
+		}
+		upkeep = {
+			energy = @avb_b2_upkeep
+		}
+	}
+}

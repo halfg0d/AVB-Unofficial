@@ -1990,7 +1990,7 @@ building_avb_hab_capital_4 = {
 
 	inline_script = {
 		script = "jobs/politician_add"
-		AMOUNT = @avb_building_static_jobs
+		AMOUNT = 400
 	}
 
 	triggered_planet_modifier = {
@@ -2385,7 +2385,7 @@ building_avb_resort_capital_3 = {
 
 	inline_script = {
 		script = "jobs/politician_add"
-		AMOUNT = @avb_building_static_jobs
+		AMOUNT = 400
 	}
 
 	triggered_planet_modifier = {
@@ -2623,7 +2623,7 @@ building_avb_slave_capital_3 = {
 
 	inline_script = {
 		script = "jobs/politician_add"
-		AMOUNT = @avb_building_static_jobs
+		AMOUNT = 400
 	}
 
 	triggered_planet_modifier = {

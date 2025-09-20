@@ -122,7 +122,7 @@ building_avb_hydroponics_farm_2 = {
 	
 	inline_script = {
 		script = jobs/farmers_add
-		AMOUNT = @avb_building_static_jobs
+		AMOUNT = 400
 	}
 	resources = {
 		category = planet_buildings
@@ -628,7 +628,7 @@ building_avb_baol_organic_plant_2 = {
 
 	inline_script = {
 		script = jobs/farmers_add
-		AMOUNT = @avb_building_static_jobs
+		AMOUNT = 400
 	}
 	# for exceptions to the above (i.e. Wilderness):
 	inline_script = {
