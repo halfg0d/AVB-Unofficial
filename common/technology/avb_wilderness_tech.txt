@@ -1,0 +1,71 @@
+
+tech_avb_cradle_rebirth_2 = {
+	cost = @tier4cost3
+	area = society
+	tier = 4
+	category = { biology }
+	prerequisites = { "tech_galactic_administration" }
+	weight = @tier4weight3
+	
+	potential = {
+		is_wilderness_empire = yes	
+	}
+	
+	weight_modifier = {
+	}
+
+	ai_weight = {
+	}
+}
+tech_avb_cradle_rebirth_3 = {
+	cost = @tier5cost3
+	area = society
+	tier = 5
+	category = { biology }
+	prerequisites = { "tech_avb_cradle_rebirth_2" "tech_avb_capital_5" }
+	weight = @tier5weight3
+	
+	potential = {
+		is_wilderness_empire = yes	
+	}
+	
+	weight_modifier = {
+	}
+
+	ai_weight = {
+	}
+}
+tech_avb_wilderness_sensorium_5 = {
+	cost = @tier5cost2
+	area = society
+	category = { statecraft }
+	tier = 5
+	prerequisites = { "tech_wilderness_confluence" }
+	weight = @tier5weight2
+
+	weight_modifier = {
+	}
+
+	potential = {
+		always = yes
+	}
+	ai_weight = {
+	}
+}
+tech_avb_wilderness_sensorium_6 = {
+	cost = @avbtier6cost2
+	area = society
+	category = { statecraft }
+	tier = 6
+	prerequisites = { "tech_avb_wildnerness_sensorium_5" }
+	weight = @avbtier6weight2
+
+	weight_modifier = {
+	}
+
+	potential = {
+		always = yes
+	}
+	ai_weight = {
+	}
+}
