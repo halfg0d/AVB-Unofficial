@@ -1419,16 +1419,12 @@ building_nanolab_2 = {
 
 	inline_script = {
 		script = jobs/researchers_add
-		AMOUNT = @building_static_jobs_high_3
+		AMOUNT = @building_static_jobs
 	}
 
 	planet_modifier = {
-		planet_physicists_physics_research_produces_add = 4
-		planet_biologists_society_research_produces_add = 4
-		planet_engineers_engineering_research_produces_add = 4
-		planet_physicists_nanites_upkeep_add = 0.5
-		planet_biologists_nanites_upkeep_add = 0.5
-		planet_engineers_nanites_upkeep_add = 0.5
+		planet_engineers_engineering_research_produces_add = 2
+		planet_engineers_nanites_upkeep_add = 1
 	}
 	upgrades = {
 		building_avb_nanolab_3
@@ -1481,14 +1477,9 @@ building_avb_nanolab_3 = {
 		script = jobs/researchers_add
 		AMOUNT = 400
 	}
-
 	planet_modifier = {
-		planet_physicists_physics_research_produces_add = 6
-		planet_biologists_society_research_produces_add = 6
-		planet_engineers_engineering_research_produces_add = 6
-		planet_physicists_nanites_upkeep_add = 0.75
-		planet_biologists_nanites_upkeep_add = 0.5
-		planet_engineers_nanites_upkeep_add = 0.75
+		planet_engineers_engineering_research_produces_add = 3
+		planet_engineers_nanites_upkeep_add = 1.5
 	}
 }
 
