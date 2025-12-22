@@ -79,10 +79,6 @@ building_transcendental_retreat = {
 		text = natural_design_ascension_bonus
 	}
 
-	triggered_desc = {
-		text = job_healthcare_effect_desc
-	}
-
 	prerequisites = {}
 	upgrades = {
 		building_avb_transcendental_retreat_2
@@ -185,10 +181,6 @@ building_avb_transcendental_retreat_2 = {
 
 	triggered_desc = {
 		text = avb_natural_design_ascension_bonus
-	}
-
-	triggered_desc = {
-		text = job_healthcare_effect_desc
 	}
 
 	prerequisites = {
@@ -469,6 +461,7 @@ building_lathe_super_capital = {
 	position_priority = 0
 	building_sets = { cosmogenesis_world }
 
+	capital_tier = 4
 	category = government
 
 	potential = {
@@ -555,6 +548,7 @@ building_avb_lathe_capital_4 = {
 	position_priority = 0
 	building_sets = { cosmogenesis_world }
 
+	capital_tier = 5
 	category = government
 
 	potential = {
@@ -1429,6 +1423,21 @@ building_nanolab_2 = {
 	upgrades = {
 		building_avb_nanolab_3
 	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = engineer_is_nanotech_researcher_tt
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		text = engineering_calculator_is_nanotech_researcher_tt
+	}
 }
 building_avb_nanolab_3 = {
 	base_buildtime = @avb_b3_time
@@ -1480,6 +1489,21 @@ building_avb_nanolab_3 = {
 	planet_modifier = {
 		planet_engineers_engineering_research_produces_add = 3
 		planet_engineers_nanites_upkeep_add = 1.5
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = engineer_is_nanotech_researcher_tt
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		text = engineering_calculator_is_nanotech_researcher_tt
 	}
 }
 

@@ -64,10 +64,6 @@ building_noble_estates = {
 			energy = 2
 		}
 	}
-
-	triggered_desc = {
-		text = job_noble_effect_desc
-	}
 	upgrades = {
 		building_avb_noble_estates_2
 	}
@@ -133,10 +129,6 @@ building_avb_noble_estates_2 = {
 		upkeep = {
 			energy = @avb_b2_upkeep
 		}
-	}
-	
-	triggered_desc = {
-		text = job_noble_effect_desc
 	}
 	
 	prerequisites = {
@@ -220,10 +212,6 @@ building_slave_processing = {
 	triggered_desc = {
 		text = building_slave_processing_slave_army_effect_desc
 	}
-
-	triggered_desc = {
-		text = building_slave_processing_migrate_effect_desc
-	}
 	upgrades = {
 		building_avb_slave_processing_2
 	}
@@ -303,10 +291,6 @@ building_avb_slave_processing_2 = {
 	triggered_desc = {
 		text = building_slave_processing_slave_army_effect_desc
 	}
-
-	triggered_desc = {
-		text = building_slave_processing_migrate_effect_desc
-	}
 	
 	prerequisites = {
 		"tech_avb_slave_processing_2"
@@ -371,11 +355,6 @@ building_hall_judgment = {
 	prerequisites = {
 		"tech_colonial_centralization"
 	}
-
-	triggered_desc = {
-		text = job_enforcer_effect_desc
-	}
-
 	show_tech_unlock_if = {
 		is_regular_empire = yes
 		NOT = { has_valid_civic = civic_civil_education }
@@ -1243,10 +1222,6 @@ building_grand_embassy = {
 		AMOUNT = @building_static_jobs
 	}
 
-	triggered_desc = {
-		text = job_politician_effect_desc
-	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1350,6 +1325,9 @@ building_avb_grand_embassy_2 = {
 		is_regular_empire = yes
 	}
 }
+
+# Infernals
+
 
 ###
 ### Zoo Administration

@@ -313,6 +313,15 @@ building_dread_encampment = {
 		script = jobs/soldiers_add
 		AMOUNT = @building_static_jobs
 	}
+	planet_modifier = {
+		planet_soldiers_society_research_produces_add = 2
+		planet_soldiers_engineering_research_produces_add = 2
+		planet_soldiers_consumer_goods_upkeep_add = 1
+	}
+
+	triggered_desc = {
+		text = building_dread_encampment_tt
+	}
   upgrades = {
     building_avb_dread_encampment_2 
   }
@@ -339,6 +348,15 @@ building_avb_dread_encampment_2 = {
 	inline_script = {
 		script = jobs/soldiers_add
 		AMOUNT = 400
+	}
+	planet_modifier = {
+		planet_soldiers_society_research_produces_add = 3
+		planet_soldiers_engineering_research_produces_add = 3
+		planet_soldiers_consumer_goods_upkeep_add = 1.5
+	}
+
+	triggered_desc = {
+		text = building_dread_encampment_tt
 	}
 
 	resources = {

@@ -29,32 +29,12 @@ building_foundry_3 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			trigger = {
-				has_ringworld_output_boost = no
-			}
 			minerals = @b3_minerals
 			volatile_motes = @b4_rare_cost
 		}
-		cost = {
-			trigger = {
-				has_ringworld_output_boost = yes
-			}
-			minerals = 1500
-			volatile_motes = 600
-		}
 		upkeep = {
-			trigger = {
-				has_ringworld_output_boost = no
-			}
 			energy = @b3_upkeep
 			volatile_motes = @b4_rare_upkeep
-		}
-		upkeep = {
-			trigger = {
-				has_ringworld_output_boost = yes
-			}
-			energy = 15
-			volatile_motes = 8
 		}
 	}
 
@@ -109,11 +89,6 @@ building_avb_foundry_4 = {
 			energy = @avb_b3_upkeep
 			volatile_motes = @avb_b3_rare_upkeep
 		}
-		inline_script = {
-			script = building_resources/avb_ringworld_resources
-			RARE = volatile_motes
-			TRIGGER = " "
-		}
 	}
 
 	inline_script = {
@@ -166,11 +141,6 @@ building_avb_foundry_5 = {
 		upkeep = {
 			energy = @avb_b4_upkeep
 			volatile_motes = @avb_b4_rare_upkeep
-		}
-		inline_script = {
-			script = building_resources/avb_ringworld_resources
-			RARE = volatile_motes
-			TRIGGER = " "
 		}
 	}
 
@@ -227,11 +197,6 @@ building_avb_foundry_6 = {
 			energy = @avb_b5_upkeep
 			volatile_motes = @avb_b5_rare_upkeep
 		}
-		inline_script = {
-			script = building_resources/avb_ringworld_resources
-			RARE = volatile_motes
-			TRIGGER = " "
-		}
 	}
 
 	inline_script = {
@@ -280,32 +245,12 @@ building_factory_3 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			trigger = {
-				has_ringworld_output_boost = no
-			}
 			minerals = @b3_minerals
 			rare_crystals = @b4_rare_cost
 		}
-		cost = {
-			trigger = {
-				has_ringworld_output_boost = yes
-			}
-			minerals = 1500
-			rare_crystals = 600
-		}
 		upkeep = {
-			trigger = {
-				has_ringworld_output_boost = no
-			}
 			energy = @b3_upkeep
 			rare_crystals = @b4_rare_upkeep
-		}
-		upkeep = {
-			trigger = {
-				has_ringworld_output_boost = yes
-			}
-			energy = 15
-			rare_crystals = 8
 		}
 	}
 
@@ -357,6 +302,17 @@ building_avb_factory_4 = {
 			}
 		}
 	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @avb_b3_minerals
+			rare_crystals = @avb_b3_rare_cost
+		}
+		upkeep = {
+			energy = @avb_b3_upkeep
+			rare_crystals = @avb_b3_rare_upkeep
+		}
+	}	
 	inline_script = {
 		script = jobs/factory_add
 		AMOUNT = 800
@@ -423,11 +379,6 @@ building_avb_factory_5 = {
 			energy = @avb_b4_upkeep
 			rare_crystals = @avb_b4_rare_upkeep
 		}
-		inline_script = {
-			script = building_resources/avb_ringworld_resources
-			RARE = rare_crystals
-			TRIGGER = " "
-		}
 	}	
 	
 	upgrades = {
@@ -488,11 +439,6 @@ building_avb_factory_6 = {
 		upkeep = {
 			energy = @avb_b5_upkeep
 			rare_crystals = @avb_b5_rare_upkeep
-		}
-		inline_script = {
-			script = building_resources/avb_ringworld_resources
-			RARE = rare_crystals
-			TRIGGER = " "
 		}
 	}	
 	
@@ -1126,12 +1072,12 @@ building_nanite_transmuter = {
 					}
 				}
 			}
-			rare_crystals = 2
-			volatile_motes = 2
-			exotic_gases = 2
+			rare_crystals = 5
+			volatile_motes = 5
+			exotic_gases = 5
 		}
 		upkeep = {
-			nanites = 1
+			nanites = 2
 			energy = 5
 		}
 	}
@@ -1207,12 +1153,12 @@ building_avb_nanite_transmuter_2 = {
 					}
 				}
 			}
-			rare_crystals = 6
-			volatile_motes = 6
-			exotic_gases = 6
+			rare_crystals = 10
+			volatile_motes = 10
+			exotic_gases = 10
 		}
 		upkeep = {
-			nanites = 2
+			nanites = 5
 			energy = @avb_b4_upkeep
 		}
 	}
@@ -1599,16 +1545,10 @@ building_archaeo_refinery = {
 		category = planet_buildings
 		cost = {
 			minerals = @b2_minerals
-			minor_artifacts = @b2_rare_cost
+			minor_artifacts = @b4_rare_cost
 		}
 		upkeep = {
 			energy = @b2_upkeep
-		}
-		upkeep = {
-			trigger = {
-				owner = { is_wilderness_empire = yes }
-			}
-			minerals = 30 # equivalent to this Building's Jobs Upkeep
 		}
 	}
 
@@ -1679,16 +1619,10 @@ building_avb_archaeo_refinery_2 = {
 		category = planet_buildings
 		cost = {
 			minerals = @avb_b3_minerals
-			minor_artifacts = @avb_b3_rare_cost
+			minor_artifacts = @avb_b4_rare_cost
 		}
 		upkeep = {
 			energy = @avb_b3_upkeep
-		}
-		upkeep = {
-			trigger = {
-				owner = { is_wilderness_empire = yes }
-			}
-			minerals = 60 # equivalent to this Building's Jobs Upkeep
 		}
 	}
 

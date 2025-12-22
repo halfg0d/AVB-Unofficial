@@ -435,26 +435,6 @@ building_machine_assembly_complex = {
 	prerequisites = {
 		tech_mega_assembly
 	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_machine_empire = yes
-			}
-		}
-		text = job_replicator_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_individual_machine = yes
-			}
-		}
-		text = job_roboticist_individual_machine_effect_desc
-	}
 	upgrades = {
 		building_avb_machine_assembly_plant_2
 	}
@@ -538,25 +518,6 @@ building_avb_machine_assembly_plant_2 = {
 			energy = @avb_b3_upkeep
 			rare_crystals = @avb_b3_rare_upkeep
 		}
-	}
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_machine_empire = yes
-			}
-		}
-		text = job_replicator_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_individual_machine = yes
-			}
-		}
-		text = job_roboticist_individual_machine_effect_desc
 	}
 	prerequisites = {
 		"tech_avb_machine_assembly_plant_2"
@@ -654,16 +615,6 @@ building_spawning_pool = {
 
 	convert_to = {
 		building_offspring_nest
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				has_active_tradition = tr_cybernetics_synaptic_sub_processing
-			}
-		}
-		text = job_augmentor_drone_assembly_desc
 	}
 
 	triggered_desc = {
@@ -768,16 +719,6 @@ building_avb_spawning_pool_2 = {
 		"tech_avb_spawning_pool_2"
 	}
 	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				has_active_tradition = tr_cybernetics_synaptic_sub_processing
-			}
-		}
-		text = job_augmentor_drone_assembly_desc
-	}
-
-	triggered_desc = {
 		text = spawning_pool_tooltip
 	}
 }
@@ -841,17 +782,6 @@ building_offspring_nest = {
 			energy = 2
 		}
 	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				has_active_tradition = tr_cybernetics_synaptic_sub_processing
-			}
-		}
-		text = job_augmentor_drone_assembly_desc
-	}
-
 	triggered_desc = {
 		text = offspring_nest_tooltip
 	}
@@ -918,17 +848,6 @@ building_avb_offspring_nest_2 = {
 	prerequisites = {
 		tech_avb_offspring_nest_2
 	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				has_active_tradition = tr_cybernetics_synaptic_sub_processing
-			}
-		}
-		text = job_augmentor_drone_assembly_desc
-	}
-
 	triggered_desc = {
 		text = offspring_nest_tooltip
 	}
@@ -1041,47 +960,6 @@ building_necrophage_house_of_apotheosis = {
 	show_tech_unlock_if = {
 		has_origin = origin_necrophage
 		has_trait = trait_necrophage
-	}
-
-	triggered_desc = {
-		text = job_necro_apprentice_effect_desc
-		trigger = {
-			exists = owner
-			owner = {
-				is_lithoid_empire = no
-				is_hive_empire = no
-			}
-		}
-	}
-	triggered_desc = {
-		text = job_necro_apprentice_effect_lithoid_desc
-		trigger = {
-			exists = owner
-			owner = {
-				is_lithoid_empire = yes
-				is_hive_empire = no
-			}
-		}
-	}
-	triggered_desc = {
-		text = job_necro_apprentice_effect_hive_desc
-		trigger = {
-			exists = owner
-			owner = {
-				is_lithoid_empire = no
-				is_hive_empire = yes
-			}
-		}
-	}
-	triggered_desc = {
-		text = job_necro_apprentice_effect_hive_lithoid_desc
-		trigger = {
-			exists = owner
-			owner = {
-				is_lithoid_empire = yes
-				is_hive_empire = yes
-			}
-		}
 	}
 	triggered_desc = {
 		text = necrophage_elevation_timer_tooltip
@@ -1198,47 +1076,6 @@ building_avb_necrophage_3 = {
 	show_tech_unlock_if = {
 		has_origin = origin_necrophage
 		has_trait = trait_necrophage
-	}
-
-	triggered_desc = {
-		text = job_necro_apprentice_effect_desc
-		trigger = {
-			exists = owner
-			owner = {
-				is_lithoid_empire = no
-				is_hive_empire = no
-			}
-		}
-	}
-	triggered_desc = {
-		text = job_necro_apprentice_effect_lithoid_desc
-		trigger = {
-			exists = owner
-			owner = {
-				is_lithoid_empire = yes
-				is_hive_empire = no
-			}
-		}
-	}
-	triggered_desc = {
-		text = job_necro_apprentice_effect_hive_desc
-		trigger = {
-			exists = owner
-			owner = {
-				is_lithoid_empire = no
-				is_hive_empire = yes
-			}
-		}
-	}
-	triggered_desc = {
-		text = job_necro_apprentice_effect_hive_lithoid_desc
-		trigger = {
-			exists = owner
-			owner = {
-				is_lithoid_empire = yes
-				is_hive_empire = yes
-			}
-		}
 	}
 	triggered_desc = {
 		text = necrophage_elevation_timer_tooltip
@@ -1494,7 +1331,7 @@ building_clone_vats = {
 			trigger = {
 				exists = owner
 				owner = {
-					is_lithoid_empire = no
+					is_lithoid_or_infernal_empire = no
 				}
 			}
 			food = 15
@@ -1503,17 +1340,7 @@ building_clone_vats = {
 			trigger = {
 				exists = owner
 				owner = {
-					is_lithoid_empire = no
-					has_cloning_tradition = yes
-				}
-			}
-			food = 15
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = {
-					is_lithoid_empire = no
+					is_lithoid_or_infernal_empire = no
 					has_cloning_tradition = yes
 				}
 			}
@@ -1537,6 +1364,25 @@ building_clone_vats = {
 				}
 			}
 			minerals = 15
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_infernal_empire = yes
+				}
+			}
+			alloys = @b2_alloy_upkeep
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_infernal_empire = yes
+					has_cloning_tradition = yes
+				}
+			}
+			alloys = @b2_alloy_upkeep
 		}
 	}
 
@@ -1805,7 +1651,7 @@ building_avb_clone_vats_2 = {
 			trigger = {
 				exists = owner
 				owner = {
-					is_lithoid_empire = no
+					is_lithoid_or_infernal_empire = no
 				}
 			}
 			food = 30
@@ -1814,17 +1660,7 @@ building_avb_clone_vats_2 = {
 			trigger = {
 				exists = owner
 				owner = {
-					is_lithoid_empire = no
-					has_cloning_tradition = yes
-				}
-			}
-			food = 30
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = {
-					is_lithoid_empire = no
+					is_lithoid_or_infernal_empire = no
 					has_cloning_tradition = yes
 				}
 			}
@@ -1848,6 +1684,25 @@ building_avb_clone_vats_2 = {
 				}
 			}
 			minerals = 30
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_infernal_empire = yes
+				}
+			}
+			alloys = @b3_alloy_upkeep
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_infernal_empire = yes
+					has_cloning_tradition = yes
+				}
+			}
+			alloys = @b3_alloy_upkeep
 		}
 	}
 	prerequisites = {
@@ -1908,7 +1763,7 @@ building_clone_army_clone_vat = {
 		clone_soldiers_sustained = @clones_sustained_high
 	}
 
-	# Add growth from 0 to 25 depending on 'clone_pops_missing_per_vat'.
+	# Add growth from 0 to 20 depending on 'clone_pops_missing_per_vat'.
 	triggered_planet_pop_group_modifier_for_species = {
 		potential = {
 			has_infertile_clone_soldier_trait = yes
@@ -1916,69 +1771,69 @@ building_clone_army_clone_vat = {
 				check_variable = { which = clone_pops_missing_per_vat value > 2200 }
 			}
 		}
-		bonus_pop_growth = 25
+		bonus_pop_growth = 20
 	}
 	triggered_planet_modifier = {
 		potential = {
 			check_variable = { which = clone_pops_missing_per_vat value > 2200 }
 		}
-		fake_pop_growth_mod = 25
+		fake_pop_growth_mod = 20
 	}
 
 	inline_script = {
 		script = buildings/clone_army_vat_output
 		UPPER_LIMIT = 2200
 		LOWER_LIMIT = 2000
-		GROWTH = 22
+		GROWTH = 19
 	}
 
 	inline_script = {
 		script = buildings/clone_army_vat_output
 		UPPER_LIMIT = 2000
 		LOWER_LIMIT = 1800
-		GROWTH = 20
+		GROWTH = 17
 	}
 
 	inline_script = {
 		script = buildings/clone_army_vat_output
 		UPPER_LIMIT = 1800
 		LOWER_LIMIT = 1600
-		GROWTH = 17
+		GROWTH = 14
 	}
 
 	inline_script = {
 		script = buildings/clone_army_vat_output
 		UPPER_LIMIT = 1600
 		LOWER_LIMIT = 1400
-		GROWTH = 15
+		GROWTH = 12
 	}
 
 	inline_script = {
 		script = buildings/clone_army_vat_output
 		UPPER_LIMIT = 1400
 		LOWER_LIMIT = 1200
-		GROWTH = 12
+		GROWTH = 9
 	}
 
 	inline_script = {
 		script = buildings/clone_army_vat_output
 		UPPER_LIMIT = 1200
 		LOWER_LIMIT = 1000
-		GROWTH = 10
+		GROWTH = 7 
 	}
 
 	inline_script = {
 		script = buildings/clone_army_vat_output
 		UPPER_LIMIT = 1000
 		LOWER_LIMIT = 800
-		GROWTH = 7
+		GROWTH = 5
 	}
 
 	inline_script = {
 		script = buildings/clone_army_vat_output
 		UPPER_LIMIT = 800
 		LOWER_LIMIT = 600
-		GROWTH = 5
+		GROWTH = 4
 	}
 
 	triggered_planet_pop_group_modifier_for_species = {
@@ -2018,6 +1873,33 @@ building_clone_army_clone_vat = {
 		upkeep = {
 			energy = @b2_upkeep
 		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_lithoid_or_infernal_empire = no
+				}
+			}
+			food = @b2_upkeep
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_lithoid_empire = yes
+				}
+			}
+			minerals = @b2_upkeep
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_infernal_empire = yes
+				}
+			}
+			alloys = @b2_alloy_upkeep
+		}
 	}
 
 	upgrades = {
@@ -2029,18 +1911,6 @@ building_clone_army_clone_vat = {
 
 	triggered_desc = {
 		text = building_clone_army_clone_vat_effect_desc
-	}
-	triggered_desc = {
-		trigger = {
-			OR = {
-				has_building = building_robot_assembly_plant
-				AND = {
-					exists = assembling_species
-					assembling_species = { is_robotic_species = yes }
-				}
-			}
-		}
-		text = tooltip_organic_and_artificial_assembly_warning
 	}
 
 	is_essential = yes
@@ -2221,21 +2091,36 @@ building_avb_clone_army_clone_vat_2 = {
 		upkeep = {
 			energy = @avb_b3_upkeep
 		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_lithoid_or_infernal_empire = no
+				}
+			}
+			food = @b3_upkeep
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_lithoid_empire = yes
+				}
+			}
+			minerals = @b3_upkeep
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_infernal_empire = yes
+				}
+			}
+			alloys = @b3_alloy_upkeep
+		}
 	}
 	triggered_desc = {
 		text = building_clone_army_clone_vat_effect_desc
-	}
-	triggered_desc = {
-		trigger = {
-			OR = {
-				has_building = building_robot_assembly_plant
-				AND = {
-					exists = assembling_species
-					assembling_species = { is_robotic_species = yes }
-				}
-			}
-		}
-		text = tooltip_organic_and_artificial_assembly_warning
 	}
 
 	is_essential = yes
@@ -2314,22 +2199,6 @@ building_posthumous_employment_center = {
 			energy = @b1_upkeep
 		}
 	}
-
-	triggered_desc = {
-		text = job_reassigner_effect_desc
-	}
-	triggered_desc = {
-		trigger = {
-			OR = {
-				has_building = building_robot_assembly_plant
-				AND = {
-					exists = assembling_species
-					assembling_species = { is_robotic_species = yes }
-				}
-			}
-		}
-		text = tooltip_organic_and_artificial_assembly_warning
-	}
 	upgrades = {
 		building_avb_posthumous_employment_center_2
 	}
@@ -2404,21 +2273,6 @@ building_avb_posthumous_employment_center_2 = {
 		upkeep = {
 			energy = @avb_b2_upkeep
 		}
-	}
-	triggered_desc = {
-		text = job_reassigner_effect_desc
-	}
-	triggered_desc = {
-		trigger = {
-			OR = {
-				has_building = building_robot_assembly_plant
-				AND = {
-					exists = assembling_species
-					assembling_species = { is_robotic_species = yes }
-				}
-			}
-		}
-		text = tooltip_organic_and_artificial_assembly_warning
 	}
 }
 

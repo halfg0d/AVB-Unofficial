@@ -1581,7 +1581,7 @@ building_bio_reactor_2 = {
 	planet_modifier = {
 		planet_farmers_food_produces_add = -3
 		planet_farmers_energy_produces_add = 2
-		planet_farmers_exotic_gases_produces_add = 0.1
+		planet_farmers_exotic_gases_produces_add = 0.5
 	}
 
 	prerequisites = {
@@ -1649,7 +1649,7 @@ building_avb_bio_reactor_3 = {
 	planet_modifier = {
 		planet_farmers_food_produces_add = -4.5
 		planet_farmers_energy_produces_add = 3
-		planet_farmers_exotic_gases_produces_add = 0.15
+		planet_farmers_exotic_gases_produces_add = 0.75
 	}
 
 	prerequisites = {

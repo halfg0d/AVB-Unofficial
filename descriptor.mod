@@ -1,8 +1,8 @@
-version="1.8.2"
+version="1.8.3"
 tags={
 	"Buildings"
 }
-name="[BETA] Additional Vanilla Buildings - Unofficial"
+name="Additional Vanilla Buildings - Unofficial"
 picture="thumbnail.png"
-supported_version="v4.1.5"
+supported_version="v4.2.3"
 remote_file_id="2916082557"

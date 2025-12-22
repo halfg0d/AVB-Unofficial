@@ -132,29 +132,6 @@ building_system_capital = {
 		}
 	}
 
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { NOT = { has_valid_civic = civic_civil_education } }
-		}
-		text = job_enforcer_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { has_valid_civic = civic_civil_education }
-		}
-		text = job_educator_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			has_modifier = payback_unified_purpose
-		}
-		text = job_unifier_effect_desc
-	}
-
 	upgrades = {
 		"building_avb_capital_4"
 		"building_imperial_capital"
@@ -283,28 +260,6 @@ building_avb_capital_4 = {
 		}
 	}
 
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { NOT = { has_valid_civic = civic_civil_education } }
-		}
-		text = job_enforcer_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { has_valid_civic = civic_civil_education }
-		}
-		text = job_educator_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			has_modifier = payback_unified_purpose
-		}
-		text = job_unifier_effect_desc
-	}
 }
 
 building_avb_capital_5 = {
@@ -427,29 +382,6 @@ building_avb_capital_5 = {
 			energy = @avb_b5_upkeep
 		}
 	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { NOT = { has_valid_civic = civic_civil_education } }
-		}
-		text = job_enforcer_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { has_valid_civic = civic_civil_education }
-		}
-		text = job_educator_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			has_modifier = payback_unified_purpose
-		}
-		text = job_unifier_effect_desc
-	}
 }
 
 building_avb_capital_6 = {
@@ -570,28 +502,6 @@ building_avb_capital_6 = {
 		upkeep = {
 			energy = @avb_b6_upkeep
 		}
-	}
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { NOT = { has_valid_civic = civic_civil_education } }
-		}
-		text = job_enforcer_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { has_valid_civic = civic_civil_education }
-		}
-		text = job_educator_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			has_modifier = payback_unified_purpose
-		}
-		text = job_unifier_effect_desc
 	}
 }
 
@@ -728,6 +638,15 @@ building_machine_system_capital = {
 		}
 	}
 
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_modifier = shroud_forged_physician_modifier }
+		}
+		modifier = {
+			job_physician_drone_add = 100
+		}
+	}
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -738,26 +657,10 @@ building_machine_system_capital = {
 		}
 	}
 
-	triggered_desc = {
-		text = job_replicator_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			has_modifier = gestation_colony
-		}
-		text = job_gestation_drone_effect_desc
-	}
-
-	triggered_desc = {
-		text = job_patrol_drone_effect_desc
-	}
-
 	upgrades = {
 		"building_avb_machine_capital_4"
 		"building_imperial_machine_capital"
 	}
-
 	additional_ai_weight = 100
 }
 building_avb_machine_capital_4 = {
@@ -890,6 +793,15 @@ building_avb_machine_capital_4 = {
 			pop_bonus_workforce_mult = 0.1
 		}
 	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_modifier = shroud_forged_physician_modifier }
+		}
+		modifier = {
+			job_physician_drone_add = 100
+		}
+	}
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -898,20 +810,6 @@ building_avb_machine_capital_4 = {
 		upkeep = {
 			energy = @avb_b4_upkeep
 		}
-	}
-	triggered_desc = {
-		text = job_replicator_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			has_modifier = gestation_colony
-		}
-		text = job_gestation_drone_effect_desc
-	}
-
-	triggered_desc = {
-		text = job_patrol_drone_effect_desc
 	}
 }
 
@@ -1041,6 +939,15 @@ building_avb_machine_capital_5 = {
 			pop_bonus_workforce_mult = 0.1
 		}
 	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_modifier = shroud_forged_physician_modifier }
+		}
+		modifier = {
+			job_physician_drone_add = 100
+		}
+	}
 	upgrades = {
 		building_avb_machine_capital_6
 	}
@@ -1052,20 +959,6 @@ building_avb_machine_capital_5 = {
 		upkeep = {
 			energy = @avb_b5_upkeep
 		}
-	}
-	triggered_desc = {
-		text = job_replicator_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			has_modifier = gestation_colony
-		}
-		text = job_gestation_drone_effect_desc
-	}
-
-	triggered_desc = {
-		text = job_patrol_drone_effect_desc
 	}
 }
 
@@ -1197,6 +1090,15 @@ building_avb_machine_capital_6 = {
 			pop_bonus_workforce_mult = 0.1
 		}
 	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_modifier = shroud_forged_physician_modifier }
+		}
+		modifier = {
+			job_physician_drone_add = 100
+		}
+	}
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1205,20 +1107,6 @@ building_avb_machine_capital_6 = {
 		upkeep = {
 			energy = @avb_b6_upkeep
 		}
-	}
-	triggered_desc = {
-		text = job_replicator_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			has_modifier = gestation_colony
-		}
-		text = job_gestation_drone_effect_desc
-	}
-
-	triggered_desc = {
-		text = job_patrol_drone_effect_desc
 	}
 }
 
@@ -1744,125 +1632,6 @@ building_hab_system_capital = {
 			pop_bonus_workforce_mult = 0.1
 		}
 	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				has_origin = origin_toxic_knights
-				NOR = {
-					has_country_flag = toxoids_7011_b
-					has_country_flag = toxoids_7040_b
-					has_country_flag = toxoids_7130_b
-				}
-			}
-			has_planet_flag = toxic_knights_habitat
-		}
-		text = job_knight_commander_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				has_origin = origin_toxic_knights
-				OR = {
-					has_country_flag = toxoids_7011_b
-					has_country_flag = toxoids_7040_b
-					has_country_flag = toxoids_7130_b
-				}
-			}
-			has_planet_flag = toxic_knights_habitat
-		}
-		text = job_knight_commander_research_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				has_origin = origin_toxic_knights
-			}
-			has_planet_flag = toxic_knights_habitat
-		}
-		text = job_knight_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				OR = {
-					is_individual_machine = yes
-					AND = {
-						is_regular_empire = yes
-						has_active_tradition = tr_synthetics_prefabricated_components
-					}
-				}
-			}
-		}
-		text = job_roboticist_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-					is_regular_empire = yes
-					NOT = { has_valid_civic = civic_civil_education }
-			}
-			text = job_enforcer_effect_desc
-		}
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { has_valid_civic = civic_civil_education }
-		}
-		text = job_educator_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { has_valid_civic = civic_private_healthcare_corporate }
-		}
-		text = job_healthcare_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-		}
-		text = job_evaluator_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-		}
-		text = job_replicator_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-		}
-		text = job_logistics_drone_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_hive_empire = yes }
-		}
-		text = job_synapse_drone_effect_desc
-	}
-
 	upgrades = {
 		"building_avb_hab_capital_4"
 		"building_imperial_capital"
@@ -2063,124 +1832,6 @@ building_avb_hab_capital_4 = {
 			pop_bonus_workforce_mult = 0.1
 		}
 	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				has_origin = origin_toxic_knights
-				NOR = {
-					has_country_flag = toxoids_7011_b
-					has_country_flag = toxoids_7040_b
-					has_country_flag = toxoids_7130_b
-				}
-			}
-			has_planet_flag = toxic_knights_habitat
-		}
-		text = job_knight_commander_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				has_origin = origin_toxic_knights
-				OR = {
-					has_country_flag = toxoids_7011_b
-					has_country_flag = toxoids_7040_b
-					has_country_flag = toxoids_7130_b
-				}
-			}
-			has_planet_flag = toxic_knights_habitat
-		}
-		text = job_knight_commander_research_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				has_origin = origin_toxic_knights
-			}
-			has_planet_flag = toxic_knights_habitat
-		}
-		text = job_knight_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				OR = {
-					is_individual_machine = yes
-					AND = {
-						is_regular_empire = yes
-						has_active_tradition = tr_synthetics_prefabricated_components
-					}
-				}
-			}
-		}
-		text = job_roboticist_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-					is_regular_empire = yes
-					NOT = { has_valid_civic = civic_civil_education }
-			}
-			text = job_enforcer_effect_desc
-		}
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { has_valid_civic = civic_civil_education }
-		}
-		text = job_educator_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { has_valid_civic = civic_private_healthcare_corporate }
-		}
-		text = job_healthcare_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-		}
-		text = job_evaluator_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-		}
-		text = job_replicator_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-		}
-		text = job_logistics_drone_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_hive_empire = yes }
-		}
-		text = job_synapse_drone_effect_desc
-	}
 }
 
 #############
@@ -2274,59 +1925,6 @@ building_resort_major_capital = {
 			pop_bonus_workforce_mult = 0.1
 		}
 	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_megacorp = no
-			}
-		}
-		text = job_politician_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { has_active_tradition = tr_synthetics_prefabricated_components }
-		}
-		text = job_roboticist_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_megacorp = yes
-				is_worker_coop_empire = no
-			}
-		}
-		text = job_executive_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_megacorp = yes
-				is_worker_coop_empire = yes
-			}
-		}
-		text = job_steward_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { has_valid_civic = civic_private_healthcare_corporate }
-		}
-		text = job_healthcare_effect_desc
-	}
-
-	triggered_desc = {
-		text = job_resort_worker_effect_desc
-	}
-
 	upgrades = {
 		"building_avb_resort_capital_3"
 	}
@@ -2418,58 +2016,6 @@ building_avb_resort_capital_3 = {
 			pop_bonus_workforce_mult = 0.1
 		}
 	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_megacorp = no
-			}
-		}
-		text = job_politician_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { has_active_tradition = tr_synthetics_prefabricated_components }
-		}
-		text = job_roboticist_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_megacorp = yes
-				is_worker_coop_empire = no
-			}
-		}
-		text = job_executive_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_megacorp = yes
-				is_worker_coop_empire = yes
-			}
-		}
-		text = job_steward_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { has_valid_civic = civic_private_healthcare_corporate }
-		}
-		text = job_healthcare_effect_desc
-	}
-
-	triggered_desc = {
-		text = job_resort_worker_effect_desc
-	}
 }
 
 # Thrall-World Major Capital
@@ -2544,43 +2090,6 @@ building_slave_major_capital = {
 			pop_bonus_workforce_mult = 0.1
 		}
 	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_megacorp = no
-			}
-		}
-		text = job_politician_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_megacorp = yes
-				is_worker_coop_empire = no
-			}
-		}
-		text = job_executive_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_megacorp = yes
-				is_worker_coop_empire = yes
-			}
-		}
-		text = job_steward_effect_desc
-	}
-
-	triggered_desc = {
-		text = job_slave_overseer_effect_desc
-	}
-
 	upgrades = {
 		"building_avb_slave_capital_3"
 	}
@@ -2657,41 +2166,5 @@ building_avb_slave_capital_3 = {
 		modifier = {
 			pop_bonus_workforce_mult = 0.1
 		}
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_megacorp = no
-			}
-		}
-		text = job_politician_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_megacorp = yes
-				is_worker_coop_empire = no
-			}
-		}
-		text = job_executive_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_megacorp = yes
-				is_worker_coop_empire = yes
-			}
-		}
-		text = job_steward_effect_desc
-	}
-
-	triggered_desc = {
-		text = job_slave_overseer_effect_desc
 	}
 }

@@ -355,21 +355,7 @@ building_galactic_stock_exchange = {
 	}
 
 	ai_resource_production = {
-		energy = 5
-		trigger = {
-			solar_system = {
-				#has_system_trade_value >= 50
-			}
-		}
-	}
-
-	ai_resource_production = {
-		energy = 3
-		trigger = {
-			solar_system = {
-				#has_system_trade_value >= 80
-			}
-		}
+		trade = 10
 	}
 	upgrades = {
 		building_avb_galactic_stock_exchange_2
@@ -449,20 +435,6 @@ building_avb_galactic_stock_exchange_2 = {
 	}
 	
 	ai_resource_production = {
-		energy = 5
-		trigger = {
-			solar_system = {
-				#has_system_trade_value >= 50
-			}
-		}
-	}
-
-	ai_resource_production = {
-		energy = 3
-		trigger = {
-			solar_system = {
-				#has_system_trade_value >= 80
-			}
-		}
+		trade = 20
 	}
 }

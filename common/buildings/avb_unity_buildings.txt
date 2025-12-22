@@ -24,6 +24,7 @@ building_hypercomms_forum = {
 				is_gestalt = yes
 				is_megacorp = yes
 				is_memorialist_empire = yes
+				is_entropy_drinkers_empire = yes
 			}
 		}
 	}
@@ -41,6 +42,7 @@ building_hypercomms_forum = {
 					is_gestalt = yes
 					is_megacorp = yes
 					is_memorialist_empire = yes
+					is_entropy_drinkers_empire = yes
 				}
 			}
 		}
@@ -51,6 +53,10 @@ building_hypercomms_forum = {
 		building_simulation_3
 		building_galactic_memorial_3
 		building_sensorium_3
+		building_lifecrypt_3
+		building_lifecrypt_machine_3
+		building_lifecrypt_hive_mind_3
+		building_lifecrypt_corporate_3
 		building_avatar_chamber_3
 	}
 
@@ -92,6 +98,7 @@ building_hypercomms_forum = {
 		is_gestalt = no
 		is_megacorp = no
 		is_memorialist_empire = no
+		is_entropy_drinkers_empire = no
 	}
 	upgrades = {
 		building_avb_monument_4
@@ -118,6 +125,7 @@ building_avb_monument_4 = {
 				is_gestalt = yes
 				is_megacorp = yes
 				is_memorialist_empire = yes
+				is_entropy_drinkers_empire = yes 
 			}
 		}
 	}
@@ -136,6 +144,7 @@ building_avb_monument_4 = {
 					is_gestalt = yes
 					is_megacorp = yes
 					is_memorialist_empire = yes
+					is_entropy_drinkers_empire = yes 
 				}
 			}
 		}
@@ -182,6 +191,7 @@ building_avb_monument_4 = {
 		is_gestalt = no
 		is_megacorp = no
 		is_memorialist_empire = no
+		is_entropy_drinkers_empire = no
 	}
 	upgrades = {
 		building_avb_monument_5
@@ -208,6 +218,7 @@ building_avb_monument_5 = {
 				is_gestalt = yes
 				is_megacorp = yes
 				is_memorialist_empire = yes
+				is_entropy_drinkers_empire = yes 
 			}
 		}
 	}
@@ -226,6 +237,7 @@ building_avb_monument_5 = {
 					is_gestalt = yes
 					is_megacorp = yes
 					is_memorialist_empire = yes
+					is_entropy_drinkers_empire = yes 
 				}
 			}
 		}
@@ -272,6 +284,7 @@ building_avb_monument_5 = {
 		is_gestalt = no
 		is_megacorp = no
 		is_memorialist_empire = no
+		is_entropy_drinkers_empire = no 
 	}
 	upgrades = {
 		building_avb_monument_6
@@ -298,6 +311,7 @@ building_avb_monument_6 = {
 				is_gestalt = yes
 				is_megacorp = yes
 				is_memorialist_empire = yes
+				is_entropy_drinkers_empire = yes
 			}
 		}
 	}
@@ -315,6 +329,7 @@ building_avb_monument_6 = {
 				OR = {
 					is_gestalt = yes
 					is_megacorp = yes
+					is_entropy_drinkers_empire = yes
 					is_memorialist_empire = yes
 				}
 			}
@@ -362,6 +377,7 @@ building_avb_monument_6 = {
 	show_tech_unlock_if = {
 		is_gestalt = no
 		is_megacorp = no
+		is_entropy_drinkers_empire = no 
 		is_memorialist_empire = no
 	}
 }
@@ -1844,7 +1860,7 @@ building_avb_death_temple_5 = {
 		"building_avb_death_temple_6"
 	}
 }
-building_avb_death_temple_5 = {
+building_avb_death_temple_6 = {
 	base_buildtime = @avb_b6_time
 	position_priority = 100
 	planet_limit = 1
@@ -2423,6 +2439,7 @@ building_simulation_3 = {
 		owner = {
 			is_machine_empire = yes
 			is_memorialist_empire = no
+			is_entropy_drinkers_empire = no
 		}
 	}
 
@@ -2438,6 +2455,7 @@ building_simulation_3 = {
 				OR = {
 					is_machine_empire = no
 					is_memorialist_empire = yes
+					is_entropy_drinkers_empire = yes 
 				}
 			}
 		}
@@ -2448,6 +2466,10 @@ building_simulation_3 = {
 		building_hypercomms_forum
 		building_galactic_memorial_3
 		building_sensorium_3
+		building_lifecrypt_3
+		building_lifecrypt_machine_3
+		building_lifecrypt_hive_mind_3
+		building_lifecrypt_corporate_3
 	}
 
 	resources = {
@@ -2484,6 +2506,7 @@ building_simulation_3 = {
 	show_tech_unlock_if = {
 		is_machine_empire = yes
 		is_memorialist_empire = no
+		is_entropy_drinkers_empire = no
 	}
 	upgrades = {
 		"building_avb_monument_machine_4"
@@ -2506,6 +2529,7 @@ building_avb_monument_machine_4 = {
 		owner = {
 			is_machine_empire = yes
 			is_memorialist_empire = no
+			is_entropy_drinkers_empire = no
 		}
 	}
 
@@ -2521,6 +2545,7 @@ building_avb_monument_machine_4 = {
 				OR = {
 					is_machine_empire = no
 					is_memorialist_empire = yes
+					is_entropy_drinkers_empire = yes 
 				}
 			}
 		}
@@ -2563,6 +2588,7 @@ building_avb_monument_machine_4 = {
 	show_tech_unlock_if = {
 		is_machine_empire = yes
 		is_memorialist_empire = no
+		is_entropy_drinkers_empire = no
 	}
 	upgrades = {
 		building_avb_monument_machine_5
@@ -2585,6 +2611,7 @@ building_avb_monument_machine_5 = {
 		owner = {
 			is_machine_empire = yes
 			is_memorialist_empire = no
+			is_entropy_drinkers_empire = no 
 		}
 	}
 
@@ -2600,6 +2627,7 @@ building_avb_monument_machine_5 = {
 				OR = {
 					is_machine_empire = no
 					is_memorialist_empire = yes
+					is_entropy_drinkers_empire = yes 
 				}
 			}
 		}
@@ -2640,6 +2668,7 @@ building_avb_monument_machine_5 = {
 	show_tech_unlock_if = {
 		is_machine_empire = yes
 		is_memorialist_empire = no
+		is_entropy_drinkers_empire = no
 	}
 	upgrades = {
 		building_avb_monument_machine_6
@@ -2662,6 +2691,7 @@ building_avb_monument_machine_6 = {
 		owner = {
 			is_machine_empire = yes
 			is_memorialist_empire = no
+			is_entropy_drinkers_empire = no 
 		}
 	}
 
@@ -2677,6 +2707,7 @@ building_avb_monument_machine_6 = {
 				OR = {
 					is_machine_empire = no
 					is_memorialist_empire = yes
+					is_entropy_drinkers_empire = yes 
 				}
 			}
 		}
@@ -2717,6 +2748,7 @@ building_avb_monument_machine_6 = {
 	show_tech_unlock_if = {
 		is_machine_empire = yes
 		is_memorialist_empire = no
+		is_entropy_drinkers_empire = no
 	}
 }
 
@@ -2739,6 +2771,8 @@ building_corporate_forum = {
 		NOT = { has_modifier = slave_colony }
 		owner = {
 			is_megacorp = yes
+			is_memorialist_empire = no
+			is_entropy_drinkers_empire = no
 		}
 	}
 
@@ -2764,6 +2798,10 @@ building_corporate_forum = {
 		building_simulation_3
 		building_galactic_memorial_3
 		building_sensorium_3
+		building_lifecrypt_3
+		building_lifecrypt_machine_3
+		building_lifecrypt_hive_mind_3
+		building_lifecrypt_corporate_3
 	}
 
 	resources = {

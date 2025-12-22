@@ -158,17 +158,6 @@ building_paragon_memory_vaults = {
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
-
-	on_built = {
-		set_variable = {
-			which = paragon_memory_vault
-			value = 0
-		}
-	}
-
-	on_destroy = {
-		clear_variable = paragon_memory_vault
-	}
 	upgrades = {
 		"building_avb_paragon_memory_vaults_2"
 	}
@@ -349,9 +338,5 @@ building_avb_paragon_memory_vaults_2 = {
 
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
-	}
-
-	on_destroy = {
-		clear_variable = paragon_memory_vault
 	}
 }

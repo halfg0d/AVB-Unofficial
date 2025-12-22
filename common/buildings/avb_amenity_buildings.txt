@@ -53,7 +53,7 @@ building_paradise_dome = {
 
 	planet_modifier = {
 		planet_housing_add = 3000
-		planet_amenities_add = 5000
+		planet_amenities_add = 3000
 	}
 
 	triggered_planet_modifier = {
@@ -145,7 +145,7 @@ building_avb_residence_3 = {
 	
 	planet_modifier = {
 		planet_housing_add = 6000
-		planet_amenities_add = 10000
+		planet_amenities_add = 6000
 	}
 	
 	triggered_planet_modifier = {
@@ -236,7 +236,7 @@ building_avb_residence_4 = {
 	
 	planet_modifier = {
 		planet_housing_add = 12000
-		planet_amenities_add = 20000
+		planet_amenities_add = 12000
 	}
 	
 	triggered_planet_modifier = {
@@ -247,7 +247,7 @@ building_avb_residence_4 = {
 			}					
 		}
 		modifier = {
-			planet_housing_add = 1
+			planet_housing_add = 100
 		}
 	}
 	resources = {
@@ -328,7 +328,7 @@ building_avb_residence_5 = {
 	
 	planet_modifier = {
 		planet_housing_add = 24000
-		planet_amenities_add = 40000
+		planet_amenities_add = 24000
 	}
 	
 	triggered_planet_modifier = {
@@ -433,7 +433,7 @@ building_communal_housing_large = {
 
 	planet_modifier = {
 		planet_housing_add = 4000
-		planet_amenities_add = 6000
+		planet_amenities_add = 5000
 	}
 
 	triggered_planet_modifier = {
@@ -533,7 +533,7 @@ building_avb_communal_housing_3 = {
 	
 	planet_modifier = {
 		planet_housing_add = 8000
-		planet_amenities_add = 12000
+		planet_amenities_add = 10000
 	}
 	
 	triggered_planet_modifier = {
@@ -634,7 +634,7 @@ building_avb_communal_housing_4 = {
 	
 	planet_modifier = {
 		planet_housing_add = 16000
-		planet_amenities_add = 24000
+		planet_amenities_add = 20000
 	}
 	
 	triggered_planet_modifier = {
@@ -733,7 +733,7 @@ building_avb_communal_housing_5 = {
 	
 	planet_modifier = {
 		planet_housing_add = 32000
-		planet_amenities_add = 48000
+		planet_amenities_add = 40000
 	}
 	
 	triggered_planet_modifier = {
@@ -796,7 +796,7 @@ building_drone_megastorage = {
 
 	planet_modifier = {
 		planet_housing_add = 3000
-		planet_amenities_no_happiness_add = 5000
+		planet_amenities_no_happiness_add = 3000
 	}
 
 	triggered_planet_modifier = {
@@ -870,7 +870,7 @@ building_expanded_warren = {
 
 	planet_modifier = {
 		planet_housing_add = 3000
-		planet_amenities_no_happiness_add = 5000
+		planet_amenities_no_happiness_add = 3000
 	}
 
 	triggered_planet_modifier = {
@@ -938,7 +938,7 @@ building_avb_drone_storage_3 = {
 	
 	planet_modifier = {
 		planet_housing_add = 6000
-		planet_amenities_add = 10000
+		planet_amenities_add = 6000
 	}
 	
 	triggered_planet_modifier = {
@@ -1005,7 +1005,7 @@ building_avb_drone_storage_4 = {
 	
 	planet_modifier = {
 		planet_housing_add = 12000
-		planet_amenities_add = 20000
+		planet_amenities_add = 12000
 	}
 	
 	triggered_planet_modifier = {
@@ -1071,7 +1071,7 @@ building_avb_drone_storage_5 = {
 	
 	planet_modifier = {
 		planet_housing_add = 24000
-		planet_amenities_add = 40000
+		planet_amenities_add = 24000
 	}
 	
 	triggered_planet_modifier = {
@@ -1141,7 +1141,7 @@ building_avb_warren_3 = {
 	
 	planet_modifier = {
 		planet_housing_add = 6000
-		planet_amenities_no_happiness_add = 10000
+		planet_amenities_no_happiness_add = 6000
 	}
 
 	triggered_planet_modifier = {
@@ -1214,7 +1214,7 @@ building_avb_warren_4 = {
 	
 	planet_modifier = {
 		planet_housing_add = 12000
-		planet_amenities_no_happiness_add = 20000
+		planet_amenities_no_happiness_add = 12000
 	}
 
 	triggered_planet_modifier = {
@@ -1284,7 +1284,7 @@ building_avb_warren_5 = {
 	
 	planet_modifier = {
 		planet_housing_add = 24000
-		planet_amenities_add = 40000
+		planet_amenities_add = 24000
 	}
 	
 	triggered_planet_modifier = {
@@ -1295,7 +1295,7 @@ building_avb_warren_5 = {
 			}					
 		}
 		modifier = {
-			planet_housing_add = 1
+			planet_housing_add = 100
 		}
 	}
 

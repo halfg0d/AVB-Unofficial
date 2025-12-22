@@ -38,18 +38,6 @@ building_research_lab_3 = {
 			energy = @b3_upkeep
 			exotic_gases = @b3_rare_upkeep
 		}
-		upkeep = {
-			trigger = {
-				owner = {
-					is_galactic_community_member = yes
-				}
-				is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
-				planet = {
-					has_modifier = pm_extradimensional_experimentation
-				}
-			}
-			sr_zro = 1
-		}
 	}
 
 	inline_script = {
@@ -104,18 +92,6 @@ building_avb_research_lab_4 = {
 		upkeep = {
 			energy = @avb_b3_upkeep
 			exotic_gases = @avb_b3_rare_upkeep
-		}
-		upkeep = {
-			trigger = {
-				owner = {
-					is_galactic_community_member = yes
-				}
-				is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
-				planet = {
-					has_modifier = pm_extradimensional_experimentation
-				}
-			}
-			sr_zro = 1
 		}
 	}
 
@@ -172,18 +148,6 @@ building_avb_research_lab_5 = {
 			energy = @avb_b4_upkeep
 			exotic_gases = @avb_b4_rare_upkeep
 		}
-		upkeep = {
-			trigger = {
-				owner = {
-					is_galactic_community_member = yes
-				}
-				is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
-				planet = {
-					has_modifier = pm_extradimensional_experimentation
-				}
-			}
-			sr_zro = 1
-		}
 	}
 
 	inline_script = {
@@ -239,18 +203,6 @@ building_avb_research_lab_6 = {
 		upkeep = {
 			energy = @avb_b5_upkeep
 			exotic_gases = @avb_b5_rare_upkeep
-		}
-		upkeep = {
-			trigger = {
-				owner = {
-					is_galactic_community_member = yes
-				}
-				is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
-				planet = {
-					has_modifier = pm_extradimensional_experimentation
-				}
-			}
-			sr_zro = 1
 		}
 	}
 
@@ -328,9 +280,7 @@ building_institute = {
 				is_gestalt = no
 			}
 		}
-		planet_physicists_consumer_goods_upkeep_add = 1.5
-		planet_biologists_consumer_goods_upkeep_add = 1.5
-		planet_engineers_consumer_goods_upkeep_add = 1.5
+		planet_researchers_consumer_goods_upkeep_add = 1.5
 	}
 	triggered_planet_modifier = {
 		potential = {
@@ -339,9 +289,7 @@ building_institute = {
 				is_machine_empire = yes
 			}
 		}
-		planet_physicists_energy_upkeep_add = 3
-		planet_biologists_energy_upkeep_add = 3
-		planet_engineers_energy_upkeep_add = 3
+		planet_researchers_energy_upkeep_add = 3
 	}
 	triggered_planet_modifier = {
 		potential = {
@@ -350,9 +298,7 @@ building_institute = {
 				is_hive_empire = yes
 			}
 		}
-		planet_physicists_minerals_upkeep_add = 4
-		planet_biologists_minerals_upkeep_add = 4
-		planet_engineers_minerals_upkeep_add = 4
+		planet_researchers_minerals_upkeep_add = 4
 	}
 
 	prerequisites = {
@@ -435,9 +381,7 @@ building_avb_institute_2 = {
 				is_gestalt = no
 			}
 		}
-		planet_physicists_consumer_goods_upkeep_add = 2.25
-		planet_biologists_consumer_goods_upkeep_add = 2.25
-		planet_engineers_consumer_goods_upkeep_add = 2.25
+		planet_researchers_consumer_goods_upkeep_add = 2.25
 	}
 	triggered_planet_modifier = {
 		potential = {
@@ -446,9 +390,7 @@ building_avb_institute_2 = {
 				is_machine_empire = yes
 			}
 		}
-		planet_physicists_energy_upkeep_add = 4.5
-		planet_biologists_energy_upkeep_add = 4.5
-		planet_engineers_energy_upkeep_add = 4.5
+		planet_researchers_energy_upkeep_add = 4.5
 	}
 	triggered_planet_modifier = {
 		potential = {
@@ -457,9 +399,7 @@ building_avb_institute_2 = {
 				is_hive_empire = yes
 			}
 		}
-		planet_physicists_minerals_upkeep_add = 6
-		planet_biologists_minerals_upkeep_add = 6
-		planet_engineers_minerals_upkeep_add = 6
+		planet_researchers_minerals_upkeep_add = 6
 	}
 
 	prerequisites = {
@@ -543,9 +483,7 @@ building_supercomputer = {
 				is_gestalt = no
 			}
 		}
-		planet_physicists_consumer_goods_upkeep_add = 1.5
-		planet_biologists_consumer_goods_upkeep_add = 1.5
-		planet_engineers_consumer_goods_upkeep_add = 1.5
+		planet_researchers_consumer_goods_upkeep_add = 1.5
 	}
 	triggered_planet_modifier = {
 		potential = {
@@ -554,9 +492,7 @@ building_supercomputer = {
 				is_machine_empire = yes
 			}
 		}
-		planet_physicists_energy_upkeep_add = 3
-		planet_biologists_energy_upkeep_add = 3
-		planet_engineers_energy_upkeep_add = 3
+		planet_researchers_energy_upkeep_add = 3
 	}
 	triggered_planet_modifier = {
 		potential = {
@@ -565,9 +501,7 @@ building_supercomputer = {
 				is_hive_empire = yes
 			}
 		}
-		planet_physicists_minerals_upkeep_add = 4
-		planet_biologists_minerals_upkeep_add = 4
-		planet_engineers_minerals_upkeep_add = 4
+		planet_researchers_minerals_upkeep_add = 4
 	}
 
 	prerequisites = {
@@ -657,9 +591,7 @@ building_avb_supercomputer_2 = {
 				is_gestalt = no
 			}
 		}
-		planet_physicists_consumer_goods_upkeep_add = 2.25
-		planet_biologists_consumer_goods_upkeep_add = 2.25
-		planet_engineers_consumer_goods_upkeep_add = 2.25
+		planet_researchers_consumer_goods_upkeep_add = 2.25
 	}
 	triggered_planet_modifier = {
 		potential = {
@@ -668,9 +600,7 @@ building_avb_supercomputer_2 = {
 				is_machine_empire = yes
 			}
 		}
-		planet_physicists_energy_upkeep_add = 4.5
-		planet_biologists_energy_upkeep_add = 4.5
-		planet_engineers_energy_upkeep_add = 4.5
+		planet_researchers_energy_upkeep_add = 4.5
 	}
 	triggered_planet_modifier = {
 		potential = {
@@ -679,9 +609,7 @@ building_avb_supercomputer_2 = {
 				is_hive_empire = yes
 			}
 		}
-		planet_physicists_minerals_upkeep_add = 6
-		planet_biologists_minerals_upkeep_add = 6
-		planet_engineers_minerals_upkeep_add = 6
+		planet_researchers_minerals_upkeep_add = 6
 	}
 
 	prerequisites = {
@@ -832,6 +760,35 @@ building_archaeostudies_faculty = {
 	}
 
 	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+			}
+		}
+		text = biologist_is_archaeo_engineer_tt
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+			}
+		}
+		text = biology_drone_is_archaeo_engineer_tt
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+		}
+		text = biology_unit_is_archaeo_engineer_tt
+	}
+	triggered_desc = {
 		text = building_archaeostudies_faculty_relic_effect
 	}
 
@@ -979,6 +936,35 @@ building_avb_archaeostudies_faculty_2 = {
 		is_wilderness_empire = no
 	}
 
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+			}
+		}
+		text = biologist_is_archaeo_engineer_tt
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+			}
+		}
+		text = biology_drone_is_archaeo_engineer_tt
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+		}
+		text = biology_unit_is_archaeo_engineer_tt
+	}
 	triggered_desc = {
 		text = building_archaeostudies_faculty_relic_effect
 	}
@@ -2030,18 +2016,6 @@ building_research_efficiency_1 = {
 			energy = @b3_upkeep
 			exotic_gases = @b4_rare_upkeep
 		}
-		upkeep = {
-			trigger = {
-				owner = {
-					is_galactic_community_member = yes
-				}
-				is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
-				planet = {
-					has_modifier = pm_extradimensional_experimentation
-				}
-			}
-			sr_zro = 1
-		}
 	}
 
 	planet_modifier = {
@@ -2052,6 +2026,17 @@ building_research_efficiency_1 = {
 		"tech_basic_science_lab_2"
 	}
 
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_galactic_community_member = yes
+			}
+			is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
+			has_modifier = pm_extradimensional_experimentation
+		}
+		planet_physicists_sr_zro_upkeep_add = 1
+		planet_physicists_physics_research_produces_add = 2
+	}
 	inline_script = {
 		script = districts/ai_research_extra_weighting
 		AMOUNT = 5
@@ -2107,18 +2092,6 @@ building_avb_research_efficiency_2 = {
 			energy = @avb_b4_upkeep
 			exotic_gases = @avb_b5_rare_upkeep
 		}
-		upkeep = {
-			trigger = {
-				owner = {
-					is_galactic_community_member = yes
-				}
-				is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
-				planet = {
-					has_modifier = pm_extradimensional_experimentation
-				}
-			}
-			sr_zro = 1
-		}
 	}
 
 	planet_modifier = {
@@ -2129,6 +2102,17 @@ building_avb_research_efficiency_2 = {
 		"tech_avb_basic_science_lab_4"
 	}
 
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_galactic_community_member = yes
+			}
+			is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
+			has_modifier = pm_extradimensional_experimentation
+		}
+		planet_physicists_sr_zro_upkeep_add = 2
+		planet_physicists_physics_research_produces_add = 4
+	}
 	inline_script = {
 		script = districts/ai_research_extra_weighting
 		AMOUNT = 5
@@ -2184,18 +2168,6 @@ building_avb_research_efficiency_3 = {
 			energy = @avb_b5_upkeep
 			exotic_gases = @avb_b6_rare_upkeep
 		}
-		upkeep = {
-			trigger = {
-				owner = {
-					is_galactic_community_member = yes
-				}
-				is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
-				planet = {
-					has_modifier = pm_extradimensional_experimentation
-				}
-			}
-			sr_zro = 1
-		}
 	}
 
 	planet_modifier = {
@@ -2206,6 +2178,17 @@ building_avb_research_efficiency_3 = {
 		"tech_avb_basic_science_lab_6"
 	}
 
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_galactic_community_member = yes
+			}
+			is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
+			has_modifier = pm_extradimensional_experimentation
+		}
+		planet_physicists_sr_zro_upkeep_add = 3
+		planet_physicists_physics_research_produces_add = 6
+	}
 	inline_script = {
 		script = districts/ai_research_extra_weighting
 		AMOUNT = 5
